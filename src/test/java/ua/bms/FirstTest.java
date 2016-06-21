@@ -21,7 +21,7 @@ public class FirstTest {
 	@Test // Marking this method as part of the test
 	public void gotoSeleniumWikiPage() {
 		// Go to the Wikipedia home page
-		driver.get("https://en.wikipedia.org/");
+		driver.get("https://en.wikipedia.org/wiki/Main_Page");
 		// Find the text input element by its id and type "Selenium"
 		driver.findElement(By.id("searchInput")).sendKeys("Selenium");
 		// Click search button		
