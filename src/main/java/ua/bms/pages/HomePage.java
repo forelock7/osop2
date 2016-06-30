@@ -13,14 +13,23 @@ public class HomePage extends Page {
 	@FindBy(id = "button-1038-btnInnerEl")
 	public WebElement linkLogOut;
 	
-	//@FindBy(xpath = ....)
-	//public WebElement linkLogin;
+	@FindBy(xpath = "html/body/div[1]/form/h2")
+	public WebElement linkLogIn;
+	
+	@FindBy (id = "button-1006-btnInnerEl")
+	public WebElement confirmLogOut;
+	
+	@FindBy (id = "button-1015-btnInnerEl")
+	public WebElement reportSections;
+	
+	@FindBy (id = "menuitem-1029-textEl")
+	public WebElement adminViol;
 	
 	@Override
-	public void open();
+	public void open(){};
 	
 	public boolean isLoggedOut() {
-		if (isElementPresent(linkLogin)) {
+		if (isElementPresent(linkLogIn)) {
 			return true;
 		}
 		else {
@@ -32,8 +41,13 @@ public class HomePage extends Page {
 		return isElementPresent(linkLogOut);
 	}
 	
-	public void logout() {
+	public void logOut() {
 		linkLogOut.click();
+		confirmLogOut.click();
 	}
 
+	public void goToAV() {
+		reportSections.clear();
+		adminViol.clear();
+	}
 }

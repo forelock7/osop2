@@ -1,12 +1,10 @@
+// Logining test
+
 package ua.bms.test;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import static org.testng.Assert.assertTrue;
+
 import org.testng.annotations.Test;
 
 import ua.bms.pages.HomePage;
@@ -14,17 +12,21 @@ import ua.bms.pages.LoginPage;
 
 public class LoginTest extends BasicTestCase {
 	
+	//Initialization of page instance according to PageFactory
 	private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
 	
-	@Test
-	public void testUntitled() throws Exception {
-		loginPage.open();
-		homePage = loginPage.loginAs(admin);
-		assertTrue(homePage.isLoggedIn());
-		homePage.logout();
-		assertTrue(HomePage.isLoggedOut);
-	}
+	private HomePage homePage;
 	
+	@Test
+	public void testLoginForm() throws Exception {
+		loginPage.open();
+		homePage = loginPage.loginAs(user);
+		assertTrue(homePage.isLoggedIn());
+		homePage.logOut();
+		assertTrue(homePage.isLoggedOut());
+	}
+
+
 	
 	
 	/*private WebDriver driver;

@@ -4,7 +4,7 @@
 	<test name="Test1">
 		<parameter name="path" value="/"/>
 		<classes>
-		    <class name="ua.bms.HomePageTest"/>
+		    <class name="ua.bms.test.*"/>
 		</classes>
 	</test>  
 </suite>

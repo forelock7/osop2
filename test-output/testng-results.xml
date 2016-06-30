@@ -2,20 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="10324" started-at="2016-06-29T13:19:58Z" finished-at="2016-06-29T13:20:08Z">
+  <suite name="Default suite" duration-ms="14127" started-at="2016-06-30T14:25:41Z" finished-at="2016-06-30T14:25:55Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="10324" started-at="2016-06-29T13:19:58Z" finished-at="2016-06-29T13:20:08Z">
+    <test name="Default test" duration-ms="14127" started-at="2016-06-30T14:25:41Z" finished-at="2016-06-30T14:25:55Z">
       <class name="ua.bms.test.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:ua.bms.test.LoginTest@c0edeb]" name="setUp" is-config="true" duration-ms="5338" started-at="2016-06-29T16:19:58Z" finished-at="2016-06-29T16:20:03Z">
+        <test-method status="PASS" signature="testLoginForm()[pri:0, instance:ua.bms.test.LoginTest@5fc5a4]" name="testLoginForm" duration-ms="13409" started-at="2016-06-30T17:25:41Z" finished-at="2016-06-30T17:25:54Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="gotoStartPageOsop()[pri:0, instance:ua.bms.test.LoginTest@c0edeb]" name="gotoStartPageOsop" duration-ms="4445" started-at="2016-06-29T16:20:03Z" finished-at="2016-06-29T16:20:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- gotoStartPageOsop -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.LoginTest@c0edeb]" name="tearDown" is-config="true" duration-ms="521" started-at="2016-06-29T16:20:08Z" finished-at="2016-06-29T16:20:08Z">
+        </test-method> <!-- testLoginForm -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.LoginTest@5fc5a4]" name="tearDown" is-config="true" duration-ms="689" started-at="2016-06-30T17:25:54Z" finished-at="2016-06-30T17:25:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

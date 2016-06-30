@@ -1,3 +1,5 @@
+// Class that extracts properties from the prop file (application.properties)
+
 package ua.bms.utils;
 
 import java.io.IOException;

@@ -1,3 +1,5 @@
+//Abstract class representation of a Page in the UI. Page object pattern.
+
 package ua.bms.pages;
 
 import org.openqa.selenium.NoSuchElementException;

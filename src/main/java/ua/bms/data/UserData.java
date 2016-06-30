@@ -1,13 +1,16 @@
+// This class consists of user data.
+
 package ua.bms.data;
 
 public class UserData {
 	
-	public String name;
+	public String login;
 	public String password;
 	
-	public UserData(String name, String password) {
-		this.name = name;
+	public UserData(String login, String password) {
+		this.login = login;
 		this.password = password;
 	}
 
 }
+

@@ -3,11 +3,13 @@ package ua.bms.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import ua.bms.data.UserData;
 import ua.bms.utils.ConfigProperties;
 
 public class LoginPage extends Page {
+	
 	
 	@FindBy(name = "username")
 	public WebElement fieldUsername;
@@ -22,10 +24,11 @@ public class LoginPage extends Page {
 		super(driver);
 	}
 	
-	public HomePage loginAs(UserData admin) {
-		type(fieldUsername, admin.name);
-		type(fieldPassword, admin.password);
+	public HomePage loginAs(UserData user) {
+		type(fieldUsername, user.login);
+		type(fieldPassword, user.password);
 		buttonLogin.click();
+		return PageFactory.initElements(driver, HomePage.class);
 	}
 	
 	@Override

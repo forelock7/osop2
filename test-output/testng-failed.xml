@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="ua.bms.FirstTest">
+      <class name="ua.bms.test.LoginTest">
         <methods>
-          <include name="gotoSeleniumWikiPageFailure"/>
           <include name="tearDown"/>
-          <include name="setUp"/>
+          <include name="testUntitled"/>
         </methods>
-      </class> <!-- ua.bms.FirstTest -->
+      </class> <!-- ua.bms.test.LoginTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
