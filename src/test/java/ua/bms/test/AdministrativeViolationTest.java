@@ -23,6 +23,10 @@ public class AdministrativeViolationTest extends BasicTestCase {
 		homePage = loginPage.loginAs(user);
 		assertTrue(homePage.isLoggedIn());
 		administrativeViolationsPage = homePage.goToAV();
+		
+		administrativeViolationsPage.createCard(aVCard);
+		
 		homePage.logOut();
 		assertTrue(homePage.isLoggedOut());
+	}
 }

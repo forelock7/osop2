@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="ua.bms.test.LoginTest">
+      <class name="ua.bms.test.AdministrativeViolationTest">
         <methods>
           <include name="tearDown"/>
-          <include name="testUntitled"/>
+          <include name="testLoginForm"/>
         </methods>
-      </class> <!-- ua.bms.test.LoginTest -->
+      </class> <!-- ua.bms.test.AdministrativeViolationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

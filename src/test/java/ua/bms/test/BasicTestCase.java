@@ -8,16 +8,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterTest;
 
+import ua.bms.data.AdminViolCardData;
 import ua.bms.data.UserData;
 import ua.bms.utils.ConfigProperties;
 
 public class BasicTestCase {
 	
-//Keeping instance of WebDriver
+	//Keeping instance of WebDriver
 	protected static WebDriver driver;
 
-//Initialization of object "user"	
+	//Initialization of object "user"	
 	protected UserData user = new UserData("vova", "bMS$2016");
+	protected AdminViolCardData aVCard = new AdminViolCardData("101", "01.07.2016", "01.07.2016", "ÔÀÁÓËÀ_ÁÎÒ", "ÏĞÀÂÎÏÎĞÓØÍÈÊ_ÁÎÒ", "01.01.1980", "Â²ÉÑÜÊÎÂÀ ×ÀÑÒÈÍÀ ¹1");
 
 	protected WebDriver getWebDriver() {
 		if (driver == null){
