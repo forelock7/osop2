@@ -49,7 +49,7 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
-                    <span>C:\Users\ChubenkoV\AppData\Local\Temp\testng-eclipse--45005159\testng-customsuite.xml</span>
+                    <span>C:\Users\ChubenkoV\AppData\Local\Temp\testng-eclipse-55374648\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -128,15 +128,13 @@
                   <a name="testLoginForm">
                   </a> <!-- testLoginForm -->
                   <span class="method-name">testLoginForm</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;Стаття КУпАП:&quot;}
-Command duration or timeout: 5.25 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Element must be user-editable in order to clear it.
+Command duration or timeout: 5.24 seconds
 Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.39&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
+System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.42&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: c0c2dea5-1fdf-4561-a518-2e3a807346a3
-*** Element info: {Using=id, value=Стаття КУпАП:}
+Session ID: 52dfaa4f-a5d6-453a-8d47-c298c82ebd95
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -144,14 +142,16 @@ Session ID: c0c2dea5-1fdf-4561-a518-2e3a807346a3
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
-	at org.openqa.selenium.By$ById.findElement(By.java:218)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at com.sun.proxy.$Proxy6.click(Unknown Source)
-	at ua.bms.pages.AdministrativeViolationsPage.createCard(AdministrativeViolationsPage.java:101)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:140)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at com.sun.proxy.$Proxy6.clear(Unknown Source)
+	at ua.bms.pages.Page.type(Page.java:18)
+	at ua.bms.pages.AdministrativeViolationsPage.createCard(AdministrativeViolationsPage.java:167)
 	at ua.bms.test.AdministrativeViolationTest.testLoginForm(AdministrativeViolationTest.java:27)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
@@ -178,13 +178,15 @@ Session ID: c0c2dea5-1fdf-4561-a518-2e3a807346a3
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;id&quot;,&quot;selector&quot;:&quot;Стаття КУпАП:&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Caused by: org.openqa.selenium.WebDriverException: Element must be user-editable in order to clear it.
 Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.39&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
+System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.42&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous5864522923162439761webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous5864522923162439761webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+	at &lt;anonymous class&gt;.bot.Error(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous5035310497162810074webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:681)
+	at &lt;anonymous class&gt;.bot.action.clear(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous5035310497162810074webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:11685)
+	at &lt;anonymous class&gt;.WebElement.clearElement(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous5035310497162810074webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12136)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous5035310497162810074webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous5035310497162810074webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
 
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
@@ -194,7 +196,7 @@ Driver info: driver.version: unknown
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\ChubenkoV\AppData\Local\Temp\testng-eclipse--45005159\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\ChubenkoV\AppData\Local\Temp\testng-eclipse-55374648\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -247,12 +249,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testLoginForm')
 data.setCell(0, 2, 'ua.bms.test.AdministrativeViolationTest')
-data.setCell(0, 3, 16606);
+data.setCell(0, 3, 23779);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 16 seconds</span>
+              <span class="suite-total-time">Total running time: 23 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -287,7 +289,7 @@ return data;
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">16620 ms</span>
+                <span class="method-start">23793 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

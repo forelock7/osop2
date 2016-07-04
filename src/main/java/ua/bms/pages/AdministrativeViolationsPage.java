@@ -3,7 +3,7 @@ package ua.bms.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+
 
 import ua.bms.data.AdminViolCardData;
 
@@ -31,10 +31,10 @@ public class AdministrativeViolationsPage extends Page {
 	public WebElement inputProtocolCreatingDate;
 
 	//Input field "Стаття КУпАП"
-	@FindBy(using ="Стаття КУпАП:")
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Стаття КУпАП:')]")
 	public WebElement inputSectionAVLawbook;
 	//First Item "Ст. 172-10" from drop-down list of input field "Стаття КУпАП"
-	@FindBy(partialLinkText  = "Ст. 172-10")
+	@FindBy(xpath  = "//li[contains(., 'Ст. 172-10')]")
 	public WebElement itemSectionAVLawbook;
 	
 	//Input field "Дата вчинення правопорушення"
@@ -53,11 +53,11 @@ public class AdministrativeViolationsPage extends Page {
 	@FindBy(id = "datefield-1210-inputEl")
 	public WebElement inputBirthday;
 	
-	//Input field "Військове формування"
-	@FindBy(id = "combo-1211-inputEl")
+	//Input field "Військове формування" 
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Військове формування:')]")
 	public WebElement inputMilitaryTroops;
 	//First Item "Збройні сили" from drop-down list of input field "Військові формування"
-	@FindBy(xpath = ".//*[@id='boundlist-1264-listEl']/li[1]")
+	@FindBy(xpath = "//li[contains(., 'Збройні сили')]")
 	public WebElement itemMilitaryTroop;
 	
 	//Input field "Назва військової частини, установи"
@@ -65,24 +65,72 @@ public class AdministrativeViolationsPage extends Page {
 	public WebElement inputMilitaryUnitName;
 	
 	//Input field "Військове звання"
-	@FindBy(id = "combo-1214-inputEl")
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Військове звання:')]")
 	public WebElement inputMilitaryRank;
-	//First Item "Старший та вищій офіцерський склад" from drop-down list of input field "Військові звання"
-	@FindBy(xpath = ".//*[@id='boundlist-1403-listEl']/li[1]")
+	//Second Item "Молодший офіцерський склад" from drop-down list of input field "Військові звання"
+	@FindBy(xpath = "//li[contains(., 'Молодший офіцерський склад')]")
 	public WebElement itemMilitaryRank;
 	
 	//Input field "Категорія посади"
-	@FindBy(id = "combo-1354-inputEl")
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Категорія посади:')]")
 	public WebElement inputPostCategory;
-	//First Item "Командир(начальник) військової частини" from drop-down list of input field "Категорія посади"
-	@FindBy(xpath = ".//*[@id='boundlist-1335-listEl']/li[1]")
+	//First Item "Командир (начальник) військової частини" from drop-down list of input field "Категорія посади"
+	@FindBy(xpath = "//li[contains(., 'Командир (начальник) військової частини')]")
 	public WebElement itemPostCategory;
+	
+	//Input field "Посада"
+	@FindBy(id = "textfield-1216-inputEl")
+	public WebElement inputPost;
+	
+	//Input field "Дата первинного направлення до суду(для обліку у звіті)"
+	@FindBy (id = "datefield-1218-inputEl")
+	public WebElement inputReferToCourtDate;
+	
+	//Input field "Назва суду"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Назва суду:')]")
+	public WebElement inputCourtName;
+	//Third item of Courts
+	@FindBy (xpath = "//span[contains(., 'Вищий спеціалізований суд України з розгляду цивільних і кримінальних справ')]")
+	public WebElement itemOfCourt;
+	
+	//CheckBox "Повернуто судом"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Повернуто судом')]")
+	public WebElement returnByCourt;
+	
+	//Input field "Дата надходження рішення про повернення судом (для обліку у звіті)"
+	@FindBy(id = "datefield-1228-inputEl")
+	public WebElement inputReceivingCourtDecisionDate;
+	
+	//Input field "Дата повторного направлення (для обліку у звіті)"
+	@FindBy(id = "datefield-1229-inputEl")
+	public WebElement inputRepeatedReferToCourtDate;
+	
+	//Button "Додати". Adding a record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Додати')]")
+	public WebElement buttonAdd;
+	
+	//Form "Створення "Рух протоколу""
+	//Input field "Направлено до суду/Повернуто судом"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(., 'Направлено до суду')]")
+	public WebElement inputRefer_Receive;
+	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[contains(., 'Направлено до суду')]")
+	public WebElement itemRefer_Receive;
+	//Input field "Дата рішення"
+	@FindBy(xpath = "//span[contains(., 'Дата рішення:')]")
+	public WebElement inputCourtDecisionDate;
+	//Saving button of record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(., 'Додати')]")
+	public WebElement buttonAddMovingOfProtocol;
+	
+	
 	
 	//Button "Зберегти" for saving card
 	@FindBy(id = "button-1260-btnInnerEl")
 	public WebElement buttonSave;
-	
-	
+		
+	//Alert button "OK" from massage about successful creating
+	@FindBy (xpath = "//div[contains(@id, 'messagebox')]//span[contains(@id, 'button')]")
+	public WebElement buttonSuccessfulCreating;
 	
 	@Override
 	public void open() {
@@ -93,20 +141,36 @@ public class AdministrativeViolationsPage extends Page {
 		buttonCreateCardAV.click();
 		type(inputProtocolNumber, adminViolCard.protocolNumber);
 		type(inputProtocolCreatingDate, adminViolCard.protocolCreatingDate);
+		inputSectionAVLawbook.click();
+		itemSectionAVLawbook.click();
 		type(inputCommitingAVDate, adminViolCard.commitingAVDate);
 		type(inputTheory, adminViolCard.theory);
 		type(inputOffenderName, adminViolCard.offenderName);
 		type(inputBirthday, adminViolCard.birthday);
-		type(inputMilitaryUnitName, adminViolCard.militaryUnitName);
-		inputSectionAVLawbook.click();
-		itemSectionAVLawbook.click();
 		inputMilitaryTroops.click();
 		itemMilitaryTroop.click();
+		type(inputMilitaryUnitName, adminViolCard.militaryUnitName);
 		inputMilitaryRank.click();
 		itemMilitaryRank.click();
 		inputPostCategory.click();
 		itemPostCategory.click();
+		type(inputPost, adminViolCard.post);
+		type(inputReferToCourtDate, adminViolCard.referToCourtDate);
+		inputCourtName.click();
+		itemOfCourt.click();
+		returnByCourt.click();
+		type(inputReceivingCourtDecisionDate, adminViolCard.receivingCourtDecisionDate);
+		type(inputRepeatedReferToCourtDate, adminViolCard.repeatedReferToCourtDate);
+		buttonAdd.click();
+		inputRefer_Receive.click();
+		itemRefer_Receive.click();
+		type(inputCourtDecisionDate, adminViolCard.courtDecisionDate);
+		buttonAddMovingOfProtocol.click();
+		
+		
+		
 		buttonSave.click();
+		buttonSuccessfulCreating.click();
 		
 	}
 }
