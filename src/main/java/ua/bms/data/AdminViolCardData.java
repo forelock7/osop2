@@ -13,8 +13,10 @@ public class AdminViolCardData {
 	public String receivingCourtDecisionDate;
 	public String repeatedReferToCourtDate;
 	public String courtDecisionDate;
+	public String receivingDateMain;
+	public String beginingPunishmentDate;
 	
-	public AdminViolCardData(String protocolNumber, String protocolCreatingDate, String commitingAVDate, String theory, String offenderName, String birthday, String militaryUnitName, String post, String referToCourtDate, String receivingCourtDecisionDate, String repeatedReferToCourtDate, String courtDecisionDate) {
+	public AdminViolCardData(String protocolNumber, String protocolCreatingDate, String commitingAVDate, String theory, String offenderName, String birthday, String militaryUnitName, String post, String referToCourtDate, String receivingCourtDecisionDate, String repeatedReferToCourtDate, String courtDecisionDate, String receivingDateMain, String beginingPunishmentDate) {
 		this.protocolNumber = protocolNumber;
 		this.protocolCreatingDate = protocolCreatingDate;
 		this.commitingAVDate = commitingAVDate;
@@ -27,6 +29,8 @@ public class AdminViolCardData {
 		this.receivingCourtDecisionDate = receivingCourtDecisionDate;
 		this.repeatedReferToCourtDate = repeatedReferToCourtDate;
 		this.courtDecisionDate = courtDecisionDate;
+		this.receivingDateMain = receivingDateMain;
+		this.beginingPunishmentDate = beginingPunishmentDate;
 	}
 
 }

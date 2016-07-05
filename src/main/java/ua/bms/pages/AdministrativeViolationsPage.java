@@ -34,7 +34,7 @@ public class AdministrativeViolationsPage extends Page {
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Стаття КУпАП:')]")
 	public WebElement inputSectionAVLawbook;
 	//First Item "Ст. 172-10" from drop-down list of input field "Стаття КУпАП"
-	@FindBy(xpath  = "//li[contains(., 'Ст. 172-10')]")
+	@FindBy(xpath  = "//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]")
 	public WebElement itemSectionAVLawbook;
 	
 	//Input field "Дата вчинення правопорушення"
@@ -95,7 +95,7 @@ public class AdministrativeViolationsPage extends Page {
 	
 	//CheckBox "Повернуто судом"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Повернуто судом')]")
-	public WebElement returnByCourt;
+	public WebElement checkboxReturnByCourt;
 	
 	//Input field "Дата надходження рішення про повернення судом (для обліку у звіті)"
 	@FindBy(id = "datefield-1228-inputEl")
@@ -111,18 +111,36 @@ public class AdministrativeViolationsPage extends Page {
 	
 	//Form "Створення "Рух протоколу""
 	//Input field "Направлено до суду/Повернуто судом"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(., 'Направлено до суду')]")
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(., 'Повернуто судом')]")
 	public WebElement inputRefer_Receive;
 	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[contains(., 'Направлено до суду')]")
 	public WebElement itemRefer_Receive;
 	//Input field "Дата рішення"
-	@FindBy(xpath = "//span[contains(., 'Дата рішення:')]")
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//input[contains(@id, 'datefield')]")
 	public WebElement inputCourtDecisionDate;
 	//Saving button of record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(., 'Додати')]")
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(text(), 'Додати')]")
 	public WebElement buttonAddMovingOfProtocol;
 	
+	//Input field "Результат розгляду"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Результат розгляду:')]")
+	public WebElement inputConsiderationResult;
+	//Third item of court consideration result
+	@FindBy (xpath = "//span[contains(., 'Арешт з утриманням на гауптвахті')]") 
+	public WebElement itemConsiderationResult;	
 	
+	//Input field "Дата надходження рішення суду(для обліку у звіті)"(пошук наступного(1) div-елемента після span(на одному рівні) )
+	@FindBy(xpath = "//span[contains(., 'Дата надходження рішення суду (для обліку у звіті):')]/../following-sibling::div[1]//input")
+	public WebElement inputReceivingDateMain;
+	
+	//!!!CheckBox "Відбули покарання у виді арешту з утриманням на гауптвахті". Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Відбули покарання у виді арешту з утриманням на гауптвахті')]")
+	public WebElement checkboxCarriedPunishment;
+	
+	//Input field "Дата початку утримання на гауптвахті:"Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті".(пошук наступного(1) div-елемента після span(на одному рівні) )
+	@FindBy(xpath = "//span[contains(., 'Дата початку утримання на гауптвахті:')]/../following-sibling::div[1]//input")
+	public WebElement inputBeginingPunishmentDate;
+		
 	
 	//Button "Зберегти" for saving card
 	@FindBy(id = "button-1260-btnInnerEl")
@@ -137,11 +155,12 @@ public class AdministrativeViolationsPage extends Page {
 					
 	}
 	
-	public void createCard (AdminViolCardData adminViolCard) {
+	public void createCard (AdminViolCardData adminViolCard) throws InterruptedException {
 		buttonCreateCardAV.click();
 		type(inputProtocolNumber, adminViolCard.protocolNumber);
 		type(inputProtocolCreatingDate, adminViolCard.protocolCreatingDate);
 		inputSectionAVLawbook.click();
+		Thread.sleep(2000);
 		itemSectionAVLawbook.click();
 		type(inputCommitingAVDate, adminViolCard.commitingAVDate);
 		type(inputTheory, adminViolCard.theory);
@@ -158,16 +177,20 @@ public class AdministrativeViolationsPage extends Page {
 		type(inputReferToCourtDate, adminViolCard.referToCourtDate);
 		inputCourtName.click();
 		itemOfCourt.click();
-		returnByCourt.click();
+		checkboxReturnByCourt.click();
 		type(inputReceivingCourtDecisionDate, adminViolCard.receivingCourtDecisionDate);
 		type(inputRepeatedReferToCourtDate, adminViolCard.repeatedReferToCourtDate);
 		buttonAdd.click();
 		inputRefer_Receive.click();
+		Thread.sleep(2000);
 		itemRefer_Receive.click();
 		type(inputCourtDecisionDate, adminViolCard.courtDecisionDate);
 		buttonAddMovingOfProtocol.click();
-		
-		
+		inputConsiderationResult.click();
+		itemConsiderationResult.click();
+		type(inputReceivingDateMain, adminViolCard.receivingDateMain);
+		checkboxCarriedPunishment.click();
+		type(inputBeginingPunishmentDate, adminViolCard.beginingPunishmentDate);
 		
 		buttonSave.click();
 		buttonSuccessfulCreating.click();
