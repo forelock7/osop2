@@ -11,7 +11,7 @@ public class HomePage extends Page {
 		super(driver);
 	}
 
-	//Button "Âèõ³ä"
+	//Button "Ð’Ð¸Ñ…Ñ–Ð´"
 	@FindBy(id = "button-1038-btnInnerEl")
 	public WebElement linkLogOut;
 	
@@ -34,7 +34,7 @@ public class HomePage extends Page {
 	@Override
 	public void open(){};
 	
-	//Checking if user is logged out of system(have to exist the title "ÂÕ²Ä ÄÎ ÑÈÑÒÅÌÈ" on Login Page)
+	//Checking if user is logged out of system(have to exist the title "Ð’Ð¥Ð†Ð” Ð”Ðž Ð¡Ð˜Ð¡Ð¢Ð•ÐœÐ˜" on Login Page)
 	public boolean isLoggedOut() {
 		if (isElementPresent(linkLogIn)) {
 			return true;
@@ -44,7 +44,7 @@ public class HomePage extends Page {
 		}
 	}
 	
-	//Checking if user is logged in system(have to exist the button "Âèõ³ä")
+	//Checking if user is logged in system(have to exist the button "Ð’Ð¸Ñ…Ñ–Ð´")
 	public boolean isLoggedIn() {
 		return isElementPresent(linkLogOut);
 	}

@@ -9,6 +9,8 @@ import ua.bms.pages.AdministrativeViolationsPage;
 import ua.bms.pages.HomePage;
 import ua.bms.pages.LoginPage;
 
+
+
 public class AdministrativeViolationTest extends BasicTestCase {
 
 	private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
@@ -23,10 +25,20 @@ public class AdministrativeViolationTest extends BasicTestCase {
 		homePage = loginPage.loginAs(user);
 		assertTrue(homePage.isLoggedIn());
 		administrativeViolationsPage = homePage.goToAV();
-		
 		administrativeViolationsPage.createCard(aVCard);
 		
-		homePage.logOut();
-		assertTrue(homePage.isLoggedOut());
+		administrativeViolationsPage.openCardToEdit();
+		
+		assertEquals(administrativeViolationsPage.getTextProtocolNumber(), protNum);
+		administrativeViolationsPage.exitFromCard();
+		//homePage.logOut();
+		//assertTrue(homePage.isLoggedOut());
 	}
+
+	private void assertEquals(String textProtocolNumber, String protNum) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
 }

@@ -14,150 +14,163 @@ public class AdministrativeViolationsPage extends Page {
 	}
 	
 	//Page elements
-	//Title "Військові адмінправопорушення"
-	@FindBy(xpath = ".//*[@id='unit9-crimeSearch-1114_header-title-textEl']/div[1]")
+	//Title "Р’С–Р№СЃСЊРєРѕРІС– Р°РґРјС–РЅРїСЂР°РІРѕРїРѕСЂСѓС€РµРЅРЅСЏ"
+	@FindBy(xpath = ".//*[@id='unit9-crimeSearch']/div[1]")
 	public WebElement titleAV;
 	
-	//Button "Створити"
+	//Button "РЎС‚РІРѕСЂРёС‚Рё"
 	@FindBy(id = "button-1065-btnInnerEl")
 	public WebElement buttonCreateCardAV;
 	
-	//Input field "Номер протоколу"
-	@FindBy(id = "textfield-1203-inputEl")
+	//Input field "РќРѕРјРµСЂ РїСЂРѕС‚РѕРєРѕР»Сѓ"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'РќРѕРјРµСЂ РїСЂРѕС‚РѕРєРѕР»Сѓ:')]/../following-sibling::div[1]//input")
 	public WebElement inputProtocolNumber;
 	
-	//Input field "Дата складання протоколу"
+	//Input field "Р”Р°С‚Р° СЃРєР»Р°РґР°РЅРЅСЏ РїСЂРѕС‚РѕРєРѕР»Сѓ"
 	@FindBy(id = "datefield-1204-inputEl")
 	public WebElement inputProtocolCreatingDate;
 
-	//Input field "Стаття КУпАП"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Стаття КУпАП:')]")
+	//Input field "РЎС‚Р°С‚С‚СЏ РљРЈРїРђРџ"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'РЎС‚Р°С‚С‚СЏ РљРЈРїРђРџ:')]")
 	public WebElement inputSectionAVLawbook;
-	//First Item "Ст. 172-10" from drop-down list of input field "Стаття КУпАП"
-	@FindBy(xpath  = "//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]")
+	//First Item "РЎС‚. 172-10" from drop-down list of input field "РЎС‚Р°С‚С‚СЏ РљРЈРїРђРџ"
+	@FindBy(xpath  = "//div[contains(@id, 'boundlist')]//li[contains(., 'РЎС‚. 172-10')]")
 	public WebElement itemSectionAVLawbook;
 	
-	//Input field "Дата вчинення правопорушення"
+	//Input field "Р”Р°С‚Р° РІС‡РёРЅРµРЅРЅСЏ РїСЂР°РІРѕРїРѕСЂСѓС€РµРЅРЅСЏ"
 	@FindBy(id = "datefield-1206-inputEl")
 	public WebElement inputCommitingAVDate;
 	
-	//Input field "Фабула"
+	//Input field "Р¤Р°Р±СѓР»Р°"
 	@FindBy(id = "textarea-1207-inputEl")
 	public WebElement inputTheory;
 	
-	//Input field "ПІБ правопорушника"
+	//Input field "РџР†Р‘ РїСЂР°РІРѕРїРѕСЂСѓС€РЅРёРєР°"
 	@FindBy(id = "textfield-1209-inputEl")
 	public WebElement inputOffenderName;
 	
-	//Input field "Дата народження"
+	//Input field "Р”Р°С‚Р° РЅР°СЂРѕРґР¶РµРЅРЅСЏ"
 	@FindBy(id = "datefield-1210-inputEl")
 	public WebElement inputBirthday;
 	
-	//Input field "Військове формування" 
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Військове формування:')]")
+	//Input field "Р’С–Р№СЃСЊРєРѕРІРµ С„РѕСЂРјСѓРІР°РЅРЅСЏ" 
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Р’С–Р№СЃСЊРєРѕРІРµ С„РѕСЂРјСѓРІР°РЅРЅСЏ:')]")
 	public WebElement inputMilitaryTroops;
-	//First Item "Збройні сили" from drop-down list of input field "Військові формування"
-	@FindBy(xpath = "//li[contains(., 'Збройні сили')]")
+	//First Item "Р—Р±СЂРѕР№РЅС– СЃРёР»Рё" from drop-down list of input field "Р’С–Р№СЃСЊРєРѕРІС– С„РѕСЂРјСѓРІР°РЅРЅСЏ"
+	@FindBy(xpath = "//li[contains(., 'Р—Р±СЂРѕР№РЅС– СЃРёР»Рё')]")
 	public WebElement itemMilitaryTroop;
 	
-	//Input field "Назва військової частини, установи"
+	//Input field "РќР°Р·РІР° РІС–Р№СЃСЊРєРѕРІРѕС— С‡Р°СЃС‚РёРЅРё, СѓСЃС‚Р°РЅРѕРІРё"
 	@FindBy(id = "textfield-1212-inputEl")
 	public WebElement inputMilitaryUnitName;
 	
-	//Input field "Військове звання"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Військове звання:')]")
+	//Input field "Р’С–Р№СЃСЊРєРѕРІРµ Р·РІР°РЅРЅСЏ"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Р’С–Р№СЃСЊРєРѕРІРµ Р·РІР°РЅРЅСЏ:')]")
 	public WebElement inputMilitaryRank;
-	//Second Item "Молодший офіцерський склад" from drop-down list of input field "Військові звання"
-	@FindBy(xpath = "//li[contains(., 'Молодший офіцерський склад')]")
+	//Second Item "РњРѕР»РѕРґС€РёР№ РѕС„С–С†РµСЂСЃСЊРєРёР№ СЃРєР»Р°Рґ" from drop-down list of input field "Р’С–Р№СЃСЊРєРѕРІС– Р·РІР°РЅРЅСЏ"
+	@FindBy(xpath = "//li[contains(., 'РњРѕР»РѕРґС€РёР№ РѕС„С–С†РµСЂСЃСЊРєРёР№ СЃРєР»Р°Рґ')]")
 	public WebElement itemMilitaryRank;
 	
-	//Input field "Категорія посади"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Категорія посади:')]")
+	//Input field "РљР°С‚РµРіРѕСЂС–СЏ РїРѕСЃР°РґРё"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'РљР°С‚РµРіРѕСЂС–СЏ РїРѕСЃР°РґРё:')]")
 	public WebElement inputPostCategory;
-	//First Item "Командир (начальник) військової частини" from drop-down list of input field "Категорія посади"
-	@FindBy(xpath = "//li[contains(., 'Командир (начальник) військової частини')]")
+	//First Item "РљРѕРјР°РЅРґРёСЂ (РЅР°С‡Р°Р»СЊРЅРёРє) РІС–Р№СЃСЊРєРѕРІРѕС— С‡Р°СЃС‚РёРЅРё" from drop-down list of input field "РљР°С‚РµРіРѕСЂС–СЏ РїРѕСЃР°РґРё"
+	@FindBy(xpath = "//li[contains(., 'РљРѕРјР°РЅРґРёСЂ (РЅР°С‡Р°Р»СЊРЅРёРє) РІС–Р№СЃСЊРєРѕРІРѕС— С‡Р°СЃС‚РёРЅРё')]")
 	public WebElement itemPostCategory;
 	
-	//Input field "Посада"
+	//Input field "РџРѕСЃР°РґР°"
 	@FindBy(id = "textfield-1216-inputEl")
 	public WebElement inputPost;
 	
-	//Input field "Дата первинного направлення до суду(для обліку у звіті)"
+	//Input field "Р”Р°С‚Р° РїРµСЂРІРёРЅРЅРѕРіРѕ РЅР°РїСЂР°РІР»РµРЅРЅСЏ РґРѕ СЃСѓРґСѓ(РґР»СЏ РѕР±Р»С–РєСѓ Сѓ Р·РІС–С‚С–)"
 	@FindBy (id = "datefield-1218-inputEl")
 	public WebElement inputReferToCourtDate;
 	
-	//Input field "Назва суду"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Назва суду:')]")
+	//Input field "РќР°Р·РІР° СЃСѓРґСѓ"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'РќР°Р·РІР° СЃСѓРґСѓ:')]")
 	public WebElement inputCourtName;
 	//Third item of Courts
-	@FindBy (xpath = "//span[contains(., 'Вищий спеціалізований суд України з розгляду цивільних і кримінальних справ')]")
+	@FindBy (xpath = "//span[contains(., 'Р’РёС‰РёР№ СЃРїРµС†С–Р°Р»С–Р·РѕРІР°РЅРёР№ СЃСѓРґ РЈРєСЂР°С—РЅРё Р· СЂРѕР·РіР»СЏРґСѓ С†РёРІС–Р»СЊРЅРёС… С– РєСЂРёРјС–РЅР°Р»СЊРЅРёС… СЃРїСЂР°РІ')]")
 	public WebElement itemOfCourt;
 	
-	//CheckBox "Повернуто судом"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Повернуто судом')]")
+	//CheckBox "РџРѕРІРµСЂРЅСѓС‚Рѕ СЃСѓРґРѕРј"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'РџРѕРІРµСЂРЅСѓС‚Рѕ СЃСѓРґРѕРј')]")
 	public WebElement checkboxReturnByCourt;
 	
-	//Input field "Дата надходження рішення про повернення судом (для обліку у звіті)"
+	//Input field "Р”Р°С‚Р° РЅР°РґС…РѕРґР¶РµРЅРЅСЏ СЂС–С€РµРЅРЅСЏ РїСЂРѕ РїРѕРІРµСЂРЅРµРЅРЅСЏ СЃСѓРґРѕРј (РґР»СЏ РѕР±Р»С–РєСѓ Сѓ Р·РІС–С‚С–)"
 	@FindBy(id = "datefield-1228-inputEl")
 	public WebElement inputReceivingCourtDecisionDate;
 	
-	//Input field "Дата повторного направлення (для обліку у звіті)"
+	//Input field "Р”Р°С‚Р° РїРѕРІС‚РѕСЂРЅРѕРіРѕ РЅР°РїСЂР°РІР»РµРЅРЅСЏ (РґР»СЏ РѕР±Р»С–РєСѓ Сѓ Р·РІС–С‚С–)"
 	@FindBy(id = "datefield-1229-inputEl")
 	public WebElement inputRepeatedReferToCourtDate;
 	
-	//Button "Додати". Adding a record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Додати')]")
+	//Button "Р”РѕРґР°С‚Рё". Adding a record into grid "Р’С–РґРѕРјРѕСЃС‚С– РїСЂРѕ РїРѕРІС‚РѕСЂРЅС– РЅР°РїСЂР°РІР»РµРЅРЅСЏ РїСЂРѕС‚РѕРєРѕР»Сѓ РґРѕ СЃСѓРґСѓ / РїРѕРІРµСЂРЅРµРЅРЅСЏ СЃСѓРґРѕРј"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Р”РѕРґР°С‚Рё')]")
 	public WebElement buttonAdd;
 	
-	//Form "Створення "Рух протоколу""
-	//Input field "Направлено до суду/Повернуто судом"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(., 'Повернуто судом')]")
+	//Form "РЎС‚РІРѕСЂРµРЅРЅСЏ "Р СѓС… РїСЂРѕС‚РѕРєРѕР»Сѓ""
+	//Input field "РќР°РїСЂР°РІР»РµРЅРѕ РґРѕ СЃСѓРґСѓ/РџРѕРІРµСЂРЅСѓС‚Рѕ СЃСѓРґРѕРј"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(., 'РџРѕРІРµСЂРЅСѓС‚Рѕ СЃСѓРґРѕРј')]")
 	public WebElement inputRefer_Receive;
-	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[contains(., 'Направлено до суду')]")
+	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[contains(., 'РќР°РїСЂР°РІР»РµРЅРѕ РґРѕ СЃСѓРґСѓ')]")
 	public WebElement itemRefer_Receive;
-	//Input field "Дата рішення"
+	//Input field "Р”Р°С‚Р° СЂС–С€РµРЅРЅСЏ"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//input[contains(@id, 'datefield')]")
 	public WebElement inputCourtDecisionDate;
-	//Saving button of record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(text(), 'Додати')]")
+	//Saving button of record into grid "Р’С–РґРѕРјРѕСЃС‚С– РїСЂРѕ РїРѕРІС‚РѕСЂРЅС– РЅР°РїСЂР°РІР»РµРЅРЅСЏ РїСЂРѕС‚РѕРєРѕР»Сѓ РґРѕ СЃСѓРґСѓ / РїРѕРІРµСЂРЅРµРЅРЅСЏ СЃСѓРґРѕРј"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(text(), 'Р”РѕРґР°С‚Рё')]")
 	public WebElement buttonAddMovingOfProtocol;
 	
-	//Input field "Результат розгляду"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Результат розгляду:')]")
+	//Input field "Р РµР·СѓР»СЊС‚Р°С‚ СЂРѕР·РіР»СЏРґСѓ"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Р РµР·СѓР»СЊС‚Р°С‚ СЂРѕР·РіР»СЏРґСѓ:')]")
 	public WebElement inputConsiderationResult;
 	//Third item of court consideration result
-	@FindBy (xpath = "//span[contains(., 'Арешт з утриманням на гауптвахті')]") 
+	@FindBy (xpath = "//span[contains(., 'РђСЂРµС€С‚ Р· СѓС‚СЂРёРјР°РЅРЅСЏРј РЅР° РіР°СѓРїС‚РІР°С…С‚С–')]") 
 	public WebElement itemConsiderationResult;	
 	
-	//Input field "Дата надходження рішення суду(для обліку у звіті)"(пошук наступного(1) div-елемента після span(на одному рівні) )
-	@FindBy(xpath = "//span[contains(., 'Дата надходження рішення суду (для обліку у звіті):')]/../following-sibling::div[1]//input")
+	//Input field "Р”Р°С‚Р° РЅР°РґС…РѕРґР¶РµРЅРЅСЏ СЂС–С€РµРЅРЅСЏ СЃСѓРґСѓ(РґР»СЏ РѕР±Р»С–РєСѓ Сѓ Р·РІС–С‚С–)"(РїРѕС€СѓРє РЅР°СЃС‚СѓРїРЅРѕРіРѕ(1) div-РµР»РµРјРµРЅС‚Р° РїС–СЃР»СЏ span(РЅР° РѕРґРЅРѕРјСѓ СЂС–РІРЅС–)  )
+	@FindBy(xpath = "//span[contains(., 'Р”Р°С‚Р° РЅР°РґС…РѕРґР¶РµРЅРЅСЏ СЂС–С€РµРЅРЅСЏ СЃСѓРґСѓ (РґР»СЏ РѕР±Р»С–РєСѓ Сѓ Р·РІС–С‚С–):')]/../following-sibling::div[1]//input")
 	public WebElement inputReceivingDateMain;
 	
-	//!!!CheckBox "Відбули покарання у виді арешту з утриманням на гауптвахті". Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті"
-	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Відбули покарання у виді арешту з утриманням на гауптвахті')]")
+	//!!!CheckBox "Р’С–РґР±СѓР»Рё РїРѕРєР°СЂР°РЅРЅСЏ Сѓ РІРёРґС– Р°СЂРµС€С‚Сѓ Р· СѓС‚СЂРёРјР°РЅРЅСЏРј РЅР° РіР°СѓРїС‚РІР°С…С‚С–". Enable only if "Р РµР·СѓР»СЊС‚Р°С‚ СЂРѕР·РіР»СЏРґСѓ"="РђСЂРµС€С‚ Р· СѓС‚СЂРёРјР°РЅРЅСЏРј РЅР° РіР°СѓРїС‚РІР°С…С‚С–"
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Р’С–РґР±СѓР»Рё РїРѕРєР°СЂР°РЅРЅСЏ Сѓ РІРёРґС– Р°СЂРµС€С‚Сѓ Р· СѓС‚СЂРёРјР°РЅРЅСЏРј РЅР° РіР°СѓРїС‚РІР°С…С‚С–')]")
 	public WebElement checkboxCarriedPunishment;
 	
-	//Input field "Дата початку утримання на гауптвахті:"Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті".(пошук наступного(1) div-елемента після span(на одному рівні) )
-	@FindBy(xpath = "//span[contains(., 'Дата початку утримання на гауптвахті:')]/../following-sibling::div[1]//input")
+	//Input field "Р”Р°С‚Р° РїРѕС‡Р°С‚РєСѓ СѓС‚СЂРёРјР°РЅРЅСЏ РЅР° РіР°СѓРїС‚РІР°С…С‚С–:"Enable only if "Р РµР·СѓР»СЊС‚Р°С‚ СЂРѕР·РіР»СЏРґСѓ"="РђСЂРµС€С‚ Р· СѓС‚СЂРёРјР°РЅРЅСЏРј РЅР° РіР°СѓРїС‚РІР°С…С‚С–".(РїРѕС€СѓРє РЅР°СЃС‚СѓРїРЅРѕРіРѕ(1) div-РµР»РµРјРµРЅС‚Р° РїС–СЃР»СЏ span(РЅР° РѕРґРЅРѕРјСѓ СЂС–РІРЅС–) )
+	@FindBy(xpath = "//span[contains(., 'Р”Р°С‚Р° РїРѕС‡Р°С‚РєСѓ СѓС‚СЂРёРјР°РЅРЅСЏ РЅР° РіР°СѓРїС‚РІР°С…С‚С–:')]/../following-sibling::div[1]//input")
 	public WebElement inputBeginingPunishmentDate;
-		
 	
-	//Button "Зберегти" for saving card
+	
+	
+	//Button "Р—Р±РµСЂРµРіС‚Рё" for saving card
 	@FindBy(id = "button-1260-btnInnerEl")
 	public WebElement buttonSave;
+	
+	//Button "Р’РёС…С–Рґ" for exit from card
+	@FindBy (xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Р’РёС…С–Рґ')]")
+	public WebElement buttonExit;
 		
 	//Alert button "OK" from massage about successful creating
 	@FindBy (xpath = "//div[contains(@id, 'messagebox')]//span[contains(@id, 'button')]")
 	public WebElement buttonSuccessfulCreating;
+	
+
+	
+	//Button "Edit" in the main grid of "Military Administrative Violations" section.
+	@FindBy(xpath = "//td[12]/div")
+	public WebElement buttonEdit;
 	
 	@Override
 	public void open() {
 					
 	}
 	
+
 	public void createCard (AdminViolCardData adminViolCard) throws InterruptedException {
 		buttonCreateCardAV.click();
-		type(inputProtocolNumber, adminViolCard.protocolNumber);
+		type(inputProtocolNumber, adminViolCard.setProtocolNumber());
+	
 		type(inputProtocolCreatingDate, adminViolCard.protocolCreatingDate);
 		inputSectionAVLawbook.click();
 		Thread.sleep(2000);
@@ -195,5 +208,19 @@ public class AdministrativeViolationsPage extends Page {
 		buttonSave.click();
 		buttonSuccessfulCreating.click();
 		
+	}
+	
+	public void openCardToEdit() {
+		buttonEdit.click();
+	}
+	
+	public String getTextProtocolNumber() {
+		return inputProtocolNumber.getText();
+
+		
+	}
+	
+	public void exitFromCard() {
+		buttonExit.click();
 	}
 }
