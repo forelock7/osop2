@@ -17,15 +17,16 @@ public class AdminViolCardData {
 	public String courtDecisionDate;
 	public String receivingDateMain;
 	public String beginingPunishmentDate;
-	
+
+	//generation of random protocol number
 	public String setProtocolNumber() {
 		Random rnd = new Random();
 		return Integer.toString(rnd.nextInt(999999));
 	}
 	
-	public AdminViolCardData(/*String protocolNumber, */String protocolCreatingDate, String commitingAVDate, String theory, String offenderName, String birthday, String militaryUnitName, String post, String referToCourtDate, String receivingCourtDecisionDate, String repeatedReferToCourtDate, String courtDecisionDate, String receivingDateMain, String beginingPunishmentDate) {
+	public AdminViolCardData(String protocolCreatingDate, String commitingAVDate, String theory, String offenderName, String birthday, String militaryUnitName, String post, String referToCourtDate, String receivingCourtDecisionDate, String repeatedReferToCourtDate, String courtDecisionDate, String receivingDateMain, String beginingPunishmentDate) {
 
-		//this.protocolNumber = setProtocolNumber();
+		this.protocolNumber = setProtocolNumber();
 		this.protocolCreatingDate = protocolCreatingDate;
 		this.commitingAVDate = commitingAVDate;
 		this.theory = theory;
@@ -39,6 +40,7 @@ public class AdminViolCardData {
 		this.courtDecisionDate = courtDecisionDate;
 		this.receivingDateMain = receivingDateMain;
 		this.beginingPunishmentDate = beginingPunishmentDate;
+		
 	}
 	
 

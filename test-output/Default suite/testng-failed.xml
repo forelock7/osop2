@@ -6,7 +6,7 @@
       <class name="ua.bms.test.AdministrativeViolationTest">
         <methods>
           <include name="tearDown"/>
-          <include name="testLoginForm"/>
+          <include name="testCreateMilitaryCard"/>
         </methods>
       </class> <!-- ua.bms.test.AdministrativeViolationTest -->
     </classes>

@@ -16,12 +16,23 @@ public class BasicTestCase {
 	
 	//Keeping instance of WebDriver
 	protected static WebDriver driver;
+	
+	protected WebDriver getWebDriver() {
+		if (driver == null){
+			//Creating a new instance of the Firefox driver
+			driver = new FirefoxDriver();
+			//Maximizing a browser window
+			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(Long.parseLong(ConfigProperties.getProperty("imp.wait")), TimeUnit.SECONDS);
+		}
+		return driver;
+	}
 
 	//Initialization of object "user"	
 	protected UserData user = new UserData("vova", "bMS$2016");
 	
 	//Initialization of input fields from Military Administrative Violation Card except field with drop-down list
-	protected AdminViolCardData aVCard = new AdminViolCardData(
+	protected static AdminViolCardData aVCard = new AdminViolCardData(
 			/*Дата складання протоколу*/"01.07.2016", 
 			/*Дата вчинення правопорушення*/"02.07.2016", 
 			/*Фабула*/"Фабула_бот-english", 
@@ -36,22 +47,9 @@ public class BasicTestCase {
 			/*Дата надходження рішення суду(для обліку у звіті)*/"08.07.2016", 
 			/*Дата початку утримання на гаупвахті*/"09.07.2016");
 	
-	
-	protected String protNum = aVCard.setProtocolNumber();
 
-	protected WebDriver getWebDriver() {
-		if (driver == null){
-			//Creating a new instance of the Firefox driver
-			driver = new FirefoxDriver();
-			//Maximizing a browser window
-			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(Long.parseLong(ConfigProperties.getProperty("imp.wait")), TimeUnit.SECONDS);
-		}
-		return driver;
-	}
 	
 	@AfterTest
-
 	public void tearDown() throws Exception {
 		driver.quit();
 	}

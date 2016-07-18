@@ -55,6 +55,7 @@ public class HomePage extends Page {
 		confirmLogOut.click();
 	}
 
+	//Moving from "Home" page to "Military Administrative violations" page
 	public AdministrativeViolationsPage goToAV() {
 		reportSections.click();
 		adminViol.click();

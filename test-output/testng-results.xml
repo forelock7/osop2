@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="28725" started-at="2016-07-07T15:48:17Z" finished-at="2016-07-07T15:48:46Z">
+  <suite name="Default suite" duration-ms="54453" started-at="2016-07-18T14:22:25Z" finished-at="2016-07-18T14:23:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="28725" started-at="2016-07-07T15:48:17Z" finished-at="2016-07-07T15:48:46Z">
+    <test name="Default test" duration-ms="54453" started-at="2016-07-18T14:22:25Z" finished-at="2016-07-18T14:23:20Z">
       <class name="ua.bms.test.AdministrativeViolationTest">
-        <test-method status="PASS" signature="testLoginForm()[pri:0, instance:ua.bms.test.AdministrativeViolationTest@16b88f5]" name="testLoginForm" duration-ms="28059" started-at="2016-07-07T18:48:18Z" finished-at="2016-07-07T18:48:46Z">
+        <test-method status="PASS" signature="testCreateMilitaryCard()[pri:0, instance:ua.bms.test.AdministrativeViolationTest@16b88f5]" name="testCreateMilitaryCard" duration-ms="53347" started-at="2016-07-18T17:22:25Z" finished-at="2016-07-18T17:23:19Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testLoginForm -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.AdministrativeViolationTest@16b88f5]" name="tearDown" is-config="true" duration-ms="638" started-at="2016-07-07T18:48:46Z" finished-at="2016-07-07T18:48:46Z">
+        </test-method> <!-- testCreateMilitaryCard -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.AdministrativeViolationTest@16b88f5]" name="tearDown" is-config="true" duration-ms="1037" started-at="2016-07-18T17:23:19Z" finished-at="2016-07-18T17:23:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

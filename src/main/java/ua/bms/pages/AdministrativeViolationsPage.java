@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 
 import ua.bms.data.AdminViolCardData;
 
+
 public class AdministrativeViolationsPage extends Page {
 	
 	public AdministrativeViolationsPage(WebDriver driver) {
@@ -167,10 +168,10 @@ public class AdministrativeViolationsPage extends Page {
 	}
 	
 
+	//Creating the new card with filling all fields 
 	public void createCard (AdminViolCardData adminViolCard) throws InterruptedException {
 		buttonCreateCardAV.click();
-		type(inputProtocolNumber, adminViolCard.setProtocolNumber());
-	
+		type(inputProtocolNumber, adminViolCard.protocolNumber);
 		type(inputProtocolCreatingDate, adminViolCard.protocolCreatingDate);
 		inputSectionAVLawbook.click();
 		Thread.sleep(2000);
@@ -210,15 +211,18 @@ public class AdministrativeViolationsPage extends Page {
 		
 	}
 	
+	
 	public void openCardToEdit() {
 		buttonEdit.click();
 	}
 	
-	public String getTextProtocolNumber() {
-		return inputProtocolNumber.getText();
+	//getting value from input-field "Protocol Number" in formerly created card
+	public String getProtocolNumber() {
+		return inputProtocolNumber.getAttribute("value");
 
 		
 	}
+	
 	
 	public void exitFromCard() {
 		buttonExit.click();

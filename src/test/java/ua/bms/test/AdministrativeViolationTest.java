@@ -3,6 +3,7 @@ package ua.bms.test;
 import static org.testng.Assert.assertTrue;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import ua.bms.pages.AdministrativeViolationsPage;
@@ -20,7 +21,7 @@ public class AdministrativeViolationTest extends BasicTestCase {
 	private AdministrativeViolationsPage administrativeViolationsPage;
 	
 	@Test
-	public void testLoginForm() throws Exception {
+	public void testCreateMilitaryCard() throws Exception {
 		loginPage.open();
 		homePage = loginPage.loginAs(user);
 		assertTrue(homePage.isLoggedIn());
@@ -28,17 +29,23 @@ public class AdministrativeViolationTest extends BasicTestCase {
 		administrativeViolationsPage.createCard(aVCard);
 		
 		administrativeViolationsPage.openCardToEdit();
+
+		String protNumInField = administrativeViolationsPage.getProtocolNumber();
+		//protocol number, that was used upon creating the card
+		String currentProtNum = aVCard.protocolNumber;
 		
-		assertEquals(administrativeViolationsPage.getTextProtocolNumber(), protNum);
+		System.out.println("protNumInField = " + protNumInField);
+		System.out.println("currentProtNumber = " + currentProtNum);
+		
+		Assert.assertEquals(protNumInField, currentProtNum);
+		
+
 		administrativeViolationsPage.exitFromCard();
 		//homePage.logOut();
 		//assertTrue(homePage.isLoggedOut());
 	}
 
-	private void assertEquals(String textProtocolNumber, String protNum) {
-		// TODO Auto-generated method stub
-		
-	}
+	
 
 
 }
