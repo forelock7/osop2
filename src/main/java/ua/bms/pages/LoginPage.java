@@ -10,16 +10,19 @@ import ua.bms.utils.ConfigProperties;
 
 public class LoginPage extends Page {
 	
-	
+	//Input field "Логін"
 	@FindBy(name = "username")
 	public WebElement fieldUsername;
 	
+	//Input field "Пароль"
 	@FindBy(name = "password")
 	public WebElement fieldPassword;
 	
+	//Button "Увійти в систему"
 	@FindBy(xpath = "html/body/div/form/div[3]/input")
 	public WebElement buttonLogin;
 	
+	//
 	public LoginPage(WebDriver driver) {
 		super(driver);
 	}
@@ -31,6 +34,7 @@ public class LoginPage extends Page {
 		return PageFactory.initElements(driver, HomePage.class);
 	}
 	
+	//Putting the url into browser
 	@Override
 	public void open() {
 		driver.get(ConfigProperties.getProperty("login.url"));

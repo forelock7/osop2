@@ -6,7 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterTest;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeSuite;
 
 import ua.bms.data.AdminViolCardData;
 import ua.bms.data.UserData;
@@ -17,6 +18,7 @@ public class BasicTestCase {
 	//Keeping instance of WebDriver
 	protected static WebDriver driver;
 	
+	@BeforeSuite
 	protected WebDriver getWebDriver() {
 		if (driver == null){
 			//Creating a new instance of the Firefox driver
@@ -49,9 +51,10 @@ public class BasicTestCase {
 	
 
 	
-	@AfterTest
+	@AfterSuite (alwaysRun = true)
 	public void tearDown() throws Exception {
 		driver.quit();
+		System.out.println("Quit from Webdriver");
 	}
 	
 	

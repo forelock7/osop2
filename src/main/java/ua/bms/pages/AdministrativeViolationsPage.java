@@ -16,7 +16,7 @@ public class AdministrativeViolationsPage extends Page {
 	
 	//Page elements
 	//Title "Військові адмінправопорушення"
-	@FindBy(xpath = ".//*[@id='unit9-crimeSearch']/div[1]")
+	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")
 	public WebElement titleAV;
 	
 	//Button "Створити"
@@ -167,8 +167,12 @@ public class AdministrativeViolationsPage extends Page {
 					
 	}
 	
+	//Checking if user jumped into page of Unit9 (existing unit9 title)
+	public boolean isOnUnit9Page() {
+		return isElementPresent(titleAV);
+	}
 
-	//Creating the new card with filling all fields 
+	//Creating the new card with filling all fields in
 	public void createCard (AdminViolCardData adminViolCard) throws InterruptedException {
 		buttonCreateCardAV.click();
 		type(inputProtocolNumber, adminViolCard.protocolNumber);
@@ -205,13 +209,12 @@ public class AdministrativeViolationsPage extends Page {
 		type(inputReceivingDateMain, adminViolCard.receivingDateMain);
 		checkboxCarriedPunishment.click();
 		type(inputBeginingPunishmentDate, adminViolCard.beginingPunishmentDate);
-		
 		buttonSave.click();
 		buttonSuccessfulCreating.click();
 		
 	}
 	
-	
+	//Click on "Edit" button for the first record in the main grid
 	public void openCardToEdit() {
 		buttonEdit.click();
 	}
@@ -223,7 +226,7 @@ public class AdministrativeViolationsPage extends Page {
 		
 	}
 	
-	
+	//Clicking on "Exit" button in Card
 	public void exitFromCard() {
 		buttonExit.click();
 	}

@@ -20,14 +20,20 @@ public class AdministrativeViolationTest extends BasicTestCase {
 	
 	private AdministrativeViolationsPage administrativeViolationsPage;
 	
-	@Test
-	public void testCreateMilitaryCard() throws Exception {
+	@Test (groups = {"unit9"})
+	public void testJumpToUnit9Page() throws Exception {
 		loginPage.open();
 		homePage = loginPage.loginAs(user);
 		assertTrue(homePage.isLoggedIn());
 		administrativeViolationsPage = homePage.goToAV();
-		administrativeViolationsPage.createCard(aVCard);
+		assertTrue(administrativeViolationsPage.isOnUnit9Page());
+	}
+	
+	@Test (groups = {"unit9"}, dependsOnMethods = { "testJumpToUnit9Page" })
+	public void testCreateMilitaryCard() throws Exception {
 		
+
+		administrativeViolationsPage.createCard(aVCard);
 		administrativeViolationsPage.openCardToEdit();
 
 		String protNumInField = administrativeViolationsPage.getProtocolNumber();
