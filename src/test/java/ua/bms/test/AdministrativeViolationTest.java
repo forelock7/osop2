@@ -32,12 +32,11 @@ public class AdministrativeViolationTest extends BasicTestCase {
 	@Test (groups = {"unit9"}, dependsOnMethods = { "testJumpToUnit9Page" })
 	public void testCreateMilitaryCard() throws Exception {
 		
-
 		administrativeViolationsPage.createCard(aVCard);
 		administrativeViolationsPage.openCardToEdit();
-		System.out.println("step1");
+		
 		String protNumInField = administrativeViolationsPage.getProtocolNumber();
-		System.out.println("step2");
+		
 		//protocol number, that was used upon creating the card
 		String currentProtNum = aVCard.protocolNumber;
 		
@@ -46,7 +45,6 @@ public class AdministrativeViolationTest extends BasicTestCase {
 		
 		Assert.assertEquals(protNumInField, currentProtNum);
 		
-
 		administrativeViolationsPage.exitFromCard();
 		//homePage.logOut();
 		//assertTrue(homePage.isLoggedOut());

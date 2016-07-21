@@ -53,7 +53,9 @@ public class BasicTestCase {
 	
 	@AfterSuite (alwaysRun = true)
 	public void tearDown() throws Exception {
-		driver.quit();
+		if (driver !=null) {
+			driver.quit();
+		}
 		System.out.println("Quit from Webdriver");
 	}
 	
