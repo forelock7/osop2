@@ -2,6 +2,7 @@ package ua.bms.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 
 
@@ -25,6 +26,7 @@ public class AdministrativeViolationsPage extends Page {
 	
 	//Input field "Номер протоколу"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Номер протоколу:')]/../following-sibling::div[1]//input")
+	@CacheLookup //Caching web-element refer for reusing this element
 	public WebElement inputProtocolNumber;
 	
 	//Input field "Дата складання протоколу"
