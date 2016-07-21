@@ -1,39 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Tests]">
-  <test name="Test1(failed)">
-    <groups>
-      <run>
-        <include name="login"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
       <class name="ua.bms.test.AdministrativeViolationTest">
         <methods>
           <include name="tearDown"/>
-        </methods>
-      </class> <!-- ua.bms.test.AdministrativeViolationTest -->
-      <class name="ua.bms.test.LoginTest">
-        <methods>
-          <include name="testLoginForm"/>
-        </methods>
-      </class> <!-- ua.bms.test.LoginTest -->
-    </classes>
-  </test> <!-- Test1(failed) -->
-  <test name="Test2(failed)">
-    <groups>
-      <run>
-        <include name="unit9"/>
-      </run>
-    </groups>
-    <classes>
-      <class name="ua.bms.test.AdministrativeViolationTest">
-        <methods>
-          <include name="tearDown"/>
+          <include name="getWebDriver"/>
           <include name="testJumpToUnit9Page"/>
           <include name="testCreateMilitaryCard"/>
         </methods>
       </class> <!-- ua.bms.test.AdministrativeViolationTest -->
     </classes>
-  </test> <!-- Test2(failed) -->
-</suite> <!-- Failed suite [Tests] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

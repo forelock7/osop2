@@ -15,7 +15,8 @@ public class AdministrativeViolationsPage extends Page {
 		super(driver);
 	}
 	
-	//Page elements
+/*-------------------The Elements of Main Page----------------------------------------------------*/
+
 	//Title "Військові адмінправопорушення"
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")
 	public WebElement titleAV;
@@ -24,9 +25,14 @@ public class AdministrativeViolationsPage extends Page {
 	@FindBy(id = "button-1065-btnInnerEl")
 	public WebElement buttonCreateCardAV;
 	
+	//Button "Edit" in the main grid of "Military Administrative Violations" section(row-1; column-12).
+	@FindBy(xpath = "//table[1]//td[12]/div")
+	public WebElement buttonEdit;
+
+/*------------------The Elements of the Card------------------------------------------------------*/
 	//Input field "Номер протоколу"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Номер протоколу:')]/../following-sibling::div[1]//input")
-	@CacheLookup //Caching web-element refer for reusing this element
+	//@CacheLookup //Caching web-element refer for reusing this element
 	public WebElement inputProtocolNumber;
 	
 	//Input field "Дата складання протоколу"
@@ -154,15 +160,14 @@ public class AdministrativeViolationsPage extends Page {
 	@FindBy (xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Вихід')]")
 	public WebElement buttonExit;
 		
+/*----------------The Massage Box (after creating card)-----------------------------------------------*/	
 	//Alert button "OK" from massage about successful creating
 	@FindBy (xpath = "//div[contains(@id, 'messagebox')]//span[contains(@id, 'button')]")
 	public WebElement buttonSuccessfulCreating;
 	
 
 	
-	//Button "Edit" in the main grid of "Military Administrative Violations" section.
-	@FindBy(xpath = "//td[12]/div")
-	public WebElement buttonEdit;
+
 	
 	@Override
 	public void open() {

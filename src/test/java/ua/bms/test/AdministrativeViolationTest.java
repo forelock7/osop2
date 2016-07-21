@@ -35,8 +35,9 @@ public class AdministrativeViolationTest extends BasicTestCase {
 
 		administrativeViolationsPage.createCard(aVCard);
 		administrativeViolationsPage.openCardToEdit();
-
+		System.out.println("step1");
 		String protNumInField = administrativeViolationsPage.getProtocolNumber();
+		System.out.println("step2");
 		//protocol number, that was used upon creating the card
 		String currentProtNum = aVCard.protocolNumber;
 		

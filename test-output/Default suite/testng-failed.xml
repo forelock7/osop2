@@ -6,6 +6,8 @@
       <class name="ua.bms.test.AdministrativeViolationTest">
         <methods>
           <include name="tearDown"/>
+          <include name="getWebDriver"/>
+          <include name="testJumpToUnit9Page"/>
           <include name="testCreateMilitaryCard"/>
         </methods>
       </class> <!-- ua.bms.test.AdministrativeViolationTest -->
