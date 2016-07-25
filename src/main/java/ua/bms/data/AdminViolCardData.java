@@ -19,7 +19,7 @@ public class AdminViolCardData {
 	public String beginingPunishmentDate;
 
 	//generation of random protocol number
-	public String setProtocolNumber() {
+	private String setProtocolNumber() {
 		Random rnd = new Random();
 		return Integer.toString(rnd.nextInt(999999));
 	}

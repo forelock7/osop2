@@ -13,23 +13,23 @@ public class HomePage extends Page {
 
 	//Button "Вихід"
 	@FindBy(id = "button-1038-btnInnerEl")
-	public WebElement linkLogOut;
+	private WebElement linkLogOut;
 	
 	@FindBy(xpath = "html/body/div[1]/form/h2")
-	public WebElement linkLogIn;
+	private WebElement linkLogIn;
 	
 	//Alert of logout confirmation 
 	@FindBy (id = "button-1006-btnInnerEl")
-	public WebElement confirmLogOut;
+	private WebElement confirmLogOut;
 	
 	//Menu button of "Report sections"
 	@FindBy (id = "button-1015-btnInnerEl")
-	public WebElement reportSections;
+	private WebElement reportSections;
 	
 	//Items from menu "Report sections"
 	//Section Addition Table 5 - "Administrative Violations"
 	@FindBy (id = "menuitem-1029-textEl")
-	public WebElement adminViol;
+	private WebElement adminViol;
 	
 	@Override
 	public void open(){};

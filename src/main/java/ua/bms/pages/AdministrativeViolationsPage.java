@@ -19,151 +19,151 @@ public class AdministrativeViolationsPage extends Page {
 
 	//Title "Військові адмінправопорушення"
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")
-	public WebElement titleAV;
+	private WebElement titleAV;
 	
 	//Button "Створити"
 	@FindBy(id = "button-1065-btnInnerEl")
-	public WebElement buttonCreateCardAV;
+	private WebElement buttonCreateCardAV;
 	
 	//Button "Edit" in the main grid of "Military Administrative Violations" section(row-1; column-12).
 	@FindBy(xpath = "//table[1]//td[12]/div")
-	public WebElement buttonEdit;
+	private WebElement buttonEdit;
 
 /*------------------The Elements of the Card------------------------------------------------------*/
 	//Input field "Номер протоколу"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Номер протоколу:')]/../following-sibling::div[1]//input")
 	//@CacheLookup //Caching web-element refer for reusing this element
-	public WebElement inputProtocolNumber;
+	private WebElement inputProtocolNumber;
 	
 	//Input field "Дата складання протоколу"
 	@FindBy(id = "datefield-1204-inputEl")
-	public WebElement inputProtocolCreatingDate;
+	private WebElement inputProtocolCreatingDate;
 
 	//Input field "Стаття КУпАП"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Стаття КУпАП:')]")
-	public WebElement inputSectionAVLawbook;
+	private WebElement inputSectionAVLawbook;
 	//First Item "Ст. 172-10" from drop-down list of input field "Стаття КУпАП"
 	@FindBy(xpath  = "//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]")
-	public WebElement itemSectionAVLawbook;
+	private WebElement itemSectionAVLawbook;
 	
 	//Input field "Дата вчинення правопорушення"
 	@FindBy(id = "datefield-1206-inputEl")
-	public WebElement inputCommitingAVDate;
+	private WebElement inputCommitingAVDate;
 	
 	//Input field "Фабула"
 	@FindBy(id = "textarea-1207-inputEl")
-	public WebElement inputTheory;
+	private WebElement inputTheory;
 	
 	//Input field "ПІБ правопорушника"
 	@FindBy(id = "textfield-1209-inputEl")
-	public WebElement inputOffenderName;
+	private WebElement inputOffenderName;
 	
 	//Input field "Дата народження"
 	@FindBy(id = "datefield-1210-inputEl")
-	public WebElement inputBirthday;
+	private WebElement inputBirthday;
 	
 	//Input field "Військове формування" 
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Військове формування:')]")
-	public WebElement inputMilitaryTroops;
+	private WebElement inputMilitaryTroops;
 	//First Item "Збройні сили" from drop-down list of input field "Військові формування"
 	@FindBy(xpath = "//li[contains(., 'Збройні сили')]")
-	public WebElement itemMilitaryTroop;
+	private WebElement itemMilitaryTroop;
 	
 	//Input field "Назва військової частини, установи"
 	@FindBy(id = "textfield-1212-inputEl")
-	public WebElement inputMilitaryUnitName;
+	private WebElement inputMilitaryUnitName;
 	
 	//Input field "Військове звання"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Військове звання:')]")
-	public WebElement inputMilitaryRank;
+	private WebElement inputMilitaryRank;
 	//Second Item "Молодший офіцерський склад" from drop-down list of input field "Військові звання"
 	@FindBy(xpath = "//li[contains(., 'Молодший офіцерський склад')]")
-	public WebElement itemMilitaryRank;
+	private WebElement itemMilitaryRank;
 	
 	//Input field "Категорія посади"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Категорія посади:')]")
-	public WebElement inputPostCategory;
+	private WebElement inputPostCategory;
 	//First Item "Командир (начальник) військової частини" from drop-down list of input field "Категорія посади"
 	@FindBy(xpath = "//li[contains(., 'Командир (начальник) військової частини')]")
-	public WebElement itemPostCategory;
+	private WebElement itemPostCategory;
 	
 	//Input field "Посада"
 	@FindBy(id = "textfield-1216-inputEl")
-	public WebElement inputPost;
+	private WebElement inputPost;
 	
 	//Input field "Дата первинного направлення до суду(для обліку у звіті)"
 	@FindBy (id = "datefield-1218-inputEl")
-	public WebElement inputReferToCourtDate;
+	private WebElement inputReferToCourtDate;
 	
 	//Input field "Назва суду"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Назва суду:')]")
-	public WebElement inputCourtName;
+	private WebElement inputCourtName;
 	//Third item of Courts
 	@FindBy (xpath = "//span[contains(., 'Вищий спеціалізований суд України з розгляду цивільних і кримінальних справ')]")
-	public WebElement itemOfCourt;
+	private WebElement itemOfCourt;
 	
 	//CheckBox "Повернуто судом"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Повернуто судом')]")
-	public WebElement checkboxReturnByCourt;
+	private WebElement checkboxReturnByCourt;
 	
 	//Input field "Дата надходження рішення про повернення судом (для обліку у звіті)"
 	@FindBy(id = "datefield-1228-inputEl")
-	public WebElement inputReceivingCourtDecisionDate;
+	private WebElement inputReceivingCourtDecisionDate;
 	
 	//Input field "Дата повторного направлення (для обліку у звіті)"
 	@FindBy(id = "datefield-1229-inputEl")
-	public WebElement inputRepeatedReferToCourtDate;
+	private WebElement inputRepeatedReferToCourtDate;
 	
 	//Button "Додати". Adding a record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Додати')]")
-	public WebElement buttonAdd;
+	private WebElement buttonAdd;
 	
 	//Form "Створення "Рух протоколу""
 	//Input field "Направлено до суду/Повернуто судом"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(., 'Повернуто судом')]")
-	public WebElement inputRefer_Receive;
+	private WebElement inputRefer_Receive;
 	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[contains(., 'Направлено до суду')]")
-	public WebElement itemRefer_Receive;
+	private WebElement itemRefer_Receive;
 	//Input field "Дата рішення"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//input[contains(@id, 'datefield')]")
-	public WebElement inputCourtDecisionDate;
+	private WebElement inputCourtDecisionDate;
 	//Saving button of record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(text(), 'Додати')]")
-	public WebElement buttonAddMovingOfProtocol;
+	private WebElement buttonAddMovingOfProtocol;
 	
 	//Input field "Результат розгляду"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Результат розгляду:')]")
-	public WebElement inputConsiderationResult;
+	private WebElement inputConsiderationResult;
 	//Third item of court consideration result
 	@FindBy (xpath = "//span[contains(., 'Арешт з утриманням на гауптвахті')]") 
-	public WebElement itemConsiderationResult;	
+	private WebElement itemConsiderationResult;	
 	
 	//Input field "Дата надходження рішення суду(для обліку у звіті)"(пошук наступного(1) div-елемента після span(на одному рівні)  )
 	@FindBy(xpath = "//span[contains(., 'Дата надходження рішення суду (для обліку у звіті):')]/../following-sibling::div[1]//input")
-	public WebElement inputReceivingDateMain;
+	private WebElement inputReceivingDateMain;
 	
 	//!!!CheckBox "Відбули покарання у виді арешту з утриманням на гауптвахті". Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Відбули покарання у виді арешту з утриманням на гауптвахті')]")
-	public WebElement checkboxCarriedPunishment;
+	private WebElement checkboxCarriedPunishment;
 	
 	//Input field "Дата початку утримання на гауптвахті:"Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті".(пошук наступного(1) div-елемента після span(на одному рівні) )
 	@FindBy(xpath = "//span[contains(., 'Дата початку утримання на гауптвахті:')]/../following-sibling::div[1]//input")
-	public WebElement inputBeginingPunishmentDate;
+	private WebElement inputBeginingPunishmentDate;
 	
 	
 	
 	//Button "Зберегти" for saving card
 	@FindBy(id = "button-1260-btnInnerEl")
-	public WebElement buttonSave;
+	private WebElement buttonSave;
 	
 	//Button "Вихід" for exit from card
 	@FindBy (xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Вихід')]")
-	public WebElement buttonExit;
+	private WebElement buttonExit;
 		
 /*----------------The Massage Box (after creating card)-----------------------------------------------*/	
 	//Alert button "OK" from massage about successful creating
 	@FindBy (xpath = "//div[contains(@id, 'messagebox')]//span[contains(@id, 'button')]")
-	public WebElement buttonSuccessfulCreating;
+	private WebElement buttonSuccessfulCreating;
 	
 
 	

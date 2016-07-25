@@ -12,15 +12,15 @@ public class LoginPage extends Page {
 	
 	//Input field "Логін"
 	@FindBy(name = "username")
-	public WebElement fieldUsername;
+	private WebElement fieldUsername;
 	
 	//Input field "Пароль"
 	@FindBy(name = "password")
-	public WebElement fieldPassword;
+	private WebElement fieldPassword;
 	
 	//Button "Увійти в систему"
 	@FindBy(xpath = "html/body/div/form/div[3]/input")
-	public WebElement buttonLogin;
+	private WebElement buttonLogin;
 	
 	//
 	public LoginPage(WebDriver driver) {

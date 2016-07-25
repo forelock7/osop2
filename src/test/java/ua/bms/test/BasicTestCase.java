@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.DataProvider;
 
 import ua.bms.data.AdminViolCardData;
 import ua.bms.data.UserData;
@@ -32,6 +33,7 @@ public class BasicTestCase {
 
 	//Initialization of object "user"	
 	protected UserData user = new UserData("vova", "bMS$2016");
+	protected UserData user1 = new UserData("vova", "failedPassword");
 	
 	//Initialization of input fields from Military Administrative Violation Card except field with drop-down list
 	protected static AdminViolCardData aVCard = new AdminViolCardData(
@@ -50,6 +52,10 @@ public class BasicTestCase {
 			/*Дата початку утримання на гаупвахті*/"09.07.2016");
 	
 
+	/*@DataProvider(name = "DP1")
+	public Object[][] createData1(){
+		Object[][] retObjArr = getTableArray("\\")
+	}*/
 	
 	@AfterSuite (alwaysRun = true)
 	public void tearDown() throws Exception {

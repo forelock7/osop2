@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Thu Jul 21 14:54:44 EEST 2016</td>
+<td>Started on:</td><td>Mon Jul 25 18:05:06 EEST 2016</td>
 </tr>
-<tr><td>Total time:</td><td>30 seconds (30532 ms)</td>
+<tr><td>Total time:</td><td>9 seconds (9196 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,32 +75,32 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ua.bms.test.AdministrativeViolationTest.testCreateMilitaryCard()'><b>testCreateMilitaryCard</b><br>Test class: ua.bms.test.AdministrativeViolationTest</td>
-<td><div><pre>org.openqa.selenium.StaleElementReferenceException: Element not found in the cache - perhaps the page has changed since it was looked up
-Command duration or timeout: 5.23 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+<td title='ua.bms.test.LoginTest.testLoginFailed()'><b>testLoginFailed</b><br>Test class: ua.bms.test.LoginTest</td>
+<td><div><pre>org.openqa.selenium.UnhandledAlertException: Unexpected modal dialog (text: Невірний логін або пароль): Невірний логін або пароль
 Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.91&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
+System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.96&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 4af110e9-667a-4aec-bd9f-963d4247c0bc
+Session ID: 1263da52-a125-492d-bf7d-30c31e590686
+*** Element info: {Using=id, value=button-1038-btnInnerEl}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:154)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
-	at org.openqa.selenium.remote.RemoteWebElement.getAttribute(RemoteWebElement.java:150)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy7.getAttribute(Unknown Source)
-	at ua.bms.pages.AdministrativeViolationsPage.getProtocolNumber(AdministrativeViolationsPage.java:226)
-	at ua.bms.test.AdministrativeViolationTest.testCreateMilitaryCard(AdministrativeViolationTest.java:39)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy6.isDisplayed(Unknown Source)
+	at ua.bms.pages.Page.isElementPresent(Page.java:26)
+	at ua.bms.pages.HomePage.isLoggedIn(HomePage.java:49)
+	at ua.bms.test.LoginTest.testLoginFailed(LoginTest.java:34)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -126,42 +126,32 @@ Session ID: 4af110e9-667a-4aec-bd9f-963d4247c0bc
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-Caused by: org.openqa.selenium.StaleElementReferenceException: Element not found in the cache - perhaps the page has changed since it was looked up
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
+</pre></div><a href='#' onClick='toggleBox("stack-trace31544261", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace31544261'><pre>org.openqa.selenium.UnhandledAlertException: Unexpected modal dialog (text: Невірний логін або пароль): Невірний логін або пароль
 Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.91&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.fxdriver.cache.getElementAt(resource://fxdriver/modules/web-element-cache.js:9454)
-	at &lt;anonymous class&gt;.Utils.getElementAt(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous8950827908810893162webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9039)
-	at &lt;anonymous class&gt;.WebElement.getElementAttribute(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous8950827908810893162webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12146)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous8950827908810893162webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous8950827908810893162webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
-</pre></div><a href='#' onClick='toggleBox("stack-trace1720228", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1720228'><pre>org.openqa.selenium.StaleElementReferenceException: Element not found in the cache - perhaps the page has changed since it was looked up
-Command duration or timeout: 5.23 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.91&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
+System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.96&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 4af110e9-667a-4aec-bd9f-963d4247c0bc
+Session ID: 1263da52-a125-492d-bf7d-30c31e590686
+*** Element info: {Using=id, value=button-1038-btnInnerEl}
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.ErrorHandler.createUnhandledAlertException(ErrorHandler.java:187)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:154)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
-	at org.openqa.selenium.remote.RemoteWebElement.getAttribute(RemoteWebElement.java:150)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy7.getAttribute(Unknown Source)
-	at ua.bms.pages.AdministrativeViolationsPage.getProtocolNumber(AdministrativeViolationsPage.java:226)
-	at ua.bms.test.AdministrativeViolationTest.testCreateMilitaryCard(AdministrativeViolationTest.java:39)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementById(RemoteWebDriver.java:413)
+	at org.openqa.selenium.By$ById.findElement(By.java:218)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy6.isDisplayed(Unknown Source)
+	at ua.bms.pages.Page.isElementPresent(Page.java:26)
+	at ua.bms.pages.HomePage.isLoggedIn(HomePage.java:49)
+	at ua.bms.test.LoginTest.testLoginFailed(LoginTest.java:34)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -187,19 +177,9 @@ Session ID: 4af110e9-667a-4aec-bd9f-963d4247c0bc
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-Caused by: org.openqa.selenium.StaleElementReferenceException: Element not found in the cache - perhaps the page has changed since it was looked up
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/stale_element_reference.html
-Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.91&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.fxdriver.cache.getElementAt(resource://fxdriver/modules/web-element-cache.js:9454)
-	at &lt;anonymous class&gt;.Utils.getElementAt(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous8950827908810893162webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:9039)
-	at &lt;anonymous class&gt;.WebElement.getElementAttribute(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous8950827908810893162webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12146)
-	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous8950827908810893162webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous8950827908810893162webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
 </pre></div></td>
-<td>22</td>
-<td>ua.bms.test.AdministrativeViolationTest@16ddd1d</td></tr>
+<td>3</td>
+<td>ua.bms.test.LoginTest@16ddd1d</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -209,10 +189,10 @@ Driver info: driver.version: unknown
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='ua.bms.test.AdministrativeViolationTest.testJumpToUnit9Page()'><b>testJumpToUnit9Page</b><br>Test class: ua.bms.test.AdministrativeViolationTest</td>
+<td title='ua.bms.test.LoginTest.testLogin()'><b>testLogin</b><br>Test class: ua.bms.test.LoginTest</td>
 <td></td>
-<td>7</td>
-<td>ua.bms.test.AdministrativeViolationTest@16ddd1d</td></tr>
+<td>5</td>
+<td>ua.bms.test.LoginTest@16ddd1d</td></tr>
 </table><p>
 </body>
 </html>

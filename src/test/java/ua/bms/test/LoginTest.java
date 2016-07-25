@@ -4,6 +4,7 @@ package ua.bms.test;
 
 import org.openqa.selenium.support.PageFactory;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertFalse;
 
 import org.testng.annotations.Test;
 
@@ -18,15 +19,20 @@ public class LoginTest extends BasicTestCase {
 	private HomePage homePage;
 	
 	@Test(groups = {"login"})
-	public void testLoginForm() throws Exception {
+	public void testLogin() throws Exception {
 		loginPage.open();
 		homePage = loginPage.loginAs(user);
 		assertTrue(homePage.isLoggedIn());
 		homePage.logOut();
 		assertTrue(homePage.isLoggedOut());
 	}
-
-
+	
+	/*@Test(groups = {"login"})
+	public void testLoginFailed() throws Exception {
+		loginPage.open();
+		homePage = loginPage.loginAs(user1);
+		assertFalse(homePage.isLoggedIn());
+	}*/
 	
 	
 
