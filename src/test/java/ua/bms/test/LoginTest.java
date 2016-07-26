@@ -1,10 +1,10 @@
-// Logining test
+// Login test
 
 package ua.bms.test;
 
 import org.openqa.selenium.support.PageFactory;
 import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.assertFalse;
+
 
 import org.testng.annotations.Test;
 
@@ -18,23 +18,30 @@ public class LoginTest extends BasicTestCase {
 	
 	private HomePage homePage;
 	
-	@Test(groups = {"login"})
+	@Test(groups = {"login1"})
 	public void testLogin() throws Exception {
 		loginPage.open();
 		homePage = loginPage.loginAs(user);
 		assertTrue(homePage.isLoggedIn());
 		homePage.logOut();
-		assertTrue(homePage.isLoggedOut());
+		assertTrue(loginPage.isLoggedOut());
 	}
 	
-	/*@Test(groups = {"login"})
-	public void testLoginFailed() throws Exception {
+	@Test(groups = {"login2"})
+	public void testFailedPassword() throws Exception {
 		loginPage.open();
-		homePage = loginPage.loginAs(user1);
-		assertFalse(homePage.isLoggedIn());
-	}*/
+		loginPage.loginAs(user1);
+		loginPage.acceptFailedLoginAlert();
+		assertTrue(loginPage.isLoggedOut());
+	}
 	
-	
+	@Test(groups = {"login3"})
+	public void testFailedLogin() throws Exception {
+		loginPage.open();
+		loginPage.loginAs(user2);
+		loginPage.acceptFailedLoginAlert();
+		assertTrue(loginPage.isLoggedOut());
+	}
 
 
 }

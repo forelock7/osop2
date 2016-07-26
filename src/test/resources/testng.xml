@@ -4,7 +4,9 @@
 	<test verbose="1" name="Test1">
 		<groups>
 			<run>
-				<include name = "login" />
+				<include name = "login1" />
+				<include name = "login2" />
+				<include name = "login3" />
 			</run>
 		</groups>
 		<classes>
@@ -19,7 +21,7 @@
 			</run>
 		</groups>
 		<classes>
-      		 <class name="ua.bms.test.AdministrativeViolationTest" />
+      		 <class name="ua.bms.test.Unit9MilitaryTest" />
  		</classes>
 	</test>
 </suite>

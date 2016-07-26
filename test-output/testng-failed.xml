@@ -5,9 +5,9 @@
     <classes>
       <class name="ua.bms.test.LoginTest">
         <methods>
-          <include name="testLoginFailed"/>
           <include name="tearDown"/>
           <include name="getWebDriver"/>
+          <include name="testLogin"/>
         </methods>
       </class> <!-- ua.bms.test.LoginTest -->
     </classes>

@@ -8,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.DataProvider;
 
-import ua.bms.data.AdminViolCardData;
+
+import ua.bms.data.Unit9CardData;
 import ua.bms.data.UserData;
 import ua.bms.utils.ConfigProperties;
 
@@ -34,9 +34,10 @@ public class BasicTestCase {
 	//Initialization of object "user"	
 	protected UserData user = new UserData("vova", "bMS$2016");
 	protected UserData user1 = new UserData("vova", "failedPassword");
+	protected UserData user2 = new UserData("failedLogin", "bMS$2016");
 	
 	//Initialization of input fields from Military Administrative Violation Card except field with drop-down list
-	protected static AdminViolCardData aVCard = new AdminViolCardData(
+	protected static Unit9CardData aVCard = new Unit9CardData(
 			/*Дата складання протоколу*/"01.07.2016", 
 			/*Дата вчинення правопорушення*/"02.07.2016", 
 			/*Фабула*/"Фабула_бот-english", 
@@ -51,11 +52,8 @@ public class BasicTestCase {
 			/*Дата надходження рішення суду(для обліку у звіті)*/"08.07.2016", 
 			/*Дата початку утримання на гаупвахті*/"09.07.2016");
 	
+	protected static String someText = "Some text after EDITING 12343434456678767890!@#@#$%^&&*^";
 
-	/*@DataProvider(name = "DP1")
-	public Object[][] createData1(){
-		Object[][] retObjArr = getTableArray("\\")
-	}*/
 	
 	@AfterSuite (alwaysRun = true)
 	public void tearDown() throws Exception {

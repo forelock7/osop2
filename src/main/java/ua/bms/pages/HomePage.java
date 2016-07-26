@@ -10,17 +10,12 @@ public class HomePage extends Page {
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
+	
+/*------------------The Web-Elements of the MAIN TOOLBAR------------------------------------------------------*/
 
 	//Button "Вихід"
 	@FindBy(id = "button-1038-btnInnerEl")
 	private WebElement linkLogOut;
-	
-	@FindBy(xpath = "html/body/div[1]/form/h2")
-	private WebElement linkLogIn;
-	
-	//Alert of logout confirmation 
-	@FindBy (id = "button-1006-btnInnerEl")
-	private WebElement confirmLogOut;
 	
 	//Menu button of "Report sections"
 	@FindBy (id = "button-1015-btnInnerEl")
@@ -31,18 +26,11 @@ public class HomePage extends Page {
 	@FindBy (id = "menuitem-1029-textEl")
 	private WebElement adminViol;
 	
+/*------------------Methods---------------------------------------------------------------------------*/	
+	
 	@Override
 	public void open(){};
 	
-	//Checking if user is logged out of system(have to exist the title "ВХІД ДО СИСТЕМИ" on Login Page)
-	public boolean isLoggedOut() {
-		if (isElementPresent(linkLogIn)) {
-			return true;
-		}
-		else {
-			return false;
-		}
-	}
 	
 	//Checking if user is logged in system(have to exist the button "Вихід")
 	public boolean isLoggedIn() {
@@ -50,15 +38,16 @@ public class HomePage extends Page {
 	}
 	
 	//Performing of logging of system
-	public void logOut() {
+	public LoginPage logOut() {
 		linkLogOut.click();
-		confirmLogOut.click();
+		buttonYesConfirmationPopup.click();
+		return PageFactory.initElements(driver, LoginPage.class);
 	}
 
 	//Moving from "Home" page to "Military Administrative violations" page
-	public AdministrativeViolationsPage goToAV() {
+	public Unit9MilitaryPage goToAV() {
 		reportSections.click();
 		adminViol.click();
-		return PageFactory.initElements(driver, AdministrativeViolationsPage.class);
+		return PageFactory.initElements(driver, Unit9MilitaryPage.class);
 	}
 }

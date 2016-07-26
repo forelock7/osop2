@@ -2,7 +2,7 @@ package ua.bms.data;
 
 import java.util.Random;
 
-public class AdminViolCardData {
+public class Unit9CardData {
 	public String protocolNumber;
 	public String protocolCreatingDate;
 	public String commitingAVDate;
@@ -24,7 +24,7 @@ public class AdminViolCardData {
 		return Integer.toString(rnd.nextInt(999999));
 	}
 	
-	public AdminViolCardData(String protocolCreatingDate, String commitingAVDate, String theory, String offenderName, String birthday, String militaryUnitName, String post, String referToCourtDate, String receivingCourtDecisionDate, String repeatedReferToCourtDate, String courtDecisionDate, String receivingDateMain, String beginingPunishmentDate) {
+	public Unit9CardData(String protocolCreatingDate, String commitingAVDate, String theory, String offenderName, String birthday, String militaryUnitName, String post, String referToCourtDate, String receivingCourtDecisionDate, String repeatedReferToCourtDate, String courtDecisionDate, String receivingDateMain, String beginingPunishmentDate) {
 
 		this.protocolNumber = setProtocolNumber();
 		this.protocolCreatingDate = protocolCreatingDate;

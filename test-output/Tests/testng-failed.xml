@@ -1,25 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Tests]">
-  <test name="Test1(failed)">
-    <groups>
-      <run>
-        <include name="login"/>
-      </run>
-    </groups>
-    <classes>
-      <class name="ua.bms.test.AdministrativeViolationTest">
-        <methods>
-          <include name="tearDown"/>
-        </methods>
-      </class> <!-- ua.bms.test.AdministrativeViolationTest -->
-      <class name="ua.bms.test.LoginTest">
-        <methods>
-          <include name="testLoginForm"/>
-        </methods>
-      </class> <!-- ua.bms.test.LoginTest -->
-    </classes>
-  </test> <!-- Test1(failed) -->
   <test name="Test2(failed)">
     <groups>
       <run>
@@ -27,13 +8,14 @@
       </run>
     </groups>
     <classes>
-      <class name="ua.bms.test.AdministrativeViolationTest">
+      <class name="ua.bms.test.Unit9MilitaryTest">
         <methods>
           <include name="tearDown"/>
           <include name="testJumpToUnit9Page"/>
+          <include name="testEditMilitaryCard"/>
           <include name="testCreateMilitaryCard"/>
         </methods>
-      </class> <!-- ua.bms.test.AdministrativeViolationTest -->
+      </class> <!-- ua.bms.test.Unit9MilitaryTest -->
     </classes>
   </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [Tests] -->

@@ -6,30 +6,22 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 
-import ua.bms.data.AdminViolCardData;
+import ua.bms.data.Unit9CardData;
 
 
-public class AdministrativeViolationsPage extends Page {
+public class Unit9MilitaryPage extends Page {
 	
-	public AdministrativeViolationsPage(WebDriver driver) {
+	public Unit9MilitaryPage(WebDriver driver) {
 		super(driver);
 	}
 	
-/*-------------------The Elements of Main Page----------------------------------------------------*/
+/*-------------------The Web-Elements of Main Page----------------------------------------------------*/
 
 	//Title "Військові адмінправопорушення"
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")
 	private WebElement titleAV;
-	
-	//Button "Створити"
-	@FindBy(id = "button-1065-btnInnerEl")
-	private WebElement buttonCreateCardAV;
-	
-	//Button "Edit" in the main grid of "Military Administrative Violations" section(row-1; column-12).
-	@FindBy(xpath = "//table[1]//td[12]/div")
-	private WebElement buttonEdit;
 
-/*------------------The Elements of the Card------------------------------------------------------*/
+/*------------------The Web-Elements of the Card------------------------------------------------------*/
 	//Input field "Номер протоколу"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Номер протоколу:')]/../following-sibling::div[1]//input")
 	//@CacheLookup //Caching web-element refer for reusing this element
@@ -51,7 +43,7 @@ public class AdministrativeViolationsPage extends Page {
 	private WebElement inputCommitingAVDate;
 	
 	//Input field "Фабула"
-	@FindBy(id = "textarea-1207-inputEl")
+	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//textarea")
 	private WebElement inputTheory;
 	
 	//Input field "ПІБ правопорушника"
@@ -150,24 +142,12 @@ public class AdministrativeViolationsPage extends Page {
 	@FindBy(xpath = "//span[contains(., 'Дата початку утримання на гауптвахті:')]/../following-sibling::div[1]//input")
 	private WebElement inputBeginingPunishmentDate;
 	
-	
-	
-	//Button "Зберегти" for saving card
-	@FindBy(id = "button-1260-btnInnerEl")
-	private WebElement buttonSave;
-	
-	//Button "Вихід" for exit from card
-	@FindBy (xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Вихід')]")
-	private WebElement buttonExit;
 		
-/*----------------The Massage Box (after creating card)-----------------------------------------------*/	
-	//Alert button "OK" from massage about successful creating
-	@FindBy (xpath = "//div[contains(@id, 'messagebox')]//span[contains(@id, 'button')]")
-	private WebElement buttonSuccessfulCreating;
-	
 
 	
 
+	
+/*------------------Methods---------------------------------------------------------------------------*/
 	
 	@Override
 	public void open() {
@@ -180,8 +160,8 @@ public class AdministrativeViolationsPage extends Page {
 	}
 
 	//Creating the new card with filling all fields in
-	public void createCard (AdminViolCardData adminViolCard) throws InterruptedException {
-		buttonCreateCardAV.click();
+	public void createCard (Unit9CardData adminViolCard) throws InterruptedException {
+		buttonCreateCard.click();
 		type(inputProtocolNumber, adminViolCard.protocolNumber);
 		type(inputProtocolCreatingDate, adminViolCard.protocolCreatingDate);
 		inputSectionAVLawbook.click();
@@ -217,7 +197,7 @@ public class AdministrativeViolationsPage extends Page {
 		checkboxCarriedPunishment.click();
 		type(inputBeginingPunishmentDate, adminViolCard.beginingPunishmentDate);
 		buttonSave.click();
-		buttonSuccessfulCreating.click();
+		buttonOKAlertPopup.click();
 		
 	}
 	
@@ -229,12 +209,33 @@ public class AdministrativeViolationsPage extends Page {
 	//getting value from input-field "Protocol Number" in formerly created card
 	public String getProtocolNumber() {
 		return inputProtocolNumber.getAttribute("value");
-
-		
 	}
+	
+	//getting value from input-field "Theory" in formerly created card
+	public String getTheory() {
+		return inputTheory.getAttribute("value");
+	}
+	
+	//Clicking on "Save" button in Card
+	public void saveCard() {
+		buttonSave.click();
+	}	
 	
 	//Clicking on "Exit" button in Card
 	public void exitFromCard() {
 		buttonExit.click();
+	}
+	
+	//Editing field "Фабула"
+	public void changeValueInTheoryField(String someText) {
+		type(inputTheory, someText);
+	}
+	
+	public boolean isAlertPresent() {
+		return isElementPresent(buttonOKAlertPopup);
+	}
+	
+	public void clickOnAlertOK() {
+		buttonOKAlertPopup.click();
 	}
 }
