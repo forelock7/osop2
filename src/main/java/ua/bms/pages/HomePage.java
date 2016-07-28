@@ -14,18 +14,21 @@ public class HomePage extends Page {
 /*------------------The Web-Elements of the MAIN TOOLBAR------------------------------------------------------*/
 
 	//Button "Вихід"
-	@FindBy(id = "button-1038-btnInnerEl")
+	@FindBy(xpath = "//div[contains(@id, 'mainToolBarContainer')]//span[contains(text(), 'Вихід')]")
 	private WebElement linkLogOut;
 	
 	//Menu button of "Report sections"
-	@FindBy (id = "button-1015-btnInnerEl")
+	@FindBy (xpath = "//div[contains(@id, 'mainToolBarContainer')]//span[contains(text(), 'РОЗДІЛИ ЗВІТУ')]")
 	private WebElement reportSections;
 	
 	//Items from menu "Report sections"
 	//Section Addition Table 5 - "Administrative Violations"
-	@FindBy (id = "menuitem-1029-textEl")
-	private WebElement adminViol;
+	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Військові адмінправопорушення')]")
+	private WebElement menuItemU9;
 	
+	//Section Addition Table 5 - "Administrative Violations"
+	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'ЗМІ')]")
+	private WebElement menuItemU7;
 /*------------------Methods---------------------------------------------------------------------------*/	
 	
 	@Override
@@ -45,9 +48,15 @@ public class HomePage extends Page {
 	}
 
 	//Moving from "Home" page to "Military Administrative violations" page
-	public Unit9MilitaryPage goToAV() {
+	public Unit9MilitaryPage goToU9() {
 		reportSections.click();
-		adminViol.click();
+		menuItemU9.click();
 		return PageFactory.initElements(driver, Unit9MilitaryPage.class);
+	}
+	
+	public Unit7MassMediaPage goToU7() {
+		reportSections.click();
+		menuItemU7.click();
+		return PageFactory.initElements(driver, Unit7MassMediaPage.class);
 	}
 }

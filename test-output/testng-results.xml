@@ -1,42 +1,149 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="3" passed="3">
+<testng-results skipped="0" failed="1" total="8" passed="7">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="12819" started-at="2016-07-26T14:22:31Z" finished-at="2016-07-26T14:22:43Z">
+  <suite name="Tests" duration-ms="61661" started-at="2016-07-28T15:03:00Z" finished-at="2016-07-28T15:04:01Z">
     <groups>
+      <group name="unit9">
+        <method signature="Unit9MilitaryTest.testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@172a855]" name="testJumpToUnit9Page" class="ua.bms.test.Unit9MilitaryTest"/>
+        <method signature="Unit9MilitaryTest.testCreateMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@172a855]" name="testCreateMilitaryCard" class="ua.bms.test.Unit9MilitaryTest"/>
+        <method signature="Unit9MilitaryTest.testEditMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@172a855]" name="testEditMilitaryCard" class="ua.bms.test.Unit9MilitaryTest"/>
+      </group> <!-- unit9 -->
+      <group name="unit7">
+        <method signature="Unit7MassMediaTest.testJumpToUnit7Page()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@1910fd6]" name="testJumpToUnit7Page" class="ua.bms.test.Unit7MassMediaTest"/>
+        <method signature="Unit7MassMediaTest.testCreateMassMediaCard()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@1910fd6]" name="testCreateMassMediaCard" class="ua.bms.test.Unit7MassMediaTest"/>
+      </group> <!-- unit7 -->
       <group name="login3">
-        <method signature="LoginTest.testFailedLogin()[pri:0, instance:ua.bms.test.LoginTest@16ddd1d]" name="testFailedLogin" class="ua.bms.test.LoginTest"/>
+        <method signature="LoginTest.testFailedLogin()[pri:0, instance:ua.bms.test.LoginTest@4d6d96]" name="testFailedLogin" class="ua.bms.test.LoginTest"/>
       </group> <!-- login3 -->
       <group name="login2">
-        <method signature="LoginTest.testFailedPassword()[pri:0, instance:ua.bms.test.LoginTest@16ddd1d]" name="testFailedPassword" class="ua.bms.test.LoginTest"/>
+        <method signature="LoginTest.testFailedPassword()[pri:0, instance:ua.bms.test.LoginTest@4d6d96]" name="testFailedPassword" class="ua.bms.test.LoginTest"/>
       </group> <!-- login2 -->
       <group name="login1">
-        <method signature="LoginTest.testLogin()[pri:0, instance:ua.bms.test.LoginTest@16ddd1d]" name="testLogin" class="ua.bms.test.LoginTest"/>
+        <method signature="LoginTest.testLogin()[pri:0, instance:ua.bms.test.LoginTest@4d6d96]" name="testLogin" class="ua.bms.test.LoginTest"/>
       </group> <!-- login1 -->
     </groups>
-    <test name="Default test" duration-ms="12819" started-at="2016-07-26T14:22:31Z" finished-at="2016-07-26T14:22:43Z">
+    <test name="Test1" duration-ms="14822" started-at="2016-07-28T15:03:00Z" finished-at="2016-07-28T15:03:14Z">
       <class name="ua.bms.test.LoginTest">
-        <test-method status="PASS" signature="getWebDriver()[pri:0, instance:ua.bms.test.LoginTest@16ddd1d]" name="getWebDriver" is-config="true" duration-ms="16" started-at="2016-07-26T17:22:31Z" finished-at="2016-07-26T17:22:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getWebDriver -->
-        <test-method status="PASS" signature="testFailedLogin()[pri:0, instance:ua.bms.test.LoginTest@16ddd1d]" name="testFailedLogin" duration-ms="3591" started-at="2016-07-26T17:22:31Z" finished-at="2016-07-26T17:22:34Z">
+        <test-method status="PASS" signature="testFailedLogin()[pri:0, instance:ua.bms.test.LoginTest@4d6d96]" name="testFailedLogin" duration-ms="4599" started-at="2016-07-28T18:03:00Z" finished-at="2016-07-28T18:03:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFailedLogin -->
-        <test-method status="PASS" signature="testFailedPassword()[pri:0, instance:ua.bms.test.LoginTest@16ddd1d]" name="testFailedPassword" duration-ms="3670" started-at="2016-07-26T17:22:34Z" finished-at="2016-07-26T17:22:38Z">
+        <test-method status="PASS" signature="testFailedPassword()[pri:0, instance:ua.bms.test.LoginTest@4d6d96]" name="testFailedPassword" duration-ms="3597" started-at="2016-07-28T18:03:04Z" finished-at="2016-07-28T18:03:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFailedPassword -->
-        <test-method status="PASS" signature="testLogin()[pri:0, instance:ua.bms.test.LoginTest@16ddd1d]" name="testLogin" duration-ms="5535" started-at="2016-07-26T17:22:38Z" finished-at="2016-07-26T17:22:43Z">
+        <test-method status="PASS" signature="testLogin()[pri:0, instance:ua.bms.test.LoginTest@4d6d96]" name="testLogin" duration-ms="6594" started-at="2016-07-28T18:03:08Z" finished-at="2016-07-28T18:03:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.LoginTest@16ddd1d]" name="tearDown" is-config="true" duration-ms="634" started-at="2016-07-26T17:22:43Z" finished-at="2016-07-26T17:22:44Z">
+      </class> <!-- ua.bms.test.LoginTest -->
+    </test> <!-- Test1 -->
+    <test name="Test2" duration-ms="36532" started-at="2016-07-28T15:03:14Z" finished-at="2016-07-28T15:03:51Z">
+      <class name="ua.bms.test.Unit9MilitaryTest">
+        <test-method status="PASS" signature="testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@172a855]" name="testJumpToUnit9Page" duration-ms="7918" started-at="2016-07-28T18:03:14Z" finished-at="2016-07-28T18:03:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testJumpToUnit9Page -->
+        <test-method status="PASS" signature="testCreateMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@172a855]" name="testCreateMilitaryCard" duration-ms="22044" started-at="2016-07-28T18:03:22Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testJumpToUnit9Page" finished-at="2016-07-28T18:03:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateMilitaryCard -->
+        <test-method status="PASS" signature="testEditMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@172a855]" name="testEditMilitaryCard" duration-ms="6564" started-at="2016-07-28T18:03:44Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testCreateMilitaryCard" finished-at="2016-07-28T18:03:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEditMilitaryCard -->
+      </class> <!-- ua.bms.test.Unit9MilitaryTest -->
+    </test> <!-- Test2 -->
+    <test name="Test3" duration-ms="10257" started-at="2016-07-28T15:03:51Z" finished-at="2016-07-28T15:04:01Z">
+      <class name="ua.bms.test.Unit7MassMediaTest">
+        <test-method status="PASS" signature="testJumpToUnit7Page()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@1910fd6]" name="testJumpToUnit7Page" duration-ms="1708" started-at="2016-07-28T18:03:51Z" finished-at="2016-07-28T18:03:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testJumpToUnit7Page -->
+        <test-method status="FAIL" signature="testCreateMassMediaCard()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@1910fd6]" name="testCreateMassMediaCard" duration-ms="8541" started-at="2016-07-28T18:03:53Z" depends-on-methods="ua.bms.test.Unit7MassMediaTest.testJumpToUnit7Page" finished-at="2016-07-28T18:04:01Z">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Unable to locate element: {"method":"xpath","selector":"//div[contains(@id, 'unit7-mediaCard')]//label[contains(text(), 'Назва ЗМІ:')]"}
+Command duration or timeout: 5.10 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'ChubenkoV', ip: '10.101.11.108', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_92'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9025f549-026b-4f16-9c14-eb65cc5e5993
+*** Element info: {Using=xpath, value=//div[contains(@id, 'unit7-mediaCard')]//label[contains(text(), 'Назва ЗМІ:')]}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[contains(@id, 'unit7-mediaCard')]//label[contains(text(), 'Назва ЗМІ:')]"}
+Command duration or timeout: 5.10 seconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'ChubenkoV', ip: '10.101.11.108', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_92'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 9025f549-026b-4f16-9c14-eb65cc5e5993
+*** Element info: {Using=xpath, value=//div[contains(@id, 'unit7-mediaCard')]//label[contains(text(), 'Назва ЗМІ:')]}
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at com.sun.proxy.$Proxy5.clear(Unknown Source)
+	at ua.bms.pages.Page.type(Page.java:60)
+	at ua.bms.pages.Unit7MassMediaPage.createCardU7(Unit7MassMediaPage.java:67)
+	at ua.bms.test.Unit7MassMediaTest.testCreateMassMediaCard(Unit7MassMediaTest.java:34)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:778)
+	at org.testng.TestRunner.run(TestRunner.java:632)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
+	at org.testng.TestNG.runSuites(TestNG.java:1075)
+	at org.testng.TestNG.run(TestNG.java:1047)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
+Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"//div[contains(@id, 'unit7-mediaCard')]//label[contains(text(), 'Назва ЗМІ:')]"}
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
+System info: host: 'ChubenkoV', ip: '10.101.11.108', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_92'
+Driver info: driver.version: unknown
+	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous6581086129588857684webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous6581086129588857684webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateMassMediaCard -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@1910fd6]" name="tearDown" is-config="true" duration-ms="866" started-at="2016-07-28T18:04:01Z" finished-at="2016-07-28T18:04:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- ua.bms.test.LoginTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- ua.bms.test.Unit7MassMediaTest -->
+    </test> <!-- Test3 -->
+  </suite> <!-- Tests -->
 </testng-results>

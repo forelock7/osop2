@@ -9,7 +9,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-
+import ua.bms.data.Unit7CardData;
 import ua.bms.data.Unit9CardData;
 import ua.bms.data.UserData;
 import ua.bms.utils.ConfigProperties;
@@ -30,12 +30,12 @@ public class BasicTestCase {
 		}
 		return driver;
 	}
-
+/*-----------------------------------------------------------------------------------------------------------------*/
 	//Initialization of object "user"	
 	protected UserData user = new UserData("vova", "bMS$2016");
 	protected UserData user1 = new UserData("vova", "failedPassword");
 	protected UserData user2 = new UserData("failedLogin", "bMS$2016");
-	
+/*-----------------------------------------------------------------------------------------------------------------*/	
 	//Initialization of input fields from Military Administrative Violation Card except field with drop-down list
 	protected static Unit9CardData aVCard = new Unit9CardData(
 			/*Дата складання протоколу*/"01.07.2016", 
@@ -53,6 +53,12 @@ public class BasicTestCase {
 			/*Дата початку утримання на гаупвахті*/"09.07.2016");
 	
 	protected static String someText = "Some text after EDITING 12343434456678767890!@#@#$%^&&*^";
+/*-----------------------------------------------------------------------------------------------------------------*/	
+	protected static Unit7CardData mMCard = new Unit7CardData(
+			/*Дата виступу*/"28.07.2016",
+			/*Назва ЗМІ*/"Назва ЗМІ 099089667545233",
+			/*Автор*/"Автор Author 56473657829*^&%#@@!",
+			/*Примітка*/"Примітка Remark*&^&$%$^@$@!");
 
 	
 	@AfterSuite (alwaysRun = true)

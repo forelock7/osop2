@@ -20,19 +20,22 @@ public class Unit9MilitaryTest extends BasicTestCase {
 	
 	private Unit9MilitaryPage unit9MilitaryPage;
 	
+/*-----------------------------Tests---------------------------------------------------------*/	
+	
 	@Test (groups = {"unit9"})
 	public void testJumpToUnit9Page() throws Exception {
 		loginPage.open();
 		homePage = loginPage.loginAs(user);
 		assertTrue(homePage.isLoggedIn());
-		unit9MilitaryPage = homePage.goToAV();
+		unit9MilitaryPage = homePage.goToU9();
 		assertTrue(unit9MilitaryPage.isOnUnit9Page());
 	}
+	
 	
 	@Test (groups = {"unit9"}, dependsOnMethods = {"testJumpToUnit9Page"})
 	public void testCreateMilitaryCard() throws Exception {
 		
-		unit9MilitaryPage.createCard(aVCard);
+		unit9MilitaryPage.createCardU9(aVCard);
 		unit9MilitaryPage.openCardToEdit();
 		
 		String protNumInField = unit9MilitaryPage.getProtocolNumber();
@@ -50,6 +53,7 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		//homePage.logOut();
 		//assertTrue(homePage.isLoggedOut());
 	}
+	
 	
 	@Test (groups = {"unit9"}, dependsOnMethods = {"testCreateMilitaryCard"})
 	public void testEditMilitaryCard() throws Exception {

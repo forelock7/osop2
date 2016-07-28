@@ -15,6 +15,9 @@ public class Unit9MilitaryPage extends Page {
 		super(driver);
 	}
 	
+	@Override
+	public void open() {}
+	
 /*-------------------The Web-Elements of Main Page----------------------------------------------------*/
 
 	//Title "Військові адмінправопорушення"
@@ -149,10 +152,7 @@ public class Unit9MilitaryPage extends Page {
 	
 /*------------------Methods---------------------------------------------------------------------------*/
 	
-	@Override
-	public void open() {
-					
-	}
+
 	
 	//Checking if user jumped into page of Unit9 (existing unit9 title)
 	public boolean isOnUnit9Page() {
@@ -160,7 +160,7 @@ public class Unit9MilitaryPage extends Page {
 	}
 
 	//Creating the new card with filling all fields in
-	public void createCard (Unit9CardData adminViolCard) throws InterruptedException {
+	public void createCardU9 (Unit9CardData adminViolCard) throws InterruptedException {
 		buttonCreateCard.click();
 		type(inputProtocolNumber, adminViolCard.protocolNumber);
 		type(inputProtocolCreatingDate, adminViolCard.protocolCreatingDate);
@@ -201,10 +201,10 @@ public class Unit9MilitaryPage extends Page {
 		
 	}
 	
-	//Click on "Edit" button for the first record in the main grid
+	/*//Click on "Edit" button for the first record in the main grid
 	public void openCardToEdit() {
 		buttonEdit.click();
-	}
+	}*/
 	
 	//getting value from input-field "Protocol Number" in formerly created card
 	public String getProtocolNumber() {
@@ -221,10 +221,10 @@ public class Unit9MilitaryPage extends Page {
 		buttonSave.click();
 	}	
 	
-	//Clicking on "Exit" button in Card
+	/*//Clicking on "Exit" button in Card
 	public void exitFromCard() {
 		buttonExit.click();
-	}
+	}*/
 	
 	//Editing field "Фабула"
 	public void changeValueInTheoryField(String someText) {

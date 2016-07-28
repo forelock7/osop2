@@ -69,5 +69,15 @@ public abstract class Page {
 			return false;
 		}
 	}
+	
+	//Click on "Edit" button for the first record in the main grid
+	public void openCardToEdit() {
+		buttonEdit.click();
+	}
+	
+	//Clicking on "Exit" button in Card
+	public void exitFromCard() {
+		buttonExit.click();
+	}
 
 }
