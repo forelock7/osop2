@@ -23,6 +23,18 @@ public class Unit9MilitaryPage extends Page {
 	//Title "Військові адмінправопорушення"
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")
 	private WebElement titleAV;
+	
+	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-12).
+	@FindBy(xpath = "//table[1]//td[12]/div")
+	private WebElement buttonEdit;
+	
+	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-13).
+	@FindBy(xpath = "/html/body/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/table[1]/tbody/tr/td[13]/div/img") //"//div[contains(@id, 'ext-element-9')]/table[1]//td[13]/div/img")
+	private WebElement buttonRemove;
+	
+	//Grid field with Registration Number
+	@FindBy(xpath = "//table[1]//td[2]/div")
+	private WebElement regNumberInGrid;
 
 /*------------------The Web-Elements of the Card------------------------------------------------------*/
 	//Input field "Номер протоколу"
@@ -196,15 +208,36 @@ public class Unit9MilitaryPage extends Page {
 		type(inputReceivingDateMain, adminViolCard.receivingDateMain);
 		checkboxCarriedPunishment.click();
 		type(inputBeginingPunishmentDate, adminViolCard.beginingPunishmentDate);
-		buttonSave.click();
-		buttonOKAlertPopup.click();
+		this.saveCard();
+		this.clickOnAlertOK();
+		//buttonSave.click();
+		//buttonOKAlertPopup.click();
 		
 	}
 	
-	/*//Click on "Edit" button for the first record in the main grid
+	public void removeCard() throws InterruptedException {
+		Thread.sleep(5000);
+		buttonRemove.click();
+	}
+	
+	/*public String removeCardUnit9() throws InterruptedException{
+		
+		buttonRemove.click();
+		
+		String regNumberRemovedCard = this.confirmDeletion();
+		this.goTobRemoved();
+		this.clickOnAlertOK();
+		return regNumberRemovedCard;
+	}*/
+	
+	public String getRegNumberFromGrid() {
+		return regNumberInGrid.getAttribute("value");
+	}
+	
+	//Click on "Edit" button for the first record in the main grid
 	public void openCardToEdit() {
 		buttonEdit.click();
-	}*/
+	}
 	
 	//getting value from input-field "Protocol Number" in formerly created card
 	public String getProtocolNumber() {
@@ -216,26 +249,12 @@ public class Unit9MilitaryPage extends Page {
 		return inputTheory.getAttribute("value");
 	}
 	
-	//Clicking on "Save" button in Card
-	public void saveCard() {
-		buttonSave.click();
-	}	
-	
-	/*//Clicking on "Exit" button in Card
-	public void exitFromCard() {
-		buttonExit.click();
-	}*/
-	
 	//Editing field "Фабула"
 	public void changeValueInTheoryField(String someText) {
 		type(inputTheory, someText);
 	}
 	
-	public boolean isAlertPresent() {
-		return isElementPresent(buttonOKAlertPopup);
-	}
+
 	
-	public void clickOnAlertOK() {
-		buttonOKAlertPopup.click();
-	}
+
 }

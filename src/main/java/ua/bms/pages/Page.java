@@ -23,17 +23,15 @@ public abstract class Page {
 	@FindBy(xpath = "//span[contains(., 'Створити')]")
 	protected WebElement buttonCreateCard;
 	
-	//Button "Edit"("Редагувати") in the main grid on the main UNIT's page(row-1; column-12).
-	@FindBy(xpath = "//table[1]//td[12]/div")
-	protected WebElement buttonEdit;
-	
-	//Button "Delete"("Видалити")
+	//Tab "Removed" 
+	@FindBy (xpath = "span[contains(., 'Видалені')]")
+	private WebElement tabRemoved;
 	
 /*The card*/
 	
 	//Button "Save" ("Зберегти") for saving card
 	@FindBy(xpath = "//span[contains(., 'Зберегти')]")
-	protected WebElement buttonSave;
+	private WebElement buttonSave;
 	
 	//Button "Exit" ("Вихід") for exit from card
 	@FindBy (xpath = "//div[contains(@id, 'Card')]//span[contains(., 'Вихід')]")
@@ -43,7 +41,7 @@ public abstract class Page {
 	
 	//Alert Popup - button "OK".
 	@FindBy (xpath = "//.[contains(@id, 'messagebox')]//.[contains(@id, 'button')]")
-	protected WebElement buttonOKAlertPopup;
+	private WebElement buttonOKAlertPopup;
 	
 	//Confirmation Popup - button "Yes" 
 	@FindBy (xpath = "//.[contains(@id, 'messagebox')]//span[contains(.,'Так')]")
@@ -52,11 +50,25 @@ public abstract class Page {
 	@FindBy (xpath = "//.[contains(@id, 'messagebox')]//span[contains(.,'Ні')]")
 	protected WebElement buttonNoConfirmationPopup;
 	
+/*Form of Deletion Confirmation*/
+	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//label[contains(., 'Реєстраційний №:')]/../following-sibling::div[1]//input")
+	protected WebElement fieldRegistrationNumber;
+	//Reason of Deletion
+	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//label[contains(., 'Підстава видалення:')]/../following-sibling::div[1]//input")
+	protected WebElement inputFieldDeletionReason;
+	//The First Item of deletion reason
+	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[1]")
+	protected WebElement itemDeletionReason;
+	//Button "Delete" ("Видалити")
+	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//span[contains(text(), 'Видалити')]")
+	protected WebElement buttonConfirmDelete;
+	
 /*---------------------------------Methods-----------------------------------------*/	
 	
 	protected abstract void open();
 	
 	protected void type(WebElement webElement, String text) {
+		//webElement.click();
 		webElement.clear();
 		webElement.sendKeys(text);
 	}
@@ -70,14 +82,36 @@ public abstract class Page {
 		}
 	}
 	
-	//Click on "Edit" button for the first record in the main grid
-	public void openCardToEdit() {
-		buttonEdit.click();
+	public boolean isAlertPresent() {
+		return isElementPresent(buttonOKAlertPopup);
 	}
 	
+	public void clickOnAlertOK() {
+		buttonOKAlertPopup.click();
+	}
+	
+	//Clicking on "Save" button in Card
+	public void saveCard() {
+		buttonSave.click();
+	}
+		
 	//Clicking on "Exit" button in Card
 	public void exitFromCard() {
 		buttonExit.click();
 	}
+	
+	//Confirmation of Card Deletion 
+	protected String confirmDeletion(){
+		inputFieldDeletionReason.click();
+		itemDeletionReason.click();
+		String regNumber = fieldRegistrationNumber.getAttribute("value");
+		buttonConfirmDelete.click();
+		this.clickOnAlertOK();
+		return regNumber;
+	}
+	
+	protected void goTobRemoved() {
+		tabRemoved.click();
+		}
 
 }

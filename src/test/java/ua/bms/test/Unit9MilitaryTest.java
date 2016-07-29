@@ -69,9 +69,20 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		Assert.assertEquals(currentTheory, someText);
 		
 		unit9MilitaryPage.exitFromCard();
+		Thread.sleep(5000);
 	}
 
-	
+	@Test (groups = {"unit9"})
+	public void testRemoveMilitaryCard() throws InterruptedException {
+		Thread.sleep(5000);
+		unit9MilitaryPage.removeCard();
+		System.out.println("regNumRemovedCard = eeeeeeeeeeeee");
+		//String regNumRemovedCard = unit9MilitaryPage.removeCardUnit9();
+		String regNumCardInGrid = unit9MilitaryPage.getRegNumberFromGrid();
+		//System.out.println("regNumRemovedCard = " + regNumRemovedCard);
+		System.out.println("regNumCardInGrid = " + regNumCardInGrid);
+		//Assert.assertEquals(regNumRemovedCard, regNumCardInGrid);
+	}
 
 
 }

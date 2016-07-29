@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Tests]">
-  <test name="Test3(failed)">
-    <groups>
-      <run>
-        <include name="unit7"/>
-      </run>
-    </groups>
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="ua.bms.test.Unit7MassMediaTest">
+      <class name="ua.bms.test.Unit9MilitaryTest">
         <methods>
-          <include name="testCreateMassMediaCard"/>
-          <include name="testJumpToUnit7Page"/>
           <include name="tearDown"/>
+          <include name="getWebDriver"/>
+          <include name="testRemoveMilitaryCard"/>
         </methods>
-      </class> <!-- ua.bms.test.Unit7MassMediaTest -->
+      </class> <!-- ua.bms.test.Unit9MilitaryTest -->
     </classes>
-  </test> <!-- Test3(failed) -->
-</suite> <!-- Failed suite [Tests] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -7,21 +7,26 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import ua.bms.pages.HomePage;
-import ua.bms.pages.LoginPage;
+
 import ua.bms.pages.Unit7MassMediaPage;
-import ua.bms.pages.Unit9MilitaryPage;
+
 
 public class Unit7MassMediaTest extends BasicTestCase {
+	
+	//Special for debugging
 	//private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
+	//private HomePage homePage;
 	
 	private HomePage homePage = PageFactory.initElements(getWebDriver(), HomePage.class);
-	
-	//private Unit9MilitaryPage unit9MilitaryPage = PageFactory.initElements(getWebDriver(), Unit9MilitaryPage.class);;
-	
 	private Unit7MassMediaPage unit7MassMediaPage;
 
 	@Test (groups = {"unit7"})
 	public void testJumpToUnit7Page() throws Exception {
+		
+		//Special for debugging
+		//loginPage.open();
+		//homePage = loginPage.loginAs(user);
+		//assertTrue(homePage.isLoggedIn());
 
 		unit7MassMediaPage = homePage.goToU7();
 		assertTrue(unit7MassMediaPage.isOnUnit7Page());
