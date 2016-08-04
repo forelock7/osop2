@@ -1,8 +1,9 @@
 package ua.bms.pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 
@@ -29,12 +30,14 @@ public class Unit9MilitaryPage extends Page {
 	private WebElement buttonEdit;
 	
 	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-13).
-	@FindBy(xpath = "/html/body/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/table[1]/tbody/tr/td[13]/div/img") //"//div[contains(@id, 'ext-element-9')]/table[1]//td[13]/div/img")
+	@FindBy(xpath = "//table[1]//td[13]/div/img")//html/body/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/table[1]/tbody/tr/td[13]/div/img") //"//div[contains(@id, 'ext-element-9')]/table[1]//td[13]/div/img")
 	private WebElement buttonRemove;
 	
 	//Grid field with Registration Number
-	@FindBy(xpath = "//table[1]//td[2]/div")
-	private WebElement regNumberInGrid;
+	@FindBy(xpath = "/html/body/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody/tr/td[2]/div")
+	private WebElement cellRegNumberInGrid;
+	@FindBy(id = "ext-quicktips-tip-innerCt")
+	private WebElement quicktipRegNumberInGrid;
 
 /*------------------The Web-Elements of the Card------------------------------------------------------*/
 	//Input field "Номер протоколу"
@@ -215,23 +218,26 @@ public class Unit9MilitaryPage extends Page {
 		
 	}
 	
-	public void removeCard() throws InterruptedException {
-		Thread.sleep(5000);
+	public String removeCardUnit9() throws InterruptedException{
 		buttonRemove.click();
-	}
-	
-	/*public String removeCardUnit9() throws InterruptedException{
-		
-		buttonRemove.click();
-		
 		String regNumberRemovedCard = this.confirmDeletion();
 		this.goTobRemoved();
 		this.clickOnAlertOK();
 		return regNumberRemovedCard;
-	}*/
+	}
 	
-	public String getRegNumberFromGrid() {
-		return regNumberInGrid.getAttribute("value");
+	public String getRegNumberFromGrid() throws InterruptedException{
+		Thread.sleep(1000);
+		System.out.println("before method");
+		Thread.sleep(3000);
+		//cellRegNumberInGrid.click();
+		Actions build = new Actions(driver);
+		build.moveToElement(cellRegNumberInGrid).doubleClick(cellRegNumberInGrid).build().perform();
+		System.out.println("doubleClick!!!!!!!!!!!!!!!");
+		//Thread.sleep(2000);
+		//build.moveToElement(quicktipRegNumberInGrid).build().perform();
+		//((JavascriptExecutor)driver).executeScript("unselectable = off;", cellRegNumberInGrid);
+		return /*quicktipRegNumberInGrid*/cellRegNumberInGrid.getAttribute("value");
 	}
 	
 	//Click on "Edit" button for the first record in the main grid
@@ -241,6 +247,7 @@ public class Unit9MilitaryPage extends Page {
 	
 	//getting value from input-field "Protocol Number" in formerly created card
 	public String getProtocolNumber() {
+		
 		return inputProtocolNumber.getAttribute("value");
 	}
 	

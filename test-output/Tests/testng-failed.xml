@@ -15,7 +15,10 @@
       </class> <!-- ua.bms.test.Unit7MassMediaTest -->
       <class name="ua.bms.test.Unit9MilitaryTest">
         <methods>
+          <include name="testJumpToUnit9Page"/>
           <include name="testRemoveMilitaryCard"/>
+          <include name="testEditMilitaryCard"/>
+          <include name="testCreateMilitaryCard"/>
         </methods>
       </class> <!-- ua.bms.test.Unit9MilitaryTest -->
     </classes>

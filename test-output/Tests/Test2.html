@@ -57,9 +57,9 @@ function toggleAllBoxes() {
 <tr>
 <td>Tests passed/Failed/Skipped:</td><td>3/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Fri Jul 29 16:41:35 EEST 2016</td>
+<td>Started on:</td><td>Thu Aug 04 14:55:40 EEST 2016</td>
 </tr>
-<tr><td>Total time:</td><td>45 seconds (45861 ms)</td>
+<tr><td>Total time:</td><td>47 seconds (47529 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>unit9 </td>
 </tr><tr>
@@ -76,44 +76,39 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard()'><b>testRemoveMilitaryCard</b><br>Test class: ua.bms.test.Unit9MilitaryTest</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[1]//td[13]//img&quot;}
-Command duration or timeout: 5.21 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+<td><div><pre>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 5.04 seconds
 Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.108&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
+System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.120&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 34b4b411-1746-4429-8381-41bcc374da8b
-*** Element info: {Using=xpath, value=//table[1]//td[13]//img}
+Session ID: 6ccceb41-344a-4896-a286-085f0cdac0f0
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy6.click(Unknown Source)
-	at ua.bms.pages.Unit9MilitaryPage.removeCardUnit9(Unit9MilitaryPage.java:220)
-	at ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard(Unit9MilitaryTest.java:76)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[1]//td[13]//img&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+	at ua.bms.pages.Page.clickOnAlertOK(Page.java:90)
+	at ua.bms.pages.Unit9MilitaryPage.removeCardUnit9(Unit9MilitaryPage.java:222)
+	at ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard(Unit9MilitaryTest.java:80)
+Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
 Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.108&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
+System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.120&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous3863355648847389692webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous3863355648847389692webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
-... Removed 29 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace19166055", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace19166055'><pre>org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[1]//td[13]//img&quot;}
-Command duration or timeout: 5.21 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+	at &lt;anonymous class&gt;.fxdriver.preconditions.visible(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous2204395865318374469webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:10092)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous2204395865318374469webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous2204395865318374469webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous2204395865318374469webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
+... Removed 32 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace25072625", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace25072625'><pre>org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 5.04 seconds
 Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.108&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
+System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.120&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 34b4b411-1746-4429-8381-41bcc374da8b
-*** Element info: {Using=xpath, value=//table[1]//td[13]//img}
+Session ID: 6ccceb41-344a-4896-a286-085f0cdac0f0
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -121,15 +116,16 @@ Session ID: 34b4b411-1746-4429-8381-41bcc374da8b
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy6.click(Unknown Source)
-	at ua.bms.pages.Unit9MilitaryPage.removeCardUnit9(Unit9MilitaryPage.java:220)
-	at ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard(Unit9MilitaryTest.java:76)
+	at ua.bms.pages.Page.clickOnAlertOK(Page.java:90)
+	at ua.bms.pages.Unit9MilitaryPage.removeCardUnit9(Unit9MilitaryPage.java:222)
+	at ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard(Unit9MilitaryTest.java:80)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -155,15 +151,16 @@ Session ID: 34b4b411-1746-4429-8381-41bcc374da8b
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//table[1]//td[13]//img&quot;}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
 Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.108&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
+System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.120&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
 Driver info: driver.version: unknown
-	at &lt;anonymous class&gt;.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous3863355648847389692webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
-	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous3863355648847389692webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+	at &lt;anonymous class&gt;.fxdriver.preconditions.visible(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous2204395865318374469webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:10092)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous2204395865318374469webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+	at &lt;anonymous class&gt;.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous2204395865318374469webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+	at &lt;anonymous class&gt;.fxdriver.Timer.prototype.setTimeout/&lt;.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous2204395865318374469webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
 </pre></div></td>
-<td>7</td>
+<td>10</td>
 <td>ua.bms.test.Unit9MilitaryTest@af26ee</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -176,17 +173,17 @@ Driver info: driver.version: unknown
 <tr>
 <td title='ua.bms.test.Unit9MilitaryTest.testCreateMilitaryCard()'><b>testCreateMilitaryCard</b><br>Test class: ua.bms.test.Unit9MilitaryTest</td>
 <td></td>
-<td>23</td>
+<td>21</td>
 <td>ua.bms.test.Unit9MilitaryTest@af26ee</td></tr>
 <tr>
 <td title='ua.bms.test.Unit9MilitaryTest.testEditMilitaryCard()'><b>testEditMilitaryCard</b><br>Test class: ua.bms.test.Unit9MilitaryTest</td>
 <td></td>
-<td>5</td>
+<td>6</td>
 <td>ua.bms.test.Unit9MilitaryTest@af26ee</td></tr>
 <tr>
 <td title='ua.bms.test.Unit9MilitaryTest.testJumpToUnit9Page()'><b>testJumpToUnit9Page</b><br>Test class: ua.bms.test.Unit9MilitaryTest</td>
 <td></td>
-<td>9</td>
+<td>7</td>
 <td>ua.bms.test.Unit9MilitaryTest@af26ee</td></tr>
 </table><p>
 </body>

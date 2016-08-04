@@ -24,7 +24,7 @@ public abstract class Page {
 	protected WebElement buttonCreateCard;
 	
 	//Tab "Removed" 
-	@FindBy (xpath = "span[contains(., 'Видалені')]")
+	@FindBy (xpath = "//span[contains(text(), 'Видалені')]")
 	private WebElement tabRemoved;
 	
 /*The card*/
@@ -51,13 +51,13 @@ public abstract class Page {
 	protected WebElement buttonNoConfirmationPopup;
 	
 /*Form of Deletion Confirmation*/
-	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//label[contains(., 'Реєстраційний №:')]/../following-sibling::div[1]//input")
+	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//label[contains(., 'Реєстраційний №:')]/following-sibling::div[1]//input")
 	protected WebElement fieldRegistrationNumber;
 	//Reason of Deletion
-	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//label[contains(., 'Підстава видалення:')]/../following-sibling::div[1]//input")
+	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//div[contains(@id, 'combo')]//input")
 	protected WebElement inputFieldDeletionReason;
 	//The First Item of deletion reason
-	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[1]")
+	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[2]")
 	protected WebElement itemDeletionReason;
 	//Button "Delete" ("Видалити")
 	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//span[contains(text(), 'Видалити')]")
@@ -101,8 +101,9 @@ public abstract class Page {
 	}
 	
 	//Confirmation of Card Deletion 
-	protected String confirmDeletion(){
+	protected String confirmDeletion() throws InterruptedException{
 		inputFieldDeletionReason.click();
+		Thread.sleep(2000);
 		itemDeletionReason.click();
 		String regNumber = fieldRegistrationNumber.getAttribute("value");
 		buttonConfirmDelete.click();

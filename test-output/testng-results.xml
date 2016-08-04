@@ -2,7 +2,7 @@
 <testng-results skipped="0" failed="1" total="4" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="50737" started-at="2016-07-29T14:52:57Z" finished-at="2016-07-29T14:53:47Z">
+  <suite name="Default suite" duration-ms="54699" started-at="2016-08-04T15:01:13Z" finished-at="2016-08-04T15:02:08Z">
     <groups>
       <group name="unit9">
         <method signature="Unit9MilitaryTest.testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testJumpToUnit9Page" class="ua.bms.test.Unit9MilitaryTest"/>
@@ -11,39 +11,43 @@
         <method signature="Unit9MilitaryTest.testRemoveMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testRemoveMilitaryCard" class="ua.bms.test.Unit9MilitaryTest"/>
       </group> <!-- unit9 -->
     </groups>
-    <test name="Default test" duration-ms="50737" started-at="2016-07-29T14:52:57Z" finished-at="2016-07-29T14:53:47Z">
+    <test name="Default test" duration-ms="54699" started-at="2016-08-04T15:01:13Z" finished-at="2016-08-04T15:02:08Z">
       <class name="ua.bms.test.Unit9MilitaryTest">
-        <test-method status="PASS" signature="getWebDriver()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="getWebDriver" is-config="true" duration-ms="12" started-at="2016-07-29T17:52:57Z" finished-at="2016-07-29T17:52:57Z">
+        <test-method status="PASS" signature="getWebDriver()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="getWebDriver" is-config="true" duration-ms="19" started-at="2016-08-04T18:01:13Z" finished-at="2016-08-04T18:01:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getWebDriver -->
-        <test-method status="PASS" signature="testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testJumpToUnit9Page" duration-ms="7938" started-at="2016-07-29T17:52:57Z" finished-at="2016-07-29T17:53:05Z">
+        <test-method status="PASS" signature="testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testJumpToUnit9Page" duration-ms="10639" started-at="2016-08-04T18:01:13Z" finished-at="2016-08-04T18:01:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testJumpToUnit9Page -->
-        <test-method status="FAIL" signature="testRemoveMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testRemoveMilitaryCard" duration-ms="15064" started-at="2016-07-29T17:53:05Z" finished-at="2016-07-29T17:53:20Z">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method status="PASS" signature="testCreateMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testCreateMilitaryCard" duration-ms="23739" started-at="2016-08-04T18:01:24Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testJumpToUnit9Page" finished-at="2016-08-04T18:01:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateMilitaryCard -->
+        <test-method status="PASS" signature="testEditMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testEditMilitaryCard" duration-ms="8242" started-at="2016-08-04T18:01:47Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testCreateMilitaryCard" finished-at="2016-08-04T18:01:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEditMilitaryCard -->
+        <test-method status="FAIL" signature="testRemoveMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testRemoveMilitaryCard" duration-ms="12040" started-at="2016-08-04T18:01:56Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testEditMilitaryCard" finished-at="2016-08-04T18:02:08Z">
+          <exception class="org.openqa.selenium.ElementNotVisibleException">
             <message>
-              <![CDATA[Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/table[1]/tbody/tr/td[13]/div/img"}
-Command duration or timeout: 5.05 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[Element is not currently visible and so may not be interacted with
+Command duration or timeout: 5.02 seconds
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'ChubenkoV', ip: '10.101.11.111', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_92'
+System info: host: 'ChubenkoV', ip: '10.101.11.120', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_92'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: e21efce2-8ea7-471a-88ec-789cfd3b8476
-*** Element info: {Using=xpath, value=/html/body/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/table[1]/tbody/tr/td[13]/div/img}]]>
+Session ID: 9470efd6-acae-4b97-b7e9-5b5e6548a315]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/table[1]/tbody/tr/td[13]/div/img"}
-Command duration or timeout: 5.05 seconds
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+              <![CDATA[org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
+Command duration or timeout: 5.02 seconds
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'ChubenkoV', ip: '10.101.11.111', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_92'
+System info: host: 'ChubenkoV', ip: '10.101.11.120', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_92'
 Driver info: org.openqa.selenium.firefox.FirefoxDriver
 Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: e21efce2-8ea7-471a-88ec-789cfd3b8476
-*** Element info: {Using=xpath, value=/html/body/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/table[1]/tbody/tr/td[13]/div/img}
+Session ID: 9470efd6-acae-4b97-b7e9-5b5e6548a315
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
 	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -51,15 +55,16 @@ Session ID: e21efce2-8ea7-471a-88ec-789cfd3b8476
 	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
 	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:363)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:500)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
+	at sun.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at com.sun.proxy.$Proxy6.click(Unknown Source)
-	at ua.bms.pages.Unit9MilitaryPage.removeCard(Unit9MilitaryPage.java:220)
-	at ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard(Unit9MilitaryTest.java:78)
+	at ua.bms.pages.Page.clickOnAlertOK(Page.java:90)
+	at ua.bms.pages.Unit9MilitaryPage.removeCardUnit9(Unit9MilitaryPage.java:225)
+	at ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard(Unit9MilitaryTest.java:80)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -85,28 +90,21 @@ Session ID: e21efce2-8ea7-471a-88ec-789cfd3b8476
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-Caused by: org.openqa.selenium.NoSuchElementException: Unable to locate element: {"method":"xpath","selector":"/html/body/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/table[1]/tbody/tr/td[13]/div/img"}
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Caused by: org.openqa.selenium.ElementNotVisibleException: Element is not currently visible and so may not be interacted with
 Build info: version: '2.53.0', revision: '35ae25b1534ae328c771e0856c93e187490ca824', time: '2016-03-15 10:43:46'
-System info: host: 'ChubenkoV', ip: '10.101.11.111', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_92'
+System info: host: 'ChubenkoV', ip: '10.101.11.120', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_92'
 Driver info: driver.version: unknown
-	at <anonymous class>.FirefoxDriver.prototype.findElementInternal_(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous5799191181159668720webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:10770)
-	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous5799191181159668720webdriver-profile/extensions/fxdriver@googlecode.com/components/driver-component.js:625)
+	at <anonymous class>.fxdriver.preconditions.visible(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous6917082157922225522webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:10092)
+	at <anonymous class>.DelayedCommand.prototype.checkPreconditions_(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous6917082157922225522webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12644)
+	at <anonymous class>.DelayedCommand.prototype.executeInternal_/h(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous6917082157922225522webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:12661)
+	at <anonymous class>.fxdriver.Timer.prototype.setTimeout/<.notify(file:///C:/Users/CHUBEN~1/AppData/Local/Temp/anonymous6917082157922225522webdriver-profile/extensions/fxdriver@googlecode.com/components/command-processor.js:625)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.ElementNotVisibleException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRemoveMilitaryCard -->
-        <test-method status="PASS" signature="testCreateMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testCreateMilitaryCard" duration-ms="17149" started-at="2016-07-29T17:53:20Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testJumpToUnit9Page" finished-at="2016-07-29T17:53:37Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testCreateMilitaryCard -->
-        <test-method status="PASS" signature="testEditMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="testEditMilitaryCard" duration-ms="10553" started-at="2016-07-29T17:53:37Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testCreateMilitaryCard" finished-at="2016-07-29T17:53:47Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testEditMilitaryCard -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="tearDown" is-config="true" duration-ms="587" started-at="2016-07-29T17:53:47Z" finished-at="2016-07-29T17:53:48Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@16ddd1d]" name="tearDown" is-config="true" duration-ms="727" started-at="2016-08-04T18:02:08Z" finished-at="2016-08-04T18:02:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
