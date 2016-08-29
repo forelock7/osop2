@@ -106,12 +106,13 @@ public abstract class Page {
 		Thread.sleep(2000);
 		itemDeletionReason.click();
 		String regNumber = fieldRegistrationNumber.getAttribute("value");
+		System.out.println("regNumberqqqqqq =" + regNumber);
 		buttonConfirmDelete.click();
 		this.clickOnAlertOK();
 		return regNumber;
 	}
 	
-	protected void goTobRemoved() {
+	protected void goToRemoved() {
 		tabRemoved.click();
 		}
 

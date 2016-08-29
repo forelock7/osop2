@@ -54,8 +54,10 @@ public class HomePage extends Page {
 		return PageFactory.initElements(driver, Unit9MilitaryPage.class);
 	}
 	
-	public Unit7MassMediaPage goToU7() {
+	public Unit7MassMediaPage goToU7() throws InterruptedException {
+		Thread.sleep(3000);
 		reportSections.click();
+	
 		menuItemU7.click();
 		return PageFactory.initElements(driver, Unit7MassMediaPage.class);
 	}

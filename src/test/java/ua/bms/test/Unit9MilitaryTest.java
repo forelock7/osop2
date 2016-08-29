@@ -62,28 +62,20 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		unit9MilitaryPage.saveCard();
 		assertTrue(unit9MilitaryPage.isAlertPresent());
 		unit9MilitaryPage.clickOnAlertOK();
-		unit9MilitaryPage.openCardToEdit();
-				
-		String currentTheory = unit9MilitaryPage.getTheory();
-		System.out.println("currentTheory = " + currentTheory);
-		Assert.assertEquals(currentTheory, someText);
-		
+		unit9MilitaryPage.openCardToEdit();				
+		String currentTheory = unit9MilitaryPage.getTheory();		
+		Assert.assertEquals(currentTheory, someText);		
 		unit9MilitaryPage.exitFromCard();
 		
 	}
 
 	@Test (groups = {"unit9"}, dependsOnMethods = {"testEditMilitaryCard"})
 	public void testRemoveMilitaryCard() throws InterruptedException {
-		Thread.sleep(1000);
-		//unit9MilitaryPage.removeCard();
-		//System.out.println("regNumRemovedCard = eeeeeeeeeeeee");
 		String regNumRemovedCard = unit9MilitaryPage.removeCardUnit9();
-		System.out.println("regNumRemovedCard = " + regNumRemovedCard);
-		String regNumCardInGrid = unit9MilitaryPage.getRegNumberFromGrid();
-		
-		System.out.println("regNumCardInGrid = " + regNumCardInGrid);
+		String regNumCardInGrid = unit9MilitaryPage.getRegNumberFromGrid();		
 		Assert.assertEquals(regNumRemovedCard, regNumCardInGrid);
 	}
 
+	
 
 }

@@ -7,8 +7,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import ua.bms.pages.HomePage;
-
+import ua.bms.pages.LoginPage;
 import ua.bms.pages.Unit7MassMediaPage;
+import ua.bms.pages.Unit9MilitaryPage;
 
 
 public class Unit7MassMediaTest extends BasicTestCase {
@@ -18,6 +19,8 @@ public class Unit7MassMediaTest extends BasicTestCase {
 	//private HomePage homePage;
 	
 	private HomePage homePage = PageFactory.initElements(getWebDriver(), HomePage.class);
+	
+
 	private Unit7MassMediaPage unit7MassMediaPage;
 
 	@Test (groups = {"unit7"})
@@ -27,7 +30,7 @@ public class Unit7MassMediaTest extends BasicTestCase {
 		//loginPage.open();
 		//homePage = loginPage.loginAs(user);
 		//assertTrue(homePage.isLoggedIn());
-
+		System.out.println("before7777777");
 		unit7MassMediaPage = homePage.goToU7();
 		assertTrue(unit7MassMediaPage.isOnUnit7Page());
 	}

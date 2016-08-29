@@ -221,8 +221,9 @@ public class Unit9MilitaryPage extends Page {
 	public String removeCardUnit9() throws InterruptedException{
 		buttonRemove.click();
 		String regNumberRemovedCard = this.confirmDeletion();
-		this.goTobRemoved();
-		this.clickOnAlertOK();
+		System.out.println("regNumberInU9Page =" + regNumberRemovedCard);
+		this.goToRemoved();
+		//this.clickOnAlertOK();
 		return regNumberRemovedCard;
 	}
 	
@@ -237,7 +238,7 @@ public class Unit9MilitaryPage extends Page {
 		//Thread.sleep(2000);
 		//build.moveToElement(quicktipRegNumberInGrid).build().perform();
 		//((JavascriptExecutor)driver).executeScript("unselectable = off;", cellRegNumberInGrid);
-		return /*quicktipRegNumberInGrid*/cellRegNumberInGrid.getAttribute("value");
+		return /*quicktipRegNumberInGrid*/cellRegNumberInGrid.getText()/*getAttribute("value")*/;
 	}
 	
 	//Click on "Edit" button for the first record in the main grid
