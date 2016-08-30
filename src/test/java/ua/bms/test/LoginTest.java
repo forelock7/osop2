@@ -15,11 +15,11 @@ public class LoginTest extends BasicTestCase {
 	
 	//Initialization of page instance according to PageFactory
 	private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
-	
 	private HomePage homePage;
 	
 	@Test(groups = {"login1"})
 	public void testLogin() throws Exception {
+		System.out.println("Tests - Login");
 		loginPage.open();
 		homePage = loginPage.loginAs(user);
 		assertTrue(homePage.isLoggedIn());

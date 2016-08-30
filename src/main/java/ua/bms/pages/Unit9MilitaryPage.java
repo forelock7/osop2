@@ -1,9 +1,7 @@
 package ua.bms.pages;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 
 
@@ -21,7 +19,7 @@ public class Unit9MilitaryPage extends Page {
 	
 /*-------------------The Web-Elements of Main Page----------------------------------------------------*/
 
-	//Title "Військові адмінправопорушення"
+	//Title "Military Administrative Violations" ("Військові адмінправопорушення")
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")
 	private WebElement titleAV;
 	
@@ -30,144 +28,138 @@ public class Unit9MilitaryPage extends Page {
 	private WebElement buttonEdit;
 	
 	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-13).
-	@FindBy(xpath = "//table[1]//td[13]/div/img")//html/body/div[2]/div/div/div[1]/div[2]/div/div[3]/div[1]/div[1]/table[1]/tbody/tr/td[13]/div/img") //"//div[contains(@id, 'ext-element-9')]/table[1]//td[13]/div/img")
+	@FindBy(xpath = "//table[1]//td[13]/div/img")
 	private WebElement buttonRemove;
+		
+	//Button "Recover" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-12).
+	@FindBy(xpath = "//div[contains(@id, 'crimeGridDeleted')]//table[1]//td[12]/div/img")
+	private WebElement buttonRecover;
 	
-	//Grid field with Registration Number
-	@FindBy(xpath = "/html/body/div[2]/div/div/div[1]/div[2]/div[2]/div[2]/div[1]/div[1]/table[1]/tbody/tr/td[2]/div")
-	private WebElement cellRegNumberInGrid;
-	@FindBy(id = "ext-quicktips-tip-innerCt")
-	private WebElement quicktipRegNumberInGrid;
-
 /*------------------The Web-Elements of the Card------------------------------------------------------*/
-	//Input field "Номер протоколу"
+	//Input field "Protocol Number" ("Номер протоколу")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Номер протоколу:')]/../following-sibling::div[1]//input")
-	//@CacheLookup //Caching web-element refer for reusing this element
+	//@CacheLookup /*Caching web-element refer for reusing this element*/
 	private WebElement inputProtocolNumber;
 	
-	//Input field "Дата складання протоколу"
+	//Input field "Protocol Creating Date" ("Дата складання протоколу")
 	@FindBy(id = "datefield-1204-inputEl")
 	private WebElement inputProtocolCreatingDate;
 
-	//Input field "Стаття КУпАП"
+	//Input field "Section of AV Lawbook" ("Стаття КУпАП")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Стаття КУпАП:')]")
 	private WebElement inputSectionAVLawbook;
-	//First Item "Ст. 172-10" from drop-down list of input field "Стаття КУпАП"
+	//First Item "Ст. 172-10" from drop-down list of input field "Section of AV Lawbook" ("Стаття КУпАП")
 	@FindBy(xpath  = "//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]")
 	private WebElement itemSectionAVLawbook;
 	
-	//Input field "Дата вчинення правопорушення"
+	//Input field "Date of Commitment Administrative Violations" ("Дата вчинення правопорушення")
 	@FindBy(id = "datefield-1206-inputEl")
 	private WebElement inputCommitingAVDate;
 	
-	//Input field "Фабула"
+	//Input field "Theory" ("Фабула")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//textarea")
 	private WebElement inputTheory;
 	
-	//Input field "ПІБ правопорушника"
+	//Input field "Name of Offender" ("ПІБ правопорушника")
 	@FindBy(id = "textfield-1209-inputEl")
 	private WebElement inputOffenderName;
 	
-	//Input field "Дата народження"
+	//Input field "Birthday" ("Дата народження")
 	@FindBy(id = "datefield-1210-inputEl")
 	private WebElement inputBirthday;
 	
-	//Input field "Військове формування" 
+	//Input field "Military Troop" ("Військове формування") 
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Військове формування:')]")
-	private WebElement inputMilitaryTroops;
-	//First Item "Збройні сили" from drop-down list of input field "Військові формування"
+	private WebElement inputMilitaryTroop;
+	//First Item "Armed Forces" ("Збройні сили") from drop-down list of input field "Military Troop" ("Військове формування") 
 	@FindBy(xpath = "//li[contains(., 'Збройні сили')]")
 	private WebElement itemMilitaryTroop;
 	
-	//Input field "Назва військової частини, установи"
+	//Input field "Military Unit Name" ("Назва військової частини, установи")
 	@FindBy(id = "textfield-1212-inputEl")
 	private WebElement inputMilitaryUnitName;
 	
-	//Input field "Військове звання"
+	//Input field "Military Rank" ("Військове звання")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Військове звання:')]")
 	private WebElement inputMilitaryRank;
-	//Second Item "Молодший офіцерський склад" from drop-down list of input field "Військові звання"
+	//Second Item "Company Officers" ("Молодший офіцерський склад") from drop-down list of input field "Military Rank" ("Військове звання")
 	@FindBy(xpath = "//li[contains(., 'Молодший офіцерський склад')]")
 	private WebElement itemMilitaryRank;
 	
-	//Input field "Категорія посади"
+	//Input field "Post Category" ("Категорія посади")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Категорія посади:')]")
 	private WebElement inputPostCategory;
-	//First Item "Командир (начальник) військової частини" from drop-down list of input field "Категорія посади"
+	//First Item "Командир (начальник) військової частини" from drop-down list of input field "Post Category" ("Категорія посади")
 	@FindBy(xpath = "//li[contains(., 'Командир (начальник) військової частини')]")
 	private WebElement itemPostCategory;
 	
-	//Input field "Посада"
+	//Input field "Post" ("Посада")
 	@FindBy(id = "textfield-1216-inputEl")
 	private WebElement inputPost;
 	
-	//Input field "Дата первинного направлення до суду(для обліку у звіті)"
+	//Input field "Date of the First Refering to the Court" ("Дата первинного направлення до суду(для обліку у звіті)")
 	@FindBy (id = "datefield-1218-inputEl")
 	private WebElement inputReferToCourtDate;
 	
-	//Input field "Назва суду"
+	//Input field "Court Name" ("Назва суду")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Назва суду:')]")
 	private WebElement inputCourtName;
 	//Third item of Courts
 	@FindBy (xpath = "//span[contains(., 'Вищий спеціалізований суд України з розгляду цивільних і кримінальних справ')]")
 	private WebElement itemOfCourt;
 	
-	//CheckBox "Повернуто судом"
+	//CheckBox "Returning by Court" ("Повернуто судом")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Повернуто судом')]")
 	private WebElement checkboxReturnByCourt;
 	
-	//Input field "Дата надходження рішення про повернення судом (для обліку у звіті)"
+	//Input field "Date of Receiving Court Decision" (Дата надходження рішення про повернення судом (для обліку у звіті)")
 	@FindBy(id = "datefield-1228-inputEl")
 	private WebElement inputReceivingCourtDecisionDate;
 	
-	//Input field "Дата повторного направлення (для обліку у звіті)"
+	//Input field "Date of Repeated Refering to the Court" ("Дата повторного направлення (для обліку у звіті)")
 	@FindBy(id = "datefield-1229-inputEl")
 	private WebElement inputRepeatedReferToCourtDate;
 	
-	//Button "Додати". Adding a record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
+	//Button "Add" ("Додати"). Adding a record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Додати')]")
 	private WebElement buttonAdd;
 	
-	//Form "Створення "Рух протоколу""
-	//Input field "Направлено до суду/Повернуто судом"
+	//Form "Creating "Protocol Movement"" ("Створення "Рух протоколу"")
+	//Input field "Refered to Court/Return by Court" ("Направлено до суду/Повернуто судом")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(., 'Повернуто судом')]")
-	private WebElement inputRefer_Receive;
+	private WebElement inputReferReturn;
 	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[contains(., 'Направлено до суду')]")
-	private WebElement itemRefer_Receive;
-	//Input field "Дата рішення"
+	private WebElement itemReferReturn;
+	//Input field "Decision Date"  ("Дата рішення")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//input[contains(@id, 'datefield')]")
 	private WebElement inputCourtDecisionDate;
-	//Saving button of record into grid "Відомості про повторні направлення протоколу до суду / повернення судом"
+	//Saving button of record into grid "Info about repeated ref/ret" ("Відомості про повторні направлення протоколу до суду / повернення судом")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(text(), 'Додати')]")
 	private WebElement buttonAddMovingOfProtocol;
 	
-	//Input field "Результат розгляду"
+	//Input field "Consideration Result" ("Результат розгляду")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Результат розгляду:')]")
 	private WebElement inputConsiderationResult;
 	//Third item of court consideration result
 	@FindBy (xpath = "//span[contains(., 'Арешт з утриманням на гауптвахті')]") 
 	private WebElement itemConsiderationResult;	
 	
-	//Input field "Дата надходження рішення суду(для обліку у звіті)"(пошук наступного(1) div-елемента після span(на одному рівні)  )
+	//Input field "Receiving Date of Decision Result" ("Дата надходження рішення суду(для обліку у звіті)")
+	//(пошук наступного(1) div-елемента після span(на одному рівні)  )
 	@FindBy(xpath = "//span[contains(., 'Дата надходження рішення суду (для обліку у звіті):')]/../following-sibling::div[1]//input")
 	private WebElement inputReceivingDateMain;
 	
-	//!!!CheckBox "Відбули покарання у виді арешту з утриманням на гауптвахті". Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті"
+	//!!!CheckBox "Carried Punishment" ("Відбули покарання у виді арешту з утриманням на гауптвахті").
+	//Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті"
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//label[contains(., 'Відбули покарання у виді арешту з утриманням на гауптвахті')]")
 	private WebElement checkboxCarriedPunishment;
 	
-	//Input field "Дата початку утримання на гауптвахті:"Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті".(пошук наступного(1) div-елемента після span(на одному рівні) )
+	//Input field "Beginning Punishment Date" ("Дата початку утримання на гауптвахті)
+	//"Enable only if "Результат розгляду"="Арешт з утриманням на гауптвахті".(пошук наступного(1) div-елемента після span(на одному рівні) )
 	@FindBy(xpath = "//span[contains(., 'Дата початку утримання на гауптвахті:')]/../following-sibling::div[1]//input")
-	private WebElement inputBeginingPunishmentDate;
-	
-		
-
-	
-
+	private WebElement inputBeginningPunishmentDate;
 	
 /*------------------Methods---------------------------------------------------------------------------*/
-	
-
 	
 	//Checking if user jumped into page of Unit9 (existing unit9 title)
 	public boolean isOnUnit9Page() {
@@ -186,7 +178,7 @@ public class Unit9MilitaryPage extends Page {
 		type(inputTheory, adminViolCard.theory);
 		type(inputOffenderName, adminViolCard.offenderName);
 		type(inputBirthday, adminViolCard.birthday);
-		inputMilitaryTroops.click();
+		inputMilitaryTroop.click();
 		itemMilitaryTroop.click();
 		type(inputMilitaryUnitName, adminViolCard.militaryUnitName);
 		inputMilitaryRank.click();
@@ -201,65 +193,55 @@ public class Unit9MilitaryPage extends Page {
 		type(inputReceivingCourtDecisionDate, adminViolCard.receivingCourtDecisionDate);
 		type(inputRepeatedReferToCourtDate, adminViolCard.repeatedReferToCourtDate);
 		buttonAdd.click();
-		inputRefer_Receive.click();
+		inputReferReturn.click();
 		Thread.sleep(2000);
-		itemRefer_Receive.click();
+		itemReferReturn.click();
 		type(inputCourtDecisionDate, adminViolCard.courtDecisionDate);
 		buttonAddMovingOfProtocol.click();
 		inputConsiderationResult.click();
 		itemConsiderationResult.click();
 		type(inputReceivingDateMain, adminViolCard.receivingDateMain);
 		checkboxCarriedPunishment.click();
-		type(inputBeginingPunishmentDate, adminViolCard.beginingPunishmentDate);
+		type(inputBeginningPunishmentDate, adminViolCard.beginingPunishmentDate);
 		this.saveCard();
 		this.clickOnAlertOK();
-		//buttonSave.click();
-		//buttonOKAlertPopup.click();
-		
 	}
 	
+	//Removing Card with getinging registration number of the card that is deleting
 	public String removeCardUnit9() throws InterruptedException{
 		buttonRemove.click();
 		String regNumberRemovedCard = this.confirmDeletion();
-		System.out.println("regNumberInU9Page =" + regNumberRemovedCard);
 		this.goToRemoved();
-		//this.clickOnAlertOK();
 		return regNumberRemovedCard;
 	}
 	
-	public String getRegNumberFromGrid() throws InterruptedException{
-		Thread.sleep(1000);
-		System.out.println("before method");
-		Thread.sleep(3000);
-		//cellRegNumberInGrid.click();
-		Actions build = new Actions(driver);
-		build.moveToElement(cellRegNumberInGrid).doubleClick(cellRegNumberInGrid).build().perform();
-		System.out.println("doubleClick!!!!!!!!!!!!!!!");
-		//Thread.sleep(2000);
-		//build.moveToElement(quicktipRegNumberInGrid).build().perform();
-		//((JavascriptExecutor)driver).executeScript("unselectable = off;", cellRegNumberInGrid);
-		return /*quicktipRegNumberInGrid*/cellRegNumberInGrid.getText()/*getAttribute("value")*/;
-	}
+
 	
 	//Click on "Edit" button for the first record in the main grid
 	public void openCardToEdit() {
 		buttonEdit.click();
 	}
 	
-	//getting value from input-field "Protocol Number" in formerly created card
+	//Getting value from input-field "Protocol Number" in formerly created card
 	public String getProtocolNumber() {
-		
 		return inputProtocolNumber.getAttribute("value");
 	}
 	
-	//getting value from input-field "Theory" in formerly created card
+	//Getting value from input-field "Theory" in formerly created card
 	public String getTheory() {
 		return inputTheory.getAttribute("value");
 	}
 	
-	//Editing field "Фабула"
+	//Editing field "Theory" ("Фабула")
 	public void changeValueInTheoryField(String someText) {
 		type(inputTheory, someText);
+	}
+
+	public String recoverCardUnit9() {
+		buttonRecover.click();
+		String regNumber = confirmRecovering();
+		this.goToMainTab();
+		return regNumber;
 	}
 	
 

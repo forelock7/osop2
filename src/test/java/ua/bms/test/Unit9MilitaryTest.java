@@ -15,15 +15,14 @@ import ua.bms.pages.LoginPage;
 public class Unit9MilitaryTest extends BasicTestCase {
 
 	private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
-	
 	private HomePage homePage;
-	
 	private Unit9MilitaryPage unit9MilitaryPage;
 	
 /*-----------------------------Tests---------------------------------------------------------*/	
 	
 	@Test (groups = {"unit9"})
 	public void testJumpToUnit9Page() throws Exception {
+		System.out.println("Tests - Unit9");
 		loginPage.open();
 		homePage = loginPage.loginAs(user);
 		assertTrue(homePage.isLoggedIn());
@@ -34,24 +33,15 @@ public class Unit9MilitaryTest extends BasicTestCase {
 	
 	@Test (groups = {"unit9"}, dependsOnMethods = {"testJumpToUnit9Page"})
 	public void testCreateMilitaryCard() throws Exception {
-		
 		unit9MilitaryPage.createCardU9(aVCard);
 		unit9MilitaryPage.openCardToEdit();
-		
 		String protNumInField = unit9MilitaryPage.getProtocolNumber();
-		
-		//protocol number, that was used upon creating the card
+		//Protocol number, that was used upon creating the card
 		String currentProtNum = aVCard.protocolNumber;
-		
-		System.out.println("protNumInField = " + protNumInField);
-		System.out.println("currentProtNumber = " + currentProtNum);
-		
+		//Checking in console
+		System.out.println("Created Card (protNum) = " + protNumInField + " = " + currentProtNum);
 		Assert.assertEquals(protNumInField, currentProtNum);
 		unit9MilitaryPage.exitFromCard();
-		
-		//unit9MilitaryPage.exitFromCard();
-		//homePage.logOut();
-		//assertTrue(homePage.isLoggedOut());
 	}
 	
 	
@@ -72,8 +62,19 @@ public class Unit9MilitaryTest extends BasicTestCase {
 	@Test (groups = {"unit9"}, dependsOnMethods = {"testEditMilitaryCard"})
 	public void testRemoveMilitaryCard() throws InterruptedException {
 		String regNumRemovedCard = unit9MilitaryPage.removeCardUnit9();
-		String regNumCardInGrid = unit9MilitaryPage.getRegNumberFromGrid();		
+		String regNumCardInGrid = unit9MilitaryPage.getRegNumberFromGridOnDelTab();	
+		//Checking in console
+		System.out.println("Removed Card = " + regNumRemovedCard + " = " + regNumCardInGrid);
 		Assert.assertEquals(regNumRemovedCard, regNumCardInGrid);
+	}
+	
+	@Test (groups = {"unit9"}, dependsOnMethods = {"testRemoveMilitaryCard"})
+	public void testRecoverMilitaryCard() throws InterruptedException {
+		String regNumRecoveredCard = unit9MilitaryPage.recoverCardUnit9();
+		String regNumInGrid = unit9MilitaryPage.getRegNumberFromGridMainTab();
+		//Checking in console
+		System.out.println("Recovered Card = " + regNumRecoveredCard + " = " + regNumInGrid);
+		Assert.assertEquals(regNumRecoveredCard, regNumInGrid);
 	}
 
 	

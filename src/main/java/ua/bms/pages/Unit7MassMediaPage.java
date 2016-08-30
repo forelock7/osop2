@@ -17,7 +17,7 @@ public class Unit7MassMediaPage extends Page{
 	
 	/*-------------------The Web-Elements of Main Page----------------------------------------------------*/
 
-	//Title "ЗМІ"
+	//Title "Mass Media" ("ЗМІ")
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'ЗМІ')]")
 	private WebElement titleMM;
 	
@@ -31,30 +31,31 @@ public class Unit7MassMediaPage extends Page{
 	
 /*------------------The Web-Elements of the Card------------------------------------------------------*/
 	
-	//Input field "Дата виступу"
+	//Input field "Speech Date" ("Дата виступу")
 	@FindBy(xpath = "//div[contains(@id, 'unit7-mediaCard')]//input[contains(@id, 'datefield')]")
 	private WebElement inputSpeechDate;
 	
-	//Input field "Вид висвітлення діяльності органів прокуратури"
+	//Input field "Type Coverage of Prosecution Authorities" ("Вид висвітлення діяльності органів прокуратури")
 	@FindBy(xpath = "//div[contains(@id, 'unit7-mediaCard')]//input[contains(@id, 'treecombo')]")
 	private WebElement inputTypeOfCoverage;
-	//Second Item "Інформація в органи влади" from drop-down list of input field "Вид висвітлення діяльності органів прокуратури"
+	//Second Item "Information for Government Authority" ("Інформація в органи влади") from drop-down list of input field 
+	//"Type Coverage of Prosecution Authorities" "Вид висвітлення діяльності органів прокуратури"
 	@FindBy(xpath  = "//div[contains(@id, 'treepanel')]//table[2]")
 	private WebElement itemTypeOfCoverage;
 	
-	//Input field "Назва ЗМІ"
+	//Input field "Name of Mass Media" ("Назва ЗМІ")
 	@FindBy(xpath = "//div[contains(@id, 'unit7-mediaCard')]//label[contains(., 'Назва ЗМІ:')]/following-sibling::div//input")
 	private WebElement inputNameOfMassMedia;
 	
-	//Input field "Тема чи назва виступу"
+	//Input field "Subject of Speech" ("Тема чи назва виступу")
 	@FindBy(xpath = "//div[contains(@id, 'unit7-mediaCard')]//label[contains(., 'Тема чи назва виступу:')]/following-sibling::div//input")
 	private WebElement inputSubjectOfSpeech;
 	
-	//Input field "Автор"
+	//Input field "Author" ("Автор")
 	@FindBy(xpath = "//div[contains(@id, 'unit7-mediaCard')]//label[contains(., 'Автор:')]/following-sibling::div//input")
 	private WebElement inputAuthorOfSpeech;
 	
-	//Input field "Примітка"
+	//Input field "Remark" ("Примітка")
 	@FindBy(xpath = "//div[contains(@id, 'unit7-mediaCard')]//textarea")
 	private WebElement inputRemark;
 	
@@ -72,16 +73,12 @@ public class Unit7MassMediaPage extends Page{
 		inputTypeOfCoverage.click();
 		Thread.sleep(2000);
 		itemTypeOfCoverage.click();
-		//inputNameOfMassMedia.click();
 		type(inputNameOfMassMedia, massMediaCard.nameOfMassMedia);
 		type(inputSubjectOfSpeech, massMediaCard.subjectOfSpeech);
 		type(inputAuthorOfSpeech, massMediaCard.authorOfSpeech);
 		type(inputRemark, massMediaCard.remark);
-		
 		this.saveCard();
 		this.clickOnAlertOK();
-		//buttonSave.click();
-		//buttonOKAlertPopup.click();
 	}
 	
 	//Click on "Edit" button for the first record in the main grid
@@ -89,6 +86,7 @@ public class Unit7MassMediaPage extends Page{
 		buttonEdit.click();
 	}
 	
+	//Getting existing Subject of Speech from input-field
 	public String getSubjectOfSpeech() {
 		return inputSubjectOfSpeech.getAttribute("value");
 	}

@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Tests">
-              <span class="suite-name border-failed">Tests</span>
+              <span class="suite-name border-passed">Tests</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,35 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">9 methods, 1 failed,  1 skipped,  7 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Tests" class="hide-methods failed suite-Tests"> (hide)</a> <!-- hide-methods failed suite-Tests -->
-                      <a href="#" panel-name="suite-Tests" class="show-methods failed suite-Tests"> (show)</a> <!-- show-methods failed suite-Tests -->
-                    </span>
-                    <div class="method-list-content failed suite-Tests">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ua.bms.test.Unit7MassMediaTest" hash-for-method="testJumpToUnit7Page">testJumpToUnit7Page</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Tests -->
-                  </li>
-                  <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Tests" class="hide-methods skipped suite-Tests"> (hide)</a> <!-- hide-methods skipped suite-Tests -->
-                      <a href="#" panel-name="suite-Tests" class="show-methods skipped suite-Tests"> (show)</a> <!-- show-methods skipped suite-Tests -->
-                    </span>
-                    <div class="method-list-content skipped suite-Tests">
-                      <span>
-                        <img width="3%" src="skipped.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ua.bms.test.Unit7MassMediaTest" hash-for-method="testCreateMassMediaCard">testCreateMassMediaCard</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content skipped suite-Tests -->
+                    <span class="method-stats">10 methods,   10 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -128,6 +100,11 @@
                       <a href="#" panel-name="suite-Tests" class="show-methods passed suite-Tests"> (show)</a> <!-- show-methods passed suite-Tests -->
                     </span>
                     <div class="method-list-content passed suite-Tests">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ua.bms.test.Unit7MassMediaTest" hash-for-method="testCreateMassMediaCard">testCreateMassMediaCard</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ua.bms.test.Unit9MilitaryTest" hash-for-method="testCreateMilitaryCard">testCreateMilitaryCard</a> <!-- method navigator-link -->
@@ -150,12 +127,22 @@
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ua.bms.test.Unit7MassMediaTest" hash-for-method="testJumpToUnit7Page">testJumpToUnit7Page</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ua.bms.test.Unit9MilitaryTest" hash-for-method="testJumpToUnit9Page">testJumpToUnit9Page</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ua.bms.test.LoginTest" hash-for-method="testLogin">testLogin</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Tests" title="ua.bms.test.Unit9MilitaryTest" hash-for-method="testRecoverMilitaryCard">testRecoverMilitaryCard</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -175,86 +162,6 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Tests" class="panel Tests">
-          <div class="suite-Tests-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">ua.bms.test.Unit7MassMediaTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testJumpToUnit7Page">
-                  </a> <!-- testJumpToUnit7Page -->
-                  <span class="method-name">testJumpToUnit7Page</span>
-                  <div class="stack-trace">org.openqa.selenium.WebDriverException: Element is not clickable at point (69, 24). Other element would receive the click: &lt;div id=&quot;ext-element-18&quot; role=&quot;presentation&quot; class=&quot;x-mask x-border-box&quot; style=&quot;height: 969px; width: 1920px; z-index: 18996; right: auto; left: 0px; top: 0px;&quot;&gt;&lt;/div&gt;
-Command duration or timeout: 106 milliseconds
-Build info: version: &apos;2.53.0&apos;, revision: &apos;35ae25b1534ae328c771e0856c93e187490ca824&apos;, time: &apos;2016-03-15 10:43:46&apos;
-System info: host: &apos;ChubenkoV&apos;, ip: &apos;10.101.11.164&apos;, os.name: &apos;Windows 8.1&apos;, os.arch: &apos;x86&apos;, os.version: &apos;6.3&apos;, java.version: &apos;1.8.0_92&apos;
-Driver info: org.openqa.selenium.firefox.FirefoxDriver
-Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=45.2.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
-Session ID: 49163334-9c11-421e-a440-5758d1b05240
-	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:206)
-	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:158)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:678)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:327)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:85)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at com.sun.proxy.$Proxy6.click(Unknown Source)
-	at ua.bms.pages.HomePage.goToU7(HomePage.java:59)
-	at ua.bms.test.Unit7MassMediaTest.testJumpToUnit7Page(Unit7MassMediaTest.java:34)
-... Removed 32 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Tests-class-failed -->
-          <div class="suite-Tests-class-skipped">
-            <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">ua.bms.test.Unit7MassMediaTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testCreateMassMediaCard">
-                  </a> <!-- testCreateMassMediaCard -->
-                  <span class="method-name">testCreateMassMediaCard</span>
-                  <div class="stack-trace">java.lang.Throwable: Method Unit7MassMediaTest.testCreateMassMediaCard()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@88a337] depends on not successfully finished methods
-... Removed 18 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Tests-class-skipped -->
-          <div class="suite-Tests-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">ua.bms.test.LoginTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="testFailedLogin">
-                  </a> <!-- testFailedLogin -->
-                  <span class="method-name">testFailedLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testFailedPassword">
-                  </a> <!-- testFailedPassword -->
-                  <span class="method-name">testFailedPassword</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="testLogin">
-                  </a> <!-- testLogin -->
-                  <span class="method-name">testLogin</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Tests-class-passed -->
           <div class="suite-Tests-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -284,9 +191,67 @@ Session ID: 49163334-9c11-421e-a440-5758d1b05240
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
+                  <a name="testRecoverMilitaryCard">
+                  </a> <!-- testRecoverMilitaryCard -->
+                  <span class="method-name">testRecoverMilitaryCard</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
                   <a name="testRemoveMilitaryCard">
                   </a> <!-- testRemoveMilitaryCard -->
                   <span class="method-name">testRemoveMilitaryCard</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Tests-class-passed -->
+          <div class="suite-Tests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ua.bms.test.Unit7MassMediaTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateMassMediaCard">
+                  </a> <!-- testCreateMassMediaCard -->
+                  <span class="method-name">testCreateMassMediaCard</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testJumpToUnit7Page">
+                  </a> <!-- testJumpToUnit7Page -->
+                  <span class="method-name">testJumpToUnit7Page</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Tests-class-passed -->
+          <div class="suite-Tests-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">ua.bms.test.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFailedLogin">
+                  </a> <!-- testFailedLogin -->
+                  <span class="method-name">testFailedLogin</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testFailedPassword">
+                  </a> <!-- testFailedPassword -->
+                  <span class="method-name">testFailedPassword</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLogin">
+                  </a> <!-- testLogin -->
+                  <span class="method-name">testLogin</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -412,6 +377,10 @@ Session ID: 49163334-9c11-421e-a440-5758d1b05240
                 <br/>
               </div> <!-- method-in-group -->
               <div class="method-in-group">
+                <span class="method-in-group-name">testRecoverMilitaryCard</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
                 <span class="method-in-group-name">testRemoveMilitaryCard</span>
                 <br/>
               </div> <!-- method-in-group -->
@@ -432,48 +401,52 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(9);
+data.addRows(10);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'testCreateMilitaryCard')
 data.setCell(0, 2, 'ua.bms.test.Unit9MilitaryTest')
-data.setCell(0, 3, 17752);
+data.setCell(0, 3, 17585);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'testRemoveMilitaryCard')
+data.setCell(1, 1, 'testJumpToUnit9Page')
 data.setCell(1, 2, 'ua.bms.test.Unit9MilitaryTest')
-data.setCell(1, 3, 9448);
+data.setCell(1, 3, 6672);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'testJumpToUnit9Page')
-data.setCell(2, 2, 'ua.bms.test.Unit9MilitaryTest')
-data.setCell(2, 3, 6592);
+data.setCell(2, 1, 'testCreateMassMediaCard')
+data.setCell(2, 2, 'ua.bms.test.Unit7MassMediaTest')
+data.setCell(2, 3, 6326);
 data.setCell(3, 0, 3)
 data.setCell(3, 1, 'testEditMilitaryCard')
 data.setCell(3, 2, 'ua.bms.test.Unit9MilitaryTest')
-data.setCell(3, 3, 5974);
+data.setCell(3, 3, 5658);
 data.setCell(4, 0, 4)
 data.setCell(4, 1, 'testLogin')
 data.setCell(4, 2, 'ua.bms.test.LoginTest')
-data.setCell(4, 3, 5226);
+data.setCell(4, 3, 5182);
 data.setCell(5, 0, 5)
-data.setCell(5, 1, 'testFailedPassword')
-data.setCell(5, 2, 'ua.bms.test.LoginTest')
-data.setCell(5, 3, 3268);
+data.setCell(5, 1, 'testRemoveMilitaryCard')
+data.setCell(5, 2, 'ua.bms.test.Unit9MilitaryTest')
+data.setCell(5, 3, 4132);
 data.setCell(6, 0, 6)
-data.setCell(6, 1, 'testFailedLogin')
+data.setCell(6, 1, 'testFailedPassword')
 data.setCell(6, 2, 'ua.bms.test.LoginTest')
-data.setCell(6, 3, 3162);
+data.setCell(6, 3, 3762);
 data.setCell(7, 0, 7)
-data.setCell(7, 1, 'testJumpToUnit7Page')
-data.setCell(7, 2, 'ua.bms.test.Unit7MassMediaTest')
-data.setCell(7, 3, 3157);
+data.setCell(7, 1, 'testFailedLogin')
+data.setCell(7, 2, 'ua.bms.test.LoginTest')
+data.setCell(7, 3, 3582);
 data.setCell(8, 0, 8)
-data.setCell(8, 1, 'testCreateMassMediaCard')
-data.setCell(8, 2, 'ua.bms.test.Unit7MassMediaTest')
-data.setCell(8, 3, 0);
+data.setCell(8, 1, 'testRecoverMilitaryCard')
+data.setCell(8, 2, 'ua.bms.test.Unit9MilitaryTest')
+data.setCell(8, 3, 2266);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testJumpToUnit7Page')
+data.setCell(9, 2, 'ua.bms.test.Unit7MassMediaTest')
+data.setCell(9, 3, 1128);
 window.suiteTableData['Tests']= { tableData: data, tableDiv: 'times-div-Tests'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 54 seconds</span>
+              <span class="suite-total-time">Total running time: 56 seconds</span>
               <div id="times-div-Tests">
               </div> <!-- times-div-Tests -->
             </div> <!-- times-div -->
@@ -506,43 +479,49 @@ return data;
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testFailedPassword</span>
-                <span class="method-start">3164 ms</span>
+                <span class="method-start">3584 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testLogin</span>
-                <span class="method-start">6434 ms</span>
+                <span class="method-start">7348 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ua.bms.test.Unit9MilitaryTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">testJumpToUnit9Page</span>
-                <span class="method-start">11693 ms</span>
+                <span class="method-start">12571 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testCreateMilitaryCard</span>
-                <span class="method-start">18287 ms</span>
+                <span class="method-start">19245 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testEditMilitaryCard</span>
-                <span class="method-start">36041 ms</span>
+                <span class="method-start">36832 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">testRemoveMilitaryCard</span>
-                <span class="method-start">42016 ms</span>
+                <span class="method-start">42492 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testRecoverMilitaryCard</span>
+                <span class="method-start">46625 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">ua.bms.test.Unit7MassMediaTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">testJumpToUnit7Page</span>
-                <span class="method-start">51475 ms</span>
+                <span class="method-start">48900 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testCreateMassMediaCard</span>
+                <span class="method-start">50029 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">54649 ms</span>
+                <span class="method-start">56363 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

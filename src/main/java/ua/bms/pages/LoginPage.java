@@ -18,19 +18,19 @@ public class LoginPage extends Page {
 
 /*------------------The Web-Elements of the page------------------------------------------------------*/	
 	
-	//Input field "Логін"
+	//Input field "Login" ("Логін")
 	@FindBy(name = "username")
 	private WebElement fieldUsername;
 	
-	//Input field "Пароль"
+	//Input field "Password" ("Пароль")
 	@FindBy(name = "password")
 	private WebElement fieldPassword;
 	
-	//Button "Увійти в систему"
+	//Button "LogIn" ("Увійти в систему")
 	@FindBy(xpath = "//div[3]/input")
 	private WebElement buttonLogin;
 	
-	//Heading "ВХІД ДО СИСТЕМИ" of login page
+	//Heading "LOGIN" ("ВХІД ДО СИСТЕМИ") of login page
 	@FindBy(xpath = "//body//h2")
 	private WebElement linkLogIn;
 	
@@ -60,7 +60,7 @@ public class LoginPage extends Page {
 		driver.get(ConfigProperties.getProperty("login.url"));
 	}
 	
-	//Accepting alert "Невірний пароль або логін" after failed login or password
+	//Accepting alert "Invalid password or username" ("Невірний пароль або логін") after failed login or password
 	public void acceptFailedLoginAlert() {
 		Alert faildLoginAlert = driver.switchTo().alert();
 		faildLoginAlert.accept();

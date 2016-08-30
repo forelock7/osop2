@@ -6,6 +6,7 @@
       <class name="ua.bms.test.Unit9MilitaryTest">
         <methods>
           <include name="tearDown"/>
+          <include name="testRecoverMilitaryCard"/>
           <include name="getWebDriver"/>
           <include name="testJumpToUnit9Page"/>
           <include name="testRemoveMilitaryCard"/>
