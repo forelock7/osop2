@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class HomePage extends Page {
+public class TopNavigationPage extends Page {
 	
-	public HomePage(WebDriver driver) {
+	public TopNavigationPage(WebDriver driver) {
 		super(driver);
 	}
 	

@@ -10,12 +10,12 @@ import ua.bms.data.UserData;
 import ua.bms.utils.ConfigProperties;
 
 public class LoginPage extends Page {
-	
+	/*
 	//Constructor
 	public LoginPage(WebDriver driver) {
 		super(driver);
 	}
-
+*/
 /*------------------The Web-Elements of the page------------------------------------------------------*/	
 	
 	//Input field "Login" ("Логін")
@@ -37,11 +37,11 @@ public class LoginPage extends Page {
 /*------------------Methods---------------------------------------------------------------------------*/
 		
 	//Setting login form by login and password
-	public HomePage loginAs(UserData user) {
+	public TopNavigationPage loginAs(UserData user) {
 		type(fieldUsername, user.login);
 		type(fieldPassword, user.password);
 		buttonLogin.click();
-		return PageFactory.initElements(driver, HomePage.class);
+		return PageFactory.initElements(driver, TopNavigationPage.class);
 	}
 	
 	//Checking if user is logged out of system(have to exist the title "ВХІД ДО СИСТЕМИ" on Login Page)
