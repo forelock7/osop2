@@ -4,7 +4,7 @@ import static org.testng.Assert.assertTrue;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import ua.bms.pages.HomePage;
+import ua.bms.pages.TopNavigationPage;
 import ua.bms.pages.Unit7MassMediaPage;
 
 public class Unit7MassMediaTest extends BasicTestCase {
@@ -13,7 +13,7 @@ public class Unit7MassMediaTest extends BasicTestCase {
 	//private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
 	//private HomePage homePage;
 	
-	private HomePage homePage = PageFactory.initElements(getWebDriver(), HomePage.class);
+	private TopNavigationPage topNavigationPage = PageFactory.initElements(getWebDriver(), TopNavigationPage.class);
 	private Unit7MassMediaPage unit7MassMediaPage;
 
 	@Test (groups = {"unit7"})
@@ -23,7 +23,7 @@ public class Unit7MassMediaTest extends BasicTestCase {
 		//homePage = loginPage.loginAs(user);
 		//assertTrue(homePage.isLoggedIn());
 		System.out.println("Tests - Unit7");
-		unit7MassMediaPage = homePage.goToU7();
+		unit7MassMediaPage = topNavigationPage.goToU7();
 		assertTrue(unit7MassMediaPage.isOnUnit7Page());
 	}
 	

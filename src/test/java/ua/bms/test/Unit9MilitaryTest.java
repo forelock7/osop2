@@ -7,7 +7,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import ua.bms.pages.Unit9MilitaryPage;
-import ua.bms.pages.HomePage;
+import ua.bms.pages.TopNavigationPage;
 import ua.bms.pages.LoginPage;
 
 
@@ -15,7 +15,7 @@ import ua.bms.pages.LoginPage;
 public class Unit9MilitaryTest extends BasicTestCase {
 
 	private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
-	private HomePage homePage;
+	private TopNavigationPage topNavigationPage;
 	private Unit9MilitaryPage unit9MilitaryPage;
 	
 /*-----------------------------Tests---------------------------------------------------------*/	
@@ -24,9 +24,9 @@ public class Unit9MilitaryTest extends BasicTestCase {
 	public void testJumpToUnit9Page() throws Exception {
 		System.out.println("Tests - Unit9");
 		loginPage.open();
-		homePage = loginPage.loginAs(user);
-		assertTrue(homePage.isLoggedIn());
-		unit9MilitaryPage = homePage.goToU9();
+		topNavigationPage = loginPage.loginAs(user);
+		assertTrue(topNavigationPage.isLoggedIn());
+		unit9MilitaryPage = topNavigationPage.goToU9();
 		assertTrue(unit9MilitaryPage.isOnUnit9Page());
 	}
 	

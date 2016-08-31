@@ -8,25 +8,47 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.annotations.Test;
 
-import ua.bms.pages.HomePage;
+import ua.bms.pages.TopNavigationPage;
 import ua.bms.pages.LoginPage;
+import ua.bms.pages.Page;
 
 public class LoginTest extends BasicTestCase {
 	
+	
+	
+	/*-------
+	
 	//Initialization of page instance according to PageFactory
 	private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
-	private HomePage homePage;
+	private TopNavigationPage topNavigationPage;
+	
+		----------*/
 	
 	@Test(groups = {"login1"})
 	public void testLogin() throws Exception {
 		System.out.println("Tests - Login");
-		loginPage.open();
-		homePage = loginPage.loginAs(user);
-		assertTrue(homePage.isLoggedIn());
-		homePage.logOut();
+		Page.login.open();
+		topNavigationPage = loginPage.loginAs(user);
+		assertTrue(topNavigationPage.isLoggedIn());
+		topNavigationPage.logOut();
 		assertTrue(loginPage.isLoggedOut());
 	}
 	
+	
+	
+	/*----
+	@Test(groups = {"login1"})
+	public void testLogin() throws Exception {
+		System.out.println("Tests - Login");
+		loginPage.open();
+		topNavigationPage = loginPage.loginAs(user);
+		assertTrue(topNavigationPage.isLoggedIn());
+		topNavigationPage.logOut();
+		assertTrue(loginPage.isLoggedOut());
+	}
+
+	
+
 	@Test(groups = {"login2"})
 	public void testFailedPassword() throws Exception {
 		loginPage.open();
@@ -43,5 +65,5 @@ public class LoginTest extends BasicTestCase {
 		assertTrue(loginPage.isLoggedOut());
 	}
 
-
+-----*/
 }

@@ -16,6 +16,9 @@ import ua.bms.utils.ConfigProperties;
 
 public class BasicTestCase {
 	
+	
+	
+	/*-----
 	//Keeping instance of WebDriver
 	protected static WebDriver driver;
 	
@@ -30,6 +33,11 @@ public class BasicTestCase {
 		}
 		return driver;
 	}
+	----*/
+	
+	
+	
+	
 /*-----------------------------------------------------------------------------------------------------------------*/
 	//Initialization of object "user"	
 	protected UserData user = new UserData("vova", "bMS$2016");
@@ -60,7 +68,7 @@ public class BasicTestCase {
 			/*Автор*/"Автор Author 56473657829*^&%#@@!",
 			/*Примітка*/"Примітка Remark*&^&$%$^@$@!");
 
-	
+	/*----
 	@AfterSuite (alwaysRun = true)
 	public void tearDown() throws Exception {
 		if (driver !=null) {
@@ -69,5 +77,5 @@ public class BasicTestCase {
 		System.out.println("Quit from Webdriver");
 	}
 	
-	
+	-----*/
 }

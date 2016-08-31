@@ -2,7 +2,7 @@
 <testng-results skipped="0" failed="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Tests" duration-ms="56868" started-at="2016-08-31T06:27:48Z" finished-at="2016-08-31T06:28:45Z">
+  <suite name="Tests" duration-ms="65057" started-at="2016-08-31T11:04:49Z" finished-at="2016-08-31T11:05:54Z">
     <groups>
       <group name="unit9">
         <method signature="Unit9MilitaryTest.testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testJumpToUnit9Page" class="ua.bms.test.Unit9MilitaryTest"/>
@@ -25,57 +25,57 @@
         <method signature="LoginTest.testLogin()[pri:0, instance:ua.bms.test.LoginTest@f278eb]" name="testLogin" class="ua.bms.test.LoginTest"/>
       </group> <!-- login1 -->
     </groups>
-    <test name="Test1" duration-ms="11942" started-at="2016-08-31T06:27:48Z" finished-at="2016-08-31T06:28:00Z">
+    <test name="Test1" duration-ms="12146" started-at="2016-08-31T11:04:49Z" finished-at="2016-08-31T11:05:02Z">
       <class name="ua.bms.test.LoginTest">
-        <test-method status="PASS" signature="testFailedLogin()[pri:0, instance:ua.bms.test.LoginTest@f278eb]" name="testFailedLogin" duration-ms="4189" started-at="2016-08-31T09:27:49Z" finished-at="2016-08-31T09:27:53Z">
+        <test-method status="PASS" signature="testFailedLogin()[pri:0, instance:ua.bms.test.LoginTest@f278eb]" name="testFailedLogin" duration-ms="3264" started-at="2016-08-31T14:04:49Z" finished-at="2016-08-31T14:04:53Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFailedLogin -->
-        <test-method status="PASS" signature="testFailedPassword()[pri:0, instance:ua.bms.test.LoginTest@f278eb]" name="testFailedPassword" duration-ms="2660" started-at="2016-08-31T09:27:53Z" finished-at="2016-08-31T09:27:55Z">
+        <test-method status="PASS" signature="testFailedPassword()[pri:0, instance:ua.bms.test.LoginTest@f278eb]" name="testFailedPassword" duration-ms="2564" started-at="2016-08-31T14:04:53Z" finished-at="2016-08-31T14:04:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testFailedPassword -->
-        <test-method status="PASS" signature="testLogin()[pri:0, instance:ua.bms.test.LoginTest@f278eb]" name="testLogin" duration-ms="5069" started-at="2016-08-31T09:27:55Z" finished-at="2016-08-31T09:28:00Z">
+        <test-method status="PASS" signature="testLogin()[pri:0, instance:ua.bms.test.LoginTest@f278eb]" name="testLogin" duration-ms="6291" started-at="2016-08-31T14:04:55Z" finished-at="2016-08-31T14:05:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLogin -->
       </class> <!-- ua.bms.test.LoginTest -->
     </test> <!-- Test1 -->
-    <test name="Test2" duration-ms="38242" started-at="2016-08-31T06:28:00Z" finished-at="2016-08-31T06:28:39Z">
+    <test name="Test2" duration-ms="43856" started-at="2016-08-31T11:05:02Z" finished-at="2016-08-31T11:05:45Z">
       <class name="ua.bms.test.Unit9MilitaryTest">
-        <test-method status="PASS" signature="testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testJumpToUnit9Page" duration-ms="6857" started-at="2016-08-31T09:28:00Z" finished-at="2016-08-31T09:28:07Z">
+        <test-method status="PASS" signature="testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testJumpToUnit9Page" duration-ms="7016" started-at="2016-08-31T14:05:02Z" finished-at="2016-08-31T14:05:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testJumpToUnit9Page -->
-        <test-method status="PASS" signature="testCreateMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testCreateMilitaryCard" duration-ms="19468" started-at="2016-08-31T09:28:07Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testJumpToUnit9Page" finished-at="2016-08-31T09:28:27Z">
+        <test-method status="PASS" signature="testCreateMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testCreateMilitaryCard" duration-ms="22350" started-at="2016-08-31T14:05:09Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testJumpToUnit9Page" finished-at="2016-08-31T14:05:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateMilitaryCard -->
-        <test-method status="PASS" signature="testEditMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testEditMilitaryCard" duration-ms="5405" started-at="2016-08-31T09:28:27Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testCreateMilitaryCard" finished-at="2016-08-31T09:28:32Z">
+        <test-method status="PASS" signature="testEditMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testEditMilitaryCard" duration-ms="6056" started-at="2016-08-31T14:05:31Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testCreateMilitaryCard" finished-at="2016-08-31T14:05:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testEditMilitaryCard -->
-        <test-method status="PASS" signature="testRemoveMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testRemoveMilitaryCard" duration-ms="4310" started-at="2016-08-31T09:28:32Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testEditMilitaryCard" finished-at="2016-08-31T09:28:37Z">
+        <test-method status="PASS" signature="testRemoveMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testRemoveMilitaryCard" duration-ms="5840" started-at="2016-08-31T14:05:37Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testEditMilitaryCard" finished-at="2016-08-31T14:05:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRemoveMilitaryCard -->
-        <test-method status="PASS" signature="testRecoverMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testRecoverMilitaryCard" duration-ms="2193" started-at="2016-08-31T09:28:37Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard" finished-at="2016-08-31T09:28:39Z">
+        <test-method status="PASS" signature="testRecoverMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@12b503c]" name="testRecoverMilitaryCard" duration-ms="2584" started-at="2016-08-31T14:05:43Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard" finished-at="2016-08-31T14:05:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testRecoverMilitaryCard -->
       </class> <!-- ua.bms.test.Unit9MilitaryTest -->
     </test> <!-- Test2 -->
-    <test name="Test3" duration-ms="6649" started-at="2016-08-31T06:28:39Z" finished-at="2016-08-31T06:28:45Z">
+    <test name="Test3" duration-ms="9011" started-at="2016-08-31T11:05:45Z" finished-at="2016-08-31T11:05:54Z">
       <class name="ua.bms.test.Unit7MassMediaTest">
-        <test-method status="PASS" signature="testJumpToUnit7Page()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@10a1059]" name="testJumpToUnit7Page" duration-ms="1131" started-at="2016-08-31T09:28:39Z" finished-at="2016-08-31T09:28:40Z">
+        <test-method status="PASS" signature="testJumpToUnit7Page()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@10a1059]" name="testJumpToUnit7Page" duration-ms="1834" started-at="2016-08-31T14:05:45Z" finished-at="2016-08-31T14:05:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testJumpToUnit7Page -->
-        <test-method status="PASS" signature="testCreateMassMediaCard()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@10a1059]" name="testCreateMassMediaCard" duration-ms="5516" started-at="2016-08-31T09:28:40Z" depends-on-methods="ua.bms.test.Unit7MassMediaTest.testJumpToUnit7Page" finished-at="2016-08-31T09:28:45Z">
+        <test-method status="PASS" signature="testCreateMassMediaCard()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@10a1059]" name="testCreateMassMediaCard" duration-ms="7173" started-at="2016-08-31T14:05:47Z" depends-on-methods="ua.bms.test.Unit7MassMediaTest.testJumpToUnit7Page" finished-at="2016-08-31T14:05:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testCreateMassMediaCard -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@10a1059]" name="tearDown" is-config="true" duration-ms="741" started-at="2016-08-31T09:28:45Z" finished-at="2016-08-31T09:28:46Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@10a1059]" name="tearDown" is-config="true" duration-ms="739" started-at="2016-08-31T14:05:54Z" finished-at="2016-08-31T14:05:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
