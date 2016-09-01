@@ -1,19 +1,15 @@
 package ua.bms.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import ua.bms.data.Unit7CardData;
-
-public class Unit7MassMediaPage extends Page{
+public class Unit7MassMediaPage extends AnyPage{
 	
-	public Unit7MassMediaPage(WebDriver driver) {
-		super(driver);
+	public Unit7MassMediaPage(PageManager pages) {
+		super(pages);
 	}
 	
-	@Override
-	public void open() {}
+
 	
 	/*-------------------The Web-Elements of Main Page----------------------------------------------------*/
 
@@ -60,7 +56,7 @@ public class Unit7MassMediaPage extends Page{
 	private WebElement inputRemark;
 	
 	/*------------------Methods---------------------------------------------------------------------------*/
-	
+/*	
 	//Checking if user jumped into page of Unit7 (existing unit7 title)
 	public boolean isOnUnit7Page() {
 		return isElementPresent(titleMM);
@@ -89,5 +85,5 @@ public class Unit7MassMediaPage extends Page{
 	//Getting existing Subject of Speech from input-field
 	public String getSubjectOfSpeech() {
 		return inputSubjectOfSpeech.getAttribute("value");
-	}
+	}*/
 }

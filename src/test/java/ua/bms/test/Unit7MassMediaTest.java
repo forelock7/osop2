@@ -13,6 +13,8 @@ public class Unit7MassMediaTest extends BasicTestCase {
 	//private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
 	//private HomePage homePage;
 	
+	
+	/*
 	private TopNavigationPage topNavigationPage = PageFactory.initElements(getWebDriver(), TopNavigationPage.class);
 	private Unit7MassMediaPage unit7MassMediaPage;
 
@@ -40,5 +42,5 @@ public class Unit7MassMediaTest extends BasicTestCase {
 		Assert.assertEquals(subjectOfSpeechInField, currentsubjectOfSpeech);
 		unit7MassMediaPage.exitFromCard();
 	}
-	
+	*/
 }

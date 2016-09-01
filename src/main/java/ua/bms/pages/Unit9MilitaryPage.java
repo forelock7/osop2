@@ -1,21 +1,14 @@
 package ua.bms.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-
-import ua.bms.data.Unit9CardData;
-
-
-public class Unit9MilitaryPage extends Page {
+public class Unit9MilitaryPage extends AnyPage {
 	
-	public Unit9MilitaryPage(WebDriver driver) {
-		super(driver);
+	public Unit9MilitaryPage(PageManager pages) {
+		super(pages);
 	}
 	
-	@Override
-	public void open() {}
 	
 /*-------------------The Web-Elements of Main Page----------------------------------------------------*/
 
@@ -160,7 +153,7 @@ public class Unit9MilitaryPage extends Page {
 	private WebElement inputBeginningPunishmentDate;
 	
 /*------------------Methods---------------------------------------------------------------------------*/
-	
+/*	
 	//Checking if user jumped into page of Unit9 (existing unit9 title)
 	public boolean isOnUnit9Page() {
 		return isElementPresent(titleAV);
@@ -243,7 +236,7 @@ public class Unit9MilitaryPage extends Page {
 		this.goToMainTab();
 		return regNumber;
 	}
-	
+	*/
 
 	
 

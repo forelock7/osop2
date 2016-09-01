@@ -1,21 +1,18 @@
 package ua.bms.pages;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import ua.bms.model.User;
 
-import ua.bms.data.UserData;
-import ua.bms.utils.ConfigProperties;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
-public class LoginPage extends Page {
-	/*
-	//Constructor
-	public LoginPage(WebDriver driver) {
-		super(driver);
+public class LoginPage extends AnyPage {
+	
+	public LoginPage(PageManager pages) {
+		super(pages);
 	}
-*/
+
 /*------------------The Web-Elements of the page------------------------------------------------------*/	
 	
 	//Input field "Login" ("Логін")
@@ -35,36 +32,50 @@ public class LoginPage extends Page {
 	private WebElement linkLogIn;
 	
 /*------------------Methods---------------------------------------------------------------------------*/
-		
+	
+	public LoginPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(presenceOfElementLocated(By.xpath("//body//h2")));
+		return this;
+	}
+	
+	public LoginPage setLoginForm(User user) {
+		type(fieldUsername, user.login);
+		type(fieldPassword, user.password);
+		return this;
+	}
+	
+	public void clickSubmitButton() {
+		buttonLogin.click();
+	}
+	
+	
+}
 	//Setting login form by login and password
-	public TopNavigationPage loginAs(UserData user) {
+	/*public TopNavigationPage loginAs(User user) {
 		type(fieldUsername, user.login);
 		type(fieldPassword, user.password);
 		buttonLogin.click();
 		return PageFactory.initElements(driver, TopNavigationPage.class);
-	}
+	}*/
 	
 	//Checking if user is logged out of system(have to exist the title "ВХІД ДО СИСТЕМИ" on Login Page)
-	public boolean isLoggedOut() {
+	/*public boolean isLoggedOut() {
+		
 		if (isElementPresent(linkLogIn)) {
 			return true;
 		}
 		else {
 			return false;
-		}
-	}
+		}*/
 	
-	//Putting the URL into browser
-	@Override
-	public void open() {
-		driver.get(ConfigProperties.getProperty("login.url"));
-	}
-	
+
+	/*
 	//Accepting alert "Invalid password or username" ("Невірний пароль або логін") after failed login or password
 	public void acceptFailedLoginAlert() {
 		Alert faildLoginAlert = driver.switchTo().alert();
 		faildLoginAlert.accept();
-	}
+	}*/
 
 
-}
+

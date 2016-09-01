@@ -2,21 +2,27 @@
 
 package ua.bms.test;
 
-import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeClass;
+import ua.bms.applogic1.ApplicationManager1;
+import ua.bms.model.Unit7CardData;
+import ua.bms.model.Unit9CardData;
+import ua.bms.model.User;
 
-import ua.bms.data.Unit7CardData;
-import ua.bms.data.Unit9CardData;
-import ua.bms.data.UserData;
-import ua.bms.utils.ConfigProperties;
 
 public class BasicTestCase {
 	
-	
+	protected ApplicationManager1 app;
+
+	@BeforeClass
+	public void init() {
+		app = new ApplicationManager1();
+	}
+		
+	@AfterSuite
+	public void stop() {
+		app.stop();
+	}
 	
 	/*-----
 	//Keeping instance of WebDriver
@@ -40,9 +46,9 @@ public class BasicTestCase {
 	
 /*-----------------------------------------------------------------------------------------------------------------*/
 	//Initialization of object "user"	
-	protected UserData user = new UserData("vova", "bMS$2016");
-	protected UserData user1 = new UserData("vova", "failedPassword");
-	protected UserData user2 = new UserData("failedLogin", "bMS$2016");
+	protected User user = new User("vova", "bMS$2016");
+	protected User user1 = new User("vova", "failedPassword");
+	protected User user2 = new User("failedLogin", "bMS$2016");
 /*-----------------------------------------------------------------------------------------------------------------*/	
 	//Initialization of input fields from Military Administrative Violation Card except field with drop-down list
 	protected static Unit9CardData aVCard = new Unit9CardData(

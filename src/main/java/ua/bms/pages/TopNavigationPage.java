@@ -1,14 +1,15 @@
 package ua.bms.pages;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
-public class TopNavigationPage extends Page {
+
+public class TopNavigationPage extends AnyPage {
 	
-	public TopNavigationPage(WebDriver driver) {
-		super(driver);
+	public TopNavigationPage(PageManager pages) {
+		super(pages);
 	}
 	
 /*------------------The Web-Elements of the MAIN TOOLBAR------------------------------------------------------*/
@@ -31,16 +32,27 @@ public class TopNavigationPage extends Page {
 	private WebElement menuItemU7;
 	
 /*------------------Methods---------------------------------------------------------------------------*/	
+
+	public TopNavigationPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+	    wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'mainToolBarContainer')]//span[contains(text(), 'Вихід')]")));
+	    return this;
+	}
+
+	public LoginPage clickLogoutLink(){
+		linkLogOut.click();
+		buttonYesConfirmationPopup.click();
+		return pages.loginPage;
+	}
+
 	
-	@Override
-	public void open(){};
-	
-	
+/*	
 	//Checking if user is logged in system(have to exist the button "LogOut" ("Вихід"))
 	public boolean isLoggedIn() {
 		return isElementPresent(linkLogOut);
 	}
 	
+		
 	//Performing of logging of system
 	public LoginPage logOut() {
 		linkLogOut.click();
@@ -61,4 +73,6 @@ public class TopNavigationPage extends Page {
 		menuItemU7.click();
 		return PageFactory.initElements(driver, Unit7MassMediaPage.class);
 	}
+	
+	*/
 }

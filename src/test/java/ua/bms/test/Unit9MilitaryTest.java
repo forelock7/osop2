@@ -14,13 +14,15 @@ import ua.bms.pages.LoginPage;
 
 public class Unit9MilitaryTest extends BasicTestCase {
 
+/*
 	private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
 	private TopNavigationPage topNavigationPage;
 	private Unit9MilitaryPage unit9MilitaryPage;
+*/
 	
 /*-----------------------------Tests---------------------------------------------------------*/	
 	
-	@Test (groups = {"unit9"})
+/*	@Test (groups = {"unit9"})
 	public void testJumpToUnit9Page() throws Exception {
 		System.out.println("Tests - Unit9");
 		loginPage.open();
@@ -76,7 +78,7 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		System.out.println("Recovered Card = " + regNumRecoveredCard + " = " + regNumInGrid);
 		Assert.assertEquals(regNumRecoveredCard, regNumInGrid);
 	}
-
+*/
 	
 
 }

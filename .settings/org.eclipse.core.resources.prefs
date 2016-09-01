@@ -1,5 +1,5 @@
 eclipse.preferences.version=1
-encoding//src/main/java/ua/bms/data/Unit9CardData.java=UTF-8
-encoding//src/main/java/ua/bms/data/UserData.java=UTF-8
+encoding//src/main/java/ua/bms/model/Unit9CardData.java=UTF-8
+encoding//src/main/java/ua/bms/model/User.java=UTF-8
 encoding//src/main/java/ua/bms/pages/TopNavigationPage.java=UTF-8
 encoding//src/main/java/ua/bms/pages/Unit9MilitaryPage.java=UTF-8

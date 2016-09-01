@@ -1,4 +1,4 @@
-package ua.bms.data;
+package ua.bms.model;
 
 import java.util.Random;
 
