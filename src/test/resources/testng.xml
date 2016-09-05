@@ -2,13 +2,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Tests">
 	<test verbose="1" name="Test1">
-		<groups>
-			<run>
-				<include name = "login1" />
-				<include name = "login2" />
-				<include name = "login3" />
-			</run>
-		</groups>
+
 		<classes>
       		 <class name="ua.bms.test.LoginTest" />
  		</classes>
@@ -25,14 +19,6 @@
  		</classes>
 	</test>
 	
-		<test verbose="1" name="Test3">
-		<groups>
-			<run>
-				<include name = "unit7" />
-			</run>
-		</groups>
-		<classes>
-      		 <class name="ua.bms.test.Unit7MassMediaTest" />
- 		</classes>
-	</test>
+
+
 </suite>

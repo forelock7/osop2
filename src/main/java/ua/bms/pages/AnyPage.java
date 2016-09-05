@@ -1,6 +1,5 @@
 package ua.bms.pages;
 
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -10,7 +9,7 @@ public abstract class AnyPage extends Page {
 		super(pages);
 	}
 		
-	/*---------------The similar web-elements that is available on all pages------------*/
+/*---------------The similar web-elements that is available on all pages------------*/
 	
 	/*The main page of UNITs*/	
 		

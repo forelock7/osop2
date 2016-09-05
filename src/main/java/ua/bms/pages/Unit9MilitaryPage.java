@@ -1,5 +1,8 @@
 package ua.bms.pages;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -153,7 +156,14 @@ public class Unit9MilitaryPage extends AnyPage {
 	private WebElement inputBeginningPunishmentDate;
 	
 /*------------------Methods---------------------------------------------------------------------------*/
-/*	
+
+	public Unit9MilitaryPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")));
+		return this;
+	}
+	
+	/*	
 	//Checking if user jumped into page of Unit9 (existing unit9 title)
 	public boolean isOnUnit9Page() {
 		return isElementPresent(titleAV);

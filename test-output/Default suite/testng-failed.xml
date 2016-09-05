@@ -5,7 +5,7 @@
     <classes>
       <class name="ua.bms.test.LoginTest">
         <methods>
-          <include name="testFailedPassword"/>
+          <include name="testLoginOK"/>
           <include name="init"/>
           <include name="mayBeLogout"/>
           <include name="stop"/>

@@ -15,5 +15,17 @@ public class NavigationHelper1 extends DriverBasedHelper implements NavigationHe
 	public void openMainPage() {
 		driver.get(baseUrl);
 	}
+	
+	@Override
+	public void goToUnit7Page(){
+		pages.topNavigationPage.ensurePageLoaded().clickUnit7Page();
+	}	
+	
+	@Override
+	public void goToUnit9Page(){
+		pages.topNavigationPage.ensurePageLoaded().clickUnit9Page();
+	}
+	
+
 
 }

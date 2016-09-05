@@ -11,16 +11,15 @@
       <class name="ua.bms.test.Unit9MilitaryTest">
         <methods>
           <include name="testJumpToUnit9Page"/>
-          <include name="testRemoveMilitaryCard"/>
-          <include name="testEditMilitaryCard"/>
-          <include name="testCreateMilitaryCard"/>
         </methods>
       </class> <!-- ua.bms.test.Unit9MilitaryTest -->
-      <class name="ua.bms.test.Unit7MassMediaTest">
+      <class name="ua.bms.test.LoginTest">
         <methods>
-          <include name="tearDown"/>
+          <include name="init"/>
+          <include name="mayBeLogout"/>
+          <include name="stop"/>
         </methods>
-      </class> <!-- ua.bms.test.Unit7MassMediaTest -->
+      </class> <!-- ua.bms.test.LoginTest -->
     </classes>
   </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [Tests] -->

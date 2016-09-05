@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import ua.bms.model.User;
-
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
 public class LoginPage extends AnyPage {
@@ -33,12 +32,14 @@ public class LoginPage extends AnyPage {
 	
 /*------------------Methods---------------------------------------------------------------------------*/
 	
+	//ensuring page loading according to existence of Heading h2
 	public LoginPage ensurePageLoaded() {
 		super.ensurePageLoaded();
 		wait.until(presenceOfElementLocated(By.xpath("//body//h2")));
 		return this;
 	}
 	
+	//filling Login Form in
 	public LoginPage setLoginForm(User user) {
 		type(fieldUsername, user.login);
 		type(fieldPassword, user.password);
@@ -49,33 +50,18 @@ public class LoginPage extends AnyPage {
 		buttonLogin.click();
 	}
 	
-	
+	//Accepting alert "Invalid password or username" ("Невірний пароль або логін") after failed login or password
+	public void acceptFailedLoginAlert(){
+		wait.until(alertIsPresent()).accept();
+		//Alert faildLoginAlert = driver.switchTo().alert();
+		//faildLoginAlert.accept();
+	}
+
 }
-	//Setting login form by login and password
-	/*public TopNavigationPage loginAs(User user) {
-		type(fieldUsername, user.login);
-		type(fieldPassword, user.password);
-		buttonLogin.click();
-		return PageFactory.initElements(driver, TopNavigationPage.class);
-	}*/
-	
-	//Checking if user is logged out of system(have to exist the title "ВХІД ДО СИСТЕМИ" on Login Page)
-	/*public boolean isLoggedOut() {
-		
-		if (isElementPresent(linkLogIn)) {
-			return true;
-		}
-		else {
-			return false;
-		}*/
+
 	
 
-	/*
-	//Accepting alert "Invalid password or username" ("Невірний пароль або логін") after failed login or password
-	public void acceptFailedLoginAlert() {
-		Alert faildLoginAlert = driver.switchTo().alert();
-		faildLoginAlert.accept();
-	}*/
+
 
 
 

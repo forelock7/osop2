@@ -39,40 +39,25 @@ public class TopNavigationPage extends AnyPage {
 	    return this;
 	}
 
+	//Performing of logOut of system
 	public LoginPage clickLogoutLink(){
 		linkLogOut.click();
 		buttonYesConfirmationPopup.click();
 		return pages.loginPage;
 	}
-
 	
-/*	
-	//Checking if user is logged in system(have to exist the button "LogOut" ("Вихід"))
-	public boolean isLoggedIn() {
-		return isElementPresent(linkLogOut);
-	}
-	
-		
-	//Performing of logging of system
-	public LoginPage logOut() {
-		linkLogOut.click();
-		buttonYesConfirmationPopup.click();
-		return PageFactory.initElements(driver, LoginPage.class);
-	}
-
-	//Moving from "Home" page to "Military Administrative violations" page
-	public Unit9MilitaryPage goToU9() {
-		reportSections.click();
-		menuItemU9.click();
-		return PageFactory.initElements(driver, Unit9MilitaryPage.class);
-	}
-	
-	//Moving from "Home" page to "Mass Media" page
-	public Unit7MassMediaPage goToU7() throws InterruptedException {
+	//U7 - Moving from "Home" page to "Mass Media" page
+	public Unit7MassMediaPage clickUnit7Page(){
 		reportSections.click();	
 		menuItemU7.click();
-		return PageFactory.initElements(driver, Unit7MassMediaPage.class);
+		return pages.unit7MassMediaPage;
 	}
 	
-	*/
+	//U9 - Moving from "Home" page to "Military Administrative violations" page
+	public Unit9MilitaryPage clickUnit9Page() {
+		reportSections.click();
+		menuItemU9.click();
+		return pages.unit9MilitaryPage;
+	}
+
 }

@@ -1,26 +1,28 @@
 package ua.bms.test;
 
 import static org.testng.Assert.assertTrue;
-
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import ua.bms.pages.Unit9MilitaryPage;
-import ua.bms.pages.TopNavigationPage;
-import ua.bms.pages.LoginPage;
-
-
-
 public class Unit9MilitaryTest extends BasicTestCase {
-
-/*
-	private LoginPage loginPage = PageFactory.initElements(getWebDriver(), LoginPage.class);
-	private TopNavigationPage topNavigationPage;
-	private Unit9MilitaryPage unit9MilitaryPage;
-*/
 	
 /*-----------------------------Tests---------------------------------------------------------*/	
+
+	@BeforeClass
+	public void mayBeLogIn() {
+		if (app.getUserHelper().isLoggedIn()) {
+			return;
+		}
+		app.getUserHelper().loginAs(user);
+	}
+	
+	@Test (groups = {"unit9"})
+	public void testJumpToUnit9Page(){
+		assertTrue(app.getUserHelper().isLoggedIn());
+		app.getNavigationHelper().goToUnit9Page();
+		assertTrue(app.getUnit9Helper().isOnUnit9Page());
+	}	
+
 	
 /*	@Test (groups = {"unit9"})
 	public void testJumpToUnit9Page() throws Exception {
