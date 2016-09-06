@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Tests">
+
 	<test verbose="1" name="Test1">
 
 		<classes>
@@ -9,16 +10,17 @@
 	</test>  
 
 	<test verbose="1" name="Test2">
-		<groups>
-			<run>
-				<include name = "unit9" />
-			</run>
-		</groups>
+
 		<classes>
       		 <class name="ua.bms.test.Unit9MilitaryTest" />
  		</classes>
 	</test>
 	
+		<test verbose="1" name="Test3">
 
+		<classes>
+      		 <class name="ua.bms.test.Unit7MassMediaTest" />
+ 		</classes>
+	</test>
 
 </suite>

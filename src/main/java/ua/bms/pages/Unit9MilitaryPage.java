@@ -6,13 +6,20 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import ua.bms.model.Unit9Card;
+
 public class Unit9MilitaryPage extends AnyPage {
 	
 	public Unit9MilitaryPage(PageManager pages) {
 		super(pages);
 	}
 	
-	
+	public Unit9MilitaryPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")));
+		return this;
+	}
+		
 /*-------------------The Web-Elements of Main Page----------------------------------------------------*/
 
 	//Title "Military Administrative Violations" ("Військові адмінправопорушення")
@@ -21,7 +28,7 @@ public class Unit9MilitaryPage extends AnyPage {
 	
 	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-12).
 	@FindBy(xpath = "//table[1]//td[12]/div")
-	private WebElement buttonEdit;
+	private WebElement buttonEditU9;
 	
 	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-13).
 	@FindBy(xpath = "//table[1]//td[13]/div/img")
@@ -156,26 +163,12 @@ public class Unit9MilitaryPage extends AnyPage {
 	private WebElement inputBeginningPunishmentDate;
 	
 /*------------------Methods---------------------------------------------------------------------------*/
-
-	public Unit9MilitaryPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")));
-		return this;
-	}
-	
-	/*	
-	//Checking if user jumped into page of Unit9 (existing unit9 title)
-	public boolean isOnUnit9Page() {
-		return isElementPresent(titleAV);
-	}
-
-	//Creating the new card with filling all fields in
-	public void createCardU9 (Unit9CardData adminViolCard) throws InterruptedException {
-		buttonCreateCard.click();
+		
+	public Unit9MilitaryPage setCardUnit9(Unit9Card adminViolCard) /*throws InterruptedException*/{
 		type(inputProtocolNumber, adminViolCard.protocolNumber);
 		type(inputProtocolCreatingDate, adminViolCard.protocolCreatingDate);
 		inputSectionAVLawbook.click();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		itemSectionAVLawbook.click();
 		type(inputCommitingAVDate, adminViolCard.commitingAVDate);
 		type(inputTheory, adminViolCard.theory);
@@ -197,7 +190,7 @@ public class Unit9MilitaryPage extends AnyPage {
 		type(inputRepeatedReferToCourtDate, adminViolCard.repeatedReferToCourtDate);
 		buttonAdd.click();
 		inputReferReturn.click();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		itemReferReturn.click();
 		type(inputCourtDecisionDate, adminViolCard.courtDecisionDate);
 		buttonAddMovingOfProtocol.click();
@@ -206,23 +199,12 @@ public class Unit9MilitaryPage extends AnyPage {
 		type(inputReceivingDateMain, adminViolCard.receivingDateMain);
 		checkboxCarriedPunishment.click();
 		type(inputBeginningPunishmentDate, adminViolCard.beginingPunishmentDate);
-		this.saveCard();
-		this.clickOnAlertOK();
+		return this;
 	}
-	
-	//Removing Card with getinging registration number of the card that is deleting
-	public String removeCardUnit9() throws InterruptedException{
-		buttonRemove.click();
-		String regNumberRemovedCard = this.confirmDeletion();
-		this.goToRemoved();
-		return regNumberRemovedCard;
-	}
-	
-
 	
 	//Click on "Edit" button for the first record in the main grid
-	public void openCardToEdit() {
-		buttonEdit.click();
+	public void openCardToEditU9() {
+		buttonEditU9.click();
 	}
 	
 	//Getting value from input-field "Protocol Number" in formerly created card
@@ -230,24 +212,27 @@ public class Unit9MilitaryPage extends AnyPage {
 		return inputProtocolNumber.getAttribute("value");
 	}
 	
+
+	//Editing SOME field ("Theory" ("Фабула"))
+	public void changeValueInTextField(String someNewText) {
+		type(inputTheory, someNewText);
+	}
+	
 	//Getting value from input-field "Theory" in formerly created card
-	public String getTheory() {
+	public String getValueInFieldTheory() {
 		return inputTheory.getAttribute("value");
 	}
 	
-	//Editing field "Theory" ("Фабула")
-	public void changeValueInTheoryField(String someText) {
-		type(inputTheory, someText);
+	//Removing Card with getinging registration number of the card that is deleting
+	public void removeCard(Unit9Card adminViolCard){
+		buttonRemove.click();
+		adminViolCard.regNumberRemovedCard = this.confirmationOfDeletion();
 	}
-
-	public String recoverCardUnit9() {
+	
+	public void restoreCard(Unit9Card adminViolCard) {
 		buttonRecover.click();
-		String regNumber = confirmRecovering();
-		this.goToMainTab();
-		return regNumber;
+		adminViolCard.regNumberRestoredCard = confirmRestoring();
 	}
-	*/
-
+}
 	
 
-}

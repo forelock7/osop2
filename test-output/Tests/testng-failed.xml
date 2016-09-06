@@ -2,22 +2,22 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Tests]">
   <test name="Test2(failed)">
-    <groups>
-      <run>
-        <include name="unit9"/>
-      </run>
-    </groups>
     <classes>
       <class name="ua.bms.test.Unit9MilitaryTest">
         <methods>
+          <include name="mayBeLogIn"/>
+          <include name="init"/>
           <include name="testJumpToUnit9Page"/>
+          <include name="testEditMilitaryCard"/>
+          <include name="testCreateMilitaryCard"/>
+          <include name="stop"/>
         </methods>
       </class> <!-- ua.bms.test.Unit9MilitaryTest -->
       <class name="ua.bms.test.LoginTest">
         <methods>
+          <include name="mayBeLogIn"/>
           <include name="init"/>
           <include name="mayBeLogout"/>
-          <include name="stop"/>
         </methods>
       </class> <!-- ua.bms.test.LoginTest -->
     </classes>

@@ -1,99 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="4" passed="3">
+<testng-results skipped="0" failed="0" total="11" passed="11">
   <reporter-output>
   </reporter-output>
-  <suite name="Tests" duration-ms="15094" started-at="2016-09-05T15:10:24Z" finished-at="2016-09-05T15:10:39Z">
+  <suite name="Tests" duration-ms="132781" started-at="2016-09-06T15:04:49Z" finished-at="2016-09-06T15:07:01Z">
     <groups>
       <group name="unit9">
-        <method signature="Unit9MilitaryTest.testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1774679]" name="testJumpToUnit9Page" class="ua.bms.test.Unit9MilitaryTest"/>
+        <method signature="Unit9MilitaryTest.testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testJumpToUnit9Page" class="ua.bms.test.Unit9MilitaryTest"/>
+        <method signature="Unit9MilitaryTest.testCreateMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testCreateMilitaryCard" class="ua.bms.test.Unit9MilitaryTest"/>
+        <method signature="Unit9MilitaryTest.testEditMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testEditMilitaryCard" class="ua.bms.test.Unit9MilitaryTest"/>
+        <method signature="Unit9MilitaryTest.testRemoveMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testRemoveMilitaryCard" class="ua.bms.test.Unit9MilitaryTest"/>
+        <method signature="Unit9MilitaryTest.testRestoreMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testRestoreMilitaryCard" class="ua.bms.test.Unit9MilitaryTest"/>
       </group> <!-- unit9 -->
-      <group name="login3">
-        <method signature="LoginTest.testLoginFailedLogin()[pri:1, instance:ua.bms.test.LoginTest@c0edeb]" name="testLoginFailedLogin" class="ua.bms.test.LoginTest"/>
-      </group> <!-- login3 -->
-      <group name="login2">
-        <method signature="LoginTest.testLoginFailedPassword()[pri:2, instance:ua.bms.test.LoginTest@c0edeb]" name="testLoginFailedPassword" class="ua.bms.test.LoginTest"/>
-      </group> <!-- login2 -->
-      <group name="login1">
-        <method signature="LoginTest.testLoginOK()[pri:3, instance:ua.bms.test.LoginTest@c0edeb]" name="testLoginOK" class="ua.bms.test.LoginTest"/>
-      </group> <!-- login1 -->
+      <group name="unit7">
+        <method signature="Unit7MassMediaTest.testJumpToUnit7Page()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@17fd0e6]" name="testJumpToUnit7Page" class="ua.bms.test.Unit7MassMediaTest"/>
+        <method signature="Unit7MassMediaTest.testCreateMassMediaCard()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@17fd0e6]" name="testCreateMassMediaCard" class="ua.bms.test.Unit7MassMediaTest"/>
+        <method signature="Unit7MassMediaTest.testEditMassMediaCard()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@17fd0e6]" name="testEditMassMediaCard" class="ua.bms.test.Unit7MassMediaTest"/>
+      </group> <!-- unit7 -->
+      <group name="login">
+        <method signature="LoginTest.testLoginFailedLogin()[pri:1, instance:ua.bms.test.LoginTest@1604f19]" name="testLoginFailedLogin" class="ua.bms.test.LoginTest"/>
+        <method signature="LoginTest.testLoginFailedPassword()[pri:2, instance:ua.bms.test.LoginTest@1604f19]" name="testLoginFailedPassword" class="ua.bms.test.LoginTest"/>
+        <method signature="LoginTest.testLoginOK()[pri:3, instance:ua.bms.test.LoginTest@1604f19]" name="testLoginOK" class="ua.bms.test.LoginTest"/>
+      </group> <!-- login -->
     </groups>
-    <test name="Test1" duration-ms="15043" started-at="2016-09-05T15:10:24Z" finished-at="2016-09-05T15:10:39Z">
+    <test name="Test1" duration-ms="40060" started-at="2016-09-06T15:04:49Z" finished-at="2016-09-06T15:05:29Z">
       <class name="ua.bms.test.LoginTest">
-        <test-method status="PASS" signature="init()[pri:0, instance:ua.bms.test.LoginTest@c0edeb]" name="init" is-config="true" duration-ms="5969" started-at="2016-09-05T18:10:24Z" finished-at="2016-09-05T18:10:30Z">
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.bms.test.LoginTest@1604f19]" name="init" is-config="true" duration-ms="9437" started-at="2016-09-06T18:04:49Z" finished-at="2016-09-06T18:04:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- init -->
-        <test-method status="PASS" signature="mayBeLogout()[pri:0, instance:ua.bms.test.LoginTest@c0edeb]" name="mayBeLogout" is-config="true" duration-ms="2106" started-at="2016-09-05T18:10:30Z" finished-at="2016-09-05T18:10:32Z">
+        <test-method status="PASS" signature="mayBeLogIn()[pri:0, instance:ua.bms.test.LoginTest@1604f19]" name="mayBeLogIn" is-config="true" duration-ms="15554" started-at="2016-09-06T18:04:58Z" finished-at="2016-09-06T18:05:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mayBeLogIn -->
+        <test-method status="PASS" signature="mayBeLogout()[pri:0, instance:ua.bms.test.LoginTest@1604f19]" name="mayBeLogout" is-config="true" duration-ms="6231" started-at="2016-09-06T18:05:14Z" finished-at="2016-09-06T18:05:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mayBeLogout -->
-        <test-method status="PASS" signature="testLoginFailedLogin()[pri:1, instance:ua.bms.test.LoginTest@c0edeb]" name="testLoginFailedLogin" duration-ms="776" started-at="2016-09-05T18:10:32Z" finished-at="2016-09-05T18:10:33Z">
+        <test-method status="PASS" signature="testLoginFailedLogin()[pri:1, instance:ua.bms.test.LoginTest@1604f19]" name="testLoginFailedLogin" duration-ms="1484" started-at="2016-09-06T18:05:20Z" finished-at="2016-09-06T18:05:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginFailedLogin -->
-        <test-method status="PASS" signature="mayBeLogout()[pri:0, instance:ua.bms.test.LoginTest@c0edeb]" name="mayBeLogout" is-config="true" duration-ms="14" started-at="2016-09-05T18:10:33Z" finished-at="2016-09-05T18:10:33Z">
+        <test-method status="PASS" signature="mayBeLogout()[pri:0, instance:ua.bms.test.LoginTest@1604f19]" name="mayBeLogout" is-config="true" duration-ms="25" started-at="2016-09-06T18:05:21Z" finished-at="2016-09-06T18:05:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mayBeLogout -->
-        <test-method status="PASS" signature="testLoginFailedPassword()[pri:2, instance:ua.bms.test.LoginTest@c0edeb]" name="testLoginFailedPassword" duration-ms="1415" started-at="2016-09-05T18:10:33Z" finished-at="2016-09-05T18:10:34Z">
+        <test-method status="PASS" signature="testLoginFailedPassword()[pri:2, instance:ua.bms.test.LoginTest@1604f19]" name="testLoginFailedPassword" duration-ms="740" started-at="2016-09-06T18:05:21Z" finished-at="2016-09-06T18:05:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginFailedPassword -->
-        <test-method status="PASS" signature="mayBeLogout()[pri:0, instance:ua.bms.test.LoginTest@c0edeb]" name="mayBeLogout" is-config="true" duration-ms="16" started-at="2016-09-05T18:10:34Z" finished-at="2016-09-05T18:10:34Z">
+        <test-method status="PASS" signature="mayBeLogout()[pri:0, instance:ua.bms.test.LoginTest@1604f19]" name="mayBeLogout" is-config="true" duration-ms="30" started-at="2016-09-06T18:05:22Z" finished-at="2016-09-06T18:05:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mayBeLogout -->
-        <test-method status="PASS" signature="testLoginOK()[pri:3, instance:ua.bms.test.LoginTest@c0edeb]" name="testLoginOK" duration-ms="4721" started-at="2016-09-05T18:10:34Z" finished-at="2016-09-05T18:10:39Z">
+        <test-method status="PASS" signature="testLoginOK()[pri:3, instance:ua.bms.test.LoginTest@1604f19]" name="testLoginOK" duration-ms="6500" started-at="2016-09-06T18:05:22Z" finished-at="2016-09-06T18:05:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testLoginOK -->
       </class> <!-- ua.bms.test.LoginTest -->
     </test> <!-- Test1 -->
-    <test name="Test2" duration-ms="11" started-at="2016-09-05T15:10:39Z" finished-at="2016-09-05T15:10:39Z">
-      <class name="ua.bms.test.LoginTest">
-        <test-method status="PASS" signature="stop()[pri:0, instance:ua.bms.test.LoginTest@c0edeb]" name="stop" is-config="true" duration-ms="556" started-at="2016-09-05T18:10:39Z" finished-at="2016-09-05T18:10:39Z">
+    <test name="Test2" duration-ms="68195" started-at="2016-09-06T15:05:29Z" finished-at="2016-09-06T15:06:37Z">
+      <class name="ua.bms.test.Unit9MilitaryTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="init" is-config="true" duration-ms="3516" started-at="2016-09-06T18:05:29Z" finished-at="2016-09-06T18:05:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- stop -->
-      </class> <!-- ua.bms.test.LoginTest -->
-      <class name="ua.bms.test.Unit9MilitaryTest">
-        <test-method status="FAIL" signature="testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1774679]" name="testJumpToUnit9Page" duration-ms="2" started-at="2016-09-05T18:10:39Z" finished-at="2016-09-05T18:10:39Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at ua.bms.test.Unit9MilitaryTest.testJumpToUnit9Page(Unit9MilitaryTest.java:22)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:646)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:823)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1131)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:778)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1225)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1150)
-	at org.testng.TestNG.runSuites(TestNG.java:1075)
-	at org.testng.TestNG.run(TestNG.java:1047)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:126)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:137)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:58)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="mayBeLogIn()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="mayBeLogIn" is-config="true" duration-ms="425" started-at="2016-09-06T18:05:32Z" finished-at="2016-09-06T18:05:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mayBeLogIn -->
+        <test-method status="PASS" signature="testJumpToUnit9Page()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testJumpToUnit9Page" duration-ms="5344" started-at="2016-09-06T18:05:33Z" finished-at="2016-09-06T18:05:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testJumpToUnit9Page -->
+        <test-method status="PASS" signature="testCreateMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testCreateMilitaryCard" duration-ms="34473" started-at="2016-09-06T18:05:38Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testJumpToUnit9Page" finished-at="2016-09-06T18:06:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateMilitaryCard -->
+        <test-method status="PASS" signature="testEditMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testEditMilitaryCard" duration-ms="12651" started-at="2016-09-06T18:06:12Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testCreateMilitaryCard" finished-at="2016-09-06T18:06:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEditMilitaryCard -->
+        <test-method status="PASS" signature="testRemoveMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testRemoveMilitaryCard" duration-ms="6253" started-at="2016-09-06T18:06:25Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testEditMilitaryCard" finished-at="2016-09-06T18:06:31Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRemoveMilitaryCard -->
+        <test-method status="PASS" signature="testRestoreMilitaryCard()[pri:0, instance:ua.bms.test.Unit9MilitaryTest@1832929]" name="testRestoreMilitaryCard" duration-ms="5520" started-at="2016-09-06T18:06:31Z" depends-on-methods="ua.bms.test.Unit9MilitaryTest.testRemoveMilitaryCard" finished-at="2016-09-06T18:06:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testRestoreMilitaryCard -->
       </class> <!-- ua.bms.test.Unit9MilitaryTest -->
     </test> <!-- Test2 -->
+    <test name="Test3" duration-ms="24442" started-at="2016-09-06T15:06:37Z" finished-at="2016-09-06T15:07:01Z">
+      <class name="ua.bms.test.Unit7MassMediaTest">
+        <test-method status="PASS" signature="init()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@17fd0e6]" name="init" is-config="true" duration-ms="3158" started-at="2016-09-06T18:06:37Z" finished-at="2016-09-06T18:06:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method status="PASS" signature="mayBeLogIn()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@17fd0e6]" name="mayBeLogIn" is-config="true" duration-ms="411" started-at="2016-09-06T18:06:40Z" finished-at="2016-09-06T18:06:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mayBeLogIn -->
+        <test-method status="PASS" signature="testJumpToUnit7Page()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@17fd0e6]" name="testJumpToUnit7Page" duration-ms="2980" started-at="2016-09-06T18:06:40Z" finished-at="2016-09-06T18:06:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testJumpToUnit7Page -->
+        <test-method status="PASS" signature="testCreateMassMediaCard()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@17fd0e6]" name="testCreateMassMediaCard" duration-ms="10539" started-at="2016-09-06T18:06:43Z" depends-on-methods="ua.bms.test.Unit7MassMediaTest.testJumpToUnit7Page" finished-at="2016-09-06T18:06:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateMassMediaCard -->
+        <test-method status="PASS" signature="testEditMassMediaCard()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@17fd0e6]" name="testEditMassMediaCard" duration-ms="7344" started-at="2016-09-06T18:06:54Z" depends-on-methods="ua.bms.test.Unit7MassMediaTest.testCreateMassMediaCard" finished-at="2016-09-06T18:07:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testEditMassMediaCard -->
+        <test-method status="PASS" signature="stop()[pri:0, instance:ua.bms.test.Unit7MassMediaTest@17fd0e6]" name="stop" is-config="true" duration-ms="1008" started-at="2016-09-06T18:07:01Z" finished-at="2016-09-06T18:07:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stop -->
+      </class> <!-- ua.bms.test.Unit7MassMediaTest -->
+    </test> <!-- Test3 -->
   </suite> <!-- Tests -->
 </testng-results>

@@ -46,6 +46,7 @@ public class LoginPage extends AnyPage {
 		return this;
 	}
 	
+	//Clicking on button "LogIn" ("Увійти в систему")
 	public void clickSubmitButton() {
 		buttonLogin.click();
 	}

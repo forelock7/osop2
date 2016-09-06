@@ -3,6 +3,7 @@ package ua.bms.applogic1;
 import org.openqa.selenium.WebDriver;
 import ua.bms.applogic.ApplicationManager;
 import ua.bms.applogic.NavigationHelper;
+import ua.bms.applogic.Unit7Helper;
 import ua.bms.applogic.Unit9Helper;
 import ua.bms.applogic.UserHelper;
 import ua.bms.utils.ConfigProperties;
@@ -12,6 +13,7 @@ public class ApplicationManager1 implements ApplicationManager {
 	
 	 private UserHelper userHelper;
 	 private NavigationHelper navHelper;
+	 private Unit7Helper unit7Helper;
 	 private Unit9Helper unit9Helper;
 	 
 	 private WebDriver driver;
@@ -27,6 +29,7 @@ public class ApplicationManager1 implements ApplicationManager {
 
 		 userHelper = new UserHelper1(this);
 		 navHelper = new NavigationHelper1(this);
+		 unit7Helper = new Unit7Helper1(this);
 		 unit9Helper = new Unit9Helper1(this);
 		 
 		 getNavigationHelper().openMainPage();
@@ -41,6 +44,11 @@ public class ApplicationManager1 implements ApplicationManager {
 	@Override
 	public NavigationHelper getNavigationHelper() {
 	  return navHelper;
+	}
+	
+	@Override
+	public Unit7Helper getUnit7Helper(){
+		return unit7Helper;
 	}
 	
 	@Override

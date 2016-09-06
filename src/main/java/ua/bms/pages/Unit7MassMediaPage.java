@@ -1,7 +1,11 @@
 package ua.bms.pages;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import ua.bms.model.Unit7Card;
+
 
 public class Unit7MassMediaPage extends AnyPage{
 	
@@ -9,6 +13,11 @@ public class Unit7MassMediaPage extends AnyPage{
 		super(pages);
 	}
 	
+	public Unit7MassMediaPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'header-title-text')]//div[contains(., 'ЗМІ')]")));
+		return this;
+	}
 
 	
 	/*-------------------The Web-Elements of Main Page----------------------------------------------------*/
@@ -19,7 +28,7 @@ public class Unit7MassMediaPage extends AnyPage{
 	
 	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-9).
 	@FindBy(xpath = "//table[1]//td[9]/div")
-	private WebElement buttonEdit;
+	private WebElement buttonEditU7;
 	
 	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-10).
 	@FindBy(xpath = "//table[1]//td[10]/div")
@@ -56,34 +65,41 @@ public class Unit7MassMediaPage extends AnyPage{
 	private WebElement inputRemark;
 	
 	/*------------------Methods---------------------------------------------------------------------------*/
-/*	
-	//Checking if user jumped into page of Unit7 (existing unit7 title)
-	public boolean isOnUnit7Page() {
-		return isElementPresent(titleMM);
+	
+	
+	//Click on "Edit" button for the first record in the main grid
+	public void openCardToEditU7() {
+		buttonEditU7.click();
 	}
 	
-	//Creating the new card with filling all fields in
-	public void createCardU7 (Unit7CardData massMediaCard) throws InterruptedException {
-		buttonCreateCard.click();
+	//Setting the new card with filling all fields in
+	public Unit7MassMediaPage setCardUnit7(Unit7Card massMediaCard){
 		type(inputSpeechDate, massMediaCard.speechDate);
 		inputTypeOfCoverage.click();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		itemTypeOfCoverage.click();
 		type(inputNameOfMassMedia, massMediaCard.nameOfMassMedia);
 		type(inputSubjectOfSpeech, massMediaCard.subjectOfSpeech);
 		type(inputAuthorOfSpeech, massMediaCard.authorOfSpeech);
 		type(inputRemark, massMediaCard.remark);
-		this.saveCard();
-		this.clickOnAlertOK();
-	}
-	
-	//Click on "Edit" button for the first record in the main grid
-	public void openCardToEdit() {
-		buttonEdit.click();
+		return this;
 	}
 	
 	//Getting existing Subject of Speech from input-field
-	public String getSubjectOfSpeech() {
+	public String getInputSubjectOfSpeech() {
 		return inputSubjectOfSpeech.getAttribute("value");
-	}*/
+	}
+	
+	//Editing SOME field ("Author" ("Автор"))
+	public void setInputAuthorOfSpeech(String someNewText) {
+		type(inputAuthorOfSpeech, someNewText);
+	}
+	
+	public String getInputAuthorOfSpeech() {
+		return inputAuthorOfSpeech.getAttribute("value");
+	}
+	
+	
+	
+
 }

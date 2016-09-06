@@ -17,19 +17,21 @@ public class LoginTest extends BasicTestCase {
 		app.getUserHelper().logout();
 	}
 
-	@Test(groups = {"login1"}, priority = 3)
+/*-------------------------Tests-----------------------------------------------------*/	
+	
+	@Test(groups = {"login"}, priority = 3)
 	public void testLoginOK() {
 		app.getUserHelper().loginAs(user);
 		assertTrue(app.getUserHelper().isLoggedIn());
 	}
 
-	@Test(groups = {"login2"}, priority = 2)
+	@Test(groups = {"login"}, priority = 2)
 	public void testLoginFailedPassword(){
 		app.getUserHelper().loginAs(user1);
 		assertTrue(app.getUserHelper().isNotLoggedIn());
 	}
 	
-	@Test(groups = {"login3"}, priority = 1)
+	@Test(groups = {"login"}, priority = 1)
 	public void testLoginFailedLogin(){
 		app.getUserHelper().loginAs(user2);
 		assertTrue(app.getUserHelper().isNotLoggedIn());

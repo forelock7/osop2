@@ -79,7 +79,7 @@ public abstract class AnyPage extends Page {
 	//Registration Number Field is the same in "Deletion Confirmation Form" AND "Recovering Confirmation From"!!!!
 	//Button "Recover" ("Відновити")
 	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//span[contains(text(), 'Відновити')]")
-	protected WebElement buttonConfirmRecover;
+	protected WebElement buttonConfirmRestoring;
 		
 	/*---------------------------------Methods-----------------------------------------*/	
 		
@@ -88,18 +88,14 @@ public abstract class AnyPage extends Page {
 		webElement.clear();
 		webElement.sendKeys(text);
 	}
-	/*	
-	protected boolean isElementPresent(WebElement element) {
-		try {
-			element.isDisplayed();
-			return true;
-		} catch (NoSuchElementException e) {
-			return false;
-			}
-		}
-/*		
-	public boolean isAlertPresent() {
-		return isElementPresent(buttonOKAlertPopup);
+	
+	public void clickCreatCardButton(){
+		buttonCreateCard.click();
+	}
+	
+	//Clicking on "Save"("Зберегти") button in Card
+	public void saveCard() {
+		buttonSave.click();
 	}
 	
 	//Clicking on button "OK" of Alert Popup
@@ -107,58 +103,64 @@ public abstract class AnyPage extends Page {
 		buttonOKAlertPopup.click();
 	}
 	
-	//Clicking on "Save"("Зберегти") button in Card
-	public void saveCard() {
-		buttonSave.click();
-	}
-		
 	//Clicking on "Exit"("Вихід") button in Card
 	public void exitFromCard() {
 		buttonExit.click();
 	}
 	
-	//Getting Registration Number from "Deletion Confirmation Form" AND "Recovering Confirmation From"
-	private String getRegNumberFromConfirmForm(){
-		return fieldRegNumInConfirmationForm.getAttribute("value");
-	}
-	
 	//Confirmation of Card Deletion with getting registration number of removed card
-	protected String confirmDeletion() throws InterruptedException{
+	protected String confirmationOfDeletion()/* throws InterruptedException*/{
 		inputFieldDeletionReason.click();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		itemDeletionReason.click();
-		String regNumber = getRegNumberFromConfirmForm();
+		//Getting Registration Number from "Deletion Confirmation Form" AND "Recovering Confirmation From"
+		String regNumberRemovingCard = fieldRegNumInConfirmationForm.getAttribute("value");
 		buttonConfirmDelete.click();
 		this.clickOnAlertOK();
-		return regNumber;
-	}
-	
-	//Confirmation of Card Recovering with getting registration number of recovered card	
-	protected String confirmRecovering() {
-		String regNumber = getRegNumberFromConfirmForm();
-		buttonConfirmRecover.click();
-		this.clickOnAlertOK();
-		return regNumber;
+		return regNumberRemovingCard;
 	}
 	
 	//Moving to "Deleted"("Видалені") tab
-	protected void goToRemoved() {
+	public void goToRemoved() {
 		tabRemoved.click();
 		}
 	
 	//Moving to Main Tab
-	protected void goToMainTab() {
+	public void goToMainTab() {
 		tabMain.click();		
 	}
-
+	
 	//Getting registration number from the first record in grid on "Deleted" tab
-	public String getRegNumberFromGridOnDelTab() throws InterruptedException{
+	public String getRegNumberFromGridOnDelTab(){
 		return cellRegNumberInGridOnDelTab.getText();
 	}
-
+	
+	//Confirmation of Card Recovering with getting registration number of recovered card	
+	protected String confirmRestoring() {
+		String regNumberRestoringCard = fieldRegNumInConfirmationForm.getAttribute("value");
+		buttonConfirmRestoring.click();
+		this.clickOnAlertOK();
+		return regNumberRestoringCard;
+	}
+	
 	//Getting registration number from the first record in grid on Main tab
-	public String getRegNumberFromGridMainTab() throws InterruptedException{
+	public String getRegNumberFromGridOnMainTab(){
 		return cellRegNumberInGridOnMainTab.getText();
 	}
-*/
 }
+
+			
+	/*protected boolean isElementPresent(WebElement element) {
+		try {
+			element.isDisplayed();
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+			}
+		}
+	
+	public boolean isAlertPresent() {
+		return isElementPresent(buttonOKAlertPopup);
+	}*/
+
+

@@ -17,6 +17,14 @@ public class BasicTestCase {
 	public void init() {
 		app = new ApplicationManager1();
 	}
+	
+	@BeforeClass
+	public void mayBeLogIn() {
+		if (app.getUserHelper().isLoggedIn()) {
+			return;
+		}
+		app.getUserHelper().loginAs(user);
+	}
 			
 	@AfterSuite
 	public void stop() {
@@ -30,7 +38,7 @@ public class BasicTestCase {
 	protected User user2 = new User("failedLogin", "bMS$2016");
 /*-----------------------------------------------------------------------------------------------------------------*/	
 	//Initialization of input fields from Military Administrative Violation Card except field with drop-down list
-	protected static Unit9Card aVCard = new Unit9Card(
+	protected static Unit9Card mAVCard = new Unit9Card(
 			/*Дата складання протоколу*/"01.07.2016", 
 			/*Дата вчинення правопорушення*/"02.07.2016", 
 			/*Фабула*/"Фабула_бот-english", 
@@ -45,7 +53,7 @@ public class BasicTestCase {
 			/*Дата надходження рішення суду(для обліку у звіті)*/"08.07.2016", 
 			/*Дата початку утримання на гаупвахті*/"09.07.2016");
 	
-	protected static String someText = "Some text after EDITING 12343434456678767890!@#@#$%^&&*^";
+	//protected static String someNewText = "Some text after EDITING 12343434456678767890!@#@#$%^&&*^";
 /*-----------------------------------------------------------------------------------------------------------------*/	
 	protected static Unit7Card mMCard = new Unit7Card(
 			/*Дата виступу*/"28.07.2016",
