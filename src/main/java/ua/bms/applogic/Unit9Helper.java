@@ -6,12 +6,12 @@ public interface Unit9Helper {
 	
 	boolean isOnUnit9Page();
 	void createCardUnit9(Unit9Card adminViolCard);
-	String getProtNumberLastCreatedCard();
+	String getProtNumberLastCreatedCardU9();
 	void editCardUnit9(Unit9Card unit9Card);
-	String getValueInFieldLastCard();
+	String getValueInFieldLastCardU9();
 	void removeCardUnit9(Unit9Card unit9Card);
-	String getRegNumberAfterRemovingCard();
+	String getRegNumberAfterRemovingCardU9();
 	void restoreCardUnit9(Unit9Card unit9Card);
-	String getRegNumberAfterRestoringCard();
+	String getRegNumberAfterRestoringCardU9();
 
 }

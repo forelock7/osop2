@@ -1,5 +1,8 @@
 package ua.bms.pages;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -25,9 +28,9 @@ public abstract class AnyPage extends Page {
 	@FindBy (xpath = "//div[contains(@id, 'tabbar')]/a[1]//span[contains(@id, 'btnInnerEl')]")
 	private WebElement tabMain;
 	
-	//Registration Number in the first record of grid on "Deleted" tab
+	//Registration Number in the first record of grid on "Removed" tab
 	@FindBy(xpath = "//div[contains(@id, 'GridDeleted')]//table[1]//td[2]/div")
-	private WebElement cellRegNumberInGridOnDelTab;
+	private WebElement cellRegNumberInGridOnRemovedTab;
 	
 	//Registration Number in the first record of grid on Main tab
 	@FindBy(xpath = "//div[contains(@id, 'tabpanel')]/div[1]//table[1]//td[2]/div")
@@ -37,11 +40,11 @@ public abstract class AnyPage extends Page {
 		
 	//Button "Save" ("Зберегти") for saving card
 	@FindBy(xpath = "//span[contains(., 'Зберегти')]")
-	private WebElement buttonSave;
+	private WebElement buttonSaveCard;
 	
 	//Button "Exit" ("Вихід") for exit from card
 	@FindBy (xpath = "//div[contains(@id, 'Card')]//span[contains(., 'Вихід')]")
-	protected WebElement buttonExit;
+	protected WebElement buttonExitFromCard;
 	
 	/*The Massage Box (Popup)*/	
 		
@@ -65,15 +68,15 @@ public abstract class AnyPage extends Page {
 	
 	//Reason of Deletion
 	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//div[contains(@id, 'combo')]//input")
-	protected WebElement inputFieldDeletionReason;
+	protected WebElement inputFieldRemoveReason;
 	
 	//The First Item of deletion reason
 	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[2]")
-	protected WebElement itemDeletionReason;
+	protected WebElement itemRemoveReason;
 	
 	//Button "Delete" ("Видалити")
 	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//span[contains(text(), 'Видалити')]")
-	protected WebElement buttonConfirmDelete;
+	protected WebElement buttonConfirmRemove;
 		
 	/*Form of Recovering Confirmation*/	
 	//Registration Number Field is the same in "Deletion Confirmation Form" AND "Recovering Confirmation From"!!!!
@@ -89,13 +92,13 @@ public abstract class AnyPage extends Page {
 		webElement.sendKeys(text);
 	}
 	
-	public void clickCreatCardButton(){
+	public void clickButtonCreateCard(){
 		buttonCreateCard.click();
 	}
 	
 	//Clicking on "Save"("Зберегти") button in Card
-	public void saveCard() {
-		buttonSave.click();
+	public void clickButtonSaveCard() {
+		buttonSaveCard.click();
 	}
 	
 	//Clicking on button "OK" of Alert Popup
@@ -104,24 +107,25 @@ public abstract class AnyPage extends Page {
 	}
 	
 	//Clicking on "Exit"("Вихід") button in Card
-	public void exitFromCard() {
-		buttonExit.click();
+	public void clickButtonExitFromCardForm() {
+		buttonExitFromCard.click();
 	}
 	
-	//Confirmation of Card Deletion with getting registration number of removed card
-	protected String confirmationOfDeletion()/* throws InterruptedException*/{
-		inputFieldDeletionReason.click();
+	//Confirmation of Card Removing with getting registration number of removed card
+	protected String confirmationOfRemoving()/* throws InterruptedException*/{
+		inputFieldRemoveReason.click();
 		//Thread.sleep(2000);
-		itemDeletionReason.click();
+		//itemRemoveReason.click();
+		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'boundlist')]//li[2]"))).click();
 		//Getting Registration Number from "Deletion Confirmation Form" AND "Recovering Confirmation From"
-		String regNumberRemovingCard = fieldRegNumInConfirmationForm.getAttribute("value");
-		buttonConfirmDelete.click();
+		String regNumberRemovedCard = fieldRegNumInConfirmationForm.getAttribute("value");
+		buttonConfirmRemove.click();
 		this.clickOnAlertOK();
-		return regNumberRemovingCard;
+		return regNumberRemovedCard;
 	}
 	
 	//Moving to "Deleted"("Видалені") tab
-	public void goToRemoved() {
+	public void goToRemovedTab() {
 		tabRemoved.click();
 		}
 	
@@ -131,8 +135,8 @@ public abstract class AnyPage extends Page {
 	}
 	
 	//Getting registration number from the first record in grid on "Deleted" tab
-	public String getRegNumberFromGridOnDelTab(){
-		return cellRegNumberInGridOnDelTab.getText();
+	public String getRegNumberFromGridOnRemovedTab(){
+		return cellRegNumberInGridOnRemovedTab.getText();
 	}
 	
 	//Confirmation of Card Recovering with getting registration number of recovered card	

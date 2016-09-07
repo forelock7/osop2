@@ -16,11 +16,11 @@ public class LoginPage extends AnyPage {
 	
 	//Input field "Login" ("Логін")
 	@FindBy(name = "username")
-	private WebElement fieldUsername;
+	private WebElement inputUsername;
 	
 	//Input field "Password" ("Пароль")
 	@FindBy(name = "password")
-	private WebElement fieldPassword;
+	private WebElement inputPassword;
 	
 	//Button "LogIn" ("Увійти в систему")
 	@FindBy(xpath = "//div[3]/input")
@@ -41,13 +41,13 @@ public class LoginPage extends AnyPage {
 	
 	//filling Login Form in
 	public LoginPage setLoginForm(User user) {
-		type(fieldUsername, user.login);
-		type(fieldPassword, user.password);
+		type(inputUsername, user.login);
+		type(inputPassword, user.password);
 		return this;
 	}
 	
 	//Clicking on button "LogIn" ("Увійти в систему")
-	public void clickSubmitButton() {
+	public void clickButtonSubmit() {
 		buttonLogin.click();
 	}
 	

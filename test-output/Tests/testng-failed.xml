@@ -3,14 +3,22 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Tests]">
   <test name="Test2(failed)">
     <classes>
+      <class name="ua.bms.test.Unit7MassMediaTest">
+        <methods>
+          <include name="mayBeLogIn"/>
+          <include name="init"/>
+          <include name="stop"/>
+        </methods>
+      </class> <!-- ua.bms.test.Unit7MassMediaTest -->
       <class name="ua.bms.test.Unit9MilitaryTest">
         <methods>
           <include name="mayBeLogIn"/>
           <include name="init"/>
           <include name="testJumpToUnit9Page"/>
+          <include name="testRemoveMilitaryCard"/>
           <include name="testEditMilitaryCard"/>
           <include name="testCreateMilitaryCard"/>
-          <include name="stop"/>
+          <include name="testRestoreMilitaryCard"/>
         </methods>
       </class> <!-- ua.bms.test.Unit9MilitaryTest -->
       <class name="ua.bms.test.LoginTest">

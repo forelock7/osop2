@@ -19,7 +19,7 @@ public class WebDriverFactory {
 			driver = new FirefoxDriver();
 			//Maximizing a browser window
 			driver.manage().window().maximize();
-			driver.manage().timeouts().implicitlyWait(Long.parseLong(ConfigProperties.getProperty("imp.wait")), TimeUnit.SECONDS);
+			//driver.manage().timeouts().implicitlyWait(Long.parseLong(ConfigProperties.getProperty("imp.wait")), TimeUnit.SECONDS);
 		}
 	return driver;
 	}

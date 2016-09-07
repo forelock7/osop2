@@ -6,16 +6,23 @@ import ua.bms.model.User;
 
 public class UserHelper1 extends DriverBasedHelper implements UserHelper {
 	
+	private String baseUrl;
+	
 	public UserHelper1(ApplicationManager1 manager) {
 		super(manager.getWebDriver());
+		this.baseUrl = manager.getBaseUrl();
 	}
 	
+	@Override
+	public void openMainPage() {
+		driver.get(baseUrl);
+	}
 	
 	@Override
 	public void loginAs(User user) {
 		pages.loginPage.ensurePageLoaded()
 		.setLoginForm(user)
-		.clickSubmitButton();
+		.clickButtonSubmit();
 		try{
 			pages.loginPage.acceptFailedLoginAlert();
 			} catch (TimeoutException e){
@@ -26,13 +33,13 @@ public class UserHelper1 extends DriverBasedHelper implements UserHelper {
 	//logout from OSOP
 	@Override
 	public void logout() {
-		pages.topNavigationPage.ensurePageLoaded()
-	    .clickLogoutLink();
+		pages.navigationTopPage.ensurePageLoaded()
+	    .clickLinkLogOut();
 	}
   
 	@Override
 	public boolean isLoggedIn(){
-		return pages.topNavigationPage.waitPageLoaded();		  
+		return pages.navigationTopPage.waitPageLoaded();		  
 	}
 	
 	@Override

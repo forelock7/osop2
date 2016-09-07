@@ -24,11 +24,11 @@ public class Unit9MilitaryPage extends AnyPage {
 
 	//Title "Military Administrative Violations" ("Військові адмінправопорушення")
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")
-	private WebElement titleAV;
+	private WebElement titleUnit9;
 	
 	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-12).
 	@FindBy(xpath = "//table[1]//td[12]/div")
-	private WebElement buttonEditU9;
+	private WebElement buttonEdit;
 	
 	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-13).
 	@FindBy(xpath = "//table[1]//td[13]/div/img")
@@ -36,7 +36,7 @@ public class Unit9MilitaryPage extends AnyPage {
 		
 	//Button "Recover" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-12).
 	@FindBy(xpath = "//div[contains(@id, 'crimeGridDeleted')]//table[1]//td[12]/div/img")
-	private WebElement buttonRecover;
+	private WebElement buttonRestore;
 	
 /*------------------The Web-Elements of the Card------------------------------------------------------*/
 	//Input field "Protocol Number" ("Номер протоколу")
@@ -164,74 +164,77 @@ public class Unit9MilitaryPage extends AnyPage {
 	
 /*------------------Methods---------------------------------------------------------------------------*/
 		
-	public Unit9MilitaryPage setCardUnit9(Unit9Card adminViolCard) /*throws InterruptedException*/{
-		type(inputProtocolNumber, adminViolCard.protocolNumber);
-		type(inputProtocolCreatingDate, adminViolCard.protocolCreatingDate);
+	public Unit9MilitaryPage setCardUnit9(Unit9Card unit9Card) /*throws InterruptedException*/{
+		type(inputProtocolNumber, unit9Card.protocolNumber);
+		type(inputProtocolCreatingDate, unit9Card.protocolCreatingDate);
 		inputSectionAVLawbook.click();
 		//Thread.sleep(2000);
-		itemSectionAVLawbook.click();
-		type(inputCommitingAVDate, adminViolCard.commitingAVDate);
-		type(inputTheory, adminViolCard.theory);
-		type(inputOffenderName, adminViolCard.offenderName);
-		type(inputBirthday, adminViolCard.birthday);
+		//itemSectionAVLawbook.click();
+		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]"))).click();
+		type(inputCommitingAVDate, unit9Card.commitingAVDate);
+		type(inputTheory, unit9Card.theory);
+		type(inputOffenderName, unit9Card.offenderName);
+		type(inputBirthday, unit9Card.birthday);
 		inputMilitaryTroop.click();
 		itemMilitaryTroop.click();
-		type(inputMilitaryUnitName, adminViolCard.militaryUnitName);
+		type(inputMilitaryUnitName, unit9Card.militaryUnitName);
 		inputMilitaryRank.click();
 		itemMilitaryRank.click();
 		inputPostCategory.click();
 		itemPostCategory.click();
-		type(inputPost, adminViolCard.post);
-		type(inputReferToCourtDate, adminViolCard.referToCourtDate);
+		type(inputPost, unit9Card.post);
+		type(inputReferToCourtDate, unit9Card.referToCourtDate);
 		inputCourtName.click();
 		itemOfCourt.click();
 		checkboxReturnByCourt.click();
-		type(inputReceivingCourtDecisionDate, adminViolCard.receivingCourtDecisionDate);
-		type(inputRepeatedReferToCourtDate, adminViolCard.repeatedReferToCourtDate);
+		type(inputReceivingCourtDecisionDate, unit9Card.receivingCourtDecisionDate);
+		type(inputRepeatedReferToCourtDate, unit9Card.repeatedReferToCourtDate);
 		buttonAdd.click();
 		inputReferReturn.click();
 		//Thread.sleep(2000);
-		itemReferReturn.click();
-		type(inputCourtDecisionDate, adminViolCard.courtDecisionDate);
+		//itemReferReturn.click();
+		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Направлено до суду')]"))).click();
+		type(inputCourtDecisionDate, unit9Card.courtDecisionDate);
 		buttonAddMovingOfProtocol.click();
 		inputConsiderationResult.click();
 		itemConsiderationResult.click();
-		type(inputReceivingDateMain, adminViolCard.receivingDateMain);
+		type(inputReceivingDateMain, unit9Card.receivingDateMain);
 		checkboxCarriedPunishment.click();
-		type(inputBeginningPunishmentDate, adminViolCard.beginingPunishmentDate);
+		type(inputBeginningPunishmentDate, unit9Card.beginingPunishmentDate);
 		return this;
 	}
 	
 	//Click on "Edit" button for the first record in the main grid
-	public void openCardToEditU9() {
-		buttonEditU9.click();
+	public void clickButtonEditCardUnit9() {
+		buttonEdit.click();
 	}
 	
 	//Getting value from input-field "Protocol Number" in formerly created card
-	public String getProtocolNumber() {
+	public String getInputProtocolNumberUnit9() {
 		return inputProtocolNumber.getAttribute("value");
 	}
 	
 
 	//Editing SOME field ("Theory" ("Фабула"))
-	public void changeValueInTextField(String someNewText) {
+	public void setInputTheoryUnit9(String someNewText) {
 		type(inputTheory, someNewText);
 	}
 	
 	//Getting value from input-field "Theory" in formerly created card
-	public String getValueInFieldTheory() {
+	public String getInputTheoryUnit9() {
 		return inputTheory.getAttribute("value");
 	}
 	
-	//Removing Card with getinging registration number of the card that is deleting
-	public void removeCard(Unit9Card adminViolCard){
+	//Removing Card with getinging registration number of the card that will be removed
+	public void removeCardUnit9(Unit9Card unit9Card){
 		buttonRemove.click();
-		adminViolCard.regNumberRemovedCard = this.confirmationOfDeletion();
+		unit9Card.regNumberRemovedCard = super.confirmationOfRemoving();
 	}
 	
-	public void restoreCard(Unit9Card adminViolCard) {
-		buttonRecover.click();
-		adminViolCard.regNumberRestoredCard = confirmRestoring();
+	//Restoring card with getting registration number of the card that will be restored
+	public void restoreCardUnit9(Unit9Card unit9Card) {
+		buttonRestore.click();
+		unit9Card.regNumberRestoredCard = confirmRestoring();
 	}
 }
 	

@@ -14,7 +14,7 @@ public class DriverBasedHelper {
 	  
 	  public DriverBasedHelper(WebDriver driver) {
 		  this.driver = driver;
-		  wait = new WebDriverWait(driver, 1);
+		  wait = new WebDriverWait(driver, 2);
 		  pages = new PageManager(driver);
 		  }
 

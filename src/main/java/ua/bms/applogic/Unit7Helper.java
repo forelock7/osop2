@@ -6,18 +6,12 @@ public interface Unit7Helper {
 	
 	boolean isOnUnit7Page();
 	void createCardUnit7(Unit7Card massMediaCard);
-	String getSubjectOfSpeechLastCreatedCard();
+	String getSubjectOfSpeechLastCreatedCardU7();
 	void editCardUnit7(Unit7Card unit7Card);
-	String getValueInFieldLastCard();
-
-	
-	/*
-	
-	
-	
-	void removeCardUnit7(Unit9Card unit7Card);
-	String getRegNumberAfterRemovingCard();
-	void restoreCardUnit7(Unit9Card unit7Card);
-	String getRegNumberAfterRestoringCard();*/
+	String getValueInFieldLastCardU7();
+	void removeCardUnit7(Unit7Card unit7Card);
+	String getRegNumberAfterRemovingCardU7();
+	void restoreCardUnit7(Unit7Card unit7Card);
+	String getRegNumberAfterRestoringCardU7();
 
 }

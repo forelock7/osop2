@@ -10,22 +10,32 @@ public class Unit7MassMediaTest extends BasicTestCase {
 	@Test (groups = {"unit7"})
 	public void testJumpToUnit7Page(){
 		assertTrue(app.getUserHelper().isLoggedIn());
-		app.getNavigationHelper().goToUnit7Page();
+		app.getNavigationTopHelper().goToUnit7Page();
 		assertTrue(app.getUnit7Helper().isOnUnit7Page());
 	}
 	
 	@Test (groups = {"unit7"}, dependsOnMethods = {"testJumpToUnit7Page"})
 	public void testCreateMassMediaCard(){
 		app.getUnit7Helper().createCardUnit7(mMCard);
-		Assert.assertEquals(app.getUnit7Helper().getSubjectOfSpeechLastCreatedCard(), mMCard.subjectOfSpeech);
+		Assert.assertEquals(app.getUnit7Helper().getSubjectOfSpeechLastCreatedCardU7(), mMCard.subjectOfSpeech);
 	}
 	
 	@Test (groups = {"unit7"}, dependsOnMethods = {"testCreateMassMediaCard"})
 	public void testEditMassMediaCard(){
 		app.getUnit7Helper().editCardUnit7(mMCard);
-		Assert.assertEquals(app.getUnit7Helper().getValueInFieldLastCard(), mMCard.someNewText);
+		Assert.assertEquals(app.getUnit7Helper().getValueInFieldLastCardU7(), mMCard.someNewText);
 	}
 	
+	@Test (groups = {"unit7"}, dependsOnMethods = {"testEditMassMediaCard"})
+	public void testRemoveMassMediaCard(){
+		app.getUnit7Helper().removeCardUnit7(mMCard);
+		Assert.assertEquals(mMCard.regNumberRemovedCard, app.getUnit7Helper().getRegNumberAfterRemovingCardU7());
+	}
 	
+	@Test (groups = {"unit7"}, dependsOnMethods = {"testRemoveMassMediaCard"})
+	public void testRestoreMassMediaCard() {
+		app.getUnit7Helper().restoreCardUnit7(mMCard);
+		Assert.assertEquals(mMCard.regNumberRestoredCard, app.getUnit7Helper().getRegNumberAfterRestoringCardU7());
+	}
 
 }

@@ -8,14 +8,16 @@ public class PageManager {
 	  private WebDriver driver;
 
 	  public LoginPage loginPage;
-	  public TopNavigationPage topNavigationPage;
+	  public NavigationTopPage navigationTopPage;
+	  public NavigationUnits68Page navigationUnits68Page;
 	  public Unit7MassMediaPage unit7MassMediaPage;
 	  public Unit9MilitaryPage unit9MilitaryPage;
 
 	  public PageManager(WebDriver driver) {
 		  this.driver = driver;
 		  loginPage = initElements(new LoginPage(this));
-		  topNavigationPage = initElements(new TopNavigationPage(this));
+		  navigationTopPage = initElements(new NavigationTopPage(this));
+		  navigationUnits68Page = initElements(new NavigationUnits68Page(this));
 		  unit7MassMediaPage = initElements(new Unit7MassMediaPage(this));
 		  unit9MilitaryPage = initElements(new Unit9MilitaryPage(this));
 	  }

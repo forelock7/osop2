@@ -1,8 +1,7 @@
 package ua.bms.applogic;
 
-public interface NavigationHelper {
+public interface NavigationTopHelper {
 	
-	void openMainPage();
 	void goToUnit7Page();
 	void goToUnit9Page();
 

@@ -2,7 +2,8 @@ package ua.bms.applogic1;
 
 import org.openqa.selenium.WebDriver;
 import ua.bms.applogic.ApplicationManager;
-import ua.bms.applogic.NavigationHelper;
+import ua.bms.applogic.NavigationTopHelper;
+import ua.bms.applogic.NavigationUnit68Helper;
 import ua.bms.applogic.Unit7Helper;
 import ua.bms.applogic.Unit9Helper;
 import ua.bms.applogic.UserHelper;
@@ -12,7 +13,8 @@ import ua.bms.webdriver.WebDriverFactory;
 public class ApplicationManager1 implements ApplicationManager {
 	
 	 private UserHelper userHelper;
-	 private NavigationHelper navHelper;
+	 private NavigationTopHelper navTopHelper;
+	 private NavigationUnit68Helper navUnit68Helper;
 	 private Unit7Helper unit7Helper;
 	 private Unit9Helper unit9Helper;
 	 
@@ -28,11 +30,12 @@ public class ApplicationManager1 implements ApplicationManager {
 		 driver = WebDriverFactory.getInstance();
 
 		 userHelper = new UserHelper1(this);
-		 navHelper = new NavigationHelper1(this);
+		 navTopHelper = new NavigationTopHelper1(this);
+		 navUnit68Helper = new NavigationUnit68Helper1(this);
 		 unit7Helper = new Unit7Helper1(this);
 		 unit9Helper = new Unit9Helper1(this);
 		 
-		 getNavigationHelper().openMainPage();
+		 getUserHelper().openMainPage();
 		 
 	 }
 	 
@@ -42,8 +45,13 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 	
 	@Override
-	public NavigationHelper getNavigationHelper() {
-	  return navHelper;
+	public NavigationTopHelper getNavigationTopHelper() {
+	  return navTopHelper;
+	}
+	
+	@Override
+	public NavigationUnit68Helper getNavigationUnit68Helper() {
+	  return navUnit68Helper;
 	}
 	
 	@Override
