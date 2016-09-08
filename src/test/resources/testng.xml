@@ -5,21 +5,21 @@
 	<test verbose="1" name="Test1">
 
 		<classes>
-      		 <class name="ua.bms.test.LoginTest" />
+      		 <class name="ua.bms.osop.test.LoginTest" />
  		</classes>
 	</test>  
 
 	<test verbose="1" name="Test2">
 
 		<classes>
-      		 <class name="ua.bms.test.Unit9MilitaryTest" />
+      		 <class name="ua.bms.osop.test.Unit9MilitaryTest" />
  		</classes>
 	</test>
 	
 		<test verbose="1" name="Test3">
 
 		<classes>
-      		 <class name="ua.bms.test.Unit7MassMediaTest" />
+      		 <class name="ua.bms.osop.test.Unit7MassMediaTest" />
  		</classes>
 	</test>
 

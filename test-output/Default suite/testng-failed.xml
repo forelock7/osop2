@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="ua.bms.osop.test.Unit9MilitaryTest">
+        <methods>
+          <include name="testRemoveMilitaryCard"/>
+          <include name="testRestoreMilitaryCard"/>
+          <include name="testEditMilitaryCard"/>
+          <include name="stop"/>
+          <include name="testJumpToUnit9Page"/>
+          <include name="mayBeLogIn"/>
+          <include name="testCreateMilitaryCard"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- ua.bms.osop.test.Unit9MilitaryTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Tests]">
+  <test name="Test2(failed)">
+    <classes>
+      <class name="ua.bms.osop.test.Unit9MilitaryTest">
+        <methods>
+          <include name="testRemoveMilitaryCard"/>
+          <include name="testRestoreMilitaryCard"/>
+          <include name="testEditMilitaryCard"/>
+          <include name="testJumpToUnit9Page"/>
+          <include name="mayBeLogIn"/>
+          <include name="testCreateMilitaryCard"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- ua.bms.osop.test.Unit9MilitaryTest -->
+      <class name="ua.bms.osop.test.Unit7MassMediaTest">
+        <methods>
+          <include name="stop"/>
+          <include name="mayBeLogIn"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- ua.bms.osop.test.Unit7MassMediaTest -->
+      <class name="ua.bms.osop.test.LoginTest">
+        <methods>
+          <include name="mayBeLogIn"/>
+          <include name="mayBeLogout"/>
+          <include name="init"/>
+        </methods>
+      </class> <!-- ua.bms.osop.test.LoginTest -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+</suite> <!-- Failed suite [Tests] -->
