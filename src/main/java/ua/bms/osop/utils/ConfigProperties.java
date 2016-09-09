@@ -1,11 +1,12 @@
-// Class that extracts properties from the prop file (application.properties)
-
 package ua.bms.osop.utils;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.Properties;
 
+/*
+ * Class that extracts properties from the prop file("application.properties").
+ */
 public class ConfigProperties {
 	
 	private static Properties PROPERTIES;

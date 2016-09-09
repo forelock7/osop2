@@ -1,13 +1,13 @@
 package ua.bms.osop.applogic1;
 
 import org.openqa.selenium.WebDriver;
-
 import ua.bms.osop.applogic.ApplicationManager;
 import ua.bms.osop.applogic.NavigationTopHelper;
 import ua.bms.osop.applogic.NavigationUnit68Helper;
 import ua.bms.osop.applogic.Unit7Helper;
 import ua.bms.osop.applogic.Unit9Helper;
 import ua.bms.osop.applogic.UserHelper;
+import ua.bms.osop.utils.Browser;
 import ua.bms.osop.utils.ConfigProperties;
 import ua.bms.osop.webdriver.WebDriverFactory;
 
@@ -18,17 +18,25 @@ public class ApplicationManager1 implements ApplicationManager {
 	 private NavigationUnit68Helper navUnit68Helper;
 	 private Unit7Helper unit7Helper;
 	 private Unit9Helper unit9Helper;
-	 
 	 private WebDriver driver;
 	 private String baseUrl;
-
-	 
 	 
 	 public ApplicationManager1() {
 		 
 		 baseUrl = ConfigProperties.getProperty("base.url");
-		 
-		 driver = WebDriverFactory.getInstance();
+		 String gridHubUrl = ConfigProperties.getProperty("grid2.hub");
+
+		 Browser browser = new Browser();
+		 browser.setName(ConfigProperties.getProperty("browser.name"));
+		 browser.setVersion(ConfigProperties.getProperty("browser.version"));
+		 browser.setPlatform(ConfigProperties.getProperty("browser.platform"));
+
+		 String username = ConfigProperties.getProperty("user.username");
+		 String password = ConfigProperties.getProperty("user.password");
+	    
+		 driver = WebDriverFactory.getInstance(gridHubUrl, browser, username, password);
+	 		 
+		 //driver = WebDriverFactory.getInstance();
 
 		 userHelper = new UserHelper1(this);
 		 navTopHelper = new NavigationTopHelper1(this);
@@ -47,12 +55,12 @@ public class ApplicationManager1 implements ApplicationManager {
 	
 	@Override
 	public NavigationTopHelper getNavigationTopHelper() {
-	  return navTopHelper;
+		return navTopHelper;
 	}
 	
 	@Override
 	public NavigationUnit68Helper getNavigationUnit68Helper() {
-	  return navUnit68Helper;
+		return navUnit68Helper;
 	}
 	
 	@Override
@@ -79,6 +87,4 @@ public class ApplicationManager1 implements ApplicationManager {
 			driver.quit();
 		}
 	}
-	  
-
 }
