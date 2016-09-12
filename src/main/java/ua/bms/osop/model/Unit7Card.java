@@ -2,6 +2,9 @@ package ua.bms.osop.model;
 
 import java.util.Random;
 
+/*
+ * Implements model of Unit 7 Card
+ */
 public class Unit7Card {
 
 	public String speechDate;
@@ -18,18 +21,19 @@ public class Unit7Card {
 	public String regNumberRestoredCard;
 
 
-	//generation of random subject of speech
+	/*Generation of random subject of speech*/
 	private String setSubjectOfSpeech() {
 		Random rnd = new Random();
 		return "SUBJECT # " + Integer.toString(rnd.nextInt(999999));
 	}
 	
-	//generation of random new text for editing some Text Field
+	/*Generation of random new text for editing some Text Field*/
 	private String creatNewText() {
 		Random rnd = new Random();
 		return "Some NEW teXt U7" + Integer.toString(rnd.nextInt(999999));
 	}
 	
+	/*Constructor of Unit 7 Model Object*/
 	public Unit7Card(String speechDate, String nameOfMassMedia, String authorOfSpeech, String remark) {
 
 		this.subjectOfSpeech = setSubjectOfSpeech();

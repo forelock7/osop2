@@ -27,8 +27,7 @@
   </dependencies>
   
   <build>
-  
-  	<resources> 
+   	<resources> 
 		<resource>
 			<directory>src/main/resources</directory>
 			<filtering>true</filtering>
@@ -59,5 +58,36 @@
   		</plugin>
   	</plugins>
   </build>
-
+  <!-- profiles -->
+  <profiles>
+  	<profile>
+  		<id>firefox_local</id>
+  		<properties>
+  			<env>local</env>
+  			<user.username></user.username>
+  			<user.password></user.password>
+  			<grid2.hub></grid2.hub>
+  			<base.url>http://10.100.7.71:57775/osop/osop.Index.cls</base.url>
+  			<browser.name>firefox</browser.name>
+  			<browser.version></browser.version>
+  			<browser.platform></browser.platform>
+  		</properties>
+  		<activation>
+  			<activeByDefault>true</activeByDefault>
+  		</activation>
+  	</profile>
+  	<profile>
+  		<id>firefox_linux</id>
+  		<properties>
+  			<env>local</env>
+  			<user.username></user.username>
+  			<user.password></user.password>
+  			<grid2.hub>http://192.168.12.128:4444/wd/hub</grid2.hub>
+  			<base.url>http://10.100.7.71:57775/osop/osop.Index.cls</base.url>
+  			<browser.name>firefox</browser.name>
+  			<browser.version></browser.version>
+  			<browser.platform></browser.platform>
+  		</properties>
+  	</profile>
+  </profiles>
 </project>

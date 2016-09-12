@@ -1,6 +1,5 @@
 package ua.bms.osop.pages;
 
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
@@ -18,7 +17,7 @@ public abstract class Page {
 	public Page(PageManager pages) {
 		this.pages = pages;
 	    driver = pages.getWebDriver();
-	    wait= new WebDriverWait(driver, 2).ignoring(StaleElementReferenceException.class);
+	    wait= new WebDriverWait(driver, 2)/*.ignoring(StaleElementReferenceException.class)*/;
 	}
 	
 	

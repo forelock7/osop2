@@ -2,6 +2,9 @@ package ua.bms.osop.model;
 
 import java.util.Random;
 
+/*
+ * Implements model of Unit 9 Card
+ */
 public class Unit9Card {
 	public String protocolNumber;
 	public String protocolCreatingDate;
@@ -37,6 +40,7 @@ public class Unit9Card {
 		return "Some NEW teXt U9" + Integer.toString(rnd.nextInt(999999));
 	}
 	
+	/*Constructor of Unit 9 Model Object*/
 	public Unit9Card(String protocolCreatingDate, String commitingAVDate, String theory, String offenderName, String birthday, String militaryUnitName, String post, String referToCourtDate, String receivingCourtDecisionDate, String repeatedReferToCourtDate, String courtDecisionDate, String receivingDateMain, String beginingPunishmentDate) {
 
 		this.protocolNumber = setProtocolNumber();

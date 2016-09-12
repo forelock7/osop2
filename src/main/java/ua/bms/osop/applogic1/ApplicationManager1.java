@@ -11,6 +11,11 @@ import ua.bms.osop.utils.Browser;
 import ua.bms.osop.utils.ConfigProperties;
 import ua.bms.osop.webdriver.WebDriverFactory;
 
+/*
+ * Helps to manage application.
+ * Performs initialization of instance of WebDriver, all Helpers, some properties of web-site and browser
+ * Implements all get-methods of all Helpers
+ */
 public class ApplicationManager1 implements ApplicationManager {
 	
 	 private UserHelper userHelper;
@@ -21,22 +26,20 @@ public class ApplicationManager1 implements ApplicationManager {
 	 private WebDriver driver;
 	 private String baseUrl;
 	 
+	 /*Initialization configuration properties from application.properties(pom.xml(depend on profile))*/ 
 	 public ApplicationManager1() {
-		 
+		 		 
 		 baseUrl = ConfigProperties.getProperty("base.url");
 		 String gridHubUrl = ConfigProperties.getProperty("grid2.hub");
-
 		 Browser browser = new Browser();
 		 browser.setName(ConfigProperties.getProperty("browser.name"));
 		 browser.setVersion(ConfigProperties.getProperty("browser.version"));
 		 browser.setPlatform(ConfigProperties.getProperty("browser.platform"));
-
 		 String username = ConfigProperties.getProperty("user.username");
 		 String password = ConfigProperties.getProperty("user.password");
 	    
 		 driver = WebDriverFactory.getInstance(gridHubUrl, browser, username, password);
-	 		 
-		 //driver = WebDriverFactory.getInstance();
+	 	 //driver = WebDriverFactory.getInstance();
 
 		 userHelper = new UserHelper1(this);
 		 navTopHelper = new NavigationTopHelper1(this);
@@ -44,10 +47,16 @@ public class ApplicationManager1 implements ApplicationManager {
 		 unit7Helper = new Unit7Helper1(this);
 		 unit9Helper = new Unit9Helper1(this);
 		 
+		 /*sets URL of main page*/
 		 getUserHelper().openMainPage();
 		 
-	 }
+	}
+	
 	 
+	/*
+	 * Implements methods for managing Helpers objects
+	 * 
+	 */
 	@Override
 	public UserHelper getUserHelper() {
 		return userHelper;
@@ -80,7 +89,8 @@ public class ApplicationManager1 implements ApplicationManager {
 	protected String getBaseUrl() {
 	    return baseUrl;
 	  }
-	 
+	
+	/*Performs quitting from WebDriver*/
 	@Override
 	public void stop() {
 		if (driver != null) {

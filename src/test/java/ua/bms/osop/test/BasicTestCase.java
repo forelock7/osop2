@@ -1,24 +1,28 @@
-// Basic class for all tests
-
 package ua.bms.osop.test;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
-
 import ua.bms.osop.applogic1.ApplicationManager1;
 import ua.bms.osop.model.Unit7Card;
 import ua.bms.osop.model.Unit9Card;
 import ua.bms.osop.model.User;
 
+/*
+ * Basic class for all test classes.
+ * There are some methods are performed in Test's classes Before and/or After Class/Suite.
+ * Performs object's initialization of model's classes(ua.bms.osop.model) 
+ */
 public class BasicTestCase {
 	
 	protected ApplicationManager1 app;
-
+	
+	/*Before Test Class creates new object of Application Manager*/
 	@BeforeClass
 	public void init() {
 		app = new ApplicationManager1();
 	}
 	
+	/*Checks login in system before Test Class, in case logOut - performs loginIn*/
 	@BeforeClass
 	public void mayBeLogIn() {
 		if (app.getUserHelper().isLoggedIn()) {
@@ -26,19 +30,22 @@ public class BasicTestCase {
 		}
 		app.getUserHelper().loginAs(user);
 	}
-			
+	
+	/*Quits from WebDriver after performing Test Suite*/
 	@AfterSuite
 	public void stop() {
 		app.stop();
 	}
 	
 /*-----------------------------------------------------------------------------------------------------------------*/
-	//Initialization of object "user"	
+	/*Initialization of object "user"*/	
 	protected User user = new User("vova", "bMS$2016");
 	protected User user1 = new User("vova", "failedPassword");
 	protected User user2 = new User("failedLogin", "bMS$2016");
+	
 /*-----------------------------------------------------------------------------------------------------------------*/	
-	//Initialization of input fields from Military Administrative Violation Card except field with drop-down list
+	
+	/*Initialization of input fields from Military Administrative Violations Card(Unit 9) except field with drop-down list*/
 	protected static Unit9Card mAVCard = new Unit9Card(
 			/*Дата складання протоколу*/"01.07.2016", 
 			/*Дата вчинення правопорушення*/"02.07.2016", 
@@ -54,8 +61,9 @@ public class BasicTestCase {
 			/*Дата надходження рішення суду(для обліку у звіті)*/"08.07.2016", 
 			/*Дата початку утримання на гаупвахті*/"09.07.2016");
 	
-	//protected static String someNewText = "Some text after EDITING 12343434456678767890!@#@#$%^&&*^";
 /*-----------------------------------------------------------------------------------------------------------------*/	
+	
+	/*Initialization of input fields from Mass Media Card(Unit 7) except field with drop-down list*/
 	protected static Unit7Card mMCard = new Unit7Card(
 			/*Дата виступу*/"28.07.2016",
 			/*Назва ЗМІ*/"Назва ЗМІ 099089667545233",

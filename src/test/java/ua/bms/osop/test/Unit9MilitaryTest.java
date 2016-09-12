@@ -4,9 +4,10 @@ import static org.testng.Assert.assertTrue;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+/*
+ * Implements all tests related to Military Administrative Violations (Unit 9)
+ */
 public class Unit9MilitaryTest extends BasicTestCase {
-	
-/*-----------------------------Tests---------------------------------------------------------*/	
 	
 	@Test (groups = {"unit9"})
 	public void testJumpToUnit9Page(){
@@ -38,7 +39,5 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		app.getUnit9Helper().restoreCardUnit9(mAVCard);
 		Assert.assertEquals(mAVCard.regNumberRestoredCard, app.getUnit9Helper().getRegNumberAfterRestoringCardU9());
 	}
-
-	
 
 }

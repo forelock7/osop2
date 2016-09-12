@@ -1,8 +1,10 @@
 package ua.bms.osop.pages;
 
+import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class NavigationTopPage extends AnyPage {
 	
@@ -33,7 +35,8 @@ public class NavigationTopPage extends AnyPage {
 
 	public NavigationTopPage ensurePageLoaded() {
 		super.ensurePageLoaded();
-	    wait.until(ExpectedConditions.visibilityOf(linkLogOut));
+		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'mainToolBarContainer')]//.[contains(text(), 'Вихід')]")));
+	    //wait.until(ExpectedConditions.visibilityOf(linkLogOut));
 	    return this;
 	}
 

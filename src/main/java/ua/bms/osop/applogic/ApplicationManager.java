@@ -1,6 +1,3 @@
-/*
- * 
- */
 package ua.bms.osop.applogic;
 
 public interface ApplicationManager {
