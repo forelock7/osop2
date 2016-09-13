@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.pagefactory.ElementLocator;
 import org.openqa.selenium.support.pagefactory.ElementLocatorFactory;
 
+/*
+ * Modified AjaxElementLocatorFactory.
+ */
 public class DisplayedElementLocatorFactory implements ElementLocatorFactory {
 	
 	  private final WebDriver driver;
@@ -16,8 +19,8 @@ public class DisplayedElementLocatorFactory implements ElementLocatorFactory {
 	    this.timeOutInSeconds = timeOutInSeconds;
 	  }
 
+	  //Create ElementLocator object
 	  public ElementLocator createLocator(Field field) {
 	    return new DisplayedElementLocator(driver, field, timeOutInSeconds);
 	  }
-
 }

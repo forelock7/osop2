@@ -5,8 +5,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+/*
+ * Abstract class declare Web-elements and methods with them that could be used on every Page 
+ */
 public abstract class AnyPage extends Page {
 	
+	/*
+	 * Constructor of this Page object which is managed by object Page Manager.
+	 */
 	public AnyPage(PageManager pages) {
 		super(pages);
 	}

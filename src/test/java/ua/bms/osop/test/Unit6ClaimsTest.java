@@ -1,0 +1,27 @@
+package ua.bms.osop.test;
+
+import static org.testng.Assert.assertTrue;
+
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+/*
+ * Implements all tests related to Claims (Unit 6)
+ */
+public class Unit6ClaimsTest extends BasicTestCase {
+	
+	@Test (groups = {"unit6"})
+	public void testJumpToUnit6Page() {
+		assertTrue(app.getUserHelper().isLoggedIn());
+		app.getNavigationTopHelper().goToNavigationUnit68Page();
+		app.getNavigationUnit68Helper().goToUnit6Page();
+		assertTrue(app.getUnit6Helper().isOnUnit6Page());
+	}
+	
+	@Test (groups = {"unit6"}, dependsOnMethods = {"testJumpToUnit6Page"})
+	public void testCreateClaimCard() {
+		app.getUnit6Helper().createCardUnit6(clCard);
+		Assert.assertEquals(clCard.claimNumber, app.getUnit6Helper().getClaimNumberLastCreatedCardU6());
+	}
+
+}

@@ -8,10 +8,23 @@ import ua.bms.osop.model.User;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
+/*
+ * Declare all Web-elements on Login Page and the main methods with them
+ */
 public class LoginPage extends AnyPage {
 	
+	/*
+	 * Constructor of this Page object which is managed by object Page Manager.
+	 */
 	public LoginPage(PageManager pages) {
 		super(pages);
+	}
+	
+	//Ensures page loading according to existence of Heading h2
+	public LoginPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(ExpectedConditions.visibilityOf(linkLogIn));
+		return this;
 	}
 
 /*------------------The Web-Elements of the page------------------------------------------------------*/	
@@ -34,26 +47,19 @@ public class LoginPage extends AnyPage {
 	
 /*------------------Methods---------------------------------------------------------------------------*/
 	
-	//ensuring page loading according to existence of Heading h2
-	public LoginPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(linkLogIn));
-		return this;
-	}
-	
-	//filling Login Form in
+	//Fills Login Form in
 	public LoginPage setLoginForm(User user) {
 		type(inputUsername, user.login);
 		type(inputPassword, user.password);
 		return this;
 	}
 	
-	//Clicking on button "LogIn" ("Увійти в систему")
+	//Clicks on button "LogIn" ("Увійти в систему")
 	public void clickButtonSubmit() {
 		buttonLogin.click();
 	}
 	
-	//Accepting alert "Invalid password or username" ("Невірний пароль або логін") after failed login or password
+	//Accepts alert "Invalid password or username" ("Невірний пароль або логін") after failed login or password
 	public void acceptFailedLoginAlert(){
 		wait.until(alertIsPresent()).accept();
 		//Alert faildLoginAlert = driver.switchTo().alert();

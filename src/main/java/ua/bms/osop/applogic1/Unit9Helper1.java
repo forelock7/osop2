@@ -4,11 +4,15 @@ import ua.bms.osop.applogic.Unit9Helper;
 import ua.bms.osop.model.Unit9Card;
 
 /*
+ * Ancillary Class for tests on Military Administrative Offenses Page
  * Implements all methods are used in Unit9MilitaryTest and related with Unit9Card model(ua.bms.osop.model.Unit9Card)
  * Uses methods from Unit9MilitaryPage
  */
 public class Unit9Helper1 extends DriverBasedHelper implements Unit9Helper  {
 	
+	/*
+	 * Constructor of object which is managed by object Application Manager.
+	 */
 	public Unit9Helper1(ApplicationManager1 manager) {
 		super(manager.getWebDriver());
 	}

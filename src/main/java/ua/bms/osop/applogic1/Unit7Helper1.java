@@ -4,11 +4,15 @@ import ua.bms.osop.applogic.Unit7Helper;
 import ua.bms.osop.model.Unit7Card;
 
 /*
+ * Ancillary Class for tests on Mass Media Page Unit 7
  * Implements all methods are used in Unit7MassMediaTest and related with Unit7Card model(ua.bms.osop.model.Unit7Card)
  * Uses methods from Unit7MassMediaPage
  */
 public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 	
+	/*
+	 * Constructor of object which is managed by object Application Manager.
+	 */
 	public Unit7Helper1(ApplicationManager1 manager) {
 		super(manager.getWebDriver());
 	}

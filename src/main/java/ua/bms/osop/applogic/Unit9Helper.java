@@ -2,6 +2,9 @@ package ua.bms.osop.applogic;
 
 import ua.bms.osop.model.Unit9Card;
 
+/*
+ * Declares all methods implemented class ua.bms.osop.applogic1.Unit9Helper1
+ */
 public interface Unit9Helper {
 	
 	boolean isOnUnit9Page();

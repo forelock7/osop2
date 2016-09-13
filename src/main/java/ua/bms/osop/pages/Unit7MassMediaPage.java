@@ -8,12 +8,22 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import ua.bms.osop.model.Unit7Card;
 
+/*
+ * Declare all Web-elements on Mass Media Page - Unit 7("ЗМІ")
+ * and the main methods with them
+ */
 public class Unit7MassMediaPage extends AnyPage{
 	
+	/*
+	 * Constructor of this Page object which is managed by object Page Manager.
+	 */
 	public Unit7MassMediaPage(PageManager pages) {
 		super(pages);
 	}
 	
+	/*
+	 * Determines loading of Page
+	 */
 	public Unit7MassMediaPage ensurePageLoaded() {
 		super.ensurePageLoaded();
 		wait.until(ExpectedConditions.visibilityOf(titleUnit7));
@@ -39,7 +49,7 @@ public class Unit7MassMediaPage extends AnyPage{
 	@FindBy(xpath = "//div[contains(@id, 'mediaGridDeleted')]//table[1]//td[9]/div/img")
 	private WebElement buttonRestore;
 	
-/*------------------The Web-Elements of the Card------------------------------------------------------*/
+	/*------------------The Web-Elements of the Card------------------------------------------------------*/
 	
 	//Input field "Speech Date" ("Дата виступу")
 	@FindBy(xpath = "//div[contains(@id, 'unit7-mediaCard')]//input[contains(@id, 'datefield')]")
@@ -70,13 +80,7 @@ public class Unit7MassMediaPage extends AnyPage{
 	private WebElement inputRemark;
 	
 	/*------------------Methods---------------------------------------------------------------------------*/
-	
-	
-	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEditCardUnit7() {
-		buttonEdit.click();
-	}
-	
+		
 	//Setting the new card with filling all fields in
 	public Unit7MassMediaPage setCardUnit7(Unit7Card massMediaCard){
 		type(inputSpeechDate, massMediaCard.speechDate);
@@ -94,6 +98,11 @@ public class Unit7MassMediaPage extends AnyPage{
 	//Getting existing Subject of Speech from input-field
 	public String getInputSubjectOfSpeechUnit7() {
 		return inputSubjectOfSpeech.getAttribute("value");
+	}
+	
+	//Click on "Edit" button for the first record in the main grid
+	public void clickButtonEditCardUnit7() {
+		buttonEdit.click();
 	}
 	
 	//Editing SOME field ("Author" ("Автор"))

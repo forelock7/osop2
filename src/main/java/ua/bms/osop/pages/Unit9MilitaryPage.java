@@ -7,12 +7,22 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import ua.bms.osop.model.Unit9Card;
 
+/*
+ * Declare all Web-elements on Military Administrative Offenses Page - Unit 9("Військові адмінправопорушення")
+ * and the main methods with them
+ */
 public class Unit9MilitaryPage extends AnyPage {
 	
+	/*
+	 * Constructor of this Page object which is managed by object Page Manager.
+	 */
 	public Unit9MilitaryPage(PageManager pages) {
 		super(pages);
 	}
 	
+	/*
+	 * Determines loading of Page
+	 */
 	public Unit9MilitaryPage ensurePageLoaded() {
 		super.ensurePageLoaded();
 		wait.until(ExpectedConditions.visibilityOf(titleUnit9/*By.xpath("//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]"*/));
@@ -21,7 +31,7 @@ public class Unit9MilitaryPage extends AnyPage {
 		
 /*-------------------The Web-Elements of Main Page----------------------------------------------------*/
 
-	//Title "Military Administrative Violations" ("Військові адмінправопорушення")
+	//Title "Military Administrative Offenses" ("Військові адмінправопорушення")
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")
 	private WebElement titleUnit9;
 	
@@ -37,7 +47,7 @@ public class Unit9MilitaryPage extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'crimeGridDeleted')]//table[1]//td[12]/div/img")
 	private WebElement buttonRestore;
 	
-/*------------------The Web-Elements of the Card------------------------------------------------------*/
+	/*------------------The Web-Elements of the Card------------------------------------------------------*/
 	//Input field "Protocol Number" ("Номер протоколу")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Номер протоколу:')]/../following-sibling::div[1]//input")
 	//@CacheLookup /*Caching web-element refer for reusing this element*/
@@ -49,14 +59,14 @@ public class Unit9MilitaryPage extends AnyPage {
 
 	//Input field "Section of AV Lawbook" ("Стаття КУпАП")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Стаття КУпАП:')]")
-	private WebElement inputSectionAVLawbook;
+	private WebElement inputSectionAOLawbook;
 	//First Item "Ст. 172-10" from drop-down list of input field "Section of AV Lawbook" ("Стаття КУпАП")
 	@FindBy(xpath  = "//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]")
-	private WebElement itemSectionAVLawbook;
+	private WebElement itemSectionAOLawbook;
 	
 	//Input field "Date of Commitment Administrative Violations" ("Дата вчинення правопорушення")
 	@FindBy(id = "datefield-1206-inputEl")
-	private WebElement inputCommitingAVDate;
+	private WebElement inputCommitingAODate;
 	
 	//Input field "Theory" ("Фабула")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//textarea")
@@ -135,7 +145,7 @@ public class Unit9MilitaryPage extends AnyPage {
 	//Input field "Decision Date"  ("Дата рішення")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//input[contains(@id, 'datefield')]")
 	private WebElement inputCourtDecisionDate;
-	//Saving button of record into grid "Info about repeated ref/ret" ("Відомості про повторні направлення протоколу до суду / повернення судом")
+	//Saving button for recording into grid "Info about repeated ref/ret" ("Відомості про повторні направлення протоколу до суду / повернення судом")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crime-as-sendingToCourtInfoCard')]//span[contains(text(), 'Додати')]")
 	private WebElement buttonAddMovingOfProtocol;
 	
@@ -162,15 +172,16 @@ public class Unit9MilitaryPage extends AnyPage {
 	private WebElement inputBeginningPunishmentDate;
 	
 /*------------------Methods---------------------------------------------------------------------------*/
-		
+	
+	//Sets all field of Card
 	public Unit9MilitaryPage setCardUnit9(Unit9Card unit9Card) /*throws InterruptedException*/{
 		type(inputProtocolNumber, unit9Card.protocolNumber);
 		type(inputProtocolCreatingDate, unit9Card.protocolCreatingDate);
-		inputSectionAVLawbook.click();
+		inputSectionAOLawbook.click();
 		//Thread.sleep(2000);
 		//itemSectionAVLawbook.click();
 		wait.until(ExpectedConditions.elementToBeClickable/*presenceOfElementLocated*/(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]"))).click();
-		type(inputCommitingAVDate, unit9Card.commitingAVDate);
+		type(inputCommitingAODate, unit9Card.commitingAVDate);
 		type(inputTheory, unit9Card.theory);
 		type(inputOffenderName, unit9Card.offenderName);
 		type(inputBirthday, unit9Card.birthday);

@@ -3,6 +3,7 @@ package ua.bms.osop.test;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import ua.bms.osop.applogic1.ApplicationManager1;
+import ua.bms.osop.model.Unit6Card;
 import ua.bms.osop.model.Unit7Card;
 import ua.bms.osop.model.Unit9Card;
 import ua.bms.osop.model.User;
@@ -45,8 +46,8 @@ public class BasicTestCase {
 	
 /*-----------------------------------------------------------------------------------------------------------------*/	
 	
-	/*Initialization of input fields from Military Administrative Violations Card(Unit 9) except field with drop-down list*/
-	protected static Unit9Card mAVCard = new Unit9Card(
+	/*Initialization of input fields from Military Administrative Offenses Card(Unit 9) except field with drop-down list*/
+	protected static Unit9Card mAOCard = new Unit9Card(
 			/*Дата складання протоколу*/"01.07.2016", 
 			/*Дата вчинення правопорушення*/"02.07.2016", 
 			/*Фабула*/"Фабула_бот-english", 
@@ -69,5 +70,15 @@ public class BasicTestCase {
 			/*Назва ЗМІ*/"Назва ЗМІ 099089667545233",
 			/*Автор*/"Автор Author 56473657829*^&%#@@!",
 			/*Примітка*/"Примітка Remark*&^&$%$^@$@!");
+
+/*-----------------------------------------------------------------------------------------------------------------*/	
+	
+	/*Initialization of input fields from Claim Card(Unit 6) except field with drop-down list*/
+	
+	protected static Unit6Card clCard = new Unit6Card (
+			/*Назва заявника*/"Petrov",
+			/*Стислий зміст*/"HUIyugguswcgygw",
+			/*Дата надходження до прокуратури*/"15.09.2016");
+		
 
 }
