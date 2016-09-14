@@ -65,7 +65,7 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 	/*Removes card(record) from main grid on Unit7*/
 	@Override
 	public void removeCardUnit7(Unit7Card unit7Card){
-		pages.unit7MassMediaPage.removeCardUnit7(unit7Card);
+		pages.unit7MassMediaPage.removeCardFromGridUnit7(unit7Card);
 	}
 	
 	/*
@@ -81,7 +81,7 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 	/*Restores later removed card*/
 	@Override
 	public void restoreCardUnit7(Unit7Card unit7Card){
-		pages.unit7MassMediaPage.restoreCardUnit7(unit7Card);
+		pages.unit7MassMediaPage.restoreCardFromGridUnit7(unit7Card);
 	}
 	
 	/*

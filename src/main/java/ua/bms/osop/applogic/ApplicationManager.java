@@ -8,6 +8,7 @@ public interface ApplicationManager {
 	UserHelper getUserHelper();
 	NavigationTopHelper getNavigationTopHelper();
 	NavigationUnit68Helper getNavigationUnit68Helper();
+	Unit4Helper getUnit4Helper();
 	Unit6Helper getUnit6Helper();
 	Unit7Helper getUnit7Helper();
 	Unit8Helper getUnit8Helper();

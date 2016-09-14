@@ -3,11 +3,12 @@ package ua.bms.osop.model;
 import java.util.Random;
 
 /*
- * Implements model of Unit 6 Card
+ * "International Judicial Cooperation" Page - Unit 4 ("Міжнародно-правове співробітництво")
+ * Implements model of Unit 4 Card
  */
-public class Unit8Card {
-	
-	public String requestNumber;
+public class Unit4Card {
+
+	public String claimNumber;
 	public String receiptDate;
 	public String summary;
 	
@@ -17,9 +18,9 @@ public class Unit8Card {
 	//set registration number Card is been restoring from confirmation form of Restoring
 	public String regNumberRestoredCard;
 	
-	/*Constructor of Unit 8 Model Object*/
-	public Unit8Card(String receiptDate, String summary) {
-		this.requestNumber = createRequestNumber();
+	/*Constructor of Unit 4 Model Object*/
+	public Unit4Card(String receiptDate, String summary) {
+		this.claimNumber = createClaimNumber();
 		
 		this.receiptDate = receiptDate;
 		this.summary = summary;
@@ -27,8 +28,8 @@ public class Unit8Card {
 		this.someNewText = creatNewText();
 	}
 	
-	/*Generation of random number of Request*/
-	private String createRequestNumber() {
+	/*Generation of random number of Claim*/
+	private String createClaimNumber() {
 		Random rnd = new Random();
 		return Integer.toString(rnd.nextInt(999999999));
 	}
@@ -36,6 +37,8 @@ public class Unit8Card {
 	/*Generation of random new text for editing some Text Field*/
 	private String creatNewText() {
 		Random rnd = new Random();
-		return "Some NEW teXt U8!cdeswcvdaewv@##$$%&*^&*(&)" + Integer.toString(rnd.nextInt(999999999));
+		return "Some NEW teXt U4!@##dddghfhds$$%&*^&*(&)" + Integer.toString(rnd.nextInt(999999999));
 	}
+	
+	
 }

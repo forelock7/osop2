@@ -39,6 +39,10 @@ public class NavigationTopPage extends AnyPage {
 	
 	//Items from menu "Report sections"("РОЗДІЛИ ЗВІТУ")
 	
+	//Section Unit 4 - "International Judicial Cooperation"(Розділ 4: "Міжнародно-правове співробітництво")
+	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Міжнародно-правове співробітництво')]")
+	private WebElement itemMenuU4;
+	
 	//Section Unit 68 - "Consideration of Claims and Requests"(Розділ 6 та 8: "Розгляд звернень та запитів")
 	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Розгляд звернень та запитів')]")
 	private WebElement itemMenuU68;
@@ -58,6 +62,13 @@ public class NavigationTopPage extends AnyPage {
 		linkLogOut.click();
 		buttonYesConfirmationPopup.click();
 		return pages.loginPage;
+	}
+	
+	//U4 - Moving from "Home" page to "International Judicial Cooperation" page
+	public Unit4InternationalPage moveToUnit4Page() {
+		buttonReportSections.click();
+		itemMenuU4.click();
+		return pages.unit4InternationalPage;
 	}
 	
 	//U68 - Moving from "Home" page to "Consideration of Claims and Requests" page
@@ -80,5 +91,7 @@ public class NavigationTopPage extends AnyPage {
 		itemMenuU9.click();
 		return pages.unit9MilitaryPage;
 	}
+	
+	
 
 }

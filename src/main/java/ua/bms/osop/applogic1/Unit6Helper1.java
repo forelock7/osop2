@@ -23,9 +23,9 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 	
 	/*Creates a new Card with filling all fields in and submitting*/
 	@Override
-	public void createCardUnit6(Unit6Card claimCard){
+	public void createCardUnit6(Unit6Card unit6Card){
 		pages.unit6ClaimsPage.clickButtonCreateCard();
-		pages.unit6ClaimsPage.setCardUnit6(claimCard).clickButtonSaveCard();
+		pages.unit6ClaimsPage.setCardUnit6(unit6Card).clickButtonSaveCard();
 		pages.unit6ClaimsPage.clickOnAlertOK();
 	}
 	
@@ -37,9 +37,59 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 	@Override
 	public String getClaimNumberLastCreatedCardU6(){
 		pages.unit6ClaimsPage.clickButtonEditCardUnit6();
-		String existingTextInSpeechSubjectField = pages.unit6ClaimsPage.getInputClaimNumberUnit6();
+		String existingTextInClaimNumberField = pages.unit6ClaimsPage.getInputClaimNumberUnit6();
 		pages.unit6ClaimsPage.clickButtonExitFromCardForm();
-		return existingTextInSpeechSubjectField;
+		return existingTextInClaimNumberField;
+	}
+	
+	/*Edits card with changing value in field "Summary"*/
+	@Override
+	public void editCardUnit6(Unit6Card unit6Card) {
+		pages.unit6ClaimsPage.clickButtonEditCardUnit6();
+		pages.unit6ClaimsPage.setInputSummaryUnit6(unit6Card.someNewText);
+		pages.unit6ClaimsPage.clickButtonSaveCard();
+		pages.unit6ClaimsPage.clickOnAlertOK();
+	}
+	
+	/*Returns value in field "Summary" from later edited card(after its editing)*/
+	@Override
+	public String getValueInFieldLastCardU6(){
+		pages.unit6ClaimsPage.clickButtonEditCardUnit6();
+		String existingValueInSummaryField = pages.unit6ClaimsPage.getInputSummaryUnit6();
+		pages.unit6ClaimsPage.clickButtonExitFromCardForm();
+		return existingValueInSummaryField;
+	}
+	
+	/*Removes card(record) from main grid on Unit6*/
+	@Override
+	public void removeCardUnit6(Unit6Card unit6Card){
+		pages.unit6ClaimsPage.removeCardFromGridUnit6(unit6Card);
+	}
+	
+	/*
+	 * Gets number of the first record(card) in grid on the tab "Removed"
+	 * Checks existing of later removing card
+	 */
+	@Override
+	public String getRegNumberAfterRemovingCardU6(){
+		pages.unit6ClaimsPage.goToRemovedTab();
+		return pages.unit6ClaimsPage.getRegNumberFromGridOnRemovedTab();
+	}
+	
+	/*Restores later removed card*/
+	@Override
+	public void restoreCardUnit6(Unit6Card unit6Card){
+		pages.unit6ClaimsPage.restoreCardFromGridUnit6(unit6Card);
+	}
+	
+	/*
+	 * Gets number of the first record(card) in grid on the main tab
+	 * Checks existing of later restoring card
+	 */
+	@Override
+	public String getRegNumberAfterRestoringCardU6(){
+		pages.unit6ClaimsPage.goToMainTab();
+		return pages.unit6ClaimsPage.getRegNumberFromGridOnMainTab();
 	}
 
 }

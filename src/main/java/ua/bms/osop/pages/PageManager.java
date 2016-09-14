@@ -13,10 +13,12 @@ public class PageManager {
 	public LoginPage loginPage;
 	public NavigationTopPage navigationTopPage;
 	public NavigationUnits68Page navigationUnits68Page;
+	public Unit4InternationalPage unit4InternationalPage;
 	public Unit6ClaimsPage unit6ClaimsPage;
 	public Unit7MassMediaPage unit7MassMediaPage;
 	public Unit8RequestsPage unit8RequestsPage;
 	public Unit9MilitaryPage unit9MilitaryPage;
+	
 
 	/*
 	 * Performs initialization of each page.
@@ -27,6 +29,7 @@ public class PageManager {
 		loginPage = initElements(new LoginPage(this));
 		navigationTopPage = initElements(new NavigationTopPage(this));
 		navigationUnits68Page = initElements(new NavigationUnits68Page(this));
+		unit4InternationalPage = initElements(new Unit4InternationalPage(this));
 		unit6ClaimsPage = initElements(new Unit6ClaimsPage(this));
 		unit7MassMediaPage = initElements(new Unit7MassMediaPage(this));
 		unit8RequestsPage = initElements(new Unit8RequestsPage(this));

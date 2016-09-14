@@ -1,13 +1,11 @@
 package ua.bms.osop.pages;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import ua.bms.osop.model.Unit6Card;
-
 
 /*
  * Declare all Web-elements on Claims Page - Unit 6("Звернення")
@@ -41,6 +39,14 @@ public class Unit6ClaimsPage extends AnyPage {
 	@FindBy(xpath = "//table[1]//td[14]/div")
 	private WebElement buttonEdit;
 	
+	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-15).
+	@FindBy(xpath = "//table[1]//td[15]/div")
+	private WebElement buttonDelete;
+	
+	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
+	@FindBy(xpath = "//div[contains(@id, 'unit68-requestGridDeleted')]//table[1]//td[14]/div/img")
+	private WebElement buttonRestore;
+	
 	/*------------------The Web-Elements of the Card------------------------------------------------------*/
 	
 	//Input field "Number of Claim" ("№ звернення")
@@ -68,15 +74,15 @@ public class Unit6ClaimsPage extends AnyPage {
 	//Input field "Form of applicant" ("Вид заявника")
 	@FindBy(xpath = "//div[contains(@id, 'unit68-request-as-applicantCard')]//span[contains(., 'Вид заявника:')]")
 	private WebElement inputApplicantFormGrid;
-	@FindBy (xpath = "//div[contains(@id, 'boundlist-1345')]//li[contains(., 'Фізична особа')]")
+	@FindBy (xpath = "//div[contains(@id, 'unit68-request-as-applicantCard')]/following-sibling::div[2]/div[contains(@id, 'boundlist')]//li[contains(.,'Фізична особа')]")
 	private WebElement itemApplicantFormGrid;	
 	//Input field "Type of applicant"  ("Тип заявника")
 	@FindBy(xpath = "//div[contains(@id, 'unit68-request-as-applicantCard')]//span[contains(., 'Тип заявника:')]")
 	private WebElement inputApplicantType;
-	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[contains(., 'Заявник')]")
+	@FindBy (xpath = "//div[contains(@id, 'unit68-request-as-applicantCard')]/following-sibling::div[4]//ul[contains(@id, 'boundlist')]//li[contains(.,'Заявник')]")
 	private WebElement itemApplicantType;
 	//Input field "" ("П.І.Б/Назва")
-	@FindBy(xpath = "//div[contains(@id, 'unit68-request-as-applicantCard')]//span[contains(., 'П.І.Б./Назва:')]")
+	@FindBy(xpath = "//div[contains(@id, 'unit68-request-as-applicantCard')]//span[contains(., 'П.І.Б./Назва:')]/../following-sibling::div[1]//input")
 	private WebElement inputApplicantName;
 	//Saving button for recording into grid "Info about repeated ref/ret" ("Відомості про повторні направлення протоколу до суду / повернення судом")
 	@FindBy(xpath = "//div[contains(@id, 'unit68-request-as-applicantCard')]//span[contains(text(), 'Додати')]")
@@ -107,18 +113,18 @@ public class Unit6ClaimsPage extends AnyPage {
 	/*------------------Methods---------------------------------------------------------------------------*/
 	
 	//Setting the new card with filling all fields in
-	public Unit6ClaimsPage setCardUnit6(Unit6Card claimCard){
+	public Unit6ClaimsPage setCardUnit6(Unit6Card unit6Card){
 				
-		type(inputClaimNumber, claimCard.claimNumber);
+		type(inputClaimNumber, unit6Card.claimNumber);
 		inputClaimType.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Первинне')]"))).click();
 		inputApplicantForm.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Фізична особа')]"))).click();
 		clickButtonAddFacts();
-		setApplicantFacts(claimCard);
+		setApplicantFacts(unit6Card);
 		clickButtonAddApplicantInForm();
-		type(inputSummary, claimCard.summary);
-		type(inputReceivingProsecutorDate, claimCard.receivingProsecutorDate);
+		type(inputSummary, unit6Card.summary);
+		type(inputReceivingProsecutorDate, unit6Card.receivingProsecutorDate);
 		inputArrowEstablishInUnit.click();
 		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'boundlist')]//tr[2]/td[1]/div"))).click();
 		inputClaimCategory.click();
@@ -133,9 +139,11 @@ public class Unit6ClaimsPage extends AnyPage {
 	//Adding a record into grid "Відомості про заявника, підписанта організації заявника та про співскаржників"
 	private Unit6ClaimsPage setApplicantFacts(Unit6Card claimCard) {
 		inputApplicantFormGrid.click();
-		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'boundlist-1345')]//li[contains(., 'Фізична особа')]"))).click();
+		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit68-request-as-applicantCard')]/following-sibling::div[2]/div[contains(@id, 'boundlist')]//li[contains(.,'Фізична особа')]"))).click();
 		inputApplicantType.click();
-		wait.until(ExpectedConditions.elementToBeClickable(itemApplicantType/*By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Заявник')]")*/)).click();
+		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit68-request-as-applicantCard')]/following-sibling::div[4]//ul[contains(@id, 'boundlist')]//li[contains(.,'Заявник')]"))).click();
+		//inputApplicantName.click();
+		//inputApplicantName.sendKeys(claimCard.applicantName);
 		type(inputApplicantName, claimCard.applicantName);
 		return this;
 	}
@@ -144,13 +152,36 @@ public class Unit6ClaimsPage extends AnyPage {
 		buttonAddApplicantInForm.click();
 	}
 	
+	//Click on "Edit" button for the first record in the main grid
 	public void clickButtonEditCardUnit6() {
-		buttonEdit.click();
+		wait1.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
 	}
 	
 	//Getting value from input-field "Claim Number" in formerly created card
 	public String getInputClaimNumberUnit6() {
 		return inputClaimNumber.getAttribute("value");
+	}
+	
+	//Editing SOME field ("Summary" ("Стислий зміст"))
+	public void setInputSummaryUnit6(String someText){
+		type(inputSummary, someText);
+	}
+	
+	//Getting existing value from input-field ("Summary" ("Стислий зміст"))
+	public String getInputSummaryUnit6() {
+		return inputSummary.getAttribute("value");
+	}
+	
+	//Removing Card with getting registration number of the card that will be removed
+	public void removeCardFromGridUnit6(Unit6Card unit6Card){
+		buttonDelete.click();
+		unit6Card.regNumberRemovedCard = super.confirmationOfRemoving();
+	}
+	
+	//Restoring card with getting registration number of the card that will be restored
+	public void restoreCardFromGridUnit6(Unit6Card unit6Card) {
+		buttonRestore.click();
+		unit6Card.regNumberRestoredCard = confirmRestoring();
 	}
 
 }

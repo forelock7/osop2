@@ -6,7 +6,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /*
- * Implements all tests related to Claims (Unit 6)
+ * Implements all tests related to "International Judicial Cooperation" Page - Unit 4 ("Міжнародно-правове співробітництво")
  */
 public class Unit6ClaimsTest extends BasicTestCase {
 	
@@ -22,6 +22,24 @@ public class Unit6ClaimsTest extends BasicTestCase {
 	public void testCreateClaimCard() {
 		app.getUnit6Helper().createCardUnit6(clCard);
 		Assert.assertEquals(clCard.claimNumber, app.getUnit6Helper().getClaimNumberLastCreatedCardU6());
+	}
+	
+	@Test (groups = {"unit6"}, dependsOnMethods = {"testCreateClaimCard"})
+	public void testEditClaimCard(){
+		app.getUnit6Helper().editCardUnit6(clCard);
+		Assert.assertEquals(clCard.someNewText, app.getUnit6Helper().getValueInFieldLastCardU6());
+	}
+	
+	@Test (groups = {"unit6"}, dependsOnMethods = {"testEditClaimCard"})
+	public void testRemoveClaimCard(){
+		app.getUnit6Helper().removeCardUnit6(clCard);
+		Assert.assertEquals(clCard.regNumberRemovedCard, app.getUnit6Helper().getRegNumberAfterRemovingCardU6());
+	}
+	
+	@Test (groups = {"unit6"}, dependsOnMethods = {"testRemoveClaimCard"})
+	public void testRestoreClaimCard() {
+		app.getUnit6Helper().restoreCardUnit6(clCard);
+		Assert.assertEquals(clCard.regNumberRestoredCard, app.getUnit6Helper().getRegNumberAfterRestoringCardU6());
 	}
 
 }

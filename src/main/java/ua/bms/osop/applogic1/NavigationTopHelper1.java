@@ -16,6 +16,12 @@ public class NavigationTopHelper1 extends DriverBasedHelper implements Navigatio
 		super(manager.getWebDriver());
 	}
 	
+	//Moving to page Unit 4 "International Judicial Cooperation" Page("Міжнародно-правове співробітництво")
+	@Override
+	public void goToUnit4Page(){
+		pages.navigationTopPage.ensurePageLoaded().moveToUnit4Page();
+	}
+	
 	//Moving to navigation page of Units 6 and 8 "Consideration of Claims and Requests"("Розгляд звернень та запитів")
 	@Override
 	public void goToNavigationUnit68Page(){

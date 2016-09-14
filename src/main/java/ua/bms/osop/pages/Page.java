@@ -11,7 +11,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class Page {
 	
 	protected WebDriver driver;
-	protected Wait<WebDriver> wait;
+	protected Wait<WebDriver> wait, wait1;
 	protected PageManager pages;
 		
 	/*
@@ -20,7 +20,8 @@ public abstract class Page {
 	public Page(PageManager pages) {
 		this.pages = pages;
 	    driver = pages.getWebDriver();
-	    wait= new WebDriverWait(driver, 5);
+	    wait = new WebDriverWait(driver, 2, 200);
+	    wait1 = new WebDriverWait(driver, 10)/*.ignoring(StaleElementReferenceException.class)*/;
 	}
 	
 	

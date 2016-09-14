@@ -2,34 +2,41 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Tests">
 
-	<test verbose="1" name="Test1">
+	<test verbose="3" name="Test1">
 		<classes>
       		 <class name="ua.bms.osop.test.LoginTest" />
  		</classes>
 	</test>  
 
-	<test verbose="1" name="Test2">
+	<test verbose="3" name="Test2">
 		<classes>
       		 <class name="ua.bms.osop.test.Unit9MilitaryTest" />
  		</classes>
 	</test>
 	
-	<test verbose="1" name="Test3">
+	<test verbose="3" name="Test3">
 		<classes>
       		 <class name="ua.bms.osop.test.Unit7MassMediaTest" />
  		</classes>
 	</test>
 	
-	<test verbose="1" name="Test4">
+	<test verbose="3" name="Test4">
 		<classes>
       		 <class name="ua.bms.osop.test.Unit6ClaimsTest" />
  		</classes>
 	</test>
 	
-	<test verbose="1" name="Test5">
+	<test verbose="3" name="Test5">
 		<classes>
       		 <class name="ua.bms.osop.test.Unit8RequestsTest" />
  		</classes>
 	</test>
+	
+	<test verbose="3" name="Test6">
+		<classes>
+      		 <class name="ua.bms.osop.test.Unit4InternationalTest" />
+ 		</classes>
+	</test>
+	
 
 </suite>

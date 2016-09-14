@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import ua.bms.osop.applogic.ApplicationManager;
 import ua.bms.osop.applogic.NavigationTopHelper;
 import ua.bms.osop.applogic.NavigationUnit68Helper;
+import ua.bms.osop.applogic.Unit4Helper;
 import ua.bms.osop.applogic.Unit6Helper;
 import ua.bms.osop.applogic.Unit7Helper;
 import ua.bms.osop.applogic.Unit8Helper;
@@ -23,6 +24,7 @@ public class ApplicationManager1 implements ApplicationManager {
 	 private UserHelper userHelper;
 	 private NavigationTopHelper navTopHelper;
 	 private NavigationUnit68Helper navUnit68Helper;
+	 private Unit4Helper unit4Helper;
 	 private Unit6Helper unit6Helper;
 	 private Unit7Helper unit7Helper;
 	 private Unit8Helper unit8Helper;
@@ -48,6 +50,7 @@ public class ApplicationManager1 implements ApplicationManager {
 		 userHelper = new UserHelper1(this);
 		 navTopHelper = new NavigationTopHelper1(this);
 		 navUnit68Helper = new NavigationUnit68Helper1(this);
+		 unit4Helper = new Unit4Helper1(this);
 		 unit6Helper = new Unit6Helper1(this);
 		 unit7Helper = new Unit7Helper1(this);
 		 unit8Helper = new Unit8Helper1(this);
@@ -75,6 +78,11 @@ public class ApplicationManager1 implements ApplicationManager {
 	@Override
 	public NavigationUnit68Helper getNavigationUnit68Helper() {
 		return navUnit68Helper;
+	}
+	
+	@Override
+	public Unit4Helper getUnit4Helper(){
+		return unit4Helper;
 	}
 	
 	@Override

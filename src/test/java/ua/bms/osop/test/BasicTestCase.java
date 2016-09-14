@@ -3,8 +3,10 @@ package ua.bms.osop.test;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import ua.bms.osop.applogic1.ApplicationManager1;
+import ua.bms.osop.model.Unit4Card;
 import ua.bms.osop.model.Unit6Card;
 import ua.bms.osop.model.Unit7Card;
+import ua.bms.osop.model.Unit8Card;
 import ua.bms.osop.model.Unit9Card;
 import ua.bms.osop.model.User;
 
@@ -74,11 +76,23 @@ public class BasicTestCase {
 /*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Claim Card(Unit 6) except field with drop-down list*/
-	
 	protected static Unit6Card clCard = new Unit6Card (
 			/*Назва заявника*/"Petrov",
 			/*Стислий зміст*/"HUIyugguswcgygw",
 			/*Дата надходження до прокуратури*/"15.09.2016");
 		
+/*----------------------------------------------------------------------------------------------------------------*/
+	
+	/*Initialization of input fields from Request Card(Unit 8) except field with drop-down list*/
+	protected static Unit8Card reqCard = new Unit8Card (
+			/*Дата надходження*/"10.09.2016",
+			/*Стислий зміст*/"HUIyugguswcgy32435421мкуп!№;%:*:*+w");
+	
+/*----------------------------------------------------------------------------------------------------------------*/
+	
+	/*Initialization of input fields from International Judicial Cooperation Card(Unit 4) except field with drop-down list*/
+	protected static Unit4Card intCard = new Unit4Card (
+			/*Дата надходження*/"11.09.2016",
+			/*Стислий зміст*/"HUIyugguswc1111111189ycgcvgas35421мкуп!№;%:*:*+w");
 
 }
