@@ -17,4 +17,5 @@ public interface Unit6Helper {
 	void restoreCardUnit6(Unit6Card unit6Card);
 	String getRegNumberAfterRestoringCardU6();
 
+
 }

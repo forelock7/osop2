@@ -43,6 +43,10 @@ public class NavigationTopPage extends AnyPage {
 	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Міжнародно-правове співробітництво')]")
 	private WebElement itemMenuU4;
 	
+	//Section Unit 5 - "Supervision of the observance of laws in the execution of judgments."(Розділ 5: "Нагляд за додержанням законів при виконанні судових рішень.")
+	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Нагляд за додержанням законів при виконанні судових рішень')]")
+	private WebElement itemMenuU5;
+	
 	//Section Unit 68 - "Consideration of Claims and Requests"(Розділ 6 та 8: "Розгляд звернень та запитів")
 	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Розгляд звернень та запитів')]")
 	private WebElement itemMenuU68;
@@ -70,6 +74,13 @@ public class NavigationTopPage extends AnyPage {
 		itemMenuU4.click();
 		return pages.unit4InternationalPage;
 	}
+	
+	//U5 - Moving from "Home" page to "Supervision of the observance of laws in the execution of judgments." page(Navigation)
+			public NavigationUnit5Page moveToNavigationUnit5Page(){
+				buttonReportSections.click();	
+				itemMenuU5.click();
+				return pages.navigationUnit5Page;
+			}
 	
 	//U68 - Moving from "Home" page to "Consideration of Claims and Requests" page
 		public NavigationUnits68Page moveToNavigationUnit68Page(){

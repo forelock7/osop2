@@ -36,8 +36,8 @@ public class Unit4InternationalPage extends AnyPage {
 	
 	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-13).
 	@FindBy(xpath = "//table[1]//td[13]/div")
-	private WebElement buttonEdit;
-	
+	WebElement buttonEdit;
+		
 	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
 	@FindBy(xpath = "//table[1]//td[14]/div")
 	private WebElement buttonDelete;
@@ -81,7 +81,7 @@ public class Unit4InternationalPage extends AnyPage {
 		
 	/*------------------Methods---------------------------------------------------------------------------*/
 	
-	//Setting the new card with filling all fields in
+	//Sets the new card with filling all fields in
 	public Unit4InternationalPage setCardUnit4(Unit4Card unit4Card){
 		type(inputClaimNumber, unit4Card.claimNumber);
 		type(inputReceiptDate, unit4Card.receiptDate);

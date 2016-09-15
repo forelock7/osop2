@@ -109,6 +109,7 @@ public abstract class AnyPage extends Page {
 	//Clicking on button "OK" of Alert Popup
 	public void clickOnAlertOK() {
 		buttonOKAlertPopup.click();
+		//wait1.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//.[contains(@id, 'messagebox')]//.[contains(@id, 'button')]")));
 	}
 	
 	//Clicking on "Exit"("Вихід") button in Card

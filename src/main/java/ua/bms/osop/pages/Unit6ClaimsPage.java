@@ -2,6 +2,7 @@ package ua.bms.osop.pages;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -36,7 +37,7 @@ public class Unit6ClaimsPage extends AnyPage {
 	private WebElement titleUnit6;
 	
 	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-14).
-	@FindBy(xpath = "//table[1]//td[14]/div")
+	@FindBy(xpath = "//table[1]//td[14]/div/img")
 	private WebElement buttonEdit;
 	
 	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-15).
@@ -154,7 +155,16 @@ public class Unit6ClaimsPage extends AnyPage {
 	
 	//Click on "Edit" button for the first record in the main grid
 	public void clickButtonEditCardUnit6() {
-		wait1.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
+		for (int i=0; i<3; ++i) {
+			try{
+				wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//table[1]//td[14]/div/img")));
+				buttonEdit.click();
+				break;
+			}catch (WebDriverException e) {
+				System.out.println("exception");
+			}
+		}
+	
 	}
 	
 	//Getting value from input-field "Claim Number" in formerly created card

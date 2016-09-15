@@ -13,7 +13,7 @@ public class Unit8RequestsTest extends BasicTestCase {
 	@Test (groups = {"unit8"})
 	public void testJumpToUnit8Page() {
 		assertTrue(app.getUserHelper().isLoggedIn());
-		app.getNavigationTopHelper().goToNavigationUnit68Page();
+		//app.getNavigationTopHelper().goToNavigationUnit68Page();
 		app.getNavigationUnit68Helper().goToUnit8Page();
 		assertTrue(app.getUnit8Helper().isOnUnit8Page());
 	}

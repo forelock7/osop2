@@ -3,8 +3,12 @@ package ua.bms.osop.applogic1;
 import org.openqa.selenium.WebDriver;
 import ua.bms.osop.applogic.ApplicationManager;
 import ua.bms.osop.applogic.NavigationTopHelper;
+import ua.bms.osop.applogic.NavigationUnit5Helper;
 import ua.bms.osop.applogic.NavigationUnit68Helper;
 import ua.bms.osop.applogic.Unit4Helper;
+import ua.bms.osop.applogic.Unit5ChargedHelper;
+import ua.bms.osop.applogic.Unit5DocumentsHelper;
+import ua.bms.osop.applogic.Unit5InspectionsHelper;
 import ua.bms.osop.applogic.Unit6Helper;
 import ua.bms.osop.applogic.Unit7Helper;
 import ua.bms.osop.applogic.Unit8Helper;
@@ -23,8 +27,12 @@ public class ApplicationManager1 implements ApplicationManager {
 	
 	 private UserHelper userHelper;
 	 private NavigationTopHelper navTopHelper;
+	 private NavigationUnit5Helper navUnit5Helper;
 	 private NavigationUnit68Helper navUnit68Helper;
 	 private Unit4Helper unit4Helper;
+	 private Unit5InspectionsHelper unit5InspectionsHelper;
+	 private Unit5DocumentsHelper unit5DocumentsHelper;
+	 private Unit5ChargedHelper unit5ChargedHelper;
 	 private Unit6Helper unit6Helper;
 	 private Unit7Helper unit7Helper;
 	 private Unit8Helper unit8Helper;
@@ -49,8 +57,12 @@ public class ApplicationManager1 implements ApplicationManager {
 
 		 userHelper = new UserHelper1(this);
 		 navTopHelper = new NavigationTopHelper1(this);
+		 navUnit5Helper = new NavigationUnit5Helper1(this);
 		 navUnit68Helper = new NavigationUnit68Helper1(this);
 		 unit4Helper = new Unit4Helper1(this);
+		 unit5InspectionsHelper = new Unit5InspectionsHelper1(this);
+		 unit5DocumentsHelper = new Unit5DocumentsHelper1(this);
+		 unit5ChargedHelper = new Unit5ChargedHelper1(this);
 		 unit6Helper = new Unit6Helper1(this);
 		 unit7Helper = new Unit7Helper1(this);
 		 unit8Helper = new Unit8Helper1(this);
@@ -76,8 +88,28 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 	
 	@Override
+	public NavigationUnit5Helper getNavigationUnit5Helper() {
+		return navUnit5Helper;
+	}
+	
+	@Override
 	public NavigationUnit68Helper getNavigationUnit68Helper() {
 		return navUnit68Helper;
+	}
+	
+	@Override
+	public Unit5InspectionsHelper getUnit5InspectionsHelper(){
+		return unit5InspectionsHelper;
+	}
+	
+	@Override
+	public Unit5DocumentsHelper getUnit5DocumentsHelper(){
+		return unit5DocumentsHelper;
+	}
+	
+	@Override
+	public Unit5ChargedHelper getUnit5ChargedHelper(){
+		return unit5ChargedHelper;
 	}
 	
 	@Override

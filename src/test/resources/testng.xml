@@ -38,5 +38,11 @@
  		</classes>
 	</test>
 	
+	<test verbose="3" name="Test7">
+		<classes>
+      		 <class name="ua.bms.osop.test.Unit5SupervisionJudgmentTest" />
+ 		</classes>
+	</test>
+	
 
 </suite>

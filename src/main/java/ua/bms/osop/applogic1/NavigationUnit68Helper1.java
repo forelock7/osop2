@@ -20,16 +20,33 @@ public class NavigationUnit68Helper1 extends DriverBasedHelper implements Naviga
 		super(manager.getWebDriver());
 	}
 	
+	/*Checks if on Navigation Page Unit 68*/
+	@Override
+	public boolean isOnUnit68Page(){
+		return pages.navigationUnits68Page.waitPageLoaded();
+	}
+	
 	//Moving Unit 6 "Claims"("Звернення")
 	@Override
 	public void goToUnit6Page(){
-		pages.navigationUnits68Page.ensurePageLoaded().moveToUnit6Page();
+		if (isOnUnit68Page()) {
+			pages.navigationUnits68Page.ensurePageLoaded().moveToUnit6Page();
+		} else {
+			pages.navigationTopPage.ensurePageLoaded().moveToNavigationUnit68Page();
+			pages.navigationUnits68Page.ensurePageLoaded().moveToUnit6Page();
+		}
 	}
 	
 	//Moving Unit 8 "Requests"("Запити")
 	@Override
 	public void goToUnit8Page(){
-		pages.navigationUnits68Page.ensurePageLoaded().moveToUnit8Page();
+		if (isOnUnit68Page()) {
+			pages.navigationUnits68Page.ensurePageLoaded().moveToUnit8Page();
+		} else {
+			pages.navigationTopPage.ensurePageLoaded().moveToNavigationUnit68Page();
+			pages.navigationUnits68Page.ensurePageLoaded().moveToUnit8Page();
+		}
 	}
+
 
 }

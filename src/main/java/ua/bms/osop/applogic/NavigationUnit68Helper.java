@@ -7,5 +7,6 @@ public interface NavigationUnit68Helper {
 
 	void goToUnit6Page();
 	void goToUnit8Page();
+	boolean isOnUnit68Page();
 
 }

@@ -1,5 +1,7 @@
 package ua.bms.osop.pages;
 
+import org.openqa.selenium.InvalidSelectorException;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
@@ -11,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class Page {
 	
 	protected WebDriver driver;
-	protected Wait<WebDriver> wait, wait1;
+	protected Wait<WebDriver> wait, wait1, wait2;
 	protected PageManager pages;
 		
 	/*
@@ -21,7 +23,8 @@ public abstract class Page {
 		this.pages = pages;
 	    driver = pages.getWebDriver();
 	    wait = new WebDriverWait(driver, 2, 200);
-	    wait1 = new WebDriverWait(driver, 10)/*.ignoring(StaleElementReferenceException.class)*/;
+	    wait1 = new WebDriverWait(driver, 10)/*.ignoring(StaleElementReferenceException.class).ignoring(TimeoutException.class)*/;
+	    wait2 = new WebDriverWait(driver, 10).ignoring(InvalidSelectorException.class, StaleElementReferenceException.class);
 	}
 	
 	
