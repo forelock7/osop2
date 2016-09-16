@@ -1,7 +1,10 @@
 package ua.bms.osop.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotVisibleException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -23,7 +26,7 @@ public abstract class AnyPage extends Page {
 		
 	//Button "Create" ("Створити")
 	@FindBy(xpath = "//span[contains(., 'Створити')]")
-	protected WebElement buttonCreateCard;
+	private WebElement buttonCreateCard;
 	
 	//Tab "Removed" ("Видалені")
 	@FindBy (xpath = "//span[contains(text(), 'Видалені')]")
@@ -32,6 +35,10 @@ public abstract class AnyPage extends Page {
 	//Tab Main in Unit
 	@FindBy (xpath = "//div[contains(@id, 'tabbar')]/a[1]//span[contains(@id, 'btnInnerEl')]")
 	private WebElement tabMain;
+	
+	//Header of "Registration Number" column(2) in Main Grid
+	@FindBy (xpath = "//div[contains(@id, 'headercontainer')]/div[3]")
+	private WebElement headerMainGrid;
 	
 	//Registration Number in the first record of grid on "Removed" tab
 	@FindBy(xpath = "//div[contains(@id, 'GridDeleted')]//table[1]//td[2]/div")
@@ -49,7 +56,7 @@ public abstract class AnyPage extends Page {
 	
 	//Button "Exit" ("Вихід") for exit from card
 	@FindBy (xpath = "//div[contains(@id, 'Card')]//span[contains(., 'Вихід')]")
-	protected WebElement buttonExitFromCard;
+	private WebElement buttonExitFromCard;
 	
 	/*The Massage Box (Popup)*/	
 		
@@ -99,6 +106,15 @@ public abstract class AnyPage extends Page {
 	
 	public void clickButtonCreateCard(){
 		buttonCreateCard.click();
+	}
+	
+	public void clickOnGridHeader() {
+		headerMainGrid.click();
+	}
+	
+	public void doubleClickOnGridHeader() {
+		Actions action = new Actions(driver);
+		action.doubleClick(headerMainGrid).doubleClick(headerMainGrid).perform();
 	}
 	
 	//Clicking on "Save"("Зберегти") button in Card
@@ -157,19 +173,21 @@ public abstract class AnyPage extends Page {
 	public String getRegNumberFromGridOnMainTab(){
 		return cellRegNumberInGridOnMainTab.getText();
 	}
-}
-
 			
-	/*protected boolean isElementPresent(WebElement element) {
+	protected boolean isElementPresent(WebElement element) {
 		try {
 			element.isDisplayed();
 			return true;
 		} catch (NoSuchElementException e) {
 			return false;
 			}
-		}
+		 catch (ElementNotVisibleException e1) {
+			 return false;
+		 }
+	}
+}
 	
-	public boolean isAlertPresent() {
+	/*public boolean isAlertPresent() {
 		return isElementPresent(buttonOKAlertPopup);
 	}*/
 

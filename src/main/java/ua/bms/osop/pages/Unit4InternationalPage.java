@@ -38,9 +38,9 @@ public class Unit4InternationalPage extends AnyPage {
 	@FindBy(xpath = "//table[1]//td[13]/div")
 	WebElement buttonEdit;
 		
-	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
+	//Button "Remove"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
 	@FindBy(xpath = "//table[1]//td[14]/div")
-	private WebElement buttonDelete;
+	private WebElement buttonRemove;
 	
 	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-13).
 	@FindBy(xpath = "//div[contains(@id, 'unit4-requestGridDeleted')]//table[1]//td[13]/div/img")
@@ -117,7 +117,7 @@ public class Unit4InternationalPage extends AnyPage {
 	
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGridUnit4(Unit4Card unit4Card){
-		buttonDelete.click();
+		buttonRemove.click();
 		unit4Card.regNumberRemovedCard = super.confirmationOfRemoving();
 	}
 	

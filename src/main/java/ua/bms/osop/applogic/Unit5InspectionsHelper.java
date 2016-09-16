@@ -11,8 +11,23 @@ import ua.bms.osop.model.Unit5InspectionCard;
 public interface Unit5InspectionsHelper {
 
 	boolean isOnUnit5InspectionPage();
-	void createInspectionCardUnit5(Unit5InspectionCard inspectionCard);
-	String getClaimNumberLastCreatedInspectionCardU5();
+	void createInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
+	String getAgencyNameLastCreatedInspectionCardU5();
+	void editInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
+	void removeInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
+	String getRegNumberAfterRemovingInspectionCardU5();
+	void restoreInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
+	String getRegNumberAfterRestoringCardU5();
+	void openToCreateInspectionCard();
+	void goToDocumentTabInInspectionCard();
+	boolean isOnUnit5InspectionCard();
+	void openToEditInspectionCardUnit5();
+	boolean checkIsButtonCreatePresent();
+	boolean isOnUnit5DocumentsTab();
+	void quitCard();
+	void loadDownMainGrid();
+	void openToCreateDocumentCard();
+	
 
 	
 

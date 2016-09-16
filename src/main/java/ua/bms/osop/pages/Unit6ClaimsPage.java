@@ -40,9 +40,9 @@ public class Unit6ClaimsPage extends AnyPage {
 	@FindBy(xpath = "//table[1]//td[14]/div/img")
 	private WebElement buttonEdit;
 	
-	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-15).
+	//Button "Remove"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-15).
 	@FindBy(xpath = "//table[1]//td[15]/div")
-	private WebElement buttonDelete;
+	private WebElement buttonRemove;
 	
 	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
 	@FindBy(xpath = "//div[contains(@id, 'unit68-requestGridDeleted')]//table[1]//td[14]/div/img")
@@ -184,7 +184,7 @@ public class Unit6ClaimsPage extends AnyPage {
 	
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGridUnit6(Unit6Card unit6Card){
-		buttonDelete.click();
+		buttonRemove.click();
 		unit6Card.regNumberRemovedCard = super.confirmationOfRemoving();
 	}
 	

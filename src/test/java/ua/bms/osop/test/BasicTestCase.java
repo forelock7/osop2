@@ -4,6 +4,7 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import ua.bms.osop.applogic1.ApplicationManager1;
 import ua.bms.osop.model.Unit4Card;
+import ua.bms.osop.model.Unit5DocumentCard;
 import ua.bms.osop.model.Unit5InspectionCard;
 import ua.bms.osop.model.Unit6Card;
 import ua.bms.osop.model.Unit7Card;
@@ -98,9 +99,13 @@ public class BasicTestCase {
 	
 /*----------------------------------------------------------------------------------------------------------------*/
 	
-	/*Initialization of input fields from Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
+	/*Initialization of input fields from Inspection Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
 	protected static Unit5InspectionCard inspectionCard = new Unit5InspectionCard (
 			/*Дата проведення перевірки*/"08.09.2016");
 
+/*----------------------------------------------------------------------------------------------------------------*/
+	
+	/*Initialization of input fields from Response Document Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
+	protected static Unit5DocumentCard documentCard = new Unit5DocumentCard ();
 
 }

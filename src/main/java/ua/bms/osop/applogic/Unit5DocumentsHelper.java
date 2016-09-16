@@ -1,5 +1,7 @@
 package ua.bms.osop.applogic;
 
+import ua.bms.osop.model.Unit5DocumentCard;
+
 /*
  * "Supervision of the observance of laws in the execution of judgments." Page - Unit 5
  * ("Нагляд за додержанням законів при виконанні судових рішень.")
@@ -9,5 +11,8 @@ package ua.bms.osop.applogic;
 public interface Unit5DocumentsHelper {
 	
 	boolean isOnUnit5DocumentsPage();
+	void quitCard();
+	void createDocumentCard(Unit5DocumentCard unit5DocumentCard);
+	
 
 }
