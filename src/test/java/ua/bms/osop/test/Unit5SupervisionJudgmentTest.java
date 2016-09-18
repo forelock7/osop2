@@ -57,7 +57,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		Assert.assertEquals(inspectionCard.regNumberRestoredCard, app.getUnit5InspectionsHelper().getRegNumberAfterRestoringCardU5());
 	}
 	
-	@Test (groups = {"document_unit5"}, priority = 3)
+	@Test (groups = {"document_unit5"}, dependsOnGroups = {"inspection_unit5"})
 	public void testCheckCreatingDocumentCardIsUnable() {
 		app.getNavigationUnit5Helper().goToUnit5InspectionsPage();
 		assertTrue(app.getUnit5InspectionsHelper().isOnUnit5InspectionPage());
@@ -70,7 +70,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		Assert.assertFalse(app.getUnit5InspectionsHelper().isOnUnit5InspectionCard());
 	}
 	
-	@Test (groups = {"document_unit5"}, priority = 3)
+	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testCheckCreatingDocumentCardIsUnable"})
 	public void testCreateDocumentCard() {
 		app.getUnit5InspectionsHelper().loadDownMainGrid();
 		app.getUnit5InspectionsHelper().openToEditInspectionCardUnit5();

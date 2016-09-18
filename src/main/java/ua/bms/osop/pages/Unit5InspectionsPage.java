@@ -110,13 +110,13 @@ public class Unit5InspectionsPage extends AnyPage {
 	
 	//Click on "Edit" button for the first record in the main grid
 	public void clickButtonEditInspectionCardUnit5() {
-		for (int i=0; i<3; ++i) {
+		for (int i=0; i<10; ++i) {
 			try{
 				wait.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
-				buttonEdit.click();
+				//buttonEdit.click();
 				break;
 			}catch (WebDriverException e) {
-				System.out.println("exception");
+				System.out.println("exception - Button EDIT is unable");
 			}
 		}
 	}
