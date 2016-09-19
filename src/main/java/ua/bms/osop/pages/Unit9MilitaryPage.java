@@ -246,6 +246,7 @@ public class Unit9MilitaryPage extends AnyPage {
 		buttonRestore.click();
 		unit9Card.regNumberRestoredCard = confirmRestoring();
 	}
+
 }
 	
 

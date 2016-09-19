@@ -10,4 +10,11 @@ public interface Unit5ChargedHelper {
 	
 	boolean isOnUnit5ChargedPage();
 
+	String getChargedNameFromDocument();
+
+	void quitCard();
+
+	String getChargedNameFromGrid();
+
+
 }

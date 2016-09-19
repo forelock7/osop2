@@ -17,12 +17,14 @@ public class Unit9MilitaryTest extends BasicTestCase {
 	}	
 
 	@Test (groups = {"unit9"}, dependsOnMethods = {"testJumpToUnit9Page"})
-	public void testCreateMilitaryCard(){
+	public void testCreateAndReviewMilitaryCard() {
 		app.getUnit9Helper().createCardUnit9(mAOCard);
-		Assert.assertEquals(mAOCard.protocolNumber, app.getUnit9Helper().getProtNumberLastCreatedCardU9());
+		app.getUnit9Helper().openCardToReview();
+		Assert.assertEquals(mAOCard.protocolNumber, app.getUnit9Helper().getProtNumber());
+		app.getUnit9Helper().quitCard();
 	}
 	
-	@Test (groups = {"unit9"}, dependsOnMethods = {"testCreateMilitaryCard"})
+	@Test (groups = {"unit9"}, dependsOnMethods = {"testCreateAndReviewMilitaryCard"})
 	public void testEditMilitaryCard(){
 		app.getUnit9Helper().editCardUnit9(mAOCard);
 		Assert.assertEquals(mAOCard.someNewText, app.getUnit9Helper().getValueInFieldLastCardU9());

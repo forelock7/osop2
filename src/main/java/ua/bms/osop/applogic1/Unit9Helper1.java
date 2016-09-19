@@ -31,19 +31,24 @@ public class Unit9Helper1 extends DriverBasedHelper implements Unit9Helper  {
 		pages.unit9MilitaryPage.clickOnAlertOK();
 	}
 	
-	/*
-	 * Returns value in field "Protocol Number" from first record(card) in main grid
-	 * The first record(card) in main grid should be the last created.
-	 * Checks creating of card.
-	 */
+	//Opens Card to review 
 	@Override
-	public String getProtNumberLastCreatedCardU9(){
-		pages.unit9MilitaryPage.clickButtonEditCardUnit9();
-		String existingProtNumberInField = pages.unit9MilitaryPage.getInputProtocolNumberUnit9();
-		pages.unit9MilitaryPage.clickButtonExitFromCardForm();
-		return existingProtNumberInField;
+	public void openCardToReview() {
+		pages.unit9MilitaryPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	
+	//Opens Card to edit 
+	@Override
+	public void openCardToEdit() {
+		pages.unit9MilitaryPage.clickButtonEditCardUnit9();
+	}
+	
+	//Gets Claim Number
+	@Override
+	public String getProtNumber() {
+		return pages.unit9MilitaryPage.getInputProtocolNumberUnit9();
+	}
+		
 	/*Edits card with changing value in field "Theory"*/
 	@Override
 	public void editCardUnit9(Unit9Card unit9Card){
@@ -96,6 +101,11 @@ public class Unit9Helper1 extends DriverBasedHelper implements Unit9Helper  {
 	public String getRegNumberAfterRestoringCardU9(){
 		pages.unit9MilitaryPage.goToMainTab();
 		return pages.unit9MilitaryPage.getRegNumberFromGridOnMainTab();
+	}
+	
+	//Quit from Card
+	public void quitCard() {
+		pages.unit9MilitaryPage.clickButtonExitFromCardForm();
 	}
 
 }

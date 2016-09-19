@@ -18,12 +18,14 @@ public class Unit7MassMediaTest extends BasicTestCase {
 	}
 	
 	@Test (groups = {"unit7"}, dependsOnMethods = {"testJumpToUnit7Page"})
-	public void testCreateMassMediaCard() {
+	public void testCreateAndReviewMassMediaCard() {
 		app.getUnit7Helper().createCardUnit7(mMCard);
-		Assert.assertEquals(mMCard.subjectOfSpeech, app.getUnit7Helper().getSubjectOfSpeechLastCreatedCardU7());
+		app.getUnit7Helper().openCardToReview();
+		Assert.assertEquals(mMCard.subjectOfSpeech, app.getUnit7Helper().getSubjectOfSpeech());
+		app.getUnit7Helper().quitCard();
 	}
 	
-	@Test (groups = {"unit7"}, dependsOnMethods = {"testCreateMassMediaCard"})
+	@Test (groups = {"unit7"}, dependsOnMethods = {"testCreateAndReviewMassMediaCard"})
 	public void testEditMassMediaCard(){
 		app.getUnit7Helper().editCardUnit7(mMCard);
 		Assert.assertEquals(mMCard.someNewText, app.getUnit7Helper().getValueInFieldLastCardU7());

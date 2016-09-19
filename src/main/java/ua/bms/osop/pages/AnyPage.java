@@ -3,6 +3,7 @@ package ua.bms.osop.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -114,7 +115,20 @@ public abstract class AnyPage extends Page {
 	
 	public void doubleClickOnGridHeader() {
 		Actions action = new Actions(driver);
-		action.doubleClick(headerMainGrid).doubleClick(headerMainGrid).perform();
+		action.click(headerMainGrid).click(headerMainGrid).perform();
+	}
+	
+	//Opens to review Card
+	public void doubleClickOnFirstRecordInGridOnMainTab() {
+		Actions action = new Actions(driver);
+		for (int i=0; i<3; ++i) {
+			try{
+				action.doubleClick(wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'tabpanel')]/div[1]//table[1]//td[2]/div")))).perform();
+				break;
+			}catch (WebDriverException e) {
+				System.out.println("exception - there is no GRID");
+			}
+		}		
 	}
 	
 	//Clicking on "Save"("Зберегти") button in Card

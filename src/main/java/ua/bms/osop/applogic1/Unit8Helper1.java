@@ -29,18 +29,27 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 		pages.unit8RequestsPage.clickOnAlertOK();
 	}
 	
-	/*
-	 * Returns value in field "Number of Request" from created card(after its creating)
-	 * The first record(card) in main grid should be the last created.
-	 * Checks creating of card.
-	 */
+	//Opens Card to review 
 	@Override
-	public String getRequestNumberLastCreatedCardU8(){
-		pages.unit8RequestsPage.clickButtonEditCardUnit8();
-		String existingTextInRequestNumberField = pages.unit8RequestsPage.getInputRequestNumberUnit8();
-		pages.unit8RequestsPage.clickButtonExitFromCardForm();
-		return existingTextInRequestNumberField;
+	public void openCardToReview() {
+		pages.unit8RequestsPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
+	
+	//Opens Card to edit 
+	@Override
+	public void openCardToEdit() {
+		pages.unit8RequestsPage.clickButtonEditCardUnit8();
+	}
+	
+	//Gets Claim Number
+	@Override
+	public String getRequestNumber() {
+		return pages.unit8RequestsPage.getInputRequestNumberUnit8();
+	}
+	
+	
+	
+	
 	
 	/*Edits card with changing value in field "Summary"*/
 	@Override
@@ -90,6 +99,11 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 	public String getRegNumberAfterRestoringCardU8(){
 		pages.unit8RequestsPage.goToMainTab();
 		return pages.unit8RequestsPage.getRegNumberFromGridOnMainTab();
+	}
+	
+	//Quit from Card
+	public void quitCard() {
+		pages.unit8RequestsPage.clickButtonExitFromCardForm();
 	}
 
 }

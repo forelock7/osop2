@@ -31,15 +31,17 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		assertTrue(app.getUnit5ChargedHelper().isOnUnit5ChargedPage());
 	}
 	
-	@Test (groups = {"inspection_unit5"}, priority = 2)
-	public void testCreateInspectionCard() {
+	@Test (groups = {"unit5"}, priority = 2)
+	public void testCreateAndReviewInspectionCard() {
 		app.getNavigationUnit5Helper().goToUnit5InspectionsPage();
 		assertTrue(app.getUnit5InspectionsHelper().isOnUnit5InspectionPage());
 		app.getUnit5InspectionsHelper().createInspectionCardUnit5(inspectionCard);
-		Assert.assertEquals(inspectionCard.agencyName, app.getUnit5InspectionsHelper().getAgencyNameLastCreatedInspectionCardU5());
+		app.getUnit5InspectionsHelper().openCardToReview();
+		Assert.assertEquals(inspectionCard.agencyName, app.getUnit5InspectionsHelper().getAgencyName());
+		app.getUnit8Helper().quitCard();
 	}
 	
-	@Test (groups = {"inspection_unit5"}, dependsOnMethods = {"testCreateInspectionCard"})
+	@Test (groups = {"inspection_unit5"}, dependsOnMethods = {"testCreateAndReviewInspectionCard"})
 	public void testEditInspectionCard(){
 		app.getUnit5InspectionsHelper().editInspectionCardUnit5(inspectionCard);
 		Assert.assertEquals(inspectionCard.someNewText, app.getUnit5InspectionsHelper().getAgencyNameLastCreatedInspectionCardU5());
@@ -61,24 +63,34 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 	public void testCheckCreatingDocumentCardIsUnable() {
 		app.getNavigationUnit5Helper().goToUnit5InspectionsPage();
 		assertTrue(app.getUnit5InspectionsHelper().isOnUnit5InspectionPage());
-		app.getUnit5InspectionsHelper().openToCreateInspectionCard();
+		app.getUnit5InspectionsHelper().openInspectionCardToCreate();
 		assertTrue(app.getUnit5InspectionsHelper().isOnUnit5InspectionCard());
 		app.getUnit5InspectionsHelper().goToDocumentTabInInspectionCard();
 		assertTrue(app.getUnit5InspectionsHelper().isOnUnit5DocumentsTab());
 		Assert.assertFalse(app.getUnit5InspectionsHelper().checkIsButtonCreatePresent());
-		app.getUnit5DocumentsHelper().quitCard();
+		app.getUnit5InspectionsHelper().quitCard();
 		Assert.assertFalse(app.getUnit5InspectionsHelper().isOnUnit5InspectionCard());
 	}
 	
 	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testCheckCreatingDocumentCardIsUnable"})
-	public void testCreateDocumentCard() {
+	public void testCreateDocumentAndChargedPersonCards() {
 		app.getUnit5InspectionsHelper().loadDownMainGrid();
 		app.getUnit5InspectionsHelper().openToEditInspectionCardUnit5();
 		app.getUnit5InspectionsHelper().goToDocumentTabInInspectionCard();
-		assertTrue(app.getUnit5InspectionsHelper().isOnUnit5DocumentsTab());
-		app.getUnit5DocumentsHelper().createDocumentCard(documentCard);
-		
-		
+		app.getUnit5DocumentsHelper().createDocumentAndChargedCard(documentCard, chargedCard);
+		Assert.assertEquals(documentCard.documentContent, app.getUnit5InspectionsHelper().getContentLastDocFromGridInInspCard());
+		Assert.assertEquals(chargedCard.name, app.getUnit5ChargedHelper().getChargedNameFromDocument());
+		app.getUnit5ChargedHelper().quitCard();
+		app.getUnit5DocumentsHelper().quitCard();
+		app.getUnit5InspectionsHelper().quitCard();
+		app.getNavigationUnit5Helper().goToUnit5DocumentsPage();
+		assertTrue(app.getUnit5DocumentsHelper().isOnUnit5DocumentsPage());
+		Assert.assertEquals(documentCard.documentContent, app.getUnit5DocumentsHelper().getContentLastDocFromGrid());
+		Assert.assertEquals(chargedCard.name, app.getUnit5DocumentsHelper().getChargedNameFromGrid());
+		app.getUnit5DocumentsHelper().quitCard();
+		app.getNavigationUnit5Helper().goToUnit5ChargedPage();
+		assertTrue(app.getUnit5ChargedHelper().isOnUnit5ChargedPage());
+		Assert.assertEquals(chargedCard.name, app.getUnit5ChargedHelper().getChargedNameFromGrid());
 	}
 
 }

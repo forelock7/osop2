@@ -166,7 +166,7 @@ public class Unit6ClaimsPage extends AnyPage {
 		}
 	
 	}
-	
+		
 	//Getting value from input-field "Claim Number" in formerly created card
 	public String getInputClaimNumberUnit6() {
 		return inputClaimNumber.getAttribute("value");

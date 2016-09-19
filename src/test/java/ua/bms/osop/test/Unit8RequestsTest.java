@@ -13,18 +13,19 @@ public class Unit8RequestsTest extends BasicTestCase {
 	@Test (groups = {"unit8"})
 	public void testJumpToUnit8Page() {
 		assertTrue(app.getUserHelper().isLoggedIn());
-		//app.getNavigationTopHelper().goToNavigationUnit68Page();
 		app.getNavigationUnit68Helper().goToUnit8Page();
 		assertTrue(app.getUnit8Helper().isOnUnit8Page());
 	}
-	
+		
 	@Test (groups = {"unit8"}, dependsOnMethods = {"testJumpToUnit8Page"})
-	public void testCreateRequestCard() {
+	public void testCreateAndReviewRequestCard() {
 		app.getUnit8Helper().createCardUnit8(reqCard);
-		Assert.assertEquals(reqCard.requestNumber, app.getUnit8Helper().getRequestNumberLastCreatedCardU8());
+		app.getUnit8Helper().openCardToReview();
+		Assert.assertEquals(reqCard.requestNumber, app.getUnit8Helper().getRequestNumber());
+		app.getUnit8Helper().quitCard();
 	}
 	
-	@Test (groups = {"unit8"}, dependsOnMethods = {"testCreateRequestCard"})
+	@Test (groups = {"unit8"}, dependsOnMethods = {"testCreateAndReviewRequestCard"})
 	public void testEditRequestCard(){
 		app.getUnit8Helper().editCardUnit8(reqCard);
 		Assert.assertEquals(reqCard.someNewText, app.getUnit8Helper().getValueInFieldLastCardU8());

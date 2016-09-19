@@ -34,12 +34,30 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	 * The first record(card) in main grid should be the last created.
 	 * Checks creating of card.
 	 */
-	@Override
+	/*@Override
 	public String getClaimNumberLastCreatedCardU4(){
 		pages.unit4InternationalPage.clickButtonEditCardUnit4();
 		String existingTextInClaimNumberField = pages.unit4InternationalPage.getInputClaimNumberUnit4();
 		pages.unit4InternationalPage.clickButtonExitFromCardForm();
 		return existingTextInClaimNumberField;
+	}*/
+	
+	//Opens Card to review 
+	@Override
+	public void openCardToReview() {
+		pages.unit4InternationalPage.doubleClickOnFirstRecordInGridOnMainTab();
+	}
+	
+	//Opens Card to edit 
+	@Override
+	public void openCardToEdit() {
+		pages.unit4InternationalPage.clickButtonEditCardUnit4();
+	}
+	
+	//Gets Claim Number
+	@Override
+	public String getClaimNumber() {
+		return pages.unit4InternationalPage.getInputClaimNumberUnit4();
 	}
 	
 	/*Edits card with changing value in field "Summary"*/
@@ -90,6 +108,11 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	public String getRegNumberAfterRestoringCardU4(){
 		pages.unit4InternationalPage.goToMainTab();
 		return pages.unit4InternationalPage.getRegNumberFromGridOnMainTab();
+	}
+	
+	//Quit from Card
+	public void quitCard() {
+		pages.unit4InternationalPage.clickButtonExitFromCardForm();
 	}
 
 }

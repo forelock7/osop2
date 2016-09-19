@@ -86,11 +86,19 @@ public class Unit5InspectionsPage extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//div[contains(@id, 'pagingtoolbar')]/a[5]")
 	private WebElement buttonRefreshToolbarCard;
 	
+	//Button "Edit"("Редагувати") for the first record in the main grid on the "Response Documents" Tab in "Inspection" Card(row-1; column-13).
+	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//table[1]//td[13]/div")
+	WebElement buttonEditDocTab;
+	
+	//Button "Remove"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
+	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//table[1]//td[14]/div")
+	WebElement buttonRemoveDocTab;
+	
 	/*------------------Methods---------------------------------------------------------------------------*/
 
 	//Click on "Response Documents" in "Inspection" Card
 	public void clickOnResponseDocumentsTab() {
-		tabResponseDocuments.click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
 	}
 	
 	//Sets the new card with filling all fields in
@@ -166,6 +174,10 @@ public class Unit5InspectionsPage extends AnyPage {
 
 	public void clickButtonCreateDocumentCard() {
 		buttonCreateResponseDocument.click();
+	}
+	
+	public void clickButtonEditDocInInspectionCardUnit5() {
+		buttonEditDocTab.click();
 	}
 
 

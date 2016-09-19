@@ -29,19 +29,24 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 		pages.unit6ClaimsPage.clickOnAlertOK();
 	}
 	
-	/*
-	 * Returns value in field "Number of Claim" from created card(after its creating)
-	 * The first record(card) in main grid should be the last created.
-	 * Checks creating of card.
-	 */
+	//Opens Card to review 
 	@Override
-	public String getClaimNumberLastCreatedCardU6(){
-		pages.unit6ClaimsPage.clickButtonEditCardUnit6();
-		String existingTextInClaimNumberField = pages.unit6ClaimsPage.getInputClaimNumberUnit6();
-		pages.unit6ClaimsPage.clickButtonExitFromCardForm();
-		return existingTextInClaimNumberField;
+	public void openCardToReview() {
+		pages.unit6ClaimsPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	
+	//Opens Card to edit 
+	@Override
+	public void openCardToEdit() {
+		pages.unit6ClaimsPage.clickButtonEditCardUnit6();
+	}
+	
+	//Gets Claim Number
+	@Override
+	public String getClaimNumber() {
+		return pages.unit6ClaimsPage.getInputClaimNumberUnit6();
+	}
+		
 	/*Edits card with changing value in field "Summary"*/
 	@Override
 	public void editCardUnit6(Unit6Card unit6Card) {
@@ -90,6 +95,11 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 	public String getRegNumberAfterRestoringCardU6(){
 		pages.unit6ClaimsPage.goToMainTab();
 		return pages.unit6ClaimsPage.getRegNumberFromGridOnMainTab();
+	}
+	
+	//Quit from Card
+	public void quitCard() {
+		pages.unit6ClaimsPage.clickButtonExitFromCardForm();
 	}
 
 }

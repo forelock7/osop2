@@ -31,17 +31,22 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 		pages.unit7MassMediaPage.clickOnAlertOK();
 	}
 	
-	/*
-	 * Returns value in field "Subject of Speech" from created card(after its creating)
-	 * The first record(card) in main grid should be the last created.
-	 * Checks creating of card.
-	 */
+	//Opens Card to review 
 	@Override
-	public String getSubjectOfSpeechLastCreatedCardU7(){
+	public void openCardToReview() {
+		pages.unit7MassMediaPage.doubleClickOnFirstRecordInGridOnMainTab();
+	}
+	
+	//Opens Card to edit 
+	@Override
+	public void openCardToEdit() {
 		pages.unit7MassMediaPage.clickButtonEditCardUnit7();
-		String existingTextInSpeechSubjectField = pages.unit7MassMediaPage.getInputSubjectOfSpeechUnit7();
-		pages.unit7MassMediaPage.clickButtonExitFromCardForm();
-		return existingTextInSpeechSubjectField;
+	}
+	
+	//Gets Claim Number
+	@Override
+	public String getSubjectOfSpeech() {
+		return pages.unit7MassMediaPage.getInputSubjectOfSpeechUnit7();
 	}
 	
 	/*Edits card with changing value in field "Author Of Speech"*/
@@ -92,6 +97,11 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 	public String getRegNumberAfterRestoringCardU7(){
 		pages.unit7MassMediaPage.goToMainTab();
 		return pages.unit7MassMediaPage.getRegNumberFromGridOnMainTab();
+	}
+	
+	//Quit from Card
+	public void quitCard() {
+		pages.unit7MassMediaPage.clickButtonExitFromCardForm();
 	}
 
 }

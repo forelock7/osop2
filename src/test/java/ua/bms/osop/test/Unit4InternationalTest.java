@@ -17,12 +17,14 @@ public class Unit4InternationalTest extends BasicTestCase {
 	}
 	
 	@Test (groups = {"unit4"}, dependsOnMethods = {"testJumpToUnit4Page"})
-	public void testCreateInternationalCard() {
+	public void testCreateAndReviewInternationalCard() {
 		app.getUnit4Helper().createCardUnit4(intCard);
-		Assert.assertEquals(intCard.claimNumber, app.getUnit4Helper().getClaimNumberLastCreatedCardU4());
+		app.getUnit4Helper().openCardToReview();
+		Assert.assertEquals(intCard.claimNumber, app.getUnit4Helper().getClaimNumber());
+		app.getUnit4Helper().quitCard();
 	}
 	
-	@Test (groups = {"unit4"}, dependsOnMethods = {"testCreateInternationalCard"})
+	@Test (groups = {"unit4"}, dependsOnMethods = {"testCreateAndReviewInternationalCard"})
 	public void testEditInternationalCard(){
 		app.getUnit4Helper().editCardUnit4(intCard);
 		Assert.assertEquals(intCard.someNewText, app.getUnit4Helper().getValueInFieldLastCardU4());

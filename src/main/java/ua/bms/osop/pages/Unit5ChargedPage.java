@@ -1,8 +1,14 @@
 package ua.bms.osop.pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
+import ua.bms.osop.model.Unit5ChargedCard;
+
 
 /*
  * Declare all Web-elements on Unit 5 "Supervision of the observance of laws in the execution of judgments."
@@ -34,8 +40,72 @@ public class Unit5ChargedPage  extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Перелік осіб, притягнутих до відповідальності')]")
 	private WebElement titleUnit5Charged;
 	
+	//Registration Number in the first record of grid on Main tab
+	@FindBy(xpath = "//div[contains(@id, 'tableview')]/div[1]//table[1]//td[2]/div")
+	private WebElement cellRegNumberInGridOnMainTab;
+	
 	/*------------------The Web-Elements of the Card------------------------------------------------------*/
+	
+	//Button "Save" ("Зберегти") for saving card
+	@FindBy(xpath = "//div[contains(@id, 'actAsChargedPersonCard')]/div[4]//a[1]")
+	private WebElement buttonSaveCard;
+	
+	//Button "Exit" ("Вихід") for exit from card
+	@FindBy (xpath = "//div[contains(@id, 'actAsChargedPersonCard')]/div[4]//span[contains(., 'Вихід')]")
+	private WebElement buttonExitFromCard;
+	
+	//Name of charged person
+	@FindBy(xpath = "(//div[contains(@id, 'unit5-actAsChargedPersonCard')]//input)[1]")
+	private WebElement inputName;
+	
+	//Input field "Post" ("Посада")
+	@FindBy(xpath = "(//div[contains(@id, 'unit5-actAsChargedPersonCard')]//input)[3]")
+	private WebElement inputPost;
+	
+	//Input field "Type of Supervision, Type of Agency" ("Вид нагляду, Тип установи(доповнення)")
+	@FindBy(xpath = "(//div[contains(@id, 'unit5-actAsChargedPersonCard')]//input)[5]")
+	private WebElement inputSuperAgencyTypeAdd;
+	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonCard')]/following-sibling::div//li[1]")
+	private WebElement itemSuperAgencyTypeAdd;
 	
 	/*------------------Methods---------------------------------------------------------------------------*/
 
+	//Opens to review Card
+	@Override
+	public void doubleClickOnFirstRecordInGridOnMainTab() {
+		Actions action = new Actions(driver);
+		for (int i=0; i<3; ++i) {
+			try{
+				action.doubleClick(wait2.until(ExpectedConditions.visibilityOf(cellRegNumberInGridOnMainTab))).perform();
+				break;
+			}catch (WebDriverException e) {
+				System.out.println("exception - there is no GRID");
+			}
+		}		
+	}
+	
+	//Clicking on "Save"("Зберегти") button in Card
+	@Override
+	public void clickButtonSaveCard() {
+		buttonSaveCard.click();
+	}
+	
+	//Clicking on "Exit"("Вихід") button in Card
+	@Override
+	public void clickButtonExitFromCardForm() {
+		buttonExitFromCard.click();
+	}
+	
+	//Fills several fields in Document Card
+	public Unit5ChargedPage setChargedCard(Unit5ChargedCard unit5ChargedCard) {
+		type(inputName, unit5ChargedCard.name);
+		type(inputPost, unit5ChargedCard.post);
+		inputSuperAgencyTypeAdd.click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit5-actAsChargedPersonCard')]/following-sibling::div//li[1]"))).click();
+		return this;
+	}
+
+	public String getInputName() {
+		return inputName.getAttribute("value");
+	}
 }

@@ -46,6 +46,10 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	@FindBy(xpath = "//div[contains(@id, 'unit5-actCard')]//span[contains(., 'Зберегти')]")
 	private WebElement buttonSaveCard;
 	
+	//Button "Exit" ("Вихід") for exit from card
+	@FindBy (xpath = "//div[contains(@id, 'unit5-actCard')]//span[contains(., 'Вихід')]")
+	private WebElement buttonExitFromCard;
+	
 	//Input field "Type of Document" ("Вид документа")
 	@FindBy(xpath = "//div[contains(@id, 'unit5-actTabMain')]//span[contains(., 'Вид документа')]")
 	private WebElement inputDocumentType;
@@ -65,6 +69,18 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	@FindBy (xpath = "(//div[contains(@id, 'boundlist')]//li[1])[3]")
 	private WebElement itemSuperAgencyTypeAdd;
 	
+	//Button "Add" for adding Charged Person into Grid
+	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//a[contains(@id, 'button')]")
+	private WebElement buttonAddChargedPerson;
+	
+	//Button "Edit" in Charged Person Grid
+	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[7]//img")
+	private WebElement inputButtonEditChargedGrid;
+	
+	//Column "Name" in Charged Person Grid
+	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div")
+	private WebElement cellNameChargedGrid;
+	
 	//Input field "Document Content" ("Зміст документа")
 	@FindBy(xpath = "(//div[contains(@id, 'unit5-actTabMain')]//textarea)[1]")
 	private WebElement inputDocumentContent;
@@ -78,6 +94,18 @@ public class Unit5DocumentsPage  extends AnyPage  {
 		buttonSaveCard.click();
 	}
 	
+	//Clicking on "Exit"("Вихід") button in Card
+	@Override
+	public void clickButtonExitFromCardForm() {
+		buttonExitFromCard.click();
+	}
+	
+	//Click button "Add" in "Charged Person" grid
+	public void clickButtonAddChargedPerson() {
+		buttonAddChargedPerson.click();
+	}
+	
+	//Fills several fields in Document Card
 	public Unit5DocumentsPage setDocumentCard(Unit5DocumentCard unit5DocumentCard) {
 		inputDocumentType.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(@id, 'boundlist')]//li[1])[1]"))).click();
@@ -101,6 +129,20 @@ public class Unit5DocumentsPage  extends AnyPage  {
 		inputSuperAgencyTypeAdd.sendKeys(Keys.ESCAPE);
 	}
 	
+	public String getInputContentDocument() {
+		//return inputDocumentContent.getAttribute("value");
+		
+		return wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//div[contains(@id, 'unit5-actTabMain')]//textarea)[1]"))).getAttribute("value");
+	}
+
+	public void clickButtonEditChargedGrid() {
+		inputButtonEditChargedGrid.click();
+		
+	}
+
+	public String getNameFromChargedPersonGrid() {
+		return  wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div"))).getText();
+	}
 	
 
 }

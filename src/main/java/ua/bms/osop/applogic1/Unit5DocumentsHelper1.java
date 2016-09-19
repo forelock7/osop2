@@ -1,6 +1,7 @@
 package ua.bms.osop.applogic1;
 
 import ua.bms.osop.applogic.Unit5DocumentsHelper;
+import ua.bms.osop.model.Unit5ChargedCard;
 import ua.bms.osop.model.Unit5DocumentCard;
 
 /*
@@ -24,15 +25,27 @@ public class Unit5DocumentsHelper1 extends DriverBasedHelper implements Unit5Doc
 	}
 	
 	//Creates new "Response Document"
-	public void createDocumentCard(Unit5DocumentCard unit5DocumentCard) {
+	public void createDocumentAndChargedCard(Unit5DocumentCard unit5DocumentCard, Unit5ChargedCard unit5ChargedCard) {
 		pages.unit5InspectionsPage.clickButtonCreateDocumentCard();
-		pages.unit5DocumentsPage.setDocumentCard(unit5DocumentCard).clickButtonSaveCard();
+		pages.unit5DocumentsPage.setDocumentCard(unit5DocumentCard).clickButtonAddChargedPerson();;
+		pages.unit5ChargedPage.setChargedCard(unit5ChargedCard).clickButtonSaveCard();
+		pages.unit5DocumentsPage.clickButtonSaveCard();
 		pages.unit5InspectionsPage.clickOnAlertOK();
 	}
 	
 	//Quit from Card
 	public void quitCard() {
 		pages.unit5DocumentsPage.clickButtonExitFromCardForm();
+	}
+	
+	public String getContentLastDocFromGrid() {
+		pages.unit5DocumentsPage.doubleClickOnGridHeader();
+		pages.unit5DocumentsPage.doubleClickOnFirstRecordInGridOnMainTab();
+		return pages.unit5DocumentsPage.getInputContentDocument();
+	}
+	
+	public String getChargedNameFromGrid() {
+		return pages.unit5DocumentsPage.getNameFromChargedPersonGrid();
 	}
 
 

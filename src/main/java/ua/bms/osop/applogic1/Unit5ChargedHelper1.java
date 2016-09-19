@@ -21,5 +21,25 @@ public class Unit5ChargedHelper1 extends DriverBasedHelper implements Unit5Charg
 	public boolean isOnUnit5ChargedPage(){
 		return pages.unit5ChargedPage.waitPageLoaded();
 	}
+	
+	public String getChargedNameFromDocument() {
+		pages.unit5DocumentsPage.clickButtonEditChargedGrid();
+		return pages.unit5ChargedPage.getInputName();
+	}
+	
+	public void quitCard() {
+		pages.unit5ChargedPage.clickButtonExitFromCardForm();
+	}
+	
+	
+	public String getChargedNameFromGrid() {
+		pages.unit5ChargedPage.doubleClickOnGridHeader();
+		
+		pages.unit5ChargedPage.doubleClickOnFirstRecordInGridOnMainTab();
+		
+		String nameVelue = pages.unit5ChargedPage.getInputName();
+		pages.unit5ChargedPage.clickButtonExitFromCardForm();
+		return nameVelue;	
+	}
 
 }

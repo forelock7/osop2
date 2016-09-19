@@ -1,5 +1,6 @@
 package ua.bms.osop.applogic;
 
+import ua.bms.osop.model.Unit5ChargedCard;
 import ua.bms.osop.model.Unit5DocumentCard;
 
 /*
@@ -12,7 +13,9 @@ public interface Unit5DocumentsHelper {
 	
 	boolean isOnUnit5DocumentsPage();
 	void quitCard();
-	void createDocumentCard(Unit5DocumentCard unit5DocumentCard);
+	void createDocumentAndChargedCard(Unit5DocumentCard unit5DocumentCard, Unit5ChargedCard unit5ChargedCard);
+	String getContentLastDocFromGrid();
+	String getChargedNameFromGrid();
 	
 
 }
