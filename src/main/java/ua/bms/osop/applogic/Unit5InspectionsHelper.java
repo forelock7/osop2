@@ -11,26 +11,40 @@ import ua.bms.osop.model.Unit5InspectionCard;
 public interface Unit5InspectionsHelper {
 
 	boolean isOnUnit5InspectionPage();
+	boolean isOnUnit5InspectionCard();
+	boolean isOnUnit5DocumentsTab();
+	
+	void moveToMainTab();
+	void moveToRemovedTab();
+	
+	void sortDownMainGrid();
+	
+	void goToDocumentTabInInspectionCard();
+	
+	void openInspectionCardToCreate();
+	void openInspectionCardToReview();
+	void openInspectionCardToEdit();
+	void openDocumentCardToCreate();
+	void openDocumentCardToReview();
+	void openDocumentCardToEdit();
+	
+	
+	
 	void createInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
 	void editInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
 	void removeInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
-	String getRegNumberAfterRemovingInspectionCardU5();
 	void restoreInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
-	String getRegNumberAfterRestoringCardU5();
-	void openInspectionCardToCreate();
-	void goToDocumentTabInInspectionCard();
-	boolean isOnUnit5InspectionCard();
-	boolean checkIsButtonCreatePresent();
-	boolean isOnUnit5DocumentsTab();
-	void quitCard();
-	void loadDownMainGrid();
-	void openToCreateDocumentCard();
-	String getContentLastDocFromGridInInspCard();
-	void openCardToReview();
-	String getAgencyName();
-	void openCardToEdit();
-	
 
+	String getRegNumberFirstRemovedInspectionCardInGrid();
+	String getRegNumberFirstCardInGrid();
+	String getAgencyName();
+	
+	boolean checkIsButtonCreatePresent();
+		
+	void saveCard();
+	void quitCard();
+	
+	
 	
 
 }

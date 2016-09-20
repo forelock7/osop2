@@ -8,17 +8,25 @@ import ua.bms.osop.model.Unit8Card;
 public interface Unit8Helper {
 	
 	boolean isOnUnit8Page();
-	void createCardUnit8(Unit8Card unit8Card);
-	//String getRequestNumberLastCreatedCardU8();
-	void editCardUnit8(Unit8Card unit8Card);
-	String getValueInFieldLastCardU8();
-	void removeCardUnit8(Unit8Card unit8Card);
-	String getRegNumberAfterRemovingCardU8();
-	void restoreCardUnit8(Unit8Card unit8Card);
-	String getRegNumberAfterRestoringCardU8();
-	void quitCard();
+	
+	void moveToMainTab();
+	void moveToRemovedTab();
+	
+	void openCardToCreate();
 	void openCardToReview();
-	String getRequestNumber();
 	void openCardToEdit();
 	
+	void createCardUnit8(Unit8Card unit8Card);
+	void editCardUnit8(Unit8Card unit8Card);
+	void removeCardUnit8(Unit8Card unit8Card);
+	void restoreCardUnit8(Unit8Card unit8Card);
+	
+	String getSummary();
+	String getRegNumbreFirstRemovedCardInGrid();
+	String getRegNumberFirstCardInGrid();
+	String getRequestNumber();
+		
+	void saveCard();
+	void quitCard();
+		
 }

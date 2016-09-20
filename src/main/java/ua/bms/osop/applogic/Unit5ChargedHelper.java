@@ -1,5 +1,7 @@
 package ua.bms.osop.applogic;
 
+import ua.bms.osop.model.Unit5ChargedCard;
+
 /*
  * "Supervision of the observance of laws in the execution of judgments." Page - Unit 5
  * ("Нагляд за додержанням законів при виконанні судових рішень.")
@@ -9,12 +11,25 @@ package ua.bms.osop.applogic;
 public interface Unit5ChargedHelper {
 	
 	boolean isOnUnit5ChargedPage();
-
-	String getChargedNameFromDocument();
-
+	
+	void sortDownMainGrid();
+	
+	void openChargedCardToReview();
+	
+	void createChargedCard(Unit5ChargedCard unit5ChargedCard);
+	void editChargedCard(Unit5ChargedCard unit5ChargedCard);
+	
+	String getChargedName();
+	String getPost();
+	
+	
+	void saveCard();
 	void quitCard();
 
-	String getChargedNameFromGrid();
 
+
+	
+
+	
 
 }

@@ -19,17 +19,8 @@ public class Unit9MilitaryPage extends AnyPage {
 	public Unit9MilitaryPage(PageManager pages) {
 		super(pages);
 	}
-	
-	/*
-	 * Determines loading of Page
-	 */
-	public Unit9MilitaryPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit9/*By.xpath("//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]"*/));
-		return this;
-	}
 		
-/*-------------------The Web-Elements of Main Page----------------------------------------------------*/
+/*-------------------The Web-Elements of Military Page----------------------------------------------------*/
 
 	//Title "Military Administrative Offenses" ("Військові адмінправопорушення")
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]")
@@ -47,7 +38,7 @@ public class Unit9MilitaryPage extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'crimeGridDeleted')]//table[1]//td[12]/div/img")
 	private WebElement buttonRestore;
 	
-	/*------------------The Web-Elements of the Card------------------------------------------------------*/
+	/*------------------The Web-Elements of the Military Card------------------------------------------------------*/
 	//Input field "Protocol Number" ("Номер протоколу")
 	@FindBy(xpath = "//div[contains(@id, 'unit9-crimeCard')]//span[contains(., 'Номер протоколу:')]/../following-sibling::div[1]//input")
 	//@CacheLookup /*Caching web-element refer for reusing this element*/
@@ -171,7 +162,35 @@ public class Unit9MilitaryPage extends AnyPage {
 	@FindBy(xpath = "//span[contains(., 'Дата початку утримання на гауптвахті:')]/../following-sibling::div[1]//input")
 	private WebElement inputBeginningPunishmentDate;
 	
-/*------------------Methods---------------------------------------------------------------------------*/
+	/*------------------Methods of Military Page-------------------------------------------------------------*/
+	
+	/*
+	 * Determines loading of Page
+	 */
+	public Unit9MilitaryPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(ExpectedConditions.visibilityOf(titleUnit9/*By.xpath("//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]"*/));
+		return this;
+	}
+	
+	//Click on "Edit" button for the first record in the main grid
+	public void clickButtonEditCardUnit9() {
+		buttonEdit.click();
+	}
+	
+	//Removing Card with getinging registration number of the card that will be removed
+	public void removeCardUnit9(Unit9Card unit9Card){
+		buttonRemove.click();
+		unit9Card.regNumberRemovedCard = super.confirmationOfRemoving();
+	}
+	
+	//Restoring card with getting registration number of the card that will be restored
+	public void restoreCardUnit9(Unit9Card unit9Card) {
+		buttonRestore.click();
+		unit9Card.regNumberRestoredCard = confirmRestoring();
+	}
+	
+	/*------------------Methods of Military Page-------------------------------------------------------------*/	
 	
 	//Sets all field of Card
 	public Unit9MilitaryPage setCardUnit9(Unit9Card unit9Card) /*throws InterruptedException*/{
@@ -214,9 +233,9 @@ public class Unit9MilitaryPage extends AnyPage {
 		return this;
 	}
 	
-	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEditCardUnit9() {
-		buttonEdit.click();
+	//Editing SOME field ("Theory" ("Фабула"))
+	public void setInputTheoryUnit9(String someNewText) {
+		type(inputTheory, someNewText);
 	}
 	
 	//Getting value from input-field "Protocol Number" in formerly created card
@@ -224,27 +243,9 @@ public class Unit9MilitaryPage extends AnyPage {
 		return inputProtocolNumber.getAttribute("value");
 	}
 	
-
-	//Editing SOME field ("Theory" ("Фабула"))
-	public void setInputTheoryUnit9(String someNewText) {
-		type(inputTheory, someNewText);
-	}
-	
 	//Getting value from input-field "Theory" in formerly created card
 	public String getInputTheoryUnit9() {
 		return inputTheory.getAttribute("value");
-	}
-	
-	//Removing Card with getinging registration number of the card that will be removed
-	public void removeCardUnit9(Unit9Card unit9Card){
-		buttonRemove.click();
-		unit9Card.regNumberRemovedCard = super.confirmationOfRemoving();
-	}
-	
-	//Restoring card with getting registration number of the card that will be restored
-	public void restoreCardUnit9(Unit9Card unit9Card) {
-		buttonRestore.click();
-		unit9Card.regNumberRestoredCard = confirmRestoring();
 	}
 
 }

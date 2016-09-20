@@ -17,18 +17,28 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 		super(manager.getWebDriver());
 	}
 	
+	/*--------------------------Mass Media Page------------------------------------------*/
+	
 	/*Checks if on Unit 7 Page*/
 	@Override
 	public boolean isOnUnit7Page(){
 		return pages.unit7MassMediaPage.waitPageLoaded();
 	}
 	
-	/*Creates a new Card with filling all fields in and submitting*/
+	//Moves to Main Tab
+	public void moveToMainTab() {
+		pages.unit7MassMediaPage.goToMainTab();
+	}
+	
+	//Moves to Removed Tab
+	public void moveToRemovedTab() {
+		pages.unit7MassMediaPage.goToRemovedTab();
+	}
+	
+	//Opens Card to create 
 	@Override
-	public void createCardUnit7(Unit7Card massMediaCard){
+	public void openCardToCreate() {
 		pages.unit7MassMediaPage.clickButtonCreateCard();
-		pages.unit7MassMediaPage.setCardUnit7(massMediaCard).clickButtonSaveCard();
-		pages.unit7MassMediaPage.clickOnAlertOK();
 	}
 	
 	//Opens Card to review 
@@ -43,44 +53,10 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 		pages.unit7MassMediaPage.clickButtonEditCardUnit7();
 	}
 	
-	//Gets Claim Number
-	@Override
-	public String getSubjectOfSpeech() {
-		return pages.unit7MassMediaPage.getInputSubjectOfSpeechUnit7();
-	}
-	
-	/*Edits card with changing value in field "Author Of Speech"*/
-	@Override
-	public void editCardUnit7(Unit7Card unit7Card){
-		pages.unit7MassMediaPage.clickButtonEditCardUnit7();
-		pages.unit7MassMediaPage.setInputAuthorOfSpeechUnit7(unit7Card.someNewText);
-		pages.unit7MassMediaPage.clickButtonSaveCard();
-		pages.unit7MassMediaPage.clickOnAlertOK();
-	}
-	
-	/*Returns value in field "Author Of Speech" from later edited card(after its editing)*/
-	@Override
-	public String getValueInFieldLastCardU7(){
-		pages.unit7MassMediaPage.clickButtonEditCardUnit7();
-		String existingValueInTheoryField = pages.unit7MassMediaPage.getInputAuthorOfSpeechUnit7();
-		pages.unit7MassMediaPage.clickButtonExitFromCardForm();
-		return existingValueInTheoryField;
-	}
-	
 	/*Removes card(record) from main grid on Unit7*/
 	@Override
 	public void removeCardUnit7(Unit7Card unit7Card){
 		pages.unit7MassMediaPage.removeCardFromGridUnit7(unit7Card);
-	}
-	
-	/*
-	 * Gets number of the first record(card) in grid on the tab "Removed"
-	 * Checks existing of later removing card
-	 */
-	@Override
-	public String getRegNumberAfterRemovingCardU7(){
-		pages.unit7MassMediaPage.goToRemovedTab();
-		return pages.unit7MassMediaPage.getRegNumberFromGridOnRemovedTab();
 	}
 	
 	/*Restores later removed card*/
@@ -89,14 +65,54 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 		pages.unit7MassMediaPage.restoreCardFromGridUnit7(unit7Card);
 	}
 	
+	/*--------------------------Mass Media Card------------------------------------------*/
+	
+	/*Creates a new Card with filling all fields in and submitting*/
+	@Override
+	public void createCardUnit7(Unit7Card massMediaCard){
+		pages.unit7MassMediaPage.setCardUnit7(massMediaCard);
+	}
+	
+	/*Edits card with changing value in field "Author Of Speech"*/
+	@Override
+	public void editCardUnit7(Unit7Card unit7Card){
+		pages.unit7MassMediaPage.setInputAuthorOfSpeechUnit7(unit7Card.someNewText);
+	}
+		
+	//Gets Claim Number
+	@Override
+	public String getSubjectOfSpeech() {
+		return pages.unit7MassMediaPage.getInputSubjectOfSpeechUnit7();
+	}
+		
+	/*Returns value in field "Author Of Speech" from later edited card(after its editing)*/
+	@Override
+	public String getAuthorOfSpeech(){
+		return pages.unit7MassMediaPage.getInputAuthorOfSpeechUnit7();
+	}
+	
+	/*
+	 * Gets number of the first record(card) in grid on the tab "Removed"
+	 * Checks existing of later removing card
+	 */
+	@Override
+	public String getRegNumberFirstRemovedCardInGrid(){
+		return pages.unit7MassMediaPage.getRegNumberFromGridOnRemovedTab();
+	}
+		
 	/*
 	 * Gets number of the first record(card) in grid on the main tab
 	 * Checks existing of later restoring card
 	 */
 	@Override
-	public String getRegNumberAfterRestoringCardU7(){
-		pages.unit7MassMediaPage.goToMainTab();
+	public String getRegNumberFirstCardInGrid(){
 		return pages.unit7MassMediaPage.getRegNumberFromGridOnMainTab();
+	}
+	
+	//Save Card
+	public void saveCard() {
+		pages.unit7MassMediaPage.clickButtonSaveCard();
+		pages.unit7MassMediaPage.clickOnAlertOK();
 	}
 	
 	//Quit from Card

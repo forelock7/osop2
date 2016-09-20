@@ -17,28 +17,57 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 		super(manager.getWebDriver());
 	}
 	
+	/*--------------------------Inspection Page----------------------------------------------------*/
+	
 	/*Checks if on Unit 5 Page*/
 	@Override
 	public boolean isOnUnit5InspectionPage(){
 		return pages.unit5InspectionsPage.waitPageLoaded();
 	}
 	
-	/*Checks if in Inspection Card Unit 5*/
-	@Override
-	public boolean isOnUnit5InspectionCard() {
-		return pages.unit5InspectionsPage.isTitleOfCardIsPresent();
+	//Moves to Main Tab
+	public void moveToMainTab() {
+		pages.unit5InspectionsPage.goToMainTab();
 	}
 	
-	/*Initializes to create new Card (click button create) */
+	//Moves to Removed Tab
+	public void moveToRemovedTab() {
+		pages.unit5InspectionsPage.goToRemovedTab();
+	}
+	
+	//Sorts records down(in descending order) - double click on header of grid
+	public void sortDownMainGrid() {
+		pages.unit5InspectionsPage.doubleClickOnGridHeader();
+	}
+	
+	/*Opens to create new Card (click button create) */
 	@Override
 	public void openInspectionCardToCreate() {
 		pages.unit5InspectionsPage.clickButtonCreateCard();
 	}
 	
-	public void loadDownMainGrid() {
-		pages.unit5InspectionsPage.doubleClickOnGridHeader();
+	//Opens Card to review 
+	@Override
+	public void openInspectionCardToReview() {
+		pages.unit5InspectionsPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	
+	/*Opens Inspection Card to edit (click button create) */
+	@Override
+	public void openInspectionCardToEdit() {
+		pages.unit5InspectionsPage.clickButtonEditInspectionCardUnit5();
+	}
+	
+	/*--------------------------Inspection Card---------------------------------------------------*/
+	
+	/*---Basic Statements Tab---*/
+	
+	/*Checks if in Inspection Card Unit 5*/
+	@Override
+	public boolean isOnUnit5InspectionCard() {
+		return pages.unit5InspectionsPage.isTitleOfCardIsPresent();
+	}
+		
 	/*Moves from "Basic Statements" Tab to "Response Documents" Tab */
 	@Override
 	public void goToDocumentTabInInspectionCard() {
@@ -48,51 +77,13 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 	/*Creates a new Card with filling all fields in and submitting*/
 	@Override
 	public void createInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard) {
-		openInspectionCardToCreate();
-		pages.unit5InspectionsPage.setInspectionCardUnit5(unit5InspectionCard).clickButtonSaveCard();
-		pages.unit5InspectionsPage.clickOnAlertOK();
+		pages.unit5InspectionsPage.setInspectionCardUnit5(unit5InspectionCard);
 	}
-	
-	/*
-	 * Returns value in field "Agency Name" ("Назва відомстваб організації, установи") from created card(after its creating)
-	 * The first record(card) in main grid should be the last created.
-	 * Checks creating of card.
-	 */
-	/*@Override
-	public String getAgencyNameLastCreatedInspectionCardU5(){
-		pages.unit5InspectionsPage.clickButtonEditInspectionCardUnit5();
-		String existingTextInAgencyNameField = pages.unit5InspectionsPage.getInputAgencyNameUnit5();
-		pages.unit5InspectionsPage.clickButtonExitFromCardForm();
-		return existingTextInAgencyNameField;
-	}*/
-	
-	//Opens Card to review 
-	@Override
-	public void openCardToReview() {
-		pages.unit5InspectionsPage.doubleClickOnFirstRecordInGridOnMainTab();
-	}
-	
-	/*Initializes to create new "Response Document" Card (click button create) */
-	@Override
-	public void openCardToEdit() {
-		pages.unit5InspectionsPage.clickButtonEditInspectionCardUnit5();
-	}
-	
-	//Gets Claim Number
-	@Override
-	public String getAgencyName() {
-		return pages.unit5InspectionsPage.getInputAgencyNameUnit5();
-	}
-	
-	
 	
 	/*Edits card with changing value in field "Agency Name" ("Назва відомстваб організації, установи")*/
 	@Override
 	public void editInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard) {
-		openCardToEdit();
 		pages.unit5InspectionsPage.setInputAgencyNameUnit5(unit5InspectionCard.someNewText);
-		pages.unit5InspectionsPage.clickButtonSaveCard();
-		pages.unit5InspectionsPage.clickOnAlertOK();
 	}
 	
 	/*Removes card(record) from main grid on Inspection Page Unit5*/
@@ -100,21 +91,26 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 	public void removeInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard){
 		pages.unit5InspectionsPage.removeInspectionCardFromGridUnit5(unit5InspectionCard);
 	}
+		
+	/*Restores later removed card*/
+	@Override
+	public void restoreInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard){
+		pages.unit5InspectionsPage.restoreCardFromGridUnit5(unit5InspectionCard);
+	}
 	
+	//Gets Agency Name
+	@Override
+	public String getAgencyName() {
+		return pages.unit5InspectionsPage.getInputAgencyNameUnit5();
+	}
+		
 	/*
 	 * Gets number of the first record(card) in grid on the tab "Removed"
 	 * Checks existing of later removing card
 	 */
 	@Override
-	public String getRegNumberAfterRemovingInspectionCardU5(){
-		pages.unit5InspectionsPage.goToRemovedTab();
+	public String getRegNumberFirstRemovedInspectionCardInGrid(){
 		return pages.unit5InspectionsPage.getRegNumberFromGridOnRemovedTab();
-	}
-	
-	/*Restores later removed card*/
-	@Override
-	public void restoreInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard){
-		pages.unit5InspectionsPage.restoreCardFromGridUnit5(unit5InspectionCard);
 	}
 	
 	/*
@@ -122,12 +118,22 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 	 * Checks existing of later restoring card
 	 */
 	@Override
-	public String getRegNumberAfterRestoringCardU5(){
-		pages.unit5InspectionsPage.goToMainTab();
+	public String getRegNumberFirstCardInGrid(){
 		return pages.unit5InspectionsPage.getRegNumberFromGridOnMainTab();
 	}
 	
-	/*--------------------Related to "Response Documents"--------------------------------------*/
+	//Saves Card(clicking "Save" button)
+	public void saveCard() {
+		pages.unit5InspectionsPage.clickButtonSaveCard();
+		pages.unit5InspectionsPage.clickOnAlertOK();
+	}
+	
+	//Quit from Card
+	public void quitCard() {
+		pages.unit5InspectionsPage.clickButtonExitFromCardForm();
+	}
+	
+	/*---Response Documents Tab---*/
 	
 	//Checks if on "Response Documents" Tab in "Inspection" Card
 	public boolean isOnUnit5DocumentsTab() {
@@ -140,24 +146,24 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 		return pages.unit5InspectionsPage.isCreateButtonPresent();
 	}
 	
-	/*Initializes to create new "Response Document" Card (click button create) */
+	/*Opens to create new "Response Document" Card (click button create) */
 	@Override
-	public void openToCreateDocumentCard() {
+	public void openDocumentCardToCreate() {
 		pages.unit5InspectionsPage.clickButtonCreateDocumentCard();
 	}
 	
-	//Quit from Card
-	public void quitCard() {
-		pages.unit5InspectionsPage.clickButtonExitFromCardForm();
+	//Opens "Response Document" Card to review in Grid on "Response Document" Tab of Inspection Card
+	public void openDocumentCardToReview() {
+		pages.unit5InspectionsPage.clickOnFirstRecordInDocumentGrid();
 	}
 	
-	public String getContentLastDocFromGridInInspCard() {
+	//Opens "Response Document" Card to edit in Grid on "Response Document" Tab of Inspection Card
+	public void openDocumentCardToEdit() {
 		pages.unit5InspectionsPage.clickButtonEditDocInInspectionCardUnit5();
-		return pages.unit5DocumentsPage.getInputContentDocument();
-		
 	}
+	
 
-
-
-
+		
 }
+
+

@@ -1,6 +1,7 @@
 package ua.bms.osop.applogic1;
 
 import ua.bms.osop.applogic.Unit5ChargedHelper;
+import ua.bms.osop.model.Unit5ChargedCard;
 
 /*
  * "Supervision of the observance of laws in the execution of judgments." Page - Unit 5
@@ -16,30 +17,53 @@ public class Unit5ChargedHelper1 extends DriverBasedHelper implements Unit5Charg
 		super(manager.getWebDriver());
 	}
 	
+	/*-------------------------------Charged Person Page----------------------------------------*/
+	
 	/*Checks if on Unit 5 Page "List of Charged Person"*/
 	@Override
 	public boolean isOnUnit5ChargedPage(){
 		return pages.unit5ChargedPage.waitPageLoaded();
+	}	
+	
+	//Sorts records down(in descending order) - double click on header of grid
+	public void sortDownMainGrid() {
+		pages.unit5ChargedPage.doubleClickOnGridHeader();
 	}
 	
-	public String getChargedNameFromDocument() {
-		pages.unit5DocumentsPage.clickButtonEditChargedGrid();
+	//Opens Charged Person Card to review  in Charged Person Page
+	public void openChargedCardToReview() {
+		pages.unit5ChargedPage.doubleClickOnFirstRecordInGridOnMainTab();
+	}
+	
+	/*-------------------------------Charged Person Card----------------------------------------*/
+	
+	//Fills all fields in Charged Person Casrd
+	public void createChargedCard(Unit5ChargedCard unit5ChargedCard) {
+		pages.unit5ChargedPage.setChargedCard(unit5ChargedCard);
+	}
+	
+	public void editChargedCard(Unit5ChargedCard unit5ChargedCard) {
+		pages.unit5ChargedPage.setInputPost(unit5ChargedCard.someNewText);
+	}
+	
+	//Returns value in Charged Person Name Field
+	public String getChargedName() {
 		return pages.unit5ChargedPage.getInputName();
 	}
 	
-	public void quitCard() {
-		pages.unit5ChargedPage.clickButtonExitFromCardForm();
+	//Returns value in Post Field
+	public String getPost() {
+		return pages.unit5ChargedPage.getInputPost();
 	}
 	
+	//Saves Card(clicking "Save" button)
+	public void saveCard() {
+		pages.unit5ChargedPage.clickButtonSaveCard();
+	}
 	
-	public String getChargedNameFromGrid() {
-		pages.unit5ChargedPage.doubleClickOnGridHeader();
-		
-		pages.unit5ChargedPage.doubleClickOnFirstRecordInGridOnMainTab();
-		
-		String nameVelue = pages.unit5ChargedPage.getInputName();
+	//Quit from Card
+	public void quitCard() {
 		pages.unit5ChargedPage.clickButtonExitFromCardForm();
-		return nameVelue;	
 	}
 
 }

@@ -38,4 +38,5 @@ public class Unit8Card {
 		Random rnd = new Random();
 		return "Some NEW teXt U8!cdeswcvdaewv@##$$%&*^&*(&)" + Integer.toString(rnd.nextInt(999999999));
 	}
+	
 }

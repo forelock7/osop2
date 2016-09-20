@@ -8,17 +8,25 @@ import ua.bms.osop.model.Unit6Card;
 public interface Unit6Helper {
 
 	boolean isOnUnit6Page();
-	void createCardUnit6(Unit6Card unit6Card);
-	void editCardUnit6(Unit6Card unit6Card);
-	String getValueInFieldLastCardU6();
-	void removeCardUnit6(Unit6Card unit6Card);
-	String getRegNumberAfterRemovingCardU6();
-	void restoreCardUnit6(Unit6Card unit6Card);
-	String getRegNumberAfterRestoringCardU6();
+	
+	void moveToMainTab();
+	void moveToRemovedTab();
+	
+	void openCardToCreate();
 	void openCardToReview();
 	void openCardToEdit();
+	
+	void createCardUnit6(Unit6Card unit6Card);
+	void editCardUnit6(Unit6Card unit6Card);
+	void removeCardUnit6(Unit6Card unit6Card);
+	void restoreCardUnit6(Unit6Card unit6Card);
+		
+	String getRegNumberRemovedCardInGrid();
+	String getRegNumberFirstCardInGrid();
+	String getSummary();
 	String getClaimNumber();
+	
+	void saveCard();
 	void quitCard();
-
-
+	
 }

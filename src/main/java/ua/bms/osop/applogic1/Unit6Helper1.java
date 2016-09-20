@@ -15,18 +15,27 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 		super(manager.getWebDriver());
 	}
 	
+	/*--------------------------Claim Page------------------------------------------*/
+	
 	/*Checks if on Unit 6 Page*/
 	@Override
 	public boolean isOnUnit6Page(){
 		return pages.unit6ClaimsPage.waitPageLoaded();
 	}
 	
-	/*Creates a new Card with filling all fields in and submitting*/
-	@Override
-	public void createCardUnit6(Unit6Card unit6Card){
+	//Moves to Main Tab
+	public void moveToMainTab() {
+		pages.unit6ClaimsPage.goToMainTab();
+	}
+	
+	//Moves to Removed Tab
+	public void moveToRemovedTab() {
+		pages.unit6ClaimsPage.goToRemovedTab();
+	}
+	
+	//Opens Card to create
+	public void openCardToCreate() {
 		pages.unit6ClaimsPage.clickButtonCreateCard();
-		pages.unit6ClaimsPage.setCardUnit6(unit6Card).clickButtonSaveCard();
-		pages.unit6ClaimsPage.clickOnAlertOK();
 	}
 	
 	//Opens Card to review 
@@ -41,44 +50,10 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 		pages.unit6ClaimsPage.clickButtonEditCardUnit6();
 	}
 	
-	//Gets Claim Number
-	@Override
-	public String getClaimNumber() {
-		return pages.unit6ClaimsPage.getInputClaimNumberUnit6();
-	}
-		
-	/*Edits card with changing value in field "Summary"*/
-	@Override
-	public void editCardUnit6(Unit6Card unit6Card) {
-		pages.unit6ClaimsPage.clickButtonEditCardUnit6();
-		pages.unit6ClaimsPage.setInputSummaryUnit6(unit6Card.someNewText);
-		pages.unit6ClaimsPage.clickButtonSaveCard();
-		pages.unit6ClaimsPage.clickOnAlertOK();
-	}
-	
-	/*Returns value in field "Summary" from later edited card(after its editing)*/
-	@Override
-	public String getValueInFieldLastCardU6(){
-		pages.unit6ClaimsPage.clickButtonEditCardUnit6();
-		String existingValueInSummaryField = pages.unit6ClaimsPage.getInputSummaryUnit6();
-		pages.unit6ClaimsPage.clickButtonExitFromCardForm();
-		return existingValueInSummaryField;
-	}
-	
 	/*Removes card(record) from main grid on Unit6*/
 	@Override
 	public void removeCardUnit6(Unit6Card unit6Card){
 		pages.unit6ClaimsPage.removeCardFromGridUnit6(unit6Card);
-	}
-	
-	/*
-	 * Gets number of the first record(card) in grid on the tab "Removed"
-	 * Checks existing of later removing card
-	 */
-	@Override
-	public String getRegNumberAfterRemovingCardU6(){
-		pages.unit6ClaimsPage.goToRemovedTab();
-		return pages.unit6ClaimsPage.getRegNumberFromGridOnRemovedTab();
 	}
 	
 	/*Restores later removed card*/
@@ -87,14 +62,54 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 		pages.unit6ClaimsPage.restoreCardFromGridUnit6(unit6Card);
 	}
 	
+	/*---------------------------Claim Card-----------------------------------------*/
+		
+	/*Creates a new Card with filling all fields in and submitting*/
+	@Override
+	public void createCardUnit6(Unit6Card unit6Card){
+		pages.unit6ClaimsPage.setCardUnit6(unit6Card);
+	}
+	
+	/*Edits card with changing value in field "Summary"*/
+	@Override
+	public void editCardUnit6(Unit6Card unit6Card) {
+		pages.unit6ClaimsPage.setInputSummaryUnit6(unit6Card.someNewText);
+	}
+		
+	//Gets Claim Number
+	@Override
+	public String getClaimNumber() {
+		return pages.unit6ClaimsPage.getInputClaimNumberUnit6();
+	}
+		
+	/*Returns value in field "Summary" from later edited card(after its editing)*/
+	@Override
+	public String getSummary(){
+		return pages.unit6ClaimsPage.getInputSummaryUnit6();
+	}
+		
+	/*
+	 * Gets number of the first record(card) in grid on the tab "Removed"
+	 * Checks existing of later removing card
+	 */
+	@Override
+	public String getRegNumberRemovedCardInGrid(){
+		return pages.unit6ClaimsPage.getRegNumberFromGridOnRemovedTab();
+	}
+		
 	/*
 	 * Gets number of the first record(card) in grid on the main tab
 	 * Checks existing of later restoring card
 	 */
 	@Override
-	public String getRegNumberAfterRestoringCardU6(){
-		pages.unit6ClaimsPage.goToMainTab();
+	public String getRegNumberFirstCardInGrid(){
 		return pages.unit6ClaimsPage.getRegNumberFromGridOnMainTab();
+	}
+	
+	//Quit from Card
+	public void saveCard() {
+		pages.unit6ClaimsPage.clickButtonSaveCard();
+		pages.unit6ClaimsPage.clickOnAlertOK();
 	}
 	
 	//Quit from Card

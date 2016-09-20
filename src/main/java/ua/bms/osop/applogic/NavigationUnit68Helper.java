@@ -5,8 +5,10 @@ package ua.bms.osop.applogic;
  */
 public interface NavigationUnit68Helper {
 
+	boolean isOnUnit68Page();
+	
 	void goToUnit6Page();
 	void goToUnit8Page();
-	boolean isOnUnit68Page();
+
 
 }

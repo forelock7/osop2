@@ -2,7 +2,9 @@ package ua.bms.osop.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -23,22 +25,15 @@ public class Unit5DocumentsPage  extends AnyPage  {
 		super(pages);
 	}
 	
-	/*
-	 * Determines loading of Page
-	 */
-	public Unit5DocumentsPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit5Documents));
-		return this;
-	}
-	
-	/*-------------------The Web-Elements of Main Page----------------------------------------------------*/
+	/*-------------------The Web-Elements of "Response Document" Page----------------------------------------------------*/
 
 	//Title "List of Response Documents"("Перелік документів реагування");
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Перелік документів реагування')]")
 	private WebElement titleUnit5Documents;
-
-
+	
+	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-16).
+	@FindBy(xpath = "//div[contains(@id, 'unit5-actGridDeleted')]//table[1]//td[16]/div/img")
+	private WebElement buttonRestore;
 	
 	/*------------------The Web-Elements of the "Response Document" Card ------------------------------------------------------*/
 	
@@ -73,6 +68,10 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//a[contains(@id, 'button')]")
 	private WebElement buttonAddChargedPerson;
 	
+	//First record in Charged Person Grid
+	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div")
+	private WebElement firstRecordInChargedGrid;
+	
 	//Button "Edit" in Charged Person Grid
 	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[7]//img")
 	private WebElement inputButtonEditChargedGrid;
@@ -85,6 +84,21 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	@FindBy(xpath = "(//div[contains(@id, 'unit5-actTabMain')]//textarea)[1]")
 	private WebElement inputDocumentContent;
 	
+	/*-------------------------The Methods of the "Response Document" Page --------------------------*/
+	
+	/*
+	 * Determines loading of Page
+	 */
+	public Unit5DocumentsPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(ExpectedConditions.visibilityOf(titleUnit5Documents));
+		return this;
+	}
+	
+	public void restoreCardFromGrid(Unit5DocumentCard unit5DocumentCard) {
+		buttonRestore.click();
+		unit5DocumentCard.regNumberRestoredCard = confirmRestoring();
+	}
 	
 	/*-------------------------The Methods of the "Response Document" Card --------------------------*/
 	
@@ -103,6 +117,19 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	//Click button "Add" in "Charged Person" grid
 	public void clickButtonAddChargedPerson() {
 		buttonAddChargedPerson.click();
+	}
+	
+	//Clicks on the first record in Charged Person Grid
+	public void clickOnFirstRecordInChargedGrid() {
+		Actions actionCh = new Actions(driver);
+		for (int i=0; i<3; ++i) {
+			try{
+				actionCh.doubleClick(wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div")))).perform();
+				break;
+			}catch (WebDriverException e) {
+				System.out.println("exception - there is no GRID");
+			}
+		}
 	}
 	
 	//Fills several fields in Document Card
@@ -129,9 +156,11 @@ public class Unit5DocumentsPage  extends AnyPage  {
 		inputSuperAgencyTypeAdd.sendKeys(Keys.ESCAPE);
 	}
 	
+	public void setInputContentDocument(String someNewText) {
+		type(inputDocumentContent, someNewText);
+	}
+	
 	public String getInputContentDocument() {
-		//return inputDocumentContent.getAttribute("value");
-		
 		return wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//div[contains(@id, 'unit5-actTabMain')]//textarea)[1]"))).getAttribute("value");
 	}
 
@@ -143,6 +172,8 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	public String getNameFromChargedPersonGrid() {
 		return  wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div"))).getText();
 	}
-	
+
+
+
 
 }

@@ -24,17 +24,8 @@ public class Unit5ChargedPage  extends AnyPage {
 	public Unit5ChargedPage(PageManager pages) {
 		super(pages);
 	}
-	
-	/*
-	 * Determines loading of Page
-	 */
-	public Unit5ChargedPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit5Charged));
-		return this;
-	}
-	
-	/*-------------------The Web-Elements of Main Page----------------------------------------------------*/
+		
+	/*-------------------The Web-Elements of Charged Person Page----------------------------------------------------*/
 
 	//Title "List of Charged Person"("Перелік осіб, притягнутих до відповідальності")
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Перелік осіб, притягнутих до відповідальності')]")
@@ -44,7 +35,7 @@ public class Unit5ChargedPage  extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'tableview')]/div[1]//table[1]//td[2]/div")
 	private WebElement cellRegNumberInGridOnMainTab;
 	
-	/*------------------The Web-Elements of the Card------------------------------------------------------*/
+	/*------------------The Web-Elements of the Charged Person Card------------------------------------------------------*/
 	
 	//Button "Save" ("Зберегти") for saving card
 	@FindBy(xpath = "//div[contains(@id, 'actAsChargedPersonCard')]/div[4]//a[1]")
@@ -68,8 +59,17 @@ public class Unit5ChargedPage  extends AnyPage {
 	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonCard')]/following-sibling::div//li[1]")
 	private WebElement itemSuperAgencyTypeAdd;
 	
-	/*------------------Methods---------------------------------------------------------------------------*/
+	/*------------------Methods of Charged Person Page------------------------------------------------*/
 
+	/*
+	 * Determines loading of Page
+	 */
+	public Unit5ChargedPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(ExpectedConditions.visibilityOf(titleUnit5Charged));
+		return this;
+	}
+	
 	//Opens to review Card
 	@Override
 	public void doubleClickOnFirstRecordInGridOnMainTab() {
@@ -84,6 +84,8 @@ public class Unit5ChargedPage  extends AnyPage {
 		}		
 	}
 	
+	/*------------------Methods of Charged Person Card------------------------------------------------*/
+		
 	//Clicking on "Save"("Зберегти") button in Card
 	@Override
 	public void clickButtonSaveCard() {
@@ -104,8 +106,23 @@ public class Unit5ChargedPage  extends AnyPage {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit5-actAsChargedPersonCard')]/following-sibling::div//li[1]"))).click();
 		return this;
 	}
+	
+	//Fills Post field
+	public void setInputPost(String someNewText) {
+		type(inputPost, someNewText);
+	}
 
+	//Gets value from Name field in Charged Person Card
 	public String getInputName() {
 		return inputName.getAttribute("value");
 	}
+	
+	//Gets value from Post field in Charged Person Card
+	public String getInputPost() {
+		return inputPost.getAttribute("value");
+	}
+
+
+
+
 }

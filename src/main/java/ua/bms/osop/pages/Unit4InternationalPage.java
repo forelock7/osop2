@@ -18,17 +18,8 @@ public class Unit4InternationalPage extends AnyPage {
 	public Unit4InternationalPage(PageManager pages) {
 		super(pages);
 	}
-	
-	/*
-	 * Determines loading of Page
-	 */
-	public Unit4InternationalPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit4));
-		return this;
-	}
-	
-	/*-------------------The Web-Elements of Main Page----------------------------------------------------*/
+		
+	/*-------------------The Web-Elements of International Page----------------------------------------------------*/
 
 	//Title "International Judicial Cooperation" ("Міжнародно-правове співробітництво")
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Міжнародно-правове співробітництво')]")
@@ -46,7 +37,7 @@ public class Unit4InternationalPage extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'unit4-requestGridDeleted')]//table[1]//td[13]/div/img")
 	private WebElement buttonRestore;
 	
-	/*------------------The Web-Elements of the Card------------------------------------------------------*/
+	/*------------------The Web-Elements of the International Card------------------------------------------------------*/
 	
 	//Input field "Number of Claim" ("№ звернення")
 	@FindBy(xpath = "//div[contains(@id, 'unit4-requestTabMain')]//label[contains(., '№ звернення:')]/following-sibling::div//input")
@@ -79,7 +70,35 @@ public class Unit4InternationalPage extends AnyPage {
 	@FindBy (xpath = "//div[contains(@id, 'listcombowindow')]//table[6]//td[3]//img")
 	private WebElement itemCountryClaim;
 		
-	/*------------------Methods---------------------------------------------------------------------------*/
+	/*------------------Methods of International Page-------------------------------------------------------------*/
+	
+	/*
+	 * Determines loading of Page
+	 */
+	public Unit4InternationalPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(ExpectedConditions.visibilityOf(titleUnit4));
+		return this;
+	}
+	
+	//Click on "Edit" button for the first record in the main grid
+	public void clickButtonEditCardUnit4() {
+		wait.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
+	}
+	
+	//Removing Card with getting registration number of the card that will be removed
+	public void removeCardFromGridUnit4(Unit4Card unit4Card){
+		buttonRemove.click();
+		unit4Card.regNumberRemovedCard = super.confirmationOfRemoving();
+	}
+	
+	//Restoring card with getting registration number of the card that will be restored
+	public void restoreCardFromGridUnit4(Unit4Card unit4Card) {
+		buttonRestore.click();
+		unit4Card.regNumberRestoredCard = confirmRestoring();
+	}
+	
+	/*------------------Methods of International Card-------------------------------------------------------------*/
 	
 	//Sets the new card with filling all fields in
 	public Unit4InternationalPage setCardUnit4(Unit4Card unit4Card){
@@ -94,12 +113,7 @@ public class Unit4InternationalPage extends AnyPage {
 		type(inputSummary, unit4Card.summary);
 		return this;
 	}
-	
-	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEditCardUnit4() {
-		wait.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
-	}
-	
+		
 	//Getting value from input-field "Claim Number" in formerly created card
 	public String getInputClaimNumberUnit4() {
 		return inputClaimNumber.getAttribute("value");
@@ -114,17 +128,4 @@ public class Unit4InternationalPage extends AnyPage {
 	public String getInputSummaryUnit4() {
 		return inputSummary.getAttribute("value");
 	}
-	
-	//Removing Card with getting registration number of the card that will be removed
-	public void removeCardFromGridUnit4(Unit4Card unit4Card){
-		buttonRemove.click();
-		unit4Card.regNumberRemovedCard = super.confirmationOfRemoving();
-	}
-	
-	//Restoring card with getting registration number of the card that will be restored
-	public void restoreCardFromGridUnit4(Unit4Card unit4Card) {
-		buttonRestore.click();
-		unit4Card.regNumberRestoredCard = confirmRestoring();
-	}
-
 }

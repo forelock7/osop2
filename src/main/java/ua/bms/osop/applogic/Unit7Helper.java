@@ -8,16 +8,26 @@ import ua.bms.osop.model.Unit7Card;
 public interface Unit7Helper {
 	
 	boolean isOnUnit7Page();
+	
+	void moveToMainTab();
+	void moveToRemovedTab();
+	
+	void openCardToCreate();
+	void openCardToReview();
+	void openCardToEdit();
+		
 	void createCardUnit7(Unit7Card massMediaCard);
 	void editCardUnit7(Unit7Card unit7Card);
-	String getValueInFieldLastCardU7();
 	void removeCardUnit7(Unit7Card unit7Card);
-	String getRegNumberAfterRemovingCardU7();
 	void restoreCardUnit7(Unit7Card unit7Card);
-	String getRegNumberAfterRestoringCardU7();
-	void quitCard();
-	void openCardToReview();
+	
+	String getRegNumberFirstCardInGrid();
+	String getRegNumberFirstRemovedCardInGrid();
+	
 	String getSubjectOfSpeech();
-	void openCardToEdit();
+	String getAuthorOfSpeech();
+		
+	void saveCard();
+	void quitCard();
 
 }

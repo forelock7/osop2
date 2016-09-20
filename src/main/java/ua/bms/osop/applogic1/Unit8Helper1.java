@@ -15,18 +15,28 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 		super(manager.getWebDriver());
 	}
 	
+	/*----------------------------Request Page-----------------------------------------------------*/
+	
 	/*Checks if on Unit 8 Page*/
 	@Override
 	public boolean isOnUnit8Page(){
 		return pages.unit8RequestsPage.waitPageLoaded();
 	}
 	
-	/*Creates a new Card with filling all fields in and submitting*/
+	//Moves to Main Tab
+	public void moveToMainTab() {
+		pages.unit8RequestsPage.goToMainTab();
+	}
+	
+	//Moves to Removed Tab
+	public void moveToRemovedTab() {
+		pages.unit8RequestsPage.goToRemovedTab();
+	}
+	
+	//Opens Card to create 
 	@Override
-	public void createCardUnit8(Unit8Card unit8Card){
+	public void openCardToCreate() {
 		pages.unit8RequestsPage.clickButtonCreateCard();
-		pages.unit8RequestsPage.setCardUnit8(unit8Card).clickButtonSaveCard();
-		pages.unit8RequestsPage.clickOnAlertOK();
 	}
 	
 	//Opens Card to review 
@@ -41,32 +51,43 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 		pages.unit8RequestsPage.clickButtonEditCardUnit8();
 	}
 	
-	//Gets Claim Number
+	/*
+	 * Gets number of the first record(card) in grid on the main tab
+	 * Checks existing of later restoring card
+	 */
 	@Override
-	public String getRequestNumber() {
-		return pages.unit8RequestsPage.getInputRequestNumberUnit8();
+	public String getRegNumberFirstCardInGrid(){
+		return pages.unit8RequestsPage.getRegNumberFromGridOnMainTab();
 	}
 	
+	/*
+	 * Gets number of the first record(card) in grid on the tab "Removed"
+	 * Checks existing of later removing card
+	 */
+	@Override
+	public String getRegNumbreFirstRemovedCardInGrid(){
+		return pages.unit8RequestsPage.getRegNumberFromGridOnRemovedTab();
+	}
 	
+	/*----------------------------Request Card-----------------------------------------------------*/
 	
-	
+	/*Creates a new Card with filling all fields in and submitting*/
+	@Override
+	public void createCardUnit8(Unit8Card unit8Card){
+		pages.unit8RequestsPage.setCardUnit8(unit8Card);
+	}
 	
 	/*Edits card with changing value in field "Summary"*/
 	@Override
 	public void editCardUnit8(Unit8Card unit8Card) {
-		pages.unit8RequestsPage.clickButtonEditCardUnit8();
 		pages.unit8RequestsPage.setInputSummaryUnit8(unit8Card.someNewText);
-		pages.unit8RequestsPage.clickButtonSaveCard();
-		pages.unit8RequestsPage.clickOnAlertOK();
+
 	}
 	
-	/*Returns value in field "Summary" from later edited card(after its editing)*/
+	//Gets Claim Number
 	@Override
-	public String getValueInFieldLastCardU8(){
-		pages.unit8RequestsPage.clickButtonEditCardUnit8();
-		String existingValueInSummaryField = pages.unit8RequestsPage.getInputSummaryUnit8();
-		pages.unit8RequestsPage.clickButtonExitFromCardForm();
-		return existingValueInSummaryField;
+	public String getRequestNumber() {
+		return pages.unit8RequestsPage.getInputRequestNumberUnit8();
 	}
 	
 	/*Removes card(record) from main grid on Unit8*/
@@ -75,30 +96,22 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 		pages.unit8RequestsPage.removeCardFromGridUnit8(unit8Card);
 	}
 	
-	/*
-	 * Gets number of the first record(card) in grid on the tab "Removed"
-	 * Checks existing of later removing card
-	 */
-	@Override
-	public String getRegNumberAfterRemovingCardU8(){
-		pages.unit8RequestsPage.goToRemovedTab();
-		return pages.unit8RequestsPage.getRegNumberFromGridOnRemovedTab();
-	}
-	
 	/*Restores later removed card*/
 	@Override
 	public void restoreCardUnit8(Unit8Card unit8Card){
 		pages.unit8RequestsPage.restoreCardFromGridUnit8(unit8Card);
 	}
-	
-	/*
-	 * Gets number of the first record(card) in grid on the main tab
-	 * Checks existing of later restoring card
-	 */
+		
+	/*Returns value in field "Summary" from later edited card(after its editing)*/
 	@Override
-	public String getRegNumberAfterRestoringCardU8(){
-		pages.unit8RequestsPage.goToMainTab();
-		return pages.unit8RequestsPage.getRegNumberFromGridOnMainTab();
+	public String getSummary(){
+		return pages.unit8RequestsPage.getInputSummaryUnit8();
+	}
+		
+	//Save Card
+	public void saveCard() {
+		pages.unit8RequestsPage.clickButtonSaveCard();
+		pages.unit8RequestsPage.clickOnAlertOK();
 	}
 	
 	//Quit from Card

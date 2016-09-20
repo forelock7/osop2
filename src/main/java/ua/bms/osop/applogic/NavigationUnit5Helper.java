@@ -5,9 +5,11 @@ package ua.bms.osop.applogic;
  */
 public interface NavigationUnit5Helper {
 	
+	boolean isOnUnit5Page();
+	
 	void goToUnit5InspectionsPage();
 	void goToUnit5DocumentsPage();
 	void goToUnit5ChargedPage();
-	boolean isOnUnit5Page();
+
 
 }

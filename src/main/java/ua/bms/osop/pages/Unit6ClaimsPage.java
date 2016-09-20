@@ -20,17 +20,8 @@ public class Unit6ClaimsPage extends AnyPage {
 	public Unit6ClaimsPage(PageManager pages) {
 		super(pages);
 	}
-	
-	/*
-	 * Determines loading of Page
-	 */
-	public Unit6ClaimsPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit6));
-		return this;
-	}
-	
-	/*-------------------The Web-Elements of Main Page----------------------------------------------------*/
+		
+	/*-------------------The Web-Elements of Claim Page----------------------------------------------------*/
 
 	//Title "Claims" ("Звернення")
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Звернення')]")
@@ -48,7 +39,7 @@ public class Unit6ClaimsPage extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'unit68-requestGridDeleted')]//table[1]//td[14]/div/img")
 	private WebElement buttonRestore;
 	
-	/*------------------The Web-Elements of the Card------------------------------------------------------*/
+	/*------------------The Web-Elements of the Claim Card------------------------------------------------------*/
 	
 	//Input field "Number of Claim" ("№ звернення")
 	@FindBy(xpath = "//div[contains(@id, 'unit68-requestTabMain')]//label[contains(., '№ звернення:')]/following-sibling::div//input")
@@ -111,11 +102,46 @@ public class Unit6ClaimsPage extends AnyPage {
 	private WebElement itemClaimCategory;
 	
 	
-	/*------------------Methods---------------------------------------------------------------------------*/
+	/*------------------Methods of Claim Page---------------------------------------------------------------------------*/
+
+	/*
+	 * Determines loading of Page
+	 */
+	public Unit6ClaimsPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(ExpectedConditions.visibilityOf(titleUnit6));
+		return this;
+	}
+	
+	//Click on "Edit" button for the first record in the main grid
+	public void clickButtonEditCardUnit6() {
+		for (int i=0; i<3; ++i) {
+			try{
+				wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//table[1]//td[14]/div/img")));
+				buttonEdit.click();
+				break;
+			}catch (WebDriverException e) {
+				System.out.println("exception");
+			}
+		}
+	}
+	
+	//Removing Card with getting registration number of the card that will be removed
+	public void removeCardFromGridUnit6(Unit6Card unit6Card){
+		buttonRemove.click();
+		unit6Card.regNumberRemovedCard = super.confirmationOfRemoving();
+	}
+	
+	//Restoring card with getting registration number of the card that will be restored
+	public void restoreCardFromGridUnit6(Unit6Card unit6Card) {
+		buttonRestore.click();
+		unit6Card.regNumberRestoredCard = confirmRestoring();
+	}
+	
+	/*------------------------------Methods of Claim Card------------------------------------------------*/
 	
 	//Setting the new card with filling all fields in
 	public Unit6ClaimsPage setCardUnit6(Unit6Card unit6Card){
-				
 		type(inputClaimNumber, unit6Card.claimNumber);
 		inputClaimType.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Первинне')]"))).click();
@@ -152,21 +178,7 @@ public class Unit6ClaimsPage extends AnyPage {
 	private void clickButtonAddApplicantInForm() {
 		buttonAddApplicantInForm.click();
 	}
-	
-	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEditCardUnit6() {
-		for (int i=0; i<3; ++i) {
-			try{
-				wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//table[1]//td[14]/div/img")));
-				buttonEdit.click();
-				break;
-			}catch (WebDriverException e) {
-				System.out.println("exception");
-			}
-		}
-	
-	}
-		
+			
 	//Getting value from input-field "Claim Number" in formerly created card
 	public String getInputClaimNumberUnit6() {
 		return inputClaimNumber.getAttribute("value");
@@ -182,16 +194,4 @@ public class Unit6ClaimsPage extends AnyPage {
 		return inputSummary.getAttribute("value");
 	}
 	
-	//Removing Card with getting registration number of the card that will be removed
-	public void removeCardFromGridUnit6(Unit6Card unit6Card){
-		buttonRemove.click();
-		unit6Card.regNumberRemovedCard = super.confirmationOfRemoving();
-	}
-	
-	//Restoring card with getting registration number of the card that will be restored
-	public void restoreCardFromGridUnit6(Unit6Card unit6Card) {
-		buttonRestore.click();
-		unit6Card.regNumberRestoredCard = confirmRestoring();
-	}
-
 }
