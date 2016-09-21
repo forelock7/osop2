@@ -21,7 +21,7 @@ public class Unit4InternationalTest extends BasicTestCase {
 		app.getUnit4Helper().openCardToCreate();
 		app.getUnit4Helper().createCard(intCard);
 		app.getUnit4Helper().saveCard();
-		app.getUnit4Helper().openCardToReview();
+		app.getUnit4Helper().openCardToView();
 		Assert.assertEquals(intCard.claimNumber, app.getUnit4Helper().getClaimNumber());
 		app.getUnit4Helper().quitCard();
 	}

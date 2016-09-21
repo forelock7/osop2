@@ -35,6 +35,11 @@ public class Unit5ChargedHelper1 extends DriverBasedHelper implements Unit5Charg
 		pages.unit5ChargedPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	
+	//Gets name of Charged Person from first record in the main grid
+	public String getChargedNameFromGrid() {
+		return pages.unit5ChargedPage.getChargedNameFirstCardInGrid();
+	}
+	
 	/*-------------------------------Charged Person Card----------------------------------------*/
 	
 	//Fills all fields in Charged Person Casrd
@@ -44,6 +49,10 @@ public class Unit5ChargedHelper1 extends DriverBasedHelper implements Unit5Charg
 	
 	public void editChargedCard(Unit5ChargedCard unit5ChargedCard) {
 		pages.unit5ChargedPage.setInputPost(unit5ChargedCard.someNewText);
+	}
+	
+	public void deleteChargedPersonFromGrid(Unit5ChargedCard unit5ChargedCard) {
+		pages.unit5DocumentsPage.deleteChargedRecordFormGridInDocument(unit5ChargedCard);
 	}
 	
 	//Returns value in Charged Person Name Field

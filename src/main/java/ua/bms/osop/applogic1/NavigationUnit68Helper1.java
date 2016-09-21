@@ -30,10 +30,10 @@ public class NavigationUnit68Helper1 extends DriverBasedHelper implements Naviga
 	@Override
 	public void goToUnit6Page(){
 		if (isOnUnit68Page()) {
-			pages.navigationUnits68Page.ensurePageLoaded().moveToUnit6Page();
+			pages.navigationUnits68Page.ensurePageLoaded().clickUnit6MenuItem();
 		} else {
-			pages.navigationTopPage.ensurePageLoaded().moveToNavigationUnit68Page();
-			pages.navigationUnits68Page.ensurePageLoaded().moveToUnit6Page();
+			pages.navigationTopPage.ensurePageLoaded().clickUnit68MenuItem();
+			pages.navigationUnits68Page.ensurePageLoaded().clickUnit6MenuItem();
 		}
 	}
 	
@@ -41,10 +41,10 @@ public class NavigationUnit68Helper1 extends DriverBasedHelper implements Naviga
 	@Override
 	public void goToUnit8Page(){
 		if (isOnUnit68Page()) {
-			pages.navigationUnits68Page.ensurePageLoaded().moveToUnit8Page();
+			pages.navigationUnits68Page.ensurePageLoaded().clickUnit8MenuItem();
 		} else {
-			pages.navigationTopPage.ensurePageLoaded().moveToNavigationUnit68Page();
-			pages.navigationUnits68Page.ensurePageLoaded().moveToUnit8Page();
+			pages.navigationTopPage.ensurePageLoaded().clickUnit68MenuItem();
+			pages.navigationUnits68Page.ensurePageLoaded().clickUnit8MenuItem();
 		}
 	}
 

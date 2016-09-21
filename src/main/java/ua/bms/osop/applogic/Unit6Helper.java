@@ -13,7 +13,7 @@ public interface Unit6Helper {
 	void moveToRemovedTab();
 	
 	void openCardToCreate();
-	void openCardToReview();
+	void openCardToView();
 	void openCardToEdit();
 	
 	void createCardUnit6(Unit6Card unit6Card);

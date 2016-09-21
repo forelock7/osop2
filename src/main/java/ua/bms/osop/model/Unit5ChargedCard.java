@@ -15,6 +15,7 @@ public class Unit5ChargedCard {
 
 	public String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
+	public String chargedNameDeletedCard;
 	
 	/*Constructor of Charged Person Card Unit 5 Model Object*/
 	public Unit5ChargedCard(String post) {

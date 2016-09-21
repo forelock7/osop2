@@ -22,7 +22,7 @@ public class Unit8RequestsTest extends BasicTestCase {
 		app.getUnit8Helper().openCardToCreate();
 		app.getUnit8Helper().createCardUnit8(reqCard);
 		app.getUnit8Helper().saveCard();
-		app.getUnit8Helper().openCardToReview();
+		app.getUnit8Helper().openCardToView();
 		Assert.assertEquals(reqCard.requestNumber, app.getUnit8Helper().getRequestNumber());
 		app.getUnit8Helper().quitCard();
 	}

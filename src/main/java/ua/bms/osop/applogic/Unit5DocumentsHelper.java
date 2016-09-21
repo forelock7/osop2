@@ -11,6 +11,7 @@ import ua.bms.osop.model.Unit5DocumentCard;
 public interface Unit5DocumentsHelper {
 	
 	boolean isOnUnit5DocumentsPage();
+	boolean existRecordInChargedGrid();
 	
 	void sortDownMainGrid();
 	
@@ -18,7 +19,7 @@ public interface Unit5DocumentsHelper {
 	void moveToRemovedTab();
 	
 	void openChargedCardToCreate();
-	void openChargedCardToReview();
+	void openChargedCardToView();
 	void openChargedCardToEdit();
 	void openDocumentCardToReview();
 	
@@ -34,6 +35,8 @@ public interface Unit5DocumentsHelper {
 	
 	void saveCard();
 	void quitCard();
+
+	
 
 	
 	

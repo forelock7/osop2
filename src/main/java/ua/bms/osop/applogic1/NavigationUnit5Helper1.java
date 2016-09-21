@@ -8,7 +8,7 @@ import ua.bms.osop.applogic.NavigationUnit5Helper;
  * ("Нагляд за додержанням законів при виконанні судових рішень.")
  * of Menu "Sections of Report"("Розділи звіту").
  * 
- * Declares methods for moving between two sub-section:
+ * Declares methods for moving between three sub-section:
  * 1 - List Inspections(Перелік перевірок);
  * 2 - List of Response Documents(Перелік документів реагування);
  * 3 - List of Charged Person(Перелік осіб, притягнутих до відповідальності)
@@ -22,7 +22,7 @@ public class NavigationUnit5Helper1 extends DriverBasedHelper implements Navigat
 		super(manager.getWebDriver());
 	}
 	
-	/*Checks if on Navigation Page Unit 68*/
+	/*Checks if on Navigation Page Unit 5*/
 	@Override
 	public boolean isOnUnit5Page(){
 		return pages.navigationUnits68Page.waitPageLoaded();
@@ -32,10 +32,10 @@ public class NavigationUnit5Helper1 extends DriverBasedHelper implements Navigat
 	@Override
 	public void goToUnit5InspectionsPage(){
 		if (isOnUnit5Page()) {
-			pages.navigationUnit5Page.ensurePageLoaded().moveToUnit5InspectionPage();
+			pages.navigationUnit5Page.ensurePageLoaded().clickInspectionsMenuItem();
 		} else {
-			pages.navigationTopPage.ensurePageLoaded().moveToNavigationUnit5Page();
-			pages.navigationUnit5Page.ensurePageLoaded().moveToUnit5InspectionPage();
+			pages.navigationTopPage.ensurePageLoaded().clickUnit5MenuItem();
+			pages.navigationUnit5Page.ensurePageLoaded().clickInspectionsMenuItem();
 		}
 	}
 	
@@ -43,10 +43,10 @@ public class NavigationUnit5Helper1 extends DriverBasedHelper implements Navigat
 	@Override
 	public void goToUnit5DocumentsPage(){
 		if (isOnUnit5Page()) {
-			pages.navigationUnit5Page.ensurePageLoaded().moveToUnit5DocumentPage();
+			pages.navigationUnit5Page.ensurePageLoaded().clickResponseDocumentsMenuItem();
 		} else {
-			pages.navigationTopPage.ensurePageLoaded().moveToNavigationUnit5Page();
-			pages.navigationUnit5Page.ensurePageLoaded().moveToUnit5DocumentPage();
+			pages.navigationTopPage.ensurePageLoaded().clickUnit5MenuItem();
+			pages.navigationUnit5Page.ensurePageLoaded().clickResponseDocumentsMenuItem();
 		}
 	}
 	
@@ -54,10 +54,10 @@ public class NavigationUnit5Helper1 extends DriverBasedHelper implements Navigat
 	@Override
 	public void goToUnit5ChargedPage(){
 		if (isOnUnit5Page()) {
-			pages.navigationUnit5Page.ensurePageLoaded().moveToUnit5ChargedPage();
+			pages.navigationUnit5Page.ensurePageLoaded().clickChargedPersonsMenuItem();
 		} else {
-			pages.navigationTopPage.ensurePageLoaded().moveToNavigationUnit5Page();
-			pages.navigationUnit5Page.ensurePageLoaded().moveToUnit5ChargedPage();
+			pages.navigationTopPage.ensurePageLoaded().clickUnit5MenuItem();
+			pages.navigationUnit5Page.ensurePageLoaded().clickChargedPersonsMenuItem();
 		}
 	}
 

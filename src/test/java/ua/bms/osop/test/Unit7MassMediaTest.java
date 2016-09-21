@@ -22,7 +22,7 @@ public class Unit7MassMediaTest extends BasicTestCase {
 		app.getUnit7Helper().openCardToCreate();
 		app.getUnit7Helper().createCardUnit7(mMCard);
 		app.getUnit7Helper().saveCard();
-		app.getUnit7Helper().openCardToReview();
+		app.getUnit7Helper().openCardToView();
 		Assert.assertEquals(mMCard.subjectOfSpeech, app.getUnit7Helper().getSubjectOfSpeech());
 		app.getUnit7Helper().quitCard();
 	}

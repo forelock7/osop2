@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
 <suite name="Tests">
 
 	<test verbose="3" name="Test1">
@@ -7,42 +8,59 @@
       		 <class name="ua.bms.osop.test.LoginTest" />
  		</classes>
 	</test>  
-
+	
 	<test verbose="3" name="Test2">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit9MilitaryTest" />
+      		 <class name="ua.bms.osop.test.Unit1ReviewProceedingTest" />
  		</classes>
 	</test>
 	
 	<test verbose="3" name="Test3">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit7MassMediaTest" />
+      		 <class name="ua.bms.osop.test.Unit1ReviewProceedingToProcuracyTest" />
  		</classes>
 	</test>
 	
 	<test verbose="3" name="Test4">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit6ClaimsTest" />
+      		 <class name="ua.bms.osop.test.Unit1CrimeProceedingTest" />
  		</classes>
 	</test>
 	
 	<test verbose="3" name="Test5">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit8RequestsTest" />
+      		 <class name="ua.bms.osop.test.Unit4InternationalTest" />
  		</classes>
 	</test>
 	
 	<test verbose="3" name="Test6">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit4InternationalTest" />
+      		 <class name="ua.bms.osop.test.Unit5SupervisionJudgmentTest" />
  		</classes>
 	</test>
 	
 	<test verbose="3" name="Test7">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit5SupervisionJudgmentTest" />
+      		 <class name="ua.bms.osop.test.Unit6ClaimsTest" />
  		</classes>
 	</test>
 	
-
+	<test verbose="3" name="Test8">
+		<classes>
+      		 <class name="ua.bms.osop.test.Unit7MassMediaTest" />
+ 		</classes>
+	</test>
+	
+	<test verbose="3" name="Test9">
+		<classes>
+      		 <class name="ua.bms.osop.test.Unit8RequestsTest" />
+ 		</classes>
+	</test>
+	
+	<test verbose="3" name="Test10">
+		<classes>
+      		 <class name="ua.bms.osop.test.Unit9MilitaryTest" />
+ 		</classes>
+	</test>
+	
 </suite>

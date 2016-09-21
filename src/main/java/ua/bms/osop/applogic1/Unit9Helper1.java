@@ -43,7 +43,7 @@ public class Unit9Helper1 extends DriverBasedHelper implements Unit9Helper  {
 	
 	//Opens Card to review 
 	@Override
-	public void openCardToReview() {
+	public void openCardToView() {
 		pages.unit9MilitaryPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	

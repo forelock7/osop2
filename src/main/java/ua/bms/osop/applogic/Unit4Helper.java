@@ -14,7 +14,7 @@ public interface Unit4Helper {
 	void moveToRemovedTab();
 
 	void openCardToCreate();
-	void openCardToReview();
+	void openCardToView();
 	void openCardToEdit();
 	
 	void createCard(Unit4Card unit4Card);

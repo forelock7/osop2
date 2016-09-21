@@ -8,6 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import ua.bms.osop.model.Unit5ChargedCard;
 import ua.bms.osop.model.Unit5DocumentCard;
 
 /*
@@ -76,6 +77,10 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[7]//img")
 	private WebElement inputButtonEditChargedGrid;
 	
+	//Button "Delete" in Charged Person Grid
+	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[8]//img")
+	private WebElement buttonDeleteChargedFromGrid;
+	
 	//Column "Name" in Charged Person Grid
 	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div")
 	private WebElement cellNameChargedGrid;
@@ -119,6 +124,7 @@ public class Unit5DocumentsPage  extends AnyPage  {
 		buttonAddChargedPerson.click();
 	}
 	
+	
 	//Clicks on the first record in Charged Person Grid
 	public void clickOnFirstRecordInChargedGrid() {
 		Actions actionCh = new Actions(driver);
@@ -130,6 +136,11 @@ public class Unit5DocumentsPage  extends AnyPage  {
 				System.out.println("exception - there is no GRID");
 			}
 		}
+	}
+	
+	public void deleteChargedRecordFormGridInDocument(Unit5ChargedCard unit5ChargedCard) {
+		unit5ChargedCard.chargedNameDeletedCard = getNameFromChargedPersonGrid();
+		buttonDeleteChargedFromGrid.click();
 	}
 	
 	//Fills several fields in Document Card
@@ -171,6 +182,10 @@ public class Unit5DocumentsPage  extends AnyPage  {
 
 	public String getNameFromChargedPersonGrid() {
 		return  wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div"))).getText();
+	}
+
+	public boolean isPresentRecordInChargedGrid() {
+		return isElementPresent(cellNameChargedGrid);
 	}
 
 

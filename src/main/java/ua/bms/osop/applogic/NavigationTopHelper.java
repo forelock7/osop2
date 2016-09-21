@@ -5,9 +5,11 @@ package ua.bms.osop.applogic;
  */
 public interface NavigationTopHelper {
 	
+	void goToUnit1Page();
 	void goToUnit4Page();
 	void goToNavigationUnit68Page();
 	void goToUnit7Page();
 	void goToUnit9Page();
+	
 
 }

@@ -40,7 +40,7 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 	
 	//Opens Card to review 
 	@Override
-	public void openCardToReview() {
+	public void openCardToView() {
 		pages.unit6ClaimsPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	

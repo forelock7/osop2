@@ -18,13 +18,19 @@ public interface Unit5ChargedHelper {
 	
 	void createChargedCard(Unit5ChargedCard unit5ChargedCard);
 	void editChargedCard(Unit5ChargedCard unit5ChargedCard);
+	void deleteChargedPersonFromGrid(Unit5ChargedCard unit5ChargedCard);
 	
 	String getChargedName();
 	String getPost();
+	String getChargedNameFromGrid();
 	
 	
 	void saveCard();
 	void quitCard();
+
+	
+
+	
 
 
 

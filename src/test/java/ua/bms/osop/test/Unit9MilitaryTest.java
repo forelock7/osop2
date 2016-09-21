@@ -21,7 +21,7 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		app.getUnit9Helper().openCardToCreate();
 		app.getUnit9Helper().createCardUnit9(mAOCard);
 		app.getUnit9Helper().saveCard();
-		app.getUnit9Helper().openCardToReview();
+		app.getUnit9Helper().openCardToView();
 		Assert.assertEquals(mAOCard.protocolNumber, app.getUnit9Helper().getProtNumber());
 		app.getUnit9Helper().quitCard();
 	}

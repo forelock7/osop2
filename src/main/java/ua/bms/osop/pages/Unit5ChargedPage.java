@@ -35,6 +35,10 @@ public class Unit5ChargedPage  extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'tableview')]/div[1]//table[1]//td[2]/div")
 	private WebElement cellRegNumberInGridOnMainTab;
 	
+	//Name of Charged Person in the first record of grid on Main tab
+	@FindBy(xpath = "//div[contains(@id, 'tableview')]/div[1]//table[1]//td[2]/div")
+	private WebElement cellNameInGridOnMainTab;
+	
 	/*------------------The Web-Elements of the Charged Person Card------------------------------------------------------*/
 	
 	//Button "Save" ("Зберегти") for saving card
@@ -59,7 +63,7 @@ public class Unit5ChargedPage  extends AnyPage {
 	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonCard')]/following-sibling::div//li[1]")
 	private WebElement itemSuperAgencyTypeAdd;
 	
-	/*------------------Methods of Charged Person Page------------------------------------------------*/
+	/*------------------Methods of Charged Person Page-------------------------------------------------------------------*/
 
 	/*
 	 * Determines loading of Page
@@ -84,6 +88,10 @@ public class Unit5ChargedPage  extends AnyPage {
 		}		
 	}
 	
+	public String getChargedNameFirstCardInGrid() {
+		return cellNameInGridOnMainTab.getText();
+	}
+	
 	/*------------------Methods of Charged Person Card------------------------------------------------*/
 		
 	//Clicking on "Save"("Зберегти") button in Card
@@ -97,6 +105,8 @@ public class Unit5ChargedPage  extends AnyPage {
 	public void clickButtonExitFromCardForm() {
 		buttonExitFromCard.click();
 	}
+	
+
 	
 	//Fills several fields in Document Card
 	public Unit5ChargedPage setChargedCard(Unit5ChargedCard unit5ChargedCard) {
@@ -121,6 +131,15 @@ public class Unit5ChargedPage  extends AnyPage {
 	public String getInputPost() {
 		return inputPost.getAttribute("value");
 	}
+	
+	public String getNameFromChargedPersonGrid() {
+		return  wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div"))).getText();
+	}
+
+
+
+
+
 
 
 

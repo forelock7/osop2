@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import ua.bms.osop.model.Unit5DocumentCard;
 import ua.bms.osop.model.Unit5InspectionCard;
 
@@ -134,7 +133,7 @@ public class Unit5InspectionsPage extends AnyPage {
 	
 	//Click on "Response Documents" Tab in "Inspection" Card
 	public void clickOnResponseDocumentsTab() {
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
 	}
 	
 	//Sets the new card with filling all fields in

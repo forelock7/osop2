@@ -22,7 +22,7 @@ public class Unit6ClaimsTest extends BasicTestCase {
 		app.getUnit6Helper().openCardToCreate();
 		app.getUnit6Helper().createCardUnit6(clCard);
 		app.getUnit6Helper().saveCard();
-		app.getUnit6Helper().openCardToReview();
+		app.getUnit6Helper().openCardToView();
 		Assert.assertEquals(clCard.claimNumber, app.getUnit6Helper().getClaimNumber());
 		app.getUnit6Helper().quitCard();
 	}

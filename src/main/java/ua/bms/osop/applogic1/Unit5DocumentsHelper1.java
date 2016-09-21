@@ -58,7 +58,7 @@ public class Unit5DocumentsHelper1 extends DriverBasedHelper implements Unit5Doc
 	}
 	
 	//Opens Charged Person Card to review  in Response Document Card
-	public void openChargedCardToReview() {
+	public void openChargedCardToView() {
 		pages.unit5DocumentsPage.clickOnFirstRecordInChargedGrid();
 	}
 		
@@ -124,5 +124,9 @@ public class Unit5DocumentsHelper1 extends DriverBasedHelper implements Unit5Doc
 		pages.unit5DocumentsPage.clickButtonExitFromCardForm();
 	}
 
+	//Checks if any records exists in Charged Person Grid
+	public boolean existRecordInChargedGrid() {
+		return pages.unit5DocumentsPage.isPresentRecordInChargedGrid();
+	}
 
 }

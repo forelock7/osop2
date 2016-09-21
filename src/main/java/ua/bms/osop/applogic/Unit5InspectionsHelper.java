@@ -22,10 +22,10 @@ public interface Unit5InspectionsHelper {
 	void goToDocumentTabInInspectionCard();
 	
 	void openInspectionCardToCreate();
-	void openInspectionCardToReview();
+	void openInspectionCardToView();
 	void openInspectionCardToEdit();
 	void openDocumentCardToCreate();
-	void openDocumentCardToReview();
+	void openDocumentCardToView();
 	void openDocumentCardToEdit();
 	
 	

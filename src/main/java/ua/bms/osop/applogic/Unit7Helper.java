@@ -13,7 +13,7 @@ public interface Unit7Helper {
 	void moveToRemovedTab();
 	
 	void openCardToCreate();
-	void openCardToReview();
+	void openCardToView();
 	void openCardToEdit();
 		
 	void createCardUnit7(Unit7Card massMediaCard);

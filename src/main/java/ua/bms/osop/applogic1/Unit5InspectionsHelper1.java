@@ -48,7 +48,7 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 	
 	//Opens Card to review 
 	@Override
-	public void openInspectionCardToReview() {
+	public void openInspectionCardToView() {
 		pages.unit5InspectionsPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	
@@ -153,7 +153,7 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 	}
 	
 	//Opens "Response Document" Card to review in Grid on "Response Document" Tab of Inspection Card
-	public void openDocumentCardToReview() {
+	public void openDocumentCardToView() {
 		pages.unit5InspectionsPage.clickOnFirstRecordInDocumentGrid();
 	}
 	

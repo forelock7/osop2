@@ -41,7 +41,7 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 	
 	//Opens Card to review 
 	@Override
-	public void openCardToReview() {
+	public void openCardToView() {
 		pages.unit8RequestsPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	

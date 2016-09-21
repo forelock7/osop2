@@ -39,6 +39,10 @@ public class NavigationTopPage extends AnyPage {
 	
 	//Items from menu "Report sections"("РОЗДІЛИ ЗВІТУ")
 	
+	//Section Unit 1 - "Presentetion" (Розділ 1: "Представництво")
+	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Представництво')]")
+	private WebElement itemMenuU1;
+	
 	//Section Unit 4 - "International Judicial Cooperation"(Розділ 4: "Міжнародно-правове співробітництво")
 	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Міжнародно-правове співробітництво')]")
 	private WebElement itemMenuU4;
@@ -68,36 +72,43 @@ public class NavigationTopPage extends AnyPage {
 		return pages.loginPage;
 	}
 	
+	//U1 - Moving from "Home" page to "Presentetion" NavigationUnit1Page page
+	public NavigationUnit1Page clickUnit1MenuItem() {
+		buttonReportSections.click();
+		itemMenuU1.click();
+		return pages.navigationUnit1Page;
+	}
+	
 	//U4 - Moving from "Home" page to "International Judicial Cooperation" page
-	public Unit4InternationalPage moveToUnit4Page() {
+	public Unit4InternationalPage clickUnit4MenuItem() {
 		buttonReportSections.click();
 		itemMenuU4.click();
 		return pages.unit4InternationalPage;
 	}
 	
 	//U5 - Moving from "Home" page to "Supervision of the observance of laws in the execution of judgments." page(Navigation)
-			public NavigationUnit5Page moveToNavigationUnit5Page(){
+			public NavigationUnit5Page clickUnit5MenuItem(){
 				buttonReportSections.click();	
 				itemMenuU5.click();
 				return pages.navigationUnit5Page;
 			}
 	
 	//U68 - Moving from "Home" page to "Consideration of Claims and Requests" page
-		public NavigationUnits68Page moveToNavigationUnit68Page(){
+		public NavigationUnits68Page clickUnit68MenuItem(){
 			buttonReportSections.click();	
 			itemMenuU68.click();
 			return pages.navigationUnits68Page;
 		}
 	
 	//U7 - Moving from "Home" page to "Mass Media" page
-	public Unit7MassMediaPage moveToUnit7Page(){
+	public Unit7MassMediaPage clickUnit7MenuItem(){
 		buttonReportSections.click();	
 		itemMenuU7.click();
 		return pages.unit7MassMediaPage;
 	}
 	
 	//U9 - Moving from "Home" page to "Military Administrative violations" page
-	public Unit9MilitaryPage moveToUnit9Page() {
+	public Unit9MilitaryPage clickUnit9MenuItem() {
 		buttonReportSections.click();
 		itemMenuU9.click();
 		return pages.unit9MilitaryPage;

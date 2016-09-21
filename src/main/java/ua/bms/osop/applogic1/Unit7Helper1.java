@@ -43,7 +43,7 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 	
 	//Opens Card to review 
 	@Override
-	public void openCardToReview() {
+	public void openCardToView() {
 		pages.unit7MassMediaPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	

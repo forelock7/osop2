@@ -3,8 +3,14 @@ package ua.bms.osop.applogic1;
 import org.openqa.selenium.WebDriver;
 import ua.bms.osop.applogic.ApplicationManager;
 import ua.bms.osop.applogic.NavigationTopHelper;
+import ua.bms.osop.applogic.NavigationUnit1Helper;
 import ua.bms.osop.applogic.NavigationUnit5Helper;
 import ua.bms.osop.applogic.NavigationUnit68Helper;
+import ua.bms.osop.applogic.Unit1ClaimsHelper;
+import ua.bms.osop.applogic.Unit1ClaimsToPrcHelper;
+import ua.bms.osop.applogic.Unit1CrimeHelper;
+import ua.bms.osop.applogic.Unit1ReviewHelper;
+import ua.bms.osop.applogic.Unit1ReviewToPrcHelper;
 import ua.bms.osop.applogic.Unit4Helper;
 import ua.bms.osop.applogic.Unit5ChargedHelper;
 import ua.bms.osop.applogic.Unit5DocumentsHelper;
@@ -27,8 +33,14 @@ public class ApplicationManager1 implements ApplicationManager {
 	
 	 private UserHelper userHelper;
 	 private NavigationTopHelper navTopHelper;
+	 private NavigationUnit1Helper navUnit1Helper;
 	 private NavigationUnit5Helper navUnit5Helper;
 	 private NavigationUnit68Helper navUnit68Helper;
+	 private Unit1ReviewHelper unit1ReviewHelper;
+	 private Unit1ReviewToPrcHelper unit1ReviewToPrcHelper;
+	 private Unit1CrimeHelper unit1CrimeHelper;
+	 private Unit1ClaimsHelper unit1ClaimsHelper;
+	 private Unit1ClaimsToPrcHelper unit1ClaimsToPrcHelper;
 	 private Unit4Helper unit4Helper;
 	 private Unit5InspectionsHelper unit5InspectionsHelper;
 	 private Unit5DocumentsHelper unit5DocumentsHelper;
@@ -57,8 +69,14 @@ public class ApplicationManager1 implements ApplicationManager {
 
 		 userHelper = new UserHelper1(this);
 		 navTopHelper = new NavigationTopHelper1(this);
+		 navUnit1Helper = new NavigationUnit1Helper1(this);
 		 navUnit5Helper = new NavigationUnit5Helper1(this);
 		 navUnit68Helper = new NavigationUnit68Helper1(this);
+		 unit1ReviewHelper = new Unit1ReviewHelper1(this);
+		 unit1ReviewToPrcHelper = new Unit1ReviewToPrcHelper1(this);
+		 unit1CrimeHelper = new Unit1CrimeHelper1(this);
+		 unit1ClaimsHelper = new Unit1ClaimsHelper1(this);
+		 unit1ClaimsToPrcHelper = new Unit1ClaimsToPrcHelper1(this);
 		 unit4Helper = new Unit4Helper1(this);
 		 unit5InspectionsHelper = new Unit5InspectionsHelper1(this);
 		 unit5DocumentsHelper = new Unit5DocumentsHelper1(this);
@@ -88,6 +106,11 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 	
 	@Override
+	public NavigationUnit1Helper getNavigationUnit1Helper() {
+		return navUnit1Helper;
+	}
+	
+	@Override
 	public NavigationUnit5Helper getNavigationUnit5Helper() {
 		return navUnit5Helper;
 	}
@@ -95,6 +118,36 @@ public class ApplicationManager1 implements ApplicationManager {
 	@Override
 	public NavigationUnit68Helper getNavigationUnit68Helper() {
 		return navUnit68Helper;
+	}
+		
+	@Override
+	public Unit1ReviewHelper getUnit1ReviewHelper(){
+		return unit1ReviewHelper;
+	}
+	
+	@Override
+	public Unit1ReviewToPrcHelper getUnit1ReviewToPrcHelper(){
+		return unit1ReviewToPrcHelper;
+	}
+	
+	@Override
+	public Unit1CrimeHelper getUnit1CrimeHelper(){
+		return unit1CrimeHelper;
+	}
+	
+	@Override
+	public Unit1ClaimsHelper getUnit1ClaimsHelper(){
+		return unit1ClaimsHelper;
+	}
+	
+	@Override
+	public Unit1ClaimsToPrcHelper getUnit1ClaimsToPrcHelper(){
+		return unit1ClaimsToPrcHelper;
+	}
+		
+	@Override
+	public Unit4Helper getUnit4Helper(){
+		return unit4Helper;
 	}
 	
 	@Override
@@ -110,11 +163,6 @@ public class ApplicationManager1 implements ApplicationManager {
 	@Override
 	public Unit5ChargedHelper getUnit5ChargedHelper(){
 		return unit5ChargedHelper;
-	}
-	
-	@Override
-	public Unit4Helper getUnit4Helper(){
-		return unit4Helper;
 	}
 	
 	@Override

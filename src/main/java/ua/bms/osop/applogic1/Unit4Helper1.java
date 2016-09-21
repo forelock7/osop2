@@ -40,7 +40,7 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	
 	//Opens Card to review 
 	@Override
-	public void openCardToReview() {
+	public void openCardToView() {
 		pages.unit4InternationalPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	
