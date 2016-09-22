@@ -185,7 +185,7 @@ public abstract class AnyPage extends Page {
 	
 	//Getting registration number from the first record in grid on Main tab
 	public String getRegNumberFromGridOnMainTab(){
-		return cellRegNumberInGridOnMainTab.getText();
+		return wait2.until(ExpectedConditions.visibilityOf(cellRegNumberInGridOnMainTab)).getText();
 	}
 			
 	protected boolean isElementPresent(WebElement element) {

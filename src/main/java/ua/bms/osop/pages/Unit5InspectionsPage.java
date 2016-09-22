@@ -108,7 +108,7 @@ public class Unit5InspectionsPage extends AnyPage {
 	public void clickButtonEditInspectionCardUnit5() {
 		for (int i=0; i<10; ++i) {
 			try{
-				wait.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
+				wait1.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
 				//buttonEdit.click();
 				break;
 			}catch (WebDriverException e) {
@@ -133,7 +133,16 @@ public class Unit5InspectionsPage extends AnyPage {
 	
 	//Click on "Response Documents" Tab in "Inspection" Card
 	public void clickOnResponseDocumentsTab() {
-		wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
+		/*Actions actionDoc = new Actions(driver);
+		for (int i=0; i<3; ++i) {
+			try{
+				actionDoc.doubleClick(wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-actGrid')]//tr[1]/td[2]/div")))).perform();
+				break;
+			}catch (WebDriverException e) {
+				System.out.println("exception - there is no GRID");
+			}
+		}*/
+		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
 	}
 	
 	//Sets the new card with filling all fields in

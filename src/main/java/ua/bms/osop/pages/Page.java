@@ -25,17 +25,8 @@ public abstract class Page {
 	    driver = pages.getWebDriver();
 	    wait = new WebDriverWait(driver, 2, 200);
 	    wait1 = new WebDriverWait(driver, 10);
-	    
-		//C
-			for (int i=0; i<3; ++i) {
-				try{
-					wait2 = new WebDriverWait(driver, 10).ignoring(InvalidSelectorException.class, StaleElementReferenceException.class);
-					break;
-				}catch (WebDriverException e) {
-					System.out.println("exception - Page");
-				}
-			}
-		}
+		wait2 = new WebDriverWait(driver, 10).ignoring(InvalidSelectorException.class, StaleElementReferenceException.class);
+	}
 
 
 	
