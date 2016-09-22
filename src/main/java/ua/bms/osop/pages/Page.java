@@ -4,6 +4,7 @@ import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -23,9 +24,20 @@ public abstract class Page {
 		this.pages = pages;
 	    driver = pages.getWebDriver();
 	    wait = new WebDriverWait(driver, 2, 200);
-	    wait1 = new WebDriverWait(driver, 10)/*.ignoring(StaleElementReferenceException.class).ignoring(TimeoutException.class)*/;
-	    wait2 = new WebDriverWait(driver, 10).ignoring(InvalidSelectorException.class, StaleElementReferenceException.class);
-	}
+	    wait1 = new WebDriverWait(driver, 10);
+	    
+		//C
+			for (int i=0; i<3; ++i) {
+				try{
+					wait2 = new WebDriverWait(driver, 10).ignoring(InvalidSelectorException.class, StaleElementReferenceException.class);
+					break;
+				}catch (WebDriverException e) {
+					System.out.println("exception - Page");
+				}
+			}
+		}
+
+
 	
 	
 	public WebDriver getWebDriver() {

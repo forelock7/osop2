@@ -43,6 +43,10 @@ public class NavigationTopPage extends AnyPage {
 	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Представництво')]")
 	private WebElement itemMenuU1;
 	
+	//Section Unit 23 - "Supervision over the status of pre-trial investigation and public prosecution" (Розділ 2-3: "Нагляд за станом досудового розслідування та держобвинувачення")
+	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(., 'досудового розслідування та держобвинувачення')]")
+	private WebElement itemMenuU23;
+	
 	//Section Unit 4 - "International Judicial Cooperation"(Розділ 4: "Міжнародно-правове співробітництво")
 	@FindBy (xpath = "//div[contains(@id, 'menu')]//span[contains(text(), 'Міжнародно-правове співробітництво')]")
 	private WebElement itemMenuU4;
@@ -79,6 +83,13 @@ public class NavigationTopPage extends AnyPage {
 		return pages.navigationUnit1Page;
 	}
 	
+	//U23 - Moving from "Home" page to "Supervision over the status of pre-trial investigation and public prosecution" page
+	public NavigationUnit23Page clickUnit23MenuItem() {
+		buttonReportSections.click();
+		itemMenuU23.click();
+		return pages.navigationUnit23Page;
+	}
+	
 	//U4 - Moving from "Home" page to "International Judicial Cooperation" page
 	public Unit4InternationalPage clickUnit4MenuItem() {
 		buttonReportSections.click();
@@ -87,18 +98,18 @@ public class NavigationTopPage extends AnyPage {
 	}
 	
 	//U5 - Moving from "Home" page to "Supervision of the observance of laws in the execution of judgments." page(Navigation)
-			public NavigationUnit5Page clickUnit5MenuItem(){
-				buttonReportSections.click();	
-				itemMenuU5.click();
-				return pages.navigationUnit5Page;
-			}
+	public NavigationUnit5Page clickUnit5MenuItem(){
+		buttonReportSections.click();	
+		itemMenuU5.click();
+		return pages.navigationUnit5Page;
+	}
 	
 	//U68 - Moving from "Home" page to "Consideration of Claims and Requests" page
-		public NavigationUnits68Page clickUnit68MenuItem(){
-			buttonReportSections.click();	
-			itemMenuU68.click();
-			return pages.navigationUnits68Page;
-		}
+	public NavigationUnits68Page clickUnit68MenuItem(){
+		buttonReportSections.click();	
+		itemMenuU68.click();
+		return pages.navigationUnits68Page;
+	}
 	
 	//U7 - Moving from "Home" page to "Mass Media" page
 	public Unit7MassMediaPage clickUnit7MenuItem(){
@@ -113,6 +124,8 @@ public class NavigationTopPage extends AnyPage {
 		itemMenuU9.click();
 		return pages.unit9MilitaryPage;
 	}
+
+
 	
 	
 

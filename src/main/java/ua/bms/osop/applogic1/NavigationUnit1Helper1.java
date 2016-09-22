@@ -40,6 +40,7 @@ public class NavigationUnit1Helper1 extends DriverBasedHelper implements Navigat
 		}
 	}
 	
+	//Goes to Unit 1 - section "Review proceedings on a claim to Procuracy authorities"("НП за позовом до органів прокуратури")
 	public void goToUnit1ReviewToPrcPage() {
 		if (isOnUnit1Page()) {
 			pages.navigationUnit1Page.ensurePageLoaded().clickReviewToPrcMenuItem();
@@ -49,6 +50,7 @@ public class NavigationUnit1Helper1 extends DriverBasedHelper implements Navigat
 		}
 	}
 	
+	//Goes to Unit 1 - section "Started Crime Proceedings"("Розпочато кримінальних проваджень")
 	public void goToUnit1CrimeProceedingPage() {
 		if (isOnUnit1Page()) {
 			pages.navigationUnit1Page.ensurePageLoaded().clickCrimeMenuItem();
@@ -58,6 +60,7 @@ public class NavigationUnit1Helper1 extends DriverBasedHelper implements Navigat
 		}
 	}
 	
+	//Goes to Unit 1 - section "Viewing of claims, statements"("Перегляд позовів, заяв")
 	public void goToUnit1ClaimsPage() {
 		if (isOnUnit1Page()) {
 			pages.navigationUnit1Page.ensurePageLoaded().clickClaimsMenuItem();
@@ -67,6 +70,7 @@ public class NavigationUnit1Helper1 extends DriverBasedHelper implements Navigat
 		}
 	}
 	
+	//Goes to Unit 1 - section "Viewing of claims to Procuracy authorities"("Перегляд позовів до органів прокуратури")
 	public void goToUnit1ClaimsToPrcPage() {
 		if (isOnUnit1Page()) {
 			pages.navigationUnit1Page.ensurePageLoaded().clickClaimsToPrcMenuItem();

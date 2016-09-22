@@ -11,28 +11,12 @@ import ua.bms.osop.model.User;
  */
 public class UserHelper1 extends DriverBasedHelper implements UserHelper {
 	
-	private String baseUrl;
-	
 	/*
 	 * Constructor of object which is managed by object Application Manager.
 	 * Assigns URL from Application Manager constructor.
 	 */
 	public UserHelper1(ApplicationManager1 manager) {
 		super(manager.getWebDriver());
-		this.baseUrl = manager.getBaseUrl();
-	}
-	
-	/*
-	 * Opens the main page. Set URL.
-	 * Checks if is logged in than doesn't need to set URL of start(main) page
-	 */
-	@Override
-	public void openMainPage() {
-		if (isLoggedIn()){
-			return;
-		}else{
-		driver.get(baseUrl);
-		}
 	}
 	
 	/*Performs LogiIn. Catch case with wrong Login or Password*/

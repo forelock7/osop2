@@ -9,11 +9,24 @@ import ua.bms.osop.applogic.NavigationTopHelper;
  */
 public class NavigationTopHelper1 extends DriverBasedHelper implements NavigationTopHelper {
 
+	private String baseUrl;
+	
 	/*
 	 * Constructor of object which is managed by object Application Manager.
 	 */
 	public NavigationTopHelper1(ApplicationManager1 manager) {
 		super(manager.getWebDriver());
+		this.baseUrl = manager.getBaseUrl();
+	}
+	
+
+	/*
+	 * Opens the main page. Set URL.
+	 * Checks if is logged in than doesn't need to set URL of start(main) page
+	 */
+	@Override
+	public void openMainPage() {
+		driver.get(baseUrl);
 	}
 	
 	//Moving to page Unit 1 "Presentetion" NavigationUnit1Page page
@@ -22,15 +35,27 @@ public class NavigationTopHelper1 extends DriverBasedHelper implements Navigatio
 		pages.navigationTopPage.ensurePageLoaded().clickUnit1MenuItem();
 	}
 	
+	//Moving to page Unit 2-3 "Supervision over the status of pre-trial investigation and public prosecution" NavigationUnit23Page page
+	@Override
+	public void goToUnit23Page(){
+		pages.navigationTopPage.ensurePageLoaded().clickUnit23MenuItem();
+	}
+	
 	//Moving to page Unit 4 "International Judicial Cooperation" Page("Міжнародно-правове співробітництво")
 	@Override
 	public void goToUnit4Page(){
 		pages.navigationTopPage.ensurePageLoaded().clickUnit4MenuItem();
 	}
 	
+	//Moving to page Unit 5 "Supervision of the observance of laws in the execution of judgments." Page("Нагляд за додержанням законів при виконанні судових рішень.")
+	@Override
+	public void goToUnit5Page(){
+		pages.navigationTopPage.ensurePageLoaded().clickUnit5MenuItem();
+	}
+	
 	//Moving to navigation page of Units 6 and 8 "Consideration of Claims and Requests"("Розгляд звернень та запитів")
 	@Override
-	public void goToNavigationUnit68Page(){
+	public void goToUnit68Page(){
 		pages.navigationTopPage.ensurePageLoaded().clickUnit68MenuItem();
 	}
 	

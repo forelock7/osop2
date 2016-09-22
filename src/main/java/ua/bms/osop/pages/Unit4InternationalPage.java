@@ -107,7 +107,7 @@ public class Unit4InternationalPage extends AnyPage {
 		inputClaimType.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Звернення (запит) іноземних установ')]"))).click();
 		inputLegalAssistType.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Виконання процесуальних дій')]"))).click();
+		wait2.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Виконання процесуальних дій')]"))).click();
 		inputCountryClaim.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'listcombowindow')]//table[6]//td[3]//img"))).click();
 		type(inputSummary, unit4Card.summary);

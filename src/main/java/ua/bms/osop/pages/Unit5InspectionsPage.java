@@ -133,7 +133,7 @@ public class Unit5InspectionsPage extends AnyPage {
 	
 	//Click on "Response Documents" Tab in "Inspection" Card
 	public void clickOnResponseDocumentsTab() {
-		wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
+		wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
 	}
 	
 	//Sets the new card with filling all fields in
