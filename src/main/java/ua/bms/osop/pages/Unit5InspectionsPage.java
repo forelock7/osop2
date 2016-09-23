@@ -32,11 +32,11 @@ public class Unit5InspectionsPage extends AnyPage {
 	private WebElement titleUnit5InspectionPage;
 
 	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-13).
-	@FindBy(xpath = "//table[1]//td[13]/div")
+	@FindBy(xpath = "//table[1]//td[13]/div/img")
 	WebElement buttonEdit;
 	
 	//Button "Remove"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
-	@FindBy(xpath = "//table[1]//td[14]/div")
+	@FindBy(xpath = "//table[1]//td[14]/div/img")
 	WebElement buttonRemove;
 	
 	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-13).
@@ -87,11 +87,11 @@ public class Unit5InspectionsPage extends AnyPage {
 	
 	
 	//Button "Edit"("Редагувати") for the first record in the main grid on the "Response Documents" Tab in "Inspection" Card(row-1; column-13).
-	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//table[1]//td[13]/div")
+	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//table[1]//td[13]/div/img")
 	WebElement buttonEditDocTab;
 	
 	//Button "Remove"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
-	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//table[1]//td[14]/div")
+	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//table[1]//td[14]/div/img")
 	WebElement buttonRemoveDocTab;
 	
 	/*------------------Methods of Inspection Page---------------------------------------------------------------------------*/
@@ -105,10 +105,11 @@ public class Unit5InspectionsPage extends AnyPage {
 	}
 	
 	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEditInspectionCardUnit5() {
+	public void clickButtonEditInspectionCardUnit5() throws InterruptedException {
 		for (int i=0; i<10; ++i) {
 			try{
-				wait1.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
+				Thread.sleep(1000);
+				wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//table[1]//td[13]/div/img"))).click();
 				//buttonEdit.click();
 				break;
 			}catch (WebDriverException e) {

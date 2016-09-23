@@ -4,7 +4,6 @@ import org.openqa.selenium.InvalidSelectorException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -27,9 +26,6 @@ public abstract class Page {
 	    wait1 = new WebDriverWait(driver, 10);
 		wait2 = new WebDriverWait(driver, 10).ignoring(InvalidSelectorException.class, StaleElementReferenceException.class);
 	}
-
-
-	
 	
 	public WebDriver getWebDriver() {
 		return driver;
@@ -38,7 +34,6 @@ public abstract class Page {
 	public String getTitle() {
 		return driver.getTitle();
 	}
-	
 
 	//Waits launching of Page and returns Page
 	public Page ensurePageLoaded() {		

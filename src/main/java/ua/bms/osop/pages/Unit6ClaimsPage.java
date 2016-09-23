@@ -32,7 +32,7 @@ public class Unit6ClaimsPage extends AnyPage {
 	private WebElement buttonEdit;
 	
 	//Button "Remove"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-15).
-	@FindBy(xpath = "//table[1]//td[15]/div")
+	@FindBy(xpath = "//table[1]//td[15]/div/img")
 	private WebElement buttonRemove;
 	
 	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-14).

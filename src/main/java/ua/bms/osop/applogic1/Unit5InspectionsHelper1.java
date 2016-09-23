@@ -54,7 +54,7 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 	
 	/*Opens Inspection Card to edit (click button create) */
 	@Override
-	public void openInspectionCardToEdit() {
+	public void openInspectionCardToEdit() throws InterruptedException {
 		pages.unit5InspectionsPage.clickButtonEditInspectionCardUnit5();
 	}
 	
