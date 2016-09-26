@@ -44,7 +44,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 	}
 	
 	@Test (groups = {"inspection_unit5"}, dependsOnMethods = {"testCreateAndReviewInspectionCard"})
-	public void testEditInspectionCard()throws InterruptedException {
+	public void testEditInspectionCard() {
 		app.getUnit5InspectionsHelper().openInspectionCardToEdit();
 		app.getUnit5InspectionsHelper().editInspectionCardUnit5(inspectionCard);
 		app.getUnit5InspectionsHelper().saveCard();
@@ -80,7 +80,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 	}
 	
 	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testCheckCreatingDocumentCardIsUnable"})
-	public void testCreateAndReview_DocumentAndChargedPersonCards() throws InterruptedException  {
+	public void testCreateAndReview_DocumentAndChargedPersonCards() {
 		app.getUnit5InspectionsHelper().sortDownMainGrid();
 		app.getUnit5InspectionsHelper().openInspectionCardToEdit();
 		app.getUnit5InspectionsHelper().goToDocumentTabInInspectionCard();

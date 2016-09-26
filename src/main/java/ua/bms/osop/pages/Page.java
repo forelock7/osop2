@@ -1,9 +1,14 @@
 package ua.bms.osop.pages;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.ElementNotVisibleException;
 import org.openqa.selenium.InvalidSelectorException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -13,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public abstract class Page {
 	
 	protected WebDriver driver;
-	protected Wait<WebDriver> wait, wait1, wait2;
+	protected Wait<WebDriver> wait, wait1, wait2, waitFluent;
 	protected PageManager pages;
 		
 	/*
@@ -25,6 +30,7 @@ public abstract class Page {
 	    wait = new WebDriverWait(driver, 2, 200);
 	    wait1 = new WebDriverWait(driver, 10);
 		wait2 = new WebDriverWait(driver, 10).ignoring(InvalidSelectorException.class, StaleElementReferenceException.class);
+		waitFluent = new FluentWait<WebDriver>(driver).withMessage("Elementwas not found").withTimeout(10, TimeUnit.SECONDS).pollingEvery(1, TimeUnit.SECONDS);
 	}
 	
 	public WebDriver getWebDriver() {

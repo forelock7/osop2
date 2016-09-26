@@ -105,17 +105,16 @@ public class Unit5InspectionsPage extends AnyPage {
 	}
 	
 	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEditInspectionCardUnit5() throws InterruptedException {
-		for (int i=0; i<10; ++i) {
-			try{
-				Thread.sleep(1000);
-				wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//table[1]//td[13]/div/img"))).click();
+	public void clickButtonEditInspectionCardUnit5() {
+		//for (int i=0; i<10; ++i) {
+			//try{
+				waitFluent.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//table[1]//td[13]/div/img"))).click();
 				//buttonEdit.click();
-				break;
-			}catch (WebDriverException e) {
-				System.out.println("exception - Button EDIT is unable");
-			}
-		}
+			//	break;
+			//}catch (WebDriverException e) {
+				//System.out.println("exception - Button EDIT is unable");
+			//}
+		//}
 	}
 	
 	//Removing Card with getting registration number of the card that will be removed
@@ -143,7 +142,7 @@ public class Unit5InspectionsPage extends AnyPage {
 				System.out.println("exception - there is no GRID");
 			}
 		}*/
-		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
+		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
 	}
 	
 	//Sets the new card with filling all fields in

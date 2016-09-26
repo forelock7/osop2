@@ -89,7 +89,7 @@ public class Unit5ChargedPage  extends AnyPage {
 	}
 	
 	public String getChargedNameFirstCardInGrid() {
-		return cellNameInGridOnMainTab.getText();
+		return waitFluent.until(ExpectedConditions.visibilityOf(cellNameInGridOnMainTab)).getText();
 	}
 	
 	/*------------------Methods of Charged Person Card------------------------------------------------*/

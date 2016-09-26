@@ -23,7 +23,7 @@ public interface Unit5InspectionsHelper {
 	
 	void openInspectionCardToCreate();
 	void openInspectionCardToView();
-	void openInspectionCardToEdit() throws InterruptedException;
+	void openInspectionCardToEdit();
 	void openDocumentCardToCreate();
 	void openDocumentCardToView();
 	void openDocumentCardToEdit();

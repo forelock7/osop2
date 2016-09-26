@@ -199,7 +199,7 @@ public class Unit9MilitaryPage extends AnyPage {
 		inputSectionAOLawbook.click();
 		//Thread.sleep(2000);
 		//itemSectionAVLawbook.click();
-		wait.until(ExpectedConditions./*elementToBeClickable*/presenceOfElementLocated(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]"))).click();
+		waitFluent.until(ExpectedConditions.elementToBeClickable/*presenceOfElementLocated*/(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]"))).click();
 		type(inputCommitingAODate, unit9Card.commitingAVDate);
 		type(inputTheory, unit9Card.theory);
 		type(inputOffenderName, unit9Card.offenderName);
