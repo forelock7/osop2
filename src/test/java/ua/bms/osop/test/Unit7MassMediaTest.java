@@ -40,14 +40,14 @@ public class Unit7MassMediaTest extends BasicTestCase {
 	@Test (groups = {"unit7"}, dependsOnMethods = {"testEditMassMediaCard"})
 	public void testRemoveMassMediaCard(){
 		app.getUnit7Helper().removeCardUnit7(mMCard);
-		app.getUnit7Helper().moveToRemovedTab();
+		app.getUnit7Helper().goToRemovedTab();
 		Assert.assertEquals(mMCard.regNumberRemovedCard, app.getUnit7Helper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit7"}, dependsOnMethods = {"testRemoveMassMediaCard"})
 	public void testRestoreMassMediaCard() {
 		app.getUnit7Helper().restoreCardUnit7(mMCard);
-		app.getUnit7Helper().moveToMainTab();
+		app.getUnit7Helper().goToMainTab();
 		Assert.assertEquals(mMCard.regNumberRestoredCard, app.getUnit7Helper().getRegNumberFirstCardInGrid());
 	}
 

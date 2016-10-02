@@ -43,7 +43,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		app.getUnit5InspectionsHelper().quitCard();
 	}
 	
-	@Test (groups = {"inspection_unit5"}, dependsOnMethods = {"testCreateAndReviewInspectionCard"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testCreateAndReviewInspectionCard"})
 	public void testEditInspectionCard() {
 		app.getUnit5InspectionsHelper().openInspectionCardToEdit();
 		app.getUnit5InspectionsHelper().editInspectionCardUnit5(inspectionCard);
@@ -53,21 +53,21 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		app.getUnit5InspectionsHelper().quitCard();
 	}
 	
-	@Test (groups = {"inspection_unit5"}, dependsOnMethods = {"testEditInspectionCard"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testEditInspectionCard"})
 	public void testRemoveInspectionCard(){
 		app.getUnit5InspectionsHelper().removeInspectionCardUnit5(inspectionCard);
-		app.getUnit5InspectionsHelper().moveToRemovedTab();
+		app.getUnit5InspectionsHelper().goToRemovedTab();
 		Assert.assertEquals(inspectionCard.regNumberRemovedCard, app.getUnit5InspectionsHelper().getRegNumberFirstRemovedInspectionCardInGrid());
 	}
 	
-	@Test (groups = {"inspection_unit5"}, dependsOnMethods = {"testRemoveInspectionCard"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testRemoveInspectionCard"})
 	public void testRestoreInspectionCard() {
 		app.getUnit5InspectionsHelper().restoreInspectionCardUnit5(inspectionCard);
-		app.getUnit5InspectionsHelper().moveToMainTab();
+		app.getUnit5InspectionsHelper().goToMainTab();
 		Assert.assertEquals(inspectionCard.regNumberRestoredCard, app.getUnit5InspectionsHelper().getRegNumberFirstCardInGrid());
 	}
 	
-	@Test (groups = {"document_unit5"}, dependsOnGroups = {"inspection_unit5"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testRestoreInspectionCard"})
 	public void testCheckCreatingDocumentCardIsUnable() {
 		app.getNavigationUnit5Helper().goToUnit5InspectionsPage();
 		app.getUnit5InspectionsHelper().openInspectionCardToCreate();
@@ -79,7 +79,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		Assert.assertFalse(app.getUnit5InspectionsHelper().isOnUnit5InspectionCard());
 	}
 	
-	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testCheckCreatingDocumentCardIsUnable"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testCheckCreatingDocumentCardIsUnable"})
 	public void testCreateAndReview_DocumentAndChargedPersonCards() {
 		app.getUnit5InspectionsHelper().sortDownMainGrid();
 		app.getUnit5InspectionsHelper().openInspectionCardToEdit();
@@ -102,7 +102,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		app.getUnit5InspectionsHelper().quitCard();
 	}
 	
-	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testCreateAndReview_DocumentAndChargedPersonCards"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testCreateAndReview_DocumentAndChargedPersonCards"})
 	public void testCheckCreatingDocumentAndChargedCardsOnResponseDocumetPage() {
 		app.getNavigationUnit5Helper().goToUnit5DocumentsPage();
 		app.getUnit5DocumentsHelper().sortDownMainGrid();
@@ -114,7 +114,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		app.getUnit5DocumentsHelper().quitCard();
 	}
 	
-	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testCheckCreatingDocumentAndChargedCardsOnResponseDocumetPage"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testCheckCreatingDocumentAndChargedCardsOnResponseDocumetPage"})
 	public void testCheckCreatingChargedCardOnChargedPersonPage() {
 		app.getNavigationUnit5Helper().goToUnit5ChargedPage();
 		app.getUnit5ChargedHelper().sortDownMainGrid();
@@ -123,7 +123,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		app.getUnit5ChargedHelper().quitCard();
 	}
 		
-	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testCheckCreatingChargedCardOnChargedPersonPage"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testCheckCreatingChargedCardOnChargedPersonPage"})
 	public void editDocumentAndChargedPersonCards()throws InterruptedException  {
 		app.getNavigationUnit5Helper().goToUnit5InspectionsPage();
 		app.getUnit5InspectionsHelper().sortDownMainGrid();
@@ -147,7 +147,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		app.getUnit5InspectionsHelper().quitCard();
 	}
 	
-	@Test (groups = {"document_unit5"}, dependsOnMethods = {"editDocumentAndChargedPersonCards"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"editDocumentAndChargedPersonCards"})
 	public void testCheckEditingDocumentAndChargedCardsOnResponseDocumetPage() {
 		app.getNavigationUnit5Helper().goToUnit5DocumentsPage();
 		app.getUnit5DocumentsHelper().sortDownMainGrid();
@@ -159,7 +159,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		app.getUnit5DocumentsHelper().quitCard();
 	}
 	
-	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testCheckEditingDocumentAndChargedCardsOnResponseDocumetPage"})
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testCheckEditingDocumentAndChargedCardsOnResponseDocumetPage"})
 	public void testCheckEdtingChargedCardOnChargedPersonPage() {
 		app.getNavigationUnit5Helper().goToUnit5ChargedPage();
 		app.getUnit5ChargedHelper().sortDownMainGrid();
@@ -168,8 +168,8 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		app.getUnit5ChargedHelper().quitCard();
 	}
 	
-	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testCheckEdtingChargedCardOnChargedPersonPage"})
-	public void testRemovingResponseDocumentCard() throws InterruptedException {
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testCheckEdtingChargedCardOnChargedPersonPage"})
+	public void testRemoveResponseDocumentCard() throws InterruptedException {
 		app.getNavigationUnit5Helper().goToUnit5InspectionsPage();
 		app.getUnit5InspectionsHelper().sortDownMainGrid();
 		app.getUnit5InspectionsHelper().openInspectionCardToEdit();
@@ -177,22 +177,52 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 		app.getUnit5DocumentsHelper().removeDocumentCard(documentCard);
 		app.getUnit5InspectionsHelper().quitCard();
 		app.getNavigationUnit5Helper().goToUnit5DocumentsPage();
-		app.getUnit5DocumentsHelper().moveToRemovedTab();
+		app.getUnit5DocumentsHelper().goToRemovedTab();
 		Assert.assertEquals(documentCard.regNumberRemovedCard, app.getUnit5DocumentsHelper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
-	@Test (groups = {"document_unit5"}, dependsOnMethods = {"testRemovingResponseDocumentCard"})
-	public void testRestoringResponseDocumentCardAndCheckChargedCard() {
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testRemoveResponseDocumentCard"})
+	public void testRestoreResponseDocumentCardAndCheckChargedCard() {
 		app.getUnit5DocumentsHelper().restoreDocumentCard(documentCard);
-		app.getUnit5DocumentsHelper().moveToMainTab();
+		app.getUnit5DocumentsHelper().goToMainTab();
 		Assert.assertEquals(documentCard.regNumberRestoredCard, app.getUnit5DocumentsHelper().getRegNumberFirstCardInGrid());
 		app.getUnit5DocumentsHelper().openDocumentCardToReview();
 		Assert.assertEquals(chargedCard.name, app.getUnit5DocumentsHelper().getChargedNameFromGrid());
 		app.getUnit5DocumentsHelper().quitCard();
 	}
+
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testRestoreResponseDocumentCardAndCheckChargedCard"})
+	public void testRemoveInspectionCardWithDocAndCgargCards() {
+		app.getNavigationUnit5Helper().goToUnit5InspectionsPage();
+		app.getUnit5InspectionsHelper().sortDownMainGrid();
+		app.getUnit5InspectionsHelper().removeInspectionCardUnit5(inspectionCard);
+		app.getUnit5InspectionsHelper().goToRemovedTab();
+		Assert.assertEquals(inspectionCard.regNumberRemovedCard, app.getUnit5InspectionsHelper().getRegNumberFirstRemovedInspectionCardInGrid());
+		app.getNavigationUnit5Helper().goToUnit5DocumentsPage();
+		app.getUnit5DocumentsHelper().goToRemovedTab();
+		Assert.assertEquals(inspectionCard.regNumberRemovedCard, app.getUnit5DocumentsHelper().getRegNumberFirstRemovedCardInGrid());
+		app.getNavigationUnit5Helper().goToUnit5ChargedPage();
+		app.getUnit5ChargedHelper().sortDownMainGrid();
+		Assert.assertNotEquals(inspectionCard.regNumberRemovedCard, app.getUnit5ChargedHelper().getRegNumberFirstCardInGrid());
+	}
+
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testRemoveInspectionCardWithDocAndCgargCards"})
+	public void testRestoreInspectionCardWithDocAndCgargCards() {
+		app.getNavigationUnit5Helper().goToUnit5InspectionsPage();
+		app.getUnit5InspectionsHelper().goToRemovedTab();
+		app.getUnit5InspectionsHelper().restoreInspectionCardUnit5(inspectionCard);
+		app.getUnit5InspectionsHelper().goToMainTab();
+		Assert.assertEquals(inspectionCard.regNumberRestoredCard, app.getUnit5InspectionsHelper().getRegNumberFirstCardInGrid());
+		app.getNavigationUnit5Helper().goToUnit5DocumentsPage();
+		app.getUnit5DocumentsHelper().sortDownMainGrid();
+		Assert.assertEquals(inspectionCard.regNumberRestoredCard, app.getUnit5DocumentsHelper().getRegNumberFirstCardInGrid());
+		app.getNavigationUnit5Helper().goToUnit5ChargedPage();
+		app.getUnit5ChargedHelper().sortDownMainGrid();
+		Assert.assertEquals(inspectionCard.regNumberRestoredCard, app.getUnit5ChargedHelper().getRegNumberFirstCardInGrid());
+	}
 	
-	@Test (groups = {"charged_unit5"}, dependsOnMethods = {"testRestoringResponseDocumentCardAndCheckChargedCard"})
-	public void testRemovingChargedPersonCard()throws InterruptedException  {
+	@Test (groups = {"unit5"}, dependsOnMethods = {"testRestoreInspectionCardWithDocAndCgargCards"})
+	public void testRemoveChargedPersonCard() {
 		app.getNavigationUnit5Helper().goToUnit5InspectionsPage();
 		app.getUnit5InspectionsHelper().sortDownMainGrid();
 		app.getUnit5InspectionsHelper().openInspectionCardToEdit();

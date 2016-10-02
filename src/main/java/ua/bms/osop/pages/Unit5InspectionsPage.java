@@ -103,29 +103,23 @@ public class Unit5InspectionsPage extends AnyPage {
 		wait.until(ExpectedConditions.visibilityOf(titleUnit5InspectionPage));
 		return this;
 	}
-	
-	//Click on "Edit" button for the first record in the main grid
+
 	public void clickButtonEditInspectionCardUnit5() {
-		//for (int i=0; i<10; ++i) {
-			//try{
-				waitFluent.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//table[1]//td[13]/div/img"))).click();
-				//buttonEdit.click();
-			//	break;
-			//}catch (WebDriverException e) {
-				//System.out.println("exception - Button EDIT is unable");
-			//}
-		//}
+		fluientWaitforElement(buttonEdit).click();
 	}
+	
 	
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeInspectionCardFromGridUnit5(Unit5InspectionCard unit5InspectionCard) {
-		buttonRemove.click();
-		unit5InspectionCard.regNumberRemovedCard = super.confirmationOfRemoving();
+		fluientWaitforElement(buttonRemove).click();
+		unit5InspectionCard.regNumberRemovedCard = null;
+		unit5InspectionCard.regNumberRemovedCard = this.confirmationOfRemoving();
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGridUnit5(Unit5InspectionCard unit5InspectionCard) {
 		buttonRestore.click();
+		unit5InspectionCard.regNumberRestoredCard = null;
 		unit5InspectionCard.regNumberRestoredCard = confirmRestoring();
 	}
 	
@@ -133,16 +127,7 @@ public class Unit5InspectionsPage extends AnyPage {
 	
 	//Click on "Response Documents" Tab in "Inspection" Card
 	public void clickOnResponseDocumentsTab() {
-		/*Actions actionDoc = new Actions(driver);
-		for (int i=0; i<3; ++i) {
-			try{
-				actionDoc.doubleClick(wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-actGrid')]//tr[1]/td[2]/div")))).perform();
-				break;
-			}catch (WebDriverException e) {
-				System.out.println("exception - there is no GRID");
-			}
-		}*/
-		wait1.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@id, 'unit5-inspectionCard')]//div[contains(@id, 'tabbar')]/a[2]"))).click();
+		fluientWaitforElement(tabResponseDocuments).click();
 	}
 	
 	//Sets the new card with filling all fields in
@@ -210,14 +195,7 @@ public class Unit5InspectionsPage extends AnyPage {
 
 	public void clickOnFirstRecordInDocumentGrid() {
 		Actions actionDoc = new Actions(driver);
-		for (int i=0; i<3; ++i) {
-			try{
-				actionDoc.doubleClick(wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-actGrid')]//tr[1]/td[2]/div")))).perform();
-				break;
-			}catch (WebDriverException e) {
-				System.out.println("exception - there is no GRID");
-			}
-		}		
+		actionDoc.doubleClick(fluientWaitforElement(firstRecordInGrid)).perform();
 	}
 
 }

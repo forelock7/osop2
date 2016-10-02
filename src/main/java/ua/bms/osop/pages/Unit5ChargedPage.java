@@ -78,18 +78,17 @@ public class Unit5ChargedPage  extends AnyPage {
 	@Override
 	public void doubleClickOnFirstRecordInGridOnMainTab() {
 		Actions action = new Actions(driver);
-		for (int i=0; i<3; ++i) {
-			try{
-				action.doubleClick(wait2.until(ExpectedConditions.visibilityOf(cellRegNumberInGridOnMainTab))).perform();
-				break;
-			}catch (WebDriverException e) {
-				System.out.println("exception - there is no GRID");
-			}
-		}		
+		action.doubleClick(fluientWaitforElement(cellNameInGridOnMainTab)).perform();
+	}
+	
+	//Getting registration number from the first record in grid on Main tab
+	@Override
+	public String getRegNumberFromGridOnMainTab(){
+		return fluientWaitforElement(cellRegNumberInGridOnMainTab).getText();
 	}
 	
 	public String getChargedNameFirstCardInGrid() {
-		return waitFluent.until(ExpectedConditions.visibilityOf(cellNameInGridOnMainTab)).getText();
+		return fluientWaitforElement(cellNameInGridOnMainTab).getText();
 	}
 	
 	/*------------------Methods of Charged Person Card------------------------------------------------*/

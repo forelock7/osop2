@@ -169,13 +169,13 @@ public class Unit9MilitaryPage extends AnyPage {
 	 */
 	public Unit9MilitaryPage ensurePageLoaded() {
 		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit9/*By.xpath("//div[contains(@id, 'header-title-text')]//div[contains(., 'Військові адмінправопорушення')]"*/));
+		wait.until(ExpectedConditions.visibilityOf(titleUnit9));
 		return this;
 	}
 	
 	//Click on "Edit" button for the first record in the main grid
 	public void clickButtonEditCardUnit9() {
-		buttonEdit.click();
+		fluientWaitforElement(buttonEdit).click();
 	}
 	
 	//Removing Card with getinging registration number of the card that will be removed
@@ -197,9 +197,7 @@ public class Unit9MilitaryPage extends AnyPage {
 		type(inputProtocolNumber, unit9Card.protocolNumber);
 		type(inputProtocolCreatingDate, unit9Card.protocolCreatingDate);
 		inputSectionAOLawbook.click();
-		//Thread.sleep(2000);
-		//itemSectionAVLawbook.click();
-		waitFluent.until(ExpectedConditions.elementToBeClickable/*presenceOfElementLocated*/(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Ст. 172-10')]"))).click();
+		fluientWaitforElement(itemSectionAOLawbook).click();
 		type(inputCommitingAODate, unit9Card.commitingAVDate);
 		type(inputTheory, unit9Card.theory);
 		type(inputOffenderName, unit9Card.offenderName);
@@ -220,9 +218,7 @@ public class Unit9MilitaryPage extends AnyPage {
 		type(inputRepeatedReferToCourtDate, unit9Card.repeatedReferToCourtDate);
 		buttonAdd.click();
 		inputReferReturn.click();
-		//Thread.sleep(2000);
-		//itemReferReturn.click();
-		wait.until(ExpectedConditions.elementToBeClickable/*presenceOfElementLocated*/(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Направлено до суду')]"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Направлено до суду')]"))).click();
 		type(inputCourtDecisionDate, unit9Card.courtDecisionDate);
 		buttonAddMovingOfProtocol.click();
 		inputConsiderationResult.click();

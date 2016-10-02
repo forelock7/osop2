@@ -9,8 +9,8 @@ public interface Unit8Helper {
 	
 	boolean isOnUnit8Page();
 	
-	void moveToMainTab();
-	void moveToRemovedTab();
+	void goToMainTab();
+	void goToRemovedTab();
 	
 	void openCardToCreate();
 	void openCardToView();

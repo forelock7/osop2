@@ -9,8 +9,8 @@ public interface Unit9Helper {
 	
 	boolean isOnUnit9Page();
 	
-	void moveToMainTab();
-	void moveToRemovedTab();
+	void goToMainTab();
+	void goToRemovedTab();
 	
 	void openCardToCreate();
 	void openCardToView();

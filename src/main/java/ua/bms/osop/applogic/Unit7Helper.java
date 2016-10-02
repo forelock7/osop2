@@ -9,8 +9,8 @@ public interface Unit7Helper {
 	
 	boolean isOnUnit7Page();
 	
-	void moveToMainTab();
-	void moveToRemovedTab();
+	void goToMainTab();
+	void goToRemovedTab();
 	
 	void openCardToCreate();
 	void openCardToView();

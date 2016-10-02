@@ -24,13 +24,13 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 	}
 	
 	//Moves to Main Tab
-	public void moveToMainTab() {
-		pages.unit6ClaimsPage.goToMainTab();
+	public void goToMainTab() {
+		pages.unit6ClaimsPage.clickOnMainTab();
 	}
 	
 	//Moves to Removed Tab
-	public void moveToRemovedTab() {
-		pages.unit6ClaimsPage.goToRemovedTab();
+	public void goToRemovedTab() {
+		pages.unit6ClaimsPage.clickOnRemovedTab();
 	}
 	
 	//Opens Card to create

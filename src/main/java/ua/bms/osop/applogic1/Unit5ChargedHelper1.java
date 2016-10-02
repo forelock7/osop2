@@ -39,6 +39,15 @@ public class Unit5ChargedHelper1 extends DriverBasedHelper implements Unit5Charg
 	public String getChargedNameFromGrid() {
 		return pages.unit5ChargedPage.getChargedNameFirstCardInGrid();
 	}
+
+	/*
+ 	* Gets number of the first record(card) in grid on the main tab
+ 	* Checks existing of later restoring card
+ 	*/
+    @Override
+    public String getRegNumberFirstCardInGrid() {
+        return  pages.unit5ChargedPage.getRegNumberFromGridOnMainTab();
+    }
 	
 	/*-------------------------------Charged Person Card----------------------------------------*/
 	

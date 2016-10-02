@@ -26,13 +26,13 @@ public class Unit9Helper1 extends DriverBasedHelper implements Unit9Helper  {
 	}
 	
 	//Moves to Main Tab
-	public void moveToMainTab() {
-		pages.unit9MilitaryPage.goToMainTab();
+	public void goToMainTab() {
+		pages.unit9MilitaryPage.clickOnMainTab();
 	}
 	
 	//Moves to Removed Tab
-	public void moveToRemovedTab() {
-		pages.unit9MilitaryPage.goToRemovedTab();
+	public void goToRemovedTab() {
+		pages.unit9MilitaryPage.clickOnRemovedTab();
 	}
 	
 	//Opens Card to create 

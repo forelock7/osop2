@@ -128,16 +128,10 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	//Clicks on the first record in Charged Person Grid
 	public void clickOnFirstRecordInChargedGrid() {
 		Actions actionCh = new Actions(driver);
-		for (int i=0; i<3; ++i) {
-			try{
-				actionCh.doubleClick(wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div")))).perform();
-				break;
-			}catch (WebDriverException e) {
-				System.out.println("exception - there is no GRID");
-			}
-		}
+		actionCh.doubleClick(fluientWaitforElement(cellNameChargedGrid)).perform();
 	}
-	
+
+	//Deletes first record(charged person) from grid
 	public void deleteChargedRecordFormGridInDocument(Unit5ChargedCard unit5ChargedCard) {
 		unit5ChargedCard.chargedNameDeletedCard = getNameFromChargedPersonGrid();
 		buttonDeleteChargedFromGrid.click();

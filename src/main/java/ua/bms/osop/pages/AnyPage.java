@@ -121,14 +121,7 @@ public abstract class AnyPage extends Page {
 	//Opens to review Card
 	public void doubleClickOnFirstRecordInGridOnMainTab() {
 		Actions action = new Actions(driver);
-		for (int i=0; i<3; ++i) {
-			try{
-				action.doubleClick(wait2.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[contains(@id, 'tabpanel')]/div[1]//table[1]//td[2]/div")))).perform();
-				break;
-			}catch (WebDriverException e) {
-				System.out.println("exception - there is no GRID");
-			}
-		}		
+		action.doubleClick(fluientWaitforElement(cellRegNumberInGridOnMainTab)).perform();
 	}
 	
 	//Clicking on "Save"("Зберегти") button in Card
@@ -138,7 +131,7 @@ public abstract class AnyPage extends Page {
 	
 	//Clicking on button "OK" of Alert Popup
 	public void clickOnAlertOK() {
-		buttonOKAlertPopup.click();
+		fluientWaitforElement(buttonOKAlertPopup).click();
 		//wait1.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//.[contains(@id, 'messagebox')]//.[contains(@id, 'button')]")));
 	}
 	
@@ -148,11 +141,9 @@ public abstract class AnyPage extends Page {
 	}
 	
 	//Confirmation of Card Removing with getting registration number of removed card
-	protected String confirmationOfRemoving()/* throws InterruptedException*/{
+	protected String confirmationOfRemoving(){
 		inputFieldRemoveReason.click();
-		//Thread.sleep(2000);
-		//itemRemoveReason.click();
-		wait.until(ExpectedConditions.elementToBeClickable/*presenceOfElementLocated*/(By.xpath("//div[contains(@id, 'boundlist')]//li[2]"))).click();
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[2]"))).click();
 		//Getting Registration Number from "Deletion Confirmation Form" AND "Recovering Confirmation From"
 		String regNumberRemovedCard = fieldRegNumInConfirmationForm.getAttribute("value");
 		buttonConfirmRemove.click();
@@ -161,12 +152,12 @@ public abstract class AnyPage extends Page {
 	}
 	
 	//Moving to "Deleted"("Видалені") tab
-	public void goToRemovedTab() {
+	public void clickOnRemovedTab() {
 		tabRemoved.click();
 		}
 	
 	//Moving to Main Tab
-	public void goToMainTab() {
+	public void clickOnMainTab() {
 		tabMain.click();		
 	}
 	
@@ -185,7 +176,7 @@ public abstract class AnyPage extends Page {
 	
 	//Getting registration number from the first record in grid on Main tab
 	public String getRegNumberFromGridOnMainTab(){
-		return wait2.until(ExpectedConditions.visibilityOf(cellRegNumberInGridOnMainTab)).getText();
+		return fluientWaitforElement(cellRegNumberInGridOnMainTab).getText();
 	}
 			
 	protected boolean isElementPresent(WebElement element) {
@@ -200,9 +191,6 @@ public abstract class AnyPage extends Page {
 		 }
 	}
 }
-	
-	/*public boolean isAlertPresent() {
-		return isElementPresent(buttonOKAlertPopup);
-	}*/
+
 
 

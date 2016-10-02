@@ -23,7 +23,6 @@ public class NavigationTopPage extends AnyPage {
 	public NavigationTopPage ensurePageLoaded() {
 		super.ensurePageLoaded();
 		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'mainToolBarContainer')]//.[contains(text(), 'Вихід')]")));
-	    //wait.until(ExpectedConditions.visibilityOf(linkLogOut));
 	    return this;
 	}
 	

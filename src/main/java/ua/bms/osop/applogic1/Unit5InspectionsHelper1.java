@@ -26,13 +26,13 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 	}
 	
 	//Moves to Main Tab
-	public void moveToMainTab() {
-		pages.unit5InspectionsPage.goToMainTab();
+	public void goToMainTab() {
+		pages.unit5InspectionsPage.clickOnMainTab();
 	}
 	
 	//Moves to Removed Tab
-	public void moveToRemovedTab() {
-		pages.unit5InspectionsPage.goToRemovedTab();
+	public void goToRemovedTab() {
+		pages.unit5InspectionsPage.clickOnRemovedTab();
 	}
 	
 	//Sorts records down(in descending order) - double click on header of grid

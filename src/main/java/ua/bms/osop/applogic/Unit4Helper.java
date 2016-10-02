@@ -10,8 +10,8 @@ public interface Unit4Helper {
 	
 	boolean isOnUnit4Page();
 	
-	void moveToMainTab();
-	void moveToRemovedTab();
+	void goToMainTab();
+	void goToRemovedTab();
 
 	void openCardToCreate();
 	void openCardToView();

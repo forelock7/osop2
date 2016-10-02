@@ -26,13 +26,13 @@ public class Unit5DocumentsHelper1 extends DriverBasedHelper implements Unit5Doc
 	}
 	
 	//Moves to Main Tab
-	public void moveToMainTab() {
-		pages.unit5DocumentsPage.goToMainTab();
+	public void goToMainTab() {
+		pages.unit5DocumentsPage.clickOnMainTab();
 	}
 	
 	//Moves to Removed Tab
-	public void moveToRemovedTab() {
-		pages.unit5DocumentsPage.goToRemovedTab();
+	public void goToRemovedTab() {
+		pages.unit5DocumentsPage.clickOnRemovedTab();
 	}
 	
 	//Sorts records down(in descending order) - double click on header of grid

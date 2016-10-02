@@ -40,14 +40,14 @@ public class Unit8RequestsTest extends BasicTestCase {
 	@Test (groups = {"unit8"}, dependsOnMethods = {"testEditRequestCard"})
 	public void testRemoveRequestCard(){
 		app.getUnit8Helper().removeCardUnit8(reqCard);
-		app.getUnit8Helper().moveToRemovedTab();
+		app.getUnit8Helper().goToRemovedTab();
 		Assert.assertEquals(reqCard.regNumberRemovedCard, app.getUnit8Helper().getRegNumbreFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit8"}, dependsOnMethods = {"testRemoveRequestCard"})
 	public void testRestoreRequestCard() {
 		app.getUnit8Helper().restoreCardUnit8(reqCard);
-		app.getUnit8Helper().moveToMainTab();
+		app.getUnit8Helper().goToMainTab();
 		Assert.assertEquals(reqCard.regNumberRestoredCard, app.getUnit8Helper().getRegNumberFirstCardInGrid());
 	}
 

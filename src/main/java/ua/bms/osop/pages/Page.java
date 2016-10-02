@@ -8,6 +8,9 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -30,7 +33,24 @@ public abstract class Page {
 	    wait = new WebDriverWait(driver, 2, 200);
 	    wait1 = new WebDriverWait(driver, 10);
 		wait2 = new WebDriverWait(driver, 10).ignoring(InvalidSelectorException.class, StaleElementReferenceException.class);
-		waitFluent = new FluentWait<WebDriver>(driver).withMessage("Elementwas not found").withTimeout(10, TimeUnit.SECONDS).pollingEvery(1, TimeUnit.SECONDS);
+
+	}
+	
+	public WebElement fluientWaitforElement(WebElement element) {
+	    FluentWait<WebDriver> fWait = new FluentWait<WebDriver>(driver).withTimeout(10, TimeUnit.SECONDS)
+	        .pollingEvery(1, TimeUnit.SECONDS)
+	        .ignoring(NoSuchElementException.class, TimeoutException.class).ignoring(StaleElementReferenceException.class);
+	    for (int i = 0; i < 2; i++) {
+	        try {
+				//fWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id='reportmanager-wrapper']/div[1]/div[2]/ul/li/span[3]/i[@data-original--title='We are processing through trillions of data events, this insight may take more than 15 minutes to complete.']")));
+	        	fWait.until(ExpectedConditions.visibilityOf(element));
+	        	fWait.until(ExpectedConditions.elementToBeClickable(element));
+	        	} catch (Exception e) {
+				System.out.println("Element Not found trying again - " + element.toString().substring(70));
+	        	e.printStackTrace();
+				}
+			}
+	    return element;
 	}
 	
 	public WebDriver getWebDriver() {

@@ -14,8 +14,8 @@ public interface Unit5InspectionsHelper {
 	boolean isOnUnit5InspectionCard();
 	boolean isOnUnit5DocumentsTab();
 	
-	void moveToMainTab();
-	void moveToRemovedTab();
+	void goToMainTab();
+	void goToRemovedTab();
 	
 	void sortDownMainGrid();
 	

@@ -23,19 +23,11 @@ public interface Unit5ChargedHelper {
 	String getChargedName();
 	String getPost();
 	String getChargedNameFromGrid();
-	
+	String getRegNumberFirstCardInGrid();
 	
 	void saveCard();
 	void quitCard();
 
-	
 
-	
-
-
-
-	
-
-	
 
 }

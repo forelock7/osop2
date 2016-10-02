@@ -1,5 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
 encoding//src/main/java/ua/bms/osop/model/Unit9Card.java=UTF-8
 encoding//src/main/java/ua/bms/osop/model/User.java=UTF-8
 encoding//src/main/java/ua/bms/osop/pages/NavigationTopPage.java=UTF-8
 encoding//src/main/java/ua/bms/osop/pages/Unit9MilitaryPage.java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8

@@ -24,13 +24,13 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 	}
 	
 	//Moves to Main Tab
-	public void moveToMainTab() {
-		pages.unit8RequestsPage.goToMainTab();
+	public void goToMainTab() {
+		pages.unit8RequestsPage.clickOnMainTab();
 	}
 	
 	//Moves to Removed Tab
-	public void moveToRemovedTab() {
-		pages.unit8RequestsPage.goToRemovedTab();
+	public void goToRemovedTab() {
+		pages.unit8RequestsPage.clickOnRemovedTab();
 	}
 	
 	//Opens Card to create 

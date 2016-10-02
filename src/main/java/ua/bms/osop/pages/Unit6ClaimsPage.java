@@ -115,15 +115,7 @@ public class Unit6ClaimsPage extends AnyPage {
 	
 	//Click on "Edit" button for the first record in the main grid
 	public void clickButtonEditCardUnit6() {
-		for (int i=0; i<3; ++i) {
-			try{
-				wait1.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//table[1]//td[14]/div/img")));
-				buttonEdit.click();
-				break;
-			}catch (WebDriverException e) {
-				System.out.println("exception");
-			}
-		}
+		fluientWaitforElement(buttonEdit).click();
 	}
 	
 	//Removing Card with getting registration number of the card that will be removed
@@ -169,8 +161,6 @@ public class Unit6ClaimsPage extends AnyPage {
 		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit68-request-as-applicantCard')]/following-sibling::div[2]/div[contains(@id, 'boundlist')]//li[contains(.,'Фізична особа')]"))).click();
 		inputApplicantType.click();
 		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit68-request-as-applicantCard')]/following-sibling::div[4]//ul[contains(@id, 'boundlist')]//li[contains(.,'Заявник')]"))).click();
-		//inputApplicantName.click();
-		//inputApplicantName.sendKeys(claimCard.applicantName);
 		type(inputApplicantName, claimCard.applicantName);
 		return this;
 	}

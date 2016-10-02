@@ -39,14 +39,14 @@ public class Unit9MilitaryTest extends BasicTestCase {
 	@Test (groups = {"unit9"}, dependsOnMethods = {"testEditMilitaryCard"})
 	public void testRemoveMilitaryCard(){
 		app.getUnit9Helper().removeCardUnit9(mAOCard);
-		app.getUnit9Helper().moveToRemovedTab();
+		app.getUnit9Helper().goToRemovedTab();
 		Assert.assertEquals(mAOCard.regNumberRemovedCard, app.getUnit9Helper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit9"}, dependsOnMethods = {"testRemoveMilitaryCard"})
 	public void testRestoreMilitaryCard() {
 		app.getUnit9Helper().restoreCardUnit9(mAOCard);
-		app.getUnit9Helper().moveToMainTab();
+		app.getUnit9Helper().goToMainTab();
 		Assert.assertEquals(mAOCard.regNumberRestoredCard, app.getUnit9Helper().getRegNumberFirstCardInGrid());
 	}
 

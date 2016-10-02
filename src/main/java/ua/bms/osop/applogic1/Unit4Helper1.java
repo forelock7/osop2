@@ -24,13 +24,13 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	}
 	
 	//Moves to Main Tab
-	public void moveToMainTab() {
-		pages.unit4InternationalPage.goToMainTab();
+	public void goToMainTab() {
+		pages.unit4InternationalPage.clickOnMainTab();
 	}
 	
 	//Moves to Removed Tab
-	public void moveToRemovedTab() {
-		pages.unit4InternationalPage.goToRemovedTab();
+	public void goToRemovedTab() {
+		pages.unit4InternationalPage.clickOnRemovedTab();
 	}
 		
 	//Opens Card to create

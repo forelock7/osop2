@@ -26,13 +26,13 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 	}
 	
 	//Moves to Main Tab
-	public void moveToMainTab() {
-		pages.unit7MassMediaPage.goToMainTab();
+	public void goToMainTab() {
+		pages.unit7MassMediaPage.clickOnMainTab();
 	}
 	
 	//Moves to Removed Tab
-	public void moveToRemovedTab() {
-		pages.unit7MassMediaPage.goToRemovedTab();
+	public void goToRemovedTab() {
+		pages.unit7MassMediaPage.clickOnRemovedTab();
 	}
 	
 	//Opens Card to create 

@@ -15,8 +15,8 @@ public interface Unit5DocumentsHelper {
 	
 	void sortDownMainGrid();
 	
-	void moveToMainTab();
-	void moveToRemovedTab();
+	void goToMainTab();
+	void goToRemovedTab();
 	
 	void openChargedCardToCreate();
 	void openChargedCardToView();

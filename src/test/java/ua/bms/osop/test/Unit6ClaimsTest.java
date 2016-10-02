@@ -40,14 +40,14 @@ public class Unit6ClaimsTest extends BasicTestCase {
 	@Test (groups = {"unit6"}, dependsOnMethods = {"testEditClaimCard"})
 	public void testRemoveClaimCard(){
 		app.getUnit6Helper().removeCardUnit6(clCard);
-		app.getUnit6Helper().moveToRemovedTab();
+		app.getUnit6Helper().goToRemovedTab();
 		Assert.assertEquals(clCard.regNumberRemovedCard, app.getUnit6Helper().getRegNumberRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit6"}, dependsOnMethods = {"testRemoveClaimCard"})
 	public void testRestoreClaimCard() {
 		app.getUnit6Helper().restoreCardUnit6(clCard);
-		app.getUnit6Helper().moveToMainTab();
+		app.getUnit6Helper().goToMainTab();
 		Assert.assertEquals(clCard.regNumberRestoredCard, app.getUnit6Helper().getRegNumberFirstCardInGrid());
 	}
 
