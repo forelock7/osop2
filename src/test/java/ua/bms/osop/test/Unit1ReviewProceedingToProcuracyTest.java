@@ -1,6 +1,8 @@
 package ua.bms.osop.test;
 
 import static org.testng.Assert.assertTrue;
+
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /*
@@ -9,18 +11,52 @@ import org.testng.annotations.Test;
  */
 public class Unit1ReviewProceedingToProcuracyTest extends BasicTestCase {
 
-	@Test (groups = {"unit1_reviewAndClaimsToProcuracy"})
-	public void testJumpToUnit1ReviewPage() {
-		assertTrue(app.getUserHelper().isLoggedIn());
-		app.getNavigationUnit1Helper().goToUnit1ReviewToPrcPage();
-		assertTrue(app.getUnit1ProceedingsToPrcHelper().isOnUnit1ReviewToPrcPage());
-	}
-	
-	@Test (groups = {"unit1_reviewAndClaimsToProcuracy"})
+
+	@Test (groups = {"unit1_proceedingsAndClaimsToProcuracy"})
 	public void testJumpToUnit1ClaimsToPrcPage() {
 		assertTrue(app.getUserHelper().isLoggedIn());
 		app.getNavigationUnit1Helper().goToUnit1ClaimsToPrcPage();
 		assertTrue(app.getUnit1ViewClaimsToPrcHelper().isOnUnit1ClaimsToPrcPage());
 	}
-	
+
+	@Test (groups = {"unit1_proceedingsAndClaimsToProcuracy"}, dependsOnMethods = {"testJumpToUnit1ClaimsToPrcPage"})
+	public void testJumpToUnit1ProceedingsToPrcPage() {
+		assertTrue(app.getUserHelper().isLoggedIn());
+		app.getNavigationUnit1Helper().goToUnit1ProceedingsToPrcPage();
+		assertTrue(app.getUnit1ProceedingsToPrcHelper().isOnUnit1ProceedingsToPrcPage());
+	}
+
+	@Test (groups = {"unit1_proceedingsAndClaimsToProcuracy"}, dependsOnMethods = {"testJumpToUnit1ProceedingsToPrcPage"})
+	public void testCreateAndReviewProceedingToPrcCard() {
+		app.getUnit1ProceedingsToPrcHelper().openCardToCreate();
+		app.getUnit1ProceedingsToPrcHelper().createCard(proceedingToPrcCard);
+		app.getUnit1ProceedingsToPrcHelper().saveCard();
+		app.getUnit1ProceedingsToPrcHelper().openCardToView();
+		Assert.assertEquals(proceedingToPrcCard.plaintiff, app.getUnit1ProceedingsToPrcHelper().getPlaintiff());
+		app.getUnit1ProceedingsToPrcHelper().quitCard();
+	}
+
+	@Test (groups = {"unit1_proceedingsAndClaimsToProcuracy"}, dependsOnMethods = {"testCreateAndReviewProceedingToPrcCard"})
+	public void testEditProceedingToPrcCard(){
+		app.getUnit1ProceedingsToPrcHelper().openCardToEdit();
+		app.getUnit1ProceedingsToPrcHelper().editCard(proceedingToPrcCard);
+		app.getUnit1ProceedingsToPrcHelper().saveCard();
+		app.getUnit1ProceedingsToPrcHelper().openCardToEdit();
+		Assert.assertEquals(proceedingToPrcCard.someNewText, app.getUnit1ProceedingsToPrcHelper().getDefendant());
+		app.getUnit1ProceedingsToPrcHelper().quitCard();
+	}
+
+	@Test (groups = {"unit1_proceedingsAndClaimsToProcuracy"})
+	public void testCheckCreatingInstanceIsUnable() {
+		app.getNavigationUnit1Helper().goToUnit1ProceedingsToPrcPage();
+		app.getUnit1ProceedingsToPrcHelper().openCardToCreate();
+		assertTrue(app.getUnit1ProceedingsToPrcHelper().isOnUnit1ProceedingToPrcCard());
+		app.getUnit1ProceedingsToPrcHelper().goToStagesTab();
+		assertTrue(app.getUnit1ProceedingsToPrcHelper().isOnUnit1StagesTab());
+		Assert.assertFalse(app.getUnit1ProceedingsToPrcHelper().checkIsButtonCreateFirstInstance());
+		app.getUnit1ProceedingsToPrcHelper().quitCard();
+		Assert.assertFalse(app.getUnit1ProceedingsToPrcHelper().isOnUnit1ProceedingToPrcCard());
+	}
+
+
 }

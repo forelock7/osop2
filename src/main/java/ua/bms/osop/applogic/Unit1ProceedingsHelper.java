@@ -10,7 +10,10 @@ import ua.bms.osop.model.Unit1ProceedingCard;
  */
 public interface Unit1ProceedingsHelper {
 
-	boolean isOnUnit1ReviewPage();
+	boolean isOnUnit1ProceedingsPage();
+	boolean isOnUnit1ProceedingCard();
+	boolean isOnUnit1StagesTab();
+	boolean checkIsButtonCreateFirstInstance();
 	
 	void openCardToCreate();
 	void openCardToView();
@@ -23,6 +26,11 @@ public interface Unit1ProceedingsHelper {
 	String getPlaintiff();
 	String getDefendant();
 
+	void goToStagesTab();
+
 	void saveCard();
 	void quitCard();
+
+
+
 }

@@ -34,6 +34,7 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	}
 		
 	//Opens Card to create
+	@Override
 	public void openCardToCreate() {
 		pages.unit4InternationalPage.clickButtonCreateCard();
 	}
@@ -108,12 +109,14 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	}
 	
 	//Saves Card(clicking "Save" button)
+	@Override
 	public void saveCard() {
 		pages.unit4InternationalPage.clickButtonSaveCard();
 		pages.unit4InternationalPage.clickOnAlertOK();
 	}
 		
 	//Quit from Card
+	@Override
 	public void quitCard() {
 		pages.unit4InternationalPage.clickButtonExitFromCardForm();
 	}

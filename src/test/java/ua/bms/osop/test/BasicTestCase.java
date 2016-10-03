@@ -3,16 +3,7 @@ package ua.bms.osop.test;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import ua.bms.osop.applogic1.ApplicationManager1;
-import ua.bms.osop.model.Unit1ProceedingCard;
-import ua.bms.osop.model.Unit4Card;
-import ua.bms.osop.model.Unit5ChargedCard;
-import ua.bms.osop.model.Unit5DocumentCard;
-import ua.bms.osop.model.Unit5InspectionCard;
-import ua.bms.osop.model.Unit6Card;
-import ua.bms.osop.model.Unit7Card;
-import ua.bms.osop.model.Unit8Card;
-import ua.bms.osop.model.Unit9Card;
-import ua.bms.osop.model.User;
+import ua.bms.osop.model.*;
 
 /*
  * Basic class for all test classes.
@@ -57,7 +48,13 @@ public class BasicTestCase {
 			/*Відповідач(боржник)*/"Відповідач - боржник");
 	
 /*-----------------------------------------------------------------------------------------------------------------*/
-	
+
+	/*Initialization of input fields from Review proceedings on a claim to Procuracy authorities Card(Unit 1) except field with drop-down list*/
+	protected static Unit1ProceedingToPrcCard proceedingToPrcCard = new Unit1ProceedingToPrcCard(
+			/*Відповідач*/"Відповідач(до прокуратури)");
+
+/*-----------------------------------------------------------------------------------------------------------------*/
+
 	/*Initialization of input fields from Military Administrative Offenses Card(Unit 9) except field with drop-down list*/
 	protected static Unit9Card mAOCard = new Unit9Card(
 			/*Дата складання протоколу*/"01.07.2016", 

@@ -31,7 +31,7 @@ public class NavigationUnit1Helper1 extends DriverBasedHelper implements Navigat
 	}
 	
 	//Goes to Unit 1 - section "Review proceedings on a claim"
-	public void goToUnit1ReviewPage() {
+	public void goToUnit1ProceedingsPage() {
 		if (isOnUnit1Page()) {
 			pages.navigationUnit1Page.ensurePageLoaded().clickReviewMenuItem();
 		} else {
@@ -41,7 +41,7 @@ public class NavigationUnit1Helper1 extends DriverBasedHelper implements Navigat
 	}
 	
 	//Goes to Unit 1 - section "Review proceedings on a claim to Procuracy authorities"("НП за позовом до органів прокуратури")
-	public void goToUnit1ReviewToPrcPage() {
+	public void goToUnit1ProceedingsToPrcPage() {
 		if (isOnUnit1Page()) {
 			pages.navigationUnit1Page.ensurePageLoaded().clickReviewToPrcMenuItem();
 		} else {
