@@ -63,15 +63,15 @@ public class NavigationUnit1Page extends AnyPage {
 	}
 	
 	//Goes from "Navigation Page in Unit 1" to Unit 1 "Review proceedings on a claim" page
-	public Unit1ReviewPage clickReviewMenuItem(){
+	public Unit1ProceedingsPage clickReviewMenuItem(){
 		itemReviewMenuU1.click();
-		return pages.unit1ReviewPage;
+		return pages.unit1ProceedingsPage;
 	}
 	
 	//Goes from "Navigation Page in Unit 1" to Unit 1 "Review proceedings on a claim to Procuracy authorities" page
-	public Unit1ReviewToPrcPage clickReviewToPrcMenuItem(){
+	public Unit1ProceedingsToPrcPage clickReviewToPrcMenuItem(){
 		itemReviewToPrcMenuU1.click();
-		return pages.unit1ReviewToPrcPage;
+		return pages.unit1ProceedingsToPrcPage;
 	}
 	
 	//Goes from "Navigation Page in Unit 1" to Unit 1 "Started Crime Proceedings" page
@@ -81,15 +81,15 @@ public class NavigationUnit1Page extends AnyPage {
 	}
 	
 	//Goes from "Navigation Page in Unit 1" to Unit 1 "Viewing of claims, statements" page
-	public Unit1ClaimsPage clickClaimsMenuItem(){
+	public Unit1ViewClaimsPage clickClaimsMenuItem(){
 		itemClaimsMenuU1.click();
-		return pages.unit1ClaimsPage;
+		return pages.unit1ViewClaimsPage;
 	}
 	
 	//Goes from "Navigation Page in Unit 1" to Unit 1 "Viewing of claims to Procuracy authorities" page
-	public Unit1ClaimsToPrcPage clickClaimsToPrcMenuItem(){
+	public Unit1ViewClaimsToPrcPage clickClaimsToPrcMenuItem(){
 		itemClaimsToPrcMenuU1.click();
-		return pages.unit1ClaimsToPrcPage;
+		return pages.unit1ViewClaimsToPrcPage;
 	}
 
 	

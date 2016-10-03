@@ -13,11 +13,11 @@ public interface ApplicationManager {
 	NavigationUnit5Helper getNavigationUnit5Helper();
 	NavigationUnit68Helper getNavigationUnit68Helper();
 	
-	Unit1ReviewHelper getUnit1ReviewHelper();
-	Unit1ReviewToPrcHelper getUnit1ReviewToPrcHelper();
+	Unit1ProceedingsHelper getUnit1ProceedingsHelper();
+	Unit1ProceedingsToPrcHelper getUnit1ProceedingsToPrcHelper();
 	Unit1CrimeHelper getUnit1CrimeHelper();
-	Unit1ClaimsHelper getUnit1ClaimsHelper();
-	Unit1ClaimsToPrcHelper getUnit1ClaimsToPrcHelper();
+	Unit1ViewClaimsHelper getUnit1ViewClaimsHelper();
+	Unit1ViewClaimsToPrcHelper getUnit1ViewClaimsToPrcHelper();
 	Unit2ActsOAHelper getUnit2ActsOAHelper();
 	Unit2ActsPIHelper getUnit2ActsPIHelper();
 	Unit2AppealsHelper getUnit2AppealsHelper();

@@ -7,11 +7,11 @@ import ua.bms.osop.applogic.NavigationUnit1Helper;
 import ua.bms.osop.applogic.NavigationUnit23Helper;
 import ua.bms.osop.applogic.NavigationUnit5Helper;
 import ua.bms.osop.applogic.NavigationUnit68Helper;
-import ua.bms.osop.applogic.Unit1ClaimsHelper;
-import ua.bms.osop.applogic.Unit1ClaimsToPrcHelper;
+import ua.bms.osop.applogic.Unit1ViewClaimsHelper;
+import ua.bms.osop.applogic.Unit1ViewClaimsToPrcHelper;
 import ua.bms.osop.applogic.Unit1CrimeHelper;
-import ua.bms.osop.applogic.Unit1ReviewHelper;
-import ua.bms.osop.applogic.Unit1ReviewToPrcHelper;
+import ua.bms.osop.applogic.Unit1ProceedingsHelper;
+import ua.bms.osop.applogic.Unit1ProceedingsToPrcHelper;
 import ua.bms.osop.applogic.Unit2ActsOAHelper;
 import ua.bms.osop.applogic.Unit2ActsPIHelper;
 import ua.bms.osop.applogic.Unit2AppealsHelper;
@@ -50,11 +50,11 @@ public class ApplicationManager1 implements ApplicationManager {
 	 private NavigationUnit23Helper navUnit23Helper;
 	 private NavigationUnit5Helper navUnit5Helper;
 	 private NavigationUnit68Helper navUnit68Helper;
-	 private Unit1ReviewHelper unit1ReviewHelper;
-	 private Unit1ReviewToPrcHelper unit1ReviewToPrcHelper;
+	 private Unit1ProceedingsHelper unit1ProceedingsHelper;
+	 private Unit1ProceedingsToPrcHelper unit1ProceedingsToPrcHelper;
 	 private Unit1CrimeHelper unit1CrimeHelper;
-	 private Unit1ClaimsHelper unit1ClaimsHelper;
-	 private Unit1ClaimsToPrcHelper unit1ClaimsToPrcHelper;
+	 private Unit1ViewClaimsHelper unit1ViewClaimsHelper;
+	 private Unit1ViewClaimsToPrcHelper unit1ViewClaimsToPrcHelper;
 	 private Unit2ActsOAHelper unit2ActsOAHelper;
 	 private Unit2ActsPIHelper unit2ActsPIHelper;
 	 private Unit2AppealsHelper unit2AppealsHelper;
@@ -99,11 +99,11 @@ public class ApplicationManager1 implements ApplicationManager {
 		 navUnit23Helper = new NavigationUnit23Helper1(this);
 		 navUnit5Helper = new NavigationUnit5Helper1(this);
 		 navUnit68Helper = new NavigationUnit68Helper1(this);
-		 unit1ReviewHelper = new Unit1ReviewHelper1(this);
-		 unit1ReviewToPrcHelper = new Unit1ReviewToPrcHelper1(this);
+		 unit1ProceedingsHelper = new Unit1ProceedingsHelper1(this);
+		 unit1ProceedingsToPrcHelper = new Unit1ProceedingsToPrcHelper1(this);
 		 unit1CrimeHelper = new Unit1CrimeHelper1(this);
-		 unit1ClaimsHelper = new Unit1ClaimsHelper1(this);
-		 unit1ClaimsToPrcHelper = new Unit1ClaimsToPrcHelper1(this);
+		 unit1ViewClaimsHelper = new Unit1ViewClaimsHelper1(this);
+		 unit1ViewClaimsToPrcHelper = new Unit1ViewClaimsToPrcHelper1(this);
 		 unit2ActsOAHelper = new Unit2ActsOAHelper1(this);
 		 unit2ActsPIHelper = new Unit2ActsPIHelper1(this);
 		 unit2AppealsHelper = new Unit2AppealsHelper1(this);
@@ -165,13 +165,13 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 		
 	@Override
-	public Unit1ReviewHelper getUnit1ReviewHelper(){
-		return unit1ReviewHelper;
+	public Unit1ProceedingsHelper getUnit1ProceedingsHelper(){
+		return unit1ProceedingsHelper;
 	}
 	
 	@Override
-	public Unit1ReviewToPrcHelper getUnit1ReviewToPrcHelper(){
-		return unit1ReviewToPrcHelper;
+	public Unit1ProceedingsToPrcHelper getUnit1ProceedingsToPrcHelper(){
+		return unit1ProceedingsToPrcHelper;
 	}
 	
 	@Override
@@ -180,13 +180,13 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 	
 	@Override
-	public Unit1ClaimsHelper getUnit1ClaimsHelper(){
-		return unit1ClaimsHelper;
+	public Unit1ViewClaimsHelper getUnit1ViewClaimsHelper(){
+		return unit1ViewClaimsHelper;
 	}
 	
 	@Override
-	public Unit1ClaimsToPrcHelper getUnit1ClaimsToPrcHelper(){
-		return unit1ClaimsToPrcHelper;
+	public Unit1ViewClaimsToPrcHelper getUnit1ViewClaimsToPrcHelper(){
+		return unit1ViewClaimsToPrcHelper;
 	}
 	
 	@Override

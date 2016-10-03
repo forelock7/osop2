@@ -6,7 +6,7 @@ package ua.bms.osop.applogic;
  * Related with Unit1ReviewToPrcCard model(ua.bms.osop.model.Unit1ReviewToPrcCard)
  * Uses methods from Unit1ReviewToPrcPage
  */
-public interface Unit1ReviewToPrcHelper {
+public interface Unit1ProceedingsToPrcHelper {
 
 	boolean isOnUnit1ReviewToPrcPage();
 	

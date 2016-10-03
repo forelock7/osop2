@@ -1,0 +1,100 @@
+package ua.bms.osop.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import ua.bms.osop.model.Unit1ProceedingCard;
+
+/*
+ * Declare all Web-elements on 1 - "Review proceedings on a claim"("НП за позовом");
+ * Unit 1 "Presentetion" ("Представництво")
+ * and the main methods with them
+ */
+public class Unit1ProceedingsPage extends AnyPage {
+
+	/*
+	 * Constructor of this Page object which is managed by object Page Manager.
+	 */
+	public Unit1ProceedingsPage(PageManager pages) {
+		super(pages);
+	}
+	
+	/*-------------------The Web-Elements of the Review Page---------------------------------------------------*/
+
+	//Title of "Review proceedings on a claim"("НП за позовом")
+	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'НП за позовом')]")
+	private WebElement titleReviewUnit1;
+
+	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-9).
+	@FindBy(xpath = "//table[1]//td[9]/div/img")
+	WebElement buttonEdit;
+
+	/*------------------The Web-Elements of the Review Card----------------------------------------------------*/
+	
+	//Type of justice
+	@FindBy(xpath = "//div[contains(@id, 'unit1-reviewTabMain')]//span[contains(., 'Вид судочинства')]")
+	private WebElement inputJusticeType;
+	//First item of Type of justice
+	@FindBy (xpath = "//div[contains(@id, 'boundlist')]//li[1]") 
+	private WebElement itemJusticeType;
+	
+	//General subject matter
+	@FindBy(xpath = "//div[contains(@id, 'unit1-reviewTabMain')]//span[contains(., 'Загальна тематика питання')]")
+	private WebElement inputGeneralSubject;
+	//First item of General subject matter
+	@FindBy (xpath = "//div[contains(@id, 'treepanel')]//span[contains(., 'В інтересах громадян')]") 
+	private WebElement itemGeneralSubject;
+	
+	//Input field "Plaintiff" ("Позивач(заявник в інтересах якогоподано заяву)")
+	@FindBy(xpath = "//div[contains(@id, 'unit1-reviewTabMain')]//label[contains(., 'Позивач')]/following-sibling::div//input")
+	private WebElement inputPlaintiff;
+	
+	//Input field "Defendant" ("Відповідач(боржник)")
+	@FindBy(xpath = "//div[contains(@id, 'unit1-reviewTabMain')]//label[contains(., 'Відповідач')]/following-sibling::div//input")
+	private WebElement inputDefendant;
+	
+	/*------------------Methods of the Review Page-------------------------------------------------------------*/
+	
+	/*
+	 * Determines loading of Page
+	 */
+	public Unit1ProceedingsPage ensurePageLoaded() {
+		super.ensurePageLoaded();
+		wait.until(ExpectedConditions.visibilityOf(titleReviewUnit1));
+		return this;
+	}
+	
+	//Click on "Edit" button for the first record in the main grid
+	public void clickButtonEdit() {
+		fluientWaitforElement(buttonEdit).click();
+	}
+	/*------------------Methods of the Review Card-------------------------------------------------------------*/
+
+	//Sets the new card with filling all fields in
+		public Unit1ProceedingsPage setProceedingCardUnit1(Unit1ProceedingCard unit1ProceedingCard){
+			inputJusticeType.click();
+			fluientWaitforElement(itemJusticeType);
+			inputGeneralSubject.click();
+			fluientWaitforElement(itemGeneralSubject);
+			type(inputPlaintiff, unit1ProceedingCard.plaintiff);
+			type(inputDefendant, unit1ProceedingCard.defendant);
+			return this;
+		}
+		
+		//Getting value from input-field "Plaintiff" in formerly created card
+		public String getInputPlaintiff() {
+			return inputPlaintiff.getAttribute("value");
+		}
+		
+		//Editing SOME field ("Defendant" ("Відповідач(боржник)"))
+		public void setInputDefendant(String someText){
+			type(inputDefendant, someText);
+		}
+		
+		//Getting existing value from input-field ("Defendant" ("Відповідач(боржник)"))
+		public String getInputDefendant() {
+			return inputDefendant.getAttribute("value");
+		}
+
+
+}

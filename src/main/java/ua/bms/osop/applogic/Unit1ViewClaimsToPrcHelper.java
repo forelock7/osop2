@@ -6,7 +6,7 @@ package ua.bms.osop.applogic;
  * Related with Unit1ClaimsToPrcCard model(ua.bms.osop.model.Unit1ClaimsToPrcCard)
  * Uses methods from Unit1ClaimsToPrcPage
  */
-public interface Unit1ClaimsToPrcHelper {
+public interface Unit1ViewClaimsToPrcHelper {
 	
 	boolean isOnUnit1ClaimsToPrcPage();
 

@@ -6,7 +6,7 @@ package ua.bms.osop.applogic;
  * Related with Unit1ClaimsCard model(ua.bms.osop.model.Unit1ClaimsCard)
  * Uses methods from Unit1ClaimsPage
  */
-public interface Unit1ClaimsHelper {
+public interface Unit1ViewClaimsHelper {
 
 	boolean isOnUnit1ClaimsPage();
 	

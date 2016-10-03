@@ -13,14 +13,14 @@ public class Unit1ReviewProceedingToProcuracyTest extends BasicTestCase {
 	public void testJumpToUnit1ReviewPage() {
 		assertTrue(app.getUserHelper().isLoggedIn());
 		app.getNavigationUnit1Helper().goToUnit1ReviewToPrcPage();
-		assertTrue(app.getUnit1ReviewToPrcHelper().isOnUnit1ReviewToPrcPage());
+		assertTrue(app.getUnit1ProceedingsToPrcHelper().isOnUnit1ReviewToPrcPage());
 	}
 	
 	@Test (groups = {"unit1_reviewAndClaimsToProcuracy"})
 	public void testJumpToUnit1ClaimsToPrcPage() {
 		assertTrue(app.getUserHelper().isLoggedIn());
 		app.getNavigationUnit1Helper().goToUnit1ClaimsToPrcPage();
-		assertTrue(app.getUnit1ClaimsToPrcHelper().isOnUnit1ClaimsToPrcPage());
+		assertTrue(app.getUnit1ViewClaimsToPrcHelper().isOnUnit1ClaimsToPrcPage());
 	}
 	
 }

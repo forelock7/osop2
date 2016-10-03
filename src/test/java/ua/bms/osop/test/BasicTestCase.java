@@ -3,6 +3,7 @@ package ua.bms.osop.test;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import ua.bms.osop.applogic1.ApplicationManager1;
+import ua.bms.osop.model.Unit1ProceedingCard;
 import ua.bms.osop.model.Unit4Card;
 import ua.bms.osop.model.Unit5ChargedCard;
 import ua.bms.osop.model.Unit5DocumentCard;
@@ -50,6 +51,12 @@ public class BasicTestCase {
 	protected User user2 = new User("failedLogin", "bMS$2016");
 	
 /*-----------------------------------------------------------------------------------------------------------------*/	
+	
+	/*Initialization of input fields from Review proceedings on a claim Card(Unit 1) except field with drop-down list*/
+	protected static Unit1ProceedingCard proceedingCard = new Unit1ProceedingCard(
+			/*Відповідач(боржник)*/"Відповідач - боржник");
+	
+/*-----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Military Administrative Offenses Card(Unit 9) except field with drop-down list*/
 	protected static Unit9Card mAOCard = new Unit9Card(
