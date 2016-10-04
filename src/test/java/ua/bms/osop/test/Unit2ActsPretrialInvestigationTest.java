@@ -20,7 +20,7 @@ public class Unit2ActsPretrialInvestigationTest extends BasicTestCase {
 		app.getUnit2ActsPIHelper().createCard(actPICard);
 		app.getUnit2ActsPIHelper().saveCard();
 		app.getUnit2ActsPIHelper().openCardToView();
-		Assert.assertEquals(actPICard.getProceedingNumber(), app.getUnit2ActsPIHelper().getClaimNumber());
+		Assert.assertEquals(actPICard.getProceedingNumber(), app.getUnit2ActsPIHelper().getProceedingNumber());
 		app.getUnit2ActsPIHelper().quitCard();
 	}
 	
@@ -30,7 +30,7 @@ public class Unit2ActsPretrialInvestigationTest extends BasicTestCase {
 		app.getUnit2ActsPIHelper().editCard(actPICard);
 		app.getUnit2ActsPIHelper().saveCard();
 		app.getUnit2ActsPIHelper().openCardToEdit();
-		Assert.assertEquals(actPICard.getSomeNewText(), app.getUnit2ActsPIHelper().getSummary());
+		Assert.assertEquals(actPICard.getSomeNewText(), app.getUnit2ActsPIHelper().getContent());
 		app.getUnit2ActsPIHelper().quitCard();		
 	}
 	

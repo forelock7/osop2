@@ -28,8 +28,10 @@ public class PageManager {
 	public Unit2ActPIPage unit2ActPIPage;
 	public Unit2ActPICard unit2ActPICard;
 	public Unit2AppealPage unit2AppealPage;
+	public Unit2AppealCard unit2AppealCard;
 	public Unit2CovertPage unit2CovertPage;
 	public Unit2PreventivePage unit2PreventivePage;
+	public Unit2PreventiveCard unit2PreventiveCard;
 	public Unit3CriminalCasePage unit3CriminalCasePage;
 	public Unit3CriminalProcPage unit3CriminalProcPage;
 	public Unit3OtherCriminalCasePage unit3OtherCriminalCasePage;
@@ -77,8 +79,10 @@ public class PageManager {
 		unit2ActPIPage = initElements(new Unit2ActPIPage(this));
 		unit2ActPICard = initElements(new Unit2ActPICard(this));
 		unit2AppealPage = initElements(new Unit2AppealPage(this));
+		unit2AppealCard = initElements(new Unit2AppealCard(this));
 		unit2CovertPage = initElements(new Unit2CovertPage(this));
 		unit2PreventivePage = initElements(new Unit2PreventivePage(this));
+		unit2PreventiveCard = initElements(new Unit2PreventiveCard(this));
 		unit3CriminalCasePage = initElements(new Unit3CriminalCasePage(this));
 		unit3CriminalProcPage = initElements(new Unit3CriminalProcPage(this));
 		unit3OtherCriminalCasePage = initElements(new Unit3OtherCriminalCasePage(this));

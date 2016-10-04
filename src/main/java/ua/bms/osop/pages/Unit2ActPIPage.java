@@ -51,7 +51,7 @@ public class Unit2ActPIPage extends AnyPage  {
 	
 	//Click on "Edit" button for the first record in the main grid
 	public void clickButtonEditCard() {
-		wait.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
+		fluientWaitforElement(buttonEdit).click();
 	}
 	
 	//Removing Card with getting registration number of the card that will be removed

@@ -2,18 +2,18 @@ package ua.bms.osop.model;
 
 import java.util.Random;
 
-
 /*
  * Unit 2: "Pre-trial investigation"("Досудове розслідування")
- * Implements model of 1 - "Acts of supervision over pre-trial investigation" Card("Акти нагляду за ДР");
+ * Implements model of 3 - "The Preventive Action"("Запобіжні заходи");
  */
-public class Unit2ActPICardModel {
-
-	private String proceedingNumber;
-	private String offenseQualification; 
-	private String investigationBeginDate;
-	private String content;
+public class Unit2PreventiveCardModel {
 	
+	private String proceedingNumber;
+	private String offenseQualification;
+	private String investigationBeginDate;
+	private String lastName;
+	private String firstName;
+	private String birthday;
 	
 	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
@@ -21,11 +21,12 @@ public class Unit2ActPICardModel {
 	//set registration number Card is been restoring from confirmation form of Restoring
 	private String regNumberRestoredCard;
 	
-	public Unit2ActPICardModel(String offenseQualification, String investigationBeginDate, String content) {
+	public Unit2PreventiveCardModel(String offenseQualification, String investigationBeginDate, String lastName, String firstName, String birthday) {
 		this.proceedingNumber = createProceedingNumber();
 		this.offenseQualification = offenseQualification;
 		this.investigationBeginDate = investigationBeginDate;
-		this.content = content;
+		this.lastName = lastName;
+		this.firstName = firstName;
 		this.someNewText = creatNewText();
 	}
 	
@@ -55,8 +56,16 @@ public class Unit2ActPICardModel {
 		return offenseQualification;
 	}
 	
-	public String getContent() {
-		return content;
+	public String getLastName() {
+		return lastName;
+	}
+	
+	public String getFirstName() {
+		return firstName;
+	}
+	
+	public String getBirthday() {
+		return birthday;
 	}
 	
 	public String getSomeNewText() {
@@ -81,4 +90,5 @@ public class Unit2ActPICardModel {
 	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
 		this.regNumberRestoredCard = regNumberRestoredCard;
 	}
+
 }

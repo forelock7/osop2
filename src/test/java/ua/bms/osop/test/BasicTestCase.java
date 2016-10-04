@@ -55,10 +55,29 @@ public class BasicTestCase {
 
 /*-----------------------------------------------------------------------------------------------------------------*/
 
-	/*Initialization of input fields from 1 - "Acts of supervision over pre-trial investigation" Card("Акти нагляду за ДР");(Unit 2) except field with drop-down list*/
+	/*Initialization of input fields from 1 - "Acts of supervision over pre-trial investigation" Card("Акти нагляду за ДР")(Unit 2) except field with drop-down list*/
 	protected static Unit2ActPICardModel actPICard = new Unit2ActPICardModel(
 			/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8897786675",
+			/*Дата  початку досудового розслідування:*/"04.12.2015",
 			/*Зміст(фабула)*/"Зміст   -- Pvbcshgbcvghsacvgh");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 2 - "The appeals on the pre-trial investigation"("Апеляційні скарги з питань ДР")(Unit 2) except field with drop-down list*/
+	protected static Unit2AppealCardModel appealCard = new Unit2AppealCardModel(
+			/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8ййййсуа86675",
+			/*ПІБ підозрюваного / обвинуваченого*/"Пупко Андрій",
+			/*Підстави для оскарження*/"Підстави --0 cvgh");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 3 - "The Preventive Action"("Запобіжні заходи");(Unit 2) except field with drop-down list*/
+	protected static Unit2PreventiveCardModel preventCard = new Unit2PreventiveCardModel(
+			/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8ййййсуа86675",
+			/*Дата  початку досудового розслідування:*/"11.02.2016",
+			/*Прізвище*/"Руні",
+			/*Ім'я*/"Вейн",
+			/*Дата народження*/"18.09.1988");
 	
 /*-----------------------------------------------------------------------------------------------------------------*/
 	

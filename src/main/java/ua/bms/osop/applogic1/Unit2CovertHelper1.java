@@ -9,7 +9,12 @@ public class Unit2CovertHelper1 extends DriverBasedHelper implements Unit2Covert
 		super(manager.getWebDriver());
 	}
 	
+	/*--------------------------------Covert Page----------------------------------------------------*/
+	
 	public boolean isOnUnit2CovertPage() {
 		return pages.unit2CovertPage.waitPageLoaded();
 	}
+	
+	
+	
 }

@@ -2,18 +2,16 @@ package ua.bms.osop.model;
 
 import java.util.Random;
 
-
 /*
  * Unit 2: "Pre-trial investigation"("Досудове розслідування")
- * Implements model of 1 - "Acts of supervision over pre-trial investigation" Card("Акти нагляду за ДР");
+ * Implements model of   2 - "The appeals on the pre-trial investigation"("Апеляційні скарги з питань ДР");
  */
-public class Unit2ActPICardModel {
-
-	private String proceedingNumber;
-	private String offenseQualification; 
-	private String investigationBeginDate;
-	private String content;
+public class Unit2AppealCardModel {
 	
+	private String proceedingNumber;
+	private String offenseQualification;
+	private String suspectedName;
+	private String groundsForAppeal;
 	
 	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
@@ -21,11 +19,11 @@ public class Unit2ActPICardModel {
 	//set registration number Card is been restoring from confirmation form of Restoring
 	private String regNumberRestoredCard;
 	
-	public Unit2ActPICardModel(String offenseQualification, String investigationBeginDate, String content) {
+	public Unit2AppealCardModel(String offenseQualification, String suspectedName, String groundsForAppeal) {
 		this.proceedingNumber = createProceedingNumber();
 		this.offenseQualification = offenseQualification;
-		this.investigationBeginDate = investigationBeginDate;
-		this.content = content;
+		this.suspectedName = suspectedName;
+		this.groundsForAppeal = groundsForAppeal;
 		this.someNewText = creatNewText();
 	}
 	
@@ -38,7 +36,7 @@ public class Unit2ActPICardModel {
 	/*Generation of random new text for editing some Text Field*/
 	private String creatNewText() {
 		Random rnd = new Random();
-		return "Some NEW teXt U2@##dddghfhds$$%&*^&*(&)" + Integer.toString(rnd.nextInt(999999999));
+		return "Some NEW teXt U2(2)@##ds%&*^&*(&)" + Integer.toString(rnd.nextInt(999999999));
 	}
 	
 	/*---Get Methods---*/
@@ -47,16 +45,16 @@ public class Unit2ActPICardModel {
 		return proceedingNumber;
 	}
 	
-	public String getInvestigationBeginDate() {
-		return investigationBeginDate;
+	public String getSuspectedName() {
+		return suspectedName;
 	}
 	
 	public String getOffenseQualification() {
 		return offenseQualification;
 	}
 	
-	public String getContent() {
-		return content;
+	public String getGroundsForAppeal() {
+		return groundsForAppeal;
 	}
 	
 	public String getSomeNewText() {
@@ -81,4 +79,5 @@ public class Unit2ActPICardModel {
 	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
 		this.regNumberRestoredCard = regNumberRestoredCard;
 	}
+
 }

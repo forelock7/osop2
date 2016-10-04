@@ -63,6 +63,24 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 		pages.unit4InternationalPage.restoreCardFromGridUnit4(unit4CardModel);
 	}
 	
+	/*
+	 * Gets number of the first record(card) in grid on the tab "Removed"
+	 * Checks existing of later removing card
+	 */
+	@Override
+	public String getRegNumberFirstRemovedCardInGrid(){
+		return pages.unit4InternationalCard.getRegNumberFromGridOnRemovedTab();
+	}
+	
+	/*
+	 * Gets number of the first record(card) in grid on the main tab
+	 * Checks existing of later restoring card
+	 */
+	@Override
+	public String getRegNumberFirstCardInGrid(){
+		return pages.unit4InternationalCard.getRegNumberFromGridOnMainTab();
+	}
+	
 	/*--------------------------------International Card----------------------------------------------------*/
 	
 	/*Creates a new Card with filling all fields in and submitting*/
@@ -89,24 +107,6 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 		return pages.unit4InternationalCard.getInputSummaryUnit4();
 	}
 		
-	/*
-	 * Gets number of the first record(card) in grid on the tab "Removed"
-	 * Checks existing of later removing card
-	 */
-	@Override
-	public String getRegNumberFirstRemovedCardInGrid(){
-		return pages.unit4InternationalCard.getRegNumberFromGridOnRemovedTab();
-	}
-	
-	/*
-	 * Gets number of the first record(card) in grid on the main tab
-	 * Checks existing of later restoring card
-	 */
-	@Override
-	public String getRegNumberFirstCardInGrid(){
-		return pages.unit4InternationalCard.getRegNumberFromGridOnMainTab();
-	}
-	
 	//Saves Card(clicking "Save" button)
 	@Override
 	public void saveCard() {
