@@ -1,7 +1,7 @@
 package ua.bms.osop.applogic1;
 
 import ua.bms.osop.applogic.Unit9Helper;
-import ua.bms.osop.model.Unit9Card;
+import ua.bms.osop.model.Unit9CardModel;
 
 /*
  * Ancillary Class for tests on Military Administrative Offenses Page
@@ -55,28 +55,14 @@ public class Unit9Helper1 extends DriverBasedHelper implements Unit9Helper  {
 	
 	/*Removes card(record) from main grid on Unit9*/
 	@Override
-	public void removeCardUnit9(Unit9Card unit9Card){
-		pages.unit9MilitaryPage.removeCardUnit9(unit9Card);
+	public void removeCardUnit9(Unit9CardModel unit9CardModel){
+		pages.unit9MilitaryPage.removeCardUnit9(unit9CardModel);
 	}
 	
 	/*Restores later removed card*/
 	@Override
-	public void restoreCardUnit9(Unit9Card unit9Card){
-		pages.unit9MilitaryPage.restoreCardUnit9(unit9Card);
-	}
-	
-	/*----------------------------Military Card-----------------------------------------------------*/
-	
-	/*Creates a new Card with filling all fields in and submitting*/
-	@Override
-	public void createCardUnit9(Unit9Card unit9Card){
-		pages.unit9MilitaryPage.setCardUnit9(unit9Card);
-	}
-	
-	/*Edits card with changing value in field "Theory"*/
-	@Override
-	public void editCardUnit9(Unit9Card unit9Card){
-		pages.unit9MilitaryPage.setInputTheoryUnit9(unit9Card.someNewText);
+	public void restoreCardUnit9(Unit9CardModel unit9CardModel){
+		pages.unit9MilitaryPage.restoreCardUnit9(unit9CardModel);
 	}
 	
 	/*
@@ -96,12 +82,28 @@ public class Unit9Helper1 extends DriverBasedHelper implements Unit9Helper  {
 	public String getRegNumberFirstCardInGrid(){
 		return pages.unit9MilitaryPage.getRegNumberFromGridOnMainTab();
 	}
+	
+	/*----------------------------Military Card-----------------------------------------------------*/
+	
+	/*Creates a new Card with filling all fields in and submitting*/
+	@Override
+	public void createCardUnit9(Unit9CardModel unit9CardModel){
+		pages.unit9MilitaryCard.setCardUnit9(unit9CardModel);
+	}
+	
+	/*Edits card with changing value in field "Theory"*/
+	@Override
+	public void editCardUnit9(Unit9CardModel unit9CardModel){
+		pages.unit9MilitaryCard.setInputTheoryUnit9(unit9CardModel.someNewText);
+	}
+	
+
 
 	
 	//Gets Claim Number
 	@Override
 	public String getProtNumber() {
-		return pages.unit9MilitaryPage.getInputProtocolNumberUnit9();
+		return pages.unit9MilitaryCard.getInputProtocolNumberUnit9();
 	}
 		
 	/*
@@ -111,18 +113,18 @@ public class Unit9Helper1 extends DriverBasedHelper implements Unit9Helper  {
 	 */
 	@Override
 	public String getTheory(){
-		return pages.unit9MilitaryPage.getInputTheoryUnit9();
+		return pages.unit9MilitaryCard.getInputTheoryUnit9();
 	}
 	
 	//Save Card
 	public void saveCard() {
-		pages.unit9MilitaryPage.clickButtonSaveCard();
-		pages.unit9MilitaryPage.clickOnAlertOK();
+		pages.unit9MilitaryCard.clickButtonSaveCard();
+		pages.unit9MilitaryCard.clickOnAlertOK();
 	}
 	
 	//Quit from Card
 	public void quitCard() {
-		pages.unit9MilitaryPage.clickButtonExitFromCardForm();
+		pages.unit9MilitaryCard.clickButtonExitFromCardForm();
 	}
 
 }

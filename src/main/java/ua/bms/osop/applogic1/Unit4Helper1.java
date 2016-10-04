@@ -1,7 +1,7 @@
 package ua.bms.osop.applogic1;
 
 import ua.bms.osop.applogic.Unit4Helper;
-import ua.bms.osop.model.Unit4Card;
+import ua.bms.osop.model.Unit4CardModel;
 
 /*
  * Ancillary Class for tests on International Judicial Cooperation Page - Unit 4 ("Міжнародно-правове співробітництво")
@@ -53,40 +53,40 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	
 	/*Removes card(record) from main grid on Unit4*/
 	@Override
-	public void removeCardUnit4(Unit4Card unit4Card){
-		pages.unit4InternationalPage.removeCardFromGridUnit4(unit4Card);
+	public void removeCardUnit4(Unit4CardModel unit4CardModel){
+		pages.unit4InternationalPage.removeCardFromGridUnit4(unit4CardModel);
 	}
 	
 	/*Restores later removed card*/
 	@Override
-	public void restoreCardUnit4(Unit4Card unit4Card){
-		pages.unit4InternationalPage.restoreCardFromGridUnit4(unit4Card);
+	public void restoreCardUnit4(Unit4CardModel unit4CardModel){
+		pages.unit4InternationalPage.restoreCardFromGridUnit4(unit4CardModel);
 	}
 	
 	/*--------------------------------International Card----------------------------------------------------*/
 	
 	/*Creates a new Card with filling all fields in and submitting*/
 	@Override
-	public void createCard(Unit4Card unit4Card){
-		pages.unit4InternationalPage.setCardUnit4(unit4Card);
+	public void createCard(Unit4CardModel unit4CardModel){
+		pages.unit4InternationalCard.setCardUnit4(unit4CardModel);
 	}
 	
 	/*Edits card with changing value in field "Summary"*/
 	@Override
-	public void editCard(Unit4Card unit4Card) {
-		pages.unit4InternationalPage.setInputSummaryUnit4(unit4Card.someNewText);
+	public void editCard(Unit4CardModel unit4CardModel) {
+		pages.unit4InternationalCard.setInputSummaryUnit4(unit4CardModel.someNewText);
 	}
 			
 	//Gets Claim Number
 	@Override
 	public String getClaimNumber() {
-		return pages.unit4InternationalPage.getInputClaimNumberUnit4();
+		return pages.unit4InternationalCard.getInputClaimNumberUnit4();
 	}
 		
 	/*Returns value in field "Summary" from later edited card(after its editing)*/
 	@Override
 	public String getSummary(){
-		return pages.unit4InternationalPage.getInputSummaryUnit4();
+		return pages.unit4InternationalCard.getInputSummaryUnit4();
 	}
 		
 	/*
@@ -95,8 +95,7 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	 */
 	@Override
 	public String getRegNumberFirstRemovedCardInGrid(){
-		
-		return pages.unit4InternationalPage.getRegNumberFromGridOnRemovedTab();
+		return pages.unit4InternationalCard.getRegNumberFromGridOnRemovedTab();
 	}
 	
 	/*
@@ -105,20 +104,20 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	 */
 	@Override
 	public String getRegNumberFirstCardInGrid(){
-		return pages.unit4InternationalPage.getRegNumberFromGridOnMainTab();
+		return pages.unit4InternationalCard.getRegNumberFromGridOnMainTab();
 	}
 	
 	//Saves Card(clicking "Save" button)
 	@Override
 	public void saveCard() {
-		pages.unit4InternationalPage.clickButtonSaveCard();
-		pages.unit4InternationalPage.clickOnAlertOK();
+		pages.unit4InternationalCard.clickButtonSaveCard();
+		pages.unit4InternationalCard.clickOnAlertOK();
 	}
 		
 	//Quit from Card
 	@Override
 	public void quitCard() {
-		pages.unit4InternationalPage.clickButtonExitFromCardForm();
+		pages.unit4InternationalCard.clickButtonExitFromCardForm();
 	}
 
 }

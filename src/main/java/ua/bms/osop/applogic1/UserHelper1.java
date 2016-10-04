@@ -2,7 +2,7 @@ package ua.bms.osop.applogic1;
 
 import org.openqa.selenium.TimeoutException;
 import ua.bms.osop.applogic.UserHelper;
-import ua.bms.osop.model.User;
+import ua.bms.osop.model.UserModel;
 
 /*
  * Ancillary Class for tests with User Model(User's data)
@@ -21,9 +21,9 @@ public class UserHelper1 extends DriverBasedHelper implements UserHelper {
 	
 	/*Performs LogiIn. Catch case with wrong Login or Password*/
 	@Override
-	public void loginAs(User user) {
+	public void loginAs(UserModel userModel) {
 		pages.loginPage.ensurePageLoaded()
-		.setLoginForm(user)
+		.setLoginForm(userModel)
 		.clickButtonSubmit();
 		try{
 			pages.loginPage.acceptFailedLoginAlert();

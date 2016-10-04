@@ -10,7 +10,7 @@ public class Unit2ActsOAHelper1 extends DriverBasedHelper implements Unit2ActsOA
 	}
 	
 	public boolean isOnUnit2ActsOAPage() {
-		return pages.unit2ActsOAPage.waitPageLoaded();
+		return pages.unit2ActOAPage.waitPageLoaded();
 	}
 
 }

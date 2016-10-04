@@ -16,7 +16,7 @@ public class Unit1ViewClaimsToPrcHelper1 extends DriverBasedHelper implements Un
 	}
 	
 	public boolean isOnUnit1ClaimsToPrcPage() {
-		return pages.unit1ViewClaimsToPrcPage.waitPageLoaded();
+		return pages.unit1ViewClaimToPrcPage.waitPageLoaded();
 	}
 
 }

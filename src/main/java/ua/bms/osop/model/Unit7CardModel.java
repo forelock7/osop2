@@ -5,7 +5,7 @@ import java.util.Random;
 /*
  * Implements model of Unit 7 Card
  */
-public class Unit7Card {
+public class Unit7CardModel {
 
 	public String speechDate;
 	public String nameOfMassMedia;
@@ -34,7 +34,7 @@ public class Unit7Card {
 	}
 	
 	/*Constructor of Unit 7 Model Object*/
-	public Unit7Card(String speechDate, String nameOfMassMedia, String authorOfSpeech, String remark) {
+	public Unit7CardModel(String speechDate, String nameOfMassMedia, String authorOfSpeech, String remark) {
 
 		this.subjectOfSpeech = setSubjectOfSpeech();
 		this.speechDate = speechDate;

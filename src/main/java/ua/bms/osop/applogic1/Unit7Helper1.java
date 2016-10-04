@@ -1,7 +1,7 @@
 package ua.bms.osop.applogic1;
 
 import ua.bms.osop.applogic.Unit7Helper;
-import ua.bms.osop.model.Unit7Card;
+import ua.bms.osop.model.Unit7CardModel;
 
 /*
  * Ancillary Class for tests on Mass Media Page Unit 7
@@ -55,40 +55,14 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 	
 	/*Removes card(record) from main grid on Unit7*/
 	@Override
-	public void removeCardUnit7(Unit7Card unit7Card){
-		pages.unit7MassMediaPage.removeCardFromGridUnit7(unit7Card);
+	public void removeCardUnit7(Unit7CardModel unit7CardModel){
+		pages.unit7MassMediaPage.removeCardFromGridUnit7(unit7CardModel);
 	}
 	
 	/*Restores later removed card*/
 	@Override
-	public void restoreCardUnit7(Unit7Card unit7Card){
-		pages.unit7MassMediaPage.restoreCardFromGridUnit7(unit7Card);
-	}
-	
-	/*--------------------------Mass Media Card------------------------------------------*/
-	
-	/*Creates a new Card with filling all fields in and submitting*/
-	@Override
-	public void createCardUnit7(Unit7Card massMediaCard){
-		pages.unit7MassMediaPage.setCardUnit7(massMediaCard);
-	}
-	
-	/*Edits card with changing value in field "Author Of Speech"*/
-	@Override
-	public void editCardUnit7(Unit7Card unit7Card){
-		pages.unit7MassMediaPage.setInputAuthorOfSpeechUnit7(unit7Card.someNewText);
-	}
-		
-	//Gets Claim Number
-	@Override
-	public String getSubjectOfSpeech() {
-		return pages.unit7MassMediaPage.getInputSubjectOfSpeechUnit7();
-	}
-		
-	/*Returns value in field "Author Of Speech" from later edited card(after its editing)*/
-	@Override
-	public String getAuthorOfSpeech(){
-		return pages.unit7MassMediaPage.getInputAuthorOfSpeechUnit7();
+	public void restoreCardUnit7(Unit7CardModel unit7CardModel){
+		pages.unit7MassMediaPage.restoreCardFromGridUnit7(unit7CardModel);
 	}
 	
 	/*
@@ -109,15 +83,41 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 		return pages.unit7MassMediaPage.getRegNumberFromGridOnMainTab();
 	}
 	
+	/*--------------------------Mass Media Card------------------------------------------*/
+	
+	/*Creates a new Card with filling all fields in and submitting*/
+	@Override
+	public void createCardUnit7(Unit7CardModel massMediaCard){
+		pages.unit7MassMediaCard.setCardUnit7(massMediaCard);
+	}
+	
+	/*Edits card with changing value in field "Author Of Speech"*/
+	@Override
+	public void editCardUnit7(Unit7CardModel unit7CardModel){
+		pages.unit7MassMediaCard.setInputAuthorOfSpeechUnit7(unit7CardModel.someNewText);
+	}
+		
+	//Gets Claim Number
+	@Override
+	public String getSubjectOfSpeech() {
+		return pages.unit7MassMediaCard.getInputSubjectOfSpeechUnit7();
+	}
+		
+	/*Returns value in field "Author Of Speech" from later edited card(after its editing)*/
+	@Override
+	public String getAuthorOfSpeech(){
+		return pages.unit7MassMediaCard.getInputAuthorOfSpeechUnit7();
+	}
+	
 	//Save Card
 	public void saveCard() {
-		pages.unit7MassMediaPage.clickButtonSaveCard();
-		pages.unit7MassMediaPage.clickOnAlertOK();
+		pages.unit7MassMediaCard.clickButtonSaveCard();
+		pages.unit7MassMediaCard.clickOnAlertOK();
 	}
 	
 	//Quit from Card
 	public void quitCard() {
-		pages.unit7MassMediaPage.clickButtonExitFromCardForm();
+		pages.unit7MassMediaCard.clickButtonExitFromCardForm();
 	}
 
 }

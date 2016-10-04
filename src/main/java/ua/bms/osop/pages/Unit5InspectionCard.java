@@ -6,41 +6,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import ua.bms.osop.model.Unit5DocumentCard;
-import ua.bms.osop.model.Unit5InspectionCard;
 
-/*
- * Declare all Web-elements on Unit 5 "Supervision of the observance of laws in the execution of judgments."
- * ("Нагляд за додержанням законів при виконанні судових рішень.")
- * 1 - "List Inspections"("Перелік перевірок");
- * and the main methods with them
- */
-public class Unit5InspectionsPage extends AnyPage {
-		
+import ua.bms.osop.model.Unit5DocumentCardModel;
+import ua.bms.osop.model.Unit5InspectionCardModel;
+
+public class Unit5InspectionCard extends AnyPage {
+	
 	/*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-	public Unit5InspectionsPage(PageManager pages) {
+	public Unit5InspectionCard(PageManager pages) {
 		super(pages);
 	}
-	
-	/*-------------------The Web-Elements of Inspection Page----------------------------------------------------*/
-
-	//Title "List Inspections"("Перелік перевірок")
-	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Перелік перевірок')]")
-	private WebElement titleUnit5InspectionPage;
-
-	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-13).
-	@FindBy(xpath = "//table[1]//td[13]/div/img")
-	WebElement buttonEdit;
-	
-	//Button "Remove"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
-	@FindBy(xpath = "//table[1]//td[14]/div/img")
-	WebElement buttonRemove;
-	
-	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-13).
-	@FindBy(xpath = "//div[contains(@id, 'unit5-inspectionGridDeleted')]//table[1]//td[13]/div/img")
-	private WebElement buttonRestore;
 	
 	/*------------------The Web-Elements of the Inspection Card on "Basic Statements" Tab------------------------------------------------------*/
 	
@@ -93,35 +70,6 @@ public class Unit5InspectionsPage extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//table[1]//td[14]/div/img")
 	WebElement buttonRemoveDocTab;
 	
-	/*------------------Methods of Inspection Page---------------------------------------------------------------------------*/
-	
-	
-	/* Determines loading of Page */
-	public Unit5InspectionsPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit5InspectionPage));
-		return this;
-	}
-
-	public void clickButtonEditInspectionCardUnit5() {
-		fluientWaitforElement(buttonEdit).click();
-	}
-	
-	
-	//Removing Card with getting registration number of the card that will be removed
-	public void removeInspectionCardFromGridUnit5(Unit5InspectionCard unit5InspectionCard) {
-		fluientWaitforElement(buttonRemove).click();
-		unit5InspectionCard.regNumberRemovedCard = null;
-		unit5InspectionCard.regNumberRemovedCard = this.confirmationOfRemoving();
-	}
-	
-	//Restoring card with getting registration number of the card that will be restored
-	public void restoreCardFromGridUnit5(Unit5InspectionCard unit5InspectionCard) {
-		buttonRestore.click();
-		unit5InspectionCard.regNumberRestoredCard = null;
-		unit5InspectionCard.regNumberRestoredCard = confirmRestoring();
-	}
-	
 	/*-----------------Methods of Inspection Card on Basic Statements---------------------------------------------------------*/
 	
 	//Click on "Response Documents" Tab in "Inspection" Card
@@ -130,10 +78,10 @@ public class Unit5InspectionsPage extends AnyPage {
 	}
 	
 	//Sets the new card with filling all fields in
-	public Unit5InspectionsPage setInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard) {
-		type(inputInspectionDate, unit5InspectionCard.inspectionDate);
+	public Unit5InspectionCard setInspectionCardUnit5(Unit5InspectionCardModel unit5InspectionCardModel) {
+		type(inputInspectionDate, unit5InspectionCardModel.inspectionDate);
 		setSuperAgencyType();
-		setInputAgencyNameUnit5(unit5InspectionCard.agencyName);
+		setInputAgencyNameUnit5(unit5InspectionCardModel.agencyName);
 		return this;
 	}
 	
@@ -177,9 +125,9 @@ public class Unit5InspectionsPage extends AnyPage {
 	}
 	
 	//Removing Card with getting registration number of the card that will be removed
-	public void removeDocumentCardFormInspectionCard(Unit5DocumentCard unit5DocumentCard) {
+	public void removeDocumentCardFormInspectionCard(Unit5DocumentCardModel unit5DocumentCardModel) {
 		buttonRemoveDocTab.click();
-		unit5DocumentCard.regNumberRemovedCard = super.confirmationOfRemoving();
+		unit5DocumentCardModel.regNumberRemovedCard = super.confirmationOfRemoving();
 	}
 	
 	//Checks if button "Create" is present on "Response Documents" tab in "Inspection" Card
@@ -197,4 +145,5 @@ public class Unit5InspectionsPage extends AnyPage {
 		actionDoc.doubleClick(fluientWaitforElement(firstRecordInGrid)).perform();
 	}
 
+	
 }

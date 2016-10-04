@@ -9,12 +9,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * Unit 2: "Pre-trial investigation"("Досудове розслідування")
  * and the main methods with them
  */
-public class Unit2ActsOAPage extends AnyPage  {
+public class Unit2ActOAPage extends AnyPage  {
 
 	/*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-	public Unit2ActsOAPage(PageManager pages) {
+	public Unit2ActOAPage(PageManager pages) {
 		super(pages);
 	}
 	
@@ -28,7 +28,7 @@ public class Unit2ActsOAPage extends AnyPage  {
 	/*
 	 * Determines loading of Page
 	 */
-	public Unit2ActsOAPage ensurePageLoaded() {
+	public Unit2ActOAPage ensurePageLoaded() {
 		super.ensurePageLoaded();
 		wait.until(ExpectedConditions.visibilityOf(titleActsOAUnit2));
 		return this;

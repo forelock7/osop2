@@ -1,7 +1,7 @@
 package ua.bms.osop.applogic1;
 
 import ua.bms.osop.applogic.Unit6Helper;
-import ua.bms.osop.model.Unit6Card;
+import ua.bms.osop.model.Unit6CardModel;
 
 /*
  * Ancillary Class for tests on Claims Page Unit 6
@@ -20,81 +20,55 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 	/*Checks if on Unit 6 Page*/
 	@Override
 	public boolean isOnUnit6Page(){
-		return pages.unit6ClaimsPage.waitPageLoaded();
+		return pages.unit6ClaimPage.waitPageLoaded();
 	}
 	
 	//Moves to Main Tab
 	public void goToMainTab() {
-		pages.unit6ClaimsPage.clickOnMainTab();
+		pages.unit6ClaimPage.clickOnMainTab();
 	}
 	
 	//Moves to Removed Tab
 	public void goToRemovedTab() {
-		pages.unit6ClaimsPage.clickOnRemovedTab();
+		pages.unit6ClaimPage.clickOnRemovedTab();
 	}
 	
 	//Opens Card to create
 	public void openCardToCreate() {
-		pages.unit6ClaimsPage.clickButtonCreateCard();
+		pages.unit6ClaimPage.clickButtonCreateCard();
 	}
 	
 	//Opens Card to review 
 	@Override
 	public void openCardToView() {
-		pages.unit6ClaimsPage.doubleClickOnFirstRecordInGridOnMainTab();
+		pages.unit6ClaimPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	
 	//Opens Card to edit 
 	@Override
 	public void openCardToEdit() {
-		pages.unit6ClaimsPage.clickButtonEditCardUnit6();
+		pages.unit6ClaimPage.clickButtonEditCardUnit6();
 	}
 	
 	/*Removes card(record) from main grid on Unit6*/
 	@Override
-	public void removeCardUnit6(Unit6Card unit6Card){
-		pages.unit6ClaimsPage.removeCardFromGridUnit6(unit6Card);
+	public void removeCardUnit6(Unit6CardModel unit6CardModel){
+		pages.unit6ClaimPage.removeCardFromGridUnit6(unit6CardModel);
 	}
 	
 	/*Restores later removed card*/
 	@Override
-	public void restoreCardUnit6(Unit6Card unit6Card){
-		pages.unit6ClaimsPage.restoreCardFromGridUnit6(unit6Card);
+	public void restoreCardUnit6(Unit6CardModel unit6CardModel){
+		pages.unit6ClaimPage.restoreCardFromGridUnit6(unit6CardModel);
 	}
 	
-	/*---------------------------Claim Card-----------------------------------------*/
-		
-	/*Creates a new Card with filling all fields in and submitting*/
-	@Override
-	public void createCardUnit6(Unit6Card unit6Card){
-		pages.unit6ClaimsPage.setCardUnit6(unit6Card);
-	}
-	
-	/*Edits card with changing value in field "Summary"*/
-	@Override
-	public void editCardUnit6(Unit6Card unit6Card) {
-		pages.unit6ClaimsPage.setInputSummaryUnit6(unit6Card.someNewText);
-	}
-		
-	//Gets Claim Number
-	@Override
-	public String getClaimNumber() {
-		return pages.unit6ClaimsPage.getInputClaimNumberUnit6();
-	}
-		
-	/*Returns value in field "Summary" from later edited card(after its editing)*/
-	@Override
-	public String getSummary(){
-		return pages.unit6ClaimsPage.getInputSummaryUnit6();
-	}
-		
 	/*
 	 * Gets number of the first record(card) in grid on the tab "Removed"
 	 * Checks existing of later removing card
 	 */
 	@Override
 	public String getRegNumberRemovedCardInGrid(){
-		return pages.unit6ClaimsPage.getRegNumberFromGridOnRemovedTab();
+		return pages.unit6ClaimPage.getRegNumberFromGridOnRemovedTab();
 	}
 		
 	/*
@@ -103,18 +77,44 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 	 */
 	@Override
 	public String getRegNumberFirstCardInGrid(){
-		return pages.unit6ClaimsPage.getRegNumberFromGridOnMainTab();
+		return pages.unit6ClaimPage.getRegNumberFromGridOnMainTab();
+	}
+	
+	/*---------------------------Claim Card-----------------------------------------*/
+		
+	/*Creates a new Card with filling all fields in and submitting*/
+	@Override
+	public void createCardUnit6(Unit6CardModel unit6CardModel){
+		pages.unit6ClaimCard.setCardUnit6(unit6CardModel);
+	}
+	
+	/*Edits card with changing value in field "Summary"*/
+	@Override
+	public void editCardUnit6(Unit6CardModel unit6CardModel) {
+		pages.unit6ClaimCard.setInputSummaryUnit6(unit6CardModel.someNewText);
+	}
+		
+	//Gets Claim Number
+	@Override
+	public String getClaimNumber() {
+		return pages.unit6ClaimCard.getInputClaimNumberUnit6();
+	}
+		
+	/*Returns value in field "Summary" from later edited card(after its editing)*/
+	@Override
+	public String getSummary(){
+		return pages.unit6ClaimCard.getInputSummaryUnit6();
 	}
 	
 	//Quit from Card
 	public void saveCard() {
-		pages.unit6ClaimsPage.clickButtonSaveCard();
-		pages.unit6ClaimsPage.clickOnAlertOK();
+		pages.unit6ClaimCard.clickButtonSaveCard();
+		pages.unit6ClaimCard.clickOnAlertOK();
 	}
 	
 	//Quit from Card
 	public void quitCard() {
-		pages.unit6ClaimsPage.clickButtonExitFromCardForm();
+		pages.unit6ClaimCard.clickButtonExitFromCardForm();
 	}
 
 }

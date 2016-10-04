@@ -1,6 +1,6 @@
 package ua.bms.osop.applogic;
 
-import ua.bms.osop.model.Unit5InspectionCard;
+import ua.bms.osop.model.Unit5InspectionCardModel;
 
 /*
  * "Supervision of the observance of laws in the execution of judgments." Page - Unit 5
@@ -30,10 +30,10 @@ public interface Unit5InspectionsHelper {
 	
 	
 	
-	void createInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
-	void editInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
-	void removeInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
-	void restoreInspectionCardUnit5(Unit5InspectionCard unit5InspectionCard);
+	void createInspectionCardUnit5(Unit5InspectionCardModel unit5InspectionCardModel);
+	void editInspectionCardUnit5(Unit5InspectionCardModel unit5InspectionCardModel);
+	void removeInspectionCardUnit5(Unit5InspectionCardModel unit5InspectionCardModel);
+	void restoreInspectionCardUnit5(Unit5InspectionCardModel unit5InspectionCardModel);
 
 	String getRegNumberFirstRemovedInspectionCardInGrid();
 	String getRegNumberFirstCardInGrid();

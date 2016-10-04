@@ -1,6 +1,6 @@
 package ua.bms.osop.applogic;
 
-import ua.bms.osop.model.Unit6Card;
+import ua.bms.osop.model.Unit6CardModel;
 
 /*
  * Declares all methods implemented class ua.bms.osop.applogic1.Unit6Helper1
@@ -16,10 +16,10 @@ public interface Unit6Helper {
 	void openCardToView();
 	void openCardToEdit();
 	
-	void createCardUnit6(Unit6Card unit6Card);
-	void editCardUnit6(Unit6Card unit6Card);
-	void removeCardUnit6(Unit6Card unit6Card);
-	void restoreCardUnit6(Unit6Card unit6Card);
+	void createCardUnit6(Unit6CardModel unit6CardModel);
+	void editCardUnit6(Unit6CardModel unit6CardModel);
+	void removeCardUnit6(Unit6CardModel unit6CardModel);
+	void restoreCardUnit6(Unit6CardModel unit6CardModel);
 		
 	String getRegNumberRemovedCardInGrid();
 	String getRegNumberFirstCardInGrid();

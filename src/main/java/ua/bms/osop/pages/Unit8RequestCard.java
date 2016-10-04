@@ -4,38 +4,17 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import ua.bms.osop.model.Unit8Card;
 
-/*
- * Declare all Web-elements on Requests Page - Unit 8("Запити")
- * and the main methods with them
- */
-public class Unit8RequestsPage extends AnyPage {
-	
+import ua.bms.osop.model.Unit8CardModel;
+
+public class Unit8RequestCard extends AnyPage {
+
 	/*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-	public Unit8RequestsPage(PageManager pages) {
+	public Unit8RequestCard(PageManager pages) {
 		super(pages);
 	}
-	
-	/*-------------------The Web-Elements of Request Page----------------------------------------------------*/
-
-	//Title "Requests" ("Запити")
-	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Запити')]")
-	private WebElement titleUnit8;
-	
-	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-11).
-	@FindBy(xpath = "//table[1]//td[11]/div")
-	private WebElement buttonEdit;
-	
-	//Button "Delete"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-12).
-	@FindBy(xpath = "//table[1]//td[12]/div")
-	private WebElement buttonDelete;
-	
-	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-11).
-	@FindBy(xpath = "//div[contains(@id, 'unit68-claimGridDeleted')]//table[1]//td[11]/div/img")
-	private WebElement buttonRestore;
 	
 	/*------------------The Web-Elements of the Request Card------------------------------------------------------*/
 	
@@ -72,47 +51,19 @@ public class Unit8RequestsPage extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'unit68-claimTabMain')]//textarea")
 	private WebElement inputSummary;
 	
-	/*------------------Methods of Request Page---------------------------------------------------------------------------*/
-	
-	/*
-	 * Determines loading of Page
-	 */
-	public Unit8RequestsPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit8));
-		return this;
-	}
-	
-	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEditCardUnit8() {
-		fluientWaitforElement(buttonEdit).click();
-	}
-	
-	//Removing Card with getting registration number of the card that will be removed
-	public void removeCardFromGridUnit8(Unit8Card unit8Card){
-		buttonDelete.click();
-		unit8Card.regNumberRemovedCard = super.confirmationOfRemoving();
-	}
-	
-	//Restoring card with getting registration number of the card that will be restored
-	public void restoreCardFromGridUnit8(Unit8Card unit8Card) {
-		buttonRestore.click();
-		unit8Card.regNumberRestoredCard = confirmRestoring();
-	}
-	
 	/*------------------Methods of Request Card---------------------------------------------------------------------------*/
 	
 	//Setting the new card with filling all fields in
-	public Unit8RequestsPage setCardUnit8(Unit8Card unit8Card){
-		type(inputRequestNumber, unit8Card.requestNumber);
+	public Unit8RequestCard setCardUnit8(Unit8CardModel unit8CardModel){
+		type(inputRequestNumber, unit8CardModel.requestNumber);
 		inputRequesters.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'treepanel')]//span[contains(., 'Фізичні особи')]"))).click();
 		inputRequestReceived.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[1]"))).click();
-		type(inputReceiptDate, unit8Card.receiptDate);
+		type(inputReceiptDate, unit8CardModel.receiptDate);
 		inputRequestSpecificity.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'treepanel')]//span[contains(., 'З питань досудового розслідування')]"))).click();
-		type(inputSummary, unit8Card.summary);
+		type(inputSummary, unit8CardModel.summary);
 		return this;
 	}
 	
@@ -130,6 +81,4 @@ public class Unit8RequestsPage extends AnyPage {
 	public String getInputSummaryUnit8() {
 		return inputSummary.getAttribute("value");
 	}
-	
-	
 }

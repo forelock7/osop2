@@ -1,6 +1,6 @@
 package ua.bms.osop.applogic;
 
-import ua.bms.osop.model.Unit5ChargedCard;
+import ua.bms.osop.model.Unit5ChargedCardModel;
 
 /*
  * "Supervision of the observance of laws in the execution of judgments." Page - Unit 5
@@ -16,9 +16,9 @@ public interface Unit5ChargedHelper {
 	
 	void openChargedCardToReview();
 	
-	void createChargedCard(Unit5ChargedCard unit5ChargedCard);
-	void editChargedCard(Unit5ChargedCard unit5ChargedCard);
-	void deleteChargedPersonFromGrid(Unit5ChargedCard unit5ChargedCard);
+	void createChargedCard(Unit5ChargedCardModel unit5ChargedCardModel);
+	void editChargedCard(Unit5ChargedCardModel unit5ChargedCardModel);
+	void deleteChargedPersonFromGrid(Unit5ChargedCardModel unit5ChargedCardModel);
 	
 	String getChargedName();
 	String getPost();

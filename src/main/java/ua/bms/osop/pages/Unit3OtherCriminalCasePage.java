@@ -9,13 +9,13 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * Unit 3: "Public prosecution"("Держобвинувачення");
  * and the main methods with them
  */
-public class Unit3OtherCriminalCasesPage extends AnyPage {
+public class Unit3OtherCriminalCasePage extends AnyPage {
 
 
 	/*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-	public Unit3OtherCriminalCasesPage(PageManager pages) {
+	public Unit3OtherCriminalCasePage(PageManager pages) {
 		super(pages);
 	}
 	
@@ -29,7 +29,7 @@ public class Unit3OtherCriminalCasesPage extends AnyPage {
 	/*
 	 * Determines loading of Page
 	 */
-	public Unit3OtherCriminalCasesPage ensurePageLoaded() {
+	public Unit3OtherCriminalCasePage ensurePageLoaded() {
 		super.ensurePageLoaded();
 		wait.until(ExpectedConditions.visibilityOf(titleOtherCriminalCasesUnit3));
 		return this;

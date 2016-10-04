@@ -47,9 +47,9 @@ public abstract class AnyPage extends Page {
 	//Registration Number in the first record of grid on Main tab
 	@FindBy(xpath = "//div[contains(@id, 'tabpanel')]/div[1]//table[1]//td[2]/div")
 	private WebElement cellRegNumberInGridOnMainTab;
-
+	
 	/*The card*/
-		
+	
 	//Button "Save" ("Зберегти") for saving card
 	@FindBy(xpath = "//span[contains(., 'Зберегти')]")
 	private WebElement buttonSaveCard;
@@ -96,7 +96,9 @@ public abstract class AnyPage extends Page {
 	@FindBy (xpath = "//div[contains(@id, 'system-DeleteRecord')]//span[contains(text(), 'Відновити')]")
 	protected WebElement buttonConfirmRestoring;
 		
-	/*---------------------------------Methods-----------------------------------------*/	
+
+
+	/*---------------------------------Methods are related to Pages-----------------------------------------*/	
 		
 	protected void type(WebElement webElement, String text) {
 		//webElement.click();
@@ -123,6 +125,40 @@ public abstract class AnyPage extends Page {
 		action.doubleClick(fluientWaitforElement(cellRegNumberInGridOnMainTab)).perform();
 	}
 	
+	//Moving to "Deleted"("Видалені") tab
+	public void clickOnRemovedTab() {
+		tabRemoved.click();
+	}
+	
+	//Moving to Main Tab
+	public void clickOnMainTab() {
+		tabMain.click();		
+	}
+	
+	//Getting registration number from the first record in grid on "Deleted" tab
+	public String getRegNumberFromGridOnRemovedTab(){
+		return cellRegNumberInGridOnRemovedTab.getText();
+	}
+		
+	//Getting registration number from the first record in grid on Main tab
+	public String getRegNumberFromGridOnMainTab(){
+		return fluientWaitforElement(cellRegNumberInGridOnMainTab).getText();
+	}
+			
+	/*---------------------------------Methods are related to Cards-----------------------------------------*/
+	
+	protected boolean isElementPresent(WebElement element) {
+		try {
+			element.isDisplayed();
+			return true;
+		} catch (NoSuchElementException e) {
+			return false;
+			}
+		 catch (ElementNotVisibleException e1) {
+			 return false;
+		 }
+	}
+		
 	//Clicking on "Save"("Зберегти") button in Card
 	public void clickButtonSaveCard() {
 		buttonSaveCard.click();
@@ -150,44 +186,12 @@ public abstract class AnyPage extends Page {
 		return regNumberRemovedCard;
 	}
 	
-	//Moving to "Deleted"("Видалені") tab
-	public void clickOnRemovedTab() {
-		tabRemoved.click();
-		}
-	
-	//Moving to Main Tab
-	public void clickOnMainTab() {
-		tabMain.click();		
-	}
-	
-	//Getting registration number from the first record in grid on "Deleted" tab
-	public String getRegNumberFromGridOnRemovedTab(){
-		return cellRegNumberInGridOnRemovedTab.getText();
-	}
-	
 	//Confirmation of Card Recovering with getting registration number of recovered card	
 	protected String confirmRestoring() {
 		String regNumberRestoringCard = fieldRegNumInConfirmationForm.getAttribute("value");
 		buttonConfirmRestoring.click();
 		this.clickOnAlertOK();
 		return regNumberRestoringCard;
-	}
-	
-	//Getting registration number from the first record in grid on Main tab
-	public String getRegNumberFromGridOnMainTab(){
-		return fluientWaitforElement(cellRegNumberInGridOnMainTab).getText();
-	}
-			
-	protected boolean isElementPresent(WebElement element) {
-		try {
-			element.isDisplayed();
-			return true;
-		} catch (NoSuchElementException e) {
-			return false;
-			}
-		 catch (ElementNotVisibleException e1) {
-			 return false;
-		 }
 	}
 }
 

@@ -8,7 +8,7 @@ import java.util.Random;
  * 1 - List Inspections(Перелік перевірок);
  * Implements model of Unit 5 Inspection Card
  */
-public class Unit5InspectionCard {
+public class Unit5InspectionCardModel {
 	
 	public String inspectionDate;
 	public String agencyName;
@@ -20,7 +20,7 @@ public class Unit5InspectionCard {
 	public String regNumberRestoredCard;
 	
 	/*Constructor of Inspection Card Unit 5 Model Object*/
-	public Unit5InspectionCard(String inspectionDate) {
+	public Unit5InspectionCardModel(String inspectionDate) {
 		this.inspectionDate = inspectionDate;
 		
 		this.agencyName = createAgencyName();

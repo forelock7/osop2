@@ -9,12 +9,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
  * Unit 1 "Presentetion" ("Представництво")
  * and the main methods with them
  */
-public class Unit1ViewClaimsPage extends AnyPage {
+public class Unit1ViewClaimPage extends AnyPage {
 
 	/*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-	public Unit1ViewClaimsPage(PageManager pages) {
+	public Unit1ViewClaimPage(PageManager pages) {
 		super(pages);
 	}
 	
@@ -28,7 +28,7 @@ public class Unit1ViewClaimsPage extends AnyPage {
 	/*
 	 * Determines loading of Page
 	 */
-	public Unit1ViewClaimsPage ensurePageLoaded() {
+	public Unit1ViewClaimPage ensurePageLoaded() {
 		super.ensurePageLoaded();
 		wait.until(ExpectedConditions.visibilityOf(titleClaimsUnit1));
 		return this;

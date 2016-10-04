@@ -7,33 +7,17 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import ua.bms.osop.model.Unit5ChargedCard;
-import ua.bms.osop.model.Unit5DocumentCard;
+import ua.bms.osop.model.Unit5ChargedCardModel;
+import ua.bms.osop.model.Unit5DocumentCardModel;
 
-/*
- * Declare all Web-elements on Unit 5 "Supervision of the observance of laws in the execution of judgments."
- * ("Нагляд за додержанням законів при виконанні судових рішень.")
- * 2 - "List of Response Documents"("Перелік документів реагування");
- * and the main methods with them
- */
-public class Unit5DocumentsPage  extends AnyPage  {
+public class Unit5DocumentCard extends AnyPage {
 
 	/*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-	public Unit5DocumentsPage(PageManager pages) {
+	public Unit5DocumentCard(PageManager pages) {
 		super(pages);
 	}
-	
-	/*-------------------The Web-Elements of "Response Document" Page----------------------------------------------------*/
-
-	//Title "List of Response Documents"("Перелік документів реагування");
-	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Перелік документів реагування')]")
-	private WebElement titleUnit5Documents;
-	
-	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-16).
-	@FindBy(xpath = "//div[contains(@id, 'unit5-actGridDeleted')]//table[1]//td[16]/div/img")
-	private WebElement buttonRestore;
 	
 	/*------------------The Web-Elements of the "Response Document" Card ------------------------------------------------------*/
 	
@@ -88,22 +72,6 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	@FindBy(xpath = "(//div[contains(@id, 'unit5-actTabMain')]//textarea)[1]")
 	private WebElement inputDocumentContent;
 	
-	/*-------------------------The Methods of the "Response Document" Page --------------------------*/
-	
-	/*
-	 * Determines loading of Page
-	 */
-	public Unit5DocumentsPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit5Documents));
-		return this;
-	}
-	
-	public void restoreCardFromGrid(Unit5DocumentCard unit5DocumentCard) {
-		buttonRestore.click();
-		unit5DocumentCard.regNumberRestoredCard = confirmRestoring();
-	}
-	
 	/*-------------------------The Methods of the "Response Document" Card --------------------------*/
 	
 	//Clicking on "Save"("Зберегти") button in Card
@@ -131,18 +99,18 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	}
 
 	//Deletes first record(charged person) from grid
-	public void deleteChargedRecordFormGridInDocument(Unit5ChargedCard unit5ChargedCard) {
-		unit5ChargedCard.chargedNameDeletedCard = getNameFromChargedPersonGrid();
+	public void deleteChargedRecordFormGridInDocument(Unit5ChargedCardModel unit5ChargedCardModel) {
+		unit5ChargedCardModel.chargedNameDeletedCard = getNameFromChargedPersonGrid();
 		buttonDeleteChargedFromGrid.click();
 	}
 	
 	//Fills several fields in Document Card
-	public Unit5DocumentsPage setDocumentCard(Unit5DocumentCard unit5DocumentCard) {
+	public Unit5DocumentCard setDocumentCard(Unit5DocumentCardModel unit5DocumentCardModel) {
 		inputDocumentType.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(@id, 'boundlist')]//li[1])[1]"))).click();
 		setSuperAgencyTypeReport();
 		setSuperAgencyTypeAdd();
-		type(inputDocumentContent, unit5DocumentCard.documentContent);
+		type(inputDocumentContent, unit5DocumentCardModel.documentContent);
 		return this;
 	}
 	
@@ -180,8 +148,5 @@ public class Unit5DocumentsPage  extends AnyPage  {
 	public boolean isPresentRecordInChargedGrid() {
 		return isElementPresent(cellNameChargedGrid);
 	}
-
-
-
 
 }

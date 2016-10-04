@@ -6,7 +6,7 @@ import java.util.Random;
  * "International Judicial Cooperation" Page - Unit 4 ("Міжнародно-правове співробітництво")
  * Implements model of Unit 4 Card
  */
-public class Unit4Card {
+public class Unit4CardModel {
 
 	public String claimNumber;
 	public String receiptDate;
@@ -19,7 +19,7 @@ public class Unit4Card {
 	public String regNumberRestoredCard;
 	
 	/*Constructor of Unit 4 Model Object*/
-	public Unit4Card(String receiptDate, String summary) {
+	public Unit4CardModel(String receiptDate, String summary) {
 		this.claimNumber = createClaimNumber();
 		
 		this.receiptDate = receiptDate;

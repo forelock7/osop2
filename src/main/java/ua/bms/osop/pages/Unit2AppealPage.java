@@ -5,32 +5,32 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 /*
- * Declare all Web-elements on 1 - "Acts of supervision over pre-trial investigation"("Акти нагляду за ДР");
+ * Declare all Web-elements on - 2 - "The appeals on the pre-trial investigation"("Апеляційні скарги з питань ДР");
  * Unit 2: "Pre-trial investigation"("Досудове розслідування")
  * and the main methods with them
  */
-public class Unit2ActsPIPage extends AnyPage  {
+public class Unit2AppealPage extends AnyPage  {
 
 	/*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-	public Unit2ActsPIPage(PageManager pages) {
+	public Unit2AppealPage(PageManager pages) {
 		super(pages);
 	}
 	
 	/*-------------------The Web-Elements of Page----------------------------------------------------*/
 
-	//Title of "Acts of supervision over pre-trial investigation"("Акти нагляду за ДР")
-	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Акти нагляду за ДР')]")
-	private WebElement titleActsPIUnit2;
+	//Title of "The appeals on the pre-trial investigation"("Апеляційні скарги з питань ДР");
+	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Апеляційні скарги з питань ДР')]")
+	private WebElement titleAppealsUnit2;
 	/*-------------------Methods of Page-------------------------------------------------------------*/
 
 	/*
 	 * Determines loading of Page
 	 */
-	public Unit2ActsPIPage ensurePageLoaded() {
+	public Unit2AppealPage ensurePageLoaded() {
 		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleActsPIUnit2));
+		wait.until(ExpectedConditions.visibilityOf(titleAppealsUnit2));
 		return this;
 	}
 }

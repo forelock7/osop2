@@ -1,42 +1,22 @@
 package ua.bms.osop.pages;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.presenceOfElementLocated;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import ua.bms.osop.model.Unit6Card;
 
-/*
- * Declare all Web-elements on Claims Page - Unit 6("Звернення")
- * and the main methods with them
- */
-public class Unit6ClaimsPage extends AnyPage {
-	
+import ua.bms.osop.model.Unit6CardModel;
+
+public class Unit6ClaimCard extends AnyPage {
+
 	/*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-	public Unit6ClaimsPage(PageManager pages) {
+	public Unit6ClaimCard(PageManager pages) {
 		super(pages);
 	}
-		
-	/*-------------------The Web-Elements of Claim Page----------------------------------------------------*/
-
-	//Title "Claims" ("Звернення")
-	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Звернення')]")
-	private WebElement titleUnit6;
-	
-	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-14).
-	@FindBy(xpath = "//table[1]//td[14]/div/img")
-	private WebElement buttonEdit;
-	
-	//Button "Remove"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-15).
-	@FindBy(xpath = "//table[1]//td[15]/div/img")
-	private WebElement buttonRemove;
-	
-	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
-	@FindBy(xpath = "//div[contains(@id, 'unit68-requestGridDeleted')]//table[1]//td[14]/div/img")
-	private WebElement buttonRestore;
 	
 	/*------------------The Web-Elements of the Claim Card------------------------------------------------------*/
 	
@@ -100,49 +80,20 @@ public class Unit6ClaimsPage extends AnyPage {
 	@FindBy (xpath = "//div[contains(@id, 'treepanel')]//span[contains(., 'З питань надання правової допомоги')]") 
 	private WebElement itemClaimCategory;
 	
-	
-	/*------------------Methods of Claim Page---------------------------------------------------------------------------*/
-
-	/*
-	 * Determines loading of Page
-	 */
-	public Unit6ClaimsPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleUnit6));
-		return this;
-	}
-	
-	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEditCardUnit6() {
-		fluientWaitforElement(buttonEdit).click();
-	}
-	
-	//Removing Card with getting registration number of the card that will be removed
-	public void removeCardFromGridUnit6(Unit6Card unit6Card){
-		buttonRemove.click();
-		unit6Card.regNumberRemovedCard = super.confirmationOfRemoving();
-	}
-	
-	//Restoring card with getting registration number of the card that will be restored
-	public void restoreCardFromGridUnit6(Unit6Card unit6Card) {
-		buttonRestore.click();
-		unit6Card.regNumberRestoredCard = confirmRestoring();
-	}
-	
 	/*------------------------------Methods of Claim Card------------------------------------------------*/
 	
 	//Setting the new card with filling all fields in
-	public Unit6ClaimsPage setCardUnit6(Unit6Card unit6Card){
-		type(inputClaimNumber, unit6Card.claimNumber);
+	public Unit6ClaimCard setCardUnit6(Unit6CardModel unit6CardModel){
+		type(inputClaimNumber, unit6CardModel.claimNumber);
 		inputClaimType.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Первинне')]"))).click();
 		inputApplicantForm.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Фізична особа')]"))).click();
 		clickButtonAddFacts();
-		setApplicantFacts(unit6Card);
+		setApplicantFacts(unit6CardModel);
 		clickButtonAddApplicantInForm();
-		type(inputSummary, unit6Card.summary);
-		type(inputReceivingProsecutorDate, unit6Card.receivingProsecutorDate);
+		type(inputSummary, unit6CardModel.summary);
+		type(inputReceivingProsecutorDate, unit6CardModel.receivingProsecutorDate);
 		inputArrowEstablishInUnit.click();
 		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'boundlist')]//tr[2]/td[1]/div"))).click();
 		inputClaimCategory.click();
@@ -155,7 +106,7 @@ public class Unit6ClaimsPage extends AnyPage {
 	}
 	
 	//Adding a record into grid "Відомості про заявника, підписанта організації заявника та про співскаржників"
-	private Unit6ClaimsPage setApplicantFacts(Unit6Card claimCard) {
+	private Unit6ClaimCard setApplicantFacts(Unit6CardModel claimCard) {
 		inputApplicantFormGrid.click();
 		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit68-request-as-applicantCard')]/following-sibling::div[2]/div[contains(@id, 'boundlist')]//li[contains(.,'Фізична особа')]"))).click();
 		inputApplicantType.click();

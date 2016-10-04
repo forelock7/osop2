@@ -26,7 +26,7 @@ public class BasicTestCase {
 		if (app.getUserHelper().isLoggedIn()) {
 			return;
 		}
-		app.getUserHelper().loginAs(user);
+		app.getUserHelper().loginAs(userModel);
 	}
 	
 	/*Quits from WebDriver after performing Test Suite*/
@@ -37,26 +37,33 @@ public class BasicTestCase {
 	
 /*-----------------------------------------------------------------------------------------------------------------*/
 	/*Initialization of object "user"*/	
-	protected User user = new User("vova", "bMS$2016");
-	protected User user1 = new User("vova", "failedPassword");
-	protected User user2 = new User("failedLogin", "bMS$2016");
+	protected UserModel userModel = new UserModel("vova", "bMS$2016");
+	protected UserModel user1 = new UserModel("vova", "failedPassword");
+	protected UserModel user2 = new UserModel("failedLogin", "bMS$2016");
 	
 /*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Review proceedings on a claim Card(Unit 1) except field with drop-down list*/
-	protected static Unit1ProceedingCard proceedingCard = new Unit1ProceedingCard(
+	protected static Unit1ProceedingCardModel proceedingCard = new Unit1ProceedingCardModel(
 			/*Відповідач(боржник)*/"Відповідач - боржник");
 	
 /*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from Review proceedings on a claim to Procuracy authorities Card(Unit 1) except field with drop-down list*/
-	protected static Unit1ProceedingToPrcCard proceedingToPrcCard = new Unit1ProceedingToPrcCard(
+	protected static Unit1ProceedingToPrcCardModel proceedingToPrcCard = new Unit1ProceedingToPrcCardModel(
 			/*Відповідач*/"Відповідач(до прокуратури)");
 
 /*-----------------------------------------------------------------------------------------------------------------*/
 
+	/*Initialization of input fields from 1 - "Acts of supervision over pre-trial investigation" Card("Акти нагляду за ДР");(Unit 2) except field with drop-down list*/
+	protected static Unit2ActPICardModel actPICard = new Unit2ActPICardModel(
+			/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8897786675",
+			/*Зміст(фабула)*/"Зміст   -- Pvbcshgbcvghsacvgh");
+	
+/*-----------------------------------------------------------------------------------------------------------------*/
+	
 	/*Initialization of input fields from Military Administrative Offenses Card(Unit 9) except field with drop-down list*/
-	protected static Unit9Card mAOCard = new Unit9Card(
+	protected static Unit9CardModel mAOCard = new Unit9CardModel(
 			/*Дата складання протоколу*/"01.07.2016", 
 			/*Дата вчинення правопорушення*/"02.07.2016", 
 			/*Фабула*/"Фабула_бот-english", 
@@ -74,7 +81,7 @@ public class BasicTestCase {
 /*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Mass Media Card(Unit 7) except field with drop-down list*/
-	protected static Unit7Card mMCard = new Unit7Card(
+	protected static Unit7CardModel mMCard = new Unit7CardModel(
 			/*Дата виступу*/"28.07.2016",
 			/*Назва ЗМІ*/"Назва ЗМІ 099089667545233",
 			/*Автор*/"Автор Author 56473657829*^&%#@@!",
@@ -83,7 +90,7 @@ public class BasicTestCase {
 /*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Claim Card(Unit 6) except field with drop-down list*/
-	protected static Unit6Card clCard = new Unit6Card (
+	protected static Unit6CardModel clCard = new Unit6CardModel (
 			/*Назва заявника*/"Petrov",
 			/*Стислий зміст*/"HUIyugguswcgygw",
 			/*Дата надходження до прокуратури*/"15.09.2016");
@@ -91,32 +98,32 @@ public class BasicTestCase {
 /*----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Request Card(Unit 8) except field with drop-down list*/
-	protected static Unit8Card reqCard = new Unit8Card (
+	protected static Unit8CardModel reqCard = new Unit8CardModel (
 			/*Дата надходження*/"10.09.2016",
 			/*Стислий зміст*/"HUIyugguswcgy32435421мкуп!№;%:*:*+w");
 	
 /*----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from International Judicial Cooperation Card(Unit 4) except field with drop-down list*/
-	protected static Unit4Card intCard = new Unit4Card (
+	protected static Unit4CardModel intCard = new Unit4CardModel (
 			/*Дата надходження*/"11.09.2016",
 			/*Стислий зміст*/"HUIyugguswc1111111189ycgcvgas35421мкуп!№;%:*:*+w");
 	
 /*----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Inspection Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-	protected static Unit5InspectionCard inspectionCard = new Unit5InspectionCard (
+	protected static Unit5InspectionCardModel inspectionCard = new Unit5InspectionCardModel (
 			/*Дата проведення перевірки*/"08.09.2016");
 
 /*----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Response Document Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-	protected static Unit5DocumentCard documentCard = new Unit5DocumentCard ();
+	protected static Unit5DocumentCardModel documentCard = new Unit5DocumentCardModel ();
 	
 /*----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Charged Person Card Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-	protected static Unit5ChargedCard chargedCard = new Unit5ChargedCard(
+	protected static Unit5ChargedCardModel chargedCard = new Unit5ChargedCardModel(
 			/*Посада*/"Керівник відділу роботи з клієнтами");
 
 }

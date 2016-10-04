@@ -10,6 +10,6 @@ public class Unit2AppealsHelper1 extends DriverBasedHelper implements Unit2Appea
 	}
 	
 	public boolean isOnUnit2AppealsPage() {
-		return pages.unit2AppealsPage.waitPageLoaded();
+		return pages.unit2AppealPage.waitPageLoaded();
 	}
 }

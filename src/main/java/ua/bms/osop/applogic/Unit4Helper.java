@@ -1,6 +1,6 @@
 package ua.bms.osop.applogic;
 
-import ua.bms.osop.model.Unit4Card;
+import ua.bms.osop.model.Unit4CardModel;
 
 /*
  * "International Judicial Cooperation" Page - Unit 4 ("Міжнародно-правове співробітництво")
@@ -17,10 +17,10 @@ public interface Unit4Helper {
 	void openCardToView();
 	void openCardToEdit();
 	
-	void createCard(Unit4Card unit4Card);
-	void editCard(Unit4Card unit4Card);
-	void removeCardUnit4(Unit4Card unit4Card);
-	void restoreCardUnit4(Unit4Card unit4Card);
+	void createCard(Unit4CardModel unit4CardModel);
+	void editCard(Unit4CardModel unit4CardModel);
+	void removeCardUnit4(Unit4CardModel unit4CardModel);
+	void restoreCardUnit4(Unit4CardModel unit4CardModel);
 
 	String getRegNumberFirstCardInGrid();
 	String getRegNumberFirstRemovedCardInGrid();

@@ -16,34 +16,43 @@ public class PageManager {
 	public NavigationUnit23Page navigationUnit23Page;
 	public NavigationUnit5Page navigationUnit5Page;
 	public NavigationUnits68Page navigationUnits68Page;
-	public Unit1ProceedingsPage unit1ProceedingsPage;
-	public Unit1ProceedingsToPrcPage unit1ProceedingsToPrcPage;
+	public Unit1ProceedingPage unit1ProceedingPage;
+	public Unit1ProceedingCard unit1ProceedingCard;
+	public Unit1ProceedingToPrcPage unit1ProceedingToPrcPage;
+	public Unit1ProceedingToPrcCard unit1ProceedingToPrcCard;
 	public Unit1CrimePage unit1CrimePage;
-	public Unit1ViewClaimsPage unit1ViewClaimsPage;
-	public Unit1ViewClaimsToPrcPage unit1ViewClaimsToPrcPage;
+	public Unit1ViewClaimPage unit1ViewClaimPage;
+	public Unit1ViewClaimToPrcPage unit1ViewClaimToPrcPage;
 	public Unit2ReleasePage unit2ReleasePage;
-	public Unit2ActsOAPage unit2ActsOAPage;
-	public Unit2ActsPIPage unit2ActsPIPage;
-	public Unit2AppealsPage unit2AppealsPage;
+	public Unit2ActOAPage unit2ActOAPage;
+	public Unit2ActPIPage unit2ActPIPage;
+	public Unit2ActPICard unit2ActPICard;
+	public Unit2AppealPage unit2AppealPage;
 	public Unit2CovertPage unit2CovertPage;
 	public Unit2PreventivePage unit2PreventivePage;
-	public Unit3CriminalCasesPage unit3CriminalCasesPage;
+	public Unit3CriminalCasePage unit3CriminalCasePage;
 	public Unit3CriminalProcPage unit3CriminalProcPage;
-	public Unit3OtherCriminalCasesPage unit3OtherCriminalCasesPage;
+	public Unit3OtherCriminalCasePage unit3OtherCriminalCasePage;
 	public Unit3OtherCriminalProcPage unit3OtherCriminalProcPage;
-	public Unit3ParticipationCasesPage unit3ParticipationCasesPage;
+	public Unit3ParticipationCasePage unit3ParticipationCasePage;
 	public Unit3ParticipationProcPage unit3ParticipationProcPage;
 	public Unit4InternationalPage unit4InternationalPage;
-	public Unit5InspectionsPage unit5InspectionsPage;
-	public Unit5DocumentsPage unit5DocumentsPage;
+	public Unit4InternationalCard unit4InternationalCard;
+	public Unit5InspectionPage unit5InspectionPage;
+	public Unit5InspectionCard unit5InspectionCard;
+	public Unit5DocumentPage unit5DocumentPage;
+	public Unit5DocumentCard unit5DocumentCard;
 	public Unit5ChargedPage unit5ChargedPage;
-	public Unit6ClaimsPage unit6ClaimsPage;
+	public Unit5ChargedCard unit5ChargedCard;
+	public Unit6ClaimPage unit6ClaimPage;
+	public Unit6ClaimCard unit6ClaimCard;
 	public Unit7MassMediaPage unit7MassMediaPage;
-	public Unit8RequestsPage unit8RequestsPage;
+	public Unit7MassMediaCard unit7MassMediaCard;
+	public Unit8RequestPage unit8RequestPage;
+	public Unit8RequestCard unit8RequestCard;
 	public Unit9MilitaryPage unit9MilitaryPage;
+	public Unit9MilitaryCard unit9MilitaryCard;
 	
-	
-
 	/*
 	 * Performs initialization of each page.
 	 * Dispatches control over WebDriver to determinate Page
@@ -56,31 +65,42 @@ public class PageManager {
 		navigationUnit23Page = initElements(new NavigationUnit23Page(this));
 		navigationUnit5Page = initElements(new NavigationUnit5Page(this));
 		navigationUnits68Page = initElements(new NavigationUnits68Page(this));
-		unit1ProceedingsPage = initElements(new Unit1ProceedingsPage(this));
-		unit1ProceedingsToPrcPage = initElements(new Unit1ProceedingsToPrcPage(this));
+		unit1ProceedingPage = initElements(new Unit1ProceedingPage(this));
+		unit1ProceedingCard = initElements(new Unit1ProceedingCard(this));
+		unit1ProceedingToPrcPage = initElements(new Unit1ProceedingToPrcPage(this));
+		unit1ProceedingToPrcCard = initElements(new Unit1ProceedingToPrcCard(this));
 		unit1CrimePage = initElements(new Unit1CrimePage(this));
-		unit1ViewClaimsPage = initElements(new Unit1ViewClaimsPage(this));
-		unit1ViewClaimsToPrcPage = initElements(new Unit1ViewClaimsToPrcPage(this));
+		unit1ViewClaimPage = initElements(new Unit1ViewClaimPage(this));
+		unit1ViewClaimToPrcPage = initElements(new Unit1ViewClaimToPrcPage(this));
 		unit2ReleasePage = initElements(new Unit2ReleasePage(this));
-		unit2ActsOAPage = initElements(new Unit2ActsOAPage(this));
-		unit2ActsPIPage = initElements(new Unit2ActsPIPage(this));
-		unit2AppealsPage = initElements(new Unit2AppealsPage(this));
+		unit2ActOAPage = initElements(new Unit2ActOAPage(this));
+		unit2ActPIPage = initElements(new Unit2ActPIPage(this));
+		unit2ActPICard = initElements(new Unit2ActPICard(this));
+		unit2AppealPage = initElements(new Unit2AppealPage(this));
 		unit2CovertPage = initElements(new Unit2CovertPage(this));
 		unit2PreventivePage = initElements(new Unit2PreventivePage(this));
-		unit3CriminalCasesPage = initElements(new Unit3CriminalCasesPage(this));
+		unit3CriminalCasePage = initElements(new Unit3CriminalCasePage(this));
 		unit3CriminalProcPage = initElements(new Unit3CriminalProcPage(this));
-		unit3OtherCriminalCasesPage = initElements(new Unit3OtherCriminalCasesPage(this));
+		unit3OtherCriminalCasePage = initElements(new Unit3OtherCriminalCasePage(this));
 		unit3OtherCriminalProcPage = initElements(new Unit3OtherCriminalProcPage(this));
-		unit3ParticipationCasesPage = initElements(new Unit3ParticipationCasesPage(this));
+		unit3ParticipationCasePage = initElements(new Unit3ParticipationCasePage(this));
 		unit3ParticipationProcPage = initElements(new Unit3ParticipationProcPage(this));
 		unit4InternationalPage = initElements(new Unit4InternationalPage(this));
-		unit5InspectionsPage = initElements(new Unit5InspectionsPage(this));
-		unit5DocumentsPage = initElements(new Unit5DocumentsPage(this));
+		unit4InternationalCard = initElements(new Unit4InternationalCard(this));
+		unit5InspectionPage = initElements(new Unit5InspectionPage(this));
+		unit5InspectionCard = initElements(new Unit5InspectionCard(this));
+		unit5DocumentPage = initElements(new Unit5DocumentPage(this));
+		unit5DocumentCard = initElements(new Unit5DocumentCard(this));
 		unit5ChargedPage = initElements(new Unit5ChargedPage(this));
-		unit6ClaimsPage = initElements(new Unit6ClaimsPage(this));
+		unit5ChargedCard = initElements(new Unit5ChargedCard(this));
+		unit6ClaimPage = initElements(new Unit6ClaimPage(this));
+		unit6ClaimCard = initElements(new Unit6ClaimCard(this));
 		unit7MassMediaPage = initElements(new Unit7MassMediaPage(this));
-		unit8RequestsPage = initElements(new Unit8RequestsPage(this));
+		unit7MassMediaCard = initElements(new Unit7MassMediaCard(this));
+		unit8RequestPage = initElements(new Unit8RequestPage(this));
+		unit8RequestCard = initElements(new Unit8RequestCard(this));
 		unit9MilitaryPage = initElements(new Unit9MilitaryPage(this));
+		unit9MilitaryCard = initElements(new Unit9MilitaryCard(this));
 	}
 	
 	/*
@@ -101,7 +121,7 @@ public class PageManager {
 		 * 3-Initialization Page using explicit waits with modified method AjaxElementLocatorFactory.
 		 * Waits till Web-element doesn't only appear in DOM and also be visible(is displayed)
 		 */
-	    PageFactory.initElements(new DisplayedElementLocatorFactory(driver, 2), page);
+	    PageFactory.initElements(new DisplayedElementLocatorFactory(driver, 1), page);
 	    return page;
 	}
 	  

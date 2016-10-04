@@ -22,7 +22,7 @@ public class LoginTest extends BasicTestCase {
 	
 	@Test(groups = {"login"}, priority = 3)
 	public void testLoginOK() {
-		app.getUserHelper().loginAs(user);
+		app.getUserHelper().loginAs(userModel);
 		assertTrue(app.getUserHelper().isLoggedIn());
 	}
 

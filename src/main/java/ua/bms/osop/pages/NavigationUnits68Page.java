@@ -44,15 +44,15 @@ public class NavigationUnits68Page extends AnyPage {
 	/*------------------Methods---------------------------------------------------------------------------*/
 	
 	//U6 - Moving from "Navigation Page of Units 6 and 8" to Unit 6 "Claims" page
-	public Unit6ClaimsPage clickUnit6MenuItem(){
+	public Unit6ClaimPage clickUnit6MenuItem(){
 		itemMenuU6.click();
-		return pages.unit6ClaimsPage;
+		return pages.unit6ClaimPage;
 	}
 	
 	//U8 - Moving from "Navigation Page of Units 6 and 8" to Unit 8 "Requests" page
-	public Unit8RequestsPage clickUnit8MenuItem(){
+	public Unit8RequestPage clickUnit8MenuItem(){
 		itemMenuU8.click();
-		return pages.unit8RequestsPage;
+		return pages.unit8RequestPage;
 	}
 
 }

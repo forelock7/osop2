@@ -7,7 +7,7 @@ import java.util.Random;
  * 2 - "Review proceedings on a claim to Procuracy authorities"("НП за позовом до органів прокуратури");
  * Implements model of Unit 1 Proceeding To Procuracy Card
  */
-public class Unit1ProceedingToPrcCard {
+public class Unit1ProceedingToPrcCardModel {
 
     public String plaintiff;
     public String defendant;
@@ -19,7 +19,7 @@ public class Unit1ProceedingToPrcCard {
     public String regNumberRestoredCard;
 
     /*Constructor of Unit 1 Claim Model Object*/
-    public Unit1ProceedingToPrcCard (String defendant) {
+    public Unit1ProceedingToPrcCardModel (String defendant) {
         this.plaintiff = createNewPaintiff();
         this.defendant = defendant;
 

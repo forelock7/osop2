@@ -49,15 +49,15 @@ public class NavigationUnit5Page extends AnyPage {
 	}
 	
 	//U5 - Moving from "Navigation Page in Unit 5" to Unit 5 "List Inspections" page
-	public Unit5InspectionsPage clickInspectionsMenuItem(){
+	public Unit5InspectionPage clickInspectionsMenuItem(){
 		itemInspectionsMenuU5.click();
-		return pages.unit5InspectionsPage;
+		return pages.unit5InspectionPage;
 	}
 	
 	//U5 - Moving from "Navigation Page in Unit 5" to Unit 5 "List of Response Documents" page
-	public Unit5DocumentsPage clickResponseDocumentsMenuItem(){
+	public Unit5DocumentPage clickResponseDocumentsMenuItem(){
 		itemResponseDocumentsMenuU5.click();
-		return pages.unit5DocumentsPage;
+		return pages.unit5DocumentPage;
 	}
 	
 	//U5 - Moving from "Navigation Page in Unit 5" to Unit 5 "List of Charged Person" page

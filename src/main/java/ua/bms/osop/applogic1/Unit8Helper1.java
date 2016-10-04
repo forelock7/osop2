@@ -1,7 +1,7 @@
 package ua.bms.osop.applogic1;
 
 import ua.bms.osop.applogic.Unit8Helper;
-import ua.bms.osop.model.Unit8Card;
+import ua.bms.osop.model.Unit8CardModel;
 
 /*
  * Ancillary Class for tests on Requests Page Unit 8
@@ -20,35 +20,47 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 	/*Checks if on Unit 8 Page*/
 	@Override
 	public boolean isOnUnit8Page(){
-		return pages.unit8RequestsPage.waitPageLoaded();
+		return pages.unit8RequestPage.waitPageLoaded();
 	}
 	
 	//Moves to Main Tab
 	public void goToMainTab() {
-		pages.unit8RequestsPage.clickOnMainTab();
+		pages.unit8RequestPage.clickOnMainTab();
 	}
 	
 	//Moves to Removed Tab
 	public void goToRemovedTab() {
-		pages.unit8RequestsPage.clickOnRemovedTab();
+		pages.unit8RequestPage.clickOnRemovedTab();
 	}
 	
 	//Opens Card to create 
 	@Override
 	public void openCardToCreate() {
-		pages.unit8RequestsPage.clickButtonCreateCard();
+		pages.unit8RequestPage.clickButtonCreateCard();
 	}
 	
 	//Opens Card to review 
 	@Override
 	public void openCardToView() {
-		pages.unit8RequestsPage.doubleClickOnFirstRecordInGridOnMainTab();
+		pages.unit8RequestPage.doubleClickOnFirstRecordInGridOnMainTab();
 	}
 	
 	//Opens Card to edit 
 	@Override
 	public void openCardToEdit() {
-		pages.unit8RequestsPage.clickButtonEditCardUnit8();
+		pages.unit8RequestPage.clickButtonEditCardUnit8();
+	}
+	
+	/*Removes card(record) from main grid on Unit8*/
+	@Override
+	public void removeCardUnit8(Unit8CardModel unit8CardModel){
+		pages.unit8RequestPage.removeCardFromGridUnit8(unit8CardModel);
+	}
+	
+	/*Restores later removed card*/
+	@Override
+	public void restoreCardUnit8(Unit8CardModel unit8CardModel){
+		pages.unit8RequestPage.restoreCardFromGridUnit8(unit8CardModel);
 	}
 	
 	/*
@@ -57,7 +69,7 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 	 */
 	@Override
 	public String getRegNumberFirstCardInGrid(){
-		return pages.unit8RequestsPage.getRegNumberFromGridOnMainTab();
+		return pages.unit8RequestPage.getRegNumberFromGridOnMainTab();
 	}
 	
 	/*
@@ -66,57 +78,47 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 	 */
 	@Override
 	public String getRegNumbreFirstRemovedCardInGrid(){
-		return pages.unit8RequestsPage.getRegNumberFromGridOnRemovedTab();
+		return pages.unit8RequestPage.getRegNumberFromGridOnRemovedTab();
 	}
 	
 	/*----------------------------Request Card-----------------------------------------------------*/
 	
 	/*Creates a new Card with filling all fields in and submitting*/
 	@Override
-	public void createCardUnit8(Unit8Card unit8Card){
-		pages.unit8RequestsPage.setCardUnit8(unit8Card);
+	public void createCardUnit8(Unit8CardModel unit8CardModel){
+		pages.unit8RequestCard.setCardUnit8(unit8CardModel);
 	}
 	
 	/*Edits card with changing value in field "Summary"*/
 	@Override
-	public void editCardUnit8(Unit8Card unit8Card) {
-		pages.unit8RequestsPage.setInputSummaryUnit8(unit8Card.someNewText);
+	public void editCardUnit8(Unit8CardModel unit8CardModel) {
+		pages.unit8RequestCard.setInputSummaryUnit8(unit8CardModel.someNewText);
 
 	}
 	
 	//Gets Claim Number
 	@Override
 	public String getRequestNumber() {
-		return pages.unit8RequestsPage.getInputRequestNumberUnit8();
+		return pages.unit8RequestCard.getInputRequestNumberUnit8();
 	}
 	
-	/*Removes card(record) from main grid on Unit8*/
-	@Override
-	public void removeCardUnit8(Unit8Card unit8Card){
-		pages.unit8RequestsPage.removeCardFromGridUnit8(unit8Card);
-	}
-	
-	/*Restores later removed card*/
-	@Override
-	public void restoreCardUnit8(Unit8Card unit8Card){
-		pages.unit8RequestsPage.restoreCardFromGridUnit8(unit8Card);
-	}
+
 		
 	/*Returns value in field "Summary" from later edited card(after its editing)*/
 	@Override
 	public String getSummary(){
-		return pages.unit8RequestsPage.getInputSummaryUnit8();
+		return pages.unit8RequestCard.getInputSummaryUnit8();
 	}
 		
 	//Save Card
 	public void saveCard() {
-		pages.unit8RequestsPage.clickButtonSaveCard();
-		pages.unit8RequestsPage.clickOnAlertOK();
+		pages.unit8RequestCard.clickButtonSaveCard();
+		pages.unit8RequestCard.clickOnAlertOK();
 	}
 	
 	//Quit from Card
 	public void quitCard() {
-		pages.unit8RequestsPage.clickButtonExitFromCardForm();
+		pages.unit8RequestCard.clickButtonExitFromCardForm();
 	}
 
 }

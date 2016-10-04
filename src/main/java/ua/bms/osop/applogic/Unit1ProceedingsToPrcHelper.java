@@ -1,6 +1,6 @@
 package ua.bms.osop.applogic;
 
-import ua.bms.osop.model.Unit1ProceedingToPrcCard;
+import ua.bms.osop.model.Unit1ProceedingToPrcCardModel;
 
 /*
  * Section "Presentetion" ("Представництво") - Unit 1
@@ -19,8 +19,8 @@ public interface Unit1ProceedingsToPrcHelper {
 	void openCardToView();
 	void openCardToEdit();
 
-	void createCard(Unit1ProceedingToPrcCard unit1ProceedingToPrcCard);
-	void editCard(Unit1ProceedingToPrcCard unit1ProceedingToPrcCard);
+	void createCard(Unit1ProceedingToPrcCardModel unit1ProceedingToPrcCardModel);
+	void editCard(Unit1ProceedingToPrcCardModel unit1ProceedingToPrcCardModel);
 
 	String getRegNumberFirstCardInGrid();
 	String getPlaintiff();

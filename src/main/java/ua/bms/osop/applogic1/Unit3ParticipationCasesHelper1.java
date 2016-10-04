@@ -10,6 +10,6 @@ public class Unit3ParticipationCasesHelper1 extends DriverBasedHelper implements
 	}
 	
 	public boolean isOnUnit3ParticipationCasesPage() {
-		return pages.unit3ParticipationCasesPage.waitPageLoaded();
+		return pages.unit3ParticipationCasePage.waitPageLoaded();
 	}
 }

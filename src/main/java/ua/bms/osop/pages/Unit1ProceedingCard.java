@@ -1,39 +1,19 @@
 package ua.bms.osop.pages;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import ua.bms.osop.model.Unit1ProceedingCard;
 
-/*
- * Declare all Web-elements on 1 - "Review proceedings on a claim"("НП за позовом");
- * Unit 1 "Presentetion" ("Представництво")
- * and the main methods with them
- */
-public class Unit1ProceedingsPage extends AnyPage {
+import ua.bms.osop.model.Unit1ProceedingCardModel;
 
+public class Unit1ProceedingCard extends AnyPage {
+	
     /*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-    public Unit1ProceedingsPage(PageManager pages) {
+    public Unit1ProceedingCard(PageManager pages) {
         super(pages);
     }
-	
-	/*-------------------The Web-Elements of the Review Proceedings Page---------------------------------------------------*/
-
-    //Title of "Review proceedings on a claim"("НП за позовом")
-    @FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'НП за позовом')]")
-    private WebElement titleReviewUnit1;
-
-    //Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-9).
-    @FindBy(xpath = "//table[1]//td[9]/div/img")
-    private WebElement buttonEdit;
-
-    //Registration Number in the first record of grid on Main tab
-    @FindBy(xpath = "//div[contains(@id, 'tableview')]/div[1]//table[1]//td[2]/div")
-    private WebElement cellRegNumberInGridOnMainTab;
-
+    
 	/*------------------The Web-Elements of the Review Proceeding Card on Basic Statements----------------------------------------------------*/
 
     //Tab "Stages"("Стадії")
@@ -77,30 +57,7 @@ public class Unit1ProceedingsPage extends AnyPage {
     @FindBy(xpath = "//a[contains(@id, 'button')]//span[contains(text(), 'Перша інстанція')]")
     private WebElement buttonFirstInstance;
 
-	/*------------------Methods of the Review Page-------------------------------------------------------------*/
-
-    /*
-	 * Determines loading of Page
-	 */
-    public Unit1ProceedingsPage ensurePageLoaded() {
-        super.ensurePageLoaded();
-        wait.until(ExpectedConditions.visibilityOf(titleReviewUnit1));
-        return this;
-    }
-
-    //Opens to review Card
-    @Override
-    public void doubleClickOnFirstRecordInGridOnMainTab() {
-        Actions action = new Actions(driver);
-        action.doubleClick(fluientWaitforElement(cellRegNumberInGridOnMainTab)).perform();
-    }
-
-    //Click on "Edit" button for the first record in the main grid
-    public void clickButtonEdit() {
-        fluientWaitforElement(buttonEdit).click();
-    }
-
-	/*------------------Methods of the Review Proceeding Card on Basic Statements-------------------------------------------------------------*/
+    /*------------------Methods of the Review Proceeding Card on Basic Statements-------------------------------------------------------------*/
 
     //Checks if Title of Proceeding Card exists
     public boolean isTitleOfCardIsPresent() {
@@ -112,13 +69,13 @@ public class Unit1ProceedingsPage extends AnyPage {
     }
 
     //Sets the new card with filling all fields in
-    public Unit1ProceedingsPage setProceedingCardUnit1(Unit1ProceedingCard unit1ProceedingCard) {
+    public Unit1ProceedingCard setProceedingCardUnit1(Unit1ProceedingCardModel unit1ProceedingCardModel) {
         inputJusticeType.click();
         fluientWaitforElement(itemJusticeType).click();
         inputGeneralSubject.click();
         fluientWaitforElement(itemGeneralSubject).click();
-        type(inputPlaintiff, unit1ProceedingCard.plaintiff);
-        type(inputDefendant, unit1ProceedingCard.defendant);
+        type(inputPlaintiff, unit1ProceedingCardModel.plaintiff);
+        type(inputDefendant, unit1ProceedingCardModel.defendant);
         return this;
     }
 
@@ -148,5 +105,4 @@ public class Unit1ProceedingsPage extends AnyPage {
     public boolean isButtonCreateFirstInstancePresent() {
         return isElementPresent(buttonFirstInstance);
     }
-
 }

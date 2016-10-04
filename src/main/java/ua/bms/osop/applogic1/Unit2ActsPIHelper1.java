@@ -10,6 +10,6 @@ public class Unit2ActsPIHelper1 extends DriverBasedHelper implements Unit2ActsPI
 	}
 	
 	public boolean isOnUnit2ActsPIPage() {
-		return pages.unit2ActsPIPage.waitPageLoaded();
+		return pages.unit2ActPIPage.waitPageLoaded();
 	}
 }

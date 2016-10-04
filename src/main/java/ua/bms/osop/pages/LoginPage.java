@@ -4,7 +4,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import ua.bms.osop.model.User;
+import ua.bms.osop.model.UserModel;
 
 import static org.openqa.selenium.support.ui.ExpectedConditions.*;
 
@@ -48,9 +48,9 @@ public class LoginPage extends AnyPage {
 /*------------------Methods---------------------------------------------------------------------------*/
 	
 	//Fills Login Form in
-	public LoginPage setLoginForm(User user) {
-		type(inputUsername, user.login);
-		type(inputPassword, user.password);
+	public LoginPage setLoginForm(UserModel userModel) {
+		type(inputUsername, userModel.login);
+		type(inputPassword, userModel.password);
 		return this;
 	}
 	

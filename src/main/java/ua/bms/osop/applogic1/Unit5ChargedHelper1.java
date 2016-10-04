@@ -1,7 +1,7 @@
 package ua.bms.osop.applogic1;
 
 import ua.bms.osop.applogic.Unit5ChargedHelper;
-import ua.bms.osop.model.Unit5ChargedCard;
+import ua.bms.osop.model.Unit5ChargedCardModel;
 
 /*
  * "Supervision of the observance of laws in the execution of judgments." Page - Unit 5
@@ -52,36 +52,36 @@ public class Unit5ChargedHelper1 extends DriverBasedHelper implements Unit5Charg
 	/*-------------------------------Charged Person Card----------------------------------------*/
 	
 	//Fills all fields in Charged Person Casrd
-	public void createChargedCard(Unit5ChargedCard unit5ChargedCard) {
-		pages.unit5ChargedPage.setChargedCard(unit5ChargedCard);
+	public void createChargedCard(Unit5ChargedCardModel unit5ChargedCardModel) {
+		pages.unit5ChargedCard.setChargedCard(unit5ChargedCardModel);
 	}
 	
-	public void editChargedCard(Unit5ChargedCard unit5ChargedCard) {
-		pages.unit5ChargedPage.setInputPost(unit5ChargedCard.someNewText);
+	public void editChargedCard(Unit5ChargedCardModel unit5ChargedCardModel) {
+		pages.unit5ChargedCard.setInputPost(unit5ChargedCardModel.someNewText);
 	}
 	
-	public void deleteChargedPersonFromGrid(Unit5ChargedCard unit5ChargedCard) {
-		pages.unit5DocumentsPage.deleteChargedRecordFormGridInDocument(unit5ChargedCard);
+	public void deleteChargedPersonFromGrid(Unit5ChargedCardModel unit5ChargedCardModel) {
+		pages.unit5DocumentCard.deleteChargedRecordFormGridInDocument(unit5ChargedCardModel);
 	}
 	
 	//Returns value in Charged Person Name Field
 	public String getChargedName() {
-		return pages.unit5ChargedPage.getInputName();
+		return pages.unit5ChargedCard.getInputName();
 	}
 	
 	//Returns value in Post Field
 	public String getPost() {
-		return pages.unit5ChargedPage.getInputPost();
+		return pages.unit5ChargedCard.getInputPost();
 	}
 	
 	//Saves Card(clicking "Save" button)
 	public void saveCard() {
-		pages.unit5ChargedPage.clickButtonSaveCard();
+		pages.unit5ChargedCard.clickButtonSaveCard();
 	}
 	
 	//Quit from Card
 	public void quitCard() {
-		pages.unit5ChargedPage.clickButtonExitFromCardForm();
+		pages.unit5ChargedCard.clickButtonExitFromCardForm();
 	}
 
 }

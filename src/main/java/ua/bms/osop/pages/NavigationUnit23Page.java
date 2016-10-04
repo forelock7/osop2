@@ -99,15 +99,15 @@ public class NavigationUnit23Page extends AnyPage {
 	}
 	
 	//U2 - Moving from "Navigation Page in Unit 23" to Unit 2 "Acts of supervision over pre-trial investigation" page ("Акти нагляду за ДР");
-	public Unit2ActsPIPage clickActsPIMenuU23(){
+	public Unit2ActPIPage clickActsPIMenuU23(){
 		itemActsPIMenuU23.click();
-		return pages.unit2ActsPIPage;
+		return pages.unit2ActPIPage;
 	}
 	
 	//U2 - Moving from "Navigation Page in Unit 23" to Unit 2 "The appeals on the pre-trial investigation"("Апеляційні скарги з питань ДР");
-	public Unit2AppealsPage clickAppealsMenuU23(){
+	public Unit2AppealPage clickAppealsMenuU23(){
 		itemAppealsMenuU23.click();
-		return pages.unit2AppealsPage;
+		return pages.unit2AppealPage;
 	}
 	
 	//U2 - Moving from "Navigation Page in Unit 23" to Unit 2 "The Preventive Action"("Запобіжні заходи");
@@ -123,9 +123,9 @@ public class NavigationUnit23Page extends AnyPage {
 	}
 	
 	//U2 - Moving from "Navigation Page in Unit 23" to Unit 2 "Acts of supervision over Operational Activities"("Акти нагляду за ОРД");
-	public Unit2ActsOAPage clickActsOAMenuU23(){
+	public Unit2ActOAPage clickActsOAMenuU23(){
 		itemActsOAMenuU23.click();
-		return pages.unit2ActsOAPage;
+		return pages.unit2ActOAPage;
 	}
 	
 	//U2 - Moving from "Navigation Page in Unit 23" to Unit 2 "Covert surveillances(investigative)"("Негласні слідчі(розшукові) дії");
@@ -153,21 +153,21 @@ public class NavigationUnit23Page extends AnyPage {
 	}
 	
 	//U3 - Moving from "Navigation Page in Unit 23" to Unit 3 "Criminal cases"("Кримінальні справи");
-	public Unit3CriminalCasesPage clickCriminalCasesMenuU23(){
+	public Unit3CriminalCasePage clickCriminalCasesMenuU23(){
 		itemCriminalCasesMenuU23.click();
-		return pages.unit3CriminalCasesPage;
+		return pages.unit3CriminalCasePage;
 	}
 	
 	//U3 - Moving from "Navigation Page in Unit 23" to Unit 3 "Other criminal cases"("Інші кримінальні справи");
-	public Unit3OtherCriminalCasesPage clickOtherCriminalCasesMenuU23(){
+	public Unit3OtherCriminalCasePage clickOtherCriminalCasesMenuU23(){
 		itemOtherCriminalCasesMenuU23.click();
-		return pages.unit3OtherCriminalCasesPage;
+		return pages.unit3OtherCriminalCasePage;
 	}
 	
 	//U3 - Moving from "Navigation Page in Unit 23" to Unit 3 "Participation in the trial cases and other CC"("Участь у судовому розгляді справ та інших КС");
-	public Unit3ParticipationCasesPage clickParticipationCasesMenuU23(){
+	public Unit3ParticipationCasePage clickParticipationCasesMenuU23(){
 		itemParticipationCasesMenuU23.click();
-		return pages.unit3ParticipationCasesPage;
+		return pages.unit3ParticipationCasePage;
 	}
 	
 }

@@ -1,39 +1,19 @@
 package ua.bms.osop.pages;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import ua.bms.osop.model.Unit1ProceedingToPrcCard;
 
-/*
- * Declare all Web-elements on 2 - "Review proceedings on a claim to Procuracy authorities"("НП за позовом до органів прокуратури");
- * Unit 1 "Presentetion" ("Представництво")
- * and the main methods with them
- */
-public class Unit1ProceedingsToPrcPage extends AnyPage {
+import ua.bms.osop.model.Unit1ProceedingToPrcCardModel;
+
+public class Unit1ProceedingToPrcCard extends AnyPage {
 
 	/*
 	 * Constructor of this Page object which is managed by object Page Manager.
 	 */
-	public Unit1ProceedingsToPrcPage(PageManager pages) {
+	public Unit1ProceedingToPrcCard(PageManager pages) {
 		super(pages);
 	}
 	
-	/*-------------------The Web-Elements of Review To Procuracy Page-------------------------------------------------------*/
-
-	//Title of "Review proceedings on a claim to Procuracy authorities"("НП за позовом до органів прокуратури")
-	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'НП за позовом до органів прокуратури')]")
-	private WebElement titleReviewToPrcUnit1;
-
-	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-9).
-	@FindBy(xpath = "//table[1]//td[9]/div/img")
-	WebElement buttonEdit;
-
-	//Registration Number in the first record of grid on Main tab
-	@FindBy(xpath = "//div[contains(@id, 'tableview')]/div[1]//table[1]//td[2]/div")
-	private WebElement cellRegNumberInGridOnMainTab;
-
 	/*------------------The Web-Elements of the Review To Procuracy Card on Basic Statements----------------------------------------------------*/
 
 	//Tab "Stages"("Стадії")
@@ -78,29 +58,6 @@ public class Unit1ProceedingsToPrcPage extends AnyPage {
 	@FindBy(xpath = "//a[contains(@id, 'button')]//span[contains(text(), 'Перша інстанція')]")
 	private WebElement buttonFirstInstance;
 
-	/*------------------Methods of the Review To Procuracy Page-------------------------------------------------------------*/
-	
-	/*
-	 * Determines loading of Page
-	 */
-	public Unit1ProceedingsToPrcPage ensurePageLoaded() {
-		super.ensurePageLoaded();
-		wait.until(ExpectedConditions.visibilityOf(titleReviewToPrcUnit1));
-		return this;
-	}
-
-	//Opens to review Card
-	@Override
-	public void doubleClickOnFirstRecordInGridOnMainTab() {
-		Actions action = new Actions(driver);
-		action.doubleClick(fluientWaitforElement(cellRegNumberInGridOnMainTab)).perform();
-	}
-
-	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEdit() {
-		fluientWaitforElement(buttonEdit).click();
-	}
-
 	/*------------------Methods of the Review To Procuracy Card-------------------------------------------------------------*/
 
 	//Checks if Title of Proceeding Card exists
@@ -113,13 +70,13 @@ public class Unit1ProceedingsToPrcPage extends AnyPage {
 	}
 
 	//Sets the new card with filling all fields in
-	public Unit1ProceedingsToPrcPage setProceedingToPrcCardUnit1(Unit1ProceedingToPrcCard unit1ProceedingToPrcCard){
+	public Unit1ProceedingToPrcCard setProceedingToPrcCardUnit1(Unit1ProceedingToPrcCardModel unit1ProceedingToPrcCardModel){
 		inputJusticeType.click();
 		fluientWaitforElement(itemJusticeType).click();
 		inputGeneralSubject.click();
 		fluientWaitforElement(itemGeneralSubject).click();
-		type(inputPlaintiff, unit1ProceedingToPrcCard.plaintiff);
-		type(inputDefendant, unit1ProceedingToPrcCard.defendant);
+		type(inputPlaintiff, unit1ProceedingToPrcCardModel.plaintiff);
+		type(inputDefendant, unit1ProceedingToPrcCardModel.defendant);
 		return this;
 	}
 

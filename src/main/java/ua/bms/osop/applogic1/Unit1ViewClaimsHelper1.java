@@ -16,6 +16,6 @@ public class Unit1ViewClaimsHelper1 extends DriverBasedHelper implements Unit1Vi
 	}
 	
 	public boolean isOnUnit1ClaimsPage() {
-		return pages.unit1ViewClaimsPage.waitPageLoaded();
+		return pages.unit1ViewClaimPage.waitPageLoaded();
 	}
 }

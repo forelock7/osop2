@@ -10,6 +10,6 @@ public class Unit3CriminalCasesHelper1 extends DriverBasedHelper implements Unit
 	}
 	
 	public boolean isOnUnit3CriminalCasesPage() {
-		return pages.unit3CriminalCasesPage.waitPageLoaded();
+		return pages.unit3CriminalCasePage.waitPageLoaded();
 	}
 }
