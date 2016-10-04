@@ -27,6 +27,7 @@ public class Unit2PreventiveCardModel {
 		this.investigationBeginDate = investigationBeginDate;
 		this.lastName = lastName;
 		this.firstName = firstName;
+		this.birthday = birthday;
 		this.someNewText = creatNewText();
 	}
 	
