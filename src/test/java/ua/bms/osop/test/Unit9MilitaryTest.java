@@ -22,7 +22,7 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		app.getUnit9Helper().createCardUnit9(mAOCard);
 		app.getUnit9Helper().saveCard();
 		app.getUnit9Helper().openCardToView();
-		Assert.assertEquals(mAOCard.protocolNumber, app.getUnit9Helper().getProtNumber());
+		Assert.assertEquals(mAOCard.getProtocolNumber(), app.getUnit9Helper().getProtNumber());
 		app.getUnit9Helper().quitCard();
 	}
 	
@@ -32,7 +32,7 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		app.getUnit9Helper().editCardUnit9(mAOCard);
 		app.getUnit9Helper().saveCard();
 		app.getUnit9Helper().openCardToEdit();
-		Assert.assertEquals(mAOCard.someNewText, app.getUnit9Helper().getTheory());
+		Assert.assertEquals(mAOCard.getSomeNewText(), app.getUnit9Helper().getTheory());
 		app.getUnit9Helper().quitCard();
 	}
 		
@@ -40,14 +40,14 @@ public class Unit9MilitaryTest extends BasicTestCase {
 	public void testRemoveMilitaryCard(){
 		app.getUnit9Helper().removeCardUnit9(mAOCard);
 		app.getUnit9Helper().goToRemovedTab();
-		Assert.assertEquals(mAOCard.regNumberRemovedCard, app.getUnit9Helper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(mAOCard.getRegNumberRemovedCard(), app.getUnit9Helper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit9"}, dependsOnMethods = {"testRemoveMilitaryCard"})
 	public void testRestoreMilitaryCard() {
 		app.getUnit9Helper().restoreCardUnit9(mAOCard);
 		app.getUnit9Helper().goToMainTab();
-		Assert.assertEquals(mAOCard.regNumberRestoredCard, app.getUnit9Helper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(mAOCard.getRegNumberRestoredCard(), app.getUnit9Helper().getRegNumberFirstCardInGrid());
 	}
 
 }

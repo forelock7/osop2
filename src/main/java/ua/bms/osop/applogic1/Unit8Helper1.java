@@ -92,7 +92,7 @@ public class Unit8Helper1 extends DriverBasedHelper implements Unit8Helper  {
 	/*Edits card with changing value in field "Summary"*/
 	@Override
 	public void editCardUnit8(Unit8CardModel unit8CardModel) {
-		pages.unit8RequestCard.setInputSummaryUnit8(unit8CardModel.someNewText);
+		pages.unit8RequestCard.setInputSummaryUnit8(unit8CardModel.getSomeNewText());
 
 	}
 	

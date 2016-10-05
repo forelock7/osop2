@@ -94,7 +94,7 @@ public class Unit7Helper1 extends DriverBasedHelper implements Unit7Helper{
 	/*Edits card with changing value in field "Author Of Speech"*/
 	@Override
 	public void editCardUnit7(Unit7CardModel unit7CardModel){
-		pages.unit7MassMediaCard.setInputAuthorOfSpeechUnit7(unit7CardModel.someNewText);
+		pages.unit7MassMediaCard.setInputAuthorOfSpeechUnit7(unit7CardModel.getSomeNewText());
 	}
 		
 	//Gets Claim Number

@@ -113,7 +113,7 @@ public class Unit5InspectionsHelper1 extends DriverBasedHelper implements Unit5I
 	/*Edits card with changing value in field "Agency Name" ("Назва відомстваб організації, установи")*/
 	@Override
 	public void editInspectionCardUnit5(Unit5InspectionCardModel unit5InspectionCardModel) {
-		pages.unit5InspectionCard.setInputAgencyNameUnit5(unit5InspectionCardModel.someNewText);
+		pages.unit5InspectionCard.setInputAgencyNameUnit5(unit5InspectionCardModel.getSomeNewText());
 	}
 		
 	//Gets Agency Name

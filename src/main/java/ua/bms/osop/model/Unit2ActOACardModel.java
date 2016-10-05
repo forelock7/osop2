@@ -3,13 +3,13 @@ package ua.bms.osop.model;
 import java.util.Random;
 
 /*
- * Implements model of Unit 6 Card
+ * Unit 2: "Pre-trial investigation"("Досудове розслідування")
+ * Implements model of 5 - "Acts of supervision over Operational Activities"("Акти нагляду за ОРД");
  */
-public class Unit8CardModel {
+public class Unit2ActOACardModel {
 	
-	private String requestNumber;
-	private String receiptDate;
-	private String summary;
+	private String decisionDate;
+	private String amountOfChecked; 
 	
 	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
@@ -17,41 +17,33 @@ public class Unit8CardModel {
 	//set registration number Card is been restoring from confirmation form of Restoring
 	private String regNumberRestoredCard;
 	
-	/*Constructor of Unit 8 Model Object*/
-	public Unit8CardModel(String receiptDate, String summary) {
-		this.requestNumber = createRequestNumber();
-		
-		this.receiptDate = receiptDate;
-		this.summary = summary;
-		
+	public Unit2ActOACardModel(String decisionDate) {
+		this.decisionDate = decisionDate;
+		this.amountOfChecked = createAmountOfCheked();
+
 		this.someNewText = creatNewText();
 	}
 	
-	/*Generation of random number of Request*/
-	private String createRequestNumber() {
+	/*Generation of random number of Proceeding*/
+	private String createAmountOfCheked() {
 		Random rnd = new Random();
-		return Integer.toString(rnd.nextInt(999999999));
+		return Integer.toString(rnd.nextInt(99999));
 	}
 	
 	/*Generation of random new text for editing some Text Field*/
 	private String creatNewText() {
 		Random rnd = new Random();
-		return "Some NEW teXt U8!cdeswcvdaewv@##$$%&*^&*(&)" + Integer.toString(rnd.nextInt(999999999));
+		return Integer.toString(rnd.nextInt(999999));
 	}
-	
 	
 	/*---Get Methods---*/
 	
-	public String getRequestNumber() {
-		return requestNumber;
+	public String getDecisionDate() {
+		return decisionDate;
 	}
 	
-	public String getReceiptDate() {
-		return receiptDate;
-	}
-	
-	public String getSummary() {
-		return summary;
+	public String getAmountOfChecked() {
+		return amountOfChecked;
 	}
 	
 	public String getSomeNewText() {
@@ -66,6 +58,7 @@ public class Unit8CardModel {
 		return regNumberRestoredCard;
 	}
 	
+	
 	/*---Set Methods---*/
 	
 	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
@@ -75,5 +68,5 @@ public class Unit8CardModel {
 	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
 		this.regNumberRestoredCard = regNumberRestoredCard;
 	}
-	
+
 }

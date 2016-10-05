@@ -23,7 +23,7 @@ public class Unit8RequestsTest extends BasicTestCase {
 		app.getUnit8Helper().createCardUnit8(reqCard);
 		app.getUnit8Helper().saveCard();
 		app.getUnit8Helper().openCardToView();
-		Assert.assertEquals(reqCard.requestNumber, app.getUnit8Helper().getRequestNumber());
+		Assert.assertEquals(reqCard.getRequestNumber(), app.getUnit8Helper().getRequestNumber());
 		app.getUnit8Helper().quitCard();
 	}
 	
@@ -33,7 +33,7 @@ public class Unit8RequestsTest extends BasicTestCase {
 		app.getUnit8Helper().editCardUnit8(reqCard);
 		app.getUnit8Helper().saveCard();
 		app.getUnit8Helper().openCardToEdit();
-		Assert.assertEquals(reqCard.someNewText, app.getUnit8Helper().getSummary());
+		Assert.assertEquals(reqCard.getSomeNewText(), app.getUnit8Helper().getSummary());
 		app.getUnit8Helper().quitCard();
 	}
 	
@@ -41,14 +41,14 @@ public class Unit8RequestsTest extends BasicTestCase {
 	public void testRemoveRequestCard(){
 		app.getUnit8Helper().removeCardUnit8(reqCard);
 		app.getUnit8Helper().goToRemovedTab();
-		Assert.assertEquals(reqCard.regNumberRemovedCard, app.getUnit8Helper().getRegNumbreFirstRemovedCardInGrid());
+		Assert.assertEquals(reqCard.getRegNumberRemovedCard(), app.getUnit8Helper().getRegNumbreFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit8"}, dependsOnMethods = {"testRemoveRequestCard"})
 	public void testRestoreRequestCard() {
 		app.getUnit8Helper().restoreCardUnit8(reqCard);
 		app.getUnit8Helper().goToMainTab();
-		Assert.assertEquals(reqCard.regNumberRestoredCard, app.getUnit8Helper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(reqCard.getRegNumberRestoredCard(), app.getUnit8Helper().getRegNumberFirstCardInGrid());
 	}
 
 }

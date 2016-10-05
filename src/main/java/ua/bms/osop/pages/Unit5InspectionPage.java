@@ -57,15 +57,13 @@ public class Unit5InspectionPage extends AnyPage {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeInspectionCardFromGridUnit5(Unit5InspectionCardModel unit5InspectionCardModel) {
 		fluientWaitforElement(buttonRemove).click();
-		unit5InspectionCardModel.regNumberRemovedCard = null;
-		unit5InspectionCardModel.regNumberRemovedCard = this.confirmationOfRemoving();
+		unit5InspectionCardModel.setRegNumberRemovedCard(this.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGridUnit5(Unit5InspectionCardModel unit5InspectionCardModel) {
 		buttonRestore.click();
-		unit5InspectionCardModel.regNumberRestoredCard = null;
-		unit5InspectionCardModel.regNumberRestoredCard = confirmRestoring();
+		unit5InspectionCardModel.setRegNumberRestoredCard(confirmRestoring());
 	}
 	
 

@@ -8,15 +8,15 @@ import java.util.Random;
  */
 public class Unit4CardModel {
 
-	public String claimNumber;
-	public String receiptDate;
-	public String summary;
+	private String claimNumber;
+	private String receiptDate;
+	private String summary;
 	
-	public String someNewText;
+	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
-	public String regNumberRemovedCard;
+	private String regNumberRemovedCard;
 	//set registration number Card is been restoring from confirmation form of Restoring
-	public String regNumberRestoredCard;
+	private String regNumberRestoredCard;
 	
 	/*Constructor of Unit 4 Model Object*/
 	public Unit4CardModel(String receiptDate, String summary) {
@@ -38,6 +38,42 @@ public class Unit4CardModel {
 	private String creatNewText() {
 		Random rnd = new Random();
 		return "Some NEW teXt U4!@##dddghfhds$$%&*^&*(&)" + Integer.toString(rnd.nextInt(999999999));
+	}
+	
+	/*---Get Methods---*/
+	
+	public String getClaimNumber() {
+		return claimNumber;
+	}
+	
+	public String getReceiptDate() {
+		return receiptDate;
+	}
+	
+	public String getSummary() {
+		return summary;
+	}
+
+	public String getSomeNewText() {
+		return someNewText;
+	}
+	
+	public String getRegNumberRemovedCard() {
+		return regNumberRemovedCard;
+	}
+	
+	public String getRegNumberRestoredCard() {
+		return regNumberRestoredCard;
+	}
+	
+	/*---Set Methods---*/
+	
+	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
+		this.regNumberRemovedCard = regNumberRemovedCard;
+	}
+	
+	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
+		this.regNumberRestoredCard = regNumberRestoredCard;
 	}
 	
 	

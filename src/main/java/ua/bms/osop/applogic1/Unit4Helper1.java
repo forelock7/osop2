@@ -92,7 +92,7 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	/*Edits card with changing value in field "Summary"*/
 	@Override
 	public void editCard(Unit4CardModel unit4CardModel) {
-		pages.unit4InternationalCard.setInputSummaryUnit4(unit4CardModel.someNewText);
+		pages.unit4InternationalCard.setInputSummaryUnit4(unit4CardModel.getSomeNewText());
 	}
 			
 	//Gets Claim Number

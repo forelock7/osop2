@@ -14,9 +14,7 @@ public class Unit2ActsPIHelper1 extends DriverBasedHelper implements Unit2ActsPI
 	public Unit2ActsPIHelper1(ApplicationManager1 manager) {
 		super(manager.getWebDriver());
 	}
-	
-
-	
+		
 	/*--------------------------------Pre-Investigation Act Page----------------------------------------------------*/
 	
 	/*Checks if on Unit 2 Page*/

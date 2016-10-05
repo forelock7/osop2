@@ -79,7 +79,74 @@ public class BasicTestCase {
 			/*Ім'я*/"Вейн",
 			/*Дата народження*/"18.09.1988");
 	
-/*-----------------------------------------------------------------------------------------------------------------*/
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 4 - "The release from custody"("Звільнення з-під варти")(Unit 2) except field with drop-down list*/
+	protected static Unit2ReleaseCardModel releaseCard = new Unit2ReleaseCardModel(
+			/*Номер справи у суді*/"Справа №6742868тоіс",
+			/*Дата прийняття остаточного рішення у КП стосовно особи*/"25.11.2015");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 5 - "Acts of supervision over Operational Activities"("Акти нагляду за ОРД");(Unit 2) except field with drop-down list*/
+	protected static Unit2ActOACardModel actOACard = new Unit2ActOACardModel(
+			/*Дата прийняття рішення*/"11.09.2016");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 6 - "Covert surveillances(investigative)"("Негласні слідчі(розшукові) дії")(Unit 2) except field with drop-down list*/
+	protected static Unit2CovertCardModel covertCard = new Unit2CovertCardModel(
+			/*Дата рішення суду*/"01.09.2016");
+	
+	/*----------------------------------------------------------------------------------------------------------------*/
+	
+	/*Initialization of input fields from International Judicial Cooperation Card(Unit 4) except field with drop-down list*/
+	protected static Unit4CardModel intCard = new Unit4CardModel (
+			/*Дата надходження*/"11.09.2016",
+			/*Стислий зміст*/"HUIyugguswc1111111189ycgcvgas35421мкуп!№;%:*:*+w");
+	
+	/*----------------------------------------------------------------------------------------------------------------*/
+	
+	/*Initialization of input fields from Inspection Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
+	protected static Unit5InspectionCardModel inspectionCard = new Unit5InspectionCardModel (
+			/*Дата проведення перевірки*/"08.09.2016");
+
+	/*----------------------------------------------------------------------------------------------------------------*/
+	
+	/*Initialization of input fields from Response Document Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
+	protected static Unit5DocumentCardModel documentCard = new Unit5DocumentCardModel ();
+	
+	/*----------------------------------------------------------------------------------------------------------------*/	
+	
+	/*Initialization of input fields from Charged Person Card Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
+	protected static Unit5ChargedCardModel chargedCard = new Unit5ChargedCardModel(
+			/*Посада*/"Керівник відділу роботи з клієнтами");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/	
+	
+	/*Initialization of input fields from Claim Card(Unit 6) except field with drop-down list*/
+	protected static Unit6CardModel clCard = new Unit6CardModel (
+			/*Назва заявника*/"Petrov",
+			/*Стислий зміст*/"HUIyugguswcgygw",
+			/*Дата надходження до прокуратури*/"15.09.2016");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/	
+	
+	/*Initialization of input fields from Mass Media Card(Unit 7) except field with drop-down list*/
+	protected static Unit7CardModel mMCard = new Unit7CardModel(
+			/*Дата виступу*/"28.07.2016",
+			/*Назва ЗМІ*/"Назва ЗМІ 099089667545233",
+			/*Автор*/"Автор Author 56473657829*^&%#@@!",
+			/*Примітка*/"Примітка Remark*&^&$%$^@$@!");
+	
+	/*----------------------------------------------------------------------------------------------------------------*/
+	
+	/*Initialization of input fields from Request Card(Unit 8) except field with drop-down list*/
+	protected static Unit8CardModel reqCard = new Unit8CardModel (
+			/*Дата надходження*/"10.09.2016",
+			/*Стислий зміст*/"HUIyugguswcgy32435421мкуп!№;%:*:*+w");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Military Administrative Offenses Card(Unit 9) except field with drop-down list*/
 	protected static Unit9CardModel mAOCard = new Unit9CardModel(
@@ -97,52 +164,5 @@ public class BasicTestCase {
 			/*Дата надходження рішення суду(для обліку у звіті)*/"08.07.2016", 
 			/*Дата початку утримання на гаупвахті*/"09.07.2016");
 	
-/*-----------------------------------------------------------------------------------------------------------------*/	
-	
-	/*Initialization of input fields from Mass Media Card(Unit 7) except field with drop-down list*/
-	protected static Unit7CardModel mMCard = new Unit7CardModel(
-			/*Дата виступу*/"28.07.2016",
-			/*Назва ЗМІ*/"Назва ЗМІ 099089667545233",
-			/*Автор*/"Автор Author 56473657829*^&%#@@!",
-			/*Примітка*/"Примітка Remark*&^&$%$^@$@!");
-
-/*-----------------------------------------------------------------------------------------------------------------*/	
-	
-	/*Initialization of input fields from Claim Card(Unit 6) except field with drop-down list*/
-	protected static Unit6CardModel clCard = new Unit6CardModel (
-			/*Назва заявника*/"Petrov",
-			/*Стислий зміст*/"HUIyugguswcgygw",
-			/*Дата надходження до прокуратури*/"15.09.2016");
-		
-/*----------------------------------------------------------------------------------------------------------------*/
-	
-	/*Initialization of input fields from Request Card(Unit 8) except field with drop-down list*/
-	protected static Unit8CardModel reqCard = new Unit8CardModel (
-			/*Дата надходження*/"10.09.2016",
-			/*Стислий зміст*/"HUIyugguswcgy32435421мкуп!№;%:*:*+w");
-	
-/*----------------------------------------------------------------------------------------------------------------*/
-	
-	/*Initialization of input fields from International Judicial Cooperation Card(Unit 4) except field with drop-down list*/
-	protected static Unit4CardModel intCard = new Unit4CardModel (
-			/*Дата надходження*/"11.09.2016",
-			/*Стислий зміст*/"HUIyugguswc1111111189ycgcvgas35421мкуп!№;%:*:*+w");
-	
-/*----------------------------------------------------------------------------------------------------------------*/
-	
-	/*Initialization of input fields from Inspection Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-	protected static Unit5InspectionCardModel inspectionCard = new Unit5InspectionCardModel (
-			/*Дата проведення перевірки*/"08.09.2016");
-
-/*----------------------------------------------------------------------------------------------------------------*/
-	
-	/*Initialization of input fields from Response Document Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-	protected static Unit5DocumentCardModel documentCard = new Unit5DocumentCardModel ();
-	
-/*----------------------------------------------------------------------------------------------------------------*/	
-	
-	/*Initialization of input fields from Charged Person Card Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-	protected static Unit5ChargedCardModel chargedCard = new Unit5ChargedCardModel(
-			/*Посада*/"Керівник відділу роботи з клієнтами");
 
 }

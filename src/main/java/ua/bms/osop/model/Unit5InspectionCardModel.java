@@ -10,14 +10,14 @@ import java.util.Random;
  */
 public class Unit5InspectionCardModel {
 	
-	public String inspectionDate;
-	public String agencyName;
+	private String inspectionDate;
+	private String agencyName;
 	
-	public String someNewText;
+	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
-	public String regNumberRemovedCard;
+	private String regNumberRemovedCard;
 	//set registration number Card is been restoring from confirmation form of Restoring
-	public String regNumberRestoredCard;
+	private String regNumberRestoredCard;
 	
 	/*Constructor of Inspection Card Unit 5 Model Object*/
 	public Unit5InspectionCardModel(String inspectionDate) {
@@ -38,6 +38,39 @@ public class Unit5InspectionCardModel {
 	private String creatNewText() {
 		Random rnd = new Random();
 		return "SomeNEWteXtU5" + Integer.toString(rnd.nextInt(999));
+	}
+	
+	
+	/*---Get Methods---*/
+	
+	public String getInspectionDate() {
+		return inspectionDate;
+	}
+	
+	public String getAgencyName() {
+		return agencyName;
+	}
+
+	public String getSomeNewText() {
+		return someNewText;
+	}
+	
+	public String getRegNumberRemovedCard() {
+		return regNumberRemovedCard;
+	}
+	
+	public String getRegNumberRestoredCard() {
+		return regNumberRestoredCard;
+	}
+	
+	/*---Set Methods---*/
+	
+	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
+		this.regNumberRemovedCard = regNumberRemovedCard;
+	}
+	
+	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
+		this.regNumberRestoredCard = regNumberRestoredCard;
 	}
 
 }

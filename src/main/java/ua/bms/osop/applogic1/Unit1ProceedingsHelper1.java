@@ -61,7 +61,7 @@ public class Unit1ProceedingsHelper1 extends DriverBasedHelper implements Unit1P
 	/*Edits card with changing value in field "Defendant"*/
 	@Override
 	public void editCard(Unit1ProceedingCardModel unit1ProceedingCardModel) {
-		pages.unit1ProceedingCard.setInputDefendant(unit1ProceedingCardModel.someNewText);
+		pages.unit1ProceedingCard.setInputDefendant(unit1ProceedingCardModel.getSomeNewText());
 	}
 
 	/*---Basic Statements Tab---*/

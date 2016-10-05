@@ -32,7 +32,7 @@ public class Unit1ReviewProceedingToProcuracyTest extends BasicTestCase {
 		app.getUnit1ProceedingsToPrcHelper().createCard(proceedingToPrcCard);
 		app.getUnit1ProceedingsToPrcHelper().saveCard();
 		app.getUnit1ProceedingsToPrcHelper().openCardToView();
-		Assert.assertEquals(proceedingToPrcCard.plaintiff, app.getUnit1ProceedingsToPrcHelper().getPlaintiff());
+		Assert.assertEquals(proceedingToPrcCard.getPlaintiff(), app.getUnit1ProceedingsToPrcHelper().getPlaintiff());
 		app.getUnit1ProceedingsToPrcHelper().quitCard();
 	}
 
@@ -42,7 +42,7 @@ public class Unit1ReviewProceedingToProcuracyTest extends BasicTestCase {
 		app.getUnit1ProceedingsToPrcHelper().editCard(proceedingToPrcCard);
 		app.getUnit1ProceedingsToPrcHelper().saveCard();
 		app.getUnit1ProceedingsToPrcHelper().openCardToEdit();
-		Assert.assertEquals(proceedingToPrcCard.someNewText, app.getUnit1ProceedingsToPrcHelper().getDefendant());
+		Assert.assertEquals(proceedingToPrcCard.getSomeNewText(), app.getUnit1ProceedingsToPrcHelper().getDefendant());
 		app.getUnit1ProceedingsToPrcHelper().quitCard();
 	}
 

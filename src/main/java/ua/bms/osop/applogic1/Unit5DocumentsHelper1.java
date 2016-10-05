@@ -85,7 +85,7 @@ public class Unit5DocumentsHelper1 extends DriverBasedHelper implements Unit5Doc
 	/*Edits card with changing value in field "Agency Name" ("Назва відомстваб організації, установи")*/
 	@Override
 	public void editDocumentCard(Unit5DocumentCardModel unit5DocumentCardModel) {
-		pages.unit5DocumentCard.setInputContentDocument(unit5DocumentCardModel.someNewText);
+		pages.unit5DocumentCard.setInputContentDocument(unit5DocumentCardModel.getSomeNewText());
 	}
 	
 	/*---------------------------Response Document Card--------------------------------------*/

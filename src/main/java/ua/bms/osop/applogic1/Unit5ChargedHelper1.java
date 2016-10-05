@@ -57,7 +57,7 @@ public class Unit5ChargedHelper1 extends DriverBasedHelper implements Unit5Charg
 	}
 	
 	public void editChargedCard(Unit5ChargedCardModel unit5ChargedCardModel) {
-		pages.unit5ChargedCard.setInputPost(unit5ChargedCardModel.someNewText);
+		pages.unit5ChargedCard.setInputPost(unit5ChargedCardModel.getSomeNewText());
 	}
 	
 	public void deleteChargedPersonFromGrid(Unit5ChargedCardModel unit5ChargedCardModel) {

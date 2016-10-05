@@ -22,7 +22,7 @@ public class Unit4InternationalTest extends BasicTestCase {
 		app.getUnit4Helper().createCard(intCard);
 		app.getUnit4Helper().saveCard();
 		app.getUnit4Helper().openCardToView();
-		Assert.assertEquals(intCard.claimNumber, app.getUnit4Helper().getClaimNumber());
+		Assert.assertEquals(intCard.getClaimNumber(), app.getUnit4Helper().getClaimNumber());
 		app.getUnit4Helper().quitCard();
 	}
 	
@@ -32,7 +32,7 @@ public class Unit4InternationalTest extends BasicTestCase {
 		app.getUnit4Helper().editCard(intCard);
 		app.getUnit4Helper().saveCard();
 		app.getUnit4Helper().openCardToEdit();
-		Assert.assertEquals(intCard.someNewText, app.getUnit4Helper().getSummary());
+		Assert.assertEquals(intCard.getSomeNewText(), app.getUnit4Helper().getSummary());
 		app.getUnit4Helper().quitCard();		
 	}
 	
@@ -40,14 +40,14 @@ public class Unit4InternationalTest extends BasicTestCase {
 	public void testRemoveInternationalCard(){
 		app.getUnit4Helper().removeCardUnit4(intCard);
 		app.getUnit4Helper().goToRemovedTab();
-		Assert.assertEquals(intCard.regNumberRemovedCard, app.getUnit4Helper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(intCard.getRegNumberRemovedCard(), app.getUnit4Helper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit4"}, dependsOnMethods = {"testRemoveInternationalCard"})
 	public void testRestoreInternationalCard() {
 		app.getUnit4Helper().restoreCardUnit4(intCard);
 		app.getUnit4Helper().goToMainTab();
-		Assert.assertEquals(intCard.regNumberRestoredCard, app.getUnit4Helper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(intCard.getRegNumberRestoredCard(), app.getUnit4Helper().getRegNumberFirstCardInGrid());
 	}
 
 }

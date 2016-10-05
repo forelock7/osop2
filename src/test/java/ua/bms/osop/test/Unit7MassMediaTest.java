@@ -23,7 +23,7 @@ public class Unit7MassMediaTest extends BasicTestCase {
 		app.getUnit7Helper().createCardUnit7(mMCard);
 		app.getUnit7Helper().saveCard();
 		app.getUnit7Helper().openCardToView();
-		Assert.assertEquals(mMCard.subjectOfSpeech, app.getUnit7Helper().getSubjectOfSpeech());
+		Assert.assertEquals(mMCard.getSubjectOfSpeech(), app.getUnit7Helper().getSubjectOfSpeech());
 		app.getUnit7Helper().quitCard();
 	}
 	
@@ -33,7 +33,7 @@ public class Unit7MassMediaTest extends BasicTestCase {
 		app.getUnit7Helper().editCardUnit7(mMCard);
 		app.getUnit7Helper().saveCard();
 		app.getUnit7Helper().openCardToEdit();
-		Assert.assertEquals(mMCard.someNewText, app.getUnit7Helper().getAuthorOfSpeech());
+		Assert.assertEquals(mMCard.getSomeNewText(), app.getUnit7Helper().getAuthorOfSpeech());
 		app.getUnit7Helper().quitCard();
 	}
 	
@@ -41,14 +41,14 @@ public class Unit7MassMediaTest extends BasicTestCase {
 	public void testRemoveMassMediaCard(){
 		app.getUnit7Helper().removeCardUnit7(mMCard);
 		app.getUnit7Helper().goToRemovedTab();
-		Assert.assertEquals(mMCard.regNumberRemovedCard, app.getUnit7Helper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(mMCard.getRegNumberRemovedCard(), app.getUnit7Helper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit7"}, dependsOnMethods = {"testRemoveMassMediaCard"})
 	public void testRestoreMassMediaCard() {
 		app.getUnit7Helper().restoreCardUnit7(mMCard);
 		app.getUnit7Helper().goToMainTab();
-		Assert.assertEquals(mMCard.regNumberRestoredCard, app.getUnit7Helper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(mMCard.getRegNumberRestoredCard(), app.getUnit7Helper().getRegNumberFirstCardInGrid());
 	}
 
 }

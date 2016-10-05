@@ -10,13 +10,13 @@ import java.util.Random;
  */
 public class Unit5DocumentCardModel {
 	
-	public String documentContent;
+	private String documentContent;
 	
-	public String someNewText;
+	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
-	public String regNumberRemovedCard;
+	private String regNumberRemovedCard;
 	//set registration number Card is been restoring from confirmation form of Restoring
-	public String regNumberRestoredCard;
+	private String regNumberRestoredCard;
 	
 	/*Constructor of Response Document Unit 5 Model Object*/
 	public Unit5DocumentCardModel() {
@@ -35,6 +35,35 @@ public class Unit5DocumentCardModel {
 	private String creatNewText() {
 		Random rnd = new Random();
 		return "SomeNEWteXtU5Document" + Integer.toString(rnd.nextInt(99999));
+	}
+	
+	
+	/*---Get Methods---*/
+	
+	public String getDocumentContent() {
+		return documentContent;
+	}
+
+	public String getSomeNewText() {
+		return someNewText;
+	}
+	
+	public String getRegNumberRemovedCard() {
+		return regNumberRemovedCard;
+	}
+	
+	public String getRegNumberRestoredCard() {
+		return regNumberRestoredCard;
+	}
+	
+	/*---Set Methods---*/
+	
+	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
+		this.regNumberRemovedCard = regNumberRemovedCard;
+	}
+	
+	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
+		this.regNumberRestoredCard = regNumberRestoredCard;
 	}
 
 }

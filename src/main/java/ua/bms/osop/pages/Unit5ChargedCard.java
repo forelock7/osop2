@@ -56,8 +56,8 @@ public class Unit5ChargedCard extends AnyPage {
 		
 	//Fills several fields in Document Card
 	public Unit5ChargedCard setChargedCard(Unit5ChargedCardModel unit5ChargedCardModel) {
-		type(inputName, unit5ChargedCardModel.name);
-		type(inputPost, unit5ChargedCardModel.post);
+		type(inputName, unit5ChargedCardModel.getName());
+		type(inputPost, unit5ChargedCardModel.getPost());
 		inputSuperAgencyTypeAdd.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit5-actAsChargedPersonCard')]/following-sibling::div//li[1]"))).click();
 		return this;

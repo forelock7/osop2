@@ -79,9 +79,9 @@ public class Unit5InspectionCard extends AnyPage {
 	
 	//Sets the new card with filling all fields in
 	public Unit5InspectionCard setInspectionCardUnit5(Unit5InspectionCardModel unit5InspectionCardModel) {
-		type(inputInspectionDate, unit5InspectionCardModel.inspectionDate);
+		type(inputInspectionDate, unit5InspectionCardModel.getInspectionDate());
 		setSuperAgencyType();
-		setInputAgencyNameUnit5(unit5InspectionCardModel.agencyName);
+		setInputAgencyNameUnit5(unit5InspectionCardModel.getAgencyName());
 		return this;
 	}
 	
@@ -127,7 +127,7 @@ public class Unit5InspectionCard extends AnyPage {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeDocumentCardFormInspectionCard(Unit5DocumentCardModel unit5DocumentCardModel) {
 		buttonRemoveDocTab.click();
-		unit5DocumentCardModel.regNumberRemovedCard = super.confirmationOfRemoving();
+		unit5DocumentCardModel.setRegNumberRemovedCard(super.confirmationOfRemoving());
 	}
 	
 	//Checks if button "Create" is present on "Response Documents" tab in "Inspection" Card

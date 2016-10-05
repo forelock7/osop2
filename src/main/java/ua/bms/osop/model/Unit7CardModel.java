@@ -7,18 +7,18 @@ import java.util.Random;
  */
 public class Unit7CardModel {
 
-	public String speechDate;
-	public String nameOfMassMedia;
-	public String subjectOfSpeech;	
-	public String authorOfSpeech;
-	public String remark;
+	private String speechDate;
+	private String nameOfMassMedia;
+	private String subjectOfSpeech;	
+	private String authorOfSpeech;
+	private String remark;
 	
 	//Text is set after editing Card
-	public String someNewText;
+	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
-	public String regNumberRemovedCard;
+	private String regNumberRemovedCard;
 	//set registration number Card is been restoring from confirmation form of Restoring
-	public String regNumberRestoredCard;
+	private String regNumberRestoredCard;
 
 
 	/*Generation of random subject of speech*/
@@ -45,6 +45,49 @@ public class Unit7CardModel {
 		this.someNewText = creatNewText();
 	}
 	
+	/*---Get Methods---*/
+	
+	public String getSpeechDate() {
+		return speechDate;
+	}
+	
+	public String getNameOfMassMedia() {
+		return nameOfMassMedia;
+	}
+	
+	public String getSubjectOfSpeech() {
+		return subjectOfSpeech;
+	}
+
+	public String getAuthorOfSpeech() {
+		return authorOfSpeech;
+	}
+	
+	public String getRemark() {
+		return remark;
+	}
+	
+	public String getSomeNewText() {
+		return someNewText;
+	}
+	
+	public String getRegNumberRemovedCard() {
+		return regNumberRemovedCard;
+	}
+	
+	public String getRegNumberRestoredCard() {
+		return regNumberRestoredCard;
+	}
+	
+	/*---Set Methods---*/
+	
+	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
+		this.regNumberRemovedCard = regNumberRemovedCard;
+	}
+	
+	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
+		this.regNumberRestoredCard = regNumberRestoredCard;
+	}
 }
 	
 

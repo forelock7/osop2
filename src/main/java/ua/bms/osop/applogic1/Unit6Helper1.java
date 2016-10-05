@@ -91,7 +91,7 @@ public class Unit6Helper1 extends DriverBasedHelper implements Unit6Helper {
 	/*Edits card with changing value in field "Summary"*/
 	@Override
 	public void editCardUnit6(Unit6CardModel unit6CardModel) {
-		pages.unit6ClaimCard.setInputSummaryUnit6(unit6CardModel.someNewText);
+		pages.unit6ClaimCard.setInputSummaryUnit6(unit6CardModel.getSomeNewText());
 	}
 		
 	//Gets Claim Number

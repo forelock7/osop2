@@ -23,7 +23,7 @@ public class Unit6ClaimsTest extends BasicTestCase {
 		app.getUnit6Helper().createCardUnit6(clCard);
 		app.getUnit6Helper().saveCard();
 		app.getUnit6Helper().openCardToView();
-		Assert.assertEquals(clCard.claimNumber, app.getUnit6Helper().getClaimNumber());
+		Assert.assertEquals(clCard.getClaimNumber(), app.getUnit6Helper().getClaimNumber());
 		app.getUnit6Helper().quitCard();
 	}
 	
@@ -33,7 +33,7 @@ public class Unit6ClaimsTest extends BasicTestCase {
 		app.getUnit6Helper().editCardUnit6(clCard);
 		app.getUnit6Helper().saveCard();
 		app.getUnit6Helper().openCardToEdit();
-		Assert.assertEquals(clCard.someNewText, app.getUnit6Helper().getSummary());
+		Assert.assertEquals(clCard.getSomeNewText(), app.getUnit6Helper().getSummary());
 		app.getUnit6Helper().quitCard();
 	}
 	
@@ -41,14 +41,14 @@ public class Unit6ClaimsTest extends BasicTestCase {
 	public void testRemoveClaimCard(){
 		app.getUnit6Helper().removeCardUnit6(clCard);
 		app.getUnit6Helper().goToRemovedTab();
-		Assert.assertEquals(clCard.regNumberRemovedCard, app.getUnit6Helper().getRegNumberRemovedCardInGrid());
+		Assert.assertEquals(clCard.getRegNumberRemovedCard(), app.getUnit6Helper().getRegNumberRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit6"}, dependsOnMethods = {"testRemoveClaimCard"})
 	public void testRestoreClaimCard() {
 		app.getUnit6Helper().restoreCardUnit6(clCard);
 		app.getUnit6Helper().goToMainTab();
-		Assert.assertEquals(clCard.regNumberRestoredCard, app.getUnit6Helper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(clCard.getRegNumberRestoredCard(), app.getUnit6Helper().getRegNumberFirstCardInGrid());
 	}
 
 }

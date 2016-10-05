@@ -206,19 +206,4 @@ public class WebDriverFactory {
 		return capability;
 	}
 
-	/*public static WebDriver getInstance() {
-	
-		if (driver == null){
-			//Creating a new instance of the Firefox driver
-			driver = new FirefoxDriver();
-			//Maximizing a browser window
-			driver.manage().window().maximize();
-			
-		}
-	return driver;
-	}*/
-	
-	
-
-
 }

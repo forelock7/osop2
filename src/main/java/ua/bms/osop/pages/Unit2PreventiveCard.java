@@ -18,7 +18,7 @@ public class Unit2PreventiveCard extends AnyPage {
 	//Input field "Preventive Action" ("Запобіжний захід")
 	@FindBy(xpath = "//div[contains(@id, 'unit23-preventiveActionTabMain')]//span[contains(., 'Запобіжний захід')]")
 	private WebElement inputActType;
-	//First item of Type of Act
+	//First item of Type of Department
 	@FindBy (xpath = "(//div[contains(@id, 'boundlist')]//li[1])[1]") 
 	private WebElement itemActType;
 	

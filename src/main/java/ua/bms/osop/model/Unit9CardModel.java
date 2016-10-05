@@ -6,27 +6,27 @@ import java.util.Random;
  * Implements model of Unit 9 Card
  */
 public class Unit9CardModel {
-	public String protocolNumber;
-	public String protocolCreatingDate;
-	public String commitingAVDate;
-	public String theory;
-	public String offenderName;
-	public String birthday;
-	public String militaryUnitName;
-	public String post;
-	public String referToCourtDate;
-	public String receivingCourtDecisionDate;
-	public String repeatedReferToCourtDate;
-	public String courtDecisionDate;
-	public String receivingDateMain;
-	public String beginingPunishmentDate;
+	private String protocolNumber;
+	private String protocolCreatingDate;
+	private String commitingAVDate;
+	private String theory;
+	private String offenderName;
+	private String birthday;
+	private String militaryUnitName;
+	private String post;
+	private String referToCourtDate;
+	private String receivingCourtDecisionDate;
+	private String repeatedReferToCourtDate;
+	private String courtDecisionDate;
+	private String receivingDateMain;
+	private String beginingPunishmentDate;
 	
 	//Text is set after editing Card
-	public String someNewText;
+	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
-	public String regNumberRemovedCard;
+	private String regNumberRemovedCard;
 	//set registration number Card is been restoring from confirmation form of Restoring
-	public String regNumberRestoredCard;
+	private String regNumberRestoredCard;
 
 	//generation of random protocol number
 	private String setProtocolNumber() {
@@ -62,8 +62,83 @@ public class Unit9CardModel {
 		
 	}
 	
-
+	/*---Get Methods---*/
 	
+	public String getProtocolNumber() {
+		return protocolNumber;
+	}
+	
+	public String getProtocolCreatingDate() {
+		return protocolCreatingDate;
+	}
+	
+	public String getCommitingAVDate() {
+		return commitingAVDate;
+	}
 
-
+	public String getTheory() {
+		return theory;
+	}
+	
+	public String getOffenderName() {
+		return offenderName;
+	}
+	
+	public String getBirthday() {
+		return birthday;
+	}
+	
+	public String getMilitaryUnitName() {
+		return militaryUnitName;
+	}
+	
+	public String getPost() {
+		return post;
+	}
+	
+	public String getReferToCourtDate() {
+		return referToCourtDate;
+	}
+	
+	public String getReceivingCourtDecisionDate() {
+		return receivingCourtDecisionDate;
+	}
+	
+	public String getRepeatedReferToCourtDate() {
+		return repeatedReferToCourtDate;
+	}
+	
+	public String getCourtDecisionDate() {
+		return courtDecisionDate;
+	}
+	
+	public String getReceivingDateMain() {
+		return receivingDateMain;
+	}
+	
+	public String getBeginingPunishmentDate() {
+		return beginingPunishmentDate;
+	}
+	
+	public String getSomeNewText() {
+		return someNewText;
+	}
+	
+	public String getRegNumberRemovedCard() {
+		return regNumberRemovedCard;
+	}
+	
+	public String getRegNumberRestoredCard() {
+		return regNumberRestoredCard;
+	}
+	
+	/*---Set Methods---*/
+	
+	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
+		this.regNumberRemovedCard = regNumberRemovedCard;
+	}
+	
+	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
+		this.regNumberRestoredCard = regNumberRestoredCard;
+	}
 }

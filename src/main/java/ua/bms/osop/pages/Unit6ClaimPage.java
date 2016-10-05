@@ -56,13 +56,13 @@ public class Unit6ClaimPage extends AnyPage {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGridUnit6(Unit6CardModel unit6CardModel){
 		buttonRemove.click();
-		unit6CardModel.regNumberRemovedCard = super.confirmationOfRemoving();
+		unit6CardModel.setRegNumberRemovedCard(super.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGridUnit6(Unit6CardModel unit6CardModel) {
 		buttonRestore.click();
-		unit6CardModel.regNumberRestoredCard = confirmRestoring();
+		unit6CardModel.setRegNumberRestoredCard(confirmRestoring());
 	}
 	
 

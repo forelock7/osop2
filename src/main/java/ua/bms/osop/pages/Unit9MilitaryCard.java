@@ -144,38 +144,38 @@ public class Unit9MilitaryCard extends AnyPage {
 	
 	//Sets all field of Card
 	public Unit9MilitaryCard setCardUnit9(Unit9CardModel unit9CardModel) /*throws InterruptedException*/{
-		type(inputProtocolNumber, unit9CardModel.protocolNumber);
-		type(inputProtocolCreatingDate, unit9CardModel.protocolCreatingDate);
+		type(inputProtocolNumber, unit9CardModel.getProtocolNumber());
+		type(inputProtocolCreatingDate, unit9CardModel.getProtocolCreatingDate());
 		inputSectionAOLawbook.click();
 		fluientWaitforElement(itemSectionAOLawbook).click();
-		type(inputCommitingAODate, unit9CardModel.commitingAVDate);
-		type(inputTheory, unit9CardModel.theory);
-		type(inputOffenderName, unit9CardModel.offenderName);
-		type(inputBirthday, unit9CardModel.birthday);
+		type(inputCommitingAODate, unit9CardModel.getCommitingAVDate());
+		type(inputTheory, unit9CardModel.getTheory());
+		type(inputOffenderName, unit9CardModel.getOffenderName());
+		type(inputBirthday, unit9CardModel.getBirthday());
 		inputMilitaryTroop.click();
 		itemMilitaryTroop.click();
-		type(inputMilitaryUnitName, unit9CardModel.militaryUnitName);
+		type(inputMilitaryUnitName, unit9CardModel.getMilitaryUnitName());
 		inputMilitaryRank.click();
 		itemMilitaryRank.click();
 		inputPostCategory.click();
 		itemPostCategory.click();
-		type(inputPost, unit9CardModel.post);
-		type(inputReferToCourtDate, unit9CardModel.referToCourtDate);
+		type(inputPost, unit9CardModel.getPost());
+		type(inputReferToCourtDate, unit9CardModel.getReferToCourtDate());
 		inputCourtName.click();
 		itemOfCourt.click();
 		checkboxReturnByCourt.click();
-		type(inputReceivingCourtDecisionDate, unit9CardModel.receivingCourtDecisionDate);
-		type(inputRepeatedReferToCourtDate, unit9CardModel.repeatedReferToCourtDate);
+		type(inputReceivingCourtDecisionDate, unit9CardModel.getReceivingCourtDecisionDate());
+		type(inputRepeatedReferToCourtDate, unit9CardModel.getRepeatedReferToCourtDate());
 		buttonAdd.click();
 		inputReferReturn.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Направлено до суду')]"))).click();
-		type(inputCourtDecisionDate, unit9CardModel.courtDecisionDate);
+		type(inputCourtDecisionDate, unit9CardModel.getCourtDecisionDate());
 		buttonAddMovingOfProtocol.click();
 		inputConsiderationResult.click();
 		itemConsiderationResult.click();
-		type(inputReceivingDateMain, unit9CardModel.receivingDateMain);
+		type(inputReceivingDateMain, unit9CardModel.getReceivingDateMain());
 		checkboxCarriedPunishment.click();
-		type(inputBeginningPunishmentDate, unit9CardModel.beginingPunishmentDate);
+		type(inputBeginningPunishmentDate, unit9CardModel.getBeginingPunishmentDate());
 		return this;
 	}
 	

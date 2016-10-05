@@ -36,7 +36,7 @@ public class Unit2PreventivePage extends AnyPage  {
 	//Button "Restore" ("Відновити") for the first record in the main grid on the main UNIT's page(row-1; column-11).
 	@FindBy(xpath = "//div[contains(@id, 'unit23-preventiveActionGridDeleted')]//table[1]//td[11]/div/img")
 	private WebElement buttonRestore;
-	/*-------------------Methods of Claims Page-------------------------------------------------------------*/
+	/*-------------------Methods of Preventive Page-------------------------------------------------------------*/
 
 	/*
 	 * Determines loading of Page

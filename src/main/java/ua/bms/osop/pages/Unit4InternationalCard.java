@@ -53,15 +53,15 @@ public class Unit4InternationalCard extends AnyPage {
 	
 	//Sets the new card with filling all fields in
 	public Unit4InternationalCard setCardUnit4(Unit4CardModel unit4CardModel){
-		type(inputClaimNumber, unit4CardModel.claimNumber);
-		type(inputReceiptDate, unit4CardModel.receiptDate);
+		type(inputClaimNumber, unit4CardModel.getClaimNumber());
+		type(inputReceiptDate, unit4CardModel.getReceiptDate());
 		inputClaimType.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Звернення (запит) іноземних установ')]"))).click();
 		inputLegalAssistType.click();
 		wait2.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Виконання процесуальних дій')]"))).click();
 		inputCountryClaim.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'listcombowindow')]//table[6]//td[3]//img"))).click();
-		type(inputSummary, unit4CardModel.summary);
+		type(inputSummary, unit4CardModel.getSummary());
 		return this;
 	}
 		

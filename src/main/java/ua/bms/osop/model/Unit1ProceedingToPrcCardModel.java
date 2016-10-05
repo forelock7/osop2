@@ -9,14 +9,10 @@ import java.util.Random;
  */
 public class Unit1ProceedingToPrcCardModel {
 
-    public String plaintiff;
-    public String defendant;
+	private String plaintiff;
+	private String defendant;
 
-    public String someNewText;
-    //set registration number Card is been removing from confirmation form of Deletion
-    public String regNumberRemovedCard;
-    //set registration number Card is been restoring from confirmation form of Restoring
-    public String regNumberRestoredCard;
+	private String someNewText;
 
     /*Constructor of Unit 1 Claim Model Object*/
     public Unit1ProceedingToPrcCardModel (String defendant) {
@@ -37,5 +33,19 @@ public class Unit1ProceedingToPrcCardModel {
         Random rnd = new Random();
         return "teXt Розділ1-НП за поз до прок!@##dddghfhds$$%&*^&*(&)" + Integer.toString(rnd.nextInt(999999999));
     }
+    
+	/*---Get Methods---*/
+	
+	public String getPlaintiff() {
+		return plaintiff;
+	}
+	
+	public String getDefendant() {
+		return defendant;
+	}
+	
+	public String getSomeNewText() {
+		return someNewText;
+	}
 
 }

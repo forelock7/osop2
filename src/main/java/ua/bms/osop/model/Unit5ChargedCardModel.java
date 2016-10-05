@@ -10,12 +10,12 @@ import java.util.Random;
  */
 public class Unit5ChargedCardModel {
 	
-	public String name;
-	public String post;	
+	private String name;
+	private String post;	
 
-	public String someNewText;
+	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
-	public String chargedNameDeletedCard;
+	private String chargedNameDeletedCard;
 	
 	/*Constructor of Charged Person Card Unit 5 Model Object*/
 	public Unit5ChargedCardModel(String post) {
@@ -36,4 +36,30 @@ public class Unit5ChargedCardModel {
 		Random rnd = new Random();
 		return "Other post" + Integer.toString(rnd.nextInt(999));
 	}
+	
+	/*---Get Methods---*/
+	
+	public String getName() {
+		return name;
+	}
+	
+	public String getPost() {
+		return post;
+	}
+
+	public String getSomeNewText() {
+		return someNewText;
+	}
+	
+	public String getChargedNameDeletedCard() {
+		return chargedNameDeletedCard;
+	}
+
+	/*---Set Methods---*/
+	
+	public void setChargedNameDeletedCard (String chargedNameDeletedCard) {
+		this.chargedNameDeletedCard = chargedNameDeletedCard;
+	}
+
+	
 }

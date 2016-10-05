@@ -84,7 +84,7 @@ public class Unit6ClaimCard extends AnyPage {
 	
 	//Setting the new card with filling all fields in
 	public Unit6ClaimCard setCardUnit6(Unit6CardModel unit6CardModel){
-		type(inputClaimNumber, unit6CardModel.claimNumber);
+		type(inputClaimNumber, unit6CardModel.getClaimNumber());
 		inputClaimType.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Первинне')]"))).click();
 		inputApplicantForm.click();
@@ -92,8 +92,8 @@ public class Unit6ClaimCard extends AnyPage {
 		clickButtonAddFacts();
 		setApplicantFacts(unit6CardModel);
 		clickButtonAddApplicantInForm();
-		type(inputSummary, unit6CardModel.summary);
-		type(inputReceivingProsecutorDate, unit6CardModel.receivingProsecutorDate);
+		type(inputSummary, unit6CardModel.getSummary());
+		type(inputReceivingProsecutorDate, unit6CardModel.getReceivingProsecutorDate());
 		inputArrowEstablishInUnit.click();
 		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'boundlist')]//tr[2]/td[1]/div"))).click();
 		inputClaimCategory.click();
@@ -111,7 +111,7 @@ public class Unit6ClaimCard extends AnyPage {
 		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit68-request-as-applicantCard')]/following-sibling::div[2]/div[contains(@id, 'boundlist')]//li[contains(.,'Фізична особа')]"))).click();
 		inputApplicantType.click();
 		wait1.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'unit68-request-as-applicantCard')]/following-sibling::div[4]//ul[contains(@id, 'boundlist')]//li[contains(.,'Заявник')]"))).click();
-		type(inputApplicantName, claimCard.applicantName);
+		type(inputApplicantName, claimCard.getApplicantName());
 		return this;
 	}
 	

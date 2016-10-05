@@ -11,7 +11,7 @@ public class Unit2AppealsHelper1 extends DriverBasedHelper implements Unit2Appea
 	}
 
 	
-	/*--------------------------------Pre-Investigation Act Page----------------------------------------------------*/
+	/*--------------------------------Appeal Page----------------------------------------------------*/
 	
 	/*Checks if on Unit 2 Page*/
 	@Override
@@ -47,7 +47,7 @@ public class Unit2AppealsHelper1 extends DriverBasedHelper implements Unit2Appea
 		pages.unit2AppealPage.clickButtonEditCard();
 	}
 	
-	/*Removes card(record) from main grid on Unit4*/
+	/*Removes card(record) from main grid*/
 	@Override
 	public void removeCard(Unit2AppealCardModel unit2AppealCardModel){
 		pages.unit2AppealPage.removeCardFromGrid(unit2AppealCardModel);
@@ -77,7 +77,7 @@ public class Unit2AppealsHelper1 extends DriverBasedHelper implements Unit2Appea
 		return pages.unit2AppealPage.getRegNumberFromGridOnMainTab();
 	}
 	
-	/*--------------------------------Pre-Investigation Act Card----------------------------------------------------*/
+	/*--------------------------------Appeal Card----------------------------------------------------*/
 	
 	/*Creates a new Card with filling all fields in and submitting*/
 	@Override
@@ -97,7 +97,7 @@ public class Unit2AppealsHelper1 extends DriverBasedHelper implements Unit2Appea
 		return pages.unit2AppealCard.getInputProceedingNumber();
 	}
 		
-	/*Returns value in field "Content" from later edited card(after its editing)*/
+	/*Returns value in field from later edited card(after its editing)*/
 	@Override
 	public String getGroundsForAppeal(){
 		return pages.unit2AppealCard.getInputGroundsForAppeal();

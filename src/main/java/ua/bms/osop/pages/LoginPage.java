@@ -49,8 +49,8 @@ public class LoginPage extends AnyPage {
 	
 	//Fills Login Form in
 	public LoginPage setLoginForm(UserModel userModel) {
-		type(inputUsername, userModel.login);
-		type(inputPassword, userModel.password);
+		type(inputUsername, userModel.getLogin());
+		type(inputPassword, userModel.getPassword());
 		return this;
 	}
 	

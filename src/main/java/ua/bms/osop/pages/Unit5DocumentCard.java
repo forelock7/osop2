@@ -100,7 +100,7 @@ public class Unit5DocumentCard extends AnyPage {
 
 	//Deletes first record(charged person) from grid
 	public void deleteChargedRecordFormGridInDocument(Unit5ChargedCardModel unit5ChargedCardModel) {
-		unit5ChargedCardModel.chargedNameDeletedCard = getNameFromChargedPersonGrid();
+		unit5ChargedCardModel.setChargedNameDeletedCard(getNameFromChargedPersonGrid());
 		buttonDeleteChargedFromGrid.click();
 	}
 	
@@ -110,7 +110,7 @@ public class Unit5DocumentCard extends AnyPage {
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//div[contains(@id, 'boundlist')]//li[1])[1]"))).click();
 		setSuperAgencyTypeReport();
 		setSuperAgencyTypeAdd();
-		type(inputDocumentContent, unit5DocumentCardModel.documentContent);
+		type(inputDocumentContent, unit5DocumentCardModel.getDocumentContent());
 		return this;
 	}
 	

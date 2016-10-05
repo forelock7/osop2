@@ -55,15 +55,15 @@ public class Unit8RequestCard extends AnyPage {
 	
 	//Setting the new card with filling all fields in
 	public Unit8RequestCard setCardUnit8(Unit8CardModel unit8CardModel){
-		type(inputRequestNumber, unit8CardModel.requestNumber);
+		type(inputRequestNumber, unit8CardModel.getRequestNumber());
 		inputRequesters.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'treepanel')]//span[contains(., 'Фізичні особи')]"))).click();
 		inputRequestReceived.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[1]"))).click();
-		type(inputReceiptDate, unit8CardModel.receiptDate);
+		type(inputReceiptDate, unit8CardModel.getReceiptDate());
 		inputRequestSpecificity.click();
 		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'treepanel')]//span[contains(., 'З питань досудового розслідування')]"))).click();
-		type(inputSummary, unit8CardModel.summary);
+		type(inputSummary, unit8CardModel.getSummary());
 		return this;
 	}
 	

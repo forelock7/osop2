@@ -74,8 +74,8 @@ public class Unit1ProceedingCard extends AnyPage {
         fluientWaitforElement(itemJusticeType).click();
         inputGeneralSubject.click();
         fluientWaitforElement(itemGeneralSubject).click();
-        type(inputPlaintiff, unit1ProceedingCardModel.plaintiff);
-        type(inputDefendant, unit1ProceedingCardModel.defendant);
+        type(inputPlaintiff, unit1ProceedingCardModel.getPlaintiff());
+        type(inputDefendant, unit1ProceedingCardModel.getDefendant());
         return this;
     }
 

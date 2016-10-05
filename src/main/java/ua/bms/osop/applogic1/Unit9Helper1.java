@@ -94,7 +94,7 @@ public class Unit9Helper1 extends DriverBasedHelper implements Unit9Helper  {
 	/*Edits card with changing value in field "Theory"*/
 	@Override
 	public void editCardUnit9(Unit9CardModel unit9CardModel){
-		pages.unit9MilitaryCard.setInputTheoryUnit9(unit9CardModel.someNewText);
+		pages.unit9MilitaryCard.setInputTheoryUnit9(unit9CardModel.getSomeNewText());
 	}
 	
 

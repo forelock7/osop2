@@ -51,13 +51,13 @@ public class Unit7MassMediaCard extends AnyPage {
 	
 	//Setting the new card with filling all fields in
 	public Unit7MassMediaCard setCardUnit7(Unit7CardModel massMediaCard){
-		type(inputSpeechDate, massMediaCard.speechDate);
+		type(inputSpeechDate, massMediaCard.getSpeechDate());
 		inputTypeOfCoverage.click();
 		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'treepanel')]//table[2]"))).click();
-		type(inputNameOfMassMedia, massMediaCard.nameOfMassMedia);
-		type(inputSubjectOfSpeech, massMediaCard.subjectOfSpeech);
-		type(inputAuthorOfSpeech, massMediaCard.authorOfSpeech);
-		type(inputRemark, massMediaCard.remark);
+		type(inputNameOfMassMedia, massMediaCard.getNameOfMassMedia());
+		type(inputSubjectOfSpeech, massMediaCard.getSubjectOfSpeech());
+		type(inputAuthorOfSpeech, massMediaCard.getAuthorOfSpeech());
+		type(inputRemark, massMediaCard.getRemark());
 		return this;
 	}
 	
