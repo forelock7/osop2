@@ -19,8 +19,8 @@ public interface Unit4Helper {
 	
 	void createCard(Unit4CardModel unit4CardModel);
 	void editCard(Unit4CardModel unit4CardModel);
-	void removeCardUnit4(Unit4CardModel unit4CardModel);
-	void restoreCardUnit4(Unit4CardModel unit4CardModel);
+	void removeCard(Unit4CardModel unit4CardModel);
+	void restoreCard(Unit4CardModel unit4CardModel);
 
 	String getRegNumberFirstCardInGrid();
 	String getRegNumberFirstRemovedCardInGrid();

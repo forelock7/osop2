@@ -96,7 +96,7 @@ public class Unit1ProceedingCard extends AnyPage {
 
 	/*------------------Methods of Proceeding Card on "Stages" Tab----------------------------------*/
 
-    //Checks if button "Refresh" is present on "Stages" tab in "Proceeding" Card
+    //Checks if button  is present on "Stages" tab in "Proceeding" Card
     public boolean isTitleOfGridPresent() {
         return isElementPresent(titleOfGrid);
     }

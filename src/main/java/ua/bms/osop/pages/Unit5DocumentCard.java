@@ -64,7 +64,7 @@ public class Unit5DocumentCard extends AnyPage {
 	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[8]//img")
 	private WebElement buttonDeleteChargedFromGrid;
 	
-	//Column "Name" in Charged Person Grid
+	//First record in column "Name" in Charged Person Grid
 	@FindBy (xpath = "//div[contains(@id, 'unit5-actAsChargedPersonGrid')]//table[1]//td[2]/div")
 	private WebElement cellNameChargedGrid;
 	

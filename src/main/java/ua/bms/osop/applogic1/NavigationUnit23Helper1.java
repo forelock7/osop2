@@ -104,7 +104,7 @@ public class NavigationUnit23Helper1 extends DriverBasedHelper implements Naviga
 	/*-------------------------------------------------------------------------*/
 	
 	//Goes to Unit 3 - "Criminal proceedings"("Кримінальні провадження")
-	public void goToUnit3CriminalProcPage() {
+	public void goToUnit3CriminalProceedingPage() {
 		if (isOnUnit23Page()) {
 			pages.navigationUnit23Page.ensurePageLoaded().clickCriminalProcMenuU23();
 		} else {
@@ -114,7 +114,7 @@ public class NavigationUnit23Helper1 extends DriverBasedHelper implements Naviga
 	}
 	
 	//Goes to Unit 3 - "Other criminal proceedings"("Інші кримінальні провадження")
-	public void goToUnit3OtherCriminalProcPage() {
+	public void goToUnit3OtherCriminalProceedingPage() {
 		if (isOnUnit23Page()) {
 			pages.navigationUnit23Page.ensurePageLoaded().clickOtherCriminalProcMenuU23();
 		} else {
@@ -124,7 +124,7 @@ public class NavigationUnit23Helper1 extends DriverBasedHelper implements Naviga
 	}
 	
 	//Goes to Unit 3 - "Participation in the trial proceedings and other CP"("Участь у судовому розгляді проваджень та інших КП")
-	public void goToUnit3ParticipationProcPage() {
+	public void goToUnit3ParticipationProceedingPage() {
 		if (isOnUnit23Page()) {
 			pages.navigationUnit23Page.ensurePageLoaded().clickParticipationProcMenuU23();
 		} else {
@@ -134,7 +134,7 @@ public class NavigationUnit23Helper1 extends DriverBasedHelper implements Naviga
 	}
 	
 	//Goes to Unit 3 - "Criminal cases"("Кримінальні справи")
-	public void goToUnit3CriminalCasesPage() {
+	public void goToUnit3CriminalCasePage() {
 		if (isOnUnit23Page()) {
 			pages.navigationUnit23Page.ensurePageLoaded().clickCriminalCasesMenuU23();
 		} else {
@@ -144,7 +144,7 @@ public class NavigationUnit23Helper1 extends DriverBasedHelper implements Naviga
 	}
 	
 	//Goes to Unit 3 - "Other criminal cases"("Інші кримінальні справи")
-	public void goToUnit3OtherCriminalCasesPage() {
+	public void goToUnit3OtherCriminalCasePage() {
 		if (isOnUnit23Page()) {
 			pages.navigationUnit23Page.ensurePageLoaded().clickOtherCriminalCasesMenuU23();
 		} else {
@@ -154,7 +154,7 @@ public class NavigationUnit23Helper1 extends DriverBasedHelper implements Naviga
 	}
 	
 	//Goes to Unit 3 - "Participation in the trial cases and other CC"("Участь у судовому розгляді справ та інших КС")
-	public void goToUnit3ParticipationCasesPage() {
+	public void goToUnit3ParticipationCasePage() {
 		if (isOnUnit23Page()) {
 			pages.navigationUnit23Page.ensurePageLoaded().clickParticipationCasesMenuU23();
 		} else {

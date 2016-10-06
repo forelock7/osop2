@@ -49,18 +49,18 @@ public class Unit4InternationalPage extends AnyPage {
 	}
 	
 	//Click on "Edit" button for the first record in the main grid
-	public void clickButtonEditCardUnit4() {
-		wait.until(ExpectedConditions.elementToBeClickable(buttonEdit)).click();
+	public void clickButtonEditCard() {
+		fluientWaitforElement(buttonEdit).click();
 	}
 	
 	//Removing Card with getting registration number of the card that will be removed
-	public void removeCardFromGridUnit4(Unit4CardModel unit4CardModel){
+	public void removeCardFromGrid(Unit4CardModel unit4CardModel){
 		buttonRemove.click();
 		unit4CardModel.setRegNumberRemovedCard(super.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
-	public void restoreCardFromGridUnit4(Unit4CardModel unit4CardModel) {
+	public void restoreCardFromGrid(Unit4CardModel unit4CardModel) {
 		buttonRestore.click();
 		unit4CardModel.setRegNumberRestoredCard(confirmRestoring());
 	}

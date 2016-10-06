@@ -75,9 +75,9 @@ public class NavigationUnit1Page extends AnyPage {
 	}
 	
 	//Goes from "Navigation Page in Unit 1" to Unit 1 "Started Crime Proceedings" page
-	public Unit1CrimePage clickCrimeMenuItem(){
+	public Unit1CriminalPage clickCrimeMenuItem(){
 		itemCrimeMenuU1.click();
-		return pages.unit1CrimePage;
+		return pages.unit1CriminalPage;
 	}
 	
 	//Goes from "Navigation Page in Unit 1" to Unit 1 "Viewing of claims, statements" page

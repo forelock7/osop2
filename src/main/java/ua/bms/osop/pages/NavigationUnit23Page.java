@@ -135,21 +135,21 @@ public class NavigationUnit23Page extends AnyPage {
 	}
 	
 	//U3 - Moving from "Navigation Page in Unit 23" to Unit 3 "Criminal proceedings"("Кримінальні провадження");
-	public Unit3CriminalProcPage clickCriminalProcMenuU23(){
+	public Unit3CriminalProceedingPage clickCriminalProcMenuU23(){
 		itemCriminalProcMenuU23.click();
-		return pages.unit3CriminalProcPage;
+		return pages.unit3CriminalProceedingPage;
 	}
 	
 	//U3 - Moving from "Navigation Page in Unit 23" to Unit 3 "Other criminal proceedings"("Інші кримінальні провадження");
-	public Unit3OtherCriminalProcPage clickOtherCriminalProcMenuU23(){
+	public Unit3OtherCriminalProceedingPage clickOtherCriminalProcMenuU23(){
 		itemOtherCriminalProcMenuU23.click();
-		return pages.unit3OtherCriminalProcPage;
+		return pages.unit3OtherCriminalProceedingPage;
 	}
 	
 	//U3 - Moving from "Navigation Page in Unit 23" to Unit 3 "Participation in the trial proceedings and other CP"("Участь у судовому розгляді проваджень та інших КП");
-	public Unit3ParticipationProcPage clickParticipationProcMenuU23(){
+	public Unit3ParticipationProceedingPage clickParticipationProcMenuU23(){
 		itemParticipationProcMenuU23.click();
-		return pages.unit3ParticipationProcPage;
+		return pages.unit3ParticipationProceedingPage;
 	}
 	
 	//U3 - Moving from "Navigation Page in Unit 23" to Unit 3 "Criminal cases"("Кримінальні справи");

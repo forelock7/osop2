@@ -1,7 +1,6 @@
 package ua.bms.osop.pages;
 
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
@@ -28,11 +27,6 @@ public class Unit1ProceedingToPrcPage extends AnyPage {
 	//Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-9).
 	@FindBy(xpath = "//table[1]//td[9]/div/img")
 	WebElement buttonEdit;
-
-	//Registration Number in the first record of grid on Main tab
-	@FindBy(xpath = "//div[contains(@id, 'tableview')]/div[1]//table[1]//td[2]/div")
-	private WebElement cellRegNumberInGridOnMainTab;
-
 	
 	/*------------------Methods of the Review To Procuracy Page-------------------------------------------------------------*/
 	
@@ -43,13 +37,6 @@ public class Unit1ProceedingToPrcPage extends AnyPage {
 		super.ensurePageLoaded();
 		wait.until(ExpectedConditions.visibilityOf(titleReviewToPrcUnit1));
 		return this;
-	}
-
-	//Opens to review Card
-	@Override
-	public void doubleClickOnFirstRecordInGridOnMainTab() {
-		Actions action = new Actions(driver);
-		action.doubleClick(fluientWaitforElement(cellRegNumberInGridOnMainTab)).perform();
 	}
 
 	//Click on "Edit" button for the first record in the main grid

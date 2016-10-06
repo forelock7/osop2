@@ -38,14 +38,14 @@ public class Unit4InternationalTest extends BasicTestCase {
 	
 	@Test (groups = {"unit4"}, dependsOnMethods = {"testEditInternationalCard"})
 	public void testRemoveInternationalCard(){
-		app.getUnit4Helper().removeCardUnit4(intCard);
+		app.getUnit4Helper().removeCard(intCard);
 		app.getUnit4Helper().goToRemovedTab();
 		Assert.assertEquals(intCard.getRegNumberRemovedCard(), app.getUnit4Helper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit4"}, dependsOnMethods = {"testRemoveInternationalCard"})
 	public void testRestoreInternationalCard() {
-		app.getUnit4Helper().restoreCardUnit4(intCard);
+		app.getUnit4Helper().restoreCard(intCard);
 		app.getUnit4Helper().goToMainTab();
 		Assert.assertEquals(intCard.getRegNumberRestoredCard(), app.getUnit4Helper().getRegNumberFirstCardInGrid());
 	}

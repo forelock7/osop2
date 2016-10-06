@@ -40,13 +40,13 @@ public abstract class AnyPage extends Page {
 	@FindBy (xpath = "//div[contains(@id, 'headercontainer')]/div[3]")
 	private WebElement headerMainGrid;
 	
+	//Registration Number in the first record of grid on Main tab
+	@FindBy(xpath = "//div[1]//table[1]//td[2]/div")
+	private WebElement cellRegNumberInGridOnMainTab;
+	
 	//Registration Number in the first record of grid on "Removed" tab
 	@FindBy(xpath = "//div[contains(@id, 'GridDeleted')]//table[1]//td[2]/div")
 	private WebElement cellRegNumberInGridOnRemovedTab;
-	
-	//Registration Number in the first record of grid on Main tab
-	@FindBy(xpath = "//div[contains(@id, 'tabpanel')]/div[1]//table[1]//td[2]/div")
-	private WebElement cellRegNumberInGridOnMainTab;
 	
 	/*The card*/
 	

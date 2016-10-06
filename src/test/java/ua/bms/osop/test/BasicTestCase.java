@@ -35,25 +35,33 @@ public class BasicTestCase {
 		app.stop();
 	}
 	
-/*-----------------------------------------------------------------------------------------------------------------*/
+	/*-----------------------------------------------------------------------------------------------------------------*/
 	/*Initialization of object "user"*/	
 	protected UserModel userModel = new UserModel("vova", "bMS$2016");
 	protected UserModel user1 = new UserModel("vova", "failedPassword");
 	protected UserModel user2 = new UserModel("failedLogin", "bMS$2016");
 	
-/*-----------------------------------------------------------------------------------------------------------------*/	
+	/*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Review proceedings on a claim Card(Unit 1) except field with drop-down list*/
 	protected static Unit1ProceedingCardModel proceedingCard = new Unit1ProceedingCardModel(
 			/*Відповідач(боржник)*/"Відповідач - боржник");
 	
-/*-----------------------------------------------------------------------------------------------------------------*/
+	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from Review proceedings on a claim to Procuracy authorities Card(Unit 1) except field with drop-down list*/
 	protected static Unit1ProceedingToPrcCardModel proceedingToPrcCard = new Unit1ProceedingToPrcCardModel(
 			/*Відповідач*/"Відповідач(до прокуратури)");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/
 
-/*-----------------------------------------------------------------------------------------------------------------*/
+	/*Initialization of input fields from 3 - "Started Crime Proceedings"("Розпочато кримінальних проваджень") Card(Unit 1) except field with drop-down list*/
+	protected static Unit1CriminalCardModel criminalCard = new Unit1CriminalCardModel(
+			/*Дата реєстрації*/"05.07.2016",
+			/*Статті КК України за ознаками яких розпочато кримінальне провадження*/"Стаття 562 пункт 45 ГШПмаентлот",
+			/*Фабула*/"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");
+
+	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 1 - "Acts of supervision over pre-trial investigation" Card("Акти нагляду за ДР")(Unit 2) except field with drop-down list*/
 	protected static Unit2ActPICardModel actPICard = new Unit2ActPICardModel(
@@ -98,8 +106,16 @@ public class BasicTestCase {
 	protected static Unit2CovertCardModel covertCard = new Unit2CovertCardModel(
 			/*Дата рішення суду*/"01.09.2016");
 	
-	/*----------------------------------------------------------------------------------------------------------------*/
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 1 - "Criminal proceedings"("Кримінальні провадження"); Card(Unit 3) except field with drop-down list*/
+	protected static Unit3CriminalProceedingCardModel criminalProceedingCard = new Unit3CriminalProceedingCardModel(
+			/*Дата початку досудового розслідування*/"12.06.2015",
+			/*Кваліфікація правопорушення*/"лргсроивморШГШР%:;8678456",
+			/*Дата надіслання до суду*/"12.06.2015");
 	
+	/*----------------------------------------------------------------------------------------------------------------*/
+		
 	/*Initialization of input fields from International Judicial Cooperation Card(Unit 4) except field with drop-down list*/
 	protected static Unit4CardModel intCard = new Unit4CardModel (
 			/*Дата надходження*/"11.09.2016",

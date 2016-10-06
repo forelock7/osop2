@@ -29,10 +29,10 @@
 	
 	<test verbose="3" name="Test5">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit2ActsOperationalActivitiesTest" />
+      		 <class name="ua.bms.osop.test.Unit2ActOperationalActivityTest" />
       		 <class name="ua.bms.osop.test.Unit2ActsPretrialInvestigationTest" />
       		 <class name="ua.bms.osop.test.Unit2AppealsPretrialInvestigationTest" />
-      		 <class name="ua.bms.osop.test.Unit2CovertSurveillancesTest" />
+      		 <class name="ua.bms.osop.test.Unit2CovertSurveillanceTest" />
       		 <class name="ua.bms.osop.test.Unit2PreventiveActionTest" />
       		 <class name="ua.bms.osop.test.Unit2ReleaseFromCustodyTest" />
  		</classes>
@@ -40,8 +40,10 @@
 	
 	<test verbose="3" name="Test6">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit3CriminalCasesTest" />
-      		 <class name="ua.bms.osop.test.Unit3CriminalProceedingsTest" />
+			<class name="ua.bms.osop.test.Unit3CriminalProceedingTest" />
+			<class name="ua.bms.osop.test.Unit3OtherCriminalProceedingTest" />
+      		<class name="ua.bms.osop.test.Unit3CriminalCaseTest" />
+      		<class name="ua.bms.osop.test.Unit3OtherCriminalCaseTest" />
  		</classes>
 	</test>
 		
@@ -59,7 +61,7 @@
 	
 	<test verbose="3" name="Test9">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit6ClaimsTest" />
+      		 <class name="ua.bms.osop.test.Unit6ClaimTest" />
  		</classes>
 	</test>
 	
@@ -71,7 +73,7 @@
 	
 	<test verbose="3" name="Test11">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit8RequestsTest" />
+      		 <class name="ua.bms.osop.test.Unit8RequestTest" />
  		</classes>
 	</test>
 	

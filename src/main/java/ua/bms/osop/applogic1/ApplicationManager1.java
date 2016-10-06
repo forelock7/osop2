@@ -7,27 +7,27 @@ import ua.bms.osop.applogic.NavigationUnit1Helper;
 import ua.bms.osop.applogic.NavigationUnit23Helper;
 import ua.bms.osop.applogic.NavigationUnit5Helper;
 import ua.bms.osop.applogic.NavigationUnit68Helper;
-import ua.bms.osop.applogic.Unit1ViewClaimsHelper;
-import ua.bms.osop.applogic.Unit1ViewClaimsToPrcHelper;
-import ua.bms.osop.applogic.Unit1CrimeHelper;
-import ua.bms.osop.applogic.Unit1ProceedingsHelper;
-import ua.bms.osop.applogic.Unit1ProceedingsToPrcHelper;
-import ua.bms.osop.applogic.Unit2ActsOAHelper;
-import ua.bms.osop.applogic.Unit2ActsPIHelper;
-import ua.bms.osop.applogic.Unit2AppealsHelper;
+import ua.bms.osop.applogic.Unit1ViewClaimHelper;
+import ua.bms.osop.applogic.Unit1ViewClaimToPrcHelper;
+import ua.bms.osop.applogic.Unit1CriminalHelper;
+import ua.bms.osop.applogic.Unit1ProceedingHelper;
+import ua.bms.osop.applogic.Unit1ProceedingToPrcHelper;
+import ua.bms.osop.applogic.Unit2ActOAHelper;
+import ua.bms.osop.applogic.Unit2ActPIHelper;
+import ua.bms.osop.applogic.Unit2AppealHelper;
 import ua.bms.osop.applogic.Unit2CovertHelper;
 import ua.bms.osop.applogic.Unit2PreventiveHelper;
 import ua.bms.osop.applogic.Unit2ReleaseHelper;
-import ua.bms.osop.applogic.Unit3CriminalCasesHelper;
-import ua.bms.osop.applogic.Unit3CriminalProcHelper;
-import ua.bms.osop.applogic.Unit3OtherCriminalCasesHelper;
-import ua.bms.osop.applogic.Unit3OtherCriminalProcHelper;
-import ua.bms.osop.applogic.Unit3ParticipationCasesHelper;
-import ua.bms.osop.applogic.Unit3ParticipationProcHelper;
+import ua.bms.osop.applogic.Unit3CriminalCaseHelper;
+import ua.bms.osop.applogic.Unit3CriminalProceedingHelper;
+import ua.bms.osop.applogic.Unit3OtherCriminalCaseHelper;
+import ua.bms.osop.applogic.Unit3OtherCriminalProceedingHelper;
+import ua.bms.osop.applogic.Unit3ParticipationCaseHelper;
+import ua.bms.osop.applogic.Unit3ParticipationProceedingHelper;
 import ua.bms.osop.applogic.Unit4Helper;
 import ua.bms.osop.applogic.Unit5ChargedHelper;
-import ua.bms.osop.applogic.Unit5DocumentsHelper;
-import ua.bms.osop.applogic.Unit5InspectionsHelper;
+import ua.bms.osop.applogic.Unit5DocumentHelper;
+import ua.bms.osop.applogic.Unit5InspectionHelper;
 import ua.bms.osop.applogic.Unit6Helper;
 import ua.bms.osop.applogic.Unit7Helper;
 import ua.bms.osop.applogic.Unit8Helper;
@@ -50,26 +50,26 @@ public class ApplicationManager1 implements ApplicationManager {
 	 private NavigationUnit23Helper navUnit23Helper;
 	 private NavigationUnit5Helper navUnit5Helper;
 	 private NavigationUnit68Helper navUnit68Helper;
-	 private Unit1ProceedingsHelper unit1ProceedingsHelper;
-	 private Unit1ProceedingsToPrcHelper unit1ProceedingsToPrcHelper;
-	 private Unit1CrimeHelper unit1CrimeHelper;
-	 private Unit1ViewClaimsHelper unit1ViewClaimsHelper;
-	 private Unit1ViewClaimsToPrcHelper unit1ViewClaimsToPrcHelper;
-	 private Unit2ActsOAHelper unit2ActsOAHelper;
-	 private Unit2ActsPIHelper unit2ActsPIHelper;
-	 private Unit2AppealsHelper unit2AppealsHelper;
+	 private Unit1ProceedingHelper unit1ProceedingHelper;
+	 private Unit1ProceedingToPrcHelper unit1ProceedingToPrcHelper;
+	 private Unit1CriminalHelper unit1CriminalHelper;
+	 private Unit1ViewClaimHelper unit1ViewClaimHelper;
+	 private Unit1ViewClaimToPrcHelper unit1ViewClaimToPrcHelper;
+	 private Unit2ActOAHelper unit2ActOAHelper;
+	 private Unit2ActPIHelper unit2ActPIHelper;
+	 private Unit2AppealHelper unit2AppealHelper;
 	 private Unit2CovertHelper unit2CovertHelper;
 	 private Unit2PreventiveHelper unit2PreventiveHelper;
 	 private Unit2ReleaseHelper unit2ReleaseHelper;
-	 private Unit3CriminalCasesHelper unit3CriminalCasesHelper;
-	 private Unit3CriminalProcHelper unit3CriminalProcHelper;
-	 private Unit3OtherCriminalCasesHelper unit3OtherCriminalCasesHelper;
-	 private Unit3OtherCriminalProcHelper unit3OtherCriminalProcHelper;
-	 private Unit3ParticipationCasesHelper unit3ParticipationCasesHelper;
-	 private Unit3ParticipationProcHelper unit3ParticipationProcHelper;
+	 private Unit3CriminalCaseHelper unit3CriminalCaseHelper;
+	 private Unit3CriminalProceedingHelper unit3CriminalProceedingHelper;
+	 private Unit3OtherCriminalCaseHelper unit3OtherCriminalCaseHelper;
+	 private Unit3OtherCriminalProceedingHelper unit3OtherCriminalProceedingHelper;
+	 private Unit3ParticipationCaseHelper unit3ParticipationCaseHelper;
+	 private Unit3ParticipationProceedingHelper unit3ParticipationProceedingHelper;
 	 private Unit4Helper unit4Helper;
-	 private Unit5InspectionsHelper unit5InspectionsHelper;
-	 private Unit5DocumentsHelper unit5DocumentsHelper;
+	 private Unit5InspectionHelper unit5InspectionHelper;
+	 private Unit5DocumentHelper unit5DocumentHelper;
 	 private Unit5ChargedHelper unit5ChargedHelper;
 	 private Unit6Helper unit6Helper;
 	 private Unit7Helper unit7Helper;
@@ -99,26 +99,26 @@ public class ApplicationManager1 implements ApplicationManager {
 		 navUnit23Helper = new NavigationUnit23Helper1(this);
 		 navUnit5Helper = new NavigationUnit5Helper1(this);
 		 navUnit68Helper = new NavigationUnit68Helper1(this);
-		 unit1ProceedingsHelper = new Unit1ProceedingsHelper1(this);
-		 unit1ProceedingsToPrcHelper = new Unit1ProceedingsToPrcHelper1(this);
-		 unit1CrimeHelper = new Unit1CrimeHelper1(this);
-		 unit1ViewClaimsHelper = new Unit1ViewClaimsHelper1(this);
-		 unit1ViewClaimsToPrcHelper = new Unit1ViewClaimsToPrcHelper1(this);
-		 unit2ActsOAHelper = new Unit2ActsOAHelper1(this);
-		 unit2ActsPIHelper = new Unit2ActsPIHelper1(this);
-		 unit2AppealsHelper = new Unit2AppealsHelper1(this);
+		 unit1ProceedingHelper = new Unit1ProceedingHelper1(this);
+		 unit1ProceedingToPrcHelper = new Unit1ProceedingToPrcHelper1(this);
+		 unit1CriminalHelper = new Unit1CrimeHelper1(this);
+		 unit1ViewClaimHelper = new Unit1ViewClaimHelper1(this);
+		 unit1ViewClaimToPrcHelper = new Unit1ViewClaimToPrcHelper1(this);
+		 unit2ActOAHelper = new Unit2ActOAHelper1(this);
+		 unit2ActPIHelper = new Unit2ActPIHelper1(this);
+		 unit2AppealHelper = new Unit2AppealHelper1(this);
 		 unit2CovertHelper = new Unit2CovertHelper1(this);
 		 unit2PreventiveHelper = new Unit2PreventiveHelper1(this);
 		 unit2ReleaseHelper = new Unit2ReleaseHelper1(this);
-		 unit3CriminalCasesHelper = new Unit3CriminalCasesHelper1(this);
-		 unit3CriminalProcHelper = new Unit3CriminalProcHelper1(this);
-		 unit3OtherCriminalCasesHelper = new Unit3OtherCriminalCasesHelper1(this);
-		 unit3OtherCriminalProcHelper = new Unit3OtherCriminalProcHelper1(this);
-		 unit3ParticipationCasesHelper = new Unit3ParticipationCasesHelper1(this);
-		 unit3ParticipationProcHelper = new Unit3ParticipationProcHelper1(this);
+		 unit3CriminalCaseHelper = new Unit3CriminalCaseHelper1(this);
+		 unit3CriminalProceedingHelper = new Unit3CriminalProceedingHelper1(this);
+		 unit3OtherCriminalCaseHelper = new Unit3OtherCriminalCaseHelper1(this);
+		 unit3OtherCriminalProceedingHelper = new Unit3OtherCriminalProceedingHelper1(this);
+		 unit3ParticipationCaseHelper = new Unit3ParticipationCaseHelper1(this);
+		 unit3ParticipationProceedingHelper = new Unit3ParticipationProceedingHelper1(this);
 		 unit4Helper = new Unit4Helper1(this);
-		 unit5InspectionsHelper = new Unit5InspectionsHelper1(this);
-		 unit5DocumentsHelper = new Unit5DocumentsHelper1(this);
+		 unit5InspectionHelper = new Unit5InspectionHelper1(this);
+		 unit5DocumentHelper = new Unit5DocumentHelper1(this);
 		 unit5ChargedHelper = new Unit5ChargedHelper1(this);
 		 unit6Helper = new Unit6Helper1(this);
 		 unit7Helper = new Unit7Helper1(this);
@@ -165,28 +165,28 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 		
 	@Override
-	public Unit1ProceedingsHelper getUnit1ProceedingsHelper(){
-		return unit1ProceedingsHelper;
+	public Unit1ProceedingHelper getUnit1ProceedingsHelper(){
+		return unit1ProceedingHelper;
 	}
 	
 	@Override
-	public Unit1ProceedingsToPrcHelper getUnit1ProceedingsToPrcHelper(){
-		return unit1ProceedingsToPrcHelper;
+	public Unit1ProceedingToPrcHelper getUnit1ProceedingsToPrcHelper(){
+		return unit1ProceedingToPrcHelper;
 	}
 	
 	@Override
-	public Unit1CrimeHelper getUnit1CrimeHelper(){
-		return unit1CrimeHelper;
+	public Unit1CriminalHelper getUnit1CrimeHelper(){
+		return unit1CriminalHelper;
 	}
 	
 	@Override
-	public Unit1ViewClaimsHelper getUnit1ViewClaimsHelper(){
-		return unit1ViewClaimsHelper;
+	public Unit1ViewClaimHelper getUnit1ViewClaimsHelper(){
+		return unit1ViewClaimHelper;
 	}
 	
 	@Override
-	public Unit1ViewClaimsToPrcHelper getUnit1ViewClaimsToPrcHelper(){
-		return unit1ViewClaimsToPrcHelper;
+	public Unit1ViewClaimToPrcHelper getUnit1ViewClaimsToPrcHelper(){
+		return unit1ViewClaimToPrcHelper;
 	}
 	
 	@Override
@@ -195,16 +195,16 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 		
 	@Override
-	public Unit2ActsOAHelper getUnit2ActsOAHelper(){
-		return unit2ActsOAHelper;
+	public Unit2ActOAHelper getUnit2ActsOAHelper(){
+		return unit2ActOAHelper;
 	}
 	@Override
-	public Unit2ActsPIHelper getUnit2ActsPIHelper(){
-		return unit2ActsPIHelper;
+	public Unit2ActPIHelper getUnit2ActsPIHelper(){
+		return unit2ActPIHelper;
 	}
 	@Override
-	public Unit2AppealsHelper getUnit2AppealsHelper(){
-		return unit2AppealsHelper;
+	public Unit2AppealHelper getUnit2AppealsHelper(){
+		return unit2AppealHelper;
 	}
 	@Override
 	public Unit2CovertHelper getUnit2CovertHelper(){
@@ -216,33 +216,33 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 	
 	@Override
-	public Unit3CriminalCasesHelper getUnit3CriminalCasesHelper() {
-		return unit3CriminalCasesHelper;
+	public Unit3CriminalCaseHelper getUnit3CriminalCasesHelper() {
+		return unit3CriminalCaseHelper;
 	}
 	
 	@Override
-	public Unit3CriminalProcHelper getUnit3CriminalProcHelper() {
-		return unit3CriminalProcHelper;
+	public Unit3CriminalProceedingHelper getUnit3CriminalProceedingHelper() {
+		return unit3CriminalProceedingHelper;
 	}
 	
 	@Override
-	public Unit3OtherCriminalCasesHelper getUnit3OtherCriminalCasesHelper() {
-		return unit3OtherCriminalCasesHelper;
+	public Unit3OtherCriminalCaseHelper getUnit3OtherCriminalCasesHelper() {
+		return unit3OtherCriminalCaseHelper;
 	}
 	
 	@Override
-	public Unit3OtherCriminalProcHelper getUnit3OtherCriminalProcHelper() {
-		return unit3OtherCriminalProcHelper;
+	public Unit3OtherCriminalProceedingHelper getUnit3OtherCriminalProcHelper() {
+		return unit3OtherCriminalProceedingHelper;
 	}
 	
 	@Override
-	public Unit3ParticipationCasesHelper getUnit3ParticipationCasesHelper() {
-		return unit3ParticipationCasesHelper;
+	public Unit3ParticipationCaseHelper getUnit3ParticipationCasesHelper() {
+		return unit3ParticipationCaseHelper;
 	}
 	
 	@Override
-	public Unit3ParticipationProcHelper getUnit3ParticipationProcHelper() {
-		return unit3ParticipationProcHelper;
+	public Unit3ParticipationProceedingHelper getUnit3ParticipationProceedingHelper() {
+		return unit3ParticipationProceedingHelper;
 	}
 			
 	@Override
@@ -251,13 +251,13 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 	
 	@Override
-	public Unit5InspectionsHelper getUnit5InspectionsHelper(){
-		return unit5InspectionsHelper;
+	public Unit5InspectionHelper getUnit5InspectionsHelper(){
+		return unit5InspectionHelper;
 	}
 	
 	@Override
-	public Unit5DocumentsHelper getUnit5DocumentsHelper(){
-		return unit5DocumentsHelper;
+	public Unit5DocumentHelper getUnit5DocumentsHelper(){
+		return unit5DocumentHelper;
 	}
 	
 	@Override

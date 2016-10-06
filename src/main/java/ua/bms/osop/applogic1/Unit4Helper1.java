@@ -48,19 +48,19 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	//Opens Card to edit 
 	@Override
 	public void openCardToEdit() {
-		pages.unit4InternationalPage.clickButtonEditCardUnit4();
+		pages.unit4InternationalPage.clickButtonEditCard();
 	}
 	
 	/*Removes card(record) from main grid on Unit4*/
 	@Override
-	public void removeCardUnit4(Unit4CardModel unit4CardModel){
-		pages.unit4InternationalPage.removeCardFromGridUnit4(unit4CardModel);
+	public void removeCard(Unit4CardModel unit4CardModel){
+		pages.unit4InternationalPage.removeCardFromGrid(unit4CardModel);
 	}
 	
 	/*Restores later removed card*/
 	@Override
-	public void restoreCardUnit4(Unit4CardModel unit4CardModel){
-		pages.unit4InternationalPage.restoreCardFromGridUnit4(unit4CardModel);
+	public void restoreCard(Unit4CardModel unit4CardModel){
+		pages.unit4InternationalPage.restoreCardFromGrid(unit4CardModel);
 	}
 	
 	/*
@@ -69,7 +69,7 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	 */
 	@Override
 	public String getRegNumberFirstRemovedCardInGrid(){
-		return pages.unit4InternationalCard.getRegNumberFromGridOnRemovedTab();
+		return pages.unit4InternationalPage.getRegNumberFromGridOnRemovedTab();
 	}
 	
 	/*
@@ -78,7 +78,7 @@ public class Unit4Helper1 extends DriverBasedHelper implements Unit4Helper {
 	 */
 	@Override
 	public String getRegNumberFirstCardInGrid(){
-		return pages.unit4InternationalCard.getRegNumberFromGridOnMainTab();
+		return pages.unit4InternationalPage.getRegNumberFromGridOnMainTab();
 	}
 	
 	/*--------------------------------International Card----------------------------------------------------*/

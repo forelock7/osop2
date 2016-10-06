@@ -14,11 +14,11 @@ public interface NavigationUnit23Helper {
 	void goToUnit2ActsOAPage();
 	void goToUnit2CovertPage();
 	
-	void goToUnit3CriminalProcPage();
-	void goToUnit3OtherCriminalProcPage();
-	void goToUnit3ParticipationProcPage();
-	void goToUnit3CriminalCasesPage();
-	void goToUnit3OtherCriminalCasesPage();
-	void goToUnit3ParticipationCasesPage();
+	void goToUnit3CriminalProceedingPage();
+	void goToUnit3OtherCriminalProceedingPage();
+	void goToUnit3ParticipationProceedingPage();
+	void goToUnit3CriminalCasePage();
+	void goToUnit3OtherCriminalCasePage();
+	void goToUnit3ParticipationCasePage();
 
 }
