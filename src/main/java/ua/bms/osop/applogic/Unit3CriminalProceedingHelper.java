@@ -10,7 +10,7 @@ public interface Unit3CriminalProceedingHelper {
 
 	boolean isOnUnit3CriminalProceedingPage();
 	boolean isOnUnit3CriminalProceedingCard();
-	boolean isOnUnit1StagesTab();
+	boolean isStageCreatingUnable();
 	boolean checkIsButtonCreateFirstInstance();
 	
 	void openCardToCreate();

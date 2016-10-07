@@ -50,7 +50,7 @@ public class Unit1ProceedingCard extends AnyPage {
 
     //Title of Grid "Creation of stages is available after saving RP"("Створення стадій доступно після збереження НП")
     @FindBy(xpath = "//div[contains(text(), 'Створення стадій доступно після збереження НП')]")
-    private WebElement titleOfGrid;
+    private WebElement titleStageCreatingIsUnable;
 
 
     //Button "First Instance" for creating a new First Instance Card
@@ -97,8 +97,8 @@ public class Unit1ProceedingCard extends AnyPage {
 	/*------------------Methods of Proceeding Card on "Stages" Tab----------------------------------*/
 
     //Checks if button  is present on "Stages" tab in "Proceeding" Card
-    public boolean isTitleOfGridPresent() {
-        return isElementPresent(titleOfGrid);
+    public boolean isTitleStageCreatingIsUnableOfGridPresent() {
+        return isElementPresent(titleStageCreatingIsUnable);
     }
 
     //Checks if button "First Instance" is present on "Stages" tab in "Proceeding" Card

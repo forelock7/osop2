@@ -106,8 +106,8 @@ public class Unit1ProceedingHelper1 extends DriverBasedHelper implements Unit1Pr
 
 	//Checks if on "Stages" Tab in "Review Proceeding" Card
 	@Override
-	public boolean isOnUnit1StagesTab() {
-		return pages.unit1ProceedingCard.isTitleOfGridPresent();
+	public boolean isStageCreatingUnable() {
+		return pages.unit1ProceedingCard.isTitleStageCreatingIsUnableOfGridPresent();
 	}
 
 	@Override

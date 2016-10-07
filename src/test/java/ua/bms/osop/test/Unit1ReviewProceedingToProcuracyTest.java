@@ -52,7 +52,7 @@ public class Unit1ReviewProceedingToProcuracyTest extends BasicTestCase {
 		app.getUnit1ProceedingsToPrcHelper().openCardToCreate();
 		assertTrue(app.getUnit1ProceedingsToPrcHelper().isOnUnit1ProceedingToPrcCard());
 		app.getUnit1ProceedingsToPrcHelper().goToStagesTab();
-		assertTrue(app.getUnit1ProceedingsToPrcHelper().isOnUnit1StagesTab());
+		assertTrue(app.getUnit1ProceedingsToPrcHelper().isStageCreatingUnable());
 		Assert.assertFalse(app.getUnit1ProceedingsToPrcHelper().checkIsButtonCreateFirstInstance());
 		app.getUnit1ProceedingsToPrcHelper().quitCard();
 		Assert.assertFalse(app.getUnit1ProceedingsToPrcHelper().isOnUnit1ProceedingToPrcCard());

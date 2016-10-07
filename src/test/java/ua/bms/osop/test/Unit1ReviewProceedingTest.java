@@ -53,7 +53,7 @@ public class Unit1ReviewProceedingTest extends BasicTestCase  {
 		app.getUnit1ProceedingsHelper().openCardToCreate();
 		assertTrue(app.getUnit1ProceedingsHelper().isOnUnit1ProceedingCard());
 		app.getUnit1ProceedingsHelper().goToStagesTab();
-		assertTrue(app.getUnit1ProceedingsHelper().isOnUnit1StagesTab());
+		assertTrue(app.getUnit1ProceedingsHelper().isStageCreatingUnable());
 		Assert.assertFalse(app.getUnit1ProceedingsHelper().checkIsButtonCreateFirstInstance());
 		app.getUnit1ProceedingsHelper().quitCard();
 		Assert.assertFalse(app.getUnit1ProceedingsHelper().isOnUnit1ProceedingCard());

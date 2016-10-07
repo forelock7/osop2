@@ -49,7 +49,7 @@ public class Unit3CriminalProceedingTest extends BasicTestCase {
 		app.getUnit3CriminalProceedingHelper().openCardToCreate();
 		assertTrue(app.getUnit3CriminalProceedingHelper().isOnUnit3CriminalProceedingCard());
 		app.getUnit3CriminalProceedingHelper().goToStagesTab();
-		assertTrue(app.getUnit3CriminalProceedingHelper().isOnUnit1StagesTab());
+		assertTrue(app.getUnit3CriminalProceedingHelper().isStageCreatingUnable());
 		Assert.assertFalse(app.getUnit3CriminalProceedingHelper().checkIsButtonCreateFirstInstance());
 		app.getUnit3CriminalProceedingHelper().quitCard();
 		Assert.assertFalse(app.getUnit3CriminalProceedingHelper().isOnUnit3CriminalProceedingCard());

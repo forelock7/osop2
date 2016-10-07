@@ -86,7 +86,7 @@ public class Unit3CriminalProceedingCard extends AnyPage {
 
     //Title of Grid "Creation of stages is available after saving CP"("Створення стадій доступно після збереження КП")
     @FindBy(xpath = "//div[contains(text(), 'Створення стадій доступно після збереження КП')]")
-    private WebElement titleOfGrid;
+    private WebElement titleStageCreatingIsUnable;
 
     //Button "First Instance" for creating a new First Instance Card
     @FindBy(xpath = "//a[contains(@id, 'button')]//span[contains(text(), 'Перша інстанція')]")
@@ -153,7 +153,7 @@ public class Unit3CriminalProceedingCard extends AnyPage {
     }
     
     //Checks if button  is present on "Stages" tab in "Proceeding" Card
-    public boolean isTitleOfGridPresent() {
-        return isElementPresent(titleOfGrid);
+    public boolean isTitleOfGridStageCreatingIsUnablePresent() {
+        return isElementPresent(titleStageCreatingIsUnable);
     }
 }

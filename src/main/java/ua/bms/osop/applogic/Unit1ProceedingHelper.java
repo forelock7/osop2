@@ -12,7 +12,7 @@ public interface Unit1ProceedingHelper {
 
 	boolean isOnUnit1ProceedingsPage();
 	boolean isOnUnit1ProceedingCard();
-	boolean isOnUnit1StagesTab();
+	boolean isStageCreatingUnable();
 	boolean checkIsButtonCreateFirstInstance();
 	
 	void openCardToCreate();
