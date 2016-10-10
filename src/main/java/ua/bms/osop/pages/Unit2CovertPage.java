@@ -57,13 +57,13 @@ public class Unit2CovertPage extends AnyPage  {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGrid(Unit2CovertCardModel unit2CovertCardModel){
 		buttonRemove.click();
-		unit2CovertCardModel.setRegNumberRemovedCard(this.confirmationOfRemoving());
+		unit2CovertCardModel.setRegistrationNumber(this.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGrid(Unit2CovertCardModel unit2CovertCardModel) {
 		buttonRestore.click();
-		unit2CovertCardModel.setRegNumberRestoredCard(this.confirmRestoring());
+		unit2CovertCardModel.setRegistrationNumber(this.confirmRestoring());
 	}
 	
 }

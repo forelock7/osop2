@@ -8,18 +8,16 @@ import java.util.Random;
  */
 public class Unit2AppealCardModel {
 	
+	private String registrationNumber;
 	private String proceedingNumber;
 	private String offenseQualification;
 	private String suspectedName;
 	private String groundsForAppeal;
 	
 	private String someNewText;
-	//set registration number Card is been removing from confirmation form of Deletion
-	private String regNumberRemovedCard;
-	//set registration number Card is been restoring from confirmation form of Restoring
-	private String regNumberRestoredCard;
 	
 	public Unit2AppealCardModel(String offenseQualification, String suspectedName, String groundsForAppeal) {
+		this.registrationNumber = null;
 		this.proceedingNumber = createProceedingNumber();
 		this.offenseQualification = offenseQualification;
 		this.suspectedName = suspectedName;
@@ -61,23 +59,14 @@ public class Unit2AppealCardModel {
 		return someNewText;
 	}
 	
-	public String getRegNumberRemovedCard() {
-		return regNumberRemovedCard;
+	public String getRegistrationNumber() {
+		return registrationNumber;
 	}
-	
-	public String getRegNumberRestoredCard() {
-		return regNumberRestoredCard;
-	}
-	
 	
 	/*---Set Methods---*/
 	
-	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
-		this.regNumberRemovedCard = regNumberRemovedCard;
-	}
-	
-	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
-		this.regNumberRestoredCard = regNumberRestoredCard;
+	public void setRegistrationNumber (String registrationNumber) {
+		this.registrationNumber = registrationNumber;
 	}
 
 }

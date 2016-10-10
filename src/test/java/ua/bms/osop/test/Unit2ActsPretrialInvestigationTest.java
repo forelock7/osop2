@@ -38,13 +38,13 @@ public class Unit2ActsPretrialInvestigationTest extends BasicTestCase {
 	public void testRemoveActOfPretrialInvest(){
 		app.getUnit2ActsPIHelper().removeCard(actPICard);
 		app.getUnit2ActsPIHelper().goToRemovedTab();
-		Assert.assertEquals(actPICard.getRegNumberRemovedCard(), app.getUnit2ActsPIHelper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(actPICard.getRegistrationNumber(), app.getUnit2ActsPIHelper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit2_actsPreInv"}, dependsOnMethods = {"testRemoveActOfPretrialInvest"})
 	public void testRestoreActOfPretrialInvest() {
 		app.getUnit2ActsPIHelper().restoreCard(actPICard);
 		app.getUnit2ActsPIHelper().goToMainTab();
-		Assert.assertEquals(actPICard.getRegNumberRestoredCard(), app.getUnit2ActsPIHelper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(actPICard.getRegistrationNumber(), app.getUnit2ActsPIHelper().getRegNumberFirstCardInGrid());
 	}
 }

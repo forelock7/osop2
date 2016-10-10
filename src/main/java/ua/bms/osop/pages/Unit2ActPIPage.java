@@ -57,12 +57,12 @@ public class Unit2ActPIPage extends AnyPage  {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGrid(Unit2ActPICardModel unit2ActPICardModel){
 		buttonRemove.click();
-		unit2ActPICardModel.setRegNumberRemovedCard(this.confirmationOfRemoving());
+		unit2ActPICardModel.setRegistrationNumber(this.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGrid(Unit2ActPICardModel unit2ActPICardModel) {
 		buttonRestore.click();
-		unit2ActPICardModel.setRegNumberRestoredCard(this.confirmRestoring());
+		unit2ActPICardModel.setRegistrationNumber(this.confirmRestoring());
 	}
 }

@@ -56,13 +56,13 @@ public class Unit4InternationalPage extends AnyPage {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGrid(Unit4CardModel unit4CardModel){
 		buttonRemove.click();
-		unit4CardModel.setRegNumberRemovedCard(super.confirmationOfRemoving());
+		unit4CardModel.setRegistrationNumber(super.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGrid(Unit4CardModel unit4CardModel) {
 		buttonRestore.click();
-		unit4CardModel.setRegNumberRestoredCard(confirmRestoring());
+		unit4CardModel.setRegistrationNumber(confirmRestoring());
 	}
 	
 

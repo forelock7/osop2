@@ -8,16 +8,14 @@ import java.util.Random;
  */
 public class Unit2ActOACardModel {
 	
+	private String registrationNumber;
 	private String decisionDate;
 	private String amountOfChecked; 
 	
 	private String someNewText;
-	//set registration number Card is been removing from confirmation form of Deletion
-	private String regNumberRemovedCard;
-	//set registration number Card is been restoring from confirmation form of Restoring
-	private String regNumberRestoredCard;
 	
 	public Unit2ActOACardModel(String decisionDate) {
+		this.registrationNumber = null;
 		this.decisionDate = decisionDate;
 		this.amountOfChecked = createAmountOfCheked();
 
@@ -50,23 +48,14 @@ public class Unit2ActOACardModel {
 		return someNewText;
 	}
 	
-	public String getRegNumberRemovedCard() {
-		return regNumberRemovedCard;
+	public String getRegistrationNumber() {
+		return registrationNumber;
 	}
-	
-	public String getRegNumberRestoredCard() {
-		return regNumberRestoredCard;
-	}
-	
 	
 	/*---Set Methods---*/
 	
-	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
-		this.regNumberRemovedCard = regNumberRemovedCard;
-	}
-	
-	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
-		this.regNumberRestoredCard = regNumberRestoredCard;
+	public void setRegistrationNumber (String registrationNumber) {
+		this.registrationNumber = registrationNumber;
 	}
 
 }

@@ -43,7 +43,7 @@ public class Unit5DocumentPage  extends AnyPage  {
 	
 	public void restoreCardFromGrid(Unit5DocumentCardModel unit5DocumentCardModel) {
 		buttonRestore.click();
-		unit5DocumentCardModel.setRegNumberRestoredCard(confirmRestoring());
+		unit5DocumentCardModel.setRegistrationNumber(confirmRestoring());
 	}
 
 }

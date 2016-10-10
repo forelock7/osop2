@@ -38,14 +38,14 @@ public class Unit2ReleaseFromCustodyTest extends BasicTestCase {
 	public void testRemoveReleaseCard(){
 		app.getUnit2ReleaseHelper().removeCard(releaseCard);
 		app.getUnit2ReleaseHelper().goToRemovedTab();
-		Assert.assertEquals(releaseCard.getRegNumberRemovedCard(), app.getUnit2ReleaseHelper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(releaseCard.getRegistrationNumber(), app.getUnit2ReleaseHelper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit2_releaseFromCustody"}, dependsOnMethods = {"testRemoveReleaseCard"})
 	public void testRestoreReleaseCard() {
 		app.getUnit2ReleaseHelper().restoreCard(releaseCard);
 		app.getUnit2ReleaseHelper().goToMainTab();
-		Assert.assertEquals(releaseCard.getRegNumberRestoredCard(), app.getUnit2ReleaseHelper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(releaseCard.getRegistrationNumber(), app.getUnit2ReleaseHelper().getRegNumberFirstCardInGrid());
 	}
 	
 }

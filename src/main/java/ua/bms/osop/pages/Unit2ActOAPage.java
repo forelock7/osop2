@@ -56,12 +56,12 @@ public class Unit2ActOAPage extends AnyPage  {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGrid(Unit2ActOACardModel unit2ActOACardModel){
 		buttonRemove.click();
-		unit2ActOACardModel.setRegNumberRemovedCard(this.confirmationOfRemoving());
+		unit2ActOACardModel.setRegistrationNumber(this.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGrid(Unit2ActOACardModel unit2ActOACardModel) {
 		buttonRestore.click();
-		unit2ActOACardModel.setRegNumberRestoredCard(this.confirmRestoring());
+		unit2ActOACardModel.setRegistrationNumber(this.confirmRestoring());
 	}
 }

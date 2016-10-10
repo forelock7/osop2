@@ -56,12 +56,12 @@ public class Unit2ReleasePage extends AnyPage  {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGrid(Unit2ReleaseCardModel unit2ReleaseCardModel){
 		buttonRemove.click();
-		unit2ReleaseCardModel.setRegNumberRemovedCard(this.confirmationOfRemoving());
+		unit2ReleaseCardModel.setRegistrationNumber(this.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGrid(Unit2ReleaseCardModel unit2ReleaseCardModel) {
 		buttonRestore.click();
-		unit2ReleaseCardModel.setRegNumberRestoredCard(this.confirmRestoring());
+		unit2ReleaseCardModel.setRegistrationNumber(this.confirmRestoring());
 	}
 }

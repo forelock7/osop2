@@ -127,7 +127,7 @@ public class Unit5InspectionCard extends AnyPage {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeDocumentCardFormInspectionCard(Unit5DocumentCardModel unit5DocumentCardModel) {
 		buttonRemoveDocTab.click();
-		unit5DocumentCardModel.setRegNumberRemovedCard(super.confirmationOfRemoving());
+		unit5DocumentCardModel.setRegistrationNumber(super.confirmationOfRemoving());
 	}
 	
 	//Checks if button "Create" is present on "Response Documents" tab in "Inspection" Card

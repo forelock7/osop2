@@ -56,12 +56,12 @@ public class Unit2AppealPage extends AnyPage  {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGrid(Unit2AppealCardModel unit2AppealCardModel){
 		buttonRemove.click();
-		unit2AppealCardModel.setRegNumberRemovedCard(this.confirmationOfRemoving());
+		unit2AppealCardModel.setRegistrationNumber(this.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGrid(Unit2AppealCardModel unit2AppealCardModel) {
 		buttonRestore.click();
-		unit2AppealCardModel.setRegNumberRestoredCard(this.confirmRestoring());
+		unit2AppealCardModel.setRegistrationNumber(this.confirmRestoring());
 	}
 }

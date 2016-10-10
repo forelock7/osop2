@@ -57,13 +57,13 @@ public class Unit9MilitaryPage extends AnyPage {
 	//Removing Card with getinging registration number of the card that will be removed
 	public void removeCardUnit9(Unit9CardModel unit9CardModel){
 		buttonRemove.click();
-		unit9CardModel.setRegNumberRemovedCard(super.confirmationOfRemoving());
+		unit9CardModel.setRegistrationNumber(super.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardUnit9(Unit9CardModel unit9CardModel) {
 		buttonRestore.click();
-		unit9CardModel.setRegNumberRestoredCard(confirmRestoring());
+		unit9CardModel.setRegistrationNumber(confirmRestoring());
 	}
 	
 

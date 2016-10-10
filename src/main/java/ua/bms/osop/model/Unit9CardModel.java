@@ -6,6 +6,8 @@ import java.util.Random;
  * Implements model of Unit 9 Card
  */
 public class Unit9CardModel {
+	
+	private String registrationNumber;
 	private String protocolNumber;
 	private String protocolCreatingDate;
 	private String commitingAVDate;
@@ -23,10 +25,6 @@ public class Unit9CardModel {
 	
 	//Text is set after editing Card
 	private String someNewText;
-	//set registration number Card is been removing from confirmation form of Deletion
-	private String regNumberRemovedCard;
-	//set registration number Card is been restoring from confirmation form of Restoring
-	private String regNumberRestoredCard;
 
 	//generation of random protocol number
 	private String setProtocolNumber() {
@@ -42,7 +40,7 @@ public class Unit9CardModel {
 	
 	/*Constructor of Unit 9 Model Object*/
 	public Unit9CardModel(String protocolCreatingDate, String commitingAVDate, String theory, String offenderName, String birthday, String militaryUnitName, String post, String referToCourtDate, String receivingCourtDecisionDate, String repeatedReferToCourtDate, String courtDecisionDate, String receivingDateMain, String beginingPunishmentDate) {
-
+		this.registrationNumber = null;
 		this.protocolNumber = setProtocolNumber();
 		this.protocolCreatingDate = protocolCreatingDate;
 		this.commitingAVDate = commitingAVDate;
@@ -124,21 +122,13 @@ public class Unit9CardModel {
 		return someNewText;
 	}
 	
-	public String getRegNumberRemovedCard() {
-		return regNumberRemovedCard;
-	}
-	
-	public String getRegNumberRestoredCard() {
-		return regNumberRestoredCard;
+	public String getRegistrationNumber() {
+		return registrationNumber;
 	}
 	
 	/*---Set Methods---*/
 	
-	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
-		this.regNumberRemovedCard = regNumberRemovedCard;
-	}
-	
-	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
-		this.regNumberRestoredCard = regNumberRestoredCard;
+	public void setRegistrationNumber (String registrationNumber) {
+		this.registrationNumber = registrationNumber;
 	}
 }

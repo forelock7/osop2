@@ -55,13 +55,13 @@ public class Unit1CriminalPage extends AnyPage {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGrid(Unit1CriminalCardModel unit1CriminalCardModel){
 		buttonRemove.click();
-		unit1CriminalCardModel.setRegNumberRemovedCard(super.confirmationOfRemoving());
+		unit1CriminalCardModel.setRegistrationNumber(super.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGrid(Unit1CriminalCardModel unit1CriminalCardModel) {
 		buttonRestore.click();
-		unit1CriminalCardModel.setRegNumberRestoredCard(confirmRestoring());
+		unit1CriminalCardModel.setRegistrationNumber(confirmRestoring());
 	}
 	/*------------------------Methods of Crime Card-------------------------------------------------------------*/
 

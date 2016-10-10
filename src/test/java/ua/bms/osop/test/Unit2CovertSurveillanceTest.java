@@ -38,14 +38,14 @@ public class Unit2CovertSurveillanceTest extends BasicTestCase {
 	public void testRemoveCovertSurveillanceCard(){
 		app.getUnit2CovertHelper().removeCard(covertCard);
 		app.getUnit2CovertHelper().goToRemovedTab();
-		Assert.assertEquals(covertCard.getRegNumberRemovedCard(), app.getUnit2CovertHelper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(covertCard.getRegistrationNumber(), app.getUnit2CovertHelper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit2_covertSurveillances"}, dependsOnMethods = {"testRemoveCovertSurveillanceCard"})
 	public void testRestoreCovertSurveillanceCard() {
 		app.getUnit2CovertHelper().restoreCard(covertCard);
 		app.getUnit2CovertHelper().goToMainTab();
-		Assert.assertEquals(covertCard.getRegNumberRestoredCard(), app.getUnit2CovertHelper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(covertCard.getRegistrationNumber(), app.getUnit2CovertHelper().getRegNumberFirstCardInGrid());
 	}
 	
 }

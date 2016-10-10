@@ -38,13 +38,13 @@ public class Unit2AppealsPretrialInvestigationTest extends BasicTestCase {
 	public void testRemoveAppealCard(){
 		app.getUnit2AppealsHelper().removeCard(appealCard);
 		app.getUnit2AppealsHelper().goToRemovedTab();
-		Assert.assertEquals(appealCard.getRegNumberRemovedCard(), app.getUnit2AppealsHelper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(appealCard.getRegistrationNumber(), app.getUnit2AppealsHelper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit2_appealsPreInvest"}, dependsOnMethods = {"testRemoveAppealCard"})
 	public void testRestoreAppealCard() {
 		app.getUnit2AppealsHelper().restoreCard(appealCard);
 		app.getUnit2AppealsHelper().goToMainTab();
-		Assert.assertEquals(appealCard.getRegNumberRestoredCard(), app.getUnit2AppealsHelper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(appealCard.getRegistrationNumber(), app.getUnit2AppealsHelper().getRegNumberFirstCardInGrid());
 	}
 }

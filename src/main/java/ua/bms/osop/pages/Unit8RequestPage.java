@@ -57,13 +57,13 @@ public class Unit8RequestPage extends AnyPage {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGridUnit8(Unit8CardModel unit8CardModel){
 		buttonDelete.click();
-		unit8CardModel.setRegNumberRemovedCard(super.confirmationOfRemoving());
+		unit8CardModel.setRegistrationNumber(super.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGridUnit8(Unit8CardModel unit8CardModel) {
 		buttonRestore.click();
-		unit8CardModel.setRegNumberRestoredCard(confirmRestoring());
+		unit8CardModel.setRegistrationNumber(confirmRestoring());
 	}
 	
 

@@ -7,6 +7,7 @@ import java.util.Random;
  */
 public class Unit3OtherCriminalCaseCardModel {
 
+	private String registrationNumber;
 	private String caseNumber;
 	private String registrationDate;
 	private String shortStory;
@@ -17,6 +18,7 @@ public class Unit3OtherCriminalCaseCardModel {
 	
 	/*Constructor of Model Object*/
 	public Unit3OtherCriminalCaseCardModel(String registrationDate, String shortStory, String sentToCourtDate) {
+		this.registrationNumber = null;
 		this.caseNumber = createCaseNumber();
 		
 		this.registrationDate = registrationDate;
@@ -61,4 +63,13 @@ public class Unit3OtherCriminalCaseCardModel {
 		return sentToCourtDate;
 	}
 	
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
+	
+	/*---Set Methods---*/
+	
+	public void setRegistrationNumber (String registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
 }

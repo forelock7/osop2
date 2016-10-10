@@ -9,6 +9,7 @@ import java.util.Random;
  */
 public class Unit1ProceedingCardModel {
 	
+	private String registrationNumber;
 	private String plaintiff;
 	private String defendant;
 	
@@ -16,6 +17,7 @@ public class Unit1ProceedingCardModel {
 	
 	/*Constructor of Unit 1 Claim Model Object*/
 	public Unit1ProceedingCardModel (String defendant) {
+		this.registrationNumber = null;
 		this.plaintiff = createNewPaintiff();
 		this.defendant = defendant;
 		
@@ -46,6 +48,16 @@ public class Unit1ProceedingCardModel {
 	
 	public String getSomeNewText() {
 		return someNewText;
+	}
+	
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
+	
+	/*---Set Methods---*/
+	
+	public void setRegistrationNumber (String registrationNumber) {
+		this.registrationNumber = registrationNumber;
 	}
 
 }

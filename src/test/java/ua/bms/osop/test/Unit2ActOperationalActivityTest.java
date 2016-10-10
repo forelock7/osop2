@@ -38,13 +38,13 @@ public class Unit2ActOperationalActivityTest extends BasicTestCase {
 	public void testRemoveActsOperationalActivitiesCard(){
 		app.getUnit2ActsOAHelper().removeCard(actOACard);
 		app.getUnit2ActsOAHelper().goToRemovedTab();
-		Assert.assertEquals(actOACard.getRegNumberRemovedCard(), app.getUnit2ActsOAHelper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(actOACard.getRegistrationNumber(), app.getUnit2ActsOAHelper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit2_actsOA"}, dependsOnMethods = {"testRemoveActsOperationalActivitiesCard"})
 	public void testRestoreActsOperationalActivitiesCard() {
 		app.getUnit2ActsOAHelper().restoreCard(actOACard);
 		app.getUnit2ActsOAHelper().goToMainTab();
-		Assert.assertEquals(actOACard.getRegNumberRestoredCard(), app.getUnit2ActsOAHelper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(actOACard.getRegistrationNumber(), app.getUnit2ActsOAHelper().getRegNumberFirstCardInGrid());
 	}
 }

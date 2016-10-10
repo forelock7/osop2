@@ -8,16 +8,14 @@ import java.util.Random;
  */
 public class Unit2CovertCardModel {
 
+	private String registrationNumber;
 	private String prosecutorDecisionDate;
 	private String courtResultDate;
 	
 	private String newCourtResultDate;
-	//set registration number Card is been removing from confirmation form of Deletion
-	private String regNumberRemovedCard;
-	//set registration number Card is been restoring from confirmation form of Restoring
-	private String regNumberRestoredCard;
 	
 	public Unit2CovertCardModel(String courtResultDate) {
+		this.registrationNumber = null;
 		this.prosecutorDecisionDate = createProsecutorDecisionDate();
 		this.courtResultDate = courtResultDate;
 		
@@ -50,22 +48,13 @@ public class Unit2CovertCardModel {
 		return newCourtResultDate;
 	}
 	
-	public String getRegNumberRemovedCard() {
-		return regNumberRemovedCard;
+	public String getRegistrationNumber() {
+		return registrationNumber;
 	}
-	
-	public String getRegNumberRestoredCard() {
-		return regNumberRestoredCard;
-	}
-	
 	
 	/*---Set Methods---*/
 	
-	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
-		this.regNumberRemovedCard = regNumberRemovedCard;
-	}
-	
-	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
-		this.regNumberRestoredCard = regNumberRestoredCard;
+	public void setRegistrationNumber (String registrationNumber) {
+		this.registrationNumber = registrationNumber;
 	}
 }

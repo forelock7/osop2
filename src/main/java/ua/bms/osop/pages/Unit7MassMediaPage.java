@@ -57,13 +57,13 @@ public class Unit7MassMediaPage extends AnyPage{
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGridUnit7(Unit7CardModel unit7CardModel){
 		buttonDelete.click();
-		unit7CardModel.setRegNumberRemovedCard(super.confirmationOfRemoving());
+		unit7CardModel.setRegistrationNumber(super.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGridUnit7(Unit7CardModel unit7CardModel) {
 		buttonRestore.click();
-		unit7CardModel.setRegNumberRestoredCard(confirmRestoring());
+		unit7CardModel.setRegistrationNumber(confirmRestoring());
 	}
 	
 

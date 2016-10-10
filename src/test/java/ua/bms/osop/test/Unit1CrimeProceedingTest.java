@@ -41,14 +41,14 @@ public class Unit1CrimeProceedingTest extends BasicTestCase {
 	public void testRemoveCrimeProceedingCard(){
 		app.getUnit1CrimeHelper().removeCard(criminalCard);
 		app.getUnit1CrimeHelper().goToRemovedTab();
-		Assert.assertEquals(criminalCard.getRegNumberRemovedCard(), app.getUnit1CrimeHelper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(criminalCard.getRegistrationNumber(), app.getUnit1CrimeHelper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit1_crime"}, dependsOnMethods = {"testRemoveCrimeProceedingCard"})
 	public void testRestoreCrimeProceedingCard() {
 		app.getUnit1CrimeHelper().restoreCard(criminalCard);
 		app.getUnit1CrimeHelper().goToMainTab();
-		Assert.assertEquals(criminalCard.getRegNumberRestoredCard(), app.getUnit1CrimeHelper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(criminalCard.getRegistrationNumber(), app.getUnit1CrimeHelper().getRegNumberFirstCardInGrid());
 	}
 	
 }
