@@ -216,7 +216,7 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 	
 	@Override
-	public Unit3CriminalCaseHelper getUnit3CriminalCasesHelper() {
+	public Unit3CriminalCaseHelper getUnit3CriminalCaseHelper() {
 		return unit3CriminalCaseHelper;
 	}
 	
@@ -226,12 +226,12 @@ public class ApplicationManager1 implements ApplicationManager {
 	}
 	
 	@Override
-	public Unit3OtherCriminalCaseHelper getUnit3OtherCriminalCasesHelper() {
+	public Unit3OtherCriminalCaseHelper getUnit3OtherCriminalCaseHelper() {
 		return unit3OtherCriminalCaseHelper;
 	}
 	
 	@Override
-	public Unit3OtherCriminalProceedingHelper getUnit3OtherCriminalProcHelper() {
+	public Unit3OtherCriminalProceedingHelper getUnit3OtherCriminalProceedingHelper() {
 		return unit3OtherCriminalProceedingHelper;
 	}
 	

@@ -1,13 +1,13 @@
 package ua.bms.osop.model;
 
-/*
- * Implements model of 1 - "Criminal proceedings"("Кримінальні провадження") Card(Unit 3)
- */
 import java.util.Random;
 
-public class Unit3CriminalProceedingCardModel {
-
-	private String criminalProceedingNumber;
+/*
+ * Implements model of 1 - "Criminal cases"("Кримінальні справи") Card(Unit 3)
+ */
+public class Unit3CriminalCaseCardModel {
+	
+	private String criminalCaseNumber;
 	private String investigationBeginningDate;
 	private String investigationAgency;
 	private String offenseQualification;
@@ -17,8 +17,8 @@ public class Unit3CriminalProceedingCardModel {
 	private String someNewText;
 	
 	/*Constructor of Model Object*/
-	public Unit3CriminalProceedingCardModel(String investigationBeginningDate, String offenseQualification, String sentToCourtDate) {
-		this.criminalProceedingNumber = createCriminalProceedingNumber();
+	public Unit3CriminalCaseCardModel(String investigationBeginningDate, String offenseQualification, String sentToCourtDate) {
+		this.criminalCaseNumber = createCriminalCaseNumber();
 		
 		this.investigationBeginningDate = investigationBeginningDate;
 		this.offenseQualification = offenseQualification;
@@ -29,9 +29,9 @@ public class Unit3CriminalProceedingCardModel {
 	}
 	
 	/*Generation of random number of Claim*/
-	private String createCriminalProceedingNumber() {
+	private String createCriminalCaseNumber() {
 		Random rnd = new Random();
-		return Integer.toString(rnd.nextInt(99999999));
+		return "справа №" + Integer.toString(rnd.nextInt(99999999));
 	}
 	
 	/*Generation of random new text for editing some Text Field*/
@@ -42,8 +42,8 @@ public class Unit3CriminalProceedingCardModel {
 	
 	/*---Get Methods---*/
 	
-	public String getCriminalProceedingNumber() {
-		return criminalProceedingNumber;
+	public String getCriminalCaseNumber() {
+		return criminalCaseNumber;
 	}
 	
 	public String getInvestigationBeginningDate() {
@@ -65,5 +65,5 @@ public class Unit3CriminalProceedingCardModel {
 	public String getSentToCourtDate() {
 		return sentToCourtDate;
 	}
-	
+
 }

@@ -55,12 +55,14 @@ public class Unit2PreventivePage extends AnyPage  {
 	//Removing Card with getting registration number of the card that will be removed
 	public void removeCardFromGrid(Unit2PreventiveCardModel unit2PreventiveCardModel){
 		buttonRemove.click();
-		unit2PreventiveCardModel.setRegNumberRemovedCard(this.confirmationOfRemoving());
+		unit2PreventiveCardModel.setRegistrationNumber(this.confirmationOfRemoving());
+		//unit2PreventiveCardModel.setRegNumberRemovedCard(this.confirmationOfRemoving());
 	}
 	
 	//Restoring card with getting registration number of the card that will be restored
 	public void restoreCardFromGrid(Unit2PreventiveCardModel unit2PreventiveCardModel) {
 		buttonRestore.click();
-		unit2PreventiveCardModel.setRegNumberRestoredCard(this.confirmRestoring());
+		unit2PreventiveCardModel.setRegistrationNumber(this.confirmRestoring());
+		//unit2PreventiveCardModel.setRegNumberRestoredCard(this.confirmRestoring());
 	}
 }

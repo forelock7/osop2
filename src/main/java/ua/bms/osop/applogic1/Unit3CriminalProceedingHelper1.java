@@ -77,7 +77,7 @@ public class Unit3CriminalProceedingHelper1 extends DriverBasedHelper implements
 		return pages.unit3CriminalProceedingCard.getInputCriminalProceedingNumber();
 	}
 
-	/*Returns value in field "Defendant" from later edited card(after its editing)*/
+	/*Returns value in field "Offense Qualification" from later edited card(after its editing)*/
 	@Override
 	public String getOffenseQualification() {
 		return pages.unit3CriminalProceedingCard.getInputOffenseQualification();

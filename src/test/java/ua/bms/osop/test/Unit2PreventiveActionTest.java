@@ -38,14 +38,16 @@ public class Unit2PreventiveActionTest extends BasicTestCase {
 	public void testRemovePreventiveActionCard(){
 		app.getUnit2PreventiveHelper().removeCard(preventCard);
 		app.getUnit2PreventiveHelper().goToRemovedTab();
-		Assert.assertEquals(preventCard.getRegNumberRemovedCard(), app.getUnit2PreventiveHelper().getRegNumberFirstRemovedCardInGrid());
+		Assert.assertEquals(preventCard.getRegistrationNumber(), app.getUnit2PreventiveHelper().getRegNumberFirstRemovedCardInGrid());
+		//Assert.assertEquals(preventCard.getRegNumberRemovedCard(), app.getUnit2PreventiveHelper().getRegNumberFirstRemovedCardInGrid());
 	}
 	
 	@Test (groups = {"unit2_preventiveAction"}, dependsOnMethods = {"testRemovePreventiveActionCard"})
 	public void testRestorePreventiveActionCard() {
 		app.getUnit2PreventiveHelper().restoreCard(preventCard);
 		app.getUnit2PreventiveHelper().goToMainTab();
-		Assert.assertEquals(preventCard.getRegNumberRestoredCard(), app.getUnit2PreventiveHelper().getRegNumberFirstCardInGrid());
+		Assert.assertEquals(preventCard.getRegistrationNumber(), app.getUnit2PreventiveHelper().getRegNumberFirstCardInGrid());
+		//Assert.assertEquals(preventCard.getRegNumberRestoredCard(), app.getUnit2PreventiveHelper().getRegNumberFirstCardInGrid());
 	}
 	
 	

@@ -29,13 +29,14 @@
 	
 	<test verbose="3" name="Test5">
 		<classes>
-      		 <class name="ua.bms.osop.test.Unit2ActOperationalActivityTest" />
+      		 
       		 <class name="ua.bms.osop.test.Unit2ActsPretrialInvestigationTest" />
       		 <class name="ua.bms.osop.test.Unit2AppealsPretrialInvestigationTest" />
-      		 <class name="ua.bms.osop.test.Unit2CovertSurveillanceTest" />
       		 <class name="ua.bms.osop.test.Unit2PreventiveActionTest" />
       		 <class name="ua.bms.osop.test.Unit2ReleaseFromCustodyTest" />
- 		</classes>
+      		 <class name="ua.bms.osop.test.Unit2ActOperationalActivityTest" />
+      		 <class name="ua.bms.osop.test.Unit2CovertSurveillanceTest" />
+      	</classes>
 	</test>
 	
 	<test verbose="3" name="Test6">

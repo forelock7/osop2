@@ -24,6 +24,11 @@ public class Unit3CriminalCasePage extends AnyPage {
 	//Title of "Criminal cases"("Кримінальні справи");
 	@FindBy(xpath = "//div[contains(@id, 'header-title-text')]//div[contains(., 'Кримінальні справи')]")
 	private WebElement titleCriminalCasesUnit3;
+	
+    //Button "Edit"("Редагувати") for the first record in the main grid on the main UNIT's page(row-1; column-13).
+    @FindBy(xpath = "//table[1]//td[13]/div/img")
+    private WebElement buttonEdit;
+    
 	/*-------------------Methods of Page-------------------------------------------------------------*/
 
 	/*
@@ -34,4 +39,10 @@ public class Unit3CriminalCasePage extends AnyPage {
 		wait.until(ExpectedConditions.visibilityOf(titleCriminalCasesUnit3));
 		return this;
 	}
+	
+    //Click on "Edit" button for the first record in the main grid
+    public void clickButtonEdit() {
+        fluientWaitforElement(buttonEdit).click();
+    }
+    
 }

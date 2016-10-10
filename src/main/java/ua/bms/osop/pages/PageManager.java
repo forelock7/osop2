@@ -37,10 +37,13 @@ public class PageManager {
 	public Unit2PreventivePage unit2PreventivePage;
 	public Unit2PreventiveCard unit2PreventiveCard;
 	public Unit3CriminalCasePage unit3CriminalCasePage;
+	public Unit3CriminalCaseCard unit3CriminalCaseCard;
 	public Unit3CriminalProceedingPage unit3CriminalProceedingPage;
 	public Unit3CriminalProceedingCard unit3CriminalProceedingCard;
 	public Unit3OtherCriminalCasePage unit3OtherCriminalCasePage;
+	public Unit3OtherCriminalCaseCard unit3OtherCriminalCaseCard;
 	public Unit3OtherCriminalProceedingPage unit3OtherCriminalProceedingPage;
+	public Unit3OtherCriminalProceedingCard unit3OtherCriminalProceedingCard;
 	public Unit3ParticipationCasePage unit3ParticipationCasePage;
 	public Unit3ParticipationProceedingPage unit3ParticipationProceedingPage;
 	public Unit4InternationalPage unit4InternationalPage;
@@ -93,10 +96,13 @@ public class PageManager {
 		unit2PreventivePage = initElements(new Unit2PreventivePage(this));
 		unit2PreventiveCard = initElements(new Unit2PreventiveCard(this));
 		unit3CriminalCasePage = initElements(new Unit3CriminalCasePage(this));
+		unit3CriminalCaseCard = initElements(new Unit3CriminalCaseCard(this));
 		unit3CriminalProceedingPage = initElements(new Unit3CriminalProceedingPage(this));
 		unit3CriminalProceedingCard = initElements(new Unit3CriminalProceedingCard(this));
 		unit3OtherCriminalCasePage = initElements(new Unit3OtherCriminalCasePage(this));
+		unit3OtherCriminalCaseCard = initElements(new Unit3OtherCriminalCaseCard(this));
 		unit3OtherCriminalProceedingPage = initElements(new Unit3OtherCriminalProceedingPage(this));
+		unit3OtherCriminalProceedingCard = initElements(new Unit3OtherCriminalProceedingCard(this));
 		unit3ParticipationCasePage = initElements(new Unit3ParticipationCasePage(this));
 		unit3ParticipationProceedingPage = initElements(new Unit3ParticipationProceedingPage(this));
 		unit4InternationalPage = initElements(new Unit4InternationalPage(this));

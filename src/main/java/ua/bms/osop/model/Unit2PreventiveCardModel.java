@@ -8,6 +8,7 @@ import java.util.Random;
  */
 public class Unit2PreventiveCardModel {
 	
+	private String registrationNumber;
 	private String proceedingNumber;
 	private String offenseQualification;
 	private String investigationBeginDate;
@@ -17,11 +18,12 @@ public class Unit2PreventiveCardModel {
 	
 	private String someNewText;
 	//set registration number Card is been removing from confirmation form of Deletion
-	private String regNumberRemovedCard;
+	/*private String regNumberRemovedCard;
 	//set registration number Card is been restoring from confirmation form of Restoring
 	private String regNumberRestoredCard;
-	
+	*/
 	public Unit2PreventiveCardModel(String offenseQualification, String investigationBeginDate, String lastName, String firstName, String birthday) {
+		this.registrationNumber = null;
 		this.proceedingNumber = createProceedingNumber();
 		this.offenseQualification = offenseQualification;
 		this.investigationBeginDate = investigationBeginDate;
@@ -44,6 +46,10 @@ public class Unit2PreventiveCardModel {
 	}
 	
 	/*---Get Methods---*/
+	
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
 	
 	public String getProceedingNumber() {
 		return proceedingNumber;
@@ -72,24 +78,28 @@ public class Unit2PreventiveCardModel {
 	public String getSomeNewText() {
 		return someNewText;
 	}
-	
+	/*
 	public String getRegNumberRemovedCard() {
 		return regNumberRemovedCard;
 	}
 	
 	public String getRegNumberRestoredCard() {
 		return regNumberRestoredCard;
-	}
+	}*/
 	
 	
 	/*---Set Methods---*/
 	
+	public void setRegistrationNumber(String registrationNumber) {
+		this.registrationNumber = registrationNumber;
+	}
+	/*
 	public void setRegNumberRemovedCard (String regNumberRemovedCard) {
 		this.regNumberRemovedCard = regNumberRemovedCard;
 	}
 	
 	public void setRegNumberRestoredCard (String regNumberRestoredCard) {
 		this.regNumberRestoredCard = regNumberRestoredCard;
-	}
+	}*/
 
 }

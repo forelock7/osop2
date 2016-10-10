@@ -96,7 +96,7 @@ public class BasicTestCase {
 	
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
-	/*Initialization of input fields from 5 - "Acts of supervision over Operational Activities"("Акти нагляду за ОРД");(Unit 2) except field with drop-down list*/
+	/*Initialization of input fields from 5 - "Acts of supervision over Operational Activities"("Акти нагляду за ОРД")(Unit 2) except field with drop-down list*/
 	protected static Unit2ActOACardModel actOACard = new Unit2ActOACardModel(
 			/*Дата прийняття рішення*/"11.09.2016");
 	
@@ -113,6 +113,30 @@ public class BasicTestCase {
 			/*Дата початку досудового розслідування*/"12.06.2015",
 			/*Кваліфікація правопорушення*/"лргсроивморШГШР%:;8678456",
 			/*Дата надіслання до суду*/"12.06.2015");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
+	protected static Unit3OtherCriminalProceedingCardModel otherCriminalProceedingCard = new Unit3OtherCriminalProceedingCardModel(
+			/*Дата реєстрації*/"12.06.2015",
+			/*Коротка фабула*/"Коротка фабулаokicdhwvjhrwv76632324567%&%^&#@@%$^^8467^&$@#$%#",
+			/*Дата надіслання до суду*/"12.04.2015");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 4 - "Criminal cases"("Кримінальні справи"); Card(Unit 3) except field with drop-down list*/
+	protected static Unit3CriminalCaseCardModel criminalCaseCard = new Unit3CriminalCaseCardModel(
+			/*Дата початку досудового розслідування*/"15.07.2016",
+			/*Кваліфікація правопорушення*/"rdfksasrfwsz%:;8678456",
+			/*Дата надіслання до суду*/"09.09.2016");
+	
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
+	protected static Unit3OtherCriminalCaseCardModel otherCriminalCaseCard = new Unit3OtherCriminalCaseCardModel(
+			/*Дата реєстрації*/"01.05.2016",
+			/*Коротка фабула*/"Коротка фабулаokicdh222rwv76632324567%&%^&#@@%$^^8467^&$@#$%#",
+			/*Дата надіслання до суду*/"30.09.2016");
 	
 	/*----------------------------------------------------------------------------------------------------------------*/
 		

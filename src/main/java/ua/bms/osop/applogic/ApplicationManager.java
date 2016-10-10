@@ -26,10 +26,10 @@ public interface ApplicationManager {
 	Unit2ReleaseHelper getUnit2ReleaseHelper();
 	Unit3ParticipationProceedingHelper getUnit3ParticipationProceedingHelper();
 	Unit3ParticipationCaseHelper getUnit3ParticipationCasesHelper();
-	Unit3OtherCriminalProceedingHelper getUnit3OtherCriminalProcHelper();
-	Unit3OtherCriminalCaseHelper getUnit3OtherCriminalCasesHelper();
+	Unit3OtherCriminalProceedingHelper getUnit3OtherCriminalProceedingHelper();
+	Unit3OtherCriminalCaseHelper getUnit3OtherCriminalCaseHelper();
 	Unit3CriminalProceedingHelper getUnit3CriminalProceedingHelper();
-	Unit3CriminalCaseHelper getUnit3CriminalCasesHelper();
+	Unit3CriminalCaseHelper getUnit3CriminalCaseHelper();
 	Unit4Helper getUnit4Helper();
 	Unit5InspectionHelper getUnit5InspectionsHelper();
 	Unit5DocumentHelper getUnit5DocumentsHelper();
