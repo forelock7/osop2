@@ -34,7 +34,7 @@ public class Unit3OtherCriminalProceedingTest extends BasicTestCase  {
 		app.getUnit3OtherCriminalProceedingHelper().quitCard();		
 	}
 
-	@Test (groups = {"unit3_otherProceedings"})
+	@Test (groups = {"unit3_otherProceedings"}, dependsOnMethods = {"testEditOtherCriminalProceedingCard"})
 	public void testCheckCreatingInstanceIsUnable() {
 		app.getNavigationUnit23Helper().goToUnit3OtherCriminalProceedingPage();
 		app.getUnit3OtherCriminalProceedingHelper().openCardToCreate();

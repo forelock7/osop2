@@ -63,6 +63,10 @@ public abstract class AnyPage extends Page {
 	//Alert Popup - button "OK".
 	@FindBy (xpath = "//.[contains(@id, 'messagebox')]//.[contains(@id, 'button')]")
 	private WebElement buttonOKAlertPopup;
+
+	//Alert Popup - button "OK".
+	@FindBy (xpath = "//div[contains(@id, 'messagebox')]/div[contains(text(), 'Увага!')]")
+	private WebElement alertFieldIsRequired;
 	
 	//Confirmation Popup - button "Yes" 
 	@FindBy (xpath = "//.[contains(@id, 'messagebox')]//span[contains(.,'Так')]")
@@ -162,6 +166,10 @@ public abstract class AnyPage extends Page {
 	//Clicking on "Save"("Зберегти") button in Card
 	public void clickButtonSaveCard() {
 		buttonSaveCard.click();
+		if (isElementPresent(alertFieldIsRequired)) {
+			clickOnAlertOK();
+			buttonSaveCard.click();
+		}
 	}
 	
 	//Clicking on button "OK" of Alert Popup

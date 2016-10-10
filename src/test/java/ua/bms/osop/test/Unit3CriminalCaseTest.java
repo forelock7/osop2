@@ -7,19 +7,21 @@ import org.testng.annotations.Test;
 
 public class Unit3CriminalCaseTest extends BasicTestCase {
 
-	@Test (groups = {"unit3_cases"})
-	public void testJumpToUnit3CriminalCasesPage() {
-		assertTrue(app.getUserHelper().isLoggedIn());
-		app.getNavigationUnit23Helper().goToUnit3CriminalCasePage();
-		assertTrue(app.getUnit3CriminalCaseHelper().isOnUnit3CriminalCasePage());
-	}
-	
+
 	@Test (groups = {"unit3_cases"}, priority = 1)
 	public void testJumpToUnit3ParticipationCasesPage() {
 		assertTrue(app.getUserHelper().isLoggedIn());
 		app.getNavigationUnit23Helper().goToUnit3ParticipationCasePage();
 		assertTrue(app.getUnit3ParticipationCasesHelper().isOnUnit3ParticipationCasesPage());
 	}
+
+	@Test (groups = {"unit3_cases"}, dependsOnMethods = {"testJumpToUnit3ParticipationCasesPage"})
+	public void testJumpToUnit3CriminalCasesPage() {
+		assertTrue(app.getUserHelper().isLoggedIn());
+		app.getNavigationUnit23Helper().goToUnit3CriminalCasePage();
+		assertTrue(app.getUnit3CriminalCaseHelper().isOnUnit3CriminalCasePage());
+	}
+
 	
 	@Test (groups = {"unit3_cases"}, dependsOnMethods = {"testJumpToUnit3CriminalCasesPage"})
 	public void testCreateAndReviewCriminalCasesCard() {
