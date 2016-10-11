@@ -90,6 +90,7 @@ public class Unit2AppealHelper1 extends DriverBasedHelper implements Unit2Appeal
 	public void editCard(Unit2AppealCardModel unit2AppealCardModel) {
 		pages.unit2AppealCard.setInputGroundsForAppeal(unit2AppealCardModel.getSomeNewText());
 	}
+	
 			
 	//Gets Proceeding Number
 	@Override

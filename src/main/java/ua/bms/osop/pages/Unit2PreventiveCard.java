@@ -15,6 +15,10 @@ public class Unit2PreventiveCard extends AnyPage {
 	
 	/*------------------The Web-Elements of the Prevent Card------------------------------------------------------*/
 	
+	//Field "Registration Number"("Реєстраційний №")
+	@FindBy(xpath = "//div[contains(@id, 'unit23-preventiveActionTabMain')]//label[contains(., 'Реєстраційний')]/following-sibling::div//input")
+	private WebElement fieldRegistrationNumber;
+	
 	//Input field "Preventive Action" ("Запобіжний захід")
 	@FindBy(xpath = "//div[contains(@id, 'unit23-preventiveActionTabMain')]//span[contains(., 'Запобіжний захід')]")
 	private WebElement inputActType;
@@ -68,6 +72,11 @@ public class Unit2PreventiveCard extends AnyPage {
 		type(inputFirstName, unit2PreventiveCardModel.getFirstName());
 		type(inputBirthday, unit2PreventiveCardModel.getBirthday());
 		return this;
+	}
+	
+	//Getting value from field "Registration Number" in formerly created card
+	public String getValuaRegistrationNumber() {
+		return fieldRegistrationNumber.getAttribute("value");
 	}
 		
 	//Getting value from input-field "Proceeding Number" in formerly created card

@@ -15,6 +15,10 @@ public class Unit2AppealCard extends AnyPage {
 	
 	/*------------------The Web-Elements of the Appeal Card------------------------------------------------------*/
 	
+	//Field "Registration Number"("Реєстраційний №")
+	@FindBy(xpath = "//div[contains(@id, 'unit23-appealDRTabMain')]//label[contains(., 'Реєстраційний')]/following-sibling::div//input")
+	private WebElement fieldRegistrationNumber;
+	
 	//Input field "Type of Complaint" ("Тип скарги")
 	@FindBy(xpath = "//div[contains(@id, 'unit23-appealDRTabMain')]//span[contains(., 'Тип скарги')]")
 	private WebElement inputComplaintType;
@@ -58,6 +62,11 @@ public class Unit2AppealCard extends AnyPage {
 		type(inputSuspectedName, unit2AppealCardModel.getSuspectedName());
 		type(inputGroundsForAppeal, unit2AppealCardModel.getGroundsForAppeal());
 		return this;
+	}
+	
+	//Getting value from field "Registration Number" in formerly created card
+	public String getValuaRegistrationNumber() {
+		return fieldRegistrationNumber.getAttribute("value");
 	}
 		
 	//Getting value from input-field "Proceeding Number" in formerly created card
