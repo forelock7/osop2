@@ -31,7 +31,7 @@
 		<classes>
       		 
       		 <class name="ua.bms.osop.test.Unit2ActsPretrialInvestigationTest" />
-      		 <class name="ua.bms.osop.test.Unit2AppealsPretrialInvestigationTest" />
+      		 <class name="ua.bms.osop.test.Unit2AppealPretrialInvestigationTest" />
       		 <class name="ua.bms.osop.test.Unit2PreventiveActionTest" />
       		 <class name="ua.bms.osop.test.Unit2ReleaseFromCustodyTest" />
       		 <class name="ua.bms.osop.test.Unit2ActOperationalActivityTest" />

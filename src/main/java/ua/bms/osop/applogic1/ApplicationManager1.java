@@ -203,7 +203,7 @@ public class ApplicationManager1 implements ApplicationManager {
 		return unit2ActPIHelper;
 	}
 	@Override
-	public Unit2AppealHelper getUnit2AppealsHelper(){
+	public Unit2AppealHelper getUnit2AppealHelper(){
 		return unit2AppealHelper;
 	}
 	@Override

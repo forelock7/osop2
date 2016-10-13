@@ -20,7 +20,7 @@ public interface ApplicationManager {
 	Unit1ViewClaimToPrcHelper getUnit1ViewClaimsToPrcHelper();
 	Unit2ActOAHelper getUnit2ActsOAHelper();
 	Unit2ActPIHelper getUnit2ActsPIHelper();
-	Unit2AppealHelper getUnit2AppealsHelper();
+	Unit2AppealHelper getUnit2AppealHelper();
 	Unit2CovertHelper getUnit2CovertHelper();
 	Unit2PreventiveHelper getUnit2PreventiveHelper();
 	Unit2ReleaseHelper getUnit2ReleaseHelper();

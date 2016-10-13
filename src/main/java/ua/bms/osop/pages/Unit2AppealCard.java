@@ -65,7 +65,7 @@ public class Unit2AppealCard extends AnyPage {
 	}
 	
 	//Getting value from field "Registration Number" in formerly created card
-	public String getValuaRegistrationNumber() {
+	public String getValueRegistrationNumber() {
 		return fieldRegistrationNumber.getAttribute("value");
 	}
 		

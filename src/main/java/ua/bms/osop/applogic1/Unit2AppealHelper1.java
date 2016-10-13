@@ -39,6 +39,7 @@ public class Unit2AppealHelper1 extends DriverBasedHelper implements Unit2Appeal
 	@Override
 	public void openCardToView() {
 		pages.unit2AppealPage.doubleClickOnFirstRecordInGridOnMainTab();
+		pages.unit2AppealCard.getValueRegistrationNumber();
 	}
 	
 	//Opens Card to edit 
@@ -91,6 +92,11 @@ public class Unit2AppealHelper1 extends DriverBasedHelper implements Unit2Appeal
 		pages.unit2AppealCard.setInputGroundsForAppeal(unit2AppealCardModel.getSomeNewText());
 	}
 	
+	//Gets Registration Number
+	@Override
+	public String getRegistrationNumber() {
+		return pages.unit2AppealCard.getValueRegistrationNumber();
+	}
 			
 	//Gets Proceeding Number
 	@Override

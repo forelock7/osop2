@@ -24,10 +24,13 @@ public interface Unit2AppealHelper {
 
 	String getRegNumberFirstCardInGrid();
 	String getRegNumberFirstRemovedCardInGrid();
+	String getRegistrationNumber();
 	String getGroundsForAppeal();
 	String getProceedingNumber();
 
 	void saveCard();
 	void quitCard();
+
+	
 
 }
