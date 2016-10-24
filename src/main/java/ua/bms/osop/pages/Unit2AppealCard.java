@@ -22,8 +22,8 @@ public class Unit2AppealCard extends AnyPage {
 	//Input field "Type of Complaint" ("Тип скарги")
 	@FindBy(xpath = "//div[contains(@id, 'unit23-appealDRTabMain')]//span[contains(., 'Тип скарги')]")
 	private WebElement inputComplaintType;
-	//First item of Type of Complaint
-	@FindBy (xpath = "(//div[contains(@id, 'boundlist')]//li[1])[1]") 
+	//Third item of Type of Complaint
+	@FindBy (xpath = "(//div[contains(@id, 'boundlist')]//li[3])[1]") 
 	private WebElement itemComplaintType;
 	
 	//Input field "Department of Pretrial Investigation" ("Орган досудового розслідування")

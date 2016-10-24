@@ -14,13 +14,15 @@ public class U2AppealAndPreventiveCollaboration  extends BasicTestCase {
 		assertTrue(app.getUnit2AppealHelper().isOnUnit2AppealsPage());
 	}
 	
-	@Test (groups = {"unit2_collaboration"}, dependsOnMethods = {"testCreateAppealCardAddingPreventAction"})
+	@Test (groups = {"unit2_collaboration"}, dependsOnMethods = {"testJumpToAppealPage"})
 	public void testCreateAppealCardAddingPreventAction() {
 		app.getUnit2AppealHelper().openCardToCreate();
 		app.getUnit2AppealHelper().createCard(appealCard2);
 		app.getUnit2AppealHelper().saveCard();
 		app.getUnit2AppealHelper().openCardToView();
-		Assert.assertEquals(appealCard.getProceedingNumber(), app.getUnit2AppealHelper().getProceedingNumber());
+		Assert.assertEquals(appealCard2.getProceedingNumber(), app.getUnit2AppealHelper().getProceedingNumber());
 		app.getUnit2AppealHelper().quitCard();
 	}
+	
+	
 }
