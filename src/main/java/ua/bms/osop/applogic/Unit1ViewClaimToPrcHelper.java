@@ -6,8 +6,15 @@ package ua.bms.osop.applogic;
  * Related with Unit1ClaimsToPrcCard model(ua.bms.osop.model.Unit1ClaimsToPrcCard)
  * Uses methods from Unit1ClaimsToPrcPage
  */
-public interface Unit1ViewClaimToPrcHelper {
+public class Unit1ViewClaimToPrcHelper extends DriverBasedHelper {
+
+	/*Constructor of object which is managed by object Application Manager.*/
+	public Unit1ViewClaimToPrcHelper(ApplicationManager manager) {
+		super(manager.getWebDriver());
+	}
 	
-	boolean isOnUnit1ClaimsToPrcPage();
+	public boolean isOnUnit1ClaimsToPrcPage() {
+		return pages.unit1ViewClaimToPrcPage.waitPageLoaded();
+	}
 
 }

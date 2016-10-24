@@ -1,4 +1,4 @@
-package ua.bms.osop.applogic1;
+package ua.bms.osop.applogic;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;

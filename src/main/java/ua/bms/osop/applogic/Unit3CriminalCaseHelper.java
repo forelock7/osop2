@@ -2,30 +2,95 @@ package ua.bms.osop.applogic;
 
 import ua.bms.osop.model.Unit3CriminalCaseCardModel;
 
-/*
- * Unit 3: "Public prosecution"("Держобвинувачення");
- * 4 - "Criminal cases"("Кримінальні справи");
- */
-public interface Unit3CriminalCaseHelper {
+public class Unit3CriminalCaseHelper extends DriverBasedHelper {
 
-	boolean isOnUnit3CriminalCasePage();
-	boolean isOnUnit3CriminalCaseCard();
-	boolean isStageCreatingUnable();
-	boolean checkIsButtonCreateFirstInstance();
+	/*Constructor of object which is managed by object Application Manager.*/
+	public Unit3CriminalCaseHelper(ApplicationManager manager) {
+		super(manager.getWebDriver());
+	}
 	
-	void openCardToCreate();
-	void openCardToView();
-	void openCardToEdit();
+	/*--------------------------------Case Page----------------------------------------------------*/
 	
-	void createCard(Unit3CriminalCaseCardModel unit3CriminalCaseCardModel);
-	void editCard(Unit3CriminalCaseCardModel unit3CriminalCaseCardModel);
+	public boolean isOnUnit3CriminalCasePage() {
+		return pages.unit3CriminalCasePage.waitPageLoaded();
+	}
 	
-	String getRegNumberFirstCardInGrid();
-	String getCriminalCaseNumber();
-	String getOffenseQualification();
+	//Opens Card to create
+	public void openCardToCreate() {
+		pages.unit3CriminalCasePage.clickButtonCreateCard();
+	}
 
-	void goToStagesTab();
+	//Opens Card to view
+	public void openCardToView() {
+		pages.unit3CriminalCasePage.doubleClickOnFirstRecordInGridOnMainTab();
+	}
 
-	void saveCard();
-	void quitCard();
+	//Opens Card to edit
+	public void openCardToEdit() {
+		pages.unit3CriminalCasePage.clickButtonEdit();
+	}
+	
+	/*
+	 * Gets number of the first record(card) in grid on the main tab
+	 * Checks existing of later restoring card
+	 */
+	public String getRegNumberFirstCardInGrid(){
+		return pages.unit3CriminalCasePage.getRegNumberFromGridOnMainTab();
+	}
+
+	/*--------------------------------Proceeding Card----------------------------------------------------*/
+
+
+	/*Creates a new Card with filling all fields in and submitting*/
+	public void createCard(Unit3CriminalCaseCardModel unit3CriminalCaseCardModel) {
+		pages.unit3CriminalCaseCard.setCriminalCaseCardUnit3(unit3CriminalCaseCardModel);
+	}
+
+	/*Edits card with changing value in field "Defendant"*/
+	public void editCard(Unit3CriminalCaseCardModel unit3CriminalCaseCardModel) {
+		pages.unit3CriminalCaseCard.setInputOffenseQualification(unit3CriminalCaseCardModel.getSomeNewText());
+	}
+
+	/*---Basic Statements Tab---*/
+
+	/*Checks if in Criminal Card Unit 3*/
+	public boolean isOnUnit3CriminalCaseCard() {
+		return pages.unit3CriminalCaseCard.isTitleOfCardIsPresent();
+	}
+
+	public void goToStagesTab() {
+		pages.unit3CriminalCaseCard.clickOnStagesTab();
+	}
+
+	//Gets Plaintiff
+	public String getCriminalCaseNumber() {
+		return pages.unit3CriminalCaseCard.getInputCriminalCaseNumber();
+	}
+
+	/*Returns value in field "Defendant" from later edited card(after its editing)*/
+	public String getOffenseQualification() {
+		return pages.unit3CriminalCaseCard.getInputOffenseQualification();
+	}
+
+	//Saves Card(clicking "Save" button)
+	public void saveCard() {
+		pages.unit3CriminalCaseCard.clickButtonSaveCard();
+		pages.unit3CriminalCaseCard.clickOnAlertOK();
+	}
+
+	//Quit from Card
+	public void quitCard() {
+		pages.unit3CriminalCaseCard.clickButtonExitFromCardForm();
+	}
+
+	/*---Instance Tab---*/
+
+	//Checks if on "Stages" Tab in "Review Proceeding" Card
+	public boolean isStageCreatingUnable() {
+		return pages.unit3CriminalCaseCard.isTitleOfGridStageCreatingIsUnablePresent();
+	}
+
+	public boolean checkIsButtonCreateFirstInstance() {
+		return pages.unit3CriminalCaseCard.isButtonCreateFirstInstancePresent();
+	}
 }

@@ -2,7 +2,8 @@ package ua.bms.osop.test;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
-import ua.bms.osop.applogic1.ApplicationManager1;
+
+import ua.bms.osop.applogic.ApplicationManager;
 import ua.bms.osop.model.*;
 
 /*
@@ -12,12 +13,12 @@ import ua.bms.osop.model.*;
  */
 public class BasicTestCase {
 	
-	protected ApplicationManager1 app;
+	protected ApplicationManager app;
 	
 	/*Before Test Class creates new object of Application Manager*/
 	@BeforeClass
 	public void init() {
-		app = new ApplicationManager1();
+		app = new ApplicationManager();
 	}
 	
 	/*Checks login in system before Test Class, in case logOut - performs loginIn*/

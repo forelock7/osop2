@@ -1,10 +1,13 @@
 package ua.bms.osop.applogic;
 
-/*
- * Unit 3: "Public prosecution"("Держобвинувачення");
- * 6 - "Participation in the trial cases and other CC"("Участь у судовому розгляді справ та інших КС");
- */
-public interface Unit3ParticipationCaseHelper {
+public class Unit3ParticipationCaseHelper extends DriverBasedHelper {
 
-	boolean isOnUnit3ParticipationCasesPage();
+	/*Constructor of object which is managed by object Application Manager.*/
+	public Unit3ParticipationCaseHelper(ApplicationManager manager) {
+		super(manager.getWebDriver());
+	}
+	
+	public boolean isOnUnit3ParticipationCasesPage() {
+		return pages.unit3ParticipationCasePage.waitPageLoaded();
+	}
 }
