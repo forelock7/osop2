@@ -93,6 +93,13 @@ public class BasicTestCase {
 			/*Ім'я*/"Вейн",
 			/*Дата народження*/"18.09.1988");
 	
+	protected static Unit2PreventiveCardModel preventCard2 = new Unit2PreventiveCardModel(
+			/*Кваліфікація правопорушення/злочину*/null,
+			/*Дата  початку досудового розслідування:*/null,
+			/*Прізвище*/null,
+			/*Ім'я*/null,
+			/*Дата народження*/null);
+	
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 4 - "The release from custody"("Звільнення з-під варти")(Unit 2) except field with drop-down list*/

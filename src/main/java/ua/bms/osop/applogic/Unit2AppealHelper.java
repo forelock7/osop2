@@ -1,6 +1,7 @@
 package ua.bms.osop.applogic;
 
 import ua.bms.osop.model.Unit2AppealCardModel;
+import ua.bms.osop.model.Unit2PreventiveCardModel;
 
 public class Unit2AppealHelper extends DriverBasedHelper {
 
@@ -72,8 +73,15 @@ public class Unit2AppealHelper extends DriverBasedHelper {
 	/*--------------------------------Appeal Card----------------------------------------------------*/
 	
 	/*Creates a new Card with filling all fields in and submitting*/
-	public void createCard(Unit2AppealCardModel unit2AppealCardModel){
-		pages.unit2AppealCard.setAppealCardUnit2(unit2AppealCardModel);
+	public void setRequiredField(Unit2AppealCardModel unit2AppealCardModel){
+		pages.unit2AppealCard.setRequiredFieldOfCardUnit2(unit2AppealCardModel);
+	}
+	
+	//Add Preventive Card into Preventive Grid for relation
+	public void addRelativePreventiveCard(Unit2PreventiveCardModel unit2PreventiveCardModel) {
+		pages.unit2AppealCard.clickButtonAddReference();
+		pages.unit2AppealCard.getRegistrationNumberFirstRecordInOrderGrid(unit2PreventiveCardModel);
+		pages.unit2AppealCard.doubleClickOnFirstRecordInOrderGrid();
 	}
 	
 	/*Edits card with changing value in field "Content"*/
@@ -94,6 +102,11 @@ public class Unit2AppealHelper extends DriverBasedHelper {
 	/*Returns value in field from later edited card(after its editing)*/
 	public String getGroundsForAppeal(){
 		return pages.unit2AppealCard.getInputGroundsForAppeal();
+	}
+	
+	//Gets Registration Number from first record in Preventive Grid
+	public String getRegistrationNumberPreventiveCard() {
+		return pages.unit2AppealCard.getRegistrationNumberInPreventiveGrid();
 	}
 			
 	//Saves Card(clicking "Save" button)

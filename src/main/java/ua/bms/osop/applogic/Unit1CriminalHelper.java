@@ -99,7 +99,7 @@ public class Unit1CriminalHelper extends DriverBasedHelper {
 		pages.unit1CriminalCard.clickButtonSaveCard();
 		pages.unit1CriminalCard.clickOnAlertOK();
 	}
-		
+
 	//Quit from Card
 	public void quitCard() {
 		pages.unit1CriminalCard.clickButtonExitFromCardForm();

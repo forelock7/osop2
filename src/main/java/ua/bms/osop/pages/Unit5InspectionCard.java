@@ -64,11 +64,11 @@ public class Unit5InspectionCard extends AnyPage {
 	
 	//Button "Edit"("Редагувати") for the first record in the main grid on the "Response Documents" Tab in "Inspection" Card(row-1; column-13).
 	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//table[1]//td[13]/div/img")
-	WebElement buttonEditDocTab;
+	private WebElement buttonEditDocTab;
 	
 	//Button "Remove"("Видалити") for the first record in the main grid on the main UNIT's page(row-1; column-14).
 	@FindBy(xpath = "//div[contains(@id, 'unit5-actGrid')]//table[1]//td[14]/div/img")
-	WebElement buttonRemoveDocTab;
+	private WebElement buttonRemoveDocTab;
 	
 	/*-----------------Methods of Inspection Card on Basic Statements---------------------------------------------------------*/
 	

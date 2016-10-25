@@ -91,8 +91,7 @@ public class ApplicationManager {
 		 String password = ConfigProperties.getProperty("user.password");
 	    
 		 driver = WebDriverFactory.getInstance(gridHubUrl, browser, username, password);
-	 	 //driver = WebDriverFactory.getInstance();
-
+	 
 		 userHelper = new UserHelper(this);
 		 navTopHelper = new NavigationTopHelper(this);
 		 navUnit1Helper = new NavigationUnit1Helper(this);

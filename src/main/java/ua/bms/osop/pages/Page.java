@@ -31,7 +31,6 @@ public abstract class Page {
 	    wait = new WebDriverWait(driver, 2, 200);
 	    wait1 = new WebDriverWait(driver, 10);
 		wait2 = new WebDriverWait(driver, 10).ignoring(InvalidSelectorException.class, StaleElementReferenceException.class);
-
 	}
 	
 	public WebElement fluientWaitforElement(WebElement element) {

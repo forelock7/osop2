@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Wait;
 //import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import ua.bms.osop.pages.PageManager;
 
 /*
@@ -23,5 +22,6 @@ public class DriverBasedHelper {
 		wait= new WebDriverWait(driver, 1);
 		pages = new PageManager(driver);
 	}
+	
 
 }

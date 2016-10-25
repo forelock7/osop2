@@ -1,8 +1,10 @@
 package ua.bms.osop.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import ua.bms.osop.model.Unit2AppealCardModel;
+import ua.bms.osop.model.Unit2PreventiveCardModel;
 
 public class Unit2AppealCard extends AnyPage {
 	
@@ -49,10 +51,22 @@ public class Unit2AppealCard extends AnyPage {
 	@FindBy(xpath = "//div[contains(@id, 'unit23-appealDRTabMain')]//label[contains(., 'Підстави для оскарження')]/following-sibling::div//input")
 	private WebElement inputGroundsForAppeal;
 	
-	/*------------------Methods of Act of Pre-Investigation  Card-------------------------------------------------------------*/
+	//Button "Add"("Додати") reference to Preventive Card
+	@FindBy (xpath = "//div[contains(@id, 'unit23-appealDRAsPreventiveActionGrid')]//span[contains(@id, 'button')]")
+	private WebElement buttonAddReference;
+	
+	//Cell "Registration Number" in first record of Order Preventive Card Grid
+	@FindBy(xpath = "//div[contains(@id, 'unit23-appealDRAsPreventiveActionCard')]//table[1]//td[2]/div")
+	private WebElement cellRegNumberInOrderPreventiveGrid;
+	
+	//Cell "Registration Number" in first record of Preventive Card Grid
+	@FindBy(xpath = "//div[contains(@id, 'unit23-appealDRAsPreventiveActionGrid')]//table[1]//td[2]/div")
+	private WebElement cellRegNumberInPreventiveGrid;
+	
+	/*------------------Methods of Act of Appeal Card-------------------------------------------------------------*/
 	
 	//Sets the new card with filling all fields in
-	public Unit2AppealCard setAppealCardUnit2(Unit2AppealCardModel unit2AppealCardModel){
+	public Unit2AppealCard setRequiredFieldOfCardUnit2(Unit2AppealCardModel unit2AppealCardModel){
 		inputComplaintType.click();
 		fluientWaitforElement(itemComplaintType).click();
 		inputInvestDepartment.click();
@@ -64,6 +78,32 @@ public class Unit2AppealCard extends AnyPage {
 		return this;
 	}
 	
+	//Clicks button "Add" for adding reference to Preventive Card
+	public void clickButtonAddReference() {
+		buttonAddReference.click();
+	}
+	
+	//Opens to review Card
+	public void doubleClickOnFirstRecordInOrderGrid() {
+		Actions action = new Actions(driver);
+		action.doubleClick(fluientWaitforElement(cellRegNumberInOrderPreventiveGrid)).perform();
+	}
+		
+	//Editing SOME field ("Grounds For Appeal" ("Підстави для оскарження"))
+	public void setInputGroundsForAppeal(String someText){
+		type(inputGroundsForAppeal, someText);
+	}
+	
+	//Gets Registration Number of added Preventive Card
+	public String getRegistrationNumberInPreventiveGrid() {
+		return cellRegNumberInPreventiveGrid.getText();
+	}
+	
+	//Gets Registration Number of Preventive Card will be added
+	public void getRegistrationNumberFirstRecordInOrderGrid(Unit2PreventiveCardModel unit2PreventiveCardModel) {
+		unit2PreventiveCardModel.setRegistrationNumber(cellRegNumberInOrderPreventiveGrid.getText());
+	}
+		
 	//Getting value from field "Registration Number" in formerly created card
 	public String getValueRegistrationNumber() {
 		return fieldRegistrationNumber.getAttribute("value");
@@ -72,11 +112,6 @@ public class Unit2AppealCard extends AnyPage {
 	//Getting value from input-field "Proceeding Number" in formerly created card
 	public String getInputProceedingNumber() {
 		return inputProceedingNumber.getAttribute("value");
-	}
-	
-	//Editing SOME field ("Grounds For Appeal" ("Підстави для оскарження"))
-	public void setInputGroundsForAppeal(String someText){
-		type(inputGroundsForAppeal, someText);
 	}
 	
 	//Getting existing value from input-field ("Grounds For Appeal" ("Підстави для оскарження"))

@@ -84,4 +84,10 @@
  		</classes>
 	</test>
 	
+	<test verbose="3" name="Test13">
+		<classes>
+      		 <class name="ua.bms.osop.test.U2AppealAndPreventiveRelation" />
+ 		</classes>
+	</test>
+	
 </suite>

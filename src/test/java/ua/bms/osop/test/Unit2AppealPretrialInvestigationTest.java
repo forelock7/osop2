@@ -17,7 +17,7 @@ public class Unit2AppealPretrialInvestigationTest extends BasicTestCase {
 	@Test (groups = {"unit2_appealsPreInvest"}, dependsOnMethods = {"testJumpToUnit2AppealsPreInvestPage"})
 	public void testCreateAndReviewAppealCard() {
 		app.getUnit2AppealHelper().openCardToCreate();
-		app.getUnit2AppealHelper().createCard(appealCard);
+		app.getUnit2AppealHelper().setRequiredField(appealCard);
 		app.getUnit2AppealHelper().saveCard();
 		app.getUnit2AppealHelper().openCardToView();
 		Assert.assertEquals(appealCard.getProceedingNumber(), app.getUnit2AppealHelper().getProceedingNumber());
