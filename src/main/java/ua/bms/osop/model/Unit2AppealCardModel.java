@@ -13,6 +13,7 @@ public class Unit2AppealCardModel {
 	private String offenseQualification;
 	private String suspectedName;
 	private String groundsForAppeal;
+	private String registrationNumberAddedPreventiveCard;
 	
 	private String someNewText;
 	
@@ -39,6 +40,10 @@ public class Unit2AppealCardModel {
 	
 	/*---Get Methods---*/
 	
+	public String getRegistrationNumber() {
+		return registrationNumber;
+	}
+	
 	public String getProceedingNumber() {
 		return proceedingNumber;
 	}
@@ -59,8 +64,8 @@ public class Unit2AppealCardModel {
 		return someNewText;
 	}
 	
-	public String getRegistrationNumber() {
-		return registrationNumber;
+	public String getRegistrationNumberAddedPreventiveCard() {
+		return registrationNumberAddedPreventiveCard;
 	}
 	
 	/*---Set Methods---*/
@@ -69,4 +74,7 @@ public class Unit2AppealCardModel {
 		this.registrationNumber = registrationNumber;
 	}
 
+	public void setRegistrationNumberAddedPreventiveCard (String registrationNumberAddedPreventiveCard) {
+		this.registrationNumberAddedPreventiveCard = registrationNumberAddedPreventiveCard;
+	}
 }

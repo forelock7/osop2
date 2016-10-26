@@ -37,7 +37,7 @@ public abstract class Page {
 	    FluentWait<WebDriver> fWait = new FluentWait<WebDriver>(driver).withTimeout(10, TimeUnit.SECONDS)
 	        .pollingEvery(1, TimeUnit.SECONDS)
 	        .ignoring(NoSuchElementException.class, TimeoutException.class).ignoring(StaleElementReferenceException.class);
-	    for (int i = 0; i < 2; i++) {
+	    for (int i = 0; i < 3; i++) {
 	        try {
 				//fWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id='reportmanager-wrapper']/div[1]/div[2]/ul/li/span[3]/i[@data-original--title='We are processing through trillions of data events, this insight may take more than 15 minutes to complete.']")));
 	        	fWait.until(ExpectedConditions.visibilityOf(element));

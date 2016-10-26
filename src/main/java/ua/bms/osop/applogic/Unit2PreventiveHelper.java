@@ -24,6 +24,11 @@ public class Unit2PreventiveHelper extends DriverBasedHelper {
 	public void goToRemovedTab() {
 		pages.unit2PreventivePage.clickOnRemovedTab();
 	}
+	
+	//Sorts records down(in descending order) - double click on header of grid
+	public void sortDownMainGrid() {
+		pages.unit2PreventivePage.doubleClickOnGridHeader();
+	}
 		
 	//Opens Card to create
 	public void openCardToCreate() {
@@ -69,13 +74,23 @@ public class Unit2PreventiveHelper extends DriverBasedHelper {
 	/*--------------------------------Preventive Card----------------------------------------------------*/
 	
 	/*Creates a new Card with filling all fields in and submitting*/
-	public void createCard(Unit2PreventiveCardModel unit2PreventiveCardModel){
+	public void setRequiredFields(Unit2PreventiveCardModel unit2PreventiveCardModel){
 		pages.unit2PreventiveCard.setPreventiveCardUnit2(unit2PreventiveCardModel);
 	}
 	
 	/*Edits card with changing value in field "Content"*/
 	public void editCard(Unit2PreventiveCardModel unit2PreventiveCardModel) {
 		pages.unit2PreventiveCard.setInputOffenseQualification(unit2PreventiveCardModel.getSomeNewText());
+	}
+	
+	//Gets and memorizes Registration Number while it is opened.
+	public void storeRegistrationNumber(Unit2PreventiveCardModel unit2PreventiveCardModel) {
+		unit2PreventiveCardModel.setRegistrationNumber(getRegistrationNumber());
+	}
+	
+	//Gets Registration Number
+	public String getRegistrationNumber() {
+		return pages.unit2PreventiveCard.getValueRegistrationNumber();
 	}
 			
 	//Gets Proceeding Number
@@ -99,6 +114,10 @@ public class Unit2PreventiveHelper extends DriverBasedHelper {
 	//Quit from Card
 	public void quitCard() {
 		pages.unit2PreventiveCard.clickButtonExitFromCardForm();
+	}
+
+	public String getRegistrationNumberRelatedAppealCard() {
+		return pages.unit2PreventiveCard.getRegistrationNumberInAppealGrid();
 	}
 
 }

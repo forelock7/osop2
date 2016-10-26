@@ -22,8 +22,8 @@ public class Unit2PreventiveCard extends AnyPage {
 	//Input field "Preventive Action" ("Запобіжний захід")
 	@FindBy(xpath = "//div[contains(@id, 'unit23-preventiveActionTabMain')]//span[contains(., 'Запобіжний захід')]")
 	private WebElement inputActType;
-	//First item of Type of Department
-	@FindBy (xpath = "(//div[contains(@id, 'boundlist')]//li[1])[1]") 
+	//Fourth item of Type of Department
+	@FindBy (xpath = "(//div[contains(@id, 'boundlist')]//li[4])[1]") 
 	private WebElement itemActType;
 	
 	//Input field "Department" ("ОДР, який здійснює досудове розслідування")
@@ -57,6 +57,10 @@ public class Unit2PreventiveCard extends AnyPage {
 	@FindBy(xpath = "(//div[contains(@id, 'unit23-preventiveActionTabMain')]//input[contains(@id, 'datefield')])[2]")
 	private WebElement inputBirthday;
 	
+	//Cell "Registration Number" in first record of Preventive Card Grid
+	@FindBy(xpath = "//div[contains(@id, 'unit23-preventiveActionAsAppealDRGrid')]//table[1]//td[2]/div")
+	private WebElement cellRegNumberInAppealGrid;
+	
 	/*------------------Methods of Act of Prevetive Card-------------------------------------------------------------*/
 	
 	//Sets the new card with filling all fields in
@@ -75,7 +79,7 @@ public class Unit2PreventiveCard extends AnyPage {
 	}
 	
 	//Getting value from field "Registration Number" in formerly created card
-	public String getValuaRegistrationNumber() {
+	public String getValueRegistrationNumber() {
 		return fieldRegistrationNumber.getAttribute("value");
 	}
 		
@@ -92,6 +96,10 @@ public class Unit2PreventiveCard extends AnyPage {
 	//Getting existing value from input-field "Qualification of offense/crime" ("Кваліфікація правопорушення / злочину")
 	public String getInputOffenseQualification() {
 		return inputOffenseQualification.getAttribute("value");
+	}
+
+	public String getRegistrationNumberInAppealGrid() {
+		return cellRegNumberInAppealGrid.getText();
 	}
 	
 }

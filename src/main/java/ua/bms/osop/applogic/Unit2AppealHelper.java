@@ -1,7 +1,6 @@
 package ua.bms.osop.applogic;
 
 import ua.bms.osop.model.Unit2AppealCardModel;
-import ua.bms.osop.model.Unit2PreventiveCardModel;
 
 public class Unit2AppealHelper extends DriverBasedHelper {
 
@@ -73,14 +72,14 @@ public class Unit2AppealHelper extends DriverBasedHelper {
 	/*--------------------------------Appeal Card----------------------------------------------------*/
 	
 	/*Creates a new Card with filling all fields in and submitting*/
-	public void setRequiredField(Unit2AppealCardModel unit2AppealCardModel){
+	public void setRequiredFields(Unit2AppealCardModel unit2AppealCardModel){
 		pages.unit2AppealCard.setRequiredFieldOfCardUnit2(unit2AppealCardModel);
 	}
 	
 	//Add Preventive Card into Preventive Grid for relation
-	public void addRelativePreventiveCard(Unit2PreventiveCardModel unit2PreventiveCardModel) {
+	public void addRelativePreventiveCard(Unit2AppealCardModel unit2AppealCardModel) {
 		pages.unit2AppealCard.clickButtonAddReference();
-		pages.unit2AppealCard.getRegistrationNumberFirstRecordInOrderGrid(unit2PreventiveCardModel);
+		pages.unit2AppealCard.getRegistrationNumberFirstRecordInOrderGrid(unit2AppealCardModel);
 		pages.unit2AppealCard.doubleClickOnFirstRecordInOrderGrid();
 	}
 	
@@ -92,6 +91,11 @@ public class Unit2AppealHelper extends DriverBasedHelper {
 	//Gets Registration Number
 	public String getRegistrationNumber() {
 		return pages.unit2AppealCard.getValueRegistrationNumber();
+	}
+	
+	//Gets and memorizes Registration Number while it is opened.
+	public void storeRegistrationNumber(Unit2AppealCardModel unit2AppealCardModel) {
+		unit2AppealCardModel.setRegistrationNumber(getRegistrationNumber());
 	}
 			
 	//Gets Proceeding Number
@@ -105,7 +109,7 @@ public class Unit2AppealHelper extends DriverBasedHelper {
 	}
 	
 	//Gets Registration Number from first record in Preventive Grid
-	public String getRegistrationNumberPreventiveCard() {
+	public String getRegistrationNumberRelatedPreventiveCard() {
 		return pages.unit2AppealCard.getRegistrationNumberInPreventiveGrid();
 	}
 			
@@ -119,4 +123,5 @@ public class Unit2AppealHelper extends DriverBasedHelper {
 	public void quitCard() {
 		pages.unit2AppealCard.clickButtonExitFromCardForm();
 	}
+
 }

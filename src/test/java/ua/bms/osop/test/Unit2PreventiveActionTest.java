@@ -17,7 +17,7 @@ public class Unit2PreventiveActionTest extends BasicTestCase {
 	@Test (groups = {"unit2_preventiveAction"}, dependsOnMethods = {"testJumpToUnit2PreventiveActionPage"})
 	public void testCreateAndReviewPreventiveActionCard() {
 		app.getUnit2PreventiveHelper().openCardToCreate();
-		app.getUnit2PreventiveHelper().createCard(preventCard);
+		app.getUnit2PreventiveHelper().setRequiredFields(preventCard);
 		app.getUnit2PreventiveHelper().saveCard();
 		app.getUnit2PreventiveHelper().openCardToView();
 		Assert.assertEquals(preventCard.getProceedingNumber(), app.getUnit2PreventiveHelper().getProceedingNumber());

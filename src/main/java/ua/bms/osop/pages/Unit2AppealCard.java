@@ -4,7 +4,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import ua.bms.osop.model.Unit2AppealCardModel;
-import ua.bms.osop.model.Unit2PreventiveCardModel;
 
 public class Unit2AppealCard extends AnyPage {
 	
@@ -55,9 +54,9 @@ public class Unit2AppealCard extends AnyPage {
 	@FindBy (xpath = "//div[contains(@id, 'unit23-appealDRAsPreventiveActionGrid')]//span[contains(@id, 'button')]")
 	private WebElement buttonAddReference;
 	
-	//Cell "Registration Number" in first record of Order Preventive Card Grid
+	//Cell "Registration Number" in first record of Order List Preventive Card Grid
 	@FindBy(xpath = "//div[contains(@id, 'unit23-appealDRAsPreventiveActionCard')]//table[1]//td[2]/div")
-	private WebElement cellRegNumberInOrderPreventiveGrid;
+	private WebElement cellRegNumberInOrderListPreventiveGrid;
 	
 	//Cell "Registration Number" in first record of Preventive Card Grid
 	@FindBy(xpath = "//div[contains(@id, 'unit23-appealDRAsPreventiveActionGrid')]//table[1]//td[2]/div")
@@ -86,7 +85,7 @@ public class Unit2AppealCard extends AnyPage {
 	//Opens to review Card
 	public void doubleClickOnFirstRecordInOrderGrid() {
 		Actions action = new Actions(driver);
-		action.doubleClick(fluientWaitforElement(cellRegNumberInOrderPreventiveGrid)).perform();
+		action.doubleClick(fluientWaitforElement(cellRegNumberInOrderListPreventiveGrid)).perform();
 	}
 		
 	//Editing SOME field ("Grounds For Appeal" ("Підстави для оскарження"))
@@ -100,8 +99,8 @@ public class Unit2AppealCard extends AnyPage {
 	}
 	
 	//Gets Registration Number of Preventive Card will be added
-	public void getRegistrationNumberFirstRecordInOrderGrid(Unit2PreventiveCardModel unit2PreventiveCardModel) {
-		unit2PreventiveCardModel.setRegistrationNumber(cellRegNumberInOrderPreventiveGrid.getText());
+	public void getRegistrationNumberFirstRecordInOrderGrid(Unit2AppealCardModel unit2AppealCardModel) {
+		unit2AppealCardModel.setRegistrationNumberAddedPreventiveCard(cellRegNumberInOrderListPreventiveGrid.getText());
 	}
 		
 	//Getting value from field "Registration Number" in formerly created card
