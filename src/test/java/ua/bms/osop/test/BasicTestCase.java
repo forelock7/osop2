@@ -6,6 +6,9 @@ import org.testng.annotations.BeforeClass;
 import ua.bms.osop.applogic.ApplicationManager;
 import ua.bms.osop.model.*;
 
+import java.sql.*;
+
+
 /*
  * Basic class for all test classes.
  * There are some methods are performed in Test's classes Before and/or After Class/Suite.
@@ -36,6 +39,26 @@ public class BasicTestCase {
 		app.stop();
 	}
 	
+	//-----------------------------------
+	
+	static Connection con = null;
+	private static Statement stmt;
+	public static String DB_URL = "jdbc:mysql://localhost:33060/osop_db";
+	public static String DB_USER = "root";
+	public static String DB_PASSWORD = "bMS$2016";
+	@BeforeClass
+	public void setUp() throws Exception {
+		 try{
+			 String dbClass = "com.mysql.jdbc.Driver";
+			 Class.forName(dbClass).newInstance();
+			 Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
+			 stmt = con.createStatement();
+					 
+		 }catch (Exception e) {
+			 e.printStackTrace();
+		 }
+	}
+	
 	/*-----------------------------------------------------------------------------------------------------------------*/
 	/*Initialization of object "user"*/	
 	protected UserModel userModel = new UserModel("vova", "bMS$2016");
@@ -57,11 +80,32 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 3 - "Started Crime Proceedings"("Розпочато кримінальних проваджень") Card(Unit 1) except field with drop-down list*/
-	protected static Unit1CriminalCardModel criminalCard = new Unit1CriminalCardModel(
-			/*Дата реєстрації*/"05.07.2016",
-			/*Статті КК України за ознаками яких розпочато кримінальне провадження*/"Стаття 562 пункт 45 ГШПмаентлот",
-			/*Фабула*/"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");
+	/*protected static Unit1CriminalCardModel criminalCard = new Unit1CriminalCardModel(
+			/*Дата реєстрації*//*"05.07.2016",
+			/*Статті КК України за ознаками яких розпочато кримінальне провадження*//*"Стаття 562 пункт 45 ГШПмаентлот",
+			/*Фабула*//*"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");*/
 
+	protected Unit1CriminalCardModel newCriminalCard() {
+		try{
+			String query = "select * from unit1_criminalCard";
+			ResultSet res = stmt.executeQuery(query);
+			while (res.next()) {
+				System.out.print(res.getString(1));
+				System.out.print("\t" + res.getString(2));
+				System.out.print("\t" + res.getString(3));
+				System.out.print("\t" + res.getString(4));
+			}
+		}catch(Exception e) {
+				e.printStackTrace();
+			}
+		
+		
+				return new Unit1CriminalCardModel(
+						/*Дата реєстрації*/"05.07.2016",
+						/*Статті КК України за ознаками яких розпочато кримінальне провадження*/"Стаття 562 пункт 45 ГШПмаентлот",
+						/*Фабула*/"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");
+			}
+	
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 1 - "Acts of supervision over pre-trial investigation" Card("Акти нагляду за ДР")(Unit 2) except field with drop-down list*/

@@ -5,11 +5,15 @@ import static org.testng.Assert.assertTrue;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import ua.bms.osop.model.Unit1CriminalCardModel;
+
 /*
  * Implements all tests related to "Started Crime Proceeding"("Розпочато кримінальних проваджень") - Unit 1 "Representation" ("Представництво")
  */
 public class Unit1CrimeProceedingTest extends BasicTestCase {
 
+	Unit1CriminalCardModel criminalCard = newCriminalCard();
+	
 	@Test (groups = {"unit1_crime"})
 	public void testJumpToUnit1CrimeProceedingPage() {
 		assertTrue(app.getUserHelper().isLoggedIn());

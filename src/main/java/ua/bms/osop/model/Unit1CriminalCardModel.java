@@ -15,7 +15,7 @@ public class Unit1CriminalCardModel {
 	
 	private String someNewText;
 	
-	/*Constructor of Unit 6 Model Object*/
+	/*Constructor of Unit 1 Model Object*/
 	public Unit1CriminalCardModel(String registrationDate, String section, String theory) {
 		this.registrationNumber = null;
 		this.criminalProceedingNumber = createCriminalProceedingNumber();
@@ -27,7 +27,7 @@ public class Unit1CriminalCardModel {
 		this.someNewText = creatNewText();
 	}
 
-	/*Generation of random number of Claim*/
+
 	private String createCriminalProceedingNumber() {
 		Random rnd = new Random();
 		return Integer.toString(rnd.nextInt(99999999));
