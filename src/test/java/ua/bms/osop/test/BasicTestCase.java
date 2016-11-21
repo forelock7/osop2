@@ -43,7 +43,7 @@ public class BasicTestCase {
 	
 	static Connection con = null;
 	private static Statement stmt;
-	public static String DB_URL = "jdbc:mysql://localhost:33060/osop_db";
+	public static String DB_URL = "jdbc:mysql://localhost:3306/osopdb";
 	public static String DB_USER = "root";
 	public static String DB_PASSWORD = "bMS$2016";
 	@BeforeClass
