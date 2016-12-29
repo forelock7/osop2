@@ -86,9 +86,11 @@ public class Unit6ClaimCard extends AnyPage {
 	public Unit6ClaimCard setCardUnit6(Unit6CardModel unit6CardModel){
 		type(inputClaimNumber, unit6CardModel.getClaimNumber());
 		inputClaimType.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Первинне')]"))).click();
+		fluientWaitforElement(itemClaimType).click();
+		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Первинне')]"))).click();
 		inputApplicantForm.click();
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Фізична особа')]"))).click();
+		fluientWaitforElement(itemApplicantForm).click();
+		//wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[contains(@id, 'boundlist')]//li[contains(., 'Фізична особа')]"))).click();
 		clickButtonAddFacts();
 		setApplicantFacts(unit6CardModel);
 		clickButtonAddApplicantInForm();

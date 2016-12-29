@@ -46,6 +46,10 @@ public class Unit3CriminalProceedingCard extends AnyPage {
 	//Input field "Offense Qualification" ("Кваліфікація правопорушення")
 	@FindBy(xpath = "//div[contains(@id, 'unit23-crimeTabMain')]/div[5]//div[1]//input")
 	private WebElement inputOffenseQualification;
+
+    //Button "Create" ("Створити"). Opens form to create Accused Card for adding a record into grid "Accused" "Обвинувачений"
+    @FindBy(xpath = "//div[contains(@id, 'unit23-crimeAsAccused')]/div[1]//a")
+    private WebElement buttonCreateAccused;
 	
 	//Button "Add" ("Додати"). Adding a record into grid "Sent to Court" "Направлено до суду"
 	@FindBy(xpath = "//div[contains(@id, 'unit23-crimeAsSendingToCourtGrid')]/div[1]//a")
@@ -81,6 +85,8 @@ public class Unit3CriminalProceedingCard extends AnyPage {
 	//First record in column "Sent to Court" Sent to Court Grid
 	@FindBy (xpath = "//div[contains(@id, 'unit23-crimeAsSendingToCourtGrid')]//td[2]/div")
 	private WebElement cellSentToCourtGrid;
+
+
 	
 	/*-----------------The Web-Elements of the "Proceeding" Card on "Stages" Tab-------------*/
 
@@ -101,6 +107,10 @@ public class Unit3CriminalProceedingCard extends AnyPage {
 
     public void clickOnStagesTab() {
         fluientWaitforElement(tabStages).click();
+    }
+
+    public void clickButtonCreateAccused() {
+        buttonCreateAccused.click();
     }
 
     //Sets the new card with filling all fields in

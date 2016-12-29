@@ -36,6 +36,7 @@ public class PageManager {
 	public Unit2CovertCard unit2CovertCard;
 	public Unit2PreventivePage unit2PreventivePage;
 	public Unit2PreventiveCard unit2PreventiveCard;
+	public Unit3AccusedCard unit3AccusedCard;
 	public Unit3CriminalCasePage unit3CriminalCasePage;
 	public Unit3CriminalCaseCard unit3CriminalCaseCard;
 	public Unit3CriminalProceedingPage unit3CriminalProceedingPage;
@@ -95,6 +96,7 @@ public class PageManager {
 		unit2CovertCard = initElements(new Unit2CovertCard(this));
 		unit2PreventivePage = initElements(new Unit2PreventivePage(this));
 		unit2PreventiveCard = initElements(new Unit2PreventiveCard(this));
+		unit3AccusedCard = initElements(new Unit3AccusedCard(this));
 		unit3CriminalCasePage = initElements(new Unit3CriminalCasePage(this));
 		unit3CriminalCaseCard = initElements(new Unit3CriminalCaseCard(this));
 		unit3CriminalProceedingPage = initElements(new Unit3CriminalProceedingPage(this));

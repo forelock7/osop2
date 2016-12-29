@@ -53,7 +53,8 @@ public class Unit7MassMediaCard extends AnyPage {
 	public Unit7MassMediaCard setCardUnit7(Unit7CardModel massMediaCard){
 		type(inputSpeechDate, massMediaCard.getSpeechDate());
 		inputTypeOfCoverage.click();
-		wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'treepanel')]//table[2]"))).click();
+		fluientWaitforElement(itemTypeOfCoverage).click();
+		//wait.until(presenceOfElementLocated(By.xpath("//div[contains(@id, 'treepanel')]//table[2]"))).click();
 		type(inputNameOfMassMedia, massMediaCard.getNameOfMassMedia());
 		type(inputSubjectOfSpeech, massMediaCard.getSubjectOfSpeech());
 		type(inputAuthorOfSpeech, massMediaCard.getAuthorOfSpeech());

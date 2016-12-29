@@ -1,5 +1,6 @@
 package ua.bms.osop.applogic;
 
+import ua.bms.osop.model.Unit3AccusedModel;
 import ua.bms.osop.model.Unit3CriminalProceedingCardModel;
 
 public class Unit3CriminalProceedingHelper extends DriverBasedHelper {
@@ -44,6 +45,13 @@ public class Unit3CriminalProceedingHelper extends DriverBasedHelper {
 	/*Creates a new Card with filling all fields in and submitting*/
 	public void createCard(Unit3CriminalProceedingCardModel unit3CriminalProceedingCardModel) {
 		pages.unit3CriminalProceedingCard.setCriminalProceedingCardUnit3(unit3CriminalProceedingCardModel);
+	}
+
+	/*Create Accused Card*/
+	public void createAccused(Unit3AccusedModel unit3AccusedModel) {
+		pages.unit3CriminalProceedingCard.clickButtonCreateAccused();
+		pages.unit3AccusedCard.setAccusedCardUnit3(unit3AccusedModel).clickButtonSaveCard();
+		pages.unit3AccusedCard.clickOnAlertOK();
 	}
 
 	/*Edits card with changing value in field "Defendant"*/

@@ -7,6 +7,8 @@ import ua.bms.osop.applogic.ApplicationManager;
 import ua.bms.osop.model.*;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 /*
@@ -194,6 +196,21 @@ public class BasicTestCase {
 			/*Дата реєстрації*/"01.05.2016",
 			/*Коротка фабула*/"Коротка фабулаokicdh222rwv76632324567%&%^&#@@%$^^8467^&$@#$%#",
 			/*Дата надіслання до суду*/"30.09.2016");
+
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
+	protected static Unit3AccusedModel accusedPerson = new Unit3AccusedModel(
+			/*ПІБ*/"Особа");
+
+	/*-----------------------------------------------------------------------------------------------------------------*/
+
+	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
+	protected static ArrayList< Unit3AccusedModel > accusedPeople = new ArrayList< Unit3AccusedModel >();
+    //accusedPeople.add(i, new Unit3AccusedModel(i));
+
+
+
 	
 	/*----------------------------------------------------------------------------------------------------------------*/
 		

@@ -59,7 +59,7 @@ public abstract class Page {
 	}
 
 	//Waits launching of Page and returns Page
-	public Page ensurePageLoaded() {		
+	public Page  ensurePageLoaded() {
 		return this;
 	}
 
