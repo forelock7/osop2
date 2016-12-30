@@ -31,12 +31,19 @@ public class U3CrearteProceedingCardWithNumberOfAccused extends BasicTestCase {
 
     @Test (groups = {"unit3_proceedings"}, dependsOnMethods = {"testCreateAndReviewCriminalProceedingCard"})
     public void testAddingAccusedIntoCriminalProceedingCard(){
+
+        //temporary method
+        //app.getUnit3CriminalProceedingHelper().sortDownMainGrid();
+
         app.getUnit3CriminalProceedingHelper().openCardToEdit();
-        for(int i=0; i<10; i++) {
+        for(int i=0; i<2000; i++) {
+            if (i%100==0) {
+                app.getUnit3CriminalProceedingHelper().saveCard();
+                app.getUnit3CriminalProceedingHelper().openCardToEdit();
+            }
             accusedPeople.add(i, new Unit3AccusedModel(i));
             app.getUnit3CriminalProceedingHelper().createAccused(accusedPeople.get(i));
         }
-
         app.getUnit3CriminalProceedingHelper().saveCard();
         //app.getUnit3CriminalProceedingHelper().openCardToEdit();
         //Assert.assertEquals(criminalProceedingCard.getSomeNewText(), app.getUnit3CriminalProceedingHelper().getOffenseQualification());

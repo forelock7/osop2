@@ -15,6 +15,10 @@ public class Unit3CriminalProceedingHelper extends DriverBasedHelper {
 	public boolean isOnUnit3CriminalProceedingPage() {
 		return pages.unit3CriminalProceedingPage.waitPageLoaded();
 	}
+
+	public void sortDownMainGrid() {
+		pages.unit3CriminalProceedingPage.doubleClickOnGridHeader();
+	}
 	
 	//Opens Card to create
 	public void openCardToCreate() {

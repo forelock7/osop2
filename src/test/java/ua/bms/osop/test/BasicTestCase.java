@@ -207,11 +207,7 @@ public class BasicTestCase {
 
 	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
 	protected static ArrayList< Unit3AccusedModel > accusedPeople = new ArrayList< Unit3AccusedModel >();
-    //accusedPeople.add(i, new Unit3AccusedModel(i));
 
-
-
-	
 	/*----------------------------------------------------------------------------------------------------------------*/
 		
 	/*Initialization of input fields from International Judicial Cooperation Card(Unit 4) except field with drop-down list*/
