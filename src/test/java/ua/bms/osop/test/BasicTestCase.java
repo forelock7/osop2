@@ -47,7 +47,7 @@ public class BasicTestCase {
 	private static Statement stmt;
 	public static String DB_URL = "jdbc:mysql://localhost:3306/osopdb";
 	public static String DB_USER = "root";
-	public static String DB_PASSWORD = "bMS$2016";
+	public static String DB_PASSWORD = "vova";
 	@BeforeClass
 	public void setUp() throws Exception {
 		 try{
@@ -88,25 +88,27 @@ public class BasicTestCase {
 			/*Фабула*//*"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");*/
 
 	protected Unit1CriminalCardModel newCriminalCard() {
-		try{
-			String query = "select * from unit1_criminalCard";
-			ResultSet res = stmt.executeQuery(query);
-			while (res.next()) {
-				System.out.print(res.getString(1));
-				System.out.print("\t" + res.getString(2));
-				System.out.print("\t" + res.getString(3));
-				System.out.print("\t" + res.getString(4));
-			}
-		}catch(Exception e) {
-				e.printStackTrace();
-			}
+		//try {
+		String query = "select * from unit1_criminalCard";
+		ResultSet res = stmt.executeQuery(query);
+		while (res.next()) {
+			int id = res.getInt(1);
+			String regNum = res.getString(2);
+			String sec = res.getString(3);
+			String theory = res.getString(4);
+			return new Unit1CriminalCardModel(
+						/*Дата реєстрації*/regNum,
+						/*Статті КК України за ознаками яких розпочато кримінальне провадження*/sec,
+						/*Фабула*/theory);
+		}
+	}
+		/*} catch (Exception e) {
+			e.printStackTrace();
+		}*/
+
 		
-		
-				return new Unit1CriminalCardModel(
-						/*Дата реєстрації*/"05.07.2016",
-						/*Статті КК України за ознаками яких розпочато кримінальне провадження*/"Стаття 562 пункт 45 ГШПмаентлот",
-						/*Фабула*/"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");
-			}
+
+
 	
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
