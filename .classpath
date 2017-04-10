@@ -33,6 +33,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Tools/com.mysql.jdbc_5.1.5.jar.zip"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.testng:testng:6.9.10"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.beust:jcommander:1.48"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.beanshell:bsh:2.0b4"/>
@@ -58,6 +59,5 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: io.netty:netty:3.5.7.Final"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.seleniumhq.selenium:selenium-support:2.53.0"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.seleniumhq.selenium:selenium-leg-rc:2.53.0"/>
-	<classpathentry kind="lib" path="C:/Tools/com.mysql.jdbc_5.1.5.jar.zip"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

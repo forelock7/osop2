@@ -12,7 +12,7 @@ import ua.bms.osop.model.Unit1CriminalCardModel;
  */
 public class Unit1CrimeProceedingTest extends BasicTestCase {
 
-	Unit1CriminalCardModel criminalCard = newCriminalCard();
+	//Unit1CriminalCardModel criminalCard = newCriminalCard();
 	
 	@Test (groups = {"unit1_crime"})
 	public void testJumpToUnit1CrimeProceedingPage() {
