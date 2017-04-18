@@ -55,12 +55,12 @@ public class BasicTestCase {
 			 Class.forName(dbClass).newInstance();
 			 Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
 			 stmt = con.createStatement();
-					 
+
 		 }catch (Exception e) {
 			 e.printStackTrace();
 		 }
 	}*/
-	
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 	/*Initialization of object "user"*/	
 	protected UserModel userModel = new UserModel("vova", "bMS$2016");
@@ -87,6 +87,7 @@ public class BasicTestCase {
 			/*Статті КК України за ознаками яких розпочато кримінальне провадження*/"Стаття 562 пункт 45 ГШПмаентлот",
 			/*Фабула*/"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");
 
+
 	/*protected Unit1CriminalCardModel newCriminalCard() {
 		try {
 		String query = "select * from unit1_criminalCard";
@@ -106,7 +107,7 @@ public class BasicTestCase {
 			e.printStackTrace();
 		}*/
 
-		
+
 
 
 	
