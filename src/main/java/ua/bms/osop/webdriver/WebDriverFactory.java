@@ -71,14 +71,14 @@ public class WebDriverFactory {
 		} else if (FIREFOX.equals(browserName)) {
 			capability = DesiredCapabilities.firefox();
 			
-			//FirefoxProfile ffProfile = new FirefoxProfile();
+			FirefoxProfile ffProfile = new FirefoxProfile();
 
 			// Authentication Hack for FireFox
-			/*if (username != null && password != null) {
+			if (username != null && password != null) {
 				ffProfile.setPreference("q",
 						255);
 				capability.setCapability(FirefoxDriver.PROFILE, ffProfile);
-			}*/
+			}
 			
 			capability.setCapability(CapabilityType.TAKES_SCREENSHOT, true);
 		} else if (INTERNET_EXPLORER.equals(browserName)) {
@@ -144,10 +144,10 @@ public class WebDriverFactory {
 			FirefoxProfile ffProfile = new FirefoxProfile();
 
 			// Authentication Hack for Firefox
-			/*if (username != null && password != null) {
+			if (username != null && password != null) {
 				ffProfile.setPreference("q",
 						255);
-			}*/
+			}
 
 			webDriver = new FirefoxDriver(ffProfile);
 
