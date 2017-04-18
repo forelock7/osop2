@@ -37,6 +37,8 @@ public class WebDriverFactory {
 	public static final String LINUX = "linux";
 
 	private static WebDriver webDriver = null;
+
+	private static String driverPath = "C:\\Tools\\drivers\\";
 	/*
 	 * Factory method to return a RemoteWebDriver instance given the url of the
 	 * Grid hub and a Browser instance.
@@ -106,6 +108,8 @@ public class WebDriverFactory {
 		capability = setVersionAndPlatform(capability, browser.getVersion(),
 				browser.getPlatform());
 
+		System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
+
 		// Create Remote WebDriver
 		try {
 			webDriver = new RemoteWebDriver(new URL(gridHubUrl), capability);
@@ -148,6 +152,7 @@ public class WebDriverFactory {
 				ffProfile.setPreference("q",
 						255);
 			}
+			System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
 
 			webDriver = new FirefoxDriver(ffProfile);
 
