@@ -43,7 +43,7 @@ public class BasicTestCase {
 	
 	//-----------------------------------
 	
-	static Connection con = null;
+	/*static Connection con = null;
 	private static Statement stmt;
 	public static String DB_URL = "jdbc:mysql://localhost:3306/osopdb";
 	public static String DB_USER = "root";
@@ -59,7 +59,7 @@ public class BasicTestCase {
 		 }catch (Exception e) {
 			 e.printStackTrace();
 		 }
-	}
+	}*/
 	
 	/*-----------------------------------------------------------------------------------------------------------------*/
 	/*Initialization of object "user"*/	
@@ -82,13 +82,13 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 3 - "Started Crime Proceedings"("Розпочато кримінальних проваджень") Card(Unit 1) except field with drop-down list*/
-	/*protected static Unit1CriminalCardModel criminalCard = new Unit1CriminalCardModel(
-			/*Дата реєстрації*//*"05.07.2016",
-			/*Статті КК України за ознаками яких розпочато кримінальне провадження*//*"Стаття 562 пункт 45 ГШПмаентлот",
-			/*Фабула*//*"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");*/
+	protected static Unit1CriminalCardModel criminalCard = new Unit1CriminalCardModel(
+			/*Дата реєстрації*/"05.07.2016",
+			/*Статті КК України за ознаками яких розпочато кримінальне провадження*/"Стаття 562 пункт 45 ГШПмаентлот",
+			/*Фабула*/"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");
 
-	protected Unit1CriminalCardModel newCriminalCard() {
-		//try {
+	/*protected Unit1CriminalCardModel newCriminalCard() {
+		try {
 		String query = "select * from unit1_criminalCard";
 		ResultSet res = stmt.executeQuery(query);
 		while (res.next()) {
@@ -97,11 +97,11 @@ public class BasicTestCase {
 			String sec = res.getString(3);
 			String theory = res.getString(4);
 			return new Unit1CriminalCardModel(
-						/*Дата реєстрації*/regNum,
-						/*Статті КК України за ознаками яких розпочато кримінальне провадження*/sec,
-						/*Фабула*/theory);
+						regNum,
+						sec,
+						theory);
 		}
-	}
+	}*/
 		/*} catch (Exception e) {
 			e.printStackTrace();
 		}*/
