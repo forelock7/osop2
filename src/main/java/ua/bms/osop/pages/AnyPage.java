@@ -126,7 +126,10 @@ public abstract class AnyPage extends Page {
 	//Opens to review Card
 	public void doubleClickOnFirstRecordInGridOnMainTab() {
 		Actions action = new Actions(driver);
-		action.doubleClick(fluientWaitforElement(cellRegNumberInGridOnMainTab)).perform();
+		action.doubleClick(fluientWaitforElement(cellRegNumberInGridOnMainTab)).build().perform();
+
+
+
 	}
 	
 	//Moving to "Deleted"("Видалені") tab

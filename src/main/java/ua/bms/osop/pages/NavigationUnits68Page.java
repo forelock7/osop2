@@ -42,7 +42,7 @@ public class NavigationUnits68Page extends AnyPage {
 	private WebElement itemMenuU8;
 	
 	/*------------------Methods---------------------------------------------------------------------------*/
-	
+
 	//U6 - Moving from "Navigation Page of Units 6 and 8" to Unit 6 "Claims" page
 	public Unit6ClaimPage clickUnit6MenuItem(){
 		itemMenuU6.click();

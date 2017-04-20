@@ -8,6 +8,7 @@ import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.opera.OperaDriver;
@@ -145,7 +146,9 @@ public class WebDriverFactory {
 
 		} else if (FIREFOX.equals(browser)) {
 
-			FirefoxProfile ffProfile = new FirefoxProfile();
+			// using a new scheme to launch webdriver
+
+			/*FirefoxProfile ffProfile = new FirefoxProfile();
 
 			// Authentication Hack for Firefox
 			if (username != null && password != null) {
@@ -154,7 +157,12 @@ public class WebDriverFactory {
 			}
 			System.setProperty("webdriver.gecko.driver", driverPath + "geckodriver.exe");
 
-			webDriver = new FirefoxDriver(ffProfile);
+			webDriver = new FirefoxDriver(ffProfile);*/
+
+			//using an old scheme to launch webdriver
+
+			FirefoxOptions options = new FirefoxOptions().setLegacy(true);
+			webDriver = new FirefoxDriver(options);
 
 		} else if (INTERNET_EXPLORER.equals(browser)) {
 			webDriver = new InternetExplorerDriver();

@@ -42,6 +42,7 @@ public abstract class Page {
 				//fWait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//*[@id='reportmanager-wrapper']/div[1]/div[2]/ul/li/span[3]/i[@data-original--title='We are processing through trillions of data events, this insight may take more than 15 minutes to complete.']")));
 	        	fWait.until(ExpectedConditions.visibilityOf(element));
 	        	fWait.until(ExpectedConditions.elementToBeClickable(element));
+				//fWait.until(ExpectedConditions.elementToBeSelected(element));
 	        	} catch (Exception e) {
 				System.out.println("Element Not found trying again - " + element.toString().substring(70));
 	        	e.printStackTrace();
