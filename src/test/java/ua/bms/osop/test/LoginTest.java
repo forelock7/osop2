@@ -4,6 +4,8 @@ import static org.testng.Assert.assertTrue;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
+
 /*
  * Implements all tests related to Login Form
  */
@@ -21,12 +23,13 @@ public class LoginTest extends BasicTestCase {
 /*-------------------------Tests-----------------------------------------------------*/	
 	
 	@Test(groups = {"login"}, priority = 3)
-	public void testLoginOK() {
+	public void testLoginOK() throws IOException {
 		app.getUserHelper().loginAs(userModel);
+		//app.getUserHelper().loginAs(getUserModel(1));
 		assertTrue(app.getUserHelper().isLoggedIn());
 	}
 
-	@Test(groups = {"login"}, priority = 2)
+	/*@Test(groups = {"login"}, priority = 2)
 	public void testLoginFailedPassword(){
 		app.getUserHelper().loginAs(user1);
 		assertTrue(app.getUserHelper().isNotLoggedIn());
@@ -36,6 +39,6 @@ public class LoginTest extends BasicTestCase {
 	public void testLoginFailedLogin(){
 		app.getUserHelper().loginAs(user2);
 		assertTrue(app.getUserHelper().isNotLoggedIn());
-	}
+	}*/
 
 }

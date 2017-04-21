@@ -1,11 +1,13 @@
 package ua.bms.osop.test;
 
+
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
 import ua.bms.osop.applogic.ApplicationManager;
 import ua.bms.osop.model.*;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,11 +30,12 @@ public class BasicTestCase {
 	
 	/*Checks login in system before Test Class, in case logOut - performs loginIn*/
 	@BeforeClass
-	public void mayBeLogIn() {
+	public void mayBeLogIn() throws IOException {
 		if (app.getUserHelper().isLoggedIn()) {
 			return;
 		}
 		app.getUserHelper().loginAs(userModel);
+		//app.getUserHelper().loginAs(getUserModel(1));
 	}
 	
 	/*Quits from WebDriver after performing Test Suite*/
@@ -66,6 +69,19 @@ public class BasicTestCase {
 	protected UserModel userModel = new UserModel("vova", "bMS$2016");
 	protected UserModel user1 = new UserModel("vova", "failedPassword");
 	protected UserModel user2 = new UserModel("failedLogin", "bMS$2016");
+
+	//Main function is calling readExcel function to read data from excel file
+	/*protected static UserModel getUserModel(int i) throws IOException {
+		//Create a object of ReadGuru99ExcelFile class
+		ReadExcelFile objExcelFile = new ReadExcelFile();
+		//Prepare the path of excel file
+		String filePath = System.getProperty("user.dir")+"\\data";
+		//Call read file method of the class to read data
+		String mas[][] = objExcelFile.readExcel(filePath,"TestData.xlsx","Sheet0");
+		return new UserModel(mas[1][0], mas[1][1]);
+	}*/
+
+
 	
 	/*-----------------------------------------------------------------------------------------------------------------*/	
 	
