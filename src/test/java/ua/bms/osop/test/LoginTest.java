@@ -24,8 +24,8 @@ public class LoginTest extends BasicTestCase {
 	
 	@Test(groups = {"login"}, priority = 3)
 	public void testLoginOK() throws IOException {
-		app.getUserHelper().loginAs(userModel);
-		//app.getUserHelper().loginAs(getUserModel(1));
+		//app.getUserHelper().loginAs(userModel);
+		app.getUserHelper().loginAs(getUserModel(1));
 		assertTrue(app.getUserHelper().isLoggedIn());
 	}
 
