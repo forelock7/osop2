@@ -35,8 +35,8 @@ public class BasicTestCase {
 		if (app.getUserHelper().isLoggedIn()) {
 			return;
 		}
-		//app.getUserHelper().loginAs(userModel);
-		app.getUserHelper().loginAs(getUserModel(1));
+		app.getUserHelper().loginAs(userModel);
+		//app.getUserHelper().loginAs(getUserModel(1));
 	}
 	
 	/*Quits from WebDriver after performing Test Suite*/
@@ -67,8 +67,8 @@ public class BasicTestCase {
 
 	/*-----------------------------------------------------------------------------------------------------------------*/
 	/*Initialization of object "user"*/	
-	/*protected UserModel userModel = new UserModel("vova", "bMS$2016");
-	protected UserModel user1 = new UserModel("vova", "failedPassword");
+	protected UserModel userModel = new UserModel("vova", "bMS$2016");
+	/*protected UserModel user1 = new UserModel("vova", "failedPassword");
 	protected UserModel user2 = new UserModel("failedLogin", "bMS$2016");*/
 
 	//Main function is calling readExcel function to read data from excel file
@@ -76,7 +76,7 @@ public class BasicTestCase {
 		//Create a object of ReadGuru99ExcelFile class
 		ReadExcelFile objExcelFile = new ReadExcelFile();
 		//Prepare the path of excel file
-		String filePath = System.getProperty("user.dir")+"\\data";
+		String filePath = /*System.getProperty("user.dir")+*/"D:\\projects\\osop2\\data";
 		//Call read file method of the class to read data
 		String mas[][] = objExcelFile.readExcel(filePath,"TestData.xlsx","Sheet0");
 		return new UserModel(mas[1][0], mas[1][1]);
