@@ -4,8 +4,16 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit2PreventiveCardModel;
+
+import java.io.IOException;
 
 public class Unit2PreventiveActionTest extends BasicTestCase {
+
+	private Unit2PreventiveCardModel preventCard = getUnit2PreventiveCardModel(1);
+
+	public Unit2PreventiveActionTest() throws IOException {
+	}
 
 	@Test (groups = {"unit2_preventiveAction"})
 	public void testJumpToUnit2PreventiveActionPage() {

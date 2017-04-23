@@ -1,18 +1,17 @@
 package ua.bms.osop.test;
 
-
 import ddt.ReadExcelFile;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
 import ua.bms.osop.applogic.ApplicationManager;
 import ua.bms.osop.model.*;
+import ua.bms.osop.utils.ConfigProperties;
 
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
 
 /*
  * Basic class for all test classes.
@@ -22,6 +21,15 @@ import java.util.List;
 public class BasicTestCase {
 	
 	protected ApplicationManager app;
+	/* Set mode data to export data from determined source
+	* -----default------
+	* excel
+	* db
+	* */
+	String modeData = ConfigProperties.getProperty("data.modedata");
+	//Prepare the path of excel file
+	String filePath = ConfigProperties.getProperty("excelexport.filePath");
+	String fileName = ConfigProperties.getProperty("excelexport.fileName");
 	
 	/*Before Test Class creates new object of Application Manager*/
 	@BeforeClass
@@ -68,42 +76,91 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 	/*Initialization of object "user"*/	
 	protected UserModel userModel = new UserModel("vova", "bMS$2016");
-	/*protected UserModel user1 = new UserModel("vova", "failedPassword");
-	protected UserModel user2 = new UserModel("failedLogin", "bMS$2016");*/
 
 	//Main function is calling readExcel function to read data from excel file
-	protected static UserModel getUserModel(int i) throws IOException {
-		//Create a object of ReadGuru99ExcelFile class
-		ReadExcelFile objExcelFile = new ReadExcelFile();
-		//Prepare the path of excel file
-		String filePath = /*System.getProperty("user.dir")+*/"D:\\projects\\osop2\\data";
-		//Call read file method of the class to read data
-		String mas[][] = objExcelFile.readExcel(filePath,"TestData.xlsx","Sheet0");
-		return new UserModel(mas[1][0], mas[1][1]);
-	}
+	protected UserModel getUserModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet0");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {"vova", "bMS$2016"},
+                        {"vova1", "failedPassword"},
+                        {"failedLogin", "bMS$2016"}};
+                break;
+        }
+         return new UserModel(mas[i][0], mas[i][1]);
+    }
 
-
-	
 	/*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Review proceedings on a claim Card(Unit 1) except field with drop-down list*/
-	protected static Unit1ProceedingCardModel proceedingCard = new Unit1ProceedingCardModel(
-			/*Відповідач(боржник)*/"Відповідач - боржник");
-	
+    //Main function is calling readExcel function to read data from excel file
+    protected Unit1ProceedingCardModel getUnit1ProceedingCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet1");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {/*Відповідач(боржник)*/"Відповідач - боржник", null}};
+                break;
+        }
+        return new Unit1ProceedingCardModel(mas[i][0]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from Review proceedings on a claim to Procuracy authorities Card(Unit 1) except field with drop-down list*/
-	protected static Unit1ProceedingToPrcCardModel proceedingToPrcCard = new Unit1ProceedingToPrcCardModel(
-			/*Відповідач*/"Відповідач(до прокуратури)");
-	
+    //Main function is calling readExcel function to read data from excel file
+    protected Unit1ProceedingToPrcCardModel getUnit1ProceedingToPrcCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet2");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {/*Відповідач*/"Відповідач(до прокуратури)", null}};
+                break;
+        }
+        return new Unit1ProceedingToPrcCardModel(mas[i][0]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 3 - "Started Crime Proceedings"("Розпочато кримінальних проваджень") Card(Unit 1) except field with drop-down list*/
-	protected static Unit1CriminalCardModel criminalCard = new Unit1CriminalCardModel(
-			/*Дата реєстрації*/"05.07.2016",
-			/*Статті КК України за ознаками яких розпочато кримінальне провадження*/"Стаття 562 пункт 45 ГШПмаентлот",
-			/*Фабула*/"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh");
-
+    //Main function is calling readExcel function to read data from excel file
+    protected Unit1CriminalCardModel getUnit1CriminalCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet3");
+                break;
+            default:
+                mas = new String[][]{{null, null, null},
+                        {/*Дата реєстрації*/"05.07.2016",
+                                /*Статті КК України за ознаками яких розпочато кримінальне провадження*/"Стаття 562 пункт 45 ГШПмаентлот",
+                                /*Фабула*/"Фабула 89758973548 :?%№!  -- Pvbcshgbcvghsacvgh"}};
+                break;
+        }
+        return new Unit1CriminalCardModel(mas[i][0], mas[i][1], mas[i][2]);
+    }
 
 	/*protected Unit1CriminalCardModel newCriminalCard() {
 		try {
@@ -124,175 +181,403 @@ public class BasicTestCase {
 			e.printStackTrace();
 		}*/
 
-
-
-
-	
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 1 - "Acts of supervision over pre-trial investigation" Card("Акти нагляду за ДР")(Unit 2) except field with drop-down list*/
-	protected static Unit2ActPICardModel actPICard = new Unit2ActPICardModel(
-			/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8897786675",
-			/*Дата  початку досудового розслідування:*/"04.12.2015",
-			/*Зміст(фабула)*/"Зміст   -- Pvbcshgbcvghsacvgh");
-	
+    protected Unit2ActPICardModel getUnit2ActPICardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet4");
+                break;
+            default:
+                mas = new String[][]{{null, null, null},
+                        {/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8897786675",
+                                /*Дата  початку досудового розслідування:*/"04.12.2015",
+                                /*Зміст(фабула)*/"Зміст   -- Pvbcshgbcvghsacvgh"}};
+                break;
+        }
+        return new Unit2ActPICardModel(mas[i][0], mas[i][1], mas[i][2]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 2 - "The appeals on the pre-trial investigation"("Апеляційні скарги з питань ДР")(Unit 2) except field with drop-down list*/
-	protected static Unit2AppealCardModel appealCard = new Unit2AppealCardModel(
-			/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8ййййсуа86675",
-			/*ПІБ підозрюваного / обвинуваченого*/"Пупко Андрій",
-			/*Підстави для оскарження*/"Підстави --0 cvgh");
+    protected Unit2AppealCardModel getUnit2AppealCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet5");
+                break;
+            default:
+                mas = new String[][]{{null, null, null},
+                        {/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8ййййсуа86675",
+                                /*ПІБ підозрюваного / обвинуваченого*/"Пупко Андрій",
+                                /*Підстави для оскарження*/"Підстави --0 cvgh"},
+                        {/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочи5348ййййсуа86675",
+                                /*ПІБ підозрюваного / обвинуваченого*/"Пуп54ндрій",
+                                /*Підстави для оскарження*/"Підста3gh"}};
+                break;
+        }
+        return new Unit2AppealCardModel(mas[i][0], mas[i][1], mas[i][2]);
+    }
 
-	protected static Unit2AppealCardModel appealCard2 = new Unit2AppealCardModel(
-			/*Кваліфікація правопорушення/злочину*/"Квалі43253 злочину8ййййсуа86675",
-			/*ПІБ підозрюваного / обвинуваченого*/"Купрієнко Мирон Веніамінович",
-			/*Підстави для оскарження*/"<kf-,kf-,kf4521676");
-	
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 3 - "The Preventive Action"("Запобіжні заходи");(Unit 2) except field with drop-down list*/
-	protected static Unit2PreventiveCardModel preventCard = new Unit2PreventiveCardModel(
-			/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8ййййсуа86675",
-			/*Дата  початку досудового розслідування:*/"11.02.2016",
-			/*Прізвище*/"Руні",
-			/*Ім'я*/"Вейн",
-			/*Дата народження*/"18.09.1988");
-	
-	protected static Unit2PreventiveCardModel preventCard2 = new Unit2PreventiveCardModel(
-			/*Кваліфікація правопорушення/злочину*/"Кваліфікація",
-			/*Дата  початку досудового розслідування:*/"11.02.2016",
-			/*Прізвище*/"Босий",
-			/*Ім'я*/"Остап",
-			/*Дата народження*/"16.07.1980");
-	
+    protected Unit2PreventiveCardModel getUnit2PreventiveCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet6");
+                break;
+            default:
+                mas = new String[][]{{null, null, null},
+                        {/*Кваліфікація правопорушення/злочину*/"Кваліфікація злочину8ййййсуа86675",
+                                /*Дата  початку досудового розслідування:*/"11.02.2016",
+                                /*Прізвище*/"Руні",
+                                /*Ім'я*/"Вейн",
+                                /*Дата народження*/"18.09.1988"},
+                        {/*Кваліфікація правопорушення/злочину*/"Кваліфікаціre8ййййсуа86675",
+                                /*Дата  початку досудового розслідування:*/"07.02.2017",
+                                /*Прізвище*/"Руfdfdі",
+                                /*Ім'я*/"Веffd",
+                                /*Дата народження*/"18.09.1990"}};
+                break;
+        }
+        return new Unit2PreventiveCardModel(mas[i][0], mas[i][1], mas[i][2], mas[i][3], mas[i][4]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 4 - "The release from custody"("Звільнення з-під варти")(Unit 2) except field with drop-down list*/
-	protected static Unit2ReleaseCardModel releaseCard = new Unit2ReleaseCardModel(
-			/*Номер справи у суді*/"Справа №6742868тоіс",
-			/*Дата прийняття остаточного рішення у КП стосовно особи*/"25.11.2015");
-	
+    protected Unit2ReleaseCardModel getUnit2ReleaseCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet7");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {/*Номер справи у суді*/"Справа №6742868тоіс",	/*Дата прийняття остаточного рішення у КП стосовно особи*/"25.11.2015"}};
+                break;
+        }
+        return new Unit2ReleaseCardModel(mas[i][0], mas[i][1]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 5 - "Acts of supervision over Operational Activities"("Акти нагляду за ОРД")(Unit 2) except field with drop-down list*/
-	protected static Unit2ActOACardModel actOACard = new Unit2ActOACardModel(
-			/*Дата прийняття рішення*/"11.09.2016");
-	
+    protected Unit2ActOACardModel getUnit2ActOACardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet8");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {/*Дата прийняття рішення*/"11.09.2016", null}};
+                break;
+        }
+        return new Unit2ActOACardModel(mas[i][0]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 6 - "Covert surveillances(investigative)"("Негласні слідчі(розшукові) дії")(Unit 2) except field with drop-down list*/
-	protected static Unit2CovertCardModel covertCard = new Unit2CovertCardModel(
-			/*Дата рішення суду*/"01.09.2016");
-	
+    protected Unit2CovertCardModel getUnit2CovertCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet9");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {/*Дата рішення суду*/"01.09.2016", null}};
+                break;
+        }
+        return new Unit2CovertCardModel(mas[i][0]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 1 - "Criminal proceedings"("Кримінальні провадження"); Card(Unit 3) except field with drop-down list*/
-	protected static Unit3CriminalProceedingCardModel criminalProceedingCard = new Unit3CriminalProceedingCardModel(
-			/*Дата початку досудового розслідування*/"12.06.2015",
-			/*Кваліфікація правопорушення*/"лргсроивморШГШР%:;8678456",
-			/*Дата надіслання до суду*/"12.06.2015");
-	
+    protected Unit3CriminalProceedingCardModel getUnit3CriminalProceedingCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet10");
+                break;
+            default:
+                mas = new String[][]{{null, null, null},
+                        {/*Дата початку досудового розслідування*/"12.06.2015",
+                                /*Кваліфікація правопорушення*/"лргсроивморШГШР%:;8678456",
+                                /*Дата надіслання до суду*/"12.06.2015"}};
+                break;
+        }
+        return new Unit3CriminalProceedingCardModel(mas[i][0], mas[i][1], mas[i][2]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
-	protected static Unit3OtherCriminalProceedingCardModel otherCriminalProceedingCard = new Unit3OtherCriminalProceedingCardModel(
-			/*Дата реєстрації*/"12.06.2015",
-			/*Коротка фабула*/"Коротка фабулаokicdhwvjhrwv76632324567%&%^&#@@%$^^8467^&$@#$%#",
-			/*Дата надіслання до суду*/"12.04.2015");
-	
+    protected Unit3OtherCriminalProceedingCardModel getUnit3OtherCriminalProceedingCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet11");
+                break;
+            default:
+                mas = new String[][]{{null, null, null},
+                        {/*Дата реєстрації*/"12.06.2015",
+                                /*Коротка фабула*/"Коротка фабулаokicdhwvjhrwv76632324567%&%^&#@@%$^^8467^&$@#$%#",
+                                /*Дата надіслання до суду*/"12.04.2015"}};
+                break;
+        }
+        return new Unit3OtherCriminalProceedingCardModel(mas[i][0], mas[i][1], mas[i][2]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 4 - "Criminal cases"("Кримінальні справи"); Card(Unit 3) except field with drop-down list*/
-	protected static Unit3CriminalCaseCardModel criminalCaseCard = new Unit3CriminalCaseCardModel(
-			/*Дата початку досудового розслідування*/"15.07.2016",
-			/*Кваліфікація правопорушення*/"rdfksasrfwsz%:;8678456",
-			/*Дата надіслання до суду*/"09.09.2016");
-	
+    protected Unit3CriminalCaseCardModel getUnit3CriminalCaseCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet12");
+                break;
+            default:
+                mas = new String[][]{{null, null, null},
+                        {/*Дата початку досудового розслідування*/"15.07.2016",
+                                /*Кваліфікація правопорушення*/"rdfksasrfwsz%:;8678456",
+                                /*Дата надіслання до суду*/"09.09.2016"}};
+                break;
+        }
+        return new Unit3CriminalCaseCardModel(mas[i][0], mas[i][1], mas[i][2]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
-	protected static Unit3OtherCriminalCaseCardModel otherCriminalCaseCard = new Unit3OtherCriminalCaseCardModel(
-			/*Дата реєстрації*/"01.05.2016",
-			/*Коротка фабула*/"Коротка фабулаokicdh222rwv76632324567%&%^&#@@%$^^8467^&$@#$%#",
-			/*Дата надіслання до суду*/"30.09.2016");
+    protected Unit3OtherCriminalCaseCardModel getUnit3OtherCriminalCaseCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet13");
+                break;
+            default:
+                mas = new String[][]{{null, null, null},
+                        {/*Дата реєстрації*/"01.05.2016",
+                                /*Коротка фабула*/"Коротка фабулаokicdh222rwv76632324567%&%^&#@@%$^^8467^&$@#$%#",
+                                /*Дата надіслання до суду*/"30.09.2016"}};
+                break;
+        }
+        return new Unit3OtherCriminalCaseCardModel(mas[i][0], mas[i][1], mas[i][2]);
+    }
 
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
-	protected static Unit3AccusedModel accusedPerson = new Unit3AccusedModel(
+	protected Unit3AccusedModel accusedPerson = new Unit3AccusedModel(
 			/*ПІБ*/"Особа");
 
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
-	protected static ArrayList< Unit3AccusedModel > accusedPeople = new ArrayList< Unit3AccusedModel >();
+	protected ArrayList< Unit3AccusedModel > accusedPeople = new ArrayList< Unit3AccusedModel >();
 
 	/*----------------------------------------------------------------------------------------------------------------*/
 		
 	/*Initialization of input fields from International Judicial Cooperation Card(Unit 4) except field with drop-down list*/
-	protected static Unit4CardModel intCard = new Unit4CardModel (
-			/*Дата надходження*/"11.09.2016",
-			/*Стислий зміст*/"HUIyugguswc1111111189ycgcvgas35421мкуп!№;%:*:*+w");
-	
+    protected Unit4CardModel getUnit4CardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet14");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {/*Дата надходження*/"11.09.2016",
+                                /*Стислий зміст*/"HUIyugguswc1111111189ycgcvgas35421мкуп!№;%:*:*+w"}};
+                break;
+        }
+        return new Unit4CardModel(mas[i][0], mas[i][1]);
+    }
+
 	/*----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Inspection Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-	protected static Unit5InspectionCardModel inspectionCard = new Unit5InspectionCardModel (
-			/*Дата проведення перевірки*/"08.09.2016");
+    protected Unit5InspectionCardModel getUnit5InspectionCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet15");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {/*Дата проведення перевірки*/"08.09.2016", null}};
+                break;
+        }
+        return new Unit5InspectionCardModel(mas[i][0]);
+    }
 
 	/*----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Response Document Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-	protected static Unit5DocumentCardModel documentCard = new Unit5DocumentCardModel ();
+	//protected static Unit5DocumentCardModel documentCard = new Unit5DocumentCardModel ();
 	
 	/*----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Charged Person Card Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-	protected static Unit5ChargedCardModel chargedCard = new Unit5ChargedCardModel(
-			/*Посада*/"Керівник відділу роботи з клієнтами");
-	
+    protected Unit5ChargedCardModel getUnit5ChargedCardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet16");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {/*Посада*/"Керівник відділу роботи з клієнтами", null}};
+                break;
+        }
+        return new Unit5ChargedCardModel(mas[i][0]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Claim Card(Unit 6) except field with drop-down list*/
-	protected static Unit6CardModel clCard = new Unit6CardModel (
-			/*Назва заявника*/"Petrov",
-			/*Стислий зміст*/"HUIyugguswcgygw",
-			/*Дата надходження до прокуратури*/"15.09.2016");
-	
+    protected Unit6CardModel getUnit6CardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet17");
+                break;
+            default:
+                mas = new String[][]{{null, null, null},
+                        {/*Назва заявника*/"Petrov",
+                                /*Стислий зміст*/"HUIyugguswcgygw",
+                                /*Дата надходження до прокуратури*/"15.09.2016"}};
+                break;
+        }
+        return new Unit6CardModel(mas[i][0], mas[i][1], mas[i][2]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Mass Media Card(Unit 7) except field with drop-down list*/
-	protected static Unit7CardModel mMCard = new Unit7CardModel(
-			/*Дата виступу*/"28.07.2016",
-			/*Назва ЗМІ*/"Назва ЗМІ 099089667545233",
-			/*Автор*/"Автор Author 56473657829*^&%#@@!",
-			/*Примітка*/"Примітка Remark*&^&$%$^@$@!");
-	
+    protected Unit7CardModel getUnit7CardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet18");
+                break;
+            default:
+                mas = new String[][]{{null, null, null, null},
+                        {/*Дата виступу*/"28.07.2016",
+                                /*Назва ЗМІ*/"Назва ЗМІ 099089667545233",
+                                /*Автор*/"Автор Author 56473657829*^&%#@@!",
+                                /*Примітка*/"Примітка Remark*&^&$%$^@$@!"}};
+                break;
+        }
+        return new Unit7CardModel(mas[i][0], mas[i][1], mas[i][2], mas[i][3]);
+    }
+
 	/*----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Request Card(Unit 8) except field with drop-down list*/
-	protected static Unit8CardModel reqCard = new Unit8CardModel (
-			/*Дата надходження*/"10.09.2016",
-			/*Стислий зміст*/"HUIyugguswcgy32435421мкуп!№;%:*:*+w");
-	
+    protected Unit8CardModel getUnit8CardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet19");
+                break;
+            default:
+                mas = new String[][]{{null, null},
+                        {/*Дата надходження*/"10.09.2016",
+                                /*Стислий зміст*/"HUIyugguswcgy32435421мкуп!№;%:*:*+w"}};
+                break;
+        }
+        return new Unit8CardModel(mas[i][0], mas[i][1]);
+    }
+
 	/*-----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Military Administrative Offenses Card(Unit 9) except field with drop-down list*/
-	protected static Unit9CardModel mAOCard = new Unit9CardModel(
-			/*Дата складання протоколу*/"01.07.2016", 
-			/*Дата вчинення правопорушення*/"02.07.2016", 
-			/*Фабула*/"Фабула_бот-english", 
-			/*ПІБ правопорушника*/"правопорушник_bot", 
-			/*Дата народження*/"03.01.1980", 
-			/*Назва військової частини, установи*/"Військова частина №47707", 
-			/*Посада*/"Перший заступник командира в/ч",
-			/*Дата первинного направлення до суду (для обліку у звіті)*/"04.07.2016", 
-			/*Дата надходження рішення про повернення судом (для обліку у звіту)*/"05.07.2016", 
-			/*Дата повторного направлення (для обліку у звіту)*/"06.07.2016", 
-			/*Поле "Дата рішення"*/"07.07.2016", 
-			/*Дата надходження рішення суду(для обліку у звіті)*/"08.07.2016", 
-			/*Дата початку утримання на гаупвахті*/"09.07.2016");
-	
+    protected Unit9CardModel getUnit9CardModel(int i) throws IOException {
+        String mas[][];
+        switch (modeData) {
+            case "excel":
+                //Create a object of ReadExcelFile class
+                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel(filePath, fileName, "Sheet20");
+                break;
+            default:
+                mas = new String[][]{{null, null, null, null, null, null, null, null, null, null, null, null, null},
+                        {/*Дата складання протоколу*/"01.07.2016",
+                                /*Дата вчинення правопорушення*/"02.07.2016",
+                                /*Фабула*/"Фабула_бот-english",
+                                /*ПІБ правопорушника*/"правопорушник_bot",
+                                /*Дата народження*/"03.01.1980",
+                                /*Назва військової частини, установи*/"Військова частина №47707",
+                                /*Посада*/"Перший заступник командира в/ч",
+                                /*Дата первинного направлення до суду (для обліку у звіті)*/"04.07.2016",
+                                /*Дата надходження рішення про повернення судом (для обліку у звіту)*/"05.07.2016",
+                                /*Дата повторного направлення (для обліку у звіту)*/"06.07.2016",
+                                /*Поле "Дата рішення"*/"07.07.2016",
+                                /*Дата надходження рішення суду(для обліку у звіті)*/"08.07.2016",
+                                /*Дата початку утримання на гаупвахті*/"09.07.2016"}};
+                break;
+        }
+        return new Unit9CardModel(mas[i][0], mas[i][1], mas[i][2], mas[i][3], mas[i][4], mas[i][5], mas[i][6], mas[i][7], mas[i][8], mas[i][9], mas[i][10], mas[i][11], mas[i][12]);
+    }
 
 }

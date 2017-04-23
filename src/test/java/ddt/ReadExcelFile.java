@@ -61,29 +61,28 @@ public class ReadExcelFile {
         int rowCount = workbookSheet.getLastRowNum()-workbookSheet.getFirstRowNum();
         Row row = workbookSheet.getRow(0);
         int cellCount = row.getLastCellNum();
+        int i, j = 0;
+        row = null;
 
 
         //Create a loop over all the rows of excel file to read it
 
-        String [][] mas = new String[rowCount][cellCount];
+        String [][] mas = new String[rowCount+1][cellCount];
 
-        for (int i = 1; i < rowCount+1; i++) {
+        for (i = 1; i < rowCount+1; i++) {
 
             row = workbookSheet.getRow(i);
 
             //Create a loop to print cell values in a row
 
-            for (int j = 0; j < cellCount/*row.getLastCellNum()*/; j++) {
+            for (j = 0; j < cellCount; j++) {
 
                 //Print excel data in console
 
-                //System.out.print(row.getCell(j).getStringCellValue()+"|| ");
                 mas[i][j] = row.getCell(j).getStringCellValue();
-                System.out.println(mas);
-
             }
 
-            System.out.println(mas);
+
 
         }
 

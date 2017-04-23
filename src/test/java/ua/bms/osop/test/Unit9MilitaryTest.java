@@ -3,12 +3,20 @@ package ua.bms.osop.test;
 import static org.testng.Assert.assertTrue;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit9CardModel;
+
+import java.io.IOException;
 
 /*
  * Implements all tests related to Military Administrative Violations (Unit 9)
  */
 public class Unit9MilitaryTest extends BasicTestCase {
-	
+
+	private Unit9CardModel mAOCard = getUnit9CardModel(1);
+
+	public Unit9MilitaryTest() throws IOException {
+	}
+
 	@Test (groups = {"unit9"})
 	public void testJumpToUnit9Page(){
 		assertTrue(app.getUserHelper().isLoggedIn());

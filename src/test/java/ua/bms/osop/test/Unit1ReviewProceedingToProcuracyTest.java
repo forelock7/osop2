@@ -4,12 +4,20 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit1ProceedingToPrcCardModel;
+
+import java.io.IOException;
 
 /*
  * Implements all tests related to "Review proceedings on a claim to Procuracy authorities"("НП за позовом до органів прокуратури")
  * and "Viewing of claims, statements to Procuracy authorities"("Перегляд позовів, заяв до органів прокуратури") - Unit 1 "Representation" ("Представництво")
  */
 public class Unit1ReviewProceedingToProcuracyTest extends BasicTestCase {
+
+	private Unit1ProceedingToPrcCardModel proceedingToPrcCard = getUnit1ProceedingToPrcCardModel(1);
+
+	public Unit1ReviewProceedingToProcuracyTest() throws IOException {
+	}
 
 
 	@Test (groups = {"unit1_proceedingsAndClaimsToProcuracy"})

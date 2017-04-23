@@ -3,7 +3,10 @@ package ua.bms.osop.test;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ua.bms.osop.model.Unit3AccusedModel;
+import ua.bms.osop.model.Unit3CriminalProceedingCardModel;
 
+
+import java.io.IOException;
 
 import static org.testng.Assert.assertTrue;
 
@@ -11,6 +14,11 @@ import static org.testng.Assert.assertTrue;
  * Created by ChubenkoV on 29.12.2016.
  */
 public class U3CrearteProceedingCardWithNumberOfAccused extends BasicTestCase {
+
+    private Unit3CriminalProceedingCardModel criminalProceedingCard = getUnit3CriminalProceedingCardModel(2);
+
+    public U3CrearteProceedingCardWithNumberOfAccused() throws IOException {
+    }
 
     @Test (groups = {"unit3_proceedings"})
     public void testJumpToUnit3CriminalProceedingPage() {

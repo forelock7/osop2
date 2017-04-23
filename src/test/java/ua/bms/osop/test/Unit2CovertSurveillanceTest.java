@@ -4,8 +4,16 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit2CovertCardModel;
+
+import java.io.IOException;
 
 public class Unit2CovertSurveillanceTest extends BasicTestCase {
+
+	private Unit2CovertCardModel covertCard = getUnit2CovertCardModel(1);
+
+	public Unit2CovertSurveillanceTest() throws IOException {
+	}
 
 	@Test (groups = {"unit2_covertSurveillances"})
 	public void testJumpToUnit2CovertSurveillancesPage() {

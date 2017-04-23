@@ -4,8 +4,16 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit2AppealCardModel;
+
+import java.io.IOException;
 
 public class Unit2AppealPretrialInvestigationTest extends BasicTestCase {
+
+	private Unit2AppealCardModel appealCard = getUnit2AppealCardModel(1);
+
+	public Unit2AppealPretrialInvestigationTest() throws IOException {
+	}
 
 	@Test (groups = {"unit2_appealsPreInvest"})
 	public void testJumpToUnit2AppealsPreInvestPage() {

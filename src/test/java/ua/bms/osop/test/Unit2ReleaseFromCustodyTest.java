@@ -4,8 +4,16 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit2ReleaseCardModel;
+
+import java.io.IOException;
 
 public class Unit2ReleaseFromCustodyTest extends BasicTestCase {
+
+	private Unit2ReleaseCardModel releaseCard = getUnit2ReleaseCardModel(1);
+
+	public Unit2ReleaseFromCustodyTest() throws IOException {
+	}
 
 	@Test (groups = {"unit2_releaseFromCustody"})
 	public void testJumpToUnit2ReleaseFromCustodyPage() {

@@ -4,12 +4,20 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit8CardModel;
+
+import java.io.IOException;
 
 /*
  * Implements all tests related to Requests (Unit 8)
  */
 public class Unit8RequestTest extends BasicTestCase {
-	
+
+	private Unit8CardModel reqCard = getUnit8CardModel(1);
+
+	public Unit8RequestTest() throws IOException {
+	}
+
 	@Test (groups = {"unit8"})
 	public void testJumpToUnit8Page() {
 		assertTrue(app.getUserHelper().isLoggedIn());

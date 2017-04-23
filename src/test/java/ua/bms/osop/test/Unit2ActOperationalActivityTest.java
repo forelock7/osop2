@@ -4,8 +4,16 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit2ActOACardModel;
+
+import java.io.IOException;
 
 public class Unit2ActOperationalActivityTest extends BasicTestCase {
+
+	private Unit2ActOACardModel actOACard = getUnit2ActOACardModel(1);
+
+	public Unit2ActOperationalActivityTest() throws IOException {
+	}
 
 	@Test (groups = {"unit2_actsOA"})
 	public void testJumpToUnit2ActsOperationalActivitiesPage() {

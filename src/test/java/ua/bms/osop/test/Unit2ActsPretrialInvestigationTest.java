@@ -4,8 +4,16 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit2ActPICardModel;
+
+import java.io.IOException;
 
 public class Unit2ActsPretrialInvestigationTest extends BasicTestCase {
+
+	private Unit2ActPICardModel actPICard = getUnit2ActPICardModel(1);
+
+	public Unit2ActsPretrialInvestigationTest() throws IOException {
+	}
 
 	@Test (groups = {"unit2_actsPreInv"})
 	public void testJumpToUnit2ActsPretrialInvestPage() {

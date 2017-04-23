@@ -4,12 +4,20 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit6CardModel;
+
+import java.io.IOException;
 
 /*
  * Implements all tests related to "International Judicial Cooperation" Page - Unit 4 ("Міжнародно-правове співробітництво")
  */
 public class Unit6ClaimTest extends BasicTestCase {
-	
+
+	private Unit6CardModel clCard = getUnit6CardModel(1);
+
+	public Unit6ClaimTest() throws IOException {
+	}
+
 	@Test (groups = {"unit6"})
 	public void testJumpToUnit6Page() {
 		assertTrue(app.getUserHelper().isLoggedIn());

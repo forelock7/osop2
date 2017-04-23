@@ -4,12 +4,20 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit7CardModel;
+
+import java.io.IOException;
 
 /*
  * Implements all tests related to Mass Media (Unit 7)
  */
 public class Unit7MassMediaTest extends BasicTestCase {
-	
+
+	private Unit7CardModel mMCard = getUnit7CardModel(1);
+
+	public Unit7MassMediaTest() throws IOException {
+	}
+
 	@Test (groups = {"unit7"})
 	public void testJumpToUnit7Page() {
 		assertTrue(app.getUserHelper().isLoggedIn());

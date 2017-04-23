@@ -4,6 +4,9 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit1ProceedingCardModel;
+
+import java.io.IOException;
 
 /*
  * Implements all tests related to "Review proceedings on a claim"("НП за позовом")
@@ -11,8 +14,11 @@ import org.testng.annotations.Test;
  */
 public class Unit1ReviewProceedingTest extends BasicTestCase  {
 
+	private Unit1ProceedingCardModel proceedingCard = getUnit1ProceedingCardModel(1);
 
-	
+	public Unit1ReviewProceedingTest() throws IOException {
+	}
+
 	@Test (groups = {"unit1_proceedingsAndClaims"})
 	public void testJumpToUnit1ClaimsPage() {
 		assertTrue(app.getUserHelper().isLoggedIn());
@@ -38,7 +44,7 @@ public class Unit1ReviewProceedingTest extends BasicTestCase  {
 	}
 
 	@Test (groups = {"unit1_proceedingsAndClaims"}, dependsOnMethods = {"testCreateAndReviewProceedingCard"})
-	public void testEditProceedingCard(){
+	public void testEditProceedingCard() {
 		app.getUnit1ProceedingsHelper().openCardToEdit();
 		app.getUnit1ProceedingsHelper().editCard(proceedingCard);
 		app.getUnit1ProceedingsHelper().saveCard();

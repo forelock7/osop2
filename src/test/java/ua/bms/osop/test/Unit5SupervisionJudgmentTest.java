@@ -3,13 +3,25 @@ package ua.bms.osop.test;
 import static org.testng.Assert.assertTrue;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit5ChargedCardModel;
+import ua.bms.osop.model.Unit5DocumentCardModel;
+import ua.bms.osop.model.Unit5InspectionCardModel;
+
+import java.io.IOException;
 
 /*
  * Implements all tests related to Unit 5 "Supervision of the observance of laws in the execution of judgments."
  * ("Нагляд за додержанням законів при виконанні судових рішень.")
  */
 public class Unit5SupervisionJudgmentTest extends BasicTestCase {
-	
+
+	private Unit5InspectionCardModel inspectionCard = getUnit5InspectionCardModel(1);
+	private Unit5DocumentCardModel documentCard = new Unit5DocumentCardModel ();
+	private Unit5ChargedCardModel chargedCard = getUnit5ChargedCardModel(1);
+
+	public Unit5SupervisionJudgmentTest() throws IOException {
+	}
+
 	@Test (groups = {"unit5"}, priority = 1)
 	public void testJumpToUnit5InspectionsPage() {
 		assertTrue(app.getUserHelper().isLoggedIn());

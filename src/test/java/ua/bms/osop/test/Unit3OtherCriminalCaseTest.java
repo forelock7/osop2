@@ -4,9 +4,17 @@ import static org.testng.Assert.assertTrue;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ua.bms.osop.model.Unit3OtherCriminalCaseCardModel;
+
+import java.io.IOException;
 
 public class Unit3OtherCriminalCaseTest extends BasicTestCase  {
-		
+
+	private Unit3OtherCriminalCaseCardModel otherCriminalCaseCard = getUnit3OtherCriminalCaseCardModel(1);
+
+	public Unit3OtherCriminalCaseTest() throws IOException {
+	}
+
 	@Test (groups = {"unit3_otherCases"})
 	public void testJumpToUnit3OtherCriminalCasesPage() {
 		assertTrue(app.getUserHelper().isLoggedIn());
