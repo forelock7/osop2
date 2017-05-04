@@ -87,6 +87,7 @@ public class BasicTestCase {
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel(filePath, fileName, "Sheet0");
                 break;
+
             default:
                 mas = new String[][]{{null, null},
                         {"vova", "bMS$2016"},
