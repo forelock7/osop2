@@ -47,16 +47,29 @@ public class SQLConnector {
         // Execute the SQL Query. Store results in ResultSet
         ResultSet rs= stmt.executeQuery(query);
 
+
+
         //int columncount = rs.getRow();
         //System. out.println(rs.getRow());
 
         // While Loop to iterate through all data and print results
-        /*while (rs.next()){
-            /*4String myName = rs.getString(2);
+        String [][] mas = new String[3][3];
+        int i = 1;
+
+        while (rs.next()){
+
+            for (int j=1; j<3; j++) {
+                mas[i][j] = rs.getString(j+1);
+            }
+             ++i;
+
+        }
+            /*String myName = rs.getString(2);
             String myAge = rs.getString(3);
-            System. out.println(myName+"  "+myAge);
-            System. out.println(rs.getRow());
-        }*/
+            */
+            System. out.println(mas[1][1]+ mas[1][2]+ mas[2][1]+ mas[2][2]);
+
+
 
 
 
@@ -78,6 +91,30 @@ public class SQLConnector {
         System.out.println("SQLException: " + ex.getMessage());
         System.out.println("SQLState: " + ex.getSQLState());
         System.out.println("VendorError: " + ex.getErrorCode());
+    }*/
+
+    /*private void testDatabase() {
+        try {
+            Class.forName("org.postgresql.Driver");
+            String url = "jdbc:postgresql://localhost:5432/contactdb";
+            String login = "postgres";
+            String password = "postgres";
+            Connection con = DriverManager.getConnection(url, login, password);
+            try {
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery("SELECT * FROM JC_CONTACT");
+                while (rs.next()) {
+                    String str = rs.getString("contact_id") + ":" + rs.getString(2);
+                    System.out.println("Contact:" + str);
+                }
+                rs.close();
+                stmt.close();
+            } finally {
+                con.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }*/
 
 
