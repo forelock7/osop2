@@ -16,7 +16,7 @@ public class Unit1ReviewProceedingTest extends BasicTestCase  {
 
 	private Unit1ProceedingCardModel proceedingCard = getUnit1ProceedingCardModel(1);
 
-	public Unit1ReviewProceedingTest() throws IOException {
+	public Unit1ReviewProceedingTest() throws Exception {
 	}
 
 	@Test (groups = {"unit1_proceedingsAndClaims"})

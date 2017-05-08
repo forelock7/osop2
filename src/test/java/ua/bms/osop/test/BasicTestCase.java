@@ -1,6 +1,7 @@
 package ua.bms.osop.test;
 
 import ddt.ReadExcelFile;
+import ddt.SQLConnector;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 
@@ -9,9 +10,7 @@ import ua.bms.osop.model.*;
 import ua.bms.osop.utils.ConfigProperties;
 
 import java.io.IOException;
-import java.sql.*;
 import java.util.ArrayList;
-import java.util.List;
 
 /*
  * Basic class for all test classes.
@@ -19,7 +18,10 @@ import java.util.List;
  * Performs object's initialization of model's classes(ua.bms.osop.model) 
  */
 public class BasicTestCase {
-	
+
+    public BasicTestCase() {}
+
+
 	protected ApplicationManager app;
 	/* Set mode data to export data from determined source
 	* -----default------
@@ -27,9 +29,7 @@ public class BasicTestCase {
 	* db
 	* */
 	String modeData = ConfigProperties.getProperty("data.modedata");
-	//Prepare the path of excel file
-	String filePath = ConfigProperties.getProperty("excelexport.filePath");
-	String fileName = ConfigProperties.getProperty("excelexport.fileName");
+
 	
 	/*Before Test Class creates new object of Application Manager*/
 	@BeforeClass
@@ -52,42 +52,25 @@ public class BasicTestCase {
 	public void stop() {
 		app.stop();
 	}
-	
-	//-----------------------------------
-	
-	/*static Connection con = null;
-	private static Statement stmt;
-	public static String DB_URL = "jdbc:mysql://localhost:3306/osopdb";
-	public static String DB_USER = "root";
-	public static String DB_PASSWORD = "vova";
-	@BeforeClass
-	public void setUp() throws Exception {
-		 try{
-			 String dbClass = "com.mysql.jdbc.Driver";
-			 Class.forName(dbClass).newInstance();
-			 Connection con = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);
-			 stmt = con.createStatement();
-
-		 }catch (Exception e) {
-			 e.printStackTrace();
-		 }
-	}*/
 
 	/*-----------------------------------------------------------------------------------------------------------------*/
 	/*Initialization of object "user"*/	
 	protected UserModel userModel = new UserModel("vova", "bMS$2016");
 
 	//Main function is calling readExcel function to read data from excel file
-	protected UserModel getUserModel(int i) throws IOException {
+	protected UserModel getUserModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet0");
+                mas = objExcelFile.readExcel("Sheet0");
                 break;
-
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("user", 2);
+                break;
             default:
                 mas = new String[][]{{null, null},
                         {"vova", "bMS$2016"},
@@ -102,14 +85,18 @@ public class BasicTestCase {
 	
 	/*Initialization of input fields from Review proceedings on a claim Card(Unit 1) except field with drop-down list*/
     //Main function is calling readExcel function to read data from excel file
-    protected Unit1ProceedingCardModel getUnit1ProceedingCardModel(int i) throws IOException {
+    protected Unit1ProceedingCardModel getUnit1ProceedingCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet1");
+                mas = objExcelFile.readExcel("Sheet1");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit1_proceeding_card", 1);
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -130,7 +117,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet2");
+                mas = objExcelFile.readExcel("Sheet2");
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -151,7 +138,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet3");
+                mas = objExcelFile.readExcel("Sheet3");
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -192,7 +179,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet4");
+                mas = objExcelFile.readExcel("Sheet4");
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -214,7 +201,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet5");
+                mas = objExcelFile.readExcel("Sheet5");
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -239,7 +226,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet6");
+                mas = objExcelFile.readExcel("Sheet6");
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -268,7 +255,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet7");
+                mas = objExcelFile.readExcel("Sheet7");
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -288,7 +275,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet8");
+                mas = objExcelFile.readExcel("Sheet8");
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -308,7 +295,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet9");
+                mas = objExcelFile.readExcel("Sheet9");
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -328,7 +315,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet10");
+                mas = objExcelFile.readExcel("Sheet10");
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -350,7 +337,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet11");
+                mas = objExcelFile.readExcel("Sheet11");
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -372,7 +359,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet12");
+                mas = objExcelFile.readExcel("Sheet12");
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -394,7 +381,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet13");
+                mas = objExcelFile.readExcel("Sheet13");
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -427,7 +414,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet14");
+                mas = objExcelFile.readExcel("Sheet14");
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -448,7 +435,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet15");
+                mas = objExcelFile.readExcel("Sheet15");
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -473,7 +460,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet16");
+                mas = objExcelFile.readExcel("Sheet16");
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -493,7 +480,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet17");
+                mas = objExcelFile.readExcel("Sheet17");
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -515,7 +502,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet18");
+                mas = objExcelFile.readExcel("Sheet18");
                 break;
             default:
                 mas = new String[][]{{null, null, null, null},
@@ -538,7 +525,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet19");
+                mas = objExcelFile.readExcel("Sheet19");
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -559,7 +546,7 @@ public class BasicTestCase {
                 //Create a object of ReadExcelFile class
                 ReadExcelFile objExcelFile = new ReadExcelFile();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel(filePath, fileName, "Sheet20");
+                mas = objExcelFile.readExcel("Sheet20");
                 break;
             default:
                 mas = new String[][]{{null, null, null, null, null, null, null, null, null, null, null, null, null},

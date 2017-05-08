@@ -5,6 +5,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 /*
  * Implements all tests related to Login Form
@@ -24,19 +25,19 @@ public class LoginTest extends BasicTestCase {
 /*-------------------------Tests-----------------------------------------------------*/	
 	
 	@Test(groups = {"login"}, priority = 3)
-	public void testLoginOK() throws IOException {
+	public void testLoginOK() throws Exception {
 		app.getUserHelper().loginAs(super.getUserModel(1));
 		assertTrue(app.getUserHelper().isLoggedIn());
 	}
 
 	@Test(groups = {"login"}, priority = 2)
-	public void testLoginFailedPassword() throws IOException {
+	public void testLoginFailedPassword() throws Exception {
 		app.getUserHelper().loginAs(super.getUserModel(2));
 		assertTrue(app.getUserHelper().isNotLoggedIn());
 	}
 	
 	@Test(groups = {"login"}, priority = 1)
-	public void testLoginFailedLogin() throws IOException {
+	public void testLoginFailedLogin() throws Exception {
 		app.getUserHelper().loginAs(super.getUserModel(3));
 		assertTrue(app.getUserHelper().isNotLoggedIn());
 	}

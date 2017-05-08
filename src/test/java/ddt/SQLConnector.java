@@ -1,6 +1,7 @@
 package ddt;
 
-import java.awt.*;
+import ua.bms.osop.utils.ConfigProperties;
+
 import java.sql.*;
 
 // Notice, do not import com.mysql.jdbc.*
@@ -11,113 +12,62 @@ import java.sql.*;
  * Created by VChubenko on 03.05.2017.
  */
 public class SQLConnector {
-    public static void  main(String[] args) throws  ClassNotFoundException, SQLException {
+
+    //Connection URL Syntax: "jdbc:mysql://ipaddress:portnumber/db_name"
+    private String dbUrl = ConfigProperties.getProperty("dbexport.dburl");
+
+    //Database Username
+    private String username = ConfigProperties.getProperty("dbexport.dblogin");
+
+    //Database Password
+    private String password = ConfigProperties.getProperty("dbexport.dbpassword");
+
+    private int n = 10;
+
+    public String[][] readDB (String table, int m) throws Exception {
+
         try {
+            //Load mysql jdbc driver
             // The newInstance() call is a work around for some
             // broken Java implementations
-
             Class.forName("com.mysql.jdbc.Driver").newInstance();
-        } catch (Exception ex) {
-            // handle the error
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-
-        //Connection URL Syntax: "jdbc:mysql://ipaddress:portnumber/db_name"
-        String dbUrl = "jdbc:mysql://localhost:3306/osop2";
-
-        //Database Username
-        String username = "root";
-
-        //Database Password
-        String password = "root";
-
         //Query to Execute
-        String query = "select *  from user;";
-
-        //Load mysql jdbc driver
-        //Class.forName("com.mysql.jdbc.Driver");
+        String queryRead = "select *  from " + table + ";";
+        Connection con = null;
 
         //Create Connection to DB
-        Connection con = null;
-        con = DriverManager.getConnection(dbUrl,username,password);
+        con = DriverManager.getConnection(dbUrl, username, password);
 
         //Create Statement Object
         Statement stmt = con.createStatement();
 
         // Execute the SQL Query. Store results in ResultSet
-        ResultSet rs= stmt.executeQuery(query);
-
-
-
-        //int columncount = rs.getRow();
-        //System. out.println(rs.getRow());
+        ResultSet rs = stmt.executeQuery(queryRead);
 
         // While Loop to iterate through all data and print results
-        String [][] mas = new String[3][3];
+        String[][] mas = new String[n][m];
         int i = 1;
 
-        while (rs.next()){
+        while (rs.next()) {
 
-            for (int j=1; j<3; j++) {
-                mas[i][j] = rs.getString(j+1);
+            for (int j = 0; j < m; j++) {
+                mas[i][j] = rs.getString(j+2);
             }
-             ++i;
+            ++i;
 
         }
-            /*String myName = rs.getString(2);
-            String myAge = rs.getString(3);
-            */
-            System. out.println(mas[1][1]+ mas[1][2]+ mas[2][1]+ mas[2][2]);
-
-
-
-
-
-
-        Cursor sdb;
-
 
         // closing DB Connection
+        rs.close();
+        stmt.close();
         con.close();
+        return mas;
+
     }
-
-    /*
-
-    try {
-        conn = DriverManager.getConnection("jdbc:mysql://localhost/test?" + "user=minty&password=greatsqldb");
-
-        // Do something with the Connection
-    } catch (SQLException ex) {
-        System.out.println("SQLException: " + ex.getMessage());
-        System.out.println("SQLState: " + ex.getSQLState());
-        System.out.println("VendorError: " + ex.getErrorCode());
-    }*/
-
-    /*private void testDatabase() {
-        try {
-            Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/contactdb";
-            String login = "postgres";
-            String password = "postgres";
-            Connection con = DriverManager.getConnection(url, login, password);
-            try {
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery("SELECT * FROM JC_CONTACT");
-                while (rs.next()) {
-                    String str = rs.getString("contact_id") + ":" + rs.getString(2);
-                    System.out.println("Contact:" + str);
-                }
-                rs.close();
-                stmt.close();
-            } finally {
-                con.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }*/
-
-
 
 }
 
