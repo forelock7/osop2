@@ -12,7 +12,7 @@ public class Unit2PreventiveActionTest extends BasicTestCase {
 
 	private Unit2PreventiveCardModel preventCard = getUnit2PreventiveCardModel(1);
 
-	public Unit2PreventiveActionTest() throws IOException {
+	public Unit2PreventiveActionTest() throws Exception {
 	}
 
 	@Test (groups = {"unit2_preventiveAction"})

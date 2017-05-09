@@ -19,7 +19,7 @@ public class Unit5SupervisionJudgmentTest extends BasicTestCase {
 	private Unit5DocumentCardModel documentCard = new Unit5DocumentCardModel ();
 	private Unit5ChargedCardModel chargedCard = getUnit5ChargedCardModel(1);
 
-	public Unit5SupervisionJudgmentTest() throws IOException {
+	public Unit5SupervisionJudgmentTest() throws Exception {
 	}
 
 	@Test (groups = {"unit5"}, priority = 1)

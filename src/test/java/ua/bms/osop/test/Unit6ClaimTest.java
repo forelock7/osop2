@@ -15,7 +15,7 @@ public class Unit6ClaimTest extends BasicTestCase {
 
 	private Unit6CardModel clCard = getUnit6CardModel(1);
 
-	public Unit6ClaimTest() throws IOException {
+	public Unit6ClaimTest() throws Exception {
 	}
 
 	@Test (groups = {"unit6"})

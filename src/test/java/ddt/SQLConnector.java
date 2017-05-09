@@ -4,8 +4,8 @@ import ua.bms.osop.utils.ConfigProperties;
 
 import java.sql.*;
 
-// Notice, do not import com.mysql.jdbc.*
-// or you will have problems!
+/*Notice, do not import com.mysql.jdbc.*
+*or you will have problems!*/
 
 
 /**
@@ -22,14 +22,16 @@ public class SQLConnector {
     //Database Password
     private String password = ConfigProperties.getProperty("dbexport.dbpassword");
 
+    //number of row for creating massive
     private int n = 10;
 
+    // m - number of records, that will be used for test
     public String[][] readDB (String table, int m) throws Exception {
 
         try {
-            //Load mysql jdbc driver
-            // The newInstance() call is a work around for some
-            // broken Java implementations
+            /*Load mysql jdbc driver
+            * The newInstance() call is a work around for some
+            * broken Java implementations*/
             Class.forName("com.mysql.jdbc.Driver").newInstance();
         } catch (Exception e) {
             e.printStackTrace();
@@ -58,13 +60,12 @@ public class SQLConnector {
                 mas[i][j] = rs.getString(j+2);
             }
             ++i;
-
         }
-
         // closing DB Connection
         rs.close();
         stmt.close();
         con.close();
+        System.out.println("SQL Connection is closed");
         return mas;
 
     }

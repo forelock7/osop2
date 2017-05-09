@@ -15,7 +15,7 @@ public class Unit8RequestTest extends BasicTestCase {
 
 	private Unit8CardModel reqCard = getUnit8CardModel(1);
 
-	public Unit8RequestTest() throws IOException {
+	public Unit8RequestTest() throws Exception {
 	}
 
 	@Test (groups = {"unit8"})

@@ -16,7 +16,7 @@ public class Unit1ReviewProceedingToProcuracyTest extends BasicTestCase {
 
 	private Unit1ProceedingToPrcCardModel proceedingToPrcCard = getUnit1ProceedingToPrcCardModel(1);
 
-	public Unit1ReviewProceedingToProcuracyTest() throws IOException {
+	public Unit1ReviewProceedingToProcuracyTest() throws Exception {
 	}
 
 

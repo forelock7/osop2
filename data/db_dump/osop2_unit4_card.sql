@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `osop2` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `osop2`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: localhost    Database: osop2
@@ -16,28 +18,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `unit4_card`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `unit4_card`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL AUTO_INCREMENT,
-  `login` varchar(45) DEFAULT NULL,
-  `password` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id_user`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+CREATE TABLE `unit4_card` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `receipt_date` varchar(10) DEFAULT NULL,
+  `summary` varchar(100) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `unit4_card`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'vova','bMS$2016'),(2,'vova2','faildpassword'),(3,'failLogin','bMS$2016');
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `unit4_card` WRITE;
+/*!40000 ALTER TABLE `unit4_card` DISABLE KEYS */;
+INSERT INTO `unit4_card` VALUES (1,'05.11.2016','erhehdfh4366455yhf'),(2,'02.10.2018','hdfhtdfh5y5hfh54hgfh');
+/*!40000 ALTER TABLE `unit4_card` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-05-08 21:01:46
+-- Dump completed on 2017-05-09 15:19:35

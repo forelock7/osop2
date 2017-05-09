@@ -12,7 +12,7 @@ public class Unit2ReleaseFromCustodyTest extends BasicTestCase {
 
 	private Unit2ReleaseCardModel releaseCard = getUnit2ReleaseCardModel(1);
 
-	public Unit2ReleaseFromCustodyTest() throws IOException {
+	public Unit2ReleaseFromCustodyTest() throws Exception {
 	}
 
 	@Test (groups = {"unit2_releaseFromCustody"})

@@ -17,7 +17,7 @@ public class U3CrearteProceedingCardWithNumberOfAccused extends BasicTestCase {
 
     private Unit3CriminalProceedingCardModel criminalProceedingCard = getUnit3CriminalProceedingCardModel(2);
 
-    public U3CrearteProceedingCardWithNumberOfAccused() throws IOException {
+    public U3CrearteProceedingCardWithNumberOfAccused() throws Exception {
     }
 
     @Test (groups = {"unit3_proceedings"})

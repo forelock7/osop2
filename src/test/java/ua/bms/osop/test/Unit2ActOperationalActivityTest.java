@@ -12,7 +12,7 @@ public class Unit2ActOperationalActivityTest extends BasicTestCase {
 
 	private Unit2ActOACardModel actOACard = getUnit2ActOACardModel(1);
 
-	public Unit2ActOperationalActivityTest() throws IOException {
+	public Unit2ActOperationalActivityTest() throws Exception {
 	}
 
 	@Test (groups = {"unit2_actsOA"})

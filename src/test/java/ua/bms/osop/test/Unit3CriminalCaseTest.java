@@ -12,7 +12,7 @@ public class Unit3CriminalCaseTest extends BasicTestCase {
 
 	private Unit3CriminalCaseCardModel criminalCaseCard = getUnit3CriminalCaseCardModel(1);
 
-	public Unit3CriminalCaseTest() throws IOException {
+	public Unit3CriminalCaseTest() throws Exception {
 	}
 
 	@Test (groups = {"unit3_cases"}, priority = 1)

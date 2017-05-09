@@ -14,7 +14,7 @@ public class Unit9MilitaryTest extends BasicTestCase {
 
 	private Unit9CardModel mAOCard = getUnit9CardModel(1);
 
-	public Unit9MilitaryTest() throws IOException {
+	public Unit9MilitaryTest() throws Exception {
 	}
 
 	@Test (groups = {"unit9"})

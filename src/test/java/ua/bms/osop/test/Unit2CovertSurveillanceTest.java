@@ -12,7 +12,7 @@ public class Unit2CovertSurveillanceTest extends BasicTestCase {
 
 	private Unit2CovertCardModel covertCard = getUnit2CovertCardModel(1);
 
-	public Unit2CovertSurveillanceTest() throws IOException {
+	public Unit2CovertSurveillanceTest() throws Exception {
 	}
 
 	@Test (groups = {"unit2_covertSurveillances"})

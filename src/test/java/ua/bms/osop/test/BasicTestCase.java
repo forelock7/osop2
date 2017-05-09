@@ -1,6 +1,6 @@
 package ua.bms.osop.test;
 
-import ddt.ReadExcelFile;
+import ddt.ExcelFileConnector;
 import ddt.SQLConnector;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
@@ -62,8 +62,8 @@ public class BasicTestCase {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet0");
                 break;
@@ -89,8 +89,8 @@ public class BasicTestCase {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet1");
                 break;
@@ -110,14 +110,18 @@ public class BasicTestCase {
 
 	/*Initialization of input fields from Review proceedings on a claim to Procuracy authorities Card(Unit 1) except field with drop-down list*/
     //Main function is calling readExcel function to read data from excel file
-    protected Unit1ProceedingToPrcCardModel getUnit1ProceedingToPrcCardModel(int i) throws IOException {
+    protected Unit1ProceedingToPrcCardModel getUnit1ProceedingToPrcCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet2");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit1_proceeding_to_prc_card", 1);
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -131,14 +135,18 @@ public class BasicTestCase {
 
 	/*Initialization of input fields from 3 - "Started Crime Proceedings"("Розпочато кримінальних проваджень") Card(Unit 1) except field with drop-down list*/
     //Main function is calling readExcel function to read data from excel file
-    protected Unit1CriminalCardModel getUnit1CriminalCardModel(int i) throws IOException {
+    protected Unit1CriminalCardModel getUnit1CriminalCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet3");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit1_criminal_card", 3);
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -150,36 +158,21 @@ public class BasicTestCase {
         return new Unit1CriminalCardModel(mas[i][0], mas[i][1], mas[i][2]);
     }
 
-	/*protected Unit1CriminalCardModel newCriminalCard() {
-		try {
-		String query = "select * from unit1_criminalCard";
-		ResultSet res = stmt.executeQuery(query);
-		while (res.next()) {
-			int id = res.getInt(1);
-			String regNum = res.getString(2);
-			String sec = res.getString(3);
-			String theory = res.getString(4);
-			return new Unit1CriminalCardModel(
-						regNum,
-						sec,
-						theory);
-		}
-	}*/
-		/*} catch (Exception e) {
-			e.printStackTrace();
-		}*/
-
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 1 - "Acts of supervision over pre-trial investigation" Card("Акти нагляду за ДР")(Unit 2) except field with drop-down list*/
-    protected Unit2ActPICardModel getUnit2ActPICardModel(int i) throws IOException {
+    protected Unit2ActPICardModel getUnit2ActPICardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet4");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit2_act_pi_card", 3);
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -194,14 +187,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 2 - "The appeals on the pre-trial investigation"("Апеляційні скарги з питань ДР")(Unit 2) except field with drop-down list*/
-    protected Unit2AppealCardModel getUnit2AppealCardModel(int i) throws IOException {
+    protected Unit2AppealCardModel getUnit2AppealCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet5");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit2_appeal_card", 3);
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -219,14 +216,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 3 - "The Preventive Action"("Запобіжні заходи");(Unit 2) except field with drop-down list*/
-    protected Unit2PreventiveCardModel getUnit2PreventiveCardModel(int i) throws IOException {
+    protected Unit2PreventiveCardModel getUnit2PreventiveCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet6");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit2_preventive_card", 5);
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -248,18 +249,23 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 4 - "The release from custody"("Звільнення з-під варти")(Unit 2) except field with drop-down list*/
-    protected Unit2ReleaseCardModel getUnit2ReleaseCardModel(int i) throws IOException {
+    protected Unit2ReleaseCardModel getUnit2ReleaseCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet7");
                 break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit2_release_card", 2);
+                break;
             default:
                 mas = new String[][]{{null, null},
-                        {/*Номер справи у суді*/"Справа №6742868тоіс",	/*Дата прийняття остаточного рішення у КП стосовно особи*/"25.11.2015"}};
+                        {/*Номер справи у суді*/"Справа №6742868тоіс",
+                                /*Дата прийняття остаточного рішення у КП стосовно особи*/"25.11.2015"}};
                 break;
         }
         return new Unit2ReleaseCardModel(mas[i][0], mas[i][1]);
@@ -268,14 +274,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 5 - "Acts of supervision over Operational Activities"("Акти нагляду за ОРД")(Unit 2) except field with drop-down list*/
-    protected Unit2ActOACardModel getUnit2ActOACardModel(int i) throws IOException {
+    protected Unit2ActOACardModel getUnit2ActOACardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet8");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit2_act_oa_card", 1);
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -288,14 +298,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 6 - "Covert surveillances(investigative)"("Негласні слідчі(розшукові) дії")(Unit 2) except field with drop-down list*/
-    protected Unit2CovertCardModel getUnit2CovertCardModel(int i) throws IOException {
+    protected Unit2CovertCardModel getUnit2CovertCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet9");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit2_covert_card", 1);
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -308,14 +322,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 1 - "Criminal proceedings"("Кримінальні провадження"); Card(Unit 3) except field with drop-down list*/
-    protected Unit3CriminalProceedingCardModel getUnit3CriminalProceedingCardModel(int i) throws IOException {
+    protected Unit3CriminalProceedingCardModel getUnit3CriminalProceedingCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet10");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit3_criminal_proceeding_card", 3);
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -330,14 +348,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
-    protected Unit3OtherCriminalProceedingCardModel getUnit3OtherCriminalProceedingCardModel(int i) throws IOException {
+    protected Unit3OtherCriminalProceedingCardModel getUnit3OtherCriminalProceedingCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet11");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit3_other_criminal_proceeding_card", 3);
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -352,14 +374,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 4 - "Criminal cases"("Кримінальні справи"); Card(Unit 3) except field with drop-down list*/
-    protected Unit3CriminalCaseCardModel getUnit3CriminalCaseCardModel(int i) throws IOException {
+    protected Unit3CriminalCaseCardModel getUnit3CriminalCaseCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet12");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit3_criminal_case_card", 3);
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -374,14 +400,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 
 	/*Initialization of input fields from 2 - "Other criminal proceedings"("Інші питання кримінального провадження"); Card(Unit 3) except field with drop-down list*/
-    protected Unit3OtherCriminalCaseCardModel getUnit3OtherCriminalCaseCardModel(int i) throws IOException {
+    protected Unit3OtherCriminalCaseCardModel getUnit3OtherCriminalCaseCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet13");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit3_other_criminal_case_card", 3);
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -407,14 +437,18 @@ public class BasicTestCase {
 	/*----------------------------------------------------------------------------------------------------------------*/
 		
 	/*Initialization of input fields from International Judicial Cooperation Card(Unit 4) except field with drop-down list*/
-    protected Unit4CardModel getUnit4CardModel(int i) throws IOException {
+    protected Unit4CardModel getUnit4CardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet14");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit4_card", 2);
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -428,14 +462,18 @@ public class BasicTestCase {
 	/*----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Inspection Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-    protected Unit5InspectionCardModel getUnit5InspectionCardModel(int i) throws IOException {
+    protected Unit5InspectionCardModel getUnit5InspectionCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet15");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit5_inspection_card", 1);
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -453,14 +491,18 @@ public class BasicTestCase {
 	/*----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Charged Person Card Unit 5 "Supervision of the observance of laws in the execution of judgments." except field with drop-down list*/
-    protected Unit5ChargedCardModel getUnit5ChargedCardModel(int i) throws IOException {
+    protected Unit5ChargedCardModel getUnit5ChargedCardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet16");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit5_charged_card", 1);
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -473,14 +515,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Claim Card(Unit 6) except field with drop-down list*/
-    protected Unit6CardModel getUnit6CardModel(int i) throws IOException {
+    protected Unit6CardModel getUnit6CardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet17");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit6_card", 3);
                 break;
             default:
                 mas = new String[][]{{null, null, null},
@@ -495,14 +541,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/	
 	
 	/*Initialization of input fields from Mass Media Card(Unit 7) except field with drop-down list*/
-    protected Unit7CardModel getUnit7CardModel(int i) throws IOException {
+    protected Unit7CardModel getUnit7CardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet18");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit7_card", 4);
                 break;
             default:
                 mas = new String[][]{{null, null, null, null},
@@ -518,14 +568,18 @@ public class BasicTestCase {
 	/*----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Request Card(Unit 8) except field with drop-down list*/
-    protected Unit8CardModel getUnit8CardModel(int i) throws IOException {
+    protected Unit8CardModel getUnit8CardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet19");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit8_card", 2);
                 break;
             default:
                 mas = new String[][]{{null, null},
@@ -539,14 +593,18 @@ public class BasicTestCase {
 	/*-----------------------------------------------------------------------------------------------------------------*/
 	
 	/*Initialization of input fields from Military Administrative Offenses Card(Unit 9) except field with drop-down list*/
-    protected Unit9CardModel getUnit9CardModel(int i) throws IOException {
+    protected Unit9CardModel getUnit9CardModel(int i) throws Exception {
         String mas[][];
         switch (modeData) {
             case "excel":
-                //Create a object of ReadExcelFile class
-                ReadExcelFile objExcelFile = new ReadExcelFile();
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
                 mas = objExcelFile.readExcel("Sheet20");
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("unit9_card", 13);
                 break;
             default:
                 mas = new String[][]{{null, null, null, null, null, null, null, null, null, null, null, null, null},

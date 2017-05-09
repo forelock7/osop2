@@ -14,7 +14,7 @@ public class U2AppealAndPreventiveRelation  extends BasicTestCase {
 	private Unit2AppealCardModel appealCard2 = getUnit2AppealCardModel(2);
 	private Unit2PreventiveCardModel preventCard2 = getUnit2PreventiveCardModel(2);
 
-	public U2AppealAndPreventiveRelation() throws IOException {
+	public U2AppealAndPreventiveRelation() throws Exception {
 	}
 
 	@Test (groups = {"unit2_relation"})

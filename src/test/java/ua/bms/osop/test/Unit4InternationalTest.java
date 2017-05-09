@@ -14,7 +14,7 @@ public class Unit4InternationalTest extends BasicTestCase {
 
 	private Unit4CardModel intCard = getUnit4CardModel(1);
 
-	public Unit4InternationalTest() throws IOException {
+	public Unit4InternationalTest() throws Exception {
 	}
 
 	@Test (groups = {"unit4"})

@@ -12,7 +12,7 @@ public class Unit3CriminalProceedingTest extends BasicTestCase {
 
 	private Unit3CriminalProceedingCardModel criminalProceedingCard = getUnit3CriminalProceedingCardModel(1);
 
-	public Unit3CriminalProceedingTest() throws IOException {
+	public Unit3CriminalProceedingTest() throws Exception {
 	}
 
 

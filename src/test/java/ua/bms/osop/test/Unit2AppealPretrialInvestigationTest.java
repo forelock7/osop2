@@ -12,7 +12,7 @@ public class Unit2AppealPretrialInvestigationTest extends BasicTestCase {
 
 	private Unit2AppealCardModel appealCard = getUnit2AppealCardModel(1);
 
-	public Unit2AppealPretrialInvestigationTest() throws IOException {
+	public Unit2AppealPretrialInvestigationTest() throws Exception {
 	}
 
 	@Test (groups = {"unit2_appealsPreInvest"})

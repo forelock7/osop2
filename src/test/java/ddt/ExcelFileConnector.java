@@ -15,11 +15,11 @@ import java.io.IOException;
 /**
  * Created by VChubenko on 21.04.2017.
  */
-public class ReadExcelFile {
+public class ExcelFileConnector {
 
     //Prepare the path of excel file
-    String filePath = ConfigProperties.getProperty("excelexport.filePath");
-    String fileName = ConfigProperties.getProperty("excelexport.fileName");
+    private String filePath = ConfigProperties.getProperty("excelexport.filePath");
+    private String fileName = ConfigProperties.getProperty("excelexport.fileName");
 
     public String[][] readExcel(String sheetName) throws IOException {
 

@@ -15,7 +15,7 @@ public class Unit7MassMediaTest extends BasicTestCase {
 
 	private Unit7CardModel mMCard = getUnit7CardModel(1);
 
-	public Unit7MassMediaTest() throws IOException {
+	public Unit7MassMediaTest() throws Exception {
 	}
 
 	@Test (groups = {"unit7"})
