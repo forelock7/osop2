@@ -19,16 +19,13 @@ import java.util.ArrayList;
  */
 public class BasicTestCase {
 
-    public BasicTestCase() {}
-
-
 	protected ApplicationManager app;
 	/* Set mode data to export data from determined source
 	* -----default------
 	* excel
 	* db
 	* */
-	String modeData = ConfigProperties.getProperty("data.modedata");
+	private String modeData = ConfigProperties.getProperty("data.modedata");
 
 	
 	/*Before Test Class creates new object of Application Manager*/
