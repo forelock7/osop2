@@ -1,7 +1,11 @@
 package ua.bms.osop.test;
 
 import static org.testng.Assert.assertTrue;
+
+import ddt.ExcelFileConnector;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ua.bms.osop.model.Unit9CardModel;
 
@@ -56,6 +60,17 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		app.getUnit9Helper().restoreCardUnit9(mAOCard);
 		app.getUnit9Helper().goToMainTab();
 		Assert.assertEquals(mAOCard.getRegistrationNumber(), app.getUnit9Helper().getRegNumberFirstCardInGrid());
+	}
+
+	@AfterMethod (description = "testEditMilitaryCard")
+	public void writeRegnumberIntoExsel() throws IOException {
+		Object [][] mas = {
+				{"Registration number", "Protocol number", "Creating date"},
+				{mAOCard.getRegistrationNumber(), mAOCard.getProtocolNumber(), mAOCard.getProtocolCreatingDate()}
+		};
+
+		ExcelFileConnector exCon = new ExcelFileConnector();
+		exCon.writeExcel("military", mas);
 	}
 
 }

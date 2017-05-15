@@ -18,13 +18,13 @@ import java.io.*;
 public class ExcelFileConnector {
 
     //Prepare the path of excel file
-    private String filePath = ConfigProperties.getProperty("excelexport.filePath");
-    private String fileName = ConfigProperties.getProperty("excelexport.fileName");
+    private String importFilePath = ConfigProperties.getProperty("excelimport.filePath");
+    private String importFileName = ConfigProperties.getProperty("excelimport.fileName");
 
     public String[][] readExcel(String sheetName) throws IOException {
 
         //Create a object of File class to open xlsx file
-        File file = new File(filePath+"\\"+fileName);
+        File file = new File(importFilePath +"\\"+ importFileName);
 
         //Create an object of FileInputStream class to read excel file
         FileInputStream inputStream = new FileInputStream(file);
@@ -32,7 +32,7 @@ public class ExcelFileConnector {
         Workbook workbook = null;
 
         //Find the file extension by spliting file name in substring and getting only extension name
-        String fileExtensionName = fileName.substring(fileName.indexOf("."));
+        String fileExtensionName = importFileName.substring(importFileName.indexOf("."));
 
         //Check condition if the file is xlsx file
         if(fileExtensionName.equals(".xlsx")){
@@ -81,18 +81,17 @@ public class ExcelFileConnector {
     }
 
     //public void writeExcel() {
-    public static void main(String[] args) {
-        String FILE_NAME = "C://Vova/AutoTests/osop2/data/MyFirstExcel.xlsx";
+    public void writeExcel(String fileName, Object[][] datatypes) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("Datatypes in Java");
-        Object[][] datatypes = {
+        XSSFSheet sheet = workbook.createSheet("Sheet");
+        /*Object[][] datatypes = {
                 {"Datatype", "Type", "Size(in bytes)"},
-                {"int", "Primitive", 2},
+                {"int", "Primitive", 333333},
                 {"float", "Primitive", 4},
                 {"double", "Primitive", 8},
                 {"char", "Primitive", 1},
                 {"String", "Non-Primitive", "No fixed size"}
-        };
+        };*/
 
         int rowNum = 0;
         System.out.println("Creating excel");
@@ -111,7 +110,7 @@ public class ExcelFileConnector {
         }
 
         try {
-            FileOutputStream outputStream = new FileOutputStream(FILE_NAME);
+            FileOutputStream outputStream = new FileOutputStream(importFilePath+"\\"+fileName+".xlsx");
             workbook.write(outputStream);
             workbook.close();
         } catch (FileNotFoundException e) {
