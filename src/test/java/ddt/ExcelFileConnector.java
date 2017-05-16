@@ -84,14 +84,6 @@ public class ExcelFileConnector {
     public void writeExcel(String fileName, Object[][] datatypes) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Sheet");
-        /*Object[][] datatypes = {
-                {"Datatype", "Type", "Size(in bytes)"},
-                {"int", "Primitive", 333333},
-                {"float", "Primitive", 4},
-                {"double", "Primitive", 8},
-                {"char", "Primitive", 1},
-                {"String", "Non-Primitive", "No fixed size"}
-        };*/
 
         int rowNum = 0;
         System.out.println("Creating excel");

@@ -4,6 +4,7 @@ import static org.testng.Assert.assertTrue;
 
 import ddt.ExcelFileConnector;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -62,7 +63,7 @@ public class Unit9MilitaryTest extends BasicTestCase {
 		Assert.assertEquals(mAOCard.getRegistrationNumber(), app.getUnit9Helper().getRegNumberFirstCardInGrid());
 	}
 
-	@AfterMethod (description = "testEditMilitaryCard")
+	@AfterClass
 	public void writeRegnumberIntoExsel() throws IOException {
 		Object [][] mas = {
 				{"Registration number", "Protocol number", "Creating date"},
