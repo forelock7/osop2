@@ -63,6 +63,9 @@ public class PageManager {
 	public Unit8RequestCard unit8RequestCard;
 	public Unit9MilitaryPage unit9MilitaryPage;
 	public Unit9MilitaryCard unit9MilitaryCard;
+	public AdministrationPage administrationPage;
+	public AdminUsersPage adminUsersPage;
+
 	
 	/*
 	 * Performs initialization of each page.
@@ -123,6 +126,9 @@ public class PageManager {
 		unit8RequestCard = initElements(new Unit8RequestCard(this));
 		unit9MilitaryPage = initElements(new Unit9MilitaryPage(this));
 		unit9MilitaryCard = initElements(new Unit9MilitaryCard(this));
+		administrationPage = initElements(new AdministrationPage(this));
+		adminUsersPage = initElements(new AdminUsersPage(this));
+
 	}
 	
 	/*

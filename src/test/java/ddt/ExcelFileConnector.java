@@ -64,23 +64,17 @@ public class ExcelFileConnector {
         String [][] mas = new String[rowCount+1][cellCount];
 
         for (i = 1; i < rowCount+1; i++) {
-
             row = workbookSheet.getRow(i);
-
             //Create a loop to print cell values in a row
-
             for (j = 0; j < cellCount; j++) {
-
                 //Print excel data in console
-
                 mas[i][j] = row.getCell(j).getStringCellValue();
             }
         }
-
     return mas;
     }
 
-    //public void writeExcel() {
+
     public void writeExcel(String fileName, Object[][] datatypes) throws IOException {
         XSSFWorkbook workbook = new XSSFWorkbook();
         XSSFSheet sheet = workbook.createSheet("Sheet");

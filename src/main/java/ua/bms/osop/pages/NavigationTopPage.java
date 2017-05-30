@@ -35,6 +35,10 @@ public class NavigationTopPage extends AnyPage {
 	//Menu button of "Report sections" ("РОЗДІЛИ ЗВІТУ")
 	@FindBy (xpath = "//div[contains(@id, 'mainToolBarContainer')]//span[contains(text(), 'РОЗДІЛИ ЗВІТУ')]")
 	private WebElement buttonReportSections;
+
+	//Menu button of "Report sections" ("АДМІНІСТРУВАННЯ")
+	@FindBy (xpath = "//div[contains(@id, 'mainToolBarContainer')]//span[contains(text(), 'АДМІНІСТРУВАННЯ')]")
+	private WebElement buttonAdministrationSection;
 	
 	//Items from menu "Report sections"("РОЗДІЛИ ЗВІТУ")
 	
@@ -124,8 +128,11 @@ public class NavigationTopPage extends AnyPage {
 		return pages.unit9MilitaryPage;
 	}
 
-
-	
+	//Administration - Moving from "Home" page to "Administration" page
+	public AdministrationPage clickAdministrationItem() {
+		buttonAdministrationSection.click();
+		return pages.administrationPage;
+	}
 	
 
 }

@@ -33,6 +33,7 @@ import ua.bms.osop.applogic.Unit7Helper;
 import ua.bms.osop.applogic.Unit8Helper;
 import ua.bms.osop.applogic.Unit9Helper;
 import ua.bms.osop.applogic.UserHelper;
+import ua.bms.osop.pages.AdminUsersPage;
 import ua.bms.osop.utils.Browser;
 import ua.bms.osop.utils.ConfigProperties;
 import ua.bms.osop.webdriver.WebDriverFactory;
@@ -75,6 +76,8 @@ public class ApplicationManager {
 	 private Unit7Helper unit7Helper;
 	 private Unit8Helper unit8Helper;
 	 private Unit9Helper unit9Helper;
+	 private AdministrationHelper administrationHelper;
+	 private AdminUsersHelper adminUsersHelper;
 	 private WebDriver driver;
 	 private String baseUrl;
 	 
@@ -123,6 +126,8 @@ public class ApplicationManager {
 		 unit7Helper = new Unit7Helper(this);
 		 unit8Helper = new Unit8Helper(this);
 		 unit9Helper = new Unit9Helper(this);
+		 administrationHelper = new AdministrationHelper(this);
+		 adminUsersHelper = new AdminUsersHelper(this);
 		 
 		 /*Sets URL of main page*/
 		 getNavigationTopHelper().openMainPage();
@@ -255,6 +260,14 @@ public class ApplicationManager {
 	
 	public Unit9Helper getUnit9Helper(){
 		return unit9Helper;
+	}
+
+	public AdministrationHelper getAdministrationHelper() {
+		return administrationHelper;
+	}
+
+	public AdminUsersHelper getAdminUsersHelper() {
+		return adminUsersHelper;
 	}
 	  
 	protected WebDriver getWebDriver() {

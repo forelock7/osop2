@@ -60,7 +60,10 @@ public class NavigationTopHelper extends DriverBasedHelper {
 	public void goToUnit9Page(){
 		pages.navigationTopPage.ensurePageLoaded().clickUnit9MenuItem();
 	}
-	
 
+	//Moving to page Administration("адміністрування")
+	public void goToAdministrationPage(){
+		pages.navigationTopPage.ensurePageLoaded().clickAdministrationItem();
+	}
 
 }
