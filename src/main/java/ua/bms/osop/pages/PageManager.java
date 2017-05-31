@@ -65,8 +65,8 @@ public class PageManager {
 	public Unit9MilitaryCard unit9MilitaryCard;
 	public AdministrationPage administrationPage;
 	public AdminUsersPage adminUsersPage;
+	public UserProfileCard userProfileCard;
 
-	
 	/*
 	 * Performs initialization of each page.
 	 * Dispatches control over WebDriver to determinate Page
@@ -128,6 +128,7 @@ public class PageManager {
 		unit9MilitaryCard = initElements(new Unit9MilitaryCard(this));
 		administrationPage = initElements(new AdministrationPage(this));
 		adminUsersPage = initElements(new AdminUsersPage(this));
+		userProfileCard = initElements(new UserProfileCard(this));
 
 	}
 	

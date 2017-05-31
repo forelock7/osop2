@@ -69,13 +69,14 @@ public class BasicTestCase {
                 mas = sqlConection.readDB("user", 2);
                 break;
             default:
-                mas = new String[][]{{null, null},
-                        {"vova", "bMS$2016"},
-                        {"vova1", "failedPassword"},
-                        {"failedLogin", "bMS$2016"}};
+                mas = new String[][]{{null, null, null, null, null, null},
+                        {"vova", "bMS$2016", null, null, null, null},
+                        {"vova1", "failedPassword", null, null, null, null},
+                        {"failedLogin", "bMS$2016", null, null, null, null},
+                        {"vova23", null, "aa", "bb", "cc", "aa@bb.cc"}};
                 break;
         }
-         return new UserModel(mas[i][0], mas[i][1]);
+         return new UserModel(mas[i][0], mas[i][1], mas[i][2], mas[i][3],mas[i][4], mas[i][5]);
     }
 
 	/*-----------------------------------------------------------------------------------------------------------------*/	
@@ -622,5 +623,7 @@ public class BasicTestCase {
         }
         return new Unit9CardModel(mas[i][0], mas[i][1], mas[i][2], mas[i][3], mas[i][4], mas[i][5], mas[i][6], mas[i][7], mas[i][8], mas[i][9], mas[i][10], mas[i][11], mas[i][12]);
     }
+
+
 
 }
