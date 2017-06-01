@@ -14,7 +14,7 @@ import ua.bms.osop.pages.PageManager;
 public class DriverBasedHelper {
 	
 	protected WebDriver driver;
-	protected Wait<WebDriver> wait;
+	//protected Wait<WebDriver> wait;
 	protected PageManager pages;
 	  
 	public DriverBasedHelper(WebDriver driver) {

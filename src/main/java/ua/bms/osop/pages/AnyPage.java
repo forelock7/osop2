@@ -8,6 +8,10 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import java.util.concurrent.TimeUnit;
+
+import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
+
 /*
  * Abstract class declare Web-elements and methods with them that could be used on every Page 
  */
@@ -39,7 +43,7 @@ public abstract class AnyPage extends Page {
 	//Header of "Registration Number" column(2) in Main Grid
 	@FindBy (xpath = "//div[contains(@id, 'headercontainer')]/div[3]")
 	private WebElement headerMainGrid;
-	
+
 	//Registration Number in the first record of grid on Main tab
 	@FindBy(xpath = "//div[1]//table[1]//td[2]/div")
 	private WebElement cellRegNumberInGridOnMainTab;
@@ -117,19 +121,17 @@ public abstract class AnyPage extends Page {
 	protected void clickOnGridHeader() {
 		headerMainGrid.click();
 	}
-	
+
+
 	public void doubleClickOnGridHeader() {
 		Actions action = new Actions(driver);
 		action.click(headerMainGrid).click(headerMainGrid).perform();
 	}
-	
+
 	//Opens to review Card
 	public void doubleClickOnFirstRecordInGridOnMainTab() {
-		Actions action = new Actions(driver);
+	    Actions action = new Actions(driver);
 		action.doubleClick(fluientWaitforElement(cellRegNumberInGridOnMainTab)).build().perform();
-
-
-
 	}
 	
 	//Moving to "Deleted"("Видалені") tab

@@ -1,5 +1,7 @@
 package ua.bms.osop.model;
 
+import java.util.Random;
+
 /*
  * Implements model of User
  */
@@ -20,21 +22,24 @@ public class UserModel {
 
 	/*Constructor of User Model Object*/
 	public UserModel(String login, String password, String lastName, String firstName, String middleName, String email) {
-		this.login = login;
+		this.login = login + createNumber();
 		this.password = password;
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.middleName = middleName;
 		this.email = email;
-		System.out.println(" instance - 6");
 	}
 
 	/*Constructor of User Model Object*/
 	public UserModel(String login, String password) {
 		this.login = login;
 		this.password = password;
-		System.out.println(" instance - 2");
+	}
 
+	/*Generation of random number of Claim*/
+	private String createNumber() {
+		Random rnd = new Random();
+		return Integer.toString(rnd.nextInt(9999));
 	}
 	
 	/*---Get Methods---*/
@@ -65,7 +70,7 @@ public class UserModel {
 
 	/*---Set Methods---*/
 
-	public void setprofileCreatingDate (String profileCreatingDate) {
+	public void setProfileCreatingDate (String profileCreatingDate) {
 		this.profileCreatingDate = profileCreatingDate;
 	}
 

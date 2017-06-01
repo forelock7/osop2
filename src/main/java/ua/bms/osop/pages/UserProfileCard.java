@@ -92,4 +92,7 @@ public class UserProfileCard extends AnyPage {
     }
 
 
+    public String getInputLogin() {
+        return inputLogin.getAttribute("value");
+    }
 }

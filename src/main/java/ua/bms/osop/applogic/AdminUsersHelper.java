@@ -21,12 +21,41 @@ public class AdminUsersHelper extends DriverBasedHelper {
         pages.adminUsersPage.clickButtonCreateCard();
     }
 
-    /*--------------------------------International Card----------------------------------------------------*/
+    /*--------------------------------User Profile Card----------------------------------------------------*/
 
     public void createCard(UserModel userModel) {
         pages.userProfileCard.setUserProfileCard(userModel);
     }
 
+    //Opens Card to review
+    public void openCardToView() throws InterruptedException {
+        pages.adminUsersPage.doubleClickOnFirstRecordInGridOnMainTab();
+    }
+
+    //Sorts records down(in descending order) - double click on header of grid
+    public void sortDownMainGrid() {
+        pages.adminUsersPage.doubleClickOnGridHeader();
+    }
 
 
+
+
+
+
+    /*---------------------------User Profile Card-----------------------------------------*/
+
+    //Gets Login from an opened profile
+    public String getLogin() {
+        return pages.userProfileCard.getInputLogin();
+    }
+
+    public void saveCard() {
+        pages.userProfileCard.clickButtonSaveCard();
+        pages.userProfileCard.clickOnAlertOK();
+    }
+
+    //Quit from Card
+    public void quitCard() {
+        pages.userProfileCard.clickButtonExitFromCardForm();
+    }
 }

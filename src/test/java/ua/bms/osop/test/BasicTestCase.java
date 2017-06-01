@@ -69,11 +69,20 @@ public class BasicTestCase {
                 mas = sqlConection.readDB("user", 2);
                 break;
             default:
-                mas = new String[][]{{null, null, null, null, null, null},
-                        {"vova", "bMS$2016", null, null, null, null},
-                        {"vova1", "failedPassword", null, null, null, null},
-                        {"failedLogin", "bMS$2016", null, null, null, null},
-                        {"vova23", null, "aa", "bb", "cc", "aa@bb.cc"}};
+                if((i == 1)||(i == 2)||(i == 3)) {
+                    mas = new String[][]{{null, null},
+                            {"vova", "bMS$2016"},
+                            {"vova1", "failedPassword"},
+                            {"failedLogin", "bMS$2016"}};
+                }else {
+                    mas = new String[][]{{null, null, null, null, null, null},
+                            {null, null, null, null, null, null},
+                            {null, null, null, null, null, null},
+                            {null, null, null, null, null, null},
+                            {"vova23", null, "aa", "bb", "cc", "aa@bb.cc"}};
+                }
+
+
                 break;
         }
          return new UserModel(mas[i][0], mas[i][1], mas[i][2], mas[i][3],mas[i][4], mas[i][5]);
