@@ -72,23 +72,54 @@ public class UserProfileCard extends AnyPage {
 
     /*------------------Methods of Act of Prevetive Card-------------------------------------------------------------*/
 
-    public UserProfileCard setUserProfileCard (UserModel userModel) {
+    public UserProfileCard enterLogin(UserModel userModel) {
         type(inputLogin, userModel.getLogin());
+        return this;
+    }
+
+    public UserProfileCard enterLastName(UserModel userModel) {
         type(inputLastName, userModel.getLastName());
+        return this;
+    }
+
+    public UserProfileCard enterFirstName(UserModel userModel) {
         type(inputFirstName, userModel.getFirstName());
+        return this;
+    }
+
+    public UserProfileCard enterMiddleName(UserModel userModel) {
         type(inputMiddleName, userModel.getMiddleName());
+        return this;
+    }
+
+    public UserProfileCard enterProsecutionOffice(UserModel userModel) {
         inputProsecutionOffice.click();
         fluientWaitforElement(itemProsecutionOffice).click();
+        return this;
+    }
+
+    public UserProfileCard enterSubdivision(UserModel userModel) {
         inputSubdivision.click();
         fluientWaitforElement(itemSubdivision).click();
+        return this;
+    }
+
+    public UserProfileCard enterPost(UserModel userModel) {
         inputPost.click();
         fluientWaitforElement(itemPost).click();
+        return this;
+    }
+
+    public UserProfileCard enterRole(UserModel userModel) {
         inputRole.click();
         fluientWaitforElement(itemRole).click();
         inputRole.click();
+        return this;
+    }
+
+    public UserProfileCard enterEmail(UserModel userModel) {
         type(inputEmail, userModel.getEmail());
         return this;
-
     }
 
 

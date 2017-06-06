@@ -25,13 +25,12 @@ public class AdminUsersTest extends BasicTestCase {
         app.getNavigationTopHelper().goToAdministrationPage();
         app.getAdministrationHelper().goToAdminUsersPage();
         assertTrue(app.getAdminUsersHelper().isOnAdminUsersPage());
-
     }
 
     @Test (groups = {"admin_user"}, dependsOnMethods = {"testJumpToAdminUsersPage"})
     public void testCreateAndReviewUserProfile() throws InterruptedException {
         app.getAdminUsersHelper().openCardToCreate();
-        app.getAdminUsersHelper().createCard(userModel);
+        app.getAdminUsersHelper().enterUserProfileCard(userModel);
         app.getAdminUsersHelper().saveCard();
         app.getAdminUsersHelper().sortDownMainGrid();
         TimeUnit.SECONDS.sleep(7);

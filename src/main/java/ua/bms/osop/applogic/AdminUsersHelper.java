@@ -23,8 +23,16 @@ public class AdminUsersHelper extends DriverBasedHelper {
 
     /*--------------------------------User Profile Card----------------------------------------------------*/
 
-    public void createCard(UserModel userModel) {
-        pages.userProfileCard.setUserProfileCard(userModel);
+    public void enterUserProfileCard(UserModel userModel) {
+        pages.userProfileCard.enterLogin(userModel)
+                .enterLastName(userModel)
+                .enterFirstName(userModel)
+                .enterMiddleName(userModel)
+                .enterProsecutionOffice(userModel)
+                .enterSubdivision(userModel)
+                .enterPost(userModel)
+                .enterRole(userModel)
+                .enterEmail(userModel);
     }
 
     //Opens Card to review
