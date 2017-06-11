@@ -8,6 +8,8 @@ import java.util.Random;
 public class UserModel {
 	
 	private String login;
+	private String loginBasis = "vova";
+	private String loginNumber;
 	private String password;
 	private String lastName;
 	private String firstName;
@@ -22,7 +24,8 @@ public class UserModel {
 
 	/*Constructor of User Model Object*/
 	public UserModel(String login, String password, String lastName, String firstName, String middleName, String email) {
-		this.login = login + createNumber();
+		this.loginNumber = Integer.toString(Integer.valueOf(login)+1);
+		this.login = loginBasis + loginNumber;
 		this.password = password;
 		this.lastName = lastName;
 		this.firstName = firstName;
@@ -36,18 +39,20 @@ public class UserModel {
 		this.password = password;
 	}
 
-	/*Generation of random number of Claim*/
-	private String createNumber() {
-		Random rnd = new Random();
-		return Integer.toString(rnd.nextInt(9999));
-	}
-	
 	/*---Get Methods---*/
 	
 	public String getLogin() {
 		return login;
 	}
-	
+
+	public String getLoginBasis() {
+		return loginBasis;
+	}
+
+	public String getLoginNumber() {
+		return loginNumber;
+	}
+
 	public String getPassword() {
 		return password;
 	}

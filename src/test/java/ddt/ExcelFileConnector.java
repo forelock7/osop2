@@ -1,12 +1,9 @@
 package ddt;
 
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
 import ua.bms.osop.utils.ConfigProperties;
 
 
@@ -19,9 +16,8 @@ public class ExcelFileConnector {
 
     //Prepare the path of excel file
     private String importFilePath = ConfigProperties.getProperty("excelimport.filePath");
-    private String importFileName = ConfigProperties.getProperty("excelimport.fileName");
 
-    public String[][] readExcel(String sheetName) throws IOException {
+    public String[][] readExcel(String sheetName, String importFileName) throws IOException {
 
         //Create a object of File class to open xlsx file
         File file = new File(importFilePath +"\\"+ importFileName);
@@ -63,12 +59,15 @@ public class ExcelFileConnector {
         //Create a loop over all the rows of excel file to read it
         String [][] mas = new String[rowCount+1][cellCount];
 
+        DataFormatter formatter = new DataFormatter();
+
         for (i = 1; i < rowCount+1; i++) {
             row = workbookSheet.getRow(i);
             //Create a loop to print cell values in a row
             for (j = 0; j < cellCount; j++) {
                 //Print excel data in console
-                mas[i][j] = row.getCell(j).getStringCellValue();
+                //mas[i][j] = row.getCell(j).getStringCellValue();
+                mas[i][j] = formatter.formatCellValue(row.getCell(j));
             }
         }
     return mas;

@@ -1,9 +1,12 @@
 package ua.bms.osop.test;
 
+import ddt.ExcelFileConnector;
 import org.testng.Assert;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import ua.bms.osop.model.UserModel;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import static org.testng.Assert.assertTrue;
@@ -14,10 +17,19 @@ import static org.testng.Assert.assertTrue;
 public class AdminUsersTest extends BasicTestCase {
 
     public AdminUsersTest() throws Exception {
-
     }
 
-    private UserModel userModel = getUserModel(4);
+    private UserModel userModel = getNewUserModel(1);
+
+    @BeforeClass
+    public void writeLoginNumber() throws IOException{
+        Object [][] mas2 = {
+                {"login", "last_number"},
+                {userModel.getLoginBasis(), userModel.getLoginNumber()}
+        };
+        ExcelFileConnector exCon = new ExcelFileConnector();
+        exCon.writeExcel("newLogin", mas2);
+    }
 
     @Test (groups = {"admin_user"})
     public void testJumpToAdminUsersPage(){

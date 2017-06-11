@@ -26,6 +26,7 @@ public class BasicTestCase {
 	* db
 	* */
 	private String modeData = ConfigProperties.getProperty("data.modedata");
+    private String importFileName = ConfigProperties.getProperty("excelimport.fileName");
 
 	
 	/*Before Test Class creates new object of Application Manager*/
@@ -62,30 +63,47 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet0");
+                mas = objExcelFile.readExcel("Sheet0", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
                 mas = sqlConection.readDB("user", 2);
                 break;
             default:
-                if((i == 1)||(i == 2)||(i == 3)) {
-                    mas = new String[][]{{null, null},
-                            {"vova", "bMS$2016"},
-                            {"vova1", "failedPassword"},
-                            {"failedLogin", "bMS$2016"}};
-                }else {
-                    mas = new String[][]{{null, null, null, null, null, null},
-                            {null, null, null, null, null, null},
-                            {null, null, null, null, null, null},
-                            {null, null, null, null, null, null},
-                            {"vova23", null, "aa", "bb", "cc", "aa@bb.cc"}};
-                }
-
-
+                mas = new String[][]{{null, null},
+                        {"vova", "bMS$2016"},
+                        {"vova", "failedPassword"},
+                        {"failedLogin", "bMS$2016"}};
                 break;
         }
-         return new UserModel(mas[i][0], mas[i][1], mas[i][2], mas[i][3],mas[i][4], mas[i][5]);
+         return new UserModel(mas[i][0], mas[i][1]);
+    }
+
+    protected UserModel getNewUserModel(int i) throws Exception {
+        /*switch (modeData) {
+            case "excel":
+                //Create a object of ExcelFileConnector class
+                ExcelFileConnector objExcelFile = new ExcelFileConnector();
+                //Call read file method of the class to read data
+                mas = objExcelFile.readExcel("Sheet0", importFileName);
+                break;
+            case "db":
+                SQLConnector sqlConection = new SQLConnector();
+                mas = sqlConection.readDB("user", 2);
+                break;
+            default:
+                mas = new String[][]{{null, null, null, null, null, null},
+                        {"vova23", null, "aa", "bb", "cc", "aa@bb.cc"}};
+                break;
+        }*/
+        String mas[][] = new String[][]{{null, null, null, null, null, null},
+                {null, null, "Спотикайло", "Петро", "Захарович", "zakhar@poshta.net"}};
+        //Create a object of ExcelFileConnector class
+        ExcelFileConnector objExcelFile = new ExcelFileConnector();
+        //Call read file method of the class to read data
+        String masLogin[][] = objExcelFile.readExcel("Sheet1", "newLogin.xlsx");
+        mas[i][0] = masLogin[i][1];
+        return new UserModel(mas[i][0], mas[i][1], mas[i][2], mas[i][3],mas[i][4], mas[i][5]);
     }
 
 	/*-----------------------------------------------------------------------------------------------------------------*/	
@@ -99,7 +117,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet1");
+                mas = objExcelFile.readExcel("Sheet1", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -124,7 +142,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet2");
+                mas = objExcelFile.readExcel("Sheet2", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -149,7 +167,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet3");
+                mas = objExcelFile.readExcel("Sheet3", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -175,7 +193,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet4");
+                mas = objExcelFile.readExcel("Sheet4", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -201,7 +219,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet5");
+                mas = objExcelFile.readExcel("Sheet5", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -230,7 +248,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet6");
+                mas = objExcelFile.readExcel("Sheet6", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -263,7 +281,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet7");
+                mas = objExcelFile.readExcel("Sheet7", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -288,7 +306,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet8");
+                mas = objExcelFile.readExcel("Sheet8", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -312,7 +330,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet9");
+                mas = objExcelFile.readExcel("Sheet9", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -336,7 +354,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet10");
+                mas = objExcelFile.readExcel("Sheet10", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -362,7 +380,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet11");
+                mas = objExcelFile.readExcel("Sheet11", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -388,7 +406,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet12");
+                mas = objExcelFile.readExcel("Sheet12", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -414,7 +432,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet13");
+                mas = objExcelFile.readExcel("Sheet13", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -451,7 +469,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet14");
+                mas = objExcelFile.readExcel("Sheet14", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -476,7 +494,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet15");
+                mas = objExcelFile.readExcel("Sheet15", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -505,7 +523,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet16");
+                mas = objExcelFile.readExcel("Sheet16", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -529,7 +547,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet17");
+                mas = objExcelFile.readExcel("Sheet17", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -555,7 +573,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet18");
+                mas = objExcelFile.readExcel("Sheet18", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -582,7 +600,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet19");
+                mas = objExcelFile.readExcel("Sheet19", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
@@ -607,7 +625,7 @@ public class BasicTestCase {
                 //Create a object of ExcelFileConnector class
                 ExcelFileConnector objExcelFile = new ExcelFileConnector();
                 //Call read file method of the class to read data
-                mas = objExcelFile.readExcel("Sheet20");
+                mas = objExcelFile.readExcel("Sheet20", importFileName);
                 break;
             case "db":
                 SQLConnector sqlConection = new SQLConnector();
